@@ -13,7 +13,7 @@ categories: [
 ]
 ---
 
-![](/media/p2p.jpg)
+![](/media/p2p/p2p.jpg)
 
 The idea of a peer to peer **something** is to create a system that doesn't require any centralized server to
 operate. In the case of a messenger, two users should be able to communicate directly between each other until at
@@ -38,31 +38,7 @@ I don't think that this approach is super scalable and makes sense in the real w
 resources for a single user. But I have chosen it because it is more fun to implement for me as it needs more
 infrastructure work.
 
-```
-                                +------+
-                                | user +-+
-                                +------+ +-+
-                                  +------+ |
-                                    +------+
-               +--------------+     |
-             +-+ Docker Swarm +-----------------------------+
-             | +-----+--------+     |                       |
-             |       ^              v                       |
-             |       |         +----+----+                  |
-             |       |         | traefik |                  |
-             |       |         +-+--+--+-+                  |
-             |       |           |  ^  |                    |
-             |       |           |  |  |                    |
-             | +-----+------+    |  |  |      +------+      |
-             | | dispatcher +<---+  |  +----->+ peer +-+    |
-             | +-----+------+       |         +------+ +--+ |
-             |       ^              |            +-----+  | |
-             |       |              v            ^ +------+ |
-             |       |          +---+----+       |          |
-             |       +--------->+ consul +<------+          |
-             |                  +--------+                  |
-             +----------------------------------------------+
-```
+![cloud](/media/p2p/cloud.jpg)
 
 ## Peer
 
@@ -127,31 +103,8 @@ When a message is sent from peer in the one network to the peer in another, brid
 and proxies the connection between two peers.
 
 Final architecture:
-```
-                  +------+                 +----------+
-                  | user +-+          +--->+ internet +<-+
-                  +------+ +-+        |    +----------+  |
-                    +------+ |        |                  |
-                      +------+        |                  |
-  +--------------+     |              |                  |     +-----------+
-+-+ Docker Swarm +-----------------------------+ +-------------+ localhost +-+
-| +-----+--------+     |              |        | |       |     +-----------+ |
-|       ^              v              v        | |       v                   |
-|       |         +----+----+     +---+----+   | | +-----+--+<-------------+ |
-|       |         | traefik |     | bridge |   | | | bridge |              | |
-|       |         +-+--+--+-+     +-------++   | | +-+------+<---+         | |
-|       |           |  ^  |               ^    | |   ^           |         | |
-|       |           |  |  |               |    | |   |           v         | |
-| +-----+------+    |  |  |      +------+ v    | |   |       +---+--+      | |
-| | dispatcher +<---+  |  +----->+ peer +-+    | |   |    +->+ peer +<-+   | |
-| +-----+------+       |         +------+ +-+  | |   |    |  +------+  |   | |
-|       ^              |           +------+ |  | |   |    |            |   | |
-|       |              v           ^ +------+  | |   v    v            v   v |
-|       |          +---+----+      |           | | ++----++         +-+---++ |
-|       +--------->+ consul +<-----+           | | | peer +<------->+ peer | |
-|                  +--------+                  | | +------+         +------+ |
-+----------------------------------------------+ +---------------------------+
-```
+
+![bridge](/media/p2p/bridge.jpg)
 
 You can find the code and maybe participate at [github](https://github.com/ngalayko/p2p).
 
