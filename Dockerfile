@@ -35,5 +35,5 @@ WORKDIR /app
 COPY ./ .
 
 RUN set -x \
-   && mogrify -resize "800>x" -quality 82 -format jpg ./content/media/* \
+   && find ./content/media/ -type f -exec mogrify -resize "800>x" -quality 82 -format jpg {} \; \
    && hugo -v -t hermit
