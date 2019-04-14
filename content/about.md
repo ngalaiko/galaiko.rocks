@@ -7,13 +7,6 @@ Hello!
 
 I am a software developer. Mostly backend with go, can do DevOps/SRE, don’t want to do frontend.
 
-Currently working at [Opera](https://opera.com) ([African payment system](https://operapay.com) project).
-
-Previously:
-
-* [Lazada](https://www.lazada.vn/) (South-Asian amazon)
-* [TheQuestion](https://thequestion.com) (Russian quora)
-
 Experienced with (ordered lists):
 
 * Languages: go, bash
