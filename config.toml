@@ -41,7 +41,7 @@ copyright = "(c) 2018. Powered by Hugo, Docker Swarm and Raspberry Pi (for some 
 
   [[params.social]]
     name = "email"
-    url = "mailto:nikita@galaiko.rocks"
+    url = "mailto:nikita+blog@galaiko.rocks"
 
   [[params.social]]
     name = "pgp"
