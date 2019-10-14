@@ -51,7 +51,7 @@ self on how to do that:
         $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
          echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
          sudo apt-get update -q && \
-         sudo apt-get install -qy kubeadm=1.13.5 kubectl=1.13.5 kubebelet=1.13.5
+         sudo apt-get install -qy kubeadm=1.13.5 kubectl=1.13.5 kubelet=1.13.5
 * Initialize Kubernetes on the __master__ node:
     ```
     $ sudo kubeadm init
