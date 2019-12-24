@@ -8,6 +8,9 @@ date: "2018-07-21"
 categories: [
     "Blog",
 ]
+aliases: [
+    "/posts/half-a-year-with-vim/",
+]
 ---
 
 ![Vim learning curve](/media/vim.jpg)
