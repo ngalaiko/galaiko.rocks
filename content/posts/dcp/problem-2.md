@@ -9,6 +9,9 @@ date: "2018-07-03"
 categories: [
     "Daily Coding Problem",
 ]
+aliases: [
+    "/posts/2018-07-03/",
+]
 ---
 
 # Problem 

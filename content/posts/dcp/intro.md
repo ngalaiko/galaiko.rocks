@@ -10,6 +10,9 @@ categories: [
     "Daily Coding Problem",
     "Blog",
 ]
+aliases: [
+    "/posts/2018-07-01/",
+]
 ---
 
 Recently found this website [Daily Coding Problem](https://www.dailycodingproblem.com/]),
