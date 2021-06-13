@@ -1,14 +1,12 @@
 baseURL = "https://galaiko.rocks"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Nikita Galaiko"
 theme = "hermit"
-#enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
-#hasCJKLanguage = true  # If there're Chinese/Japanese/Korean Languages in the content, enable this.
-rssLimit = 10  # Maximum number of items in the RSS feed.
-copyright = "(c) 2018. Powered by Hugo, Docker Swarm and Raspberry Pi (for some reason)"
-# googleAnalytics = "UA-123-45"
+rssLimit = 10
+copyright = "(c) 2018-2021. Powered by Hugo"
 
 [author]
   name = "Nikita Galaiko"
@@ -18,7 +16,6 @@ copyright = "(c) 2018. Powered by Hugo, Docker Swarm and Raspberry Pi (for some 
 
 [taxonomies]
   tag = "tags"
-  category = ""  # Categories are disabled by default.
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -26,14 +23,13 @@ copyright = "(c) 2018. Powered by Hugo, Docker Swarm and Raspberry Pi (for some 
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
-  # themeColor = "#494f5c"  # Theme color in meta tags.
+  themeColor = "#494f5c"
+
   homeSubtitle = "Software Engineer"
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-  #gitUrl = "https://github.com/Someone/SomeRepo/commit/" # Prefix of link to you git commit detail page. GitInfo must be enabled. 
-  justifyContent = false  # Set "text-align: justify" to .content
-  # bgImg = ""  #  Homepage background-image URL
-  comments = false
-  fathom = false
+  justifyContent = false
+
+  relatedPosts = true
 
   [[params.social]]
     name = "github"
@@ -48,7 +44,6 @@ copyright = "(c) 2018. Powered by Hugo, Docker Swarm and Raspberry Pi (for some 
     url = "/keys/nikita-at-galaiko-rocks.asc"
 
 [menu]
-
   [[menu.main]]
     name = "Posts"
     url = "/posts/"
