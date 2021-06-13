@@ -41,7 +41,7 @@ copyright = "(c) 2018-2021. Powered by Hugo"
 
   [[params.social]]
     name = "pgp"
-    url = "/keys/nikita-at-galaiko-rocks.asc"
+    url = "/keys/nikita@galaiko.rocks.asc"
 
 [menu]
   [[menu.main]]
