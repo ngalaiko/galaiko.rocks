@@ -9,11 +9,14 @@ date: "2018-07-16"
 categories: [
     "Daily Coding Problem",
 ]
+aliases: [
+    "/posts/probability/",
+]
 ---
 
 Today problem is a `probability` problem.
 
-# Problem 
+# Problem
 
 This problem was asked by Facebook.
 
@@ -26,7 +29,7 @@ There are many variations of such problems, and before solving it, I want to sho
 Most trivial one is **picking one random element from an array**.
 
 Every programming language has a function to generate a pseudo-random number (`int` or `float`) within the given range. If you think
-of an array **A** as of **N** numbers, it's clear how to pick random one: generate number **i** from 0 to N, and **a[i]** is the answer. 
+of an array **A** as of **N** numbers, it's clear how to pick random one: generate number **i** from 0 to N, and **a[i]** is the answer.
 ```go
 func oneRandom(a []int) int {
     i := rand.Intn(len(a))
@@ -34,12 +37,12 @@ func oneRandom(a []int) int {
 }
 ```
 
-Sometimes you need to pick **N random elements from an array**. 
+Sometimes you need to pick **N random elements from an array**.
 
 In this case, you can use the same approach and pick **N** indexes from **0** to **len(A)**.
 ```go
 func nRandom(a []int, n int) []int {
-    result := make([]int, n) 
+    result := make([]int, n)
     for i := 0; i < n; i++ {
         result[i] = oneRandom(a)
     }
@@ -80,9 +83,9 @@ func nDifferentRandom2(a []int, n int) []int{
         choosenIndex := rand.Intn(len(chooseFrom))     // pick a random index from i to N
         a[i], a[choosenIndex] = a[choosenIndex], a[i]  // swap choosenElement with i
     }
-    // after all, we have choosen elements at the 
+    // after all, we have choosen elements at the
     // begining of an array, and probability is always same.
-    return a[:n] 
+    return a[:n]
 }
 ```
 
@@ -96,17 +99,17 @@ What do we have:
 We understand that to pick a random element from the stream with uniform probability,
 we need to process hole stream somehow (without storing to memory).
 
-Well, we always can iterate over a stream (but just once). 
+Well, we always can iterate over a stream (but just once).
 
 If we knew the length of a stream, we could use the approach from the first example, that would be perfect.
 
-In first example each element of an array have a linked number - it's index. 
+In first example each element of an array have a linked number - it's index.
 Moreover, we used a function that returns number from 0 to n with uniform probability within that range to pick one.
 
 So, in this case, we can **assign** a random value to each element with the same probability, and choose between them based on it linked number.
 
-Let's do it: for each element, we generate a float number between **[0..1]**. Also, we remember 
-maximum value that we generated, an element from the stream associated with it - random element. 
+Let's do it: for each element, we generate a float number between **[0..1]**. Also, we remember
+maximum value that we generated, an element from the stream associated with it - random element.
 
 # Code
 ```go
