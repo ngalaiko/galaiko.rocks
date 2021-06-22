@@ -1,0 +1,14 @@
+<footer id="footer">
+    <style>
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+	&copy; {{ now.Format "2006" }}
+    <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
+    &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>
+</footer>
