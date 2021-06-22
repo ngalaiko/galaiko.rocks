@@ -2,46 +2,18 @@ baseURL = "https://galaiko.rocks"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Nikita Galaiko"
-theme = "hermit"
+theme = "etch"
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 rssLimit = 10
-copyright = "(c) 2018-2021. Powered by Hugo"
 
 [author]
   name = "Nikita Galaiko"
 
-[blackfriday]
-  hrefTargetBlank = true
-
-[taxonomies]
-  tag = "tags"
-
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04 -0700"
-
-  themeColor = "#494f5c"
-
-  homeSubtitle = "Software Engineer"
-  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-  justifyContent = false
-
-  relatedPosts = true
-
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/ngalaiko"
-
-  [[params.social]]
-    name = "email"
-    url = "mailto:nikita+blog@galaiko.rocks"
-
-  [[params.social]]
-    name = "pgp"
-    url = "/keys/nikita@galaiko.rocks.asc"
+  description = "Nikita Galaiko"
+  dark      = "auto"
+  highlight = false
 
 [menu]
   [[menu.main]]
@@ -53,3 +25,8 @@ copyright = "(c) 2018-2021. Powered by Hugo"
     name = "About"
     url = "/about/"
     weight = 20
+
+  [[menu.main]]
+    name = "RSS"
+    url = "/posts/index.xml"
+    weight = 30

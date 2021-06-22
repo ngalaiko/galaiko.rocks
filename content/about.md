@@ -1,6 +1,5 @@
 ---
 title: "About"
-date: 2018-07-05T22:17:45+02:00
 ---
 
 Hello!
@@ -22,4 +21,8 @@ Experienced with (ordered lists):
 
 Originally from Russia, now living in Sweden.
 
-You can contact me by email: [nikita@galaiko.rocks](mailto:nikita+blog@galaiko.rocks)
+You can contact me by email: [nikita@galaiko.rocks][].
+
+[nikita@galaiko.rocks]:mailto:nikita+blog@galaiko.rocks
+[github]:https://github.com/ngalaiko
+[pgp]:/keys/nikita@galaiko.rocks.asc
