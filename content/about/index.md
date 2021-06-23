@@ -1,28 +1,24 @@
----
-title: "About"
----
+hi!
 
-Hello!
+i am a software developer who enjoys building distributed systems and designing apis.
 
-I am a software developer. Mostly backend with go, can do DevOps/SRE, don’t want to do frontend.
+list of technologies i am expirienced with (including but not limited to):
 
-Experienced with (ordered lists):
+* languages: go, java, javascript
+* sql databases: mysql, postresql, sqlite
+* nosql databases: cassandra, mongo, redis
+* orchestration: kubernates, docker swarm
+* proxy servers: envoy, nginx, traefik
+* ci: jenkins, gitlab ci, teamcity, circle ci
+* vcs: git
+* editors: vim
 
-* Languages: go, bash
-* SQL databases: MySQL, PostgreSQL
-* NoSQL databases: mongo, redis
-* Key-value storages: etcd, consul
-* Container platforms: docker
-* Container orchestration: docker swarm, kubernates
-* Proxy servers: nginx, traefik
-* Ci: Jenkins, gitlab ci, TeamCity, circle ci
-* VCs: git
-* Editors: vim
+the best way to contact me is to send an email to [nikita@galaiko.rocks][]
 
-Originally from Russia, now living in Sweden.
+consider using my [pgp key][] if you are into it
 
-You can contact me by email: [nikita@galaiko.rocks][].
+i also have a [github][] account
 
 [nikita@galaiko.rocks]:mailto:nikita+blog@galaiko.rocks
 [github]:https://github.com/ngalaiko
-[pgp]:/keys/nikita@galaiko.rocks.asc
+[pgp key]:/keys/nikita@galaiko.rocks.asc
