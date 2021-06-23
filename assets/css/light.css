@@ -1,0 +1,53 @@
+html {
+    scrollbar-color: #6c6c6c #2e2e2e;
+}
+
+body {
+    /*color: #313a3d;*/
+    color: #282828; /* fg0 */
+    background: #fbf1c7; /* bg0 */
+}
+
+header#banner a {
+    /*color: ##313a3d;*/
+    color: #282828; /* fg0 */
+    text-decoration: none;
+}
+
+header#banner nav ul li a {
+    /*color: #454545;*/
+    color: #504945; /* fg2 */
+}
+
+main#content a {
+    /*color: #007dfa;*/
+    color: #076678; /* light blue */
+}
+
+main#content p {
+    /*color: #394548;*/
+    color: #3c3836; /* fg1 */
+}
+
+main#content hr {
+    background: #d8d8d8;
+}
+
+main#content #toc h4 {
+    color: #3d3d3d;
+}
+
+main#content ul#posts small {
+    /*color: #767676;*/
+    color: #7c6f64; /* gray*/
+}
+
+main#content ul#posts li a:hover {
+    /*color: #369aff;*/
+    color: #458588; /* blue */
+}
+
+main#content header#post-header div {
+    /*color: #767676;*/
+    color: #7c6f64; /* gray*/
+}
