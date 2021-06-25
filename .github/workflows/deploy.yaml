@@ -15,6 +15,13 @@ jobs:
         with:
           submodules: true
 
+      - name: Setup ImageMagick
+        uses: mfinelli/setup-imagemagick@v1
+
+      - name: Optimize images
+        run: find ./content/media -type f -exec \
+            mogrify -resize "1200>x" -quality 85 -format jpg {} \;
+
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
         with:
