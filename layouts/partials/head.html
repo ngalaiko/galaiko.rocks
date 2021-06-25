@@ -4,6 +4,9 @@
     {{ with .Site.Params.description -}}
     <meta name="description" content="{{ . }}">
     {{ end }}
+
+    <title>{{ .Title }}</title>
+
     {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -25,8 +28,9 @@
         {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
     {{ end -}}
 
-    {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
-
-    <title>{{ .Title }}</title>
+    {{ with $resources | resources.Concat "css/style.css" | minify }}
+    <style>
+        {{ .Content | safeCSS }}
+    </style>
+    {{ end }}
 </head>
