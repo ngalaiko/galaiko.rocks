@@ -13,9 +13,9 @@ categories: [
 
 In the golang community slack, someone shared a link to a package used to
 validate Swedish personnumer. Personnumer is a swedish version of an ID, and its
-format is well defined: 
+format is well defined:
 
-1. First 6 or 8 digits is a birthrate with or without a century. 
+1. First 6 or 8 digits is a birthrate with or without a century.
 2. Last four digits are random secret digits.
 3. The whole number satisfies the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm).
 4. Birthdate and secret digits can be divided with `-` or `+`.
@@ -170,8 +170,8 @@ There are several problems in the code. I am going to remove it one by one:
 
 ## Regexp package
 
-The most popular way to optimize functions in go is to move the regexp compilation 
-out from a function: 
+The most popular way to optimize functions in go is to move the regexp compilation
+out from a function:
 
 ```go
 
@@ -202,19 +202,19 @@ PASS
 
 ## Reflect package
 
-Reflection is generally slow and is not made to be used in such cases. Here it 
-is used to check if the input type in `int` or `string`. Let's assume we actually need 
-a function that accepts an interface, and not just a string. 
+Reflection is generally slow and is not made to be used in such cases. Here it
+is used to check if the input type in `int` or `string`. Let's assume we actually need
+a function that accepts an interface, and not just a string.
 
 To check the type of an interface you don't need a reflect package. You can always
-switch on an interface type: 
+switch on an interface type:
 
 ```go
 // Valid will validate Swedish social security numbers.
 func Valid(i interface{}) bool {
 	switch v := i.(type) {
 	case int, int32, int64, uint, uint32, uint64:
-		return ValidString(fmt.Sprint(v)) 
+		return ValidString(fmt.Sprint(v))
 	case string:
 		return ValidString(v)
 	default:
@@ -242,14 +242,14 @@ PASS
 
 ## Regexp package again
 
-Why do we even need a regexp package here? To validate that string contains only 
+Why do we even need a regexp package here? To validate that string contains only
 digits and `-` or `-` regexp is an overkill.
 
 First, we clean out everything except digits from a string and check it's length
-because we know what that length should be (6+4 or 8+4). 
+because we know what that length should be (6+4 or 8+4).
 
 To check if a character is a digit, it's enough to make sure that it's greater than
-`'0'` and less than `'9'`, because all digits have sequential codes in the 
+`'0'` and less than `'9'`, because all digits have sequential codes in the
 (ASCII table)[http://www.asciitable.com/].
 
 ```go
@@ -372,7 +372,7 @@ func testDate(century string, year string, month string, day string) bool {
 }
 ```
 
-Benchmark: 
+Benchmark:
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -388,7 +388,7 @@ Notice that there are still 33 allocations per function call. Where do they come
 from? It's because we use `string` type all the time, `string` is the same thing
 as a `[]byte`, but immutable. So every time we call `cleanNumber += string(c)`,
 allocation happens. It's impossible to change the string, so new the string is allocated,
-and both strings are copies there. 
+and both strings are copies there.
 
 Let's remove `string` usage:
 ```go
@@ -557,12 +557,12 @@ BenchmarkValid-4  20000000  94.0 ns/op  16 B/op  1 allocs/op
 PASS
 ```
 
-![Optimizaion-N](/media/optimization-n.jpg)
+![Optimizaion-N](/media/optimization-n.png)
 
-![Optimizaion-bytes](/media/optimization-bytes.jpg)
+![Optimizaion-bytes](/media/optimization-bytes.png)
 
-![Optimizaion-allocs](/media/optimization-allocs.jpg)
+![Optimizaion-allocs](/media/optimization-allocs.png)
 
-![Optimizaion-ns](/media/optimization-ns.jpg)
+![Optimizaion-ns](/media/optimization-ns.png)
 
 If you have an idea how to improve it more, please share.
