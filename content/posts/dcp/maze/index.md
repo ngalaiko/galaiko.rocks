@@ -12,7 +12,7 @@ categories: [
 ]
 ---
 
-![maze](/media/maze.jpg)
+![maze](./maze.jpg)
 
 # Problem 
 
