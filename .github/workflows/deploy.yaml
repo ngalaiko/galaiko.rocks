@@ -19,7 +19,7 @@ jobs:
         uses: mfinelli/setup-imagemagick@v1
 
       - name: Optimize images
-        run: find ./content/media -type f -exec \
+        run: find ./content -type f -name "*(.jpg)|(.png)" -exec \
             mogrify -resize "1200>x" -quality 85 -format jpg {} \;
 
       - name: Publish Site
