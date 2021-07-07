@@ -13,7 +13,7 @@ aliases: [
 ]
 ---
 
-![Vim learning curve](/media/vim.jpg)
+![Vim learning curve](./vim.jpg)
 
 I started using vim because I was bored. Likely, I code in go, so it’s pretty
 easy to switch. I mean, I tried to do Java with vim for about a week -

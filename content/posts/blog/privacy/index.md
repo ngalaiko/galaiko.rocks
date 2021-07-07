@@ -25,7 +25,7 @@ and it doesn't hurt daily usage at all. Instead,
 now I have nice stats of a website I visit and handy tools to block/whitelist
 some of them.
 
-![Pihole](/media/pihole.jpg)
+![Pihole](./pihole.jpg)
 
 You can install it directly on your router, on every device that you use.
 For MacBook and AppleTV I changed DNS settings to use my custom IP address,
@@ -34,7 +34,7 @@ If you want to try it, the address is the same as the IP of this website `167.99
 
 ## Matomo
 
-![natomo](/media/matomo.jpg)
+![natomo](./matomo.jpg)
 
 After enabling PiHole, Google Analytics stopped working, so I found a self-hosted alternative and installed it on this website. 
 

@@ -557,12 +557,12 @@ BenchmarkValid-4  20000000  94.0 ns/op  16 B/op  1 allocs/op
 PASS
 ```
 
-![Optimizaion-N](/media/optimization-n.png)
+![Optimizaion-N](./optimization-n.png)
 
-![Optimizaion-bytes](/media/optimization-bytes.png)
+![Optimizaion-bytes](./optimization-bytes.png)
 
-![Optimizaion-allocs](/media/optimization-allocs.png)
+![Optimizaion-allocs](./optimization-allocs.png)
 
-![Optimizaion-ns](/media/optimization-ns.png)
+![Optimizaion-ns](./optimization-ns.png)
 
 If you have an idea how to improve it more, please share.
