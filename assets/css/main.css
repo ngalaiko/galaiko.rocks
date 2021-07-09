@@ -1,0 +1,197 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    line-height: 28px;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 770px) {
+    body {
+        width: 800px;
+    }
+}
+
+header#banner {
+    margin: 25px 0;
+}
+
+header#banner a {
+    text-decoration: none;
+}
+
+header#banner a:hover {
+    text-decoration: underline;
+}
+
+header#banner h2 {
+    display: inline;
+    margin: 0 8px 0 0;
+    font-size: 1em;
+}
+
+header#banner nav {
+    display: inline-block;
+}
+
+header#banner nav ul {
+    list-style-type: none;
+    text-transform: lowercase;
+    margin: 0;
+    padding: 0;
+}
+
+header#banner nav ul li {
+    display: inline;
+    margin: 0 3px;
+}
+
+main#content a {
+    text-decoration: none;
+}
+
+main#content a:hover {
+    text-decoration: underline;
+}
+
+main#content h1,
+main#content h2,
+main#content h3,
+main#content h4,
+main#content h5,
+main#content h6 {
+    margin-bottom: 0;
+}
+
+main#content h2 {
+    font-size: 21.4px;
+    line-height: 28px;
+    margin: 28px 0 0 0;
+}
+
+main#content h1 + p,
+main#content h3 + p,
+main#content h4 + p,
+main#content h5 + p,
+main#content h6 + p {
+    margin-top: 5px;
+}
+
+main#content p {
+    margin: 16px 0;
+}
+
+main#content hr {
+    height: 1px;
+    border: 0;
+}
+
+/* index.html styles */
+main#content ul#posts {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+main#content ul#posts li {
+    margin: 5px 0;
+    padding: 0;
+}
+
+main#content ul#posts small {
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+main#content ul#posts li a {
+    text-decoration: none;
+}
+
+/* single.html styles */
+main#content header#post-header h1 {
+    display: block;
+    font-size: 1.95552em;
+    line-height: 1.2141em;
+}
+
+main#content header#post-header div {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+main#content img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+main#content figure {
+    margin: 16px 0;
+}
+
+main#content figure img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+main#content figure figcaption {
+    font-size: 0.92em;
+    font-style: italic;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 6px;
+    padding: 0 10px;
+}
+
+main#content figure figcaption h4 {
+    font-style: normal;
+    display: inline;
+    margin: 0;
+}
+
+main#content figure figcaption p {
+    display: inline;
+    margin: 0;
+    padding-left: 8px;
+}
+
+main#content blockquote {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+}
+
+main#content code,
+main#content pre {
+    font-family: 'Menlo', monospace;
+}
+
+main#content code {
+    font-size: 0.87em;
+    line-height: 1.45em;
+}
+
+main#content pre {
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+main#content section.footnotes {
+    font-size: 0.9em;
+}
+
+footer#footer {
+    margin: 40px 0;
+    font-size: 0.8em;
+    font-weight: 300;
+}
