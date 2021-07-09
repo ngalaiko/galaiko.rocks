@@ -4,53 +4,39 @@
     }
 
     body {
-        /*color: #ebebeb;*/
         color: #fbf1c7; /* fg0 */
-        /*background: #121212;*/
         background: #282828; /* bg0 */
     }
 
     header#banner a {
-        /*color: #e0e0e0;*/
         color: #fbf1c7; /* fg0 */
-        text-decoration: none;
     }
 
     header#banner nav ul li a {
-        /*color: #cccccc;*/
         color: #d5c4a1; /* fg2 */
     }
 
     main#content a {
-        /*color: #00b1ed;*/
         color: #83a598; /* light blue */
     }
 
     main#content p {
-        /*color: #f5f5f5;*/
         color: #ebdbb2; /* fg1 */
     }
 
     main#content hr {
-            background: #5c5c5c;
-    }
-
-    main#content #toc h4 {
-        color: #d4d4d4;
+        background: #5c5c5c;
     }
 
     main#content ul#posts small {
-        /*color: #a7a7a7;*/
         color: #a89984; /* gray*/
     }
 
     main#content ul#posts li a:hover {
-        /*color: #21c7ff;*/
         color: #458588; /* blue */
     }
 
     main#content header#post-header div {
-        /*color: #a7a7a7;*/
         color: #a89984; /* gray*/
     }
 }
