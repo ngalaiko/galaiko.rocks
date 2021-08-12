@@ -14,19 +14,3 @@ rssLimit = 10
   description = "Nikita Galaiko"
   dark      = "auto"
   highlight = false
-
-[menu]
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 10
-
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 20
-
-  [[menu.main]]
-    name = "RSS"
-    url = "/posts/index.xml"
-    weight = 30
