@@ -789,7 +789,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://img.discogs.com/7f87d8b433b9c7c0f699f838e39ec2019e7e0c01/images/spacer.gif",
+        "cover_image": "https://img.discogs.com/7bb5c71a14c5a4b5e2f5f9370949a0d7f1201d6f/images/spacer.gif",
         "formats": [
           {
             "descriptions": [
@@ -1038,6 +1038,62 @@
       "folder_id": 1,
       "id": 7846596,
       "instance_id": 686345989,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 47333,
+            "join": "",
+            "name": "Fleetwood Mac",
+            "resource_url": "https://api.discogs.com/artists/47333",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/aSlRmqL8SQRFOXZxyq73A-TcwdE=/fit-in/600x595/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15358776-1603349066-5773.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "1"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 15358776,
+        "labels": [
+          {
+            "catno": "9362-49793-5",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 134882,
+            "name": "Warner Records",
+            "resource_url": "https://api.discogs.com/labels/134882"
+          }
+        ],
+        "master_id": 38722,
+        "master_url": "https://api.discogs.com/masters/38722",
+        "resource_url": "https://api.discogs.com/releases/15358776",
+        "styles": [
+          "Classic Rock"
+        ],
+        "thumb": "https://img.discogs.com/bcnJYGMfjVudwHwfyMb37Turkik=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15358776-1603349066-5773.jpeg.jpg",
+        "title": "Rumours",
+        "year": 2020
+      },
+      "date_added": "2021-08-14T06:37:52-07:00",
+      "folder_id": 1,
+      "id": 15358776,
+      "instance_id": 781225975,
       "rating": 0
     },
     {
