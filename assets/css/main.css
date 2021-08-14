@@ -195,3 +195,13 @@ footer#footer {
     font-size: 0.8em;
     font-weight: 300;
 }
+
+/* posts/list.html styles */
+section#records {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+section#records a img {
+  width: 100%;
+}
