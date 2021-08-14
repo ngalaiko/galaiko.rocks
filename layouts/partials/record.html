@@ -1,0 +1,13 @@
+{{- $info := .basic_information -}}
+{{- $artist := index $info.artists 0 }}
+{{- $fullName := printf "%s - %s" $artist.name $info.title -}}
+{{- $discogsURL := printf "https://www.discogs.com/release/%d" (int $info.id) -}}
+
+{{- with $info.thumb -}}
+<a
+    {{ printf "href=%q" $discogsURL | safeHTMLAttr }}>
+    <img
+        {{ printf "src=%q" $info.cover_image | safeHTMLAttr }}
+        alt="{{ $fullName }}" />
+</a>
+{{- end -}}

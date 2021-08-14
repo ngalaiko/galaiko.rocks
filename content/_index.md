@@ -10,9 +10,10 @@ consider using my [pgp key][] if you are into it
 
 i have a [github][] account if you want to checkout stuff I occasionaly do for fun (programming wise)
 
-there is also my account on [discogs][] that i use to catalog vinyl that i have
+there is also [page on this website][] that i use to catalog vinyl that i have
 
 [nikita@galaiko.rocks]:mailto:nikita@galaiko.rocks
 [github]:https://github.com/ngalaiko
 [pgp key]:/keys/nikita@galaiko.rocks.asc
 [discogs]:https://www.discogs.com/user/ngalaiko
+[page on this website]:/records/

@@ -1,0 +1,5 @@
+<section id="records">
+{{ range $.Site.Data.records.releases }}
+    {{ partial "record.html" . }}
+{{ end }}
+</section>
