@@ -12,6 +12,8 @@ i have a [github][] account if you want to checkout stuff I occasionaly do for f
 
 there is also [page on this website][] that i use to catalog vinyl that i have
 
+p.s.: this website doesn't contain any javascipt or analytic tools
+
 [nikita@galaiko.rocks]:mailto:nikita@galaiko.rocks
 [github]:https://github.com/ngalaiko
 [pgp key]:/keys/nikita@galaiko.rocks.asc
