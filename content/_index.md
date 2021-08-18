@@ -1,3 +1,7 @@
+---
+title: "Nikita Galaiko"
+---
+
 hi, welcome to my homepage!
 
 i am a software developer who enjoys building distributed systems and designing apis.
