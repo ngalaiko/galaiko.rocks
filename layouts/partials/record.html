@@ -7,6 +7,7 @@
 <a
     {{ printf "href=%q" $discogsURL | safeHTMLAttr }}>
     <img
+        loading="lazy"
         {{ printf "src=%q" $info.cover_image | safeHTMLAttr }}
         alt="{{ $fullName }}" />
 </a>
