@@ -1,13 +1,4 @@
 <footer id="footer">
-    <style>
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
     {{- $posts := where .Site.RegularPages "Type" "posts" -}}
     {{- $firstPost := index (sort $posts ".Date" "asc") 0 -}}
 	&copy; {{ $firstPost.Date.Format "2006"}}...{{ now.Format "2006" }}
