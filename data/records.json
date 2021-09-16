@@ -95,6 +95,256 @@
       "basic_information": {
         "artists": [
           {
+            "anv": "\u0410\u0411\u0411\u0410",
+            "id": 69866,
+            "join": "",
+            "name": "ABBA",
+            "resource_url": "https://api.discogs.com/artists/69866",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/5kBLzUm4l2aHxZlV47IWJNgMYpg=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4953161-1429449513-9741.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Blue Labels"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 4953161,
+        "labels": [
+          {
+            "catno": "\u042160\u201415665-6",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 25796,
+        "master_url": "https://api.discogs.com/masters/25796",
+        "resource_url": "https://api.discogs.com/releases/4953161",
+        "styles": [
+          "Pop Rock"
+        ],
+        "thumb": "https://img.discogs.com/oCDavWHcA_ovp6l_q7vNLVU0Xm8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4953161-1429449513-9741.jpeg.jpg",
+        "title": "Voulez-Vous",
+        "year": 0
+      },
+      "date_added": "2021-09-13T09:51:05-07:00",
+      "folder_id": 1,
+      "id": 4953161,
+      "instance_id": 806123941,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 69866,
+            "join": "",
+            "name": "ABBA",
+            "resource_url": "https://api.discogs.com/artists/69866",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/fmPYmuJXgMjc32Q_r9gO-PgI-Gc=/fit-in/600x610/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3776450-1525511642-3388.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "1"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "id": 3776450,
+        "labels": [
+          {
+            "catno": "\u0421 60\u201408353-54",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 5298,
+        "master_url": "https://api.discogs.com/masters/5298",
+        "resource_url": "https://api.discogs.com/releases/3776450",
+        "styles": [
+          "Pop Rock",
+          "Disco"
+        ],
+        "thumb": "https://img.discogs.com/BYDTIkJgJsN5hMQWWZjKLYaoESQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3776450-1525511642-3388.jpeg.jpg",
+        "title": "\u0410\u0411\u0411\u0410",
+        "year": 1988
+      },
+      "date_added": "2021-09-13T09:53:53-07:00",
+      "folder_id": 1,
+      "id": 3776450,
+      "instance_id": 806125948,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "\u0410\u0411\u0411\u0410",
+            "id": 69866,
+            "join": "",
+            "name": "ABBA",
+            "resource_url": "https://api.discogs.com/artists/69866",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/sNpXgWYm06sngzxYGPm20wIEowI=/fit-in/586x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-16106088-1603533209-6820.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Red labels"
+          }
+        ],
+        "genres": [
+          "Pop"
+        ],
+        "id": 16106088,
+        "labels": [
+          {
+            "catno": "\u042160-11177\u201478",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 25721,
+        "master_url": "https://api.discogs.com/masters/25721",
+        "resource_url": "https://api.discogs.com/releases/16106088",
+        "styles": [
+          "Disco"
+        ],
+        "thumb": "https://img.discogs.com/up09pAUPGzFKiho9HfKxLVMcr2U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16106088-1603533209-6820.jpeg.jpg",
+        "title": "\u0410\u043b\u044c\u0431\u043e\u043c",
+        "year": 1987
+      },
+      "date_added": "2021-09-13T09:57:14-07:00",
+      "folder_id": 1,
+      "id": 16106088,
+      "instance_id": 806128546,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 69866,
+            "join": "=",
+            "name": "ABBA",
+            "resource_url": "https://api.discogs.com/artists/69866",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "\u0410\u0411\u0411\u0410",
+            "id": 69866,
+            "join": "",
+            "name": "ABBA",
+            "resource_url": "https://api.discogs.com/artists/69866",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/rOHuYTYhmuHEDq2rdJt41-ECsgA=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4687534-1603025961-6795.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Repress",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Pink Labels"
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock",
+          "Pop"
+        ],
+        "id": 4687534,
+        "labels": [
+          {
+            "catno": "33 \u0421 60\u201411057-8",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          },
+          {
+            "catno": "33 \u0421 60\u201411057-58",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 5649,
+        "master_url": "https://api.discogs.com/masters/5649",
+        "resource_url": "https://api.discogs.com/releases/4687534",
+        "styles": [
+          "Disco",
+          "Pop Rock",
+          "Ballad",
+          "Europop",
+          "Vocal"
+        ],
+        "thumb": "https://img.discogs.com/YlpTDSJCabqA73LQ2sgr4D4z3aM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4687534-1603025961-6795.jpeg.jpg",
+        "title": "\u041f\u0440\u0438\u0431\u044b\u0442\u0438\u0435",
+        "year": 1980
+      },
+      "date_added": "2021-09-13T09:59:12-07:00",
+      "folder_id": 1,
+      "id": 4687534,
+      "instance_id": 806130226,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
             "anv": "",
             "id": 258903,
             "join": "",
@@ -224,6 +474,121 @@
       "basic_information": {
         "artists": [
           {
+            "anv": "\u0412\u0438\u0442\u043b\u0437",
+            "id": 82730,
+            "join": "",
+            "name": "The Beatles",
+            "resource_url": "https://api.discogs.com/artists/82730",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/8HNGYUaq1VsjqdGbW3yvSEKGZn4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-18782740-1621366613-5014.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Reissue",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Red Label"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Stage & Screen"
+        ],
+        "id": 18782740,
+        "labels": [
+          {
+            "catno": "C60 23579 008",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 24003,
+        "master_url": "https://api.discogs.com/masters/24003",
+        "resource_url": "https://api.discogs.com/releases/18782740",
+        "styles": [
+          "Soundtrack",
+          "Rock & Roll",
+          "Pop Rock"
+        ],
+        "thumb": "https://img.discogs.com/pPkP33JdZ34a5tNPvAssHs9xN1U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18782740-1621366613-5014.jpeg.jpg",
+        "title": "A Hard Day's Night = \u0412\u0435\u0447\u0435\u0440 \u0422\u0440\u0443\u0434\u043d\u043e\u0433\u043e \u0414\u043d\u044f ",
+        "year": 1990
+      },
+      "date_added": "2021-09-13T10:02:09-07:00",
+      "folder_id": 1,
+      "id": 18782740,
+      "instance_id": 806132539,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 82730,
+            "join": "",
+            "name": "The Beatles",
+            "resource_url": "https://api.discogs.com/artists/82730",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/lmIS_ZNSqzrjDHOpX1Qkts0g3rE=/fit-in/600x588/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12433549-1535205806-1279.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Compilation"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Blue Labl "
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 12433549,
+        "labels": [
+          {
+            "catno": "\u042160 23581 008",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 185122,
+        "master_url": "https://api.discogs.com/masters/185122",
+        "resource_url": "https://api.discogs.com/releases/12433549",
+        "styles": [
+          "Beat",
+          "Rock & Roll"
+        ],
+        "thumb": "https://img.discogs.com/zXgafFN1nTFSbg2juGK1EOWhLlA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-12433549-1535205806-1279.jpeg.jpg",
+        "title": "A Taste Of Honey",
+        "year": 1986
+      },
+      "date_added": "2021-09-13T10:07:48-07:00",
+      "folder_id": 1,
+      "id": 12433549,
+      "instance_id": 806137138,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
             "anv": "",
             "id": 82730,
             "join": "",
@@ -273,6 +638,71 @@
       "folder_id": 1,
       "id": 7801798,
       "instance_id": 526496464,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 82730,
+            "join": "",
+            "name": "The Beatles",
+            "resource_url": "https://api.discogs.com/artists/82730",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/a1_qBNFJ5XOHiMZ1PlWJy-Yzweo=/fit-in/600x586/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-662841-1430813151-3213.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Compilation"
+            ],
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "Gatefold, Orange Labels"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "id": 662841,
+        "labels": [
+          {
+            "catno": "\u0412\u0422\u0410 1141/42",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25738,
+            "name": "\u0411\u0430\u043b\u043a\u0430\u043d\u0442\u043e\u043d",
+            "resource_url": "https://api.discogs.com/labels/25738"
+          },
+          {
+            "catno": "\u0412\u0422\u0410 1141/42",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 2294,
+            "name": "Parlophone",
+            "resource_url": "https://api.discogs.com/labels/2294"
+          }
+        ],
+        "master_id": 54819,
+        "master_url": "https://api.discogs.com/masters/54819",
+        "resource_url": "https://api.discogs.com/releases/662841",
+        "styles": [
+          "Soft Rock",
+          "Pop Rock"
+        ],
+        "thumb": "https://img.discogs.com/dOHEIDudxHhRtH9ffKjts99z6VI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-662841-1430813151-3213.jpeg.jpg",
+        "title": "Love Songs",
+        "year": 1982
+      },
+      "date_added": "2021-09-13T10:09:56-07:00",
+      "folder_id": 1,
+      "id": 662841,
+      "instance_id": 806138884,
       "rating": 0
     },
     {
@@ -789,7 +1219,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://img.discogs.com/7bb5c71a14c5a4b5e2f5f9370949a0d7f1201d6f/images/spacer.gif",
+        "cover_image": "https://img.discogs.com/4299d1d0e54ec04daf7c6cba20677a06516a95bc/images/spacer.gif",
         "formats": [
           {
             "descriptions": [
@@ -3103,6 +3533,14 @@
             "id": 567148,
             "name": "Virgin EMI Records",
             "resource_url": "https://api.discogs.com/labels/567148"
+          },
+          {
+            "catno": "4720269",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 567148,
+            "name": "Virgin EMI Records",
+            "resource_url": "https://api.discogs.com/labels/567148"
           }
         ],
         "master_id": 5863,
@@ -3121,6 +3559,64 @@
       "folder_id": 1,
       "id": 7541569,
       "instance_id": 660027862,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 81013,
+            "join": "",
+            "name": "Queen",
+            "resource_url": "https://api.discogs.com/artists/81013",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/ovXnrYjk9KwWVg6N0qe_efi6QAs=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7719996-1447423892-9834.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Compilation",
+              "Reissue",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Blue Labels"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 7719996,
+        "labels": [
+          {
+            "catno": "\u0412\u0422\u0410 11843",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25738,
+            "name": "\u0411\u0430\u043b\u043a\u0430\u043d\u0442\u043e\u043d",
+            "resource_url": "https://api.discogs.com/labels/25738"
+          }
+        ],
+        "master_id": 7941,
+        "master_url": "https://api.discogs.com/masters/7941",
+        "resource_url": "https://api.discogs.com/releases/7719996",
+        "styles": [
+          "Arena Rock",
+          "Classic Rock"
+        ],
+        "thumb": "https://img.discogs.com/baJBmN-6EqqGQySz7gyz222DTpg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7719996-1447423892-9834.jpeg.jpg",
+        "title": "Greatest Hits",
+        "year": 1986
+      },
+      "date_added": "2021-09-13T10:14:18-07:00",
+      "folder_id": 1,
+      "id": 7719996,
+      "instance_id": 806142481,
       "rating": 0
     },
     {
@@ -3320,6 +3816,100 @@
       "basic_information": {
         "artists": [
           {
+            "anv": "\u0423\u0434\u043e \u041b\u0438\u043d\u0434\u0435\u043d\u0431\u0435\u0440\u0433",
+            "id": 86472,
+            "join": "=",
+            "name": "Udo Lindenberg",
+            "resource_url": "https://api.discogs.com/artists/86472",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "",
+            "id": 86472,
+            "join": ",",
+            "name": "Udo Lindenberg",
+            "resource_url": "https://api.discogs.com/artists/86472",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "",
+            "id": 490460,
+            "join": "=",
+            "name": "\u0410\u043b\u043b\u0430 \u041f\u0443\u0433\u0430\u0447\u0435\u0432\u0430",
+            "resource_url": "https://api.discogs.com/artists/490460",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "Alla Pugacheva",
+            "id": 490460,
+            "join": "",
+            "name": "\u0410\u043b\u043b\u0430 \u041f\u0443\u0433\u0430\u0447\u0435\u0432\u0430",
+            "resource_url": "https://api.discogs.com/artists/490460",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/dFW0E1xyCcrxsVidlUp8He0j81Y=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1137895-1247060560.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "White Labels"
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock"
+        ],
+        "id": 1137895,
+        "labels": [
+          {
+            "catno": "\u042160 27427 006",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          },
+          {
+            "catno": "\u042160 27427 006",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1610,
+            "name": "Polydor",
+            "resource_url": "https://api.discogs.com/labels/1610"
+          }
+        ],
+        "master_id": 292380,
+        "master_url": "https://api.discogs.com/masters/292380",
+        "resource_url": "https://api.discogs.com/releases/1137895",
+        "styles": [
+          "Pop Rock",
+          "Downtempo",
+          "Synth-pop"
+        ],
+        "thumb": "https://img.discogs.com/bzbvi_T3oTCUwBY208dccAj2XaQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1137895-1247060560.jpeg.jpg",
+        "title": "\u041f\u0435\u0441\u043d\u0438 \u0412\u043c\u0435\u0441\u0442\u043e \u041f\u0438\u0441\u0435\u043c = Songs Instead Of Letters",
+        "year": 1988
+      },
+      "date_added": "2021-09-13T09:28:54-07:00",
+      "folder_id": 1,
+      "id": 1137895,
+      "instance_id": 806107951,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
             "anv": "",
             "id": 194,
             "join": "",
@@ -3368,6 +3958,134 @@
       "folder_id": 1,
       "id": 5584121,
       "instance_id": 531242910,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 194,
+            "join": "",
+            "name": "Various",
+            "resource_url": "",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/Im6Wc8dR7fn5TZK6dEMQC9TBb14=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2752732-1386525440-2724.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Compilation",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "White Label"
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock",
+          "Stage & Screen"
+        ],
+        "id": 2752732,
+        "labels": [
+          {
+            "catno": "\u042190 26459 000",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 158850,
+        "master_url": "https://api.discogs.com/masters/158850",
+        "resource_url": "https://api.discogs.com/releases/2752732",
+        "styles": [
+          "Blues Rock",
+          "New Wave",
+          "Soundtrack"
+        ],
+        "thumb": "https://img.discogs.com/inUYiWHNIIHSjr3Dk5mC5ldnySQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2752732-1386525440-2724.jpeg.jpg",
+        "title": "\u0410\u0441\u0441\u0430",
+        "year": 1988
+      },
+      "date_added": "2021-09-13T09:40:06-07:00",
+      "folder_id": 1,
+      "id": 2752732,
+      "instance_id": 806115817,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 194,
+            "join": "",
+            "name": "Various",
+            "resource_url": "",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/gvmXXKOdUZKve6KwzjxciPHdVLI=/fit-in/600x803/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5641817-1408800868-2329.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Sampler"
+            ],
+            "name": "Vinyl",
+            "qty": "1"
+          }
+        ],
+        "genres": [
+          "Non-Music",
+          "Pop",
+          "Classical"
+        ],
+        "id": 5641817,
+        "labels": [
+          {
+            "catno": "33\u0421\u041c\u201404327",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          },
+          {
+            "catno": "\u042190\u201407110",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 733364,
+        "master_url": "https://api.discogs.com/masters/733364",
+        "resource_url": "https://api.discogs.com/releases/5641817",
+        "styles": [
+          "Field Recording",
+          "Technical",
+          "Classical",
+          "Pop Rock",
+          "Ballad"
+        ],
+        "thumb": "https://img.discogs.com/dJjKv_jXZvHVx7s0wEqke-YdSHQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5641817-1408800868-2329.jpeg.jpg",
+        "title": "\u0421\u0442\u0435\u0440\u0435\u043e-\u0422\u0435\u0441\u0442",
+        "year": 1976
+      },
+      "date_added": "2021-09-13T09:45:30-07:00",
+      "folder_id": 1,
+      "id": 5641817,
+      "instance_id": 806119720,
       "rating": 0
     },
     {
@@ -3501,7 +4219,8 @@
               "LP",
               "Album",
               "Reissue",
-              "Remastered"
+              "Remastered",
+              "Stereo"
             ],
             "name": "Vinyl",
             "qty": "1"
@@ -3545,6 +4264,289 @@
       "folder_id": 1,
       "id": 17357578,
       "instance_id": 745796557,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 886738,
+            "join": "=",
+            "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u041c\u0430\u043b\u0438\u043d\u0438\u043d",
+            "resource_url": "https://api.discogs.com/artists/886738",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "Alexander Malinin",
+            "id": 886738,
+            "join": "",
+            "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u041c\u0430\u043b\u0438\u043d\u0438\u043d",
+            "resource_url": "https://api.discogs.com/artists/886738",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/P9IBgtYZpKL9z2Z-skK3p8Yg9kE=/fit-in/500x497/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1934172-1253450550.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "12\"",
+              "45 RPM",
+              "Album"
+            ],
+            "name": "Vinyl",
+            "qty": "1"
+          }
+        ],
+        "genres": [
+          "Pop"
+        ],
+        "id": 1934172,
+        "labels": [
+          {
+            "catno": "R60 00101",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 57735,
+            "name": "Russian Disc",
+            "resource_url": "https://api.discogs.com/labels/57735"
+          }
+        ],
+        "master_id": 389788,
+        "master_url": "https://api.discogs.com/masters/389788",
+        "resource_url": "https://api.discogs.com/releases/1934172",
+        "styles": [
+          "Chanson"
+        ],
+        "thumb": "https://img.discogs.com/kgZjnsNZ3seNWmQbcFEvOmt0Oyc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1934172-1253450550.jpeg.jpg",
+        "title": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u041c\u0430\u043b\u0438\u043d\u0438\u043d\u044a",
+        "year": 1991
+      },
+      "date_added": "2021-09-13T09:32:56-07:00",
+      "folder_id": 1,
+      "id": 1934172,
+      "instance_id": 806110252,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 490460,
+            "join": "",
+            "name": "\u0410\u043b\u043b\u0430 \u041f\u0443\u0433\u0430\u0447\u0435\u0432\u0430",
+            "resource_url": "https://api.discogs.com/artists/490460",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/hfWpI49VVyDym1XcyKBWrmP1buA=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5314904-1399637082-1540.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album"
+            ],
+            "name": "Vinyl",
+            "qty": "1"
+          }
+        ],
+        "genres": [
+          "Pop"
+        ],
+        "id": 5314904,
+        "labels": [
+          {
+            "catno": "33 \u0421 60\u201411975-76",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 221539,
+        "master_url": "https://api.discogs.com/masters/221539",
+        "resource_url": "https://api.discogs.com/releases/5314904",
+        "styles": [
+          "Ballad",
+          "Schlager"
+        ],
+        "thumb": "https://img.discogs.com/k5t2ZcpWQsgp7Bf7raWG-snV6zE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5314904-1399637082-1540.jpeg.jpg",
+        "title": "\u0410\u0440\u043b\u0435\u043a\u0438\u043d\u043e \u0418 \u0414\u0440\u0443\u0433\u0438\u0435",
+        "year": 1980
+      },
+      "date_added": "2021-09-13T09:36:43-07:00",
+      "folder_id": 1,
+      "id": 5314904,
+      "instance_id": 806113318,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 658660,
+            "join": "\u0421\u0442\u0438\u0445\u0438 \u0427\u0438\u0442\u0430\u044e\u0442",
+            "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u044b\u0441\u043e\u0446\u043a\u0438\u0439",
+            "resource_url": "https://api.discogs.com/artists/658660",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "\u0412. \u0410\u0431\u0434\u0443\u043b\u043e\u0432",
+            "id": 1446525,
+            "join": ",",
+            "name": "\u0412\u0441\u0435\u0432\u043e\u043b\u043e\u0434 \u0410\u0431\u0434\u0443\u043b\u043e\u0432",
+            "resource_url": "https://api.discogs.com/artists/1446525",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "\u0410. \u0414\u0435\u043c\u0438\u0434\u043e\u0432\u0430",
+            "id": 1446529,
+            "join": ",",
+            "name": "\u0410\u043b\u043b\u0430 \u0414\u0435\u043c\u0438\u0434\u043e\u0432\u0430",
+            "resource_url": "https://api.discogs.com/artists/1446529",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "\u0412. \u0417\u043e\u043b\u043e\u0442\u0443\u0445\u0438\u043d",
+            "id": 806553,
+            "join": ",",
+            "name": "\u0412\u0430\u043b\u0435\u0440\u0438\u0439 \u0417\u043e\u043b\u043e\u0442\u0443\u0445\u0438\u043d",
+            "resource_url": "https://api.discogs.com/artists/806553",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "\u0412. \u0421\u043c\u0435\u0445\u043e\u0432",
+            "id": 1446526,
+            "join": ",",
+            "name": "\u0412\u0435\u043d\u0438\u0430\u043c\u0438\u043d \u0421\u043c\u0435\u0445\u043e\u0432",
+            "resource_url": "https://api.discogs.com/artists/1446526",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "\u041b. \u0424\u0438\u043b\u0430\u0442\u043e\u0432",
+            "id": 1446524,
+            "join": "",
+            "name": "\u041b\u0435\u043e\u043d\u0438\u0434 \u0424\u0438\u043b\u0430\u0442\u043e\u0432",
+            "resource_url": "https://api.discogs.com/artists/1446524",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/mHpKoQDIVvoSs2kpbTuLediBOeE=/fit-in/499x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1690882-1241562811.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "Gatefold, Red Labels"
+          }
+        ],
+        "genres": [
+          "Non-Music",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "id": 1690882,
+        "labels": [
+          {
+            "catno": "\u042160 25427 003",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15486,
+            "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+            "resource_url": "https://api.discogs.com/labels/15486"
+          }
+        ],
+        "master_id": 200941,
+        "master_url": "https://api.discogs.com/masters/200941",
+        "resource_url": "https://api.discogs.com/releases/1690882",
+        "styles": [
+          "Spoken Word",
+          "Poetry",
+          "Chanson"
+        ],
+        "thumb": "https://img.discogs.com/moBAmIU-kjQq-1R6noyBhWeeJ5Q=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1690882-1241562811.jpeg.jpg",
+        "title": "...\u0425\u043e\u0442\u044c \u041d\u0435\u043c\u043d\u043e\u0433\u043e \u0415\u0449\u0435 \u041f\u043e\u0441\u0442\u043e\u044e \u041d\u0430 \u041a\u0440\u0430\u044e...",
+        "year": 1987
+      },
+      "date_added": "2021-09-13T09:44:14-07:00",
+      "folder_id": 1,
+      "id": 1690882,
+      "instance_id": 806118769,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 6511821,
+            "join": "",
+            "name": "\u041c\u043e\u043d\u0435\u0442\u043e\u0447\u043a\u0430",
+            "resource_url": "https://api.discogs.com/artists/6511821",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/FF2sDT7dBh1ZMfFFA_BoOPygAW0=/fit-in/600x588/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-19223086-1625431569-7329.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Gatefold, Red Translucent "
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock",
+          "Pop"
+        ],
+        "id": 19223086,
+        "labels": [
+          {
+            "catno": "396465",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 29191,
+            "name": "\u041c\u0438\u0441\u0442\u0435\u0440\u0438\u044f \u0417\u0432\u0443\u043a\u0430",
+            "resource_url": "https://api.discogs.com/labels/29191"
+          }
+        ],
+        "master_id": 1373574,
+        "master_url": "https://api.discogs.com/masters/1373574",
+        "resource_url": "https://api.discogs.com/releases/19223086",
+        "styles": [
+          "Indie Pop",
+          "Lo-Fi"
+        ],
+        "thumb": "https://img.discogs.com/yFCFWLObpOjaPIOBrLqL5m6so8E=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-19223086-1625431569-7329.jpeg.jpg",
+        "title": "\u0420\u0430\u0441\u043a\u0440\u0430\u0441\u043a\u0438 \u0414\u043b\u044f \u0412\u0437\u0440\u043e\u0441\u043b\u044b\u0445",
+        "year": 2021
+      },
+      "date_added": "2021-09-13T09:46:50-07:00",
+      "folder_id": 1,
+      "id": 19223086,
+      "instance_id": 806120710,
       "rating": 0
     }
   ]
