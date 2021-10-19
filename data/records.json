@@ -503,7 +503,7 @@
         "id": 18782740,
         "labels": [
           {
-            "catno": "C60 23579 008",
+            "catno": "\u042160 23579 008",
             "entity_type": "1",
             "entity_type_name": "Label",
             "id": 15486,
@@ -1219,7 +1219,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://img.discogs.com/4299d1d0e54ec04daf7c6cba20677a06516a95bc/images/spacer.gif",
+        "cover_image": "https://img.discogs.com/66f2363f9f07e0f0ea0642a9f63e1426270f69ff/images/spacer.gif",
         "formats": [
           {
             "descriptions": [
@@ -2080,6 +2080,76 @@
         "artists": [
           {
             "anv": "",
+            "id": 255672,
+            "join": "",
+            "name": "The Jimi Hendrix Experience",
+            "resource_url": "https://api.discogs.com/artists/255672",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/y5mWPz7YB5dwH3ZIvbRCvxbsghg=/fit-in/599x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4350677-1362522030-1294.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Numbered",
+              "Reissue",
+              "Remastered",
+              "Mono"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "200 Gram"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 4350677,
+        "labels": [
+          {
+            "catno": "88765419711",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 48276,
+            "name": "Experience Hendrix",
+            "resource_url": "https://api.discogs.com/labels/48276"
+          },
+          {
+            "catno": "88765419711",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15491,
+            "name": "Legacy",
+            "resource_url": "https://api.discogs.com/labels/15491"
+          }
+        ],
+        "master_id": 24511,
+        "master_url": "https://api.discogs.com/masters/24511",
+        "resource_url": "https://api.discogs.com/releases/4350677",
+        "styles": [
+          "Blues Rock",
+          "Hard Rock",
+          "Psychedelic Rock",
+          "Acid Rock"
+        ],
+        "thumb": "https://img.discogs.com/ZMoLXN3ce91HZddVr3a6jWYLhFg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4350677-1362522030-1294.jpeg.jpg",
+        "title": "Axis: Bold As Love",
+        "year": 2013
+      },
+      "date_added": "2021-10-02T06:32:22-07:00",
+      "folder_id": 1,
+      "id": 4350677,
+      "instance_id": 821251054,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
             "id": 95537,
             "join": "",
             "name": "Johann Sebastian Bach",
@@ -2865,7 +2935,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://img.discogs.com/dPM-5F9r7fzh5WasjAZjLj6Vgfg=/fit-in/600x601/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7606066-1445010340-4683.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/fooRqJmImKHwHSJv65J2LwRIA3Y=/fit-in/600x592/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7606066-1632344491-3858.jpeg.jpg",
         "formats": [
           {
             "descriptions": [
@@ -2915,7 +2985,7 @@
         "styles": [
           "Modal"
         ],
-        "thumb": "https://img.discogs.com/K-nfduumH4ERXJynNGWkkBTlwaM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7606066-1445010340-4683.jpeg.jpg",
+        "thumb": "https://img.discogs.com/zN1Y-yxqbdMpdcCNoF-8C4m6l9s=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7606066-1632344491-3858.jpeg.jpg",
         "title": "Kind Of Blue",
         "year": 2015
       },
