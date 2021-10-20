@@ -5,7 +5,7 @@ title = "Nikita Galaiko"
 theme = "etch"
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
-rssLimit = 10
+rssLimit = 12
 
 [author]
   name = "Nikita Galaiko"
