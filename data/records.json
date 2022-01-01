@@ -346,6 +346,91 @@
         "artists": [
           {
             "anv": "",
+            "id": 819015,
+            "join": "",
+            "name": "Adele (3)",
+            "resource_url": "https://api.discogs.com/artists/819015",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/eQksW-i1dttLRlpKV2JvEMFev9M=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-21024442-1638123090-7872.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Limited Edition",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "Clear, Pallas Pressing"
+          }
+        ],
+        "genres": [
+          "Funk / Soul",
+          "Blues",
+          "Pop"
+        ],
+        "id": 21024442,
+        "labels": [
+          {
+            "catno": "19439949071",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1866,
+            "name": "Columbia",
+            "resource_url": "https://api.discogs.com/labels/1866"
+          },
+          {
+            "catno": "19439949071",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25487,
+            "name": "Sony Music",
+            "resource_url": "https://api.discogs.com/labels/25487"
+          },
+          {
+            "catno": "19439937971",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1866,
+            "name": "Columbia",
+            "resource_url": "https://api.discogs.com/labels/1866"
+          },
+          {
+            "catno": "19439937971",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25487,
+            "name": "Sony Music",
+            "resource_url": "https://api.discogs.com/labels/25487"
+          }
+        ],
+        "master_id": 2383843,
+        "master_url": "https://api.discogs.com/masters/2383843",
+        "resource_url": "https://api.discogs.com/releases/21024442",
+        "styles": [
+          "Ballad",
+          "Neo Soul",
+          "Piano Blues"
+        ],
+        "thumb": "https://img.discogs.com/NafMIrcmZs7zSD0naLXK_tqfVcc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-21024442-1638123090-7872.jpeg.jpg",
+        "title": "30",
+        "year": 2021
+      },
+      "date_added": "2021-12-26T05:09:05-08:00",
+      "folder_id": 1,
+      "id": 21024442,
+      "instance_id": 891763249,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
             "id": 258903,
             "join": "",
             "name": "Anita O'Day",
@@ -468,6 +553,164 @@
       "folder_id": 1,
       "id": 3523183,
       "instance_id": 527611344,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 262128,
+            "join": "",
+            "name": "Art Blakey & The Jazz Messengers",
+            "resource_url": "https://api.discogs.com/artists/262128",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/pZjpXYq8FBiNXtdrDLP_bxN7RiI=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-18150907-1617551052-5039.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180g"
+          }
+        ],
+        "genres": [
+          "Jazz"
+        ],
+        "id": 18150907,
+        "labels": [
+          {
+            "catno": "0746568",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "name": "Blue Note",
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "catno": "BST-84003",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "name": "Blue Note",
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "catno": "ST-84003",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "name": "Blue Note",
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "catno": "84003",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 281,
+            "name": "Blue Note",
+            "resource_url": "https://api.discogs.com/labels/281"
+          },
+          {
+            "catno": "00602507465681",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 68029,
+            "name": "UMe",
+            "resource_url": "https://api.discogs.com/labels/68029"
+          }
+        ],
+        "master_id": 62462,
+        "master_url": "https://api.discogs.com/masters/62462",
+        "resource_url": "https://api.discogs.com/releases/18150907",
+        "styles": [
+          "Hard Bop"
+        ],
+        "thumb": "https://img.discogs.com/g2r5OM3xk5tYzTscPwYokPpdjaA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18150907-1617551052-5039.jpeg.jpg",
+        "title": "Moanin'",
+        "year": 2021
+      },
+      "date_added": "2021-12-26T05:03:54-08:00",
+      "folder_id": 1,
+      "id": 18150907,
+      "instance_id": 891759208,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 70829,
+            "join": "",
+            "name": "The Beach Boys",
+            "resource_url": "https://api.discogs.com/artists/70829",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/fRxqrj4hRPnaPXVwQcePif2y1YA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8645720-1505411453-7137.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180 Gram, 50th Anniversary Edition"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Pop"
+        ],
+        "id": 8645720,
+        "labels": [
+          {
+            "catno": "ST 2458",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 654,
+            "name": "Capitol Records",
+            "resource_url": "https://api.discogs.com/labels/654"
+          },
+          {
+            "catno": "00602547822291",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 138199,
+            "name": "Universal Music Group International",
+            "resource_url": "https://api.discogs.com/labels/138199"
+          }
+        ],
+        "master_id": 17217,
+        "master_url": "https://api.discogs.com/masters/17217",
+        "resource_url": "https://api.discogs.com/releases/8645720",
+        "styles": [
+          "Pop Rock",
+          "Art Rock",
+          "Surf",
+          "Psychedelic Rock"
+        ],
+        "thumb": "https://img.discogs.com/NkV-ZYFudPqaDyUnvPB7gKBQmLQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8645720-1505411453-7137.jpeg.jpg",
+        "title": "Pet Sounds",
+        "year": 2016
+      },
+      "date_added": "2021-10-28T08:51:38-07:00",
+      "folder_id": 1,
+      "id": 8645720,
+      "instance_id": 842450764,
       "rating": 0
     },
     {
@@ -1055,6 +1298,71 @@
         "artists": [
           {
             "anv": "",
+            "id": 215471,
+            "join": "",
+            "name": "The Byrds",
+            "resource_url": "https://api.discogs.com/artists/215471",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/LFT4aks-1btHMaHUVYYkN8VQsIg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3633317-1629020988-3680.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180 Gram"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 3633317,
+        "labels": [
+          {
+            "catno": "MOVLP501",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 169635,
+            "name": "Music On Vinyl",
+            "resource_url": "https://api.discogs.com/labels/169635"
+          },
+          {
+            "catno": "MOVLP501",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1866,
+            "name": "Columbia",
+            "resource_url": "https://api.discogs.com/labels/1866"
+          }
+        ],
+        "master_id": 29926,
+        "master_url": "https://api.discogs.com/masters/29926",
+        "resource_url": "https://api.discogs.com/releases/3633317",
+        "styles": [
+          "Psychedelic Rock",
+          "Folk Rock"
+        ],
+        "thumb": "https://img.discogs.com/wZAndHYY0qd3M4tDme5phK7qtKY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3633317-1629020988-3680.jpeg.jpg",
+        "title": "Fifth Dimension",
+        "year": 2012
+      },
+      "date_added": "2021-11-14T05:25:51-08:00",
+      "folder_id": 1,
+      "id": 3633317,
+      "instance_id": 856832773,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
             "id": 180119,
             "join": "",
             "name": "Chuck Berry",
@@ -1219,7 +1527,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://img.discogs.com/66f2363f9f07e0f0ea0642a9f63e1426270f69ff/images/spacer.gif",
+        "cover_image": "https://img.discogs.com/2e8a72413add0d361c89da1fe431d0c725e90504/images/spacer.gif",
         "formats": [
           {
             "descriptions": [
@@ -1545,11 +1853,12 @@
             "descriptions": [
               "LP",
               "Album",
-              "Reissue"
+              "Reissue",
+              "Stereo"
             ],
             "name": "Vinyl",
             "qty": "1",
-            "text": "Gatefold, Peach"
+            "text": "Peach, Gatefold"
           }
         ],
         "genres": [
@@ -1939,6 +2248,88 @@
       "folder_id": 1,
       "id": 16281419,
       "instance_id": 745791355,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 58687,
+            "join": "",
+            "name": "Jefferson Airplane",
+            "resource_url": "https://api.discogs.com/artists/58687",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/udIkpNopWBb_eK7xL_Pg64Kcev4=/fit-in/600x589/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10097404-1532283978-8798.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Remastered"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180g"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 10097404,
+        "labels": [
+          {
+            "catno": "88985396711",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 11358,
+            "name": "RCA Victor",
+            "resource_url": "https://api.discogs.com/labels/11358"
+          },
+          {
+            "catno": "88985396711",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 895,
+            "name": "RCA",
+            "resource_url": "https://api.discogs.com/labels/895"
+          },
+          {
+            "catno": "88985396711",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15491,
+            "name": "Legacy",
+            "resource_url": "https://api.discogs.com/labels/15491"
+          },
+          {
+            "catno": "88985396711",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25487,
+            "name": "Sony Music",
+            "resource_url": "https://api.discogs.com/labels/25487"
+          }
+        ],
+        "master_id": 47868,
+        "master_url": "https://api.discogs.com/masters/47868",
+        "resource_url": "https://api.discogs.com/releases/10097404",
+        "styles": [
+          "Psychedelic Rock",
+          "Folk Rock"
+        ],
+        "thumb": "https://img.discogs.com/mWHKQNR0PzUZMhHj64aZU3lfEIU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10097404-1532283978-8798.jpeg.jpg",
+        "title": "Surrealistic Pillow",
+        "year": 2017
+      },
+      "date_added": "2021-12-26T05:01:57-08:00",
+      "folder_id": 1,
+      "id": 10097404,
+      "instance_id": 891757777,
       "rating": 0
     },
     {
@@ -2615,6 +3006,124 @@
       "folder_id": 1,
       "id": 18212281,
       "instance_id": 686341297,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 34278,
+            "join": "",
+            "name": "Led Zeppelin",
+            "resource_url": "https://api.discogs.com/artists/34278",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/1SXs71_483BOeaH3u0a-YmFAmgI=/fit-in/600x607/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8605699-1501259867-2226.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Remastered"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180 Gram"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 8605699,
+        "labels": [
+          {
+            "catno": "R1-535224",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 681,
+            "name": "Atlantic",
+            "resource_url": "https://api.discogs.com/labels/681"
+          }
+        ],
+        "master_id": 4126,
+        "master_url": "https://api.discogs.com/masters/4126",
+        "resource_url": "https://api.discogs.com/releases/8605699",
+        "styles": [
+          "Blues Rock",
+          "Hard Rock",
+          "Arena Rock"
+        ],
+        "thumb": "https://img.discogs.com/c5X1SBAMJRgd6CZzupFiHewlzV0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8605699-1501259867-2226.jpeg.jpg",
+        "title": "Led Zeppelin",
+        "year": 2014
+      },
+      "date_added": "2021-11-14T05:24:57-08:00",
+      "folder_id": 1,
+      "id": 8605699,
+      "instance_id": 856832077,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 34278,
+            "join": "",
+            "name": "Led Zeppelin",
+            "resource_url": "https://api.discogs.com/artists/34278",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://img.discogs.com/3HKPQRC3R_1huZYYVtaSAA_VIJk=/fit-in/600x601/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5734489-1418396657-8315.jpeg.jpg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Remastered",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180g, Gatefold"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 5734489,
+        "labels": [
+          {
+            "catno": "8122796640",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 681,
+            "name": "Atlantic",
+            "resource_url": "https://api.discogs.com/labels/681"
+          }
+        ],
+        "master_id": 4170,
+        "master_url": "https://api.discogs.com/masters/4170",
+        "resource_url": "https://api.discogs.com/releases/5734489",
+        "styles": [
+          "Blues Rock",
+          "Classic Rock"
+        ],
+        "thumb": "https://img.discogs.com/ZaYES59-e26IdY9WCX4_cWZI96Y=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5734489-1418396657-8315.jpeg.jpg",
+        "title": "Led Zeppelin II",
+        "year": 2014
+      },
+      "date_added": "2021-12-26T05:05:59-08:00",
+      "folder_id": 1,
+      "id": 5734489,
+      "instance_id": 891760825,
       "rating": 0
     },
     {
