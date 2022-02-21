@@ -1591,7 +1591,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://s.discogs.com/af39677cd83a76db0f8bb8cff4aefc7c956d184d/images/spacer.gif",
+        "cover_image": "https://s.discogs.com/57c8804ac64149c8909a99448963d0e239b5c5d8/images/spacer.gif",
         "formats": [
           {
             "descriptions": [
@@ -3501,6 +3501,63 @@
         "artists": [
           {
             "anv": "",
+            "id": 2281535,
+            "join": "",
+            "name": "Michael Kiwanuka",
+            "resource_url": "https://api.discogs.com/artists/2281535",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://i.discogs.com/o8AYuZ0CogFybqGTs5s6KKMv_6CHs9s_d_sm3ePNGF8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTg3/Nzg1ODAtMTQ2ODU4/NjM2My02NTgxLmpw/ZWc.jpeg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album"
+            ],
+            "name": "Vinyl",
+            "qty": "2"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Funk / Soul"
+        ],
+        "id": 8778580,
+        "labels": [
+          {
+            "catno": "4783458",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1610,
+            "name": "Polydor",
+            "resource_url": "https://api.discogs.com/labels/1610"
+          }
+        ],
+        "master_id": 1029403,
+        "master_url": "https://api.discogs.com/masters/1029403",
+        "resource_url": "https://api.discogs.com/releases/8778580",
+        "styles": [
+          "Soul",
+          "Rhythm & Blues",
+          "Acoustic"
+        ],
+        "thumb": "https://i.discogs.com/UljOTBB3Et2bxtTO6I-Q2QOKQzbee6CvL294AYz4b7U/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTg3/Nzg1ODAtMTQ2ODU4/NjM2My02NTgxLmpw/ZWc.jpeg",
+        "title": "Love & Hate",
+        "year": 2016
+      },
+      "date_added": "2022-02-19T07:52:08-08:00",
+      "folder_id": 1,
+      "id": 8778580,
+      "instance_id": 952257334,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
             "id": 5059655,
             "join": "",
             "name": "Michelle Gurevich",
@@ -4516,6 +4573,81 @@
       "basic_information": {
         "artists": [
           {
+            "anv": "",
+            "id": 1245513,
+            "join": "",
+            "name": "Tame Impala",
+            "resource_url": "https://api.discogs.com/artists/1245513",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://i.discogs.com/bBDuzLECCrSS7ceVpdt267Pvwi9cNMrDXsp32obOULU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTE1/Mjk3MjI5LTE1ODkz/NjU1MDktNDA3OC5q/cGVn.jpeg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Repress"
+            ],
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "Gatefold"
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock"
+        ],
+        "id": 15297229,
+        "labels": [
+          {
+            "catno": "473067-7",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 5810,
+            "name": "Fiction Records",
+            "resource_url": "https://api.discogs.com/labels/5810"
+          },
+          {
+            "catno": "473067-7",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 674471,
+            "name": "Caroline International",
+            "resource_url": "https://api.discogs.com/labels/674471"
+          },
+          {
+            "catno": "473067-7",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 23694,
+            "name": "Universal Music",
+            "resource_url": "https://api.discogs.com/labels/23694"
+          }
+        ],
+        "master_id": 861083,
+        "master_url": "https://api.discogs.com/masters/861083",
+        "resource_url": "https://api.discogs.com/releases/15297229",
+        "styles": [
+          "Indie Rock",
+          "Psychedelic Rock",
+          "Synth-pop"
+        ],
+        "thumb": "https://i.discogs.com/pEwSjyngbAP57ihQFHNDt4Ox27LHgERhO5iV-sY5GcI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTE1/Mjk3MjI5LTE1ODkz/NjU1MDktNDA3OC5q/cGVn.jpeg",
+        "title": "Currents",
+        "year": 2018
+      },
+      "date_added": "2022-02-19T07:59:50-08:00",
+      "folder_id": 1,
+      "id": 15297229,
+      "instance_id": 952267642,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
             "anv": "\u0423\u0434\u043e \u041b\u0438\u043d\u0434\u0435\u043d\u0431\u0435\u0440\u0433",
             "id": 86472,
             "join": "=",
@@ -5188,6 +5320,76 @@
       "folder_id": 1,
       "id": 1690882,
       "instance_id": 806118769,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 6271575,
+            "join": "=",
+            "name": "\u041c\u043e\u043b\u0447\u0430\u0442 \u0414\u043e\u043c\u0430",
+            "resource_url": "https://api.discogs.com/artists/6271575",
+            "role": "",
+            "tracks": ""
+          },
+          {
+            "anv": "Molchat Doma",
+            "id": 6271575,
+            "join": "",
+            "name": "\u041c\u043e\u043b\u0447\u0430\u0442 \u0414\u043e\u043c\u0430",
+            "resource_url": "https://api.discogs.com/artists/6271575",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://i.discogs.com/I92GoS05tSdkVHlqHuSxlW41O8EwEzizEcRGLxfalCM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTIw/MTAzNDM5LTE2MzMw/OTExNjUtNDYyMC5q/cGVn.jpeg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "Coke Bottle Clear"
+          }
+        ],
+        "genres": [
+          "Electronic",
+          "Rock"
+        ],
+        "id": 20103439,
+        "labels": [
+          {
+            "catno": "SBR-3037",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 98317,
+            "name": "Sacred Bones Records",
+            "resource_url": "https://api.discogs.com/labels/98317"
+          }
+        ],
+        "master_id": 1419338,
+        "master_url": "https://api.discogs.com/masters/1419338",
+        "resource_url": "https://api.discogs.com/releases/20103439",
+        "styles": [
+          "Lo-Fi",
+          "New Wave",
+          "Synth-pop",
+          "Post-Punk",
+          "Darkwave"
+        ],
+        "thumb": "https://i.discogs.com/rwZoeofhKDATT3EYDiPWvmZgOI-mHlEEojgRg4CyVvs/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTIw/MTAzNDM5LTE2MzMw/OTExNjUtNDYyMC5q/cGVn.jpeg",
+        "title": "\u042d\u0442\u0430\u0436\u0438 = Etazhi",
+        "year": 2021
+      },
+      "date_added": "2022-02-19T07:52:42-08:00",
+      "folder_id": 1,
+      "id": 20103439,
+      "instance_id": 952258075,
       "rating": 0
     },
     {
