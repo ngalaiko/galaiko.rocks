@@ -1591,7 +1591,7 @@
             "tracks": ""
           }
         ],
-        "cover_image": "https://s.discogs.com/6a6f5089e24dde4a511e5cedae084dabbfdf34e4/images/spacer.gif",
+        "cover_image": "https://s.discogs.com/b83e2252baa910f896e461d65d687a22281d0cdc/images/spacer.gif",
         "formats": [
           {
             "descriptions": [
@@ -1629,6 +1629,80 @@
       "folder_id": 1,
       "id": 8615340,
       "instance_id": 660079174,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 56798,
+            "join": "",
+            "name": "The Doors",
+            "resource_url": "https://api.discogs.com/artists/56798",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://i.discogs.com/vCEg76oKPJ8W6AMo_xVG-9i8NYIhHo60qH2kYQ3bCKI/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NDEz/NTMtMTM4MzgzOTU3/Ny02MTQxLmpwZWc.jpeg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Stereo"
+            ],
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "180 Gram"
+          }
+        ],
+        "genres": [
+          "Rock"
+        ],
+        "id": 2441353,
+        "labels": [
+          {
+            "catno": "EKS-74007",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 651,
+            "name": "Elektra",
+            "resource_url": "https://api.discogs.com/labels/651"
+          },
+          {
+            "catno": "RHI1-74881-1",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 33244,
+            "name": "Rhino Records (2)",
+            "resource_url": "https://api.discogs.com/labels/33244"
+          },
+          {
+            "catno": "R1 519559",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 152823,
+            "name": "Rhino Vinyl",
+            "resource_url": "https://api.discogs.com/labels/152823"
+          }
+        ],
+        "master_id": 45347,
+        "master_url": "https://api.discogs.com/masters/45347",
+        "resource_url": "https://api.discogs.com/releases/2441353",
+        "styles": [
+          "Psychedelic Rock",
+          "Classic Rock"
+        ],
+        "thumb": "https://i.discogs.com/uqlLariPIcvHQr-1yVf4hwJCMQgHjvFNDmvngI1HjRY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NDEz/NTMtMTM4MzgzOTU3/Ny02MTQxLmpwZWc.jpeg",
+        "title": "The Doors",
+        "year": 2009
+      },
+      "date_added": "2022-03-20T07:16:18-07:00",
+      "folder_id": 1,
+      "id": 2441353,
+      "instance_id": 979968746,
       "rating": 0
     },
     {
@@ -2655,6 +2729,81 @@
       "folder_id": 1,
       "id": 4350677,
       "instance_id": 821251054,
+      "rating": 0
+    },
+    {
+      "basic_information": {
+        "artists": [
+          {
+            "anv": "",
+            "id": 255672,
+            "join": "",
+            "name": "The Jimi Hendrix Experience",
+            "resource_url": "https://api.discogs.com/artists/255672",
+            "role": "",
+            "tracks": ""
+          }
+        ],
+        "cover_image": "https://i.discogs.com/c_hFy4S7foBg50U1vxo-5O2okjWTUqV6fh0j0jlzusg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc2MTEz/NzYtMTUxNzU3MDcz/NS03MTY5LmpwZWc.jpeg",
+        "formats": [
+          {
+            "descriptions": [
+              "LP",
+              "Album",
+              "Reissue",
+              "Remastered"
+            ],
+            "name": "Vinyl",
+            "qty": "2",
+            "text": "180 Gram, Gatefold"
+          }
+        ],
+        "genres": [
+          "Rock",
+          "Blues"
+        ],
+        "id": 7611376,
+        "labels": [
+          {
+            "catno": "88875134511",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 48276,
+            "name": "Experience Hendrix",
+            "resource_url": "https://api.discogs.com/labels/48276"
+          },
+          {
+            "catno": "88875134511",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 15491,
+            "name": "Legacy",
+            "resource_url": "https://api.discogs.com/labels/15491"
+          },
+          {
+            "catno": "88875134511",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 25487,
+            "name": "Sony Music",
+            "resource_url": "https://api.discogs.com/labels/25487"
+          }
+        ],
+        "master_id": 24535,
+        "master_url": "https://api.discogs.com/masters/24535",
+        "resource_url": "https://api.discogs.com/releases/7611376",
+        "styles": [
+          "Electric Blues",
+          "Psychedelic Rock"
+        ],
+        "thumb": "https://i.discogs.com/FxUqsinvaq0jGt_yoFRLYTgBgxBWQR18AgR1H0SUUhE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc2MTEz/NzYtMTUxNzU3MDcz/NS03MTY5LmpwZWc.jpeg",
+        "title": "Electric Ladyland",
+        "year": 2015
+      },
+      "date_added": "2022-03-20T07:17:28-07:00",
+      "folder_id": 1,
+      "id": 7611376,
+      "instance_id": 979969862,
       "rating": 0
     },
     {
