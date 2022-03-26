@@ -1,16 +1,20 @@
+#!/usr/bin/env python3
+
 import sys
 import os
 import json
-import requests
+from urllib import request, parse
 
 def fetch_releases(token, page = 1):
     discogs_base_url = "https://api.discogs.com"
-    headers = {
+
+    url = discogs_base_url + "/users/ngalaiko/collection/folders/0/releases?sort=artist&page={}".format(page)
+    req = request.Request(url, headers={
         "Content-Type": "application/json",
         "Authorization": "Discogs token={}".format(token),
-    }
-
-    releases_resp = requests.get(discogs_base_url + "/users/ngalaiko/collection/folders/0/releases?sort=artist&page={}".format(page), headers=headers).json()
+    })
+    resp = request.urlopen(req).read()
+    releases_resp = json.loads(resp)
     releases = releases_resp['releases']
 
     pagination = releases_resp['pagination']
@@ -31,7 +35,7 @@ def save_releases(releases):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2: 
-        print("exactly one argument witn discogs access token must be provided")
+        print("usage: {} <discogs_token>".format(sys.argv[0]))
         sys.exit(1)
 
     token = sys.argv[1]
