@@ -21,7 +21,7 @@ jobs:
           python-version: "3.x"
           architecture: "x64"
 
-      - name: Update prices
+      - name: Fetch records info
         run: |
           ./scripts/discogs/export.py ${{ secrets.DISCOGS_API_KEY}}
 
