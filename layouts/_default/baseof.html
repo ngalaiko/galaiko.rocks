@@ -11,5 +11,9 @@
         {{- block "footer" . }}
             {{- partial "footer.html" . -}}
         {{- end}}
+
+        <script>
+            {{ (resources.Get "js/links.js").Content | safeJS  }}
+        </script>
     </body>
 </html>
