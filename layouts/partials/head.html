@@ -12,21 +12,21 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{ $resources := slice -}}
+    {{ $css := slice -}}
 
-    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
-    {{ $resources = $resources | append (resources.Get "css/light.css") -}}
+    {{ $css = $css | append (resources.Get "css/main.css") -}}
+    {{ $css = $css | append (resources.Get "css/light.css") -}}
 
     {{ $dark := .Site.Params.dark | default "auto" -}}
     {{ if not (eq $dark "off") -}}
-        {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+        {{ $css = $css | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
     {{ end -}}
 
     {{ if .Site.Params.highlight -}}
-        {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
+        {{ $css = $css | append (resources.Get "css/syntax.css") -}}
     {{ end -}}
 
-    {{ with $resources | resources.Concat "css/style.css" | minify }}
+    {{ with $css | resources.Concat "css/style.css" | minify }}
     <style>
         {{ .Content | safeCSS }}
     </style>
