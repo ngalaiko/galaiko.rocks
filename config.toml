@@ -2,7 +2,6 @@ baseURL = "https://galaiko.rocks"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Nikita Galaiko"
-theme = "etch"
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 rssLimit = 10
