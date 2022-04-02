@@ -2,10 +2,9 @@
 {{- $firstPost := index (sort $posts ".Date" "asc") 0 -}}
 
 <footer class="flex items-center justify-center gap-2 p-1 opacity-70 text-sm">
-    <a href="https://github.com/ngalaiko/blog/tree/master/content/{{ .Path }}">open source</a>
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="noopener">CC BY-NC 4.0</a>
     <p>&#183;</p>
-	&copy; {{ $firstPost.Date.Format "2006"}}...{{ now.Format "2006" }}
     <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>
     <p>&#183;</p>
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="noopener">CC BY-NC 4.0</a>
+	{{ $firstPost.Date.Format "2006"}}...{{ now.Format "2006" }}
 </footer>
