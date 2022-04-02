@@ -6,6 +6,8 @@ pygmentsCodefences  = true
 pygmentsUseClasses  = true
 rssLimit = 10
 
+disableKinds = ['taxonomy', 'term']
+
 [build]
   writeStats = true
 
