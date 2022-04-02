@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <main id="content">
-        {{- block "main" . }}
-            {{- .Content -}}
-        {{- end }}
-        </main>
-        {{- block "footer" . }}
-            {{- partial "footer.html" . -}}
-        {{- end}}
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <body class="font-serif bg-background text-foreground lg:bg-background-hard">
+    {{- partial "dev-size-indicator.html" . -}}
+    {{- block "header" . }}{{- end }}
 
-        <script>
-            {{ (resources.Get "js/links.js").Content | safeJS  }}
-        </script>
-    </body>
+    <main id="main" class="mb-32 bg-background max-w-3xl mx-auto lg:drop-shadow-xl lg:mt-6">
+    {{- block "main" . }}{{- end }}
+    </main>
+    {{- block "footer" . }}
+    {{- end}}
+  </body>
 </html>

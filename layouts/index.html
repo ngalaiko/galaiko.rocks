@@ -1,1 +1,34 @@
-{{- define "footer" }}<span></span>{{ end -}}
+{{ define "main" -}}
+    {{ with (resources.Get "css/links.css") | minify }}
+    <style>
+        {{ .Content | safeCSS }}
+    </style>
+    {{ end }}
+
+    <article class="glitchy-links text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
+        <header class="flex items-center gap-2">
+            <h1 class="text-4xl font-bold flex-1">{{ .Title }}</h1>
+            <img 
+                class="w-[50px] h-[50px] rounded-full"
+                src="{{ .Site.Author.avatar }}" 
+                alt="{{ .Site.Author.name }}'s picture"
+                size="50x50"
+            />
+        </header>
+
+        <style>
+            p {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+            }
+        </style>
+        {{ .Content }}
+    </article>
+
+    <script>
+        {{ (resources.Get "js/links.js").Content | safeJS  }}
+    </script>
+{{- end }}

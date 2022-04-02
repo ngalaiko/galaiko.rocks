@@ -4,7 +4,7 @@ const TWO_PI = Math.PI * 2;
 const offsetBase = 1.55;
 
 async function rotateOffsets(ratio, distanceMultiplier) {
-  const main = document.getElementById("content");
+  const main = document.getElementById("main");
 
   angle += angleIncrement * ratio;
   angle %= TWO_PI;

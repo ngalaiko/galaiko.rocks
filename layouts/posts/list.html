@@ -1,0 +1,21 @@
+{{ define "main" }}
+    {{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections  -}}
+    <article class="text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
+        <h1 class="mb-8 text-4xl font-bold">{{ len $posts }} posts</h1>
+        <ul class="flex flex-col gap-2 text-lg">
+            {{- range $posts}}
+                <li>
+                    <a class="flex items-baseline gap-2" href="{{ .Permalink }}"> 
+                        {{ .Title }} 
+                        <hr class="grow border-b-1 border-dotted"/>
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                    </a>
+                </li>
+            {{- end }}
+        </ul>
+    </article>
+{{ end }}
+
+{{- define "footer" }}
+    {{- partial "footer.html" . -}}
+{{ end -}}
