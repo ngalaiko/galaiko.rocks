@@ -1,4 +1,4 @@
-<section id="records">
+<section class="grid grid-cols-3 md:grid-cols-4 gap-1">
     {{ range $.Site.Data.records.releases }}
         {{- $info := .basic_information -}}
         {{- $artist := index $info.artists 0 }}

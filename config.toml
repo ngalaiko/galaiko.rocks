@@ -6,10 +6,10 @@ pygmentsCodefences  = true
 pygmentsUseClasses  = true
 rssLimit = 10
 
+[build]
+  writeStats = true
+
 [author]
   name = "Nikita Galaiko"
-
-[params]
-  description = "Nikita Galaiko"
-  dark      = "auto"
-  highlight = false
+  email = "nikita@galaiko.rocks"
+  avatar = "/images/nikita.jpeg"

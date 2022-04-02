@@ -1,0 +1,63 @@
+/* glitchy links */
+.glitchy-links a {
+  display: inline-block;
+  color: var(--color-blue);
+  position: relative;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.5s linear 0.2s;
+}
+
+.glitchy-links a:after,
+.glitchy-links a:before {
+  transition: transform 0.5s ease-out, opacity 0.5s linear;
+  opacity: 0;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitchy-links a:hover:after,
+.glitchy-links a:hover:before {
+  opacity: 0.75;
+}
+
+.glitchy-links a:before {
+  color: var(--color-red);
+}
+
+.glitchy-links a:after {
+  color: var(--color-blue);
+}
+
+.glitchy-links a:focus,
+.glitchy-links a:hover {
+  color: var(--color-green);
+  transition-delay: 0s;
+}
+
+.glitchy-links a:focus:before,
+.glitchy-links a:hover:before {
+  transform: translate3d(var(--moveOffset), var(--moveOffset), 0);
+  transform: translate3d(
+    var(--moveX, var(--moveOffset)),
+    var(--moveY, var(--moveOffset)),
+    0
+  );
+}
+
+.glitchy-links a:focus:after,
+.glitchy-links a:hover:after {
+  color: var(--color-blue);
+  transform: translate3d(
+    calc(-1 * var(--moveOffset)),
+    calc(-1 * var(--moveOffset)),
+    0
+  );
+  transform: translate3d(
+    calc(-1 * var(--moveX, var(--moveOffset))),
+    calc(-1 * var(--moveY, var(--moveOffset))),
+    0
+  );
+}
