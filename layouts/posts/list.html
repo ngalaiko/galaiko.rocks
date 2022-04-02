@@ -5,20 +5,20 @@
         <ul class="flex flex-col gap-2 text-lg">
             {{- $year := (index $posts 0).Date.Format "2006" -}}
             {{- $month := (index $posts 0).Date.Format "January" -}}
-            <h3 class="text-xl py-3 flex justify-between">
+            <h3 class="text-xl font-bold py-3 flex justify-between">
                 <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $year }}</time>
                 <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
             </h3>
             {{- range $posts}}
                 {{- if ne ($year) (.Date.Format "2006")  -}}
                     {{ $year = .Date.Format "2006" -}}
-                    <h3 class="text-xl py-3 mt-6 flex justify-between">
+                    <h3 class="text-xl font-bold  py-3 mt-6 flex justify-between">
                         <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $year }}</time>
                         <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
                     </h3>
                 {{- else if ne ($month) (.Date.Format "January")  -}}
                     {{ $month = .Date.Format "January" -}}
-                    <h3 class="text-xl py-3 mt-6 flex justify-end">
+                    <h3 class="text-xl font-bold py-3 mt-6 flex justify-end">
                         <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
                     </h3>
                 {{- end -}}
