@@ -1,7 +1,3 @@
----
-title: "Nikita Galaiko"
----
-
 hi, welcome to my homepage!
 
 my presence on the internet is very limited right now

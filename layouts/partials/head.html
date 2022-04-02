@@ -9,7 +9,10 @@
 
     <title>
         {{ block "title" . }}
-            {{- .Title }} - {{ .Site.Title -}}
+            {{ with .Title }}
+                {{- . }} - 
+            {{ end }}
+            {{ $.Site.Title -}}
         {{ end }}
     </title>
 
