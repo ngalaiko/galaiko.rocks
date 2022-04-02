@@ -3,12 +3,42 @@
     <article class="text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
         <h1 class="mb-8 text-4xl font-bold">{{ len $posts }} posts</h1>
         <ul class="flex flex-col gap-2 text-lg">
+            {{- $year := (index $posts 0).Date.Format "2006" -}}
+            {{- $month := (index $posts 0).Date.Format "January" -}}
+            <h3 class="text-xl py-3 flex justify-between">
+                <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $year }}</time>
+                <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
+            </h3>
             {{- range $posts}}
+                {{- if ne ($year) (.Date.Format "2006")  -}}
+                    {{ $year = .Date.Format "2006" -}}
+                    <h3 class="text-xl py-3 mt-6 flex justify-between">
+                        <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $year }}</time>
+                        <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
+                    </h3>
+                {{- else if ne ($month) (.Date.Format "January")  -}}
+                    {{ $month = .Date.Format "January" -}}
+                    <h3 class="text-xl py-3 mt-6 flex justify-end">
+                        <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
+                    </h3>
+                {{- end -}}
                 <li>
                     <a class="flex items-baseline gap-2" href="{{ .Permalink }}"> 
-                        {{ .Title }} 
-                        <hr class="grow border-b-1 border-dotted"/>
-                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                        <p class="flex-initial text-ellipsis overflow-hidden whitespace-nowrap">{{ .Title }}</p>
+                        <hr class="border-b-1 border-dotted flex-auto opacity-75"/>
+                        {{ with (.Date.Format "2") -}}
+                            <time class="flex-initial" datetime="{{ $.Date.Format "06-01-02" }}">
+                            {{- if (or (eq . "1") (eq . "21") (eq . "31")) -}}
+                                {{ . }}st
+                            {{- else if (or (eq . "2") (eq . "22")) -}}
+                                {{ . }}nd
+                            {{- else if (or (eq . "3") (eq . "23")) -}}
+                                {{ . }}rd
+                            {{- else -}}
+                                {{ . }}th
+                            {{- end -}}
+                            </time>
+                        {{- end }}
                     </a>
                 </li>
             {{- end }}
