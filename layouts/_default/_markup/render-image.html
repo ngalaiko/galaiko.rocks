@@ -10,8 +10,8 @@
             src="{{ $image.RelPermalink | safeURL }}" 
             {{ with .Text }} alt="{{ . }}" {{ end }} 
             {{ with .Title }} title="{{ . }}" {{ end }}
-            width="{{ $image.Width }}" 
-            height="{{ $image.Height }}"
+            width="{{ div $image.Width 2 | math.Round }}" 
+            height="auto"
         />
         {{ with .Title}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
     </figure>
