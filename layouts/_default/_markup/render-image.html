@@ -1,0 +1,14 @@
+{{ $image := .Page.Resources.GetMatch (.Destination) }}
+{{ if $image }}
+    {{ if gt $image.Width 640 }}
+        {{ $image = $image.Resize "640x webp" }}
+    {{ else }}
+        {{ $image = $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
+    {{ end }}
+    <figure>
+        <img src="{{ $image.RelPermalink | safeURL }}" {{ with .Text }} alt="{{ . }}" {{ end }} {{ with .Title }} title="{{ . }}" {{ end }}/>
+        {{ with .Title}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
+    </figure>
+{{ else }}
+    <img src="{{ .Destination }}" {{ with .Text }} alt="{{ . }}" {{ end }} {{ with .Title }} title="{{ . }}" {{ end }}/>
+{{ end }}
