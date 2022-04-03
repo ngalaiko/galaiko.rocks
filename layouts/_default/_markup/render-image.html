@@ -1,16 +1,17 @@
 {{ $image := .Page.Resources.GetMatch (.Destination) }}
 {{ if $image }}
-    {{ if gt $image.Width 640 }}
-        {{ $image = $image.Resize "640x webp" }}
+    {{ if gt $image.Width 1280 }}
+        {{ $image = $image.Resize "1280x webp" }}
     {{ else }}
-        {{ $image = $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
+        {{ $image = $image.Resize (printf "%dx webp" $image.Width) }}
     {{ end }}
-    <figure>
+    <figure class="flex justify-center">
         <img 
             src="{{ $image.RelPermalink | safeURL }}" 
             {{ with .Text }} alt="{{ . }}" {{ end }} 
             {{ with .Title }} title="{{ . }}" {{ end }}
-            size="{{ $image.Width }}x{{ $image.Height }}"
+            width="{{ $image.Width }}" 
+            height="{{ $image.Height }}"
         />
         {{ with .Title}} <figcaption>{{ . | markdownify }}</figcaption> {{ end }}
     </figure>
