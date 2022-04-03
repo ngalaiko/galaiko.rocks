@@ -7,10 +7,12 @@
 
     <article class="glitchy-links text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
         <header class="flex items-center gap-2">
-            <h1 class="text-4xl font-bold flex-1">Nikita Galaiko</h1>
+            <h1 class="text-4xl font-bold flex-1">{{ .Site.Author.name }}</h1>
+            {{ $image := .Page.Resources.GetMatch .Page.Params.avatar }}
+            {{ $image = $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
             <img 
                 class="w-[50px] h-[50px] rounded-full"
-                src="{{ .Site.Author.avatar }}" 
+                src="{{ $image.RelPermalink }}"
                 alt="{{ .Site.Author.name }}'s picture"
                 size="50x50"
             />

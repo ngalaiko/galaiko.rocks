@@ -14,4 +14,4 @@ disableKinds = ['taxonomy', 'term']
 [author]
   name = "Nikita Galaiko"
   email = "nikita@galaiko.rocks"
-  avatar = "/images/nikita.jpeg"
+  avatar = "/images/nikita.webp"

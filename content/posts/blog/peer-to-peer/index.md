@@ -1,19 +1,11 @@
 ---
 title: "Building a peer to peer messenger"
-tags: [
-    "p2p",
-    "go",
-    "traefik",
-    "swarm",
-    "consul",
-]
+tags: ["p2p", "go", "traefik", "swarm", "consul"]
 date: "2019-03-20"
-categories: [
-    "Blog",
-]
+categories: ["Blog"]
 ---
 
-![](./p2p.jpg)
+![](p2p.jpg)
 
 The idea of a peer to peer **something** is to create a system that doesn't require any centralized server to
 operate. In the case of a messenger, two users should be able to communicate directly between each other until at
@@ -38,7 +30,7 @@ I don't think that this approach is super scalable and makes sense in the real w
 resources for a single user. But I have chosen it because it is more fun to implement for me as it needs more
 infrastructure work.
 
-![cloud](./cloud.jpg)
+![cloud](cloud.jpg)
 
 ## Peer
 
@@ -47,16 +39,16 @@ infrastructure work.
 Peers use [gRPC](https://grpc.io/) to communicate with each other. It has a few benefits:
 
 1. There is a well defined [.proto](https://github.com/ngalayko/p2p/tree/master/instance/messages/proto) API
-schema. So it shouldn't be a problem to build clients using other programming languages.
+   schema. So it shouldn't be a problem to build clients using other programming languages.
 2. Stream support. Peers can exchange messages over a single TCP connection (thanks to HTTP/2). There is also
-ongoing work on supporting UDP as a transport. Initially, I wanted to use UDP based communication with QUIC
-but decided to go with gRPC because of other features.
+   ongoing work on supporting UDP as a transport. Initially, I wanted to use UDP based communication with QUIC
+   but decided to go with gRPC because of other features.
 3. Small things like TLS, custom resolvers, compression, schema versioning, binary marshaling out of the box.
 
 Overall communication scenario between two peers looks like this:
 
 1. Check if there is an open stream connection to the peer
-    * If it exists, send a message using the connection
+   - If it exists, send a message using the connection
 2. Exchange public keys with a peer using an insecure connection
 3. Open a secure stream connection to the peer and send a message.
 
@@ -86,7 +78,7 @@ certificate.
 The main logic for the service is relatively simple:
 
 1. Check if the user has an assigned peer (it is stored it his cookies)
-    * If it is there, redirect to the peer.
+   - If it is there, redirect to the peer.
 2. Pop an unused peer from consul
 3. Store its credentials in the user's session
 4. Redirect the user to the peer.
@@ -104,13 +96,13 @@ and proxies the connection between two peers.
 
 Final architecture:
 
-![bridge](./bridge.jpg)
+![bridge](bridge.jpg)
 
 You can find the code and maybe participate at [github](https://github.com/ngalayko/p2p).
 
 ## Links:
 
-* [Messenger](https://p2p.galaiko.rocks)
-* [GitHub](https://github.com/ngalayko/p2p)
-* [Traefik](https://traefik.io/)
-* [Consul](https://www.consul.io/)
+- [Messenger](https://p2p.galaiko.rocks)
+- [GitHub](https://github.com/ngalayko/p2p)
+- [Traefik](https://traefik.io/)
+- [Consul](https://www.consul.io/)

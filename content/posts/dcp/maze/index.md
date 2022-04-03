@@ -1,30 +1,24 @@
 ---
 title: "Daily Coding Problem #23"
-tags: [
-    "go",
-    "development",
-    "interview",
-    "maze",
-]
+tags: ["go", "development", "interview", "maze"]
 date: "2018-09-01"
-categories: [
-    "Daily Coding Problem",
-]
+categories: ["Daily Coding Problem"]
 ---
 
-![maze](./maze.jpg)
+![maze](maze.jpg)
 
-# Problem 
+# Problem
 
 You are given an M by N matrix consisting of booleans that represents a board.
 Each True boolean represents a wall. Each False boolean represents a tile you can walk on.
 
-Given this matrix, a start coordinate, and an end coordinate, return the 
+Given this matrix, a start coordinate, and an end coordinate, return the
 minimum number of steps required to reach the end coordinate from the start.
 If there is no possible path, then return null. You can move up, left, down,
 and right. You cannot move through walls. You cannot wrap around the edges of the board.
 
 For example, given the following board:
+
 ```
 [
     [f, f, f, f],
@@ -33,22 +27,22 @@ For example, given the following board:
     [f, f, f, f],
 ]
 ```
+
 and start = (3, 0) (bottom left) and end = (0, 0) (top left), the minimum number
 of steps required to reach the end is 7, since we would need to go through,
 (1, 2) because there is a wall everywhere else on the second row.
 
-
 # Solution
 
 It is a new type of problems I faced. I remember, I solved some during
-university, but it was pretty hard to come up with the solution right away. 
+university, but it was pretty hard to come up with the solution right away.
 
-I googled basic types of maze solving algorithms, and it looks like 
+I googled basic types of maze solving algorithms, and it looks like
 [Lee algorithm](https://en.wikipedia.org/wiki/Lee_algorithm) will be a pretty
 good choice in most of the `shortest path` problems since at the end of the
 day a number of different paths in a maze makes a tree.
 
-The idea is deadly simple: 
+The idea is deadly simple:
 
 1. go to start cell, mark it `0`.
 2. mark all neighbors as `+1`. It is a distance to the starting cell
@@ -56,17 +50,18 @@ The idea is deadly simple:
 
 By running this algorithm for each cell, we will get the number of steps it
 takes to get to any other point from the start. Of course, we should ignore
-walls and previously marked cells on each iteration. 
+walls and previously marked cells on each iteration.
 
-This is a basic solution and can be optimized for a given problem. 
+This is a basic solution and can be optimized for a given problem.
 For example, we can stop our recursive calls once we meet finish cell.
 
 # Code
+
 ```go
 // the maze is a matrix that represents a maze.
 // all cells have value 0, and all walls have value 1.
 // start and finish are arrays of 2 elements, [i,j] of the cells.
-func solution(maze [][]int, start []int, finish []int) int {                                                                                                               
+func solution(maze [][]int, start []int, finish []int) int {
         // mark start cell is -1
         maze[start[0]][start[1]] = -1
 
@@ -77,7 +72,7 @@ func solution(maze [][]int, start []int, finish []int) int {
         return maze[finish[0]][finish[1]]
 }
 
-// pos is a structure to hold cell coordinates, 
+// pos is a structure to hold cell coordinates,
 // because []int can't ba used as a map key ¯\_(ツ)_/¯
 type pos struct {
         i int

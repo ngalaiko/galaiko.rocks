@@ -1,3 +1,7 @@
+---
+avatar: nikita.jpeg
+---
+
 hi, welcome to my homepage!
 
 my presence on the internet is very limited right now

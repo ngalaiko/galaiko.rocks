@@ -1,14 +1,8 @@
 ---
 title: "Optimizing a function"
-tags: [
-    "algorithm",
-    "go",
-    "personnummer"
-]
+tags: ["algorithm", "go", "personnummer"]
 date: "2018-11-30"
-categories: [
-    "Blog",
-]
+categories: ["Blog"]
 ---
 
 In the golang community slack, someone shared a link to a package used to
@@ -22,8 +16,8 @@ format is well defined:
 
 For example `19900101-0017`
 
-
 Here is the initial code of the package:
+
 ```go
 package personnummer
 
@@ -146,6 +140,7 @@ func Valid(str interface{}) bool {
 ```
 
 Let's add a benchmark:
+
 ```go
 func BenchmarkValid(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -155,6 +150,7 @@ func BenchmarkValid(b *testing.B) {
 ```
 
 Results:
+
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -189,8 +185,8 @@ func Valid(str interface{}) bool {
 }
 ```
 
-
 Results are not surprising:
+
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -231,6 +227,7 @@ func ValidString(s string) bool {
 Results are pretty much the same. I think it's because of some compiler optimizations
 where `switch v.(type)` is syntax sugar for `reflect.TypeOf(v)`, plus undercover all
 objects know what types they are even when you use them as an `interface{}`.
+
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -277,6 +274,7 @@ func ValidString(s string) bool {
 ```
 
 And once we have a string that has only digits, it's easy to get all parts of it:
+
 ```go
 	//...
 
@@ -311,6 +309,7 @@ And once we have a string that has only digits, it's easy to get all parts of it
 ```
 
 Results are a bit better:
+
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -373,6 +372,7 @@ func testDate(century string, year string, month string, day string) bool {
 ```
 
 Benchmark:
+
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -391,6 +391,7 @@ allocation happens. It's impossible to change the string, so new the string is a
 and both strings are copies there.
 
 Let's remove `string` usage:
+
 ```go
 package personnummer
 
@@ -548,6 +549,7 @@ func charsToDigit(chars []byte) int {
 ```
 
 Final result:
+
 ```bash
 $ go test -bench=BenchmarkValid$ -benchmem
 goos: darwin
@@ -557,12 +559,12 @@ BenchmarkValid-4  20000000  94.0 ns/op  16 B/op  1 allocs/op
 PASS
 ```
 
-![Optimizaion-N](./optimization-n.png)
+![Optimizaion-N](optimization-n.png)
 
-![Optimizaion-bytes](./optimization-bytes.png)
+![Optimizaion-bytes](optimization-bytes.png)
 
-![Optimizaion-allocs](./optimization-allocs.png)
+![Optimizaion-allocs](optimization-allocs.png)
 
-![Optimizaion-ns](./optimization-ns.png)
+![Optimizaion-ns](optimization-ns.png)
 
 If you have an idea how to improve it more, please share.
