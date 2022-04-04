@@ -6,7 +6,7 @@ on:
     - cron: "0 3 * * *"
 
 jobs:
-  update-prices:
+  update-records:
     runs-on: ubuntu-latest
 
     steps:
