@@ -1,30 +1,22 @@
 ---
 title: "Daily Coding Problem: Problem #2"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-03"
-categories: [
-    "Daily Coding Problem",
-]
-aliases: [
-    "/posts/2018-07-03/",
-]
+categories: ["Daily Coding Problem"]
+aliases: ["/posts/2018-07-03/"]
 ---
 
-# Problem 
+# Problem
 
-This problem was asked by Uber.
+This problem was asked by Uber:
 
-Given an array of integers, return a new array such that each element at
-index i of the new array is the product of all the numbers in the original array except the one at i.
-
-For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24].
-If our input was [3, 2, 1], the expected output would be [2, 3, 6].
-
-Follow-up: what if you can't use division?
+> Given an array of integers, return a new array such that each element at
+> index i of the new array is the product of all the numbers in the original array except the one at i.
+>
+> For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24].
+> If our input was [3, 2, 1], the expected output would be [2, 3, 6].
+>
+> Follow-up: what if you can't use division?
 
 # Solution
 
@@ -52,25 +44,22 @@ func solution_no_edge_cases(aa []int) []int {
 ```
 
 ```
-a * b * c / a = b * c 
-a * b * c / b = a * c 
-a * b * c / c = a * b 
+a * b * c / a = b * c
+a * b * c / b = a * c
+a * b * c / c = a * b
 ```
 
-Only problem - zeros. We have 2 edge cases there: 
+Only problem - zeros. We have 2 edge cases there:
 
 1. One zero in an array.
 
-    In this case, the result should be all zeroes except for the 0 elements.
-    That element should contain the product of all others. 
+   In this case, the result should be all zeroes except for the 0 elements.
+   That element should contain the product of all others.
 
-2.  Two zeros in array or more.
+2. Two zeros in array or more.
 
-    This case is pretty much like the first one, but result array always
-    contains only zeros. Because you there are always 0 elements in the product.
-
-
-
+   This case is pretty much like the first one, but result array always
+   contains only zeros. Because you there are always 0 elements in the product.
 
 To avoid edge cases, we calculate the product of all elements except zero and also count them.
 
@@ -82,8 +71,8 @@ calculated and all other elements to zero.
 If we don’t have zeros in an array, all these conditions are skipped,
 and we get the correct result.
 
+## Code
 
-## Code 
 ```go
 func solution(aa []int) []int {
 	if len(aa) < 2 {
@@ -116,11 +105,10 @@ func solution(aa []int) []int {
 }
 ```
 
-
 ## Second
 
-The second solution is more complicated because it's always O(n^2), but there are no edge cases here. 
-Just use common logic from yesterday [Problem #1](../2018-07-02), and get production of each 
+The second solution is more complicated because it's always O(n^2), but there are no edge cases here.
+Just use common logic from yesterday [Problem #1](../2018-07-02), and get production of each
 elements pairs, except with itself.
 
 ## Code
@@ -147,4 +135,4 @@ func solution2(aa []int) []int {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-03)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-03)

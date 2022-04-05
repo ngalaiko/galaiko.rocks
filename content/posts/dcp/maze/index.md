@@ -21,10 +21,10 @@ For example, given the following board:
 
 ```
 [
-    [f, f, f, f],
-    [t, t, f, t],
-    [f, f, f, f],
-    [f, f, f, f],
+  [f, f, f, f],
+  [t, t, f, t],
+  [f, f, f, f],
+  [f, f, f, f],
 ]
 ```
 
@@ -120,4 +120,4 @@ func markP(maze [][]int, i, j, n int) bool {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-09-01)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-09-01)

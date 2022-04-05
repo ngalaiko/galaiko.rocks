@@ -1,36 +1,40 @@
 ---
 title: "Daily Coding Problem: Problem #3"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-04"
-categories: [
-    "Daily Coding Problem",
-]
-aliases: [
-    "/posts/2018-07-04/",
-]
+categories: ["Daily Coding Problem"]
+aliases: ["/posts/2018-07-04/"]
 ---
 
-# Problem 
+# Problem
 
-This problem was asked by Google.
+This problem was asked by Google:
 
-Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.
-
-For example, given the following Node class
-
-class Node: def init(self, val, left=None, right=None): self.val = val self.left = left self.right = right The following test should pass:
-
-node = Node('root', Node('left', Node('left.left')), Node('right')) assert deserialize(serialize(node)).left.left.val == 'left.left'
+> Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.
+>
+> For example, given the following Node class
+>
+> ```
+> class Node:
+>   def init(self, val, left=None, right=None):
+>     self.val = val
+>     self.left = left
+>     self.right = right
+> ```
+>
+> The following test should pass:
+>
+> ```
+> node = Node('root', Node('left', Node('left.left')), Node('right'))
+> assert deserialize(serialize(node)).left.left.val == 'left.left'
+> ```
 
 # Solution
 
-This one is weird. It doesn't say we can't use standard library, so I will just use it. 
+This one is weird. It doesn't say we can't use standard library, so I will just use it.
 
-# Code 
+# Code
+
 ```go
 type node struct {
 	Value string `json:"value"`
@@ -62,4 +66,4 @@ func Deserialize(s string) (*node, error) {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-04)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-04)

@@ -1,41 +1,34 @@
 ---
 title: "Daily Coding Problem: Problem #4"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-05"
-categories: [
-    "Daily Coding Problem",
-]
-aliases: [
-    "/posts/2018-07-05/",
-]
+categories: ["Daily Coding Problem"]
+aliases: ["/posts/2018-07-05/"]
 ---
 
-# Problem 
+# Problem
 
 This problem was asked by Stripe.
 
-Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
-
-For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
-
-You can modify the input array in-place.
+> Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
+>
+> For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
+>
+> You can modify the input array in-place.
 
 # Solution
 
 To solve this, you should think what’s common between array indexes and a
-positive integer:  it’s the same thing. 
+positive integer: it’s the same thing.
 
 So we put each positive integer of an
 array at its place (i+1 since we count from 1) and then iterate again to find
-first missing. 
+first missing.
 
 If we don’t, return length plus one (=next).
 
-# Code 
+# Code
+
 ```go
 func solution(aa []int) int {
 	if len(aa) == 0 {
@@ -123,4 +116,4 @@ func solution(aa []int) int {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-05)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-05)

@@ -1,12 +1,7 @@
 ---
 title: "Words Count"
-tags: [
-    "algorithm",
-    "go",
-]
-categories: [
-    "Blog",
-]
+tags: ["algorithm", "go"]
+categories: ["Blog"]
 date: 2019-05-11T11:01:45+02:00
 ---
 
@@ -60,6 +55,7 @@ This will make a map with number of occurences of each English word in the file.
 It takes ~1min to make this map.
 
 After that keys needs to be sorted:
+
 ```go
 freq := make([]*string, 2<<25)
 for word, count := range words {
@@ -77,13 +73,13 @@ for i := uint64(len(freq) - 1); i > 0 && done < 10; i-- {
 }
 ```
 
-This is a terrible way of sorting anything in real life, but it words fast, and that's
-exactly what we need in out case. It took ~113ms
+This is a terrible way of sorting anything in real life, but it works fast, and that's
+exactly what we need in our case. It took ~113ms
 
 ## Reading file concurrently
 
 The next step is to assume that it could go faster if file is processed in batches
-concurrently. That is true, but it will also create [data races](https://galaiko.rocks/posts/blog/go-data-races/).
+concurrently. That is true, but it will also creates [data races](https://galaiko.rocks/posts/blog/go-data-races/).
 To solve it, I will use this implementation of a map with atomic write.
 
 Another way to go from here is to save results from each thread to it's own map and
@@ -140,8 +136,8 @@ The last optimization, and the biggest one I've made is not completely about pro
 
 There is this theorem in probablility theory that says:
 
->  the average of the results obtained from a large number of trials should be close
-to the expected value, and will tend to become closer as more trials are performed
+> the average of the results obtained from a large number of trials should be close
+> to the expected value, and will tend to become closer as more trials are performed
 
 That means that if you take a large file with English text and count top 10 words in there,
 the top will always look almost the same.
