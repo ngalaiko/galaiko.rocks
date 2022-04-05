@@ -19,12 +19,43 @@
         </header>
 
         <style>
-            p {
+            article p {
                 display: block;
                 margin-block-start: 1em;
                 margin-block-end: 1em;
                 margin-inline-start: 0px;
                 margin-inline-end: 0px;
+            }
+
+            article h2 {
+                font-size: 1.43em;
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+            }
+
+            article h3 {
+                font-size: 1.25em;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+            }
+
+            article h2,
+            article h3 {
+                font-weight: bold;
+            }
+
+            article ul {
+                display: block;
+                list-style-type: circle;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
             }
         </style>
         {{ .Content }}
