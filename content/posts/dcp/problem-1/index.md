@@ -1,28 +1,20 @@
 ---
 title: "Daily Coding Problem: Problem #1"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-02"
-categories: [
-    "Daily Coding Problem",
-]
-aliases: [
-    "/posts/2018-07-02/",
-]
+categories: ["Daily Coding Problem"]
+aliases: ["/posts/2018-07-02/"]
 ---
 
 # Problem
 
-This problem was recently asked by Google.
+This problem was recently asked by Google:
 
-Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
-
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
-
-Bonus: Can you do this in one pass?
+> Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+>
+> For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+>
+> Bonus: Can you do this in one pass?
 
 # Solution
 
@@ -55,4 +47,4 @@ func solution(aa []int, k int) bool {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-02)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-02)

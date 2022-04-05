@@ -1,28 +1,20 @@
 ---
 title: "Daily Coding Problem: Problem #7"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-08"
-categories: [
-    "Daily Coding Problem",
-]
-aliases: [
-    "/posts/2018-07-08/",
-]
+categories: ["Daily Coding Problem"]
+aliases: ["/posts/2018-07-08/"]
 ---
 
-# Problem 
+# Problem
 
 This problem was asked by Facebook.
 
-Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
-
-For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
-
-You can assume that the messages are decodable. For example, '001' is not allowed.
+> Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+>
+> For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+>
+> You can assume that the messages are decodable. For example, '001' is not allowed.
 
 # Solution
 
@@ -31,10 +23,11 @@ it's is possible, because in ASCII table letters of Latin alphabet are located o
 In the example, I use function `f(string)` that returns 1 if a string can be decoded, otherwise 0.
 
 Most of the string parsing problems are recursion based. To start with such a solution,
-it's always helpful to manually solve some trivial cases, trying to use 
+it's always helpful to manually solve some trivial cases, trying to use
 the results of a previous case:
 
 If the length of a string is 1, there is always 1 way to decode it, so it's our base case.
+
 ```
 '1':
     ['1']
@@ -44,7 +37,8 @@ F('1') = 1
 ```
 
 If the length is 2, we always have 1 way with all digits separately, plus one if a number is less than `26`,
-we also use this one as a base case. 
+we also use this one as a base case.
+
 ```
 '12':
     ['1', '2']
@@ -53,13 +47,15 @@ we also use this one as a base case.
 F('12') = f('12') + 1
 ```
 
-If the length is 3, we can use the results of previous calculations, because we already know how to 
+If the length is 3, we can use the results of previous calculations, because we already know how to
 deal with shorter strings.
+
 ```
 F('123') = f('1') * F('23') + F('12') * f('3') = 3
 ```
 
 All next cases can be calculated using previously defined:
+
 ```
 F('4123') = f('4') * F('123') + f('41') * F('23') = 3
 ```
@@ -103,4 +99,4 @@ func canDecode(s string) int {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-08)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-08)

@@ -1,26 +1,18 @@
 ---
 title: "Daily Coding Problem #15"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-16"
-categories: [
-    "Daily Coding Problem",
-]
-aliases: [
-    "/posts/probability/",
-]
+categories: ["Daily Coding Problem"]
+aliases: ["/posts/probability/"]
 ---
 
 Today problem is a `probability` problem.
 
 # Problem
 
-This problem was asked by Facebook.
+This problem was asked by Facebook:
 
-Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
+> Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
 
 # Solution
 
@@ -30,6 +22,7 @@ Most trivial one is **picking one random element from an array**.
 
 Every programming language has a function to generate a pseudo-random number (`int` or `float`) within the given range. If you think
 of an array **A** as of **N** numbers, it's clear how to pick random one: generate number **i** from 0 to N, and **a[i]** is the answer.
+
 ```go
 func oneRandom(a []int) int {
     i := rand.Intn(len(a))
@@ -40,6 +33,7 @@ func oneRandom(a []int) int {
 Sometimes you need to pick **N random elements from an array**.
 
 In this case, you can use the same approach and pick **N** indexes from **0** to **len(A)**.
+
 ```go
 func nRandom(a []int, n int) []int {
     result := make([]int, n)
@@ -53,6 +47,7 @@ func nRandom(a []int, n int) []int {
 However, if you need to pick **N** random elements, they also have to be **different**.
 
 In this case, you can pick **N** different indexes and make sure that they are different:
+
 ```go
 func nDifferentRandom1(a []int, n int) []int {
     m := map[int]bool{}
@@ -112,6 +107,7 @@ Let's do it: for each element, we generate a float number between **[0..1]**. Al
 maximum value that we generated, an element from the stream associated with it - random element.
 
 # Code
+
 ```go
 func solution(in <-chan int) <-chan int {
 	res := make(chan int, 1)
@@ -133,4 +129,4 @@ func solution(in <-chan int) <-chan int {
 
 # Links
 
-[github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-16)
+- [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-16)

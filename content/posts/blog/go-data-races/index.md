@@ -1,36 +1,31 @@
 ---
-title: "Golang: Data races" 
-tags: [
-    "go",
-    "data race",
-    "race condition",
-]
+title: "Golang: Data races"
+tags: ["go", "data race", "race condition"]
 date: "2019-02-02"
-categories: [
-    "Blog",
-]
+categories: ["Blog"]
 ---
 
 I have noticed that many people who have started using go have troubles when it
-comes to concurrent programming. Concurrency in go is indeed the most 
-complicated part of the language, especially for people who don't have much 
-experience working with it. There are no compile time validations to prevent a 
-programmer from creating race conditions, but go provides all the needed 
+comes to concurrent programming. Concurrency in go is indeed the most
+complicated part of the language, especially for people who don't have much
+experience working with it. There are no compile time validations to prevent a
+programmer from creating race conditions, but go provides all the needed
 tools and instruments to avoid it.
 
-I will try to explain what is a race condition, why does it happen and how to 
+I will try to explain what is a race condition, why does it happen and how to
 avoid it.
 
 Wikipedia:
 
 > A race condition or race hazard is the behavior of an electronics, software,
-or another system where the system's substantive behavior is dependent on the
-sequence or timing of other uncontrollable events. It becomes a bug when one or
-more of the possible behaviors is undesirable.
+> or another system where the system's substantive behavior is dependent on the
+> sequence or timing of other uncontrollable events. It becomes a bug when one or
+> more of the possible behaviors is undesirable.
 
 Let's say we have a list of links to Wikipedia pages that we want to download.
 
 I wrote a [simple tool](https://github.com/ngalayko/examples/tree/master/concurrency/examples/download) as an example that uses the interface to do that:
+
 ```go
 type Downloader interface {
 	Download(...*url.URL) (map[*url.URL][]byte, error)
@@ -38,7 +33,8 @@ type Downloader interface {
 ```
 
 The most straightforward implementation would be to iterate over a list of urls,
-download each of them and store in the resulting map: 
+download each of them and store in the resulting map:
+
 ```go
 type Downloader struct {
 	client *http.Client
@@ -67,8 +63,8 @@ func (d *Downloader) download(u *url.URL) ([]byte, error) {
 ```
 
 The code works, but not so fast, because the total time to download links is a sum
-of times to download for each link. It's really inefficient when the number of 
-links is big. For me, it took over 16s to download 100 links. To improve it, let's 
+of times to download for each link. It's really inefficient when the number of
+links is big. For me, it took over 16s to download 100 links. To improve it, let's
 change the code, so we download all links at the same time:
 
 ```go
@@ -91,12 +87,13 @@ func (d *Downloader) Download(urls ...*url.URL) (map[*url.URL][]byte, error) {
 ```
 
 To do that, we have wrapped our `download` function to run in its goroutine.
-Wait group here is used to wait until all of the urls are downloaded, so the 
-total time equals the time to download the heavies page. On my test run, it 
-is `679.53154ms` for 100 pages. Down from sixteen seconds to less than a second - 
-an impressive result! 
+Wait group here is used to wait until all of the urls are downloaded, so the
+total time equals the time to download the heavies page. On my test run, it
+is `679.53154ms` for 100 pages. Down from sixteen seconds to less than a second -
+an impressive result!
 
 But here is a problem:
+
 ```
 ==================
 WARNING: DATA RACE
@@ -130,53 +127,54 @@ Goroutine 262 (finished) created at:
 ==================
 ```
 
-I've built the code with `-race` flag to enable golang race detector and got a 
-warning about the data race. Of cource, a warning is not an error, and we can 
-ignore it, the result was correct: we've downloaded a page for each link. 
+I've built the code with `-race` flag to enable golang race detector and got a
+warning about the data race. Of cource, a warning is not an error, and we can
+ignore it, the result was correct: we've downloaded a page for each link.
 
 But why race detector does not agree?
 
-First, let's see what lines he doesn't like: 
-```go 
+First, let's see what lines he doesn't like:
+
+```go
     result[u] = data
 ```
 
-A map is a data structure that contains keys and values. All keys are unique, 
-and each key has an associated value with it. For the sake of the example 
-let's say that every key is associated with a particular address in the memory, 
-and the address is permanent. 
+A map is a data structure that contains keys and values. All keys are unique,
+and each key has an associated value with it. For the sake of the example
+let's say that every key is associated with a particular address in the memory,
+and the address is permanent.
 
-So when we are updating the key's value, we are updating data at the same address 
-in the memory. 
+So when we are updating the key's value, we are updating data at the same address
+in the memory.
 
-In our example, we have unique urls, we download each of them and place the content 
+In our example, we have unique urls, we download each of them and place the content
 to the individual memory address associated with a map key.
 
-But what should happen when we write different data into the same key? If we 
-follow the abstractions of a map that I've described above and goroutines - 
-light-weight threads that are running concurrently at the same time - then the 
-final value for the map is not determined. 
+But what should happen when we write different data into the same key? If we
+follow the abstractions of a map that I've described above and goroutines -
+light-weight threads that are running concurrently at the same time - then the
+final value for the map is not determined.
 
-Because what happens is that we are telling go to write some data at the same 
-memory address multiple times at the same time. This can cause all kinds of 
-problems - from the unexpected result for a programmer to data corruption. And it's 
-not a responsibility of a language to decide what does a programmer wants to see 
+Because what happens is that we are telling go to write some data at the same
+memory address multiple times at the same time. This can cause all kinds of
+problems - from the unexpected result for a programmer to data corruption. And it's
+not a responsibility of a language to decide what does a programmer wants to see
 as a result. And a result in the situation depends on uncontrollable events.
 
 That's why go gives us a warning. It can't guarantee the result.
 
-It doesn't apply only to maps. The same can happen when you share a pointer 
-between two goroutines. Or you are writing to the same file from two different 
-programmes, or maybe you are saving data from two instances of your applications to 
-the same database. These all are different kinds of the same problem. 
+It doesn't apply only to maps. The same can happen when you share a pointer
+between two goroutines. Or you are writing to the same file from two different
+programmes, or maybe you are saving data from two instances of your applications to
+the same database. These all are different kinds of the same problem.
 
-> Data races happen only when you have multiple threads/goroutines/processes that 
-can access the same data at the same time. 
+> Data races happen only when you have multiple threads/goroutines/processes that
+> can access the same data at the same time.
 
-Likely, that problem was around for a while, and there is a solution to it. 
+Likely, that problem was around for a while, and there is a solution to it.
 
-> You need to make sure that only one  process has access to the same piece of
-memory at a time.
+> You need to make sure that only one process has access to the same piece of
+> memory at a time.
 
 Though, there is a difference between write and read access. Reading the same
 data from multiple threads is safe. The problems start only when you have
@@ -184,7 +182,8 @@ a thread that writes.
 
 Golang has a few instruments to deal with data races like mutexes and channels.
 
-Mutexes are used to solve exactly data race problems, here how to use them: 
+Mutexes are used to solve exactly data race problems, here how to use them:
+
 ```go
 func (d *Downloader) Download(urls ...*url.URL) (map[*url.URL][]byte, error) {
 	result := make(map[*url.URL][]byte, len(urls))
@@ -208,11 +207,13 @@ func (d *Downloader) Download(urls ...*url.URL) (map[*url.URL][]byte, error) {
 	return result, nil
 }
 ```
+
 It has two methods, `Lock` and `Unlock`. Everything between them can be accessed
-only by one goroutine at a time. Others will wait for the mutex to unlock before 
+only by one goroutine at a time. Others will wait for the mutex to unlock before
 they can access it.
 
 Channels are a bit more tricky, and can be also used to controll goroutines:
+
 ```go
 type done struct {
 	u    *url.URL
@@ -255,8 +256,9 @@ func (d *Downloader) Download(urls ...*url.URL) (map[*url.URL][]byte, error) {
 }
 ```
 
-Data from the multiple goroutines sent to the single goroutine via a channel and 
+Data from the multiple goroutines sent to the single goroutine via a channel and
 that goroutine stores the data in the map.
 
-## Links: 
-* [example](https://github.com/ngalayko/examples/tree/master/concurrency/examples/download)
+## Links:
+
+- [example](https://github.com/ngalayko/examples/tree/master/concurrency/examples/download)

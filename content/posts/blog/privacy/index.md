@@ -34,7 +34,7 @@ After enabling PiHole, Google Analytics stopped working, so I found a self-hoste
 
 [Matomo](https://matomo.org/) is pretty good. It has all essential analytics features and respects user privacy. For example, I configured it anonymize last digits of user IP. For example, `167.99.219.223` will be changed to `167.99.219.000` before saving.
 
-You can check if it tracks you (this is an `iframe`):
+You can check if it tracks you (this is an `iframe`) (that doesn't work anymore):
 
 <iframe
 	src="https://analytics.galaiko.rocks/index.php?module=CoreAdminHome&action=optOut&language=en&backgroundColor=d3dcda&fontColor=&fontSize=&fontFamily=Helvetica%20Neue"

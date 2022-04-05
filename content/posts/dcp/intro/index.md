@@ -1,18 +1,9 @@
 ---
 title: "Daily Coding Problem"
-tags: [
-    "go",
-    "development",
-    "interview",
-]
+tags: ["go", "development", "interview"]
 date: "2018-07-01"
-categories: [
-    "Daily Coding Problem",
-    "Blog",
-]
-aliases: [
-    "/posts/2018-07-01/",
-]
+categories: ["Daily Coding Problem", "Blog"]
+aliases: ["/posts/2018-07-01/"]
 ---
 
 Recently found this website [Daily Coding Problem](https://www.dailycodingproblem.com/]),
@@ -23,6 +14,6 @@ but could never begin.
 
 Also, for a long time, I wanted to start a blog, but could never begin.
 
-Writing short articles about how I solve thus problems seems for me as an excellent
+Writing short articles about how I solve these problems seems for me as an excellent
 opportunity to start doing both, so every day I will publish my solution for
 the daily problem here, and to [my GitHub](https://github.com/ngalayko/dcp) page trying to explain why and how I solved it.
