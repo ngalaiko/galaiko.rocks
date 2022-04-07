@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections  -}}
-    <article class="text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
+    <article class="text-lg pt-6 pb-12 mb-32 px-5 md:px-0 md:mx-20 md:pt-12">
         <h1 class="mb-8 text-4xl font-bold">{{ len $posts }} posts</h1>
         <ul class="flex flex-col gap-2 text-lg">
             {{- $year := (index $posts 0).Date.Format "2006" -}}
