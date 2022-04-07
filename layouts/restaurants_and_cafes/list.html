@@ -2,16 +2,16 @@
     <article class="text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
         <table class="table-auto m-auto">
             <thead>
-                <tr>
+                <tr class="text-gray text-md font-semibold text-left">
                     <th scope="col"></th>
-                    <th scope="col" class="text-md font-semibold" style="color: var(--color-gray); text-align: left; padding-left: 0.75rem; padding-left: 0.75rem; padding-top: 0.875rem; padding-bottom: 0.875rem;">Place</th>
-                    <th scope="col" class="text-md font-semibold" style="color: var(--color-gray); text-align: left; padding-left: 0.75rem; padding-left: 0.75rem; padding-top: 0.875rem; padding-bottom: 0.875rem;">Times</th>
-                    <th scope="col" class="text-md font-semibold" style="color: var(--color-gray); text-align: left; padding-left: 0.75rem; padding-left: 0.75rem; padding-top: 0.875rem; padding-bottom: 0.875rem;">Spent</th>
+                    <th scope="col" style="padding-top: .875rem; padding-bottom: .875rem; padding-left: .75rem; padding-right: .75rem;">Place</th>
+                    <th scope="col" style="padding-top: .875rem; padding-bottom: .875rem; padding-left: .75rem; padding-right: .75rem;">Times</th>
+                    <th scope="col" style="padding-top: .875rem; padding-bottom: .875rem; padding-left: .75rem; padding-right: .75rem;">Spent</th>
                 </tr>
                 {{- range $index, $row := .Site.Data.restaurants_and_cafes }}
                     <tr>
                         <td class="whitespace-nowrap px-2 md:px-3 py-4">{{ add $index 1 }}</td>
-                        <td class="md:whitespace-nowrap px-2 md:px-3 md:py-4">{{ $row.payee }}</td>
+                        <td class="md:whitespace-nowrap px-2 md:px-3 py-4">{{ $row.payee }}</td>
                         <td class="whitespace-nowrap px-2 md:px-3 py-4">{{ $row.count }}</td>
                         <td class="whitespace-nowrap px-2 md:px-3 py-4">{{ $row.amount }} {{ $row.currency }}</td>
                     </tr>
