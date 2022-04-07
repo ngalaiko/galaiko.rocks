@@ -1,5 +1,22 @@
 {{- define "main" -}}
     <article class="text-lg pt-6 pb-12 px-5 md:px-0 md:mx-20 md:pt-12">
-        {{ .Content }}
+        <section class="grid grid-cols-3 md:grid-cols-4 gap-1">
+            {{ range $.Site.Data.records.releases }}
+                {{- $info := .basic_information -}}
+                {{- $artist := index $info.artists 0 }}
+                {{- $fullName := printf "%s - %s" $artist.name $info.title -}}
+                {{- $discogsURL := printf "https://www.discogs.com/release/%d" (int $info.id) -}}
+
+                {{- with $info.thumb -}}
+                <a
+                    {{ printf "href=%q" $discogsURL | safeHTMLAttr }}>
+                    <img
+                        loading="lazy"
+                        {{ printf "src=%q" $info.cover_image | safeHTMLAttr }}
+                        alt="{{ $fullName }}" />
+                </a>
+                {{- end -}}
+            {{ end }}
+        </section>
     </article>
 {{- end -}}
