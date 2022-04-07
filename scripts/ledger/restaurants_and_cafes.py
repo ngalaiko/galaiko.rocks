@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import locale
 import subprocess
 import csv
 import os
@@ -16,8 +15,6 @@ args = parser.parse_args()
 number = int(args.number)
 
 getcontext().prec = 6
-locale.setlocale(locale.LC_ALL, '')
-locale._override_localeconv = {'mon_thousands_sep': ' '}
 
 command=[
     'hledger',
@@ -65,7 +62,8 @@ result = map(lambda key: groups[key] , sorted(groups, key=lambda g: groups[g]['c
 class DecimalEncoder(json.JSONEncoder):
   def default(self, obj):
     if isinstance(obj, Decimal):
-      return locale.format_string('%.2f', obj, grouping=True, monetary=True)
+      return format(obj, "2,f").replace(',', ' ').replace('.', ',')
+      
     return json.JSONEncoder.default(self, obj)
 
 script_location = os.path.realpath(__file__)
