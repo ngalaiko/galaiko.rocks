@@ -19,7 +19,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: ngalaiko/ledger
+          token: ${{ secrets.GH_PAT }}
           path: "ledger"
+          ref: "master"
 
       - name: Set up Python
         uses: actions/setup-python@v3
@@ -40,7 +42,7 @@ jobs:
 
       - name: Fetch list
         run: |
-          ./scripts/ledger/restaurants_and_cafes.py -f ./ledger/main.ledger -n 30
+          ./scripts/ledger/restaurants_and_cafes.py -f "$GITHUB_WORKSPACE/ledger/main.ledger" -n 30
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
