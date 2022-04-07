@@ -1,0 +1,47 @@
+name: Update Restaurants and Cafes list
+
+on:
+  push:
+  schedule:
+    # every day at 3am
+    - cron: "0 3 * * *"
+
+jobs:
+  update-restaurants-and-cafes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Checkout ledger
+        uses: actions/checkout@v3
+        with:
+          repository: ngalaiko/ledger
+          path: "ledger"
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+          architecture: "x64"
+
+      - name: Setup hledger
+        run: |
+          TMP_DIR=$(mktemp -d -t ci-XXXXXXXXXX)
+          pushd "$TMP_DIR"
+          curl -LO "https://github.com/simonmichael/hledger/releases/download/1.25/hledger-linux-x64.zip"
+          unzip hledger-linux-x64.zip
+          mkdir -p "$HOME/.local/bin"
+          cp hledger-linux-x64 "$HOME/.local/bin/hledger"
+          chmod +x "$HOME/.local/bin/hledger"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Fetch list
+        run: |
+          ./scripts/ledger/restaurants_and_cafes.py -f ./ledger/main.ledger -n 30
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Restaurants and Cafes
