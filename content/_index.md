@@ -8,7 +8,7 @@ if you want to contact me for any reason, the best way is to send an email to [n
 
 i have a [github][] account if you want to checkout stuff i occasionaly do for fun (programming wise)
 
-there is a page on this website with a [list of vinyl records i own][]
+there is a page on this website with [a list of vinyl records i own][]
 
 and here is a [top 30 restaurants and cafes][] i visited since 2018
 
@@ -20,6 +20,6 @@ and here is a [top 30 restaurants and cafes][] i visited since 2018
 [nikita@galaiko.rocks]: mailto:nikita@galaiko.rocks
 [github]: https://github.com/ngalaiko
 [pgp key]: /keys/nikita@galaiko.rocks.asc
-[list of vinyl records i own]: /records/
+[a list of vinyl records i own]: /records/
 [code collaboration]: https://getsturdy.com
 [top 30 restaurants and cafes]: /restaurants_and_cafes/
