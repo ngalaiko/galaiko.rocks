@@ -16,7 +16,7 @@ args = parser.parse_args()
 number = int(args.number)
 
 getcontext().prec = 6
-locale.setlocale(locale.LC_ALL, 'sv_SE.UTF-8')
+locale.setlocale(locale.LC_ALL, '')
 locale._override_localeconv = {'mon_thousands_sep': ' '}
 
 command=[
