@@ -3,17 +3,17 @@
         <table class="table-auto m-auto">
             <thead>
                 <tr>
-                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray">#</th>
+                    <th scope="col"></th>
                     <th scope="col" class="px-3 py-3.5 text-left text-md font-semibold text-gray">Place</th>
                     <th scope="col" class="px-3 py-3.5 text-left text-md font-semibold text-gray">Times</th>
                     <th scope="col" class="px-3 py-3.5 text-left text-md font-semibold text-gray">Spent</th>
                 </tr>
                 {{- range $index, $row := .Site.Data.restaurants_and_cafes }}
                     <tr>
-                        <td class="whitespace-nowrap py-4 pl-4 pr-3 font-medium">{{ add $index 1 }}</td>
-                        <td class="whitespace-nowrap px-3 py-4">{{ $row.payee }}</td>
-                        <td class="whitespace-nowrap px-3 py-4">{{ $row.count }}</td>
-                        <td class="whitespace-nowrap px-3 py-4">{{ $row.amount }} {{ $row.currency }}</td>
+                        <td class="whitespace-nowrap px-2 md:px-3 py-4">{{ add $index 1 }}</td>
+                        <td class="md:whitespace-nowrap px-2 md:px-3 md:py-4">{{ $row.payee }}</td>
+                        <td class="whitespace-nowrap px-2 md:px-3 py-4">{{ $row.count }}</td>
+                        <td class="whitespace-nowrap px-2 md:px-3 py-4">{{ $row.amount }} {{ $row.currency }}</td>
                     </tr>
                 {{- end }}
             </thead>
