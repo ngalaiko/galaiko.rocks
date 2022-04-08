@@ -43,6 +43,10 @@ jobs:
         run: |
           ./scripts/ledger/restaurants_and_cafes.py -f "$GITHUB_WORKSPACE/ledger/main.ledger" -n 30
 
+      - name: Rm ledger
+        run: |
+          rm -rf "$GITHUB_WORKSPACE/ledger/main.ledger"
+
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Restaurants and Cafes
