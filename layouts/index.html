@@ -5,9 +5,9 @@
     </style>
     {{ end }}
 
-    <article class="glitchy-links text-lg pt-6 pb-12 px-5 mb-32 md:px-0 md:mx-20 md:pt-12">
+    <article class="text-lg pt-6 pb-12 px-5 mb-32 md:px-0 md:mx-20 md:pt-12">
         <header class="flex items-center gap-2">
-            <h1 class="text-4xl font-bold flex-1">{{ .Site.Author.name }}</h1>
+            <h1 class="p-name text-4xl font-bold flex-1">{{ .Site.Author.name }}</h1>
             {{ $image := .Page.Resources.GetMatch .Page.Params.avatar }}
             {{ $image = $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
             <img 
@@ -18,47 +18,9 @@
             />
         </header>
 
-        <style>
-            article p {
-                display: block;
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-            }
-
-            article h2 {
-                font-size: 1.43em;
-                margin-block-start: 0.83em;
-                margin-block-end: 0.83em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-            }
-
-            article h3 {
-                font-size: 1.25em;
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-            }
-
-            article h2,
-            article h3 {
-                font-weight: bold;
-            }
-
-            article ul {
-                display: block;
-                list-style-type: circle;
-                margin-block-start: 1em;
-                margin-block-end: 1em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-                padding-inline-start: 40px;
-            }
-        </style>
-        {{ .Content }}
+        <div class="e-content glitchy-links">
+            {{ .Content }}
+        </div>
     </article>
 
     <script>
