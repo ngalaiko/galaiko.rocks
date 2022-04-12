@@ -1,8 +1,8 @@
 {{ define "main" }}
     {{- $posts := where site.RegularPages "Type" "in" site.Params.mainSections  -}}
     <article class="text-lg pt-6 pb-12 mb-32 px-5 md:px-0 md:mx-20 md:pt-12">
-        <h1 class="mb-8 text-4xl font-bold">{{ len $posts }} posts</h1>
-        <ul class="flex flex-col gap-2 text-lg">
+        <ul class="h-feed flex flex-col gap-2 text-lg">
+            <h1 class="p-name mb-8 text-4xl font-bold">{{ len $posts }} posts</h1>
             {{- $year := (index $posts 0).Date.Format "2006" -}}
             {{- $month := (index $posts 0).Date.Format "January" -}}
             <h3 class="text-xl font-bold py-3 flex justify-between">
@@ -22,12 +22,12 @@
                         <time datetime="{{ $.Date.Format "06-01-02" }}">{{ $month }}</time>
                     </h3>
                 {{- end -}}
-                <li>
-                    <a class="flex items-baseline gap-2" href="{{ .Permalink }}"> 
-                        <p class="flex-initial text-ellipsis overflow-hidden whitespace-nowrap">{{ .Title }}</p>
+                <li class="h-entry">
+                    <a class="u-url flex items-baseline gap-2" href="{{ .Permalink }}"> 
+                        <p class="p-name entry-title flex-initial text-ellipsis overflow-hidden whitespace-nowrap">{{ .Title }}</p>
                         <hr class="border-b-1 border-dotted flex-auto opacity-75"/>
                         {{ with (.Date.Format "2") -}}
-                            <time class="flex-initial" datetime="{{ $.Date.Format "06-01-02" }}">
+                            <time class="dt-published flex-initial" datetime="{{ $.Date }}">
                             {{- if (or (eq . "1") (eq . "21") (eq . "31")) -}}
                                 {{ . }}st
                             {{- else if (or (eq . "2") (eq . "22")) -}}
