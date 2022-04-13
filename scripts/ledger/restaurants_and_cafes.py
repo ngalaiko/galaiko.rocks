@@ -3,7 +3,7 @@
 import subprocess
 import csv
 import os
-from datetime import date
+from datetime import date, timedelta
 from decimal import Decimal, getcontext
 import argparse
 import json
@@ -16,6 +16,8 @@ number = int(args.number)
 
 getcontext().prec = 6
 
+year_ago = date.today() - timedelta(days=365)
+
 command=[
     'hledger',
     '-f', args.file,
@@ -23,6 +25,7 @@ command=[
     'expenses:Food:Restaurants & Cafes$',
     '--value', 'then,SEK',
     '--output-format', 'csv',
+    '--begin', year_ago.isoformat(),
 ]
 
 output = subprocess.run(command,check=True, stdout=subprocess.PIPE, universal_newlines=True, encoding='utf-8')
