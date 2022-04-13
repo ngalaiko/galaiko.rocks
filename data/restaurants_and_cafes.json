@@ -1,182 +1,152 @@
 [
-    {
-        "payee": "Weidao",
-        "amount": "16 734,0",
-        "currency": "SEK",
-        "count": 130
-    },
-    {
-        "payee": "Wrapped Burrito Bar",
-        "amount": "5 688,00",
-        "currency": "SEK",
-        "count": 64
-    },
-    {
-        "payee": "La Neta",
-        "amount": "5 607,00",
-        "currency": "SEK",
-        "count": 54
-    },
-    {
-        "payee": "McDonald's",
-        "amount": "2 735,26",
-        "currency": "SEK",
-        "count": 45
-    },
-    {
-        "payee": "Aldardo Pasta",
-        "amount": "3 776,00",
-        "currency": "SEK",
-        "count": 38
-    },
-    {
-        "payee": "Tony’s Pizza and Salad",
-        "amount": "4 543,00",
-        "currency": "SEK",
-        "count": 36
-    },
-    {
-        "payee": "StikkiNikki",
-        "amount": "1 719,00",
-        "currency": "SEK",
-        "count": 35
-    },
-    {
-        "payee": "Edo Sushi",
-        "amount": "3 464,00",
-        "currency": "SEK",
-        "count": 33
-    },
-    {
-        "payee": "D Abramo",
-        "amount": "1 144,00",
-        "currency": "SEK",
-        "count": 33
-    },
-    {
-        "payee": "Yume Sushi",
-        "amount": "3 833,00",
-        "currency": "SEK",
-        "count": 30
-    },
-    {
-        "payee": "Sushi King",
-        "amount": "2 885,00",
-        "currency": "SEK",
-        "count": 27
-    },
-    {
-        "payee": "Kaisas Fisk",
-        "amount": "3 415,00",
-        "currency": "SEK",
-        "count": 27
-    },
-    {
-        "payee": "Indian King",
-        "amount": "3 249,00",
-        "currency": "SEK",
-        "count": 26
-    },
-    {
-        "payee": "Max",
-        "amount": "2 075,00",
-        "currency": "SEK",
-        "count": 24
-    },
-    {
-        "payee": "Chic Konditori",
-        "amount": "2 624,00",
-        "currency": "SEK",
-        "count": 24
-    },
-    {
-        "payee": "Kebab House",
-        "amount": "2 035,00",
-        "currency": "SEK",
-        "count": 23
-    },
-    {
-        "payee": "DropCoffee",
-        "amount": "2 300,80",
-        "currency": "SEK",
-        "count": 23
-    },
-    {
-        "payee": "Saigon Baguette",
-        "amount": "2 344,00",
-        "currency": "SEK",
-        "count": 22
-    },
-    {
-        "payee": "Villa Romana",
-        "amount": "2 830,00",
-        "currency": "SEK",
-        "count": 22
-    },
-    {
-        "payee": "Hawaii Poke",
-        "amount": "3 039,50",
-        "currency": "SEK",
-        "count": 21
-    },
-    {
-        "payee": "Tokyo Diner",
-        "amount": "3 228,00",
-        "currency": "SEK",
-        "count": 20
-    },
-    {
-        "payee": "Brunos Korvbar",
-        "amount": "1 650,00",
-        "currency": "SEK",
-        "count": 19
-    },
-    {
-        "payee": "Italiana",
-        "amount": "1 834,00",
-        "currency": "SEK",
-        "count": 17
-    },
-    {
-        "payee": "The Good Gringo",
-        "amount": "2 230,00",
-        "currency": "SEK",
-        "count": 17
-    },
-    {
-        "payee": "Johan & Nyström",
-        "amount": "1 090,00",
-        "currency": "SEK",
-        "count": 17
-    },
-    {
-        "payee": "Omnipollos Hatt",
-        "amount": "4 283,50",
-        "currency": "SEK",
-        "count": 17
-    },
-    {
-        "payee": "Marley Café",
-        "amount": "1 082,50",
-        "currency": "SEK",
-        "count": 16
-    },
-    {
-        "payee": "Sukhothai",
-        "amount": "1 371,00",
-        "currency": "SEK",
-        "count": 15
-    },
-    {
-        "payee": "Romitas Pizzeria",
-        "amount": "1 447,00",
-        "currency": "SEK",
-        "count": 14
-    },
-    {
-        "payee": "Tutto Bello",
-        "amount": "1 386,00",
-        "currency": "SEK",
-        "count": 14
-    }
+  {
+    "payee": "La Neta",
+    "amount": "2 788,00",
+    "currency": "SEK",
+    "count": 26
+  },
+  {
+    "payee": "Tony’s Pizza and Salad",
+    "amount": "2 553,00",
+    "currency": "SEK",
+    "count": 20
+  },
+  {
+    "payee": "Tokyo Diner",
+    "amount": "3 083,00",
+    "currency": "SEK",
+    "count": 19
+  },
+  {
+    "payee": "Chic Konditori",
+    "amount": "1 690,00",
+    "currency": "SEK",
+    "count": 17
+  },
+  {
+    "payee": "Marley Café",
+    "amount": "1 082,50",
+    "currency": "SEK",
+    "count": 16
+  },
+  {
+    "payee": "Omnipollos Hatt",
+    "amount": "3 530,50",
+    "currency": "SEK",
+    "count": 14
+  },
+  {
+    "payee": "StikkiNikki",
+    "amount": "559,00",
+    "currency": "SEK",
+    "count": 12
+  },
+  {
+    "payee": "Weidao",
+    "amount": "1 610,00",
+    "currency": "SEK",
+    "count": 12
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "amount": "1 000,00",
+    "currency": "SEK",
+    "count": 12
+  },
+  {
+    "payee": "Indian King",
+    "amount": "1 595,00",
+    "currency": "SEK",
+    "count": 12
+  },
+  {
+    "payee": "Meno Male",
+    "amount": "1 550,00",
+    "currency": "SEK",
+    "count": 11
+  },
+  {
+    "payee": "McDonald's",
+    "amount": "814,37",
+    "currency": "SEK",
+    "count": 10
+  },
+  {
+    "payee": "DropCoffee",
+    "amount": "745,00",
+    "currency": "SEK",
+    "count": 10
+  },
+  {
+    "payee": "Yume Sushi",
+    "amount": "1 110,00",
+    "currency": "SEK",
+    "count": 9
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "amount": "1 360,00",
+    "currency": "SEK",
+    "count": 9
+  },
+  {
+    "payee": "Villa Romana",
+    "amount": "1 000,00",
+    "currency": "SEK",
+    "count": 8
+  },
+  {
+    "payee": "Johan & Nyström",
+    "amount": "380,00",
+    "currency": "SEK",
+    "count": 8
+  },
+  {
+    "payee": "Tutto Bello",
+    "amount": "693,00",
+    "currency": "SEK",
+    "count": 7
+  },
+  {
+    "payee": "Nem Nem Quán",
+    "amount": "925,00",
+    "currency": "SEK",
+    "count": 7
+  },
+  {
+    "payee": "Esperanza",
+    "amount": "820,00",
+    "currency": "SEK",
+    "count": 7
+  },
+  {
+    "payee": "Saigon Baguette",
+    "amount": "799,00",
+    "currency": "SEK",
+    "count": 6
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "amount": "780,00",
+    "currency": "SEK",
+    "count": 6
+  },
+  {
+    "payee": "The Good Gringo",
+    "amount": "757,00",
+    "currency": "SEK",
+    "count": 6
+  },
+  {
+    "payee": "Oolong Tea House",
+    "amount": "517,00",
+    "currency": "SEK",
+    "count": 6
+  },
+  {
+    "payee": "Levinskys",
+    "amount": "815,00",
+    "currency": "SEK",
+    "count": 6
+  }
 ]

@@ -12,7 +12,7 @@ i have a {{<a href="https://github.com/ngalaiko" rel="me">}}github{{</a>}} accou
 
 there is a page on this website with a [list of vinyl records i own][]
 
-and here is a [top 30 restaurants and cafes][] i visited since 2018
+and here is a [top 30 restaurants and cafes][] i visited since last year (updated weekly!)
 
 ### currently
 
