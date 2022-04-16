@@ -1,6 +1,7 @@
-node_modules/
-resources/
-public/
-hugo_stats.json
-.DS_Store
-ledger
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+static/g

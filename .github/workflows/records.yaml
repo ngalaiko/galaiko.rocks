@@ -14,15 +14,18 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - name: Set up node
+        uses: actions/setup-node@v2
         with:
-          python-version: "3.x"
-          architecture: "x64"
+          node-version: "17"
+          cache: "yarn"
+          cache-dependency-path: yarn.lock
 
       - name: Fetch records info
         run: |
-          ./scripts/discogs/export.py ${{ secrets.DISCOGS_API_KEY}}
+          yarn generate:discogs \
+            --api-token "${{ secrets.DISCOGS_API_KEY}}" \
+            --output ./src/lib/data/records.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
