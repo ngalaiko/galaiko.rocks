@@ -1,18 +1,7 @@
-import type { Post } from '$lib/types/post';
+import { list } from '$lib/posts';
 
 export const get = async ({ url }) => {
-	const modules = Object.entries(import.meta.glob('../../routes/posts/**/*.md'));
-	const posts = await Promise.all(
-		modules.map(async ([filename, module]): Promise<Post> => {
-			const { metadata } = await module();
-			const path = filename.split('routes')[1].replace('.md', '/');
-			return {
-				...metadata,
-				path,
-				aliases: metadata.aliases || []
-			};
-		})
-	);
+	const posts = await list();
 
 	const postsByAlias = posts.reduce((acc, post) => {
 		post.aliases.forEach((alias) => {

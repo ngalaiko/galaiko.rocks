@@ -1,23 +1,11 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { Post } from '$lib/types/post';
+import { list, type Post } from '$lib/posts';
 import { compareDesc } from 'date-fns';
 
 const baseUrl = 'https://galaiko.rocks/';
 
 export const get: RequestHandler = async () => {
-	const modules = Object.entries(import.meta.glob('../routes/posts/**/*.md'));
-	const posts = await Promise.all(
-		modules.map(async ([filename, module]): Promise<Post> => {
-			const { metadata } = await module();
-			const path = filename.split('routes')[1].replace('.md', '/');
-			return {
-				...metadata,
-				path,
-				aliases: metadata.aliases || [],
-				date: new Date(metadata.date)
-			};
-		})
-	);
+	const posts = await list();
 	const body = render(posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))));
 	const headers = {
 		'Cache-Control': 'max-age=0, s-maxage=3600',
