@@ -20,6 +20,6 @@
 	>
 </div>
 
-<div class="e-content">
+<div class="content e-content">
 	<slot />
 </div>

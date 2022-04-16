@@ -76,7 +76,7 @@
 }
 
 @layer components {
-	.e-content p {
+	.content p {
 		display: block;
 		margin-block-start: 1em;
 		margin-block-end: 1em;
@@ -84,7 +84,7 @@
 		margin-inline-end: 0px;
 	}
 
-	.e-content blockquote {
+	.content blockquote {
 		color: var(--color-foreground-4);
 
 		font-style: italic;
@@ -95,21 +95,21 @@
 		padding-left: 16px;
 	}
 
-	.e-content pre {
+	.content pre {
 		overflow-x: scroll;
 		font-size: 0.87em;
 	}
 
-	.e-content h1 {
+	.content h1 {
 		font-size: 1.5em;
 		line-height: 1.4em;
 	}
 
-	.e-content h2 {
+	.content h2 {
 		font-size: 1.43em;
 	}
 
-	.e-content h3 {
+	.content h3 {
 		font-size: 1.25em;
 		margin-block-start: 1em;
 		margin-block-end: 1em;
@@ -117,9 +117,9 @@
 		margin-inline-end: 0px;
 	}
 
-	.e-content h1,
-	.e-content h2,
-	.e-content h3 {
+	.content h1,
+	.content h2,
+	.content h3 {
 		font-weight: bold;
 		display: block;
 		margin-block-start: 0.83em;
@@ -128,7 +128,7 @@
 		margin-inline-end: 0px;
 	}
 
-	.e-content ul {
+	.content ul {
 		display: block;
 		list-style-type: circle;
 		margin-block-start: 1em;
@@ -138,7 +138,7 @@
 		padding-inline-start: 40px;
 	}
 
-	.e-content a {
+	.content a {
 		display: inline-block;
 		color: var(--color-blue);
 		position: relative;
@@ -146,12 +146,12 @@
 		text-decoration: none;
 	}
 
-	.e-content h1 a,
-	.e-content h2 a,
-	.e-content h3 a,
-	.e-content h4 a,
-	.e-content h5 a,
-	.e-content h6 a {
+	.content h1 a,
+	.content h2 a,
+	.content h3 a,
+	.content h4 a,
+	.content h5 a,
+	.content h6 a {
 		color: inherit;
 	}
 }
