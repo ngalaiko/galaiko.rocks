@@ -1,1 +1,0 @@
-<a {{ range $key, $value := .Params }}{{ printf "%s=\"%s\"" $key $value | safeHTMLAttr }}{{ end }}>{{ .Inner }}</a>
