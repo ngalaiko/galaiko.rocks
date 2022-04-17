@@ -1,9 +1,10 @@
 name: Update records list
 
 on:
+  push:
   schedule:
     # every day at 3am
-    - cron: "0 3 * * *"
+    - cron: '0 3 * * *'
 
 jobs:
   update-records:
@@ -17,9 +18,17 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v2
         with:
-          node-version: "17"
-          cache: "yarn"
+          node-version: '17'
+          cache: 'yarn'
           cache-dependency-path: yarn.lock
+
+      - name: Yarn install
+        run: |
+          yarn install --frozen-lockfile
+
+      - name: Yarn build
+        run: |
+          yarn build
 
       - name: Fetch records info
         run: |
