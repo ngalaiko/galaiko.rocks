@@ -1,7 +1,6 @@
 name: Update records list
 
 on:
-  push:
   schedule:
     # every day at 3am
     - cron: '0 3 * * *'
