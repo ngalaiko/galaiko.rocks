@@ -6,6 +6,8 @@ export const get: RequestHandler = async () => {
 	const posts = await list();
 	return {
 		status: 200,
-		body: posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+		body: posts
+			.filter(({ hidden }) => !hidden)
+			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 	};
 };
