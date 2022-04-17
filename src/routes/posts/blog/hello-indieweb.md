@@ -99,7 +99,7 @@ You can read more [here](https://indieweb.org/microformats) and [here](http://mi
 
 ## Webmentions
 
-Second step is webmentions. TODO
+TODO
 
 ### Receiving
 
