@@ -6,7 +6,11 @@ const baseUrl = 'https://galaiko.rocks/';
 
 export const get: RequestHandler = async () => {
 	const posts = await list();
-	const body = render(posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))));
+	const body = render(
+		posts
+			.filter(({ hidden }) => !hidden)
+			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+	);
 	const headers = {
 		'Cache-Control': 'max-age=0, s-maxage=3600',
 		'Content-Type': 'application/xml'
