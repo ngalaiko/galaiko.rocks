@@ -85,8 +85,6 @@ export class NotFoundError extends Error {
 export const get = async (platform: App.Platform, id: string): Promise<Webmention> => {
 	if (id.length === 0) throw new NotFoundError('not found');
 	const webmention = await platform.env.WEB_MENTIONS.get<Webmention>(id, 'json');
-	if (!webmention) {
-		throw new NotFoundError(`webmention ${id} not found`);
-	}
+	if (!webmention) throw new NotFoundError(`webmention ${id} not found`);
 	return webmention;
 };

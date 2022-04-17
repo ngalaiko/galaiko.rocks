@@ -4,4 +4,5 @@ export type Post = {
 	path: string;
 	html: string;
 	aliases: string[];
+	hidden: boolean;
 };
