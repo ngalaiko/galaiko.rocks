@@ -4,6 +4,7 @@
 		"generate:restaurants-and-cafes": "ts-node-esm ./scripts/ledger/restaurants-and-cafes.ts",
 		"generate:discogs": "ts-node-esm ./scripts/discogs/export.ts",
 		"webmentions:export": "ts-node-esm ./scripts/webmentions/export.ts",
+		"webmentions:process": "ts-node-esm ./scripts/webmentions/process.ts",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",

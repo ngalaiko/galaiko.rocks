@@ -16,7 +16,7 @@ export const get: RequestHandler = async ({ params, platform }) => {
 	try {
 		const webmention = await getById(platform, params.id);
 		const status = statusToCode(webmention.status);
-		return { status, body: webmention };
+		return { status, body: webmention.message ?? '' };
 	} catch (e) {
 		if (e instanceof NotFoundError) {
 			return { status: 404, body: e.message };

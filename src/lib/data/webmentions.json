@@ -1,14 +1,1 @@
-[
-	{
-		"id": "QfGBRH-CfYH-Kq4n4Ne1b",
-		"source": "https://galaiko.rocks",
-		"target": "https://galaiko.rocks",
-		"status": "created"
-	},
-	{
-		"id": "lDTbX1utVDxBL_-UVinOF",
-		"source": "https://galaiko.rocks",
-		"target": "https://galaiko.rocks",
-		"status": "created"
-	}
-]
+[{"id":"SVLrPaKvfFQBa1ok1XKcl","source":"https://galaiko.rocks","target":"https://galaiko.rocks","status":"created","timestamp":null},{"id":"2FI015wSfDUGGXD7mpdjF","source":"https://galaiko.rocks","target":"https://galaiko.rocks","status":"rejected","timestamp":null,"message":"duplicate of SVLrPaKvfFQBa1ok1XKcl"}]

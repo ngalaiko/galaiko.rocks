@@ -58,8 +58,8 @@ const writeJSON =
 
 const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	console.log('reading', path);
-	const stream = createReadStream(path).pipe(JSONStream.parse('*'));
 	return new Promise((resolve, reject) => {
+		const stream = createReadStream(path).pipe(JSONStream.parse('*'));
 		const webmentions: Webmention[] = [];
 		stream.on('data', (webmention: Webmention) => {
 			webmentions.push(webmention);
