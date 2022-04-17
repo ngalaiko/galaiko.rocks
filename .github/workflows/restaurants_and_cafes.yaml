@@ -1,9 +1,10 @@
 name: Update Restaurants and Cafes list
 
 on:
+  push:
   schedule:
     # every day at 3am
-    - cron: "0 3 * * *"
+    - cron: '0 3 * * *'
 
 jobs:
   update-restaurants-and-cafes:
@@ -19,14 +20,23 @@ jobs:
         with:
           repository: ngalaiko/ledger
           token: ${{ secrets.GH_PAT }}
-          path: "ledger"
-          ref: "master"
+          path: 'ledger'
+          ref: 'master'
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - name: Set up node
+        uses: actions/setup-node@v2
         with:
-          python-version: "3.x"
-          architecture: "x64"
+          node-version: '17'
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+
+      - name: Yarn install
+        run: |
+          yarn install --frozen-lockfile
+
+      - name: Yarn build
+        run: |
+          yarn build
 
       - name: Setup hledger
         run: |
@@ -41,7 +51,10 @@ jobs:
 
       - name: Fetch list
         run: |
-          ./scripts/ledger/restaurants_and_cafes.py -f "$GITHUB_WORKSPACE/ledger/main.ledger" -n 30
+          yarn generate:restaurants-and-cafes \
+            --file "$GITHUB_WORKSPACE/ledger/main.ledger" \
+            --number 30 \
+            --output ./src/lib/data/restaurants_and_cafes.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
