@@ -18,7 +18,7 @@
 
 <script lang="ts">
 	import { format } from 'date-fns';
-	import type { Post } from '$lib/database/posts';
+	import type { Post } from '$lib/posts';
 
 	export let posts: Post[] = [];
 
