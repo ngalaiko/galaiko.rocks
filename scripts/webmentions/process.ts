@@ -9,7 +9,6 @@ import fetch, { type Response } from 'node-fetch';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
-	.description('Process local webmentions and upload results to remove kv')
 	.option('namespace-id', {
 		alias: 'n',
 		describe: 'namespace id',

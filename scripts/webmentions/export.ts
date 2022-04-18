@@ -6,7 +6,6 @@ import type { Webmention } from '../../src/lib/webmentions';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
-	.description('Download webmentions from cloudflare to a local file')
 	.option('namespace-id', {
 		alias: 'n',
 		describe: 'namespace id',
