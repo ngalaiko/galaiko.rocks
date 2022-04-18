@@ -1,6 +1,16 @@
 import { nanoid } from 'nanoid';
 import { Status, type Webmention } from './types';
 
+const validDomains = {
+	'galaiko.rocks': true
+};
+
+const validateDomain = (url: URL) => {
+	if (!validDomains[url.hostname]) {
+		throw new Error(`unsupported domain: "${url.hostname}"`);
+	}
+};
+
 const supportedProtocols = {
 	'http:': true,
 	'https:': true
@@ -20,12 +30,13 @@ const parseURL = (value: string): URL => {
 	}
 };
 
-const validateURL = (url?: string) => {
+const validateURL = (url?: string): URL => {
 	if (!url || !url.length) {
 		throw new Error('must not be empty');
 	}
 	const parsed = parseURL(url);
 	validateProtocol(parsed);
+	return parsed;
 };
 
 export class ValidationError extends Error {
@@ -39,21 +50,29 @@ export const create = async (
 	platform: App.Platform,
 	params: { source?: string; target?: string }
 ): Promise<Webmention> => {
+	let source: URL;
 	try {
-		validateURL(params.source);
+		source = validateURL(params.source);
 	} catch (e) {
 		throw new ValidationError(`invalid source: ${e.message}`);
 	}
+	let target: URL;
 	try {
-		validateURL(params.target);
+		target = validateURL(params.target);
 	} catch (e) {
 		throw new ValidationError(`invalid target: ${e.message}`);
 	}
 
+	if (target.href === source.href) throw new ValidationError('source and target must be different');
+
+	validateDomain(target);
+
+	// todo: check if target.path
+
 	const webmention = {
 		id: nanoid(),
-		source: params.source,
-		target: params.target,
+		source,
+		target,
 		status: Status.Created,
 		timestamp: new Date()
 	};

@@ -1,9 +1,11 @@
 import { spawn } from 'child_process';
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
+import parse5, { type Node, type Element } from 'parse5';
 import { writeFile, createReadStream } from 'fs';
-import { Status, type Webmention } from '../../src/lib/webmentions/types.js';
+import { Status, type Webmention, type Parsed } from '../../src/lib/webmentions/types.js';
 import { compareAsc } from 'date-fns';
+import fetch, { type Response } from 'node-fetch';
 
 const argv = yargs(process.argv.slice(2)).usage('Usage: $0 <command> [options]').option('file', {
 	alias: 'f',
@@ -63,7 +65,12 @@ const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	return new Promise((resolve, reject) => {
 		const webmentions: Webmention[] = [];
 		stream.on('data', (webmention: Webmention) => {
-			webmentions.push({ ...webmention, timestamp: new Date(webmention.timestamp) });
+			webmentions.push({
+				...webmention,
+				timestamp: new Date(webmention.timestamp),
+				source: webmention.source,
+				target: webmention.target
+			});
 		});
 		stream.on('end', () => {
 			resolve(webmentions);
@@ -99,6 +106,7 @@ const markDuplicates = async (webmentions: Webmention[]): Promise<Webmention[]> 
 	Promise.all(
 		groupByTargetSource(webmentions).flatMap((group) =>
 			group.map(async (webmention, index) => {
+				if (webmention.status === Status.Rejected) return webmention;
 				return index === 0
 					? webmention
 					: await update({
@@ -110,4 +118,135 @@ const markDuplicates = async (webmentions: Webmention[]): Promise<Webmention[]> 
 		)
 	);
 
-readExistingWebmentions(argv.file).then(markDuplicates).then(writeJSON(argv.file));
+class SourceValidationError extends Error {
+	constructor(message: string) {
+		super(message);
+		this.name = 'SourceValidationError';
+	}
+}
+
+const href = (u: URL | Parsed | string): string => {
+	if ((u as Parsed).url) return (u as Parsed).url.href;
+	if ((u as URL).href) return (u as URL).href;
+	return u as string;
+};
+
+const validatePlainTextSource = async (webmention: Webmention, text: string): Promise<string> => {
+	if (text.includes(href(webmention.target))) return text;
+	throw new SourceValidationError(
+		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
+	);
+};
+
+const jsonContainsValue =
+	(lookFor: string) =>
+	(json: any): boolean => {
+		if (json instanceof Array) {
+			return json.some(jsonContainsValue(lookFor));
+		}
+		if (json instanceof Object) {
+			return Object.values(json).some(jsonContainsValue(lookFor));
+		}
+		return json === lookFor;
+	};
+
+const validateJSONSource = async (webmention: Webmention, json: string): Promise<string> => {
+	const targetUrl = href(webmention.target);
+	if (jsonContainsValue(targetUrl)(JSON.parse(json))) return json;
+	throw new SourceValidationError(
+		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
+	);
+};
+
+const hasLink =
+	(href: string) =>
+	(node: Node): boolean => {
+		const attributes = (node as Element).attrs;
+		if (
+			attributes &&
+			attributes.some(({ name, value }) => ['href', 'src'].includes(name) && value === href)
+		) {
+			return true;
+		}
+		const childNodes = (node as Element).childNodes;
+		if (childNodes) {
+			return childNodes.some(hasLink(href));
+		}
+		return false;
+	};
+
+const validateHtmlSource = async (webmention: Webmention, html: string): Promise<string> => {
+	const targetUrl = href(webmention.target);
+	if (hasLink(targetUrl)(parse5.parse(html))) return html;
+	throw new SourceValidationError(
+		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
+	);
+};
+
+// valdiate webmention source and return it if valid
+const validateSource = async (
+	webmention: Webmention,
+	sourceResponse: Response
+): Promise<string> => {
+	const contentType = sourceResponse.headers.get('content-type');
+	if (!contentType) throw new SourceValidationError(`no content-type header found in response`);
+	if (contentType.includes('text/html')) {
+		return validateHtmlSource(webmention, await sourceResponse.text());
+	} else if (contentType.includes('application/json')) {
+		return validateJSONSource(webmention, await sourceResponse.text());
+	} else if (contentType.includes('text/plain')) {
+		return validatePlainTextSource(webmention, await sourceResponse.text());
+	} else {
+		throw new SourceValidationError(`unsupported content-type ${contentType}`);
+	}
+};
+
+// downloadSource downloads the source html of the webmention and updates the status to accepted if successful
+const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
+	// only dowload created webmentions
+	if (webmention.status !== Status.Created) return webmention;
+	const sourceHref = href(webmention.source);
+	console.log('downloading', sourceHref);
+	const response = await fetch(sourceHref, {
+		headers: {
+			Accept: 'text/html, application/json, text/plain',
+			'User-Agent': 'Webmention/1.0 (crawler; https://galaiko.rocks)'
+		},
+		redirect: 'follow'
+	});
+	if (!response.ok) {
+		console.log(`${webmention.id} rejected: ${response.status} ${response.statusText}`);
+		return update({
+			...webmention,
+			status: Status.Rejected,
+			message: `failed to GET ${webmention.source.toString()}: ${response.status} ${
+				response.statusText
+			}`
+		});
+	}
+
+	try {
+		const body = await validateSource(webmention, response);
+		console.log(`${webmention.id} accepted`);
+		return update({
+			...webmention,
+			status: Status.Accepted,
+			source: {
+				url: webmention.source as URL,
+				contentType: response.headers.get('content-type'),
+				body
+			}
+		});
+	} catch (error) {
+		if (error instanceof SourceValidationError) {
+			console.log(`${webmention.id} rejected: ${error.message}`);
+			return update({ ...webmention, status: Status.Rejected, message: error.message });
+		}
+		throw error;
+	}
+};
+
+const processWebmentions = async (webmentions: Webmention[]): Promise<Webmention[]> =>
+	Promise.all(webmentions.map(downloadSource));
+
+readExistingWebmentions(argv.file).then(processWebmentions).then(writeJSON(argv.file));
