@@ -7,12 +7,20 @@ import { Status, type Webmention, type Parsed } from '../../src/lib/webmentions/
 import { compareAsc } from 'date-fns';
 import fetch, { type Response } from 'node-fetch';
 
-const argv = yargs(process.argv.slice(2)).usage('Usage: $0 <command> [options]').option('file', {
-	alias: 'f',
-	type: 'string',
-	description: 'The file with webmentions data',
-	demandOption: true
-}).argv;
+const argv = yargs(process.argv.slice(2))
+	.usage('Usage: $0 <command> [options]')
+	.option('file', {
+		alias: 'f',
+		type: 'string',
+		description: 'The file with webmentions data',
+		demandOption: true
+	})
+	.option('dev', {
+		alias: 'd',
+		type: 'boolean',
+		description: 'Do not send data to cloudflare',
+		default: false
+	}).argv;
 
 const wrangler = (...args: string[]): Promise<string> =>
 	new Promise((resolve, reject) => {
@@ -34,6 +42,7 @@ const wrangler = (...args: string[]): Promise<string> =>
 const namespaceId = '04717db6466d4700b257589fec573c01';
 
 const update = async (webmention: Webmention): Promise<Webmention> => {
+	if (argv.dev) return webmention;
 	console.log('uploading', webmention.id);
 	await wrangler(
 		'kv:key',
