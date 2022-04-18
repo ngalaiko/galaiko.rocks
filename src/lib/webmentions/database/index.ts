@@ -43,7 +43,7 @@ class FileKV implements IDatabase {
 
 	async get(key: string): Promise<Webmention> {
 		const db = await this.#readFileContent();
-		const found = db.some(({ id }) => id === key);
+		const found = db.find(({ id }) => id === key);
 		if (!found) {
 			throw new NotFoundError(`Could not find ${key}`);
 		}
