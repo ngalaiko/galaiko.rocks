@@ -98,7 +98,11 @@ export const create = async (
 	return webmention;
 };
 
-export const get = async (platform: App.Platform, id: string): Promise<Webmention> =>
+export const getById = async (platform: App.Platform, id: string): Promise<Webmention> =>
 	provideDB(platform).get(id);
+
+export const getByTarget = async (pathname: string): Promise<Webmention[]> => {
+	const webmentions = import.meta.env.DEV ? parsedDev : parsed;
+};
 
 export * from './types';

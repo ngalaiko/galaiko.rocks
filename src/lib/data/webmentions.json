@@ -1,1 +1,18 @@
-[{"id":"SVLrPaKvfFQBa1ok1XKcl","source":"https://galaiko.rocks/","target":"https://galaiko.rocks/","status":"rejected","timestamp":"1970-01-01T00:00:00.000Z","message":"https://galaiko.rocks/ does not contain mention of https://galaiko.rocks/"},{"id":"2FI015wSfDUGGXD7mpdjF","source":"https://galaiko.rocks/","target":"https://galaiko.rocks/","status":"rejected","timestamp":"1970-01-01T00:00:00.000Z","message":"duplicate of SVLrPaKvfFQBa1ok1XKcl"}]
+[
+	{
+		"id": "SVLrPaKvfFQBa1ok1XKcl",
+		"source": "https://galaiko.rocks/",
+		"target": "https://galaiko.rocks/",
+		"status": "rejected",
+		"timestamp": "1970-01-01T00:00:00.000Z",
+		"message": "https://galaiko.rocks/ does not contain mention of https://galaiko.rocks/"
+	},
+	{
+		"id": "2FI015wSfDUGGXD7mpdjF",
+		"source": "https://galaiko.rocks/",
+		"target": "https://galaiko.rocks/",
+		"status": "rejected",
+		"timestamp": "1970-01-01T00:00:00.000Z",
+		"message": "duplicate of SVLrPaKvfFQBa1ok1XKcl"
+	}
+]

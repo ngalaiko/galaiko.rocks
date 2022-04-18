@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { get as getById, NotFoundError, Status } from '$lib/webmentions';
+import { getById as getById, NotFoundError, Status } from '$lib/webmentions';
 
 const statusToCode = (status: Status): number => {
 	switch (status) {
