@@ -1,3 +1,4 @@
+import { list } from '$lib/posts';
 import { nanoid } from 'nanoid';
 import { provideDB } from './database';
 import { Status, type Webmention } from './types';
@@ -49,6 +50,19 @@ export class ValidationError extends Error {
 	}
 }
 
+const validatePathname = async (pathname: string) => {
+	const validPathnames = { '/': true, '/records/': true, '/restaurants_and_cafes/': true };
+	await list().then((posts) =>
+		posts.map(({ path }) => path).forEach((path) => (validPathnames[path] = true))
+	);
+	if (!validPathnames[pathname]) throw new ValidationError(`"${pathname}" can't be webmentioned`);
+};
+
+const validateTarget = async (target: URL) => {
+	validateDomain(target);
+	await validatePathname(target.pathname);
+};
+
 export const create = async (
 	platform: App.Platform,
 	params: { source?: string; target?: string }
@@ -68,9 +82,7 @@ export const create = async (
 
 	if (target.href === source.href) throw new ValidationError('source and target must be different');
 
-	validateDomain(target);
-
-	// todo: check if target.path is not 404
+	await validateTarget(target);
 
 	const webmention = {
 		id: nanoid(),
@@ -81,7 +93,7 @@ export const create = async (
 	};
 
 	const db = provideDB(platform);
-	db.put(webmention);
+	await db.put(webmention);
 
 	return webmention;
 };
