@@ -4,12 +4,22 @@ import yargs from 'yargs';
 import { writeFile, createReadStream } from 'fs';
 import type { Webmention } from '../../src/lib/webmentions';
 
-const argv = yargs(process.argv.slice(2)).usage('Usage: $0 <command> [options]').option('file', {
-	alias: 'f',
-	type: 'string',
-	description: 'The file with webmentions data',
-	demandOption: true
-}).argv;
+const argv = yargs(process.argv.slice(2))
+	.usage('Usage: $0 <command> [options]')
+	.description('Download webmentions from cloudflare to a local file')
+	.option('namespace-id', {
+		alias: 'n',
+		describe: 'namespace id',
+		type: 'string',
+		demandOption: true,
+		default: '04717db6466d4700b257589fec573c01'
+	})
+	.option('file', {
+		alias: 'f',
+		type: 'string',
+		description: 'The file with webmentions data',
+		demandOption: true
+	}).argv;
 
 const wrangler = (...args: string[]): Promise<string> =>
 	new Promise((resolve, reject) => {
@@ -28,18 +38,16 @@ const wrangler = (...args: string[]): Promise<string> =>
 		});
 	});
 
-const namespaceId = '04717db6466d4700b257589fec573c01';
-
 const listKeys = async (): Promise<string[]> => {
 	console.log('listing keys');
-	return wrangler('kv:key', 'list', `--namespace-id=${namespaceId}`)
+	return wrangler('kv:key', 'list', `--namespace-id=${argv.namespaceId}`)
 		.then(JSON.parse)
 		.then((keys) => keys.map(({ name }) => name));
 };
 
 const downloadKey = async (key: string): Promise<any> => {
 	console.log('downloading', key);
-	return wrangler('kv:key', 'get', `--namespace-id=${namespaceId}`, key);
+	return wrangler('kv:key', 'get', `--namespace-id=${argv.namespaceId}`, key);
 };
 
 const writeJSON =
