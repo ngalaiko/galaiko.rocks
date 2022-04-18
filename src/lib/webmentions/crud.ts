@@ -1,13 +1,16 @@
 import { nanoid } from 'nanoid';
+import { provideDB } from './database';
 import { Status, type Webmention } from './types';
 
 const validDomains = {
 	'galaiko.rocks': true
 };
 
+if (import.meta.env.DEV) validDomains['localhost'] = true;
+
 const validateDomain = (url: URL) => {
 	if (!validDomains[url.hostname]) {
-		throw new Error(`unsupported domain: "${url.hostname}"`);
+		throw new ValidationError(`unsupported domain: "${url.hostname}"`);
 	}
 };
 
@@ -67,7 +70,7 @@ export const create = async (
 
 	validateDomain(target);
 
-	// todo: check if target.path
+	// todo: check if target.path is not 404
 
 	const webmention = {
 		id: nanoid(),
@@ -77,23 +80,13 @@ export const create = async (
 		timestamp: new Date()
 	};
 
-	await platform.env.WEB_MENTIONS.put(webmention.id, JSON.stringify(webmention));
+	const db = provideDB(platform);
+	db.put(webmention);
 
 	return webmention;
 };
 
-export class NotFoundError extends Error {
-	constructor(message: string) {
-		super(message);
-		this.name = 'NotFoundError';
-	}
-}
-
-export const get = async (platform: App.Platform, id: string): Promise<Webmention> => {
-	if (id.length === 0) throw new NotFoundError('not found');
-	const webmention = await platform.env.WEB_MENTIONS.get<Webmention>(id, 'json');
-	if (!webmention) throw new NotFoundError(`webmention ${id} not found`);
-	return webmention;
-};
+export const get = async (platform: App.Platform, id: string): Promise<Webmention> =>
+	provideDB(platform).get(id);
 
 export * from './types';
