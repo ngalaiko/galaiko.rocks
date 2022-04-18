@@ -4,11 +4,18 @@ export enum Status {
 	Rejected = 'rejected'
 }
 
+export type Parsed = {
+	url: URL;
+	body: string;
+	contentType: string;
+};
+
 export type Webmention = {
 	id: string;
-	source: string;
-	target: string;
+	source: URL | Parsed;
+	target: URL | Parsed;
 	status: Status;
 	message?: string;
 	timestamp: Date;
+	sourceBody?: string;
 };

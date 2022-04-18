@@ -99,15 +99,38 @@ You can read more [here](https://indieweb.org/microformats) and [here](http://mi
 
 ## Webmentions
 
-TODO
+Second step is webmentions. Webmentions is a very simple protocol to let other's know that you've mentioned their page.
+A mention could be anything form a 'like' to 'comment' or 'rsvp'.
+
+Since [the protocol](https://www.w3.org/TR/webmention/#updating-existing-webmentions-li-4) is so simple, I am implementing
+it myself. Both because it's more fun and to satisfy my requirements for the project.
+
+There are two parts when it comes to webmentions: I need to be able to receive and to send them.
 
 ### Receiving
 
-TODO
+Since I don't want to pay for the hosting, here is a plan:
 
-### Processing
+1. When someone send me a webmention, the request is be processed by a serverless handler hosted on
+   [cloudflare workers](https://developers.cloudflare.com/workers/) and then stored in their
+   [key value storage](https://developers.cloudflare.com/workers/platform/pricing/#workers-kv)
+2. Later, [an export script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/export.ts) is triggered
+   by myself manually or via GitHub Actions cronjob to download all of the new
+   webmentions [into my repository](https://github.com/ngalaiko/blog/blob/master/src/lib/data/webmentions.json)
+3. Then, [a processing script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/process.ts) is
+   triggered in a similar manner to process new webmentions
+4. Viola, now all the raw webmentions data is available in
+   my repository at all times, and I can use it to render static pages
 
-TODO
+What I like about this plan is that:
+
+- it doesn't really depend much on the hosting solution since SvelteKit is quite
+  flexible with that
+- I expect the amount of data and read/write operations be close to 0, so free tier on cloudflare and github is more
+  than enough
+- all of the data is stored inside my repository which means I can render static pages
+
+Of course the non real timeness of the solution might be considered a downside.
 
 ### Sending
 
