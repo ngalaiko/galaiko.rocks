@@ -9,6 +9,14 @@ import fetch, { type Response } from 'node-fetch';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
+	.description('Process local webmentions and upload results to remove kv')
+	.option('namespace-id', {
+		alias: 'n',
+		describe: 'namespace id',
+		type: 'string',
+		demandOption: true,
+		default: '04717db6466d4700b257589fec573c01'
+	})
 	.option('file', {
 		alias: 'f',
 		type: 'string',
@@ -39,15 +47,13 @@ const wrangler = (...args: string[]): Promise<string> =>
 		});
 	});
 
-const namespaceId = '04717db6466d4700b257589fec573c01';
-
 const update = async (webmention: Webmention): Promise<Webmention> => {
 	if (argv.dev) return webmention;
 	console.log('uploading', webmention.id);
 	await wrangler(
 		'kv:key',
 		'put',
-		`--namespace-id=${namespaceId}`,
+		`--namespace-id=${argv.namespace_id}`,
 		webmention.id,
 		JSON.stringify(webmention)
 	);
@@ -108,25 +114,6 @@ const groupByTargetSource = (webmentions: Webmention[]): Webmention[][] => {
 	return groups;
 };
 
-// mark duplicates by combination of target and source
-// if duplicate is found, webmention with earliest date is considered the original,
-// the rest are rejected with the message 'duplicate'
-const markDuplicates = async (webmentions: Webmention[]): Promise<Webmention[]> =>
-	Promise.all(
-		groupByTargetSource(webmentions).flatMap((group) =>
-			group.map(async (webmention, index) => {
-				if (webmention.status === Status.Rejected) return webmention;
-				return index === 0
-					? webmention
-					: await update({
-							...webmention,
-							status: Status.Rejected,
-							message: `duplicate of ${group[0].id}`
-					  });
-			})
-		)
-	);
-
 class SourceValidationError extends Error {
 	constructor(message: string) {
 		super(message);
@@ -178,10 +165,7 @@ const hasLink =
 			return true;
 		}
 		const childNodes = (node as Element).childNodes;
-		if (childNodes) {
-			return childNodes.some(hasLink(href));
-		}
-		return false;
+		return childNodes ? childNodes.some(hasLink(href)) : false;
 	};
 
 const validateHtmlSource = async (webmention: Webmention, html: string): Promise<string> => {

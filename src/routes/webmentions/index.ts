@@ -21,7 +21,6 @@ export const post: RequestHandler = async ({ request, url, platform }) => {
 		};
 	} catch (e) {
 		if (e instanceof ValidationError) {
-			console.log(e.message);
 			return { status: 400, body: e.message };
 		}
 		return { status: 500, body: 'Internal Server Error' };
