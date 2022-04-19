@@ -395,10 +395,10 @@
     esbuild "^0.14.21"
     worktop "0.8.0-next.12"
 
-"@sveltejs/kit@^1.0.0-next.302":
-  version "1.0.0-next.314"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.314.tgz#3bd995cec8d348ae46430b7dbfa8640caf8618bb"
-  integrity sha512-EkXjEd30XO8+AydBLARxAtI6Ak8V0KFSEJ07sNsrkGq9J70sWPL7yGenhGaeq6S852XZAqeyWd6uGQZmQLR4Wg==
+"@sveltejs/kit@^1.0.0-next.315":
+  version "1.0.0-next.315"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.315.tgz#6066492836faa2d7928ca5cc61458ae6e5fd1c50"
+  integrity sha512-f6ufqd9z6uicOOr1eSIclm4TonwoRtw0kuIYrDatYSZtu/081kZ5r0Vj6sXDI6tFI1kctoRzPtFECXf5zkZvlw==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.32"
     sade "^1.7.4"
