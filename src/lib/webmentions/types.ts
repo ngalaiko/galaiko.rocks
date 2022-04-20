@@ -17,5 +17,4 @@ export type Webmention = {
 	status: Status;
 	message?: string;
 	timestamp: Date;
-	sourceBody?: string;
 };
