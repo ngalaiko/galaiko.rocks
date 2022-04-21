@@ -19,15 +19,10 @@
 		const body = (await res.json()) as Post | Post[];
 		if (body instanceof Array) return { status: 200, props: { posts: body } };
 		if (body.path !== url.pathname) return { status: 301, redirect: body.path };
+
 		return {
 			status: 200,
-			props: {
-				post: body,
-				likes: await fetch('likes.json').then((res) => res.json()),
-				replies: await fetch('replies.json').then((res) => res.json()),
-				reposts: await fetch('reposts.json').then((res) => res.json()),
-				mentions: await fetch('mentions.json').then((res) => res.json())
-			}
+			props: { post: body }
 		};
 	};
 </script>
@@ -35,14 +30,8 @@
 <script lang="ts">
 	import { Post as SinglePost, Posts } from '$lib/components';
 
-	export let post: Post;
-	export let posts: Post[];
-
-    // TODO: add types and display it
-	// export let likes: any[];
-	// export let replies: any[];
-	// export let reposts: any[];
-	// export let mentions: any[];
+	export let post: Post = null;
+	export let posts: Post[] = [];
 </script>
 
 {#if post}

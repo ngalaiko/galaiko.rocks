@@ -38,6 +38,8 @@ const config = {
 		preprocess({ postcss: true, typescript: true }),
 		image({
 			optimizeAll: true,
+			processFoldersSizes: true,
+			processFoldersRecursively: true,
 			optimizeRemote: true,
 			placeholder: 'blur'
 		})
@@ -46,7 +48,11 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true,
-			enabled: true
+			enabled: true,
+			crawl: true,
+			entries: [
+				'/posts/' //  it's not linked from anywhere
+			]
 		},
 		trailingSlash: 'always'
 	}
