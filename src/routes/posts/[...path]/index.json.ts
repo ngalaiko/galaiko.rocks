@@ -11,7 +11,6 @@ export const get: RequestHandler = async ({ url }) => {
 		return { status: 200, body: repliesTo(postURL) as any[] };
 	} else if (pathname.endsWith('/likes/')) {
 		const postURL = new URL(pathname.replace('likes/', ''), url.origin);
-		console.log(postURL);
 		const post = await findByPathname(postURL.pathname);
 		if (!post) return { status: 404, body: 'Not found' };
 		return { status: 200, body: likesOf(postURL) as any[] };

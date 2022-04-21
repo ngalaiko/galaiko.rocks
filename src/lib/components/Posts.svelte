@@ -1,26 +1,8 @@
-<script lang="ts" context="module">
-	export const load = async ({ fetch }) => {
-		const url = '/posts.json';
-		const res = await fetch(url);
-		if (res.ok) {
-			const posts = await res.json();
-			return {
-				props: { posts }
-			};
-		} else {
-			return {
-				status: 500,
-				error: new Error(`Could not fetch ${url}`)
-			};
-		}
-	};
-</script>
-
 <script lang="ts">
 	import { format } from 'date-fns';
 	import type { Post } from '$lib/posts';
 
-	export let posts: Post[] = [];
+	export let posts: Post[];
 
 	const data = posts.map((post) => ({
 		date: new Date(post.date),
