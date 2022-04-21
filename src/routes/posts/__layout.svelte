@@ -39,10 +39,10 @@
 	export let posts: Post[];
 
     // TODO: add types and display it
-	export let likes: any[];
-	export let replies: any[];
-	export let reposts: any[];
-	export let mentions: any[];
+	// export let likes: any[];
+	// export let replies: any[];
+	// export let reposts: any[];
+	// export let mentions: any[];
 </script>
 
 {#if post}
