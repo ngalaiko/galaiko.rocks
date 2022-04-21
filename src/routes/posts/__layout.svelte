@@ -4,11 +4,11 @@
 
 	const trimRight = (str: string, char: string) => str.replace(new RegExp(`${char}+$`), '');
 
-    // this is a cathall for any /post/... page, ther are a few options:
-    // 1. this is post => just render it
-    // 2. this is an alias for a post => redirect to the correct one
-    // 3. this is a list page => render the list
-    // 4. nothing => throw 404
+	// this is a cathall for any /post/... page, ther are a few options:
+	// 1. this is post => just render it
+	// 2. this is an alias for a post => redirect to the correct one
+	// 3. this is a list page => render the list
+	// 4. nothing => throw 404
 	export const load: Load = async ({ url, fetch }) => {
 		const res = await fetch(trimRight(url.pathname, '/') + '.json');
 		if (res.ok) {
@@ -27,17 +27,16 @@
 </script>
 
 <script lang="ts">
-	import PostComponent from '$lib/components/Post.svelte';
-	import PostsList from '$lib/components/Posts.svelte';
+	import { Post as SinglePost, Posts } from '$lib/components';
 
 	export let post: Post;
 	export let posts: Post[];
 </script>
 
 {#if post}
-	<PostComponent {post}>
+	<SinglePost {post}>
 		<slot />
-	</PostComponent>
+	</SinglePost>
 {:else}
-	<PostsList {posts} />
+	<Posts {posts} />
 {/if}
