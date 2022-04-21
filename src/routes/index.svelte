@@ -39,12 +39,15 @@
 			</p>
 
 			<p>
-				there is a page on this website with a <a href="/records/">list of vinyl records i own</a>
+				there is a page on this website with a <a sveltekit:prefetch href="/records/"
+					>list of vinyl records i own</a
+				>
 			</p>
 
 			<p>
-				and here is a <a href="/restaurants_and_cafes/">top 30 restaurants and cafes</a> i visited since
-				last year (updated weekly!)
+				and here is a <a sveltekit:prefetch href="/restaurants_and_cafes/"
+					>top 30 restaurants and cafes</a
+				> i visited since last year (updated weekly!)
 			</p>
 
 			<h3>currently</h3>

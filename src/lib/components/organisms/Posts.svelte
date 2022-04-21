@@ -36,7 +36,7 @@
 				</time>
 			{/if}
 			<li class="h-entry">
-				<a class="u-url flex items-baseline gap-2" href={post.path}>
+				<a sveltekit:prefetch class="u-url flex items-baseline gap-2" href={post.path}>
 					<p
 						class="p-name entry-title flex-initial text-ellipsis overflow-hidden whitespace-nowrap"
 					>
