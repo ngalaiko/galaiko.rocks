@@ -37,6 +37,7 @@ const config = {
 		}),
 		preprocess({ postcss: true, typescript: true }),
 		image({
+			optimizeAll: true,
 			optimizeRemote: true,
 			placeholder: 'blur'
 		})
