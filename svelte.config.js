@@ -17,9 +17,6 @@ const config = {
 			smartypants: {
 				dashes: 'oldschool'
 			},
-			layout: {
-				posts: './src/routes/posts/_layout.svelte'
-			},
 			remarkPlugins: [
 				preview(
 					htmlFormatter({

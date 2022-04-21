@@ -1,19 +1,17 @@
-<script>
+<script lang="ts">
 	import { format } from 'date-fns';
+	import type { Post } from '$lib/posts';
 
-	/** @type {string} */
-	export let title;
-	/** @type {string} */
-	export let date;
-   
-	const parsedDate = new Date(date);
+	export let post: Post;
+
+	const parsedDate = new Date(post.date);
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{post.title}</title>
 </svelte:head>
 
-<h1 class="p-name mb-1 text-4xl font-bold">{title}</h1>
+<h1 class="p-name mb-1 text-4xl font-bold">{post.title}</h1>
 <div class="mb-8">
 	<time class="dt-published" datetime={parsedDate.toISOString()}
 		>{format(parsedDate, 'MMMM dd, yyyy')}</time
