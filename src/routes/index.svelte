@@ -1,5 +1,5 @@
 <script>
-	import Image from '$lib/Image.svelte';
+	import Image from 'svelte-image';
 	import GlitchyLinks from '$lib/GlitchyLinks.svelte';
 	import { Article } from '$lib/components';
 </script>
@@ -16,13 +16,6 @@
 				<span class="p-family-name">Galaiko</span>
 			</h1>
 			<link class="u-url" href="https://galaiko.rocks" />
-			<div class="w-[50px] h-[50px]">
-				<Image
-					class="u-photo rounded-full"
-					src="img/people/nikita.jpeg"
-					alt="Nikita Galaiko's avatar"
-				/>
-			</div>
 		</header>
 
 		<GlitchyLinks>
