@@ -4,7 +4,7 @@
 @tailwind variants;
 
 @layer base {
-	html {
+	.theme-light {
 		--background-hard: #f9f5d7;
 		--background: #fbf1c7;
 		--background-soft: #f2e5bc;
@@ -38,39 +38,55 @@
 		--gray-dim: #7c6f64;
 	}
 
+	.theme-dark {
+		--background-hard: #1d2021;
+		--background: #282828;
+		--background-soft: #32302f;
+		--background-1: #3c3836;
+		--background-2: #504945;
+		--background-3: #665c54;
+		--background-4: #7c6f64;
+
+		--foreground: #fbf1c7;
+		--foreground-1: #ebdbb2;
+		--foreground-2: #d5c4a1;
+		--foreground-3: #bdae93;
+		--foreground-4: #a89984;
+
+		--red: #fb4934;
+		--green: #b8bb26;
+		--yellow: #fabd2f;
+		--blue: #83a598;
+		--purple: #d3869b;
+		--aqua: #8ec07c;
+		--gray: #928374;
+		--orange: #fe8019;
+
+		--red-dim: #cc2412;
+		--green-dim: #98971a;
+		--yellow-dim: #d79921;
+		--blue-dim: #458588;
+		--purple-dim: #b16286;
+		--aqua-dim: #689d6a;
+		--gray-dim: #a89984;
+		--orange-dim: #d65d0e;
+	}
+
+	:root[data-theme='theme-light'] {
+		@apply theme-light;
+	}
+
+	:root[data-theme='theme-dark'] {
+		@apply theme-dark;
+	}
+
+	html {
+		@apply theme-light;
+	}
+
 	@media (prefers-color-scheme: dark) {
 		html {
-			--background-hard: #1d2021;
-			--background: #282828;
-			--background-soft: #32302f;
-			--background-1: #3c3836;
-			--background-2: #504945;
-			--background-3: #665c54;
-			--background-4: #7c6f64;
-
-			--foreground: #fbf1c7;
-			--foreground-1: #ebdbb2;
-			--foreground-2: #d5c4a1;
-			--foreground-3: #bdae93;
-			--foreground-4: #a89984;
-
-			--red: #fb4934;
-			--green: #b8bb26;
-			--yellow: #fabd2f;
-			--blue: #83a598;
-			--purple: #d3869b;
-			--aqua: #8ec07c;
-			--gray: #928374;
-			--orange: #fe8019;
-
-			--red-dim: #cc2412;
-			--green-dim: #98971a;
-			--yellow-dim: #d79921;
-			--blue-dim: #458588;
-			--purple-dim: #b16286;
-			--aqua-dim: #689d6a;
-			--gray-dim: #a89984;
-			--orange-dim: #d65d0e;
+			@apply theme-dark;
 		}
 	}
 }
