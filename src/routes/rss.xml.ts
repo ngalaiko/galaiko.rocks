@@ -27,8 +27,9 @@ const renderPost = (post: Post) => `
             <link>${new URL(post.path, baseUrl)}</link>
             <pubDate>${post.date.toUTCString()}</pubDate>
             <author>Nikita Galaiko (nikita@galaiko.rocks)</author>
-            <guid>${post.path}</guid>
-            <content:encoded>${post.html}</content:encoded>
+            <guid isPermaLink="true">${post.path}</guid>
+            <source>${baseUrl}/rss.xml</source>
+            <description><![CDATA[${post.html}]]></description>
         </item>`;
 
 const render = (posts: Post[]) =>
@@ -37,13 +38,13 @@ const render = (posts: Post[]) =>
     <channel>
         <title>Posts | Nikita Galaiko</title>
         <link>${baseUrl}</link>
+        <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml />
         <description>Recent content on Nikita Galaiko's website</description>
         <language>en</language>
         <managingEditor>Nikita Galaiko (nikita@galaiko.rocks)</managingEditor>
         <webMaster>Nikita Galaiko <nikita@galaiko.rocks></webMaster>
         <copyright>CC BY-NC 4.0</copyright>
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-        <atom:link href="https://galaiko.rocks/rss.xml" rel="self" type="application/rss+xml />
         ${posts.map(renderPost).join('')}
     </channel>
 </rss>`;
