@@ -22,20 +22,25 @@
 
 		return {
 			status: 200,
-			props: { post: body }
+			props: {
+				post: body,
+				replies: await fetch(url.pathname + 'replies.json').then((res) => res.json())
+			}
 		};
 	};
 </script>
 
 <script lang="ts">
 	import { Post as SinglePost, Posts } from '$lib/components';
+	import type { Reply } from '$lib/webmentions';
 
+	export let replies: Reply[] = [];
 	export let post: Post = null;
 	export let posts: Post[] = [];
 </script>
 
 {#if post}
-	<SinglePost {post}>
+	<SinglePost {post} {replies}>
 		<slot />
 	</SinglePost>
 {:else}

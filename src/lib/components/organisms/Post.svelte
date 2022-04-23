@@ -3,8 +3,11 @@
 
 	import { format } from 'date-fns';
 	import type { Post } from '$lib/posts';
+	import type { Reply } from '$lib/webmentions';
+	import Replies from './Replies.svelte';
 
 	export let post: Post;
+	export let replies: Reply[];
 
 	const parsedDate = new Date(post.date);
 </script>
@@ -24,4 +27,10 @@
 	<div class="content e-content">
 		<slot />
 	</div>
+
+	<div class="pt-4">
+		<hr class="text-gray p-4" />
+	</div>
+
+	<Replies {replies} />
 </ArticleWithFooter>
