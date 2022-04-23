@@ -3,7 +3,12 @@ import JSONStream from 'JSONStream';
 import yargs from 'yargs';
 import parse5, { type Node, type Element } from 'parse5';
 import { createReadStream } from 'fs';
-import { Status, type Webmention, type Parsed } from '../../src/lib/webmentions/types.js';
+import {
+	webmentionFromJSON,
+	Status,
+	type Webmention,
+	type Parsed
+} from '../../src/lib/webmentions/types.js';
 import { compareDesc } from 'date-fns';
 import fetch, { type Response } from 'node-fetch';
 import { writeJSON } from '../utils.js';
@@ -65,13 +70,8 @@ const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	const stream = createReadStream(path).pipe(JSONStream.parse('*'));
 	return new Promise((resolve, reject) => {
 		const webmentions: Webmention[] = [];
-		stream.on('data', (webmention: Webmention) => {
-			webmentions.push({
-				...webmention,
-				timestamp: new Date(webmention.timestamp),
-				source: webmention.source,
-				target: webmention.target
-			});
+		stream.on('data', (webmention: any) => {
+			webmentions.push(webmentionFromJSON(webmention));
 		});
 		stream.on('end', () => {
 			resolve(webmentions);
