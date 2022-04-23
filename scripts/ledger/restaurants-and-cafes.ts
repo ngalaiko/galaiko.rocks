@@ -1,10 +1,10 @@
 import { spawn } from 'child_process';
-import { writeFile } from 'fs';
 import csv from '@fast-csv/parse';
 import { startOfDay } from 'date-fns';
 import currency from 'currency.js';
 import { addYears } from 'date-fns';
 import yargs from 'yargs';
+import { writeJSON } from '../utils.js';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
@@ -75,20 +75,6 @@ const exportTransactions = async (file?: string) => {
 		})
 	);
 };
-
-const writeJSON =
-	(path: string) =>
-	(data: any): Promise<void> =>
-		new Promise((resolve, reject) => {
-			console.log('writing to', path);
-			writeFile(path, JSON.stringify(data), (error) => {
-				if (error) {
-					reject(error);
-				} else {
-					resolve();
-				}
-			});
-		});
 
 export const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => K) =>
 	list.reduce((previous, currentItem) => {

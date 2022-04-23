@@ -2,10 +2,11 @@ import { spawn } from 'child_process';
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
 import parse5, { type Node, type Element } from 'parse5';
-import { writeFile, createReadStream } from 'fs';
+import { createReadStream } from 'fs';
 import { Status, type Webmention, type Parsed } from '../../src/lib/webmentions/types.js';
 import { compareAsc } from 'date-fns';
 import fetch, { type Response } from 'node-fetch';
+import { writeJSON } from '../utils.js';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
@@ -58,20 +59,6 @@ const update = async (webmention: Webmention): Promise<Webmention> => {
 	);
 	return webmention;
 };
-
-const writeJSON =
-	(path: string) =>
-	(data: any): Promise<void> =>
-		new Promise((resolve, reject) => {
-			console.log('writing to', path);
-			writeFile(path, JSON.stringify(data), (error) => {
-				if (error) {
-					reject(error);
-				} else {
-					resolve();
-				}
-			});
-		});
 
 const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	console.log('reading', path);
