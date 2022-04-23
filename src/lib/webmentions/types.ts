@@ -18,3 +18,17 @@ export type Webmention = {
 	message?: string;
 	timestamp: Date;
 };
+
+export type Author = {
+	picture?: URL;
+	name?: string;
+	url: string;
+};
+
+export type Reply = {
+	author: Author;
+	url: URL;
+	content: string;
+	published?: Date;
+	updated?: Date;
+};
