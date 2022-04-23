@@ -15,7 +15,7 @@
 		{:else}
 			<li class="py-2">
 				<p>
-					Send one using <a class="text-blue" href="https://indieweb.org/Webmention">Webmentions</a>!
+					Send one using <a sveltekit:reload class="text-blue" href="https://indieweb.org/Webmention">Webmentions</a>!
 				</p>
 			</li>
 		{/each}
