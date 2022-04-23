@@ -4,7 +4,7 @@ import yargs from 'yargs';
 import parse5, { type Node, type Element } from 'parse5';
 import { createReadStream } from 'fs';
 import { Status, type Webmention, type Parsed } from '../../src/lib/webmentions/types.js';
-import { compareAsc } from 'date-fns';
+import { compareDesc } from 'date-fns';
 import fetch, { type Response } from 'node-fetch';
 import { writeJSON } from '../utils.js';
 
@@ -92,7 +92,6 @@ const groupByTargetSource = (webmentions: Webmention[]): Webmention[][] => {
 		);
 		if (group) {
 			group.push(webmention);
-			group.sort((a, b) => compareAsc(a.timestamp, b.timestamp));
 		} else {
 			groups.push([webmention]);
 		}
@@ -193,7 +192,13 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 		},
 		redirect: 'follow'
 	});
-	if (!response.ok) {
+	if (!response.ok && response.status === 410) {
+		console.log(`${webmention.id} removed: ${response.status} ${response.statusText}`);
+		return update({
+			...webmention,
+			status: Status.Removed
+		});
+	} else if (!response.ok) {
 		console.log(`${webmention.id} rejected: ${response.status} ${response.statusText}`);
 		return update({
 			...webmention,
@@ -225,7 +230,15 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 	}
 };
 
+const reduceGroup = (groups: Webmention[]): Webmention => {
+	if (groups.length === 0) return null;
+	if (groups.length === 1) return groups[0];
+	return groups.sort((a, b) => compareDesc(a.timestamp, b.timestamp))[0];
+};
+
 const processWebmentions = async (webmentions: Webmention[]): Promise<Webmention[]> =>
-	Promise.all(webmentions.map(downloadSource));
+	Promise.all(webmentions.map(downloadSource))
+		.then(groupByTargetSource)
+		.then((groups) => groups.flatMap(reduceGroup).filter((w) => w !== null));
 
 readExistingWebmentions(argv.file).then(processWebmentions).then(writeJSON(argv.file));

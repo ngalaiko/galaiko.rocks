@@ -9,6 +9,8 @@ const statusToCode = (status: Status): number => {
 			return 202;
 		case Status.Rejected:
 			return 400;
+		case Status.Removed:
+			return 202;
 	}
 };
 
