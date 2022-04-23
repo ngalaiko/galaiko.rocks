@@ -1,7 +1,8 @@
 export enum Status {
 	Created = 'created',
 	Accepted = 'accepted',
-	Rejected = 'rejected'
+	Rejected = 'rejected',
+	Removed = 'removed'
 }
 
 export type Parsed = {
