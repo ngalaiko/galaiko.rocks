@@ -1,8 +1,9 @@
 import { spawn } from 'child_process';
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
-import { writeFile, createReadStream } from 'fs';
+import { createReadStream } from 'fs';
 import type { Webmention } from '../../src/lib/webmentions';
+import { writeJSON } from '../utils.js';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
@@ -48,20 +49,6 @@ const downloadKey = async (key: string): Promise<any> => {
 	console.log('downloading', key);
 	return wrangler('kv:key', 'get', `--namespace-id=${argv.namespaceId}`, key);
 };
-
-const writeJSON =
-	(path: string) =>
-	(data: any): Promise<void> =>
-		new Promise((resolve, reject) => {
-			console.log('writing to', path);
-			writeFile(path, JSON.stringify(data), (error) => {
-				if (error) {
-					reject(error);
-				} else {
-					resolve();
-				}
-			});
-		});
 
 const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	console.log('reading', path);
