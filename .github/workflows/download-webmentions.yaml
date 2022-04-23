@@ -30,14 +30,16 @@ jobs:
         run: |
           yarn build
 
-      - name: Download webmentions
+      - name: Install wrangler
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           publish: false
-          postCommands: |
-            yarn webmentions:export \
-              --file ./src/lib/data/webmentions.json
+
+      - name: Download webmentions
+        run: |
+          yarn webmentions:export \
+            --file ./src/lib/data/webmentions.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
