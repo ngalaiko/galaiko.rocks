@@ -1,7 +1,6 @@
 name: Download webmentions
 
 on:
-  push:
   schedule:
     # every day at 3am
     - cron: '0 3 * * *'
