@@ -19,27 +19,27 @@
   },
   {
     "payee": "Marley Café",
-    "count": 16,
+    "count": 17,
     "currency": "SEK",
-    "amount": 1082.5
+    "amount": 1180.5
   },
   {
     "payee": "Chic Konditori",
-    "count": 15,
+    "count": 16,
     "currency": "SEK",
-    "amount": 1486
+    "amount": 1556
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 14,
+    "count": 15,
     "currency": "SEK",
-    "amount": 3530.5
+    "amount": 3926.5
   },
   {
     "payee": "Brunos Korvbar",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1000
+    "amount": 1170
   },
   {
     "payee": "Indian King",
@@ -81,7 +81,7 @@
     "payee": "Yume Sushi",
     "count": 9,
     "currency": "SEK",
-    "amount": 1110
+    "amount": 1240
   },
   {
     "payee": "Cafe Ragazzi",
@@ -102,6 +102,12 @@
     "amount": 968
   },
   {
+    "payee": "The Good Gringo",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 856
+  },
+  {
     "payee": "Tutto Bello",
     "count": 7,
     "currency": "SEK",
@@ -112,12 +118,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 925
-  },
-  {
-    "payee": "The Good Gringo",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 757
   },
   {
     "payee": "Oolong Tea House",
@@ -174,9 +174,9 @@
     "amount": 635
   },
   {
-    "payee": "Hanoi Corner",
+    "payee": "Tehran Grill",
     "count": 5,
     "currency": "SEK",
-    "amount": 535
+    "amount": 667
   }
 ]
