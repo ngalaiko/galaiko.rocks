@@ -5,6 +5,7 @@
 		"generate:discogs": "ts-node-esm ./scripts/discogs/export.ts",
 		"webmentions:export": "ts-node-esm ./scripts/webmentions/export.ts",
 		"webmentions:process": "ts-node-esm ./scripts/webmentions/process.ts",
+		"webmentions:send": "ts-node-esm ./scripts/webmentions/send.ts",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
@@ -38,7 +39,6 @@
 		"mdsvex": "^0.10.5",
 		"microformats-parser": "^1.4.1",
 		"nanoid": "^3.3.2",
-		"node-fetch": "^3.2.3",
 		"parse5": "^6.0.1",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
@@ -54,5 +54,9 @@
 		"typescript": "^4.6.3",
 		"yargs": "^17.4.1"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"node-fetch": "^3.2.3",
+		"readdirp": "^3.6.0"
+	}
 }
