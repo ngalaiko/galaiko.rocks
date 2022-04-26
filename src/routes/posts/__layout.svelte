@@ -24,7 +24,8 @@
 			status: 200,
 			props: {
 				post: body,
-				replies: await fetch(url.pathname + 'replies.json').then((res) => res.json())
+				replies: await fetch(url.pathname + 'replies.json').then((res) => res.json()),
+				likes: await fetch(url.pathname + 'likes.json').then((res) => res.json())
 			}
 		};
 	};
@@ -32,15 +33,16 @@
 
 <script lang="ts">
 	import { Post as SinglePost, Posts } from '$lib/components';
-	import type { Reply } from '$lib/webmentions';
+	import type { Reply, Like } from '$lib/webmentions';
 
+	export let likes: Lile[] = [];
 	export let replies: Reply[] = [];
 	export let post: Post = null;
 	export let posts: Post[] = [];
 </script>
 
 {#if post}
-	<SinglePost {post} {replies}>
+	<SinglePost {post} {replies} {likes}>
 		<slot />
 	</SinglePost>
 {:else}

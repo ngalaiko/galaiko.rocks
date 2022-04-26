@@ -1,7 +1,8 @@
 import { accepted } from './json';
-import type { Parsed, Author, Reply, Webmention } from './types';
+import type { Parsed, Author, Reply, Webmention, Like } from './types';
 import { mf2 } from 'microformats-parser';
 import type { MicroformatRoot, Html } from 'microformats-parser/dist/types';
+import { time } from 'console';
 
 const url = (i: URL | Parsed): URL => {
 	if (i instanceof URL) return i;
@@ -25,7 +26,7 @@ const isReplyTo =
 		type.includes('h-entry') && properties['in-reply-to']?.includes(url.href);
 
 export const repliesTo = (to: URL) =>
-	accepted.flatMap(replies).filter((reply) => reply.to.href === to.href);
+	accepted.flatMap(replies).filter((reply) => reply.target.href === to.href);
 
 const isLikeOf =
 	(url: URL) =>
@@ -33,11 +34,7 @@ const isLikeOf =
 		properties['like-of']?.includes(url.href) || properties['like']?.includes(url.href);
 
 export const likesOf = (of: URL) =>
-	accepted
-		.filter(({ target }) => url(target).href === of.href)
-		.map(({ source }) => source as Parsed)
-		.flatMap(convertToMicroformats)
-		.filter(isLikeOf(of));
+	accepted.flatMap(likes).filter((like) => like.target.href === of.href);
 
 const isRepostOf =
 	(url: URL) =>
@@ -84,6 +81,22 @@ const mf2author = (root: MicroformatRoot): Author => {
 	};
 };
 
+const likes = (webmention: Webmention): Like[] => {
+	const targetUrl = url(webmention.target);
+	const sourceContent = parsed(webmention.source);
+	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const items = root.items.flatMap(allItems);
+	return items.filter(isLikeOf(targetUrl)).map((root): Like => {
+		const author = root.properties['author']?.[0] as MicroformatRoot;
+		return {
+			author: author ? mf2author(author) : { url: sourceContent.url.href },
+			target: targetUrl,
+			source: sourceContent.url,
+			timestamp: webmention.timestamp
+		};
+	});
+};
+
 const replies = (webmention: Webmention): Reply[] => {
 	const targetUrl = url(webmention.target);
 	const sourceContent = parsed(webmention.source);
@@ -97,8 +110,8 @@ const replies = (webmention: Webmention): Reply[] => {
 		const published = root.properties['published']?.[0] as string;
 		const updated = root.properties['updated']?.[0] as string;
 		return {
-			to: targetUrl,
-			url: sourceContent.url,
+			target: targetUrl,
+			source: sourceContent.url,
 			author: author ? mf2author(author) : { url: sourceContent.url.href },
 			content: content ? content.value : summary ? summary : name,
 			published: published ? new Date(published) : webmention.timestamp,

@@ -26,10 +26,17 @@ export type Author = {
 	url: string;
 };
 
+export type Like = {
+	source: URL;
+	target: URL;
+	author: Author;
+	timestamp: Date;
+};
+
 export type Reply = {
 	author: Author;
-	url: URL;
-	to: URL;
+	source: URL;
+	target: URL;
 	content: string;
 	published: Date;
 	updated?: Date;
