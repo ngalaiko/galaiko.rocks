@@ -1,9 +1,9 @@
 {
 	"private": true,
 	"scripts": {
-		"generate:restaurants-and-cafes": "ts-node-esm ./scripts/ledger/restaurants-and-cafes.ts",
-		"generate:discogs": "ts-node-esm ./scripts/discogs/export.ts",
-		"webmentions:export": "ts-node-esm ./scripts/webmentions/export.ts",
+		"ledger:restaurants-and-cafes": "ts-node-esm ./scripts/ledger/restaurants-and-cafes.ts",
+		"discogs:download": "ts-node-esm ./scripts/discogs/download.ts",
+		"webmentions:download": "ts-node-esm ./scripts/webmentions/download.ts",
 		"webmentions:process": "ts-node-esm ./scripts/webmentions/process.ts",
 		"webmentions:send": "ts-node-esm ./scripts/webmentions/send.ts",
 		"dev": "svelte-kit dev",
