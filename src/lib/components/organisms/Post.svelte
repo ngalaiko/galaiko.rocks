@@ -3,10 +3,11 @@
 
 	import { format } from 'date-fns';
 	import type { Post } from '$lib/posts';
-	import type { Reply } from '$lib/webmentions';
-	import Replies from './Replies.svelte';
+	import type { Reply, Like } from '$lib/webmentions';
+	import Webmentions from './Webmentions.svelte';
 
 	export let post: Post;
+    export let likes: Like[]
 	export let replies: Reply[];
 
 	const parsedDate = new Date(post.date);
@@ -32,5 +33,5 @@
 		<hr class="text-gray p-4" />
 	</div>
 
-	<Replies {replies} />
+	<Webmentions {replies} {likes} />
 </ArticleWithFooter>
