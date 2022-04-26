@@ -29,20 +29,20 @@ export type Author = {
 export type Reply = {
 	author: Author;
 	url: URL;
+	to: URL;
 	content: string;
-	published?: Date;
+	published: Date;
 	updated?: Date;
 };
 
-const parsedFromJSON = (i: any): Parsed | URL => {
-	return i instanceof Object
+const parsedFromJSON = (i: any): Parsed | URL =>
+	i instanceof Object
 		? {
 				url: new URL(i.url),
 				contentType: i.contentType,
 				body: i.body
 		  }
 		: new URL(i as string);
-};
 
 export const webmentionFromJSON = (mention: any): Webmention => ({
 	target: parsedFromJSON(mention.target),
