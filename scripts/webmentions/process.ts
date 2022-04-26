@@ -1,8 +1,8 @@
 import { spawn } from 'child_process';
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
-import parse5, { type Node, type Element } from 'parse5';
 import { createReadStream } from 'fs';
+import { mf2 } from 'microformats-parser';
 import {
 	webmentionFromJSON,
 	Status,
@@ -28,7 +28,7 @@ const argv = yargs(process.argv.slice(2))
 		description: 'The file with webmentions data',
 		demandOption: true
 	})
-	.option('dev', {
+	.option('dry-run', {
 		alias: 'd',
 		type: 'boolean',
 		description: 'Do not send data to cloudflare',
@@ -139,23 +139,12 @@ const validateJSONSource = async (webmention: Webmention, json: string): Promise
 	);
 };
 
-const hasLink =
-	(href: string) =>
-	(node: Node): boolean => {
-		const attributes = (node as Element).attrs;
-		if (
-			attributes &&
-			attributes.some(({ name, value }) => ['href', 'src'].includes(name) && value === href)
-		) {
-			return true;
-		}
-		const childNodes = (node as Element).childNodes;
-		return childNodes ? childNodes.some(hasLink(href)) : false;
-	};
-
 const validateHtmlSource = async (webmention: Webmention, html: string): Promise<string> => {
 	const targetUrl = href(webmention.target);
-	if (hasLink(targetUrl)(parse5.parse(html))) return html;
+	const sourceUrl = href(webmention.source);
+	const links = Object.keys(mf2(html, { baseUrl: sourceUrl })['rel-urls']);
+	const hasLink = links.some((link) => link === targetUrl);
+	if (hasLink) return html;
 	throw new SourceValidationError(
 		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
 	);
