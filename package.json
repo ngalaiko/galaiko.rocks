@@ -39,7 +39,7 @@
 		"mdsvex": "^0.10.5",
 		"microformats-parser": "^1.4.1",
 		"nanoid": "^3.3.2",
-		"parse5": "^6.0.1",
+		"parse5": "^7.0.0",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
 		"rehype-autolink-headings": "^6.1.1",
