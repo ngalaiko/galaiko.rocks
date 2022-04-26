@@ -31,7 +31,7 @@ jobs:
 
       - name: Fetch records info
         run: |
-          yarn generate:discogs \
+          yarn discogs:download \
             --api-token "${{ secrets.DISCOGS_API_KEY}}" \
             --output ./src/lib/data/records.json
 

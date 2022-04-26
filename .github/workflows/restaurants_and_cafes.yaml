@@ -50,7 +50,7 @@ jobs:
 
       - name: Fetch list
         run: |
-          yarn generate:restaurants-and-cafes \
+          yarn ledger:restaurants-and-cafes \
             --file "$GITHUB_WORKSPACE/ledger/main.ledger" \
             --number 30 \
             --output ./src/lib/data/restaurants_and_cafes.json
