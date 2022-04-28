@@ -1,16 +1,6 @@
-import type { Parsed, Author, Reply, Webmention, Like, Mention, Repost } from './types';
+import type { Author, Reply, Webmention, Like, Mention, Repost } from './types';
 import { mf2 } from 'microformats-parser';
 import type { MicroformatRoot, Html } from 'microformats-parser/dist/types';
-
-const url = (i: URL | Parsed): URL => {
-	if (i instanceof URL) return i;
-	throw new Error('not url');
-};
-
-const parsed = (i: URL | Parsed): Parsed => {
-	if (i instanceof URL) throw new Error('not parsed');
-	return i;
-};
 
 const allItems = (root: MicroformatRoot) =>
 	root.children ? root.children.flatMap(allItems) : [root];
@@ -23,9 +13,9 @@ const and =
 		predicates.every((predicate) => predicate(i));
 
 const containsPropertyValue =
-	(url: URL) =>
+	(url: string) =>
 	({ properties }: MicroformatRoot) =>
-		Object.values(properties).some((values) => values.includes(url.href));
+		Object.values(properties).some((values) => values.includes(url));
 
 const mf2author = (root: MicroformatRoot): Author => {
 	if (!root.type.includes('h-card')) {
@@ -35,61 +25,59 @@ const mf2author = (root: MicroformatRoot): Author => {
 	return {
 		name: root.properties['name']?.[0] as string,
 		url: root.properties['url']?.[0] as string,
-		picture: picture ? new URL(picture) : undefined
+		picture
 	};
 };
 
 const isRepostOf =
-	(url: URL) =>
+	(url: string) =>
 	({ properties }: MicroformatRoot) =>
-		properties['repost-of']?.includes(url.href);
+		properties['repost-of']?.includes(url);
 
 export const reposts = (webmention: Webmention): Repost[] => {
-	const targetUrl = url(webmention.target);
-	const sourceContent = parsed(webmention.source);
-	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const root = mf2(webmention.parsedSource.body, { baseUrl: webmention.sourceUrl });
 	const items = root.items.flatMap(allItems);
-	return items.filter(isRepostOf(targetUrl)).map((root): Like => {
+	return items.filter(isRepostOf(webmention.targetUrl)).map((root): Like => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
 		return {
-			author: author ? mf2author(author) : { url: sourceContent.url.href },
-			target: targetUrl,
-			source: sourceContent.url,
+			author: author ? mf2author(author) : { url: webmention.sourceUrl },
+			target: webmention.targetUrl,
+			source: webmention.sourceUrl,
 			timestamp: webmention.timestamp
 		};
 	});
 };
 
 const isLikeOf =
-	(url: URL) =>
+	(url: string) =>
 	({ properties }: MicroformatRoot) =>
-		properties['like-of']?.includes(url.href) || properties['like']?.includes(url.href);
+		properties['like-of']?.includes(url) || properties['like']?.includes(url);
 
 export const likes = (webmention: Webmention): Like[] => {
-	const targetUrl = url(webmention.target);
-	const sourceContent = parsed(webmention.source);
-	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const targetUrl = webmention.targetUrl;
+	const sourceContent = webmention.parsedSource;
+	const root = mf2(sourceContent.body, { baseUrl: webmention.sourceUrl });
 	const items = root.items.flatMap(allItems);
 	return items.filter(isLikeOf(targetUrl)).map((root): Like => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
 		return {
-			author: author ? mf2author(author) : { url: sourceContent.url.href },
+			author: author ? mf2author(author) : { url: webmention.sourceUrl },
 			target: targetUrl,
-			source: sourceContent.url,
+			source: webmention.sourceUrl,
 			timestamp: webmention.timestamp
 		};
 	});
 };
 
 const isReplyTo =
-	(url: URL) =>
+	(url: string) =>
 	({ properties, type }: MicroformatRoot) =>
-		type.includes('h-entry') && properties['in-reply-to']?.includes(url.href);
+		type.includes('h-entry') && properties['in-reply-to']?.includes(url);
 
 export const replies = (webmention: Webmention): Reply[] => {
-	const targetUrl = url(webmention.target);
-	const sourceContent = parsed(webmention.source);
-	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const targetUrl = webmention.targetUrl;
+	const sourceContent = webmention.parsedSource;
+	const root = mf2(sourceContent.body, { baseUrl: webmention.sourceUrl });
 	const items = root.items.flatMap(allItems);
 	return items.filter(isReplyTo(targetUrl)).map((root) => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
@@ -100,29 +88,29 @@ export const replies = (webmention: Webmention): Reply[] => {
 		const updated = root.properties['updated']?.[0] as string;
 		return {
 			target: targetUrl,
-			source: sourceContent.url,
-			author: author ? mf2author(author) : { url: sourceContent.url.href },
+			source: webmention.sourceUrl,
+			author: author ? mf2author(author) : { url: webmention.sourceUrl },
 			content: content ? content.value : summary ? summary : name,
-			published: published ? new Date(published) : webmention.timestamp,
-			updated: updated ? new Date(updated) : undefined
+			published: published ? new Date(published).getTime() : webmention.timestamp,
+			updated: updated ? new Date(updated).getTime() : undefined
 		};
 	});
 };
 
-const isMentionOf = (of: URL) => (root: MicroformatRoot) =>
+const isMentionOf = (of: string) => (root: MicroformatRoot) =>
 	and(containsPropertyValue(of), not(isReplyTo(of)), not(isLikeOf(of)), not(isRepostOf(of)))(root);
 
 export const mentions = (webmention: Webmention): Mention[] => {
-	const targetUrl = url(webmention.target);
-	const sourceContent = parsed(webmention.source);
-	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const targetUrl = webmention.targetUrl;
+	const sourceContent = webmention.parsedSource;
+	const root = mf2(sourceContent.body, { baseUrl: webmention.sourceUrl });
 	const items = root.items.flatMap(allItems);
 	return items.filter(isMentionOf(targetUrl)).map((root): Mention => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
 		return {
-			author: author ? mf2author(author) : { url: sourceContent.url.href },
+			author: author ? mf2author(author) : { url: webmention.sourceUrl },
 			target: targetUrl,
-			source: sourceContent.url,
+			source: webmention.sourceUrl,
 			timestamp: webmention.timestamp
 		};
 	});

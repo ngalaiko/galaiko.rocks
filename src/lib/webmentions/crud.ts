@@ -88,10 +88,10 @@ export const create = async (
 
 	const webmention = {
 		id: nanoid(),
-		source,
-		target,
+		sourceUrl: source.href,
+		targetUrl: target.href,
 		status: Status.Created,
-		timestamp: new Date()
+		timestamp: new Date().getTime()
 	};
 
 	const db = provideDB(platform);
@@ -104,13 +104,13 @@ export const getById = async (platform: App.Platform, id: string): Promise<Webme
 	provideDB(platform).get(id);
 
 export const repliesTo = (to: URL) =>
-	accepted.flatMap(replies).filter((reply) => reply.target.href === to.href);
+	accepted.flatMap(replies).filter((reply) => reply.target === to.href);
 
 export const mentionsOf = (of: URL) =>
-	accepted.flatMap(mentions).filter((mention) => mention.target.href === of.href);
+	accepted.flatMap(mentions).filter((mention) => mention.target === of.href);
 
 export const likesOf = (of: URL) =>
-	accepted.flatMap(likes).filter((like) => like.target.href === of.href);
+	accepted.flatMap(likes).filter((like) => like.target === of.href);
 
 export const repostsOf = (of: URL) =>
-	accepted.flatMap(reposts).filter((repost) => repost.target.href === of.href);
+	accepted.flatMap(reposts).filter((repost) => repost.target === of.href);

@@ -2,16 +2,11 @@ import { spawn } from 'child_process';
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
 import { createReadStream } from 'fs';
-import { mf2 } from 'microformats-parser';
-import {
-	webmentionFromJSON,
-	Status,
-	type Webmention,
-	type Parsed
-} from '../../src/lib/webmentions/types.js';
+import { Status, type Webmention } from '../../src/lib/webmentions/types.js';
 import { compareDesc } from 'date-fns';
 import fetch, { type Response } from 'node-fetch';
 import { writeJSON } from '../utils.js';
+import parse5, { type Node, type Element } from 'parse5';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
@@ -71,7 +66,7 @@ const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	return new Promise((resolve, reject) => {
 		const webmentions: Webmention[] = [];
 		stream.on('data', (webmention: any) => {
-			webmentions.push(webmentionFromJSON(webmention));
+			webmentions.push(webmention);
 		});
 		stream.on('end', () => {
 			resolve(webmentions);
@@ -88,7 +83,8 @@ const groupByTargetSource = (webmentions: Webmention[]): Webmention[][] => {
 	const groups: Webmention[][] = [];
 	webmentions.forEach((webmention) => {
 		const group = groups.find(
-			([first]) => first?.target === webmention.target && first?.source === webmention.source
+			([first]) =>
+				first?.targetUrl === webmention.targetUrl && first?.sourceUrl === webmention.sourceUrl
 		);
 		if (group) {
 			group.push(webmention);
@@ -106,16 +102,10 @@ class SourceValidationError extends Error {
 	}
 }
 
-const href = (u: URL | Parsed | string): string => {
-	if ((u as Parsed).url) return (u as Parsed).url.href;
-	if ((u as URL).href) return (u as URL).href;
-	return u as string;
-};
-
 const validatePlainTextSource = async (webmention: Webmention, text: string): Promise<string> => {
-	if (text.includes(href(webmention.target))) return text;
+	if (text.includes(webmention.targetUrl)) return text;
 	throw new SourceValidationError(
-		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
+		`${webmention.sourceUrl} does not contain mention of ${webmention.targetUrl}`
 	);
 };
 
@@ -132,22 +122,33 @@ const jsonContainsValue =
 	};
 
 const validateJSONSource = async (webmention: Webmention, json: string): Promise<string> => {
-	const targetUrl = href(webmention.target);
+	const targetUrl = webmention.targetUrl;
 	if (jsonContainsValue(targetUrl)(JSON.parse(json))) return json;
 	throw new SourceValidationError(
-		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
+		`${webmention.sourceUrl} does not contain mention of ${webmention.targetUrl}`
 	);
 };
 
-const validateHtmlSource = async (webmention: Webmention, html: string): Promise<string> => {
-	const targetUrl = href(webmention.target);
-	const sourceUrl = href(webmention.source);
-	const links = Object.keys(mf2(html, { baseUrl: sourceUrl })['rel-urls']);
-	const hasLink = links.some((link) => link === targetUrl);
-	if (hasLink) return html;
-	throw new SourceValidationError(
-		`${href(webmention.source)} does not contain mention of ${href(webmention.target)}`
-	);
+const hasLink =
+	(href: string) =>
+	(node: Node): boolean => {
+		const attributes = (node as Element).attrs;
+		if (
+			attributes &&
+			attributes.some(({ name, value }) => ['href', 'src'].includes(name) && value === href)
+		) {
+			return true;
+		}
+		const childNodes = (node as Element).childNodes;
+		return childNodes ? childNodes.some(hasLink(href)) : false;
+	};
+
+const validateHtmlSource = async (
+	{ targetUrl, sourceUrl }: Webmention,
+	html: string
+): Promise<string> => {
+	if (hasLink(targetUrl)(parse5.parse(html))) return html;
+	throw new SourceValidationError(`${sourceUrl} does not contain mention of ${targetUrl}`);
 };
 
 // valdiate webmention source and return it if valid
@@ -172,7 +173,7 @@ const validateSource = async (
 const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 	// only dowload created webmentions
 	if (webmention.status !== Status.Created) return webmention;
-	const sourceHref = href(webmention.source);
+	const sourceHref = webmention.sourceUrl;
 	console.log('downloading', sourceHref);
 	const response = await fetch(sourceHref, {
 		headers: {
@@ -192,9 +193,7 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 		return update({
 			...webmention,
 			status: Status.Rejected,
-			message: `failed to GET ${webmention.source.toString()}: ${response.status} ${
-				response.statusText
-			}`
+			message: `failed to GET ${webmention.sourceUrl}: ${response.status} ${response.statusText}`
 		});
 	}
 
@@ -204,8 +203,7 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 		return update({
 			...webmention,
 			status: Status.Accepted,
-			source: {
-				url: webmention.source as URL,
+			parsedSource: {
 				contentType: response.headers.get('content-type'),
 				body
 			}
