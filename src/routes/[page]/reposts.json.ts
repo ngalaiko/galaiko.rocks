@@ -1,4 +1,4 @@
-import { repostsOf } from '$lib/webmentions/microformats';
+import { repostsOf } from '$lib/webmentions';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ url, params }) => {

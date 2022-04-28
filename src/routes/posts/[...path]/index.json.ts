@@ -1,5 +1,5 @@
 import { findByPathname } from '$lib/posts';
-import { likesOf, mentionsOf, repliesTo, repostsOf } from '$lib/webmentions/microformats';
+import { likesOf, mentionsOf, repliesTo, repostsOf } from '$lib/webmentions';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ url }) => {

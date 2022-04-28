@@ -1,38 +1,50 @@
 <script lang="ts">
-	import type { Reply, Like } from '$lib/webmentions';
+	import type { Reply, Like, Repost, Mention } from '$lib/webmentions';
 	import ReplyComponent from './Reply.svelte';
 	import LikeComponent from './Like.svelte';
+	import RepostComponent from './Repost.svelte';
+	import MentionComponent from './Mention.svelte';
 
 	export let replies: Reply[];
 	export let likes: Like[];
+	export let reposts: Repost[];
+	export let mentions: Mention[];
 
-	const mentions = replies
-		.map(
-			(reply) =>
-				['reply', reply, new Date(reply.updated) ?? new Date(reply.published)] as [
-					string,
-					Reply,
-					Date
-				]
-		)
-		.concat(likes.map((like) => ['like', like, new Date(like.timestamp)] as [string, Like, Date]))
-		.sort((a, b) => b[2].getTime() - a[2].getTime());
+	const all = [
+		...replies.map((reply) => ({
+			component: ReplyComponent,
+			props: { reply },
+			sort: new Date(reply.updated) ?? new Date(reply.published)
+		})),
+		...likes.map((like) => ({
+			component: LikeComponent,
+			props: { like },
+			sort: new Date(like.timestamp)
+		})),
+		...reposts.map((repost) => ({
+			component: RepostComponent,
+			props: { repost },
+			sort: new Date(repost.timestamp)
+		})),
+		...mentions.map((mention) => ({
+			component: MentionComponent,
+			props: { mention },
+			sort: new Date(mention.timestamp)
+		}))
+	].sort((a, b) => b.sort.getTime() - a.sort.getTime());
 </script>
 
 <div>
-	<h2 class="text-xl">{mentions.length} webmentions{mentions.length ? ':' : ''}</h2>
+	<h2 class="text-xl">{all.length} mentions{all.length ? ':' : ''}</h2>
 	<ul class="flex flex-col gap-2">
-		{#each mentions as [type, data]}
+		{#each all as { component, props }}
+			{@debug props}
 			<li class="py-2">
-				{#if type === 'like'}
-					<LikeComponent like={data} />
-				{:else if type === 'reply'}
-					<ReplyComponent reply={data} />
-				{/if}
+				<svelte:component this={component} {...props} />
 			</li>
 		{:else}
 			<li class="py-2">
-				<a sveltekit:reload class="text-blue" href="https://www.w3.org/TR/webmention/">Send one!</a>
+				<a sveltekit:reload class="text-blue" href="https://indieweb.org/Webmention">Send one!</a>
 			</li>
 		{/each}
 	</ul>

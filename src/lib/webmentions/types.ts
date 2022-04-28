@@ -26,6 +26,20 @@ export type Author = {
 	url: string;
 };
 
+export type Repost = {
+	source: URL;
+	target: URL;
+	author: Author;
+	timestamp: Date;
+};
+
+export type Mention = {
+	source: URL;
+	target: URL;
+	author: Author;
+	timestamp: Date;
+};
+
 export type Like = {
 	source: URL;
 	target: URL;
