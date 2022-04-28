@@ -395,10 +395,10 @@
     esbuild "^0.14.21"
     worktop "0.8.0-next.12"
 
-"@sveltejs/kit@^1.0.0-next.302":
-  version "1.0.0-next.322"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.322.tgz#8e702bae2d13a71f64dcbdbdbdafdcc9ea911c4b"
-  integrity sha512-RPGu1LzE7PhPEqMf/MjGp9CAhBYtYbjpEKMR89KlfvNHCnRuXFdoR4Yrv9o1yGGN+kHSLcRJzibKHxe34AebJA==
+"@sveltejs/kit@^1.0.0-next.323":
+  version "1.0.0-next.323"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.323.tgz#11655fe4103faf08e0d7278b51a14f2366679098"
+  integrity sha512-5JVBfXZqVcWhsvtxdwtFPEzLNM8FmttNNyN0h5P25KLryF3BeOg5OicRK3t7qNBmWTTNovDgChb/gWmne5Oicg==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.32"
     chokidar "^3.5.3"
