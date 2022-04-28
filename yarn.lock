@@ -387,13 +387,13 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@sveltejs/adapter-cloudflare@^1.0.0-next.17":
-  version "1.0.0-next.18"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-1.0.0-next.18.tgz#f908afddb8873dbbb60141c556bfa56a96ae9d00"
-  integrity sha512-iIb7ScN2hnnfVQPhRjw0FYpovYJrw4n22BFAQIg6QvOwmmGz1E3QkyBkm/tRmyY7emDfnljgXtvk4Hsoszp5Ug==
+"@sveltejs/adapter-cloudflare@^1.0.0-next.19":
+  version "1.0.0-next.19"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-1.0.0-next.19.tgz#cd1fb749ee3252a87b89d03686a1279a9c5361e6"
+  integrity sha512-LET3DUYpl+deoKhkWCzhHUT7iipYkgVkOcRIJX7qT4m23A+MAbzcAC3npgwEYSe9RokOSWMVBr3tVujeES5EeA==
   dependencies:
     esbuild "^0.14.21"
-    worktop "0.8.0-next.12"
+    worktop "0.8.0-next.13"
 
 "@sveltejs/kit@^1.0.0-next.302":
   version "1.0.0-next.322"
@@ -4061,10 +4061,10 @@ word-wrap@^1.2.3:
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
   integrity sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==
 
-worktop@0.8.0-next.12:
-  version "0.8.0-next.12"
-  resolved "https://registry.yarnpkg.com/worktop/-/worktop-0.8.0-next.12.tgz#66f835640397de3ef8a64a1a12574912aa9a4614"
-  integrity sha512-ZXdgI9XOf0uB4IegFoViLdQ0Bf7hish0XMHwuV3nopOXygfLJkwAC5+HyA+sihBMSM2sLLQ5uGnD5aknL8+NQg==
+worktop@0.8.0-next.13:
+  version "0.8.0-next.13"
+  resolved "https://registry.yarnpkg.com/worktop/-/worktop-0.8.0-next.13.tgz#4768fc61cab2c153c1f6372e7180d9d3f2fac07e"
+  integrity sha512-aLPWSneFtPJr3RAf841orF9GNlVdVkQd2Wj/BbcGHp3whBZoXx6dcwwClA9fezm7muNan4SuT+ZTyMWdoJSCAg==
   dependencies:
     mrmime "^1.0.0"
     regexparam "^2.0.0"
