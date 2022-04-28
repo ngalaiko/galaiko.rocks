@@ -2,7 +2,7 @@ import JSONStream from 'JSONStream';
 import yargs from 'yargs';
 import { createReadStream } from 'fs';
 import { mf2 } from 'microformats-parser';
-import { webmentionFromJSON, type Webmention } from '../../src/lib/webmentions/types.js';
+import { type Webmention } from '../../src/lib/webmentions/types.js';
 import { readFile } from 'fs/promises';
 import path from 'path';
 import readdirp from 'readdirp';
@@ -43,7 +43,7 @@ const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	return new Promise((resolve, reject) => {
 		const webmentions: Webmention[] = [];
 		stream.on('data', (webmention: any) => {
-			webmentions.push(webmentionFromJSON(webmention));
+			webmentions.push(webmention);
 		});
 		stream.on('end', () => {
 			resolve(webmentions);

@@ -6,69 +6,53 @@ export enum Status {
 }
 
 export type Parsed = {
-	url: URL;
 	body: string;
 	contentType: string;
 };
 
 export type Webmention = {
 	id: string;
-	source: URL | Parsed;
-	target: URL | Parsed;
+	sourceUrl: string;
+	parsedSource?: Parsed;
+	targetUrl: string;
+	parsedTarget?: Parsed;
 	status: Status;
 	message?: string;
-	timestamp: Date;
+	timestamp: number;
 };
 
 export type Author = {
-	picture?: URL;
+	picture?: string;
 	name?: string;
 	url: string;
 };
 
 export type Repost = {
-	source: URL;
-	target: URL;
+	source: string;
+	target: string;
 	author: Author;
-	timestamp: Date;
+	timestamp: number;
 };
 
 export type Mention = {
-	source: URL;
-	target: URL;
+	source: string;
+	target: string;
 	author: Author;
-	timestamp: Date;
+	timestamp: number;
 };
 
 export type Like = {
-	source: URL;
-	target: URL;
+	source: string;
+	target: string;
 	author: Author;
-	timestamp: Date;
+	timestamp: number;
 };
 
 export type Reply = {
 	author: Author;
-	source: URL;
-	target: URL;
+	source: string;
+	target: string;
 	content: string;
-	published: Date;
-	updated?: Date;
+	published: number;
+	updated?: number;
 };
-
-const parsedFromJSON = (i: any): Parsed | URL =>
-	i instanceof Object
-		? {
-				url: new URL(i.url),
-				contentType: i.contentType,
-				body: i.body
-		  }
-		: new URL(i as string);
-
-export const webmentionFromJSON = (mention: any): Webmention => ({
-	target: parsedFromJSON(mention.target),
-	source: parsedFromJSON(mention.source),
-	timestamp: new Date(mention.timestamp),
-	status: mention.status as Status,
-	id: mention.id
-});
