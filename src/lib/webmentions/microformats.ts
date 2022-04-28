@@ -1,8 +1,6 @@
-import { accepted } from './json';
-import type { Parsed, Author, Reply, Webmention, Like } from './types';
+import type { Parsed, Author, Reply, Webmention, Like, Mention, Repost } from './types';
 import { mf2 } from 'microformats-parser';
 import type { MicroformatRoot, Html } from 'microformats-parser/dist/types';
-import { time } from 'console';
 
 const url = (i: URL | Parsed): URL => {
 	if (i instanceof URL) return i;
@@ -17,37 +15,6 @@ const parsed = (i: URL | Parsed): Parsed => {
 const allItems = (root: MicroformatRoot) =>
 	root.children ? root.children.flatMap(allItems) : [root];
 
-const convertToMicroformats = ({ contentType, body, url }: Parsed) =>
-	contentType.includes('text/html') ? mf2(body, { baseUrl: url.href }).items.flatMap(allItems) : [];
-
-const isReplyTo =
-	(url: URL) =>
-	({ properties, type }: MicroformatRoot) =>
-		type.includes('h-entry') && properties['in-reply-to']?.includes(url.href);
-
-export const repliesTo = (to: URL) =>
-	accepted.flatMap(replies).filter((reply) => reply.target.href === to.href);
-
-const isLikeOf =
-	(url: URL) =>
-	({ properties }: MicroformatRoot) =>
-		properties['like-of']?.includes(url.href) || properties['like']?.includes(url.href);
-
-export const likesOf = (of: URL) =>
-	accepted.flatMap(likes).filter((like) => like.target.href === of.href);
-
-const isRepostOf =
-	(url: URL) =>
-	({ properties }: MicroformatRoot) =>
-		properties['repost-of']?.includes(url.href);
-
-export const repostsOf = (of: URL) =>
-	accepted
-		.filter(({ target }) => url(target).href === of.href)
-		.map(({ source }) => source as Parsed)
-		.flatMap(convertToMicroformats)
-		.filter(isRepostOf(of));
-
 const not = (predicate: (i: MicroformatRoot) => boolean) => (i: MicroformatRoot) => !predicate(i);
 
 const and =
@@ -59,15 +26,6 @@ const containsPropertyValue =
 	(url: URL) =>
 	({ properties }: MicroformatRoot) =>
 		Object.values(properties).some((values) => values.includes(url.href));
-
-export const mentionsOf = (of: URL) =>
-	accepted
-		.filter(({ target }) => url(target).href === of.href)
-		.map(({ source }) => source as Parsed)
-		.flatMap(convertToMicroformats)
-		.filter(
-			and(containsPropertyValue(of), not(isReplyTo(of)), not(isLikeOf(of)), not(isRepostOf(of)))
-		);
 
 const mf2author = (root: MicroformatRoot): Author => {
 	if (!root.type.includes('h-card')) {
@@ -81,7 +39,33 @@ const mf2author = (root: MicroformatRoot): Author => {
 	};
 };
 
-const likes = (webmention: Webmention): Like[] => {
+const isRepostOf =
+	(url: URL) =>
+	({ properties }: MicroformatRoot) =>
+		properties['repost-of']?.includes(url.href);
+
+export const reposts = (webmention: Webmention): Repost[] => {
+	const targetUrl = url(webmention.target);
+	const sourceContent = parsed(webmention.source);
+	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const items = root.items.flatMap(allItems);
+	return items.filter(isRepostOf(targetUrl)).map((root): Like => {
+		const author = root.properties['author']?.[0] as MicroformatRoot;
+		return {
+			author: author ? mf2author(author) : { url: sourceContent.url.href },
+			target: targetUrl,
+			source: sourceContent.url,
+			timestamp: webmention.timestamp
+		};
+	});
+};
+
+const isLikeOf =
+	(url: URL) =>
+	({ properties }: MicroformatRoot) =>
+		properties['like-of']?.includes(url.href) || properties['like']?.includes(url.href);
+
+export const likes = (webmention: Webmention): Like[] => {
 	const targetUrl = url(webmention.target);
 	const sourceContent = parsed(webmention.source);
 	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
@@ -97,7 +81,12 @@ const likes = (webmention: Webmention): Like[] => {
 	});
 };
 
-const replies = (webmention: Webmention): Reply[] => {
+const isReplyTo =
+	(url: URL) =>
+	({ properties, type }: MicroformatRoot) =>
+		type.includes('h-entry') && properties['in-reply-to']?.includes(url.href);
+
+export const replies = (webmention: Webmention): Reply[] => {
 	const targetUrl = url(webmention.target);
 	const sourceContent = parsed(webmention.source);
 	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
@@ -116,6 +105,25 @@ const replies = (webmention: Webmention): Reply[] => {
 			content: content ? content.value : summary ? summary : name,
 			published: published ? new Date(published) : webmention.timestamp,
 			updated: updated ? new Date(updated) : undefined
+		};
+	});
+};
+
+const isMentionOf = (of: URL) => (root: MicroformatRoot) =>
+	and(containsPropertyValue(of), not(isReplyTo(of)), not(isLikeOf(of)), not(isRepostOf(of)))(root);
+
+export const mentions = (webmention: Webmention): Mention[] => {
+	const targetUrl = url(webmention.target);
+	const sourceContent = parsed(webmention.source);
+	const root = mf2(sourceContent.body, { baseUrl: sourceContent.url.href });
+	const items = root.items.flatMap(allItems);
+	return items.filter(isMentionOf(targetUrl)).map((root): Mention => {
+		const author = root.properties['author']?.[0] as MicroformatRoot;
+		return {
+			author: author ? mf2author(author) : { url: sourceContent.url.href },
+			target: targetUrl,
+			source: sourceContent.url,
+			timestamp: webmention.timestamp
 		};
 	});
 };

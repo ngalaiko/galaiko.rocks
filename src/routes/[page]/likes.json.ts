@@ -1,4 +1,4 @@
-import { likesOf } from '$lib/webmentions/microformats';
+import { likesOf } from '$lib/webmentions';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ url, params }) => {
