@@ -8,6 +8,8 @@ aliases: ['/posts/privacy/']
 
 <script>
     import Image from '$lib/Image.svelte'
+    import pihole from "$lib/assets/posts/blog/privacy/pihole.jpg?preset=hd" 
+    import matomo from "$lib/assets/posts/blog/privacy/matomo.jpg?preset=hd" 
 </script>
 
 About a month ago I began using some systems to protect my security on the internet a bit more than nothing.
@@ -23,7 +25,7 @@ and it doesn't hurt daily usage at all. Instead,
 now I have nice stats of a website I visit and handy tools to block/whitelist
 some of them.
 
-<Image src="img/posts/blog/privacy/pihole.jpg" alt="Pihole" />
+<Image src={pihole} alt="Pihole" />
 
 You can install it directly on your router, on every device that you use.
 For MacBook and AppleTV I changed DNS settings to use my custom IP address,
@@ -32,7 +34,7 @@ If you want to try it, the address is the same as the IP of this website `167.99
 
 ## Matomo
 
-<Image src="img/posts/blog/privacy/matomo.jpg" alt="Matomo" />
+<Image src={matomo} alt="Matomo" />
 
 After enabling PiHole, Google Analytics stopped working, so I found a self-hosted alternative and installed it on this website.
 

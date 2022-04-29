@@ -7,9 +7,10 @@ categories: ['Daily Coding Problem']
 
 <script>
     import Image from '$lib/Image.svelte'
+    import maze from '$lib/assets/posts/dcp/maze/maze.png?preset=hd'
 </script>
 
-<Image src="img/posts/dcp/maze/maze.png" alt="maze" />
+<Image src={maze} alt="maze" />
 
 # Problem
 

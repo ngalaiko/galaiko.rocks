@@ -7,6 +7,10 @@ categories: ['Blog']
 
 <script>
     import Image from '$lib/Image.svelte'
+    import n from "$lib/assets/posts/blog/optimizing-functions/optimization-n.png?preset=hd"
+    import bytes from "$lib/assets/posts/blog/optimizing-functions/optimization-bytes.png?preset=hd"
+    import alloc from "$lib/assets/posts/blog/optimizing-functions/optimization-allocs.png?preset=hd"
+    import ns from "$lib/assets/posts/blog/optimizing-functions/optimization-ns.png?preset=hd" 
 </script>
 
 In the golang community slack, someone shared a link to a package used to
@@ -563,9 +567,9 @@ BenchmarkValid-4  20000000  94.0 ns/op  16 B/op  1 allocs/op
 PASS
 ```
 
-<Image src="img/posts/blog/optimizing-functions/optimization-n.png" alt="Optimizaion N" />
-<Image src="img/posts/blog/optimizing-functions/optimization-bytes.png" alt="Optimizaion bytes" />
-<Image src="img/posts/blog/optimizing-functions/optimization-allocs.png" alt="Optimizaion allocs" />
-<Image src="img/posts/blog/optimizing-functions/optimization-ns.png" alt="Optimizaion ns" />
+<Image src={n} alt="Optimizaion N" />
+<Image src={bytes} alt="Optimizaion bytes" />
+<Image src={alloc} alt="Optimizaion allocs" />
+<Image src={ns} alt="Optimizaion ns" />
 
 If you have an idea how to improve it more, please share.

@@ -13,3 +13,13 @@ declare namespace App {
 
 	interface Stuff {}
 }
+
+declare module '*?preset=hd' {
+	const src: import('vite-plugin-image-presets').ImageAttrs[];
+	export default src;
+}
+
+declare module '*?preset=round' {
+	const src: import('vite-plugin-image-presets').ImageAttrs[];
+	export default src;
+}
