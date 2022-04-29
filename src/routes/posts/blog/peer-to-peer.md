@@ -7,9 +7,13 @@ categories: ['Blog']
 
 <script>
     import Image from '$lib/Image.svelte'
+
+    import p2p from "$lib/assets/posts/blog/peer-to-peer/p2p.jpg?preset=hd" 
+    import cloud from "$lib/assets/posts/blog/peer-to-peer/cloud.jpg?preset=hd" 
+    import bridge from "$lib/assets/posts/blog/peer-to-peer/bridge.jpg?preset=hd" 
 </script>
 
-<Image src="img/posts/blog/peer-to-peer/p2p.jpg" />
+<Image src={p2p} />
 
 The idea of a peer to peer **something** is to create a system that doesn't require any centralized server to
 operate. In the case of a messenger, two users should be able to communicate directly between each other until at
@@ -34,7 +38,7 @@ I don't think that this approach is super scalable and makes sense in the real w
 resources for a single user. But I have chosen it because it is more fun to implement for me as it needs more
 infrastructure work.
 
-<Image src="img/posts/blog/peer-to-peer/cloud.jpg" alt="cloud" />
+<Image src={cloud} alt="cloud" />
 
 ## Peer
 
@@ -100,7 +104,7 @@ and proxies the connection between two peers.
 
 Final architecture:
 
-<Image src="img/posts/blog/peer-to-peer/bridge.jpg" alt="bridge" />
+<Image src={bridge} alt="bridge" />
 
 You can find the code and maybe participate at [github](https://github.com/ngalayko/p2p).
 

@@ -8,9 +8,10 @@ aliases: ['/posts/half-a-year-with-vim/']
 
 <script>
     import Image from '$lib/Image.svelte'
+    import vim from '$lib/assets/posts/blog/half-a-year-with-vim/vim.jpg?preset=hd'
 </script>
 
-<Image src='img/posts/blog/half-a-year-with-vim/vim.jpg' alt="Vim learning curve" />
+<Image src={vim} alt="Vim learning curve" />
 
 I started using vim because I was bored. Likely, I code in go, so it’s pretty
 easy to switch. I mean, I tried to do Java with vim for about a week -

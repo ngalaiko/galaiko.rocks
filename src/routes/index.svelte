@@ -1,7 +1,8 @@
 <script>
-	import Image from 'svelte-image';
 	import GlitchyLinks from '$lib/GlitchyLinks.svelte';
+	import Image from '$lib/Image.svelte';
 	import { Article } from '$lib/components';
+    import nikita from '$lib/assets/people/nikita.jpeg?preset=round';
 </script>
 
 <svelte:head>
@@ -11,11 +12,12 @@
 <Article>
 	<div class="content h-card">
 		<header class="flex items-center gap-2">
-			<h1 class="p-name text-4xl font-bold flex-1">
+			<h1 class="p-name text-9xl font-bold flex-1">
 				<span class="p-given-name">Nikita</span>
 				<span class="p-family-name">Galaiko</span>
 			</h1>
 			<link class="u-url" href="https://galaiko.rocks" />
+            <Image class="u-photo" src={nikita} />
 		</header>
 
 		<GlitchyLinks>

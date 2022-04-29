@@ -2,11 +2,24 @@ import adapter from '@sveltejs/adapter-cloudflare';
 import preprocess from 'svelte-preprocess';
 
 import { mdsvex } from 'mdsvex';
-import image from 'svelte-image';
-
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import preview, { htmlFormatter } from 'remark-preview';
+import imagePresets, { hdPreset, densityPreset } from 'vite-plugin-image-presets';
+
+const rectFor = (width, height = width) =>
+	new Buffer(
+		`<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${width / 4}" ry="${
+			height / 4
+		}"/></svg>`
+	);
+
+const withRoundBorders = (image) => {
+	const { width } = image.options;
+	return image
+		.resize({ width, height: width, fit: 'cover' })
+		.composite([{ input: rectFor(width), blend: 'dest-in' }]);
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -35,14 +48,7 @@ const config = {
 				[autoLinkHeadings, { behavior: 'wrap' }] //  adds a <a> around slugged headers
 			]
 		}),
-		preprocess({ postcss: true, typescript: true }),
-		image({
-			optimizeAll: true,
-			processFoldersSizes: true,
-			processFoldersRecursively: true,
-			optimizeRemote: true,
-			placeholder: 'blur'
-		})
+		preprocess({ postcss: true, typescript: true })
 	],
 	kit: {
 		adapter: adapter(),
@@ -54,7 +60,37 @@ const config = {
 				'/posts/' //  it's not linked from anywhere
 			]
 		},
-		trailingSlash: 'always'
+		trailingSlash: 'always',
+		vite: {
+			plugins: [
+				imagePresets({
+					hd: hdPreset({
+						class: 'img hd',
+						widths: [440, 700],
+						sizes: '(min-width: 700px) 700px, 100vw',
+						formats: {
+							avif: { quality: 44 },
+							webp: { quality: 44 },
+							jpg: { quality: 50 }
+						}
+					}),
+					round: densityPreset({
+						class: 'img density',
+						height: 100, // avoid layout shift
+						baseWidth: 100,
+						density: [1, 1.5, 2],
+						resizeOptions: {
+							fit: 'cover'
+						},
+						withImage: withRoundBorders,
+						formats: {
+							webp: { quality: 40 },
+							png: { quality: 40 }
+						}
+					})
+				})
+			]
+		}
 	}
 };
 

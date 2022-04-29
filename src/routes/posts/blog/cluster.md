@@ -7,6 +7,7 @@ categories: ['Blog']
 
 <script>
     import Image from '$lib/Image.svelte'
+    import cluster from '$lib/assets/posts/blog/cluster/cluster.jpeg?preset=hd'
 </script>
 
 ## Introduction
@@ -32,7 +33,7 @@ Hardware Used:
 - 4 x [Raspberry PI 3 Model B+](https://www.amazon.de/gp/product/B07BFH96M3/ref=oh_aui_detailpage_o00_s02?ie=UTF8&psc=1)
 - 1 x [8-Port Gigabit Switch](https://www.amazon.de/gp/product/B000BCC0LO/ref=oh_aui_detailpage_o00_s02?ie=UTF8&psc=1)
 
-<Image src="img/posts/blog/cluster/cluster.jpeg" alt="Photo of a cluster hardware" />
+<Image src={cluster} alt="Photo of a cluster hardware" />
 
 Technologies used:
 
