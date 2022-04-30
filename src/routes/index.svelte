@@ -2,7 +2,7 @@
 	import GlitchyLinks from '$lib/GlitchyLinks.svelte';
 	import Image from '$lib/Image.svelte';
 	import { Article } from '$lib/components';
-    import nikita from '$lib/assets/people/nikita.jpeg?preset=round';
+    import nikita from '$lib/assets/people/nikita.jpeg?preset=avatar';
 </script>
 
 <svelte:head>
