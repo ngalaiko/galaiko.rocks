@@ -1,5 +1,5 @@
 import { findByPathname } from '$lib/posts';
-import { likesOf, mentionsOf, repliesTo, repostsOf } from '$lib/webmentions';
+import { likesOf, repliesTo, repostsOf } from '$lib/webmentions';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async ({ url }) => {
@@ -14,11 +14,6 @@ export const get: RequestHandler = async ({ url }) => {
 		const post = await findByPathname(postURL.pathname);
 		if (!post) return { status: 404, body: 'Not found' };
 		return { status: 200, body: likesOf(postURL) as any[] };
-	} else if (pathname.endsWith('/mentions/')) {
-		const postURL = new URL(pathname.replace('mentions/', ''), url.origin);
-		const post = await findByPathname(postURL.pathname);
-		if (!post) return { status: 404, body: 'Not found' };
-		return { status: 200, body: mentionsOf(postURL) as any[] };
 	} else if (pathname.endsWith('/reposts/')) {
 		const postURL = new URL(pathname.replace('reposts/', ''), url.origin);
 		const post = await findByPathname(postURL.pathname);

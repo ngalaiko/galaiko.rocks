@@ -1,21 +1,9 @@
-import type { Author, Reply, Webmention, Like, Mention, Repost } from './types';
+import type { Author, Reply, Like, Repost } from './types';
 import { mf2 } from 'microformats-parser';
 import type { MicroformatRoot, Html } from 'microformats-parser/dist/types';
 
 const allItems = (root: MicroformatRoot) =>
 	root.children ? root.children.flatMap(allItems) : [root];
-
-const not = (predicate: (i: MicroformatRoot) => boolean) => (i: MicroformatRoot) => !predicate(i);
-
-const and =
-	(...predicates: Array<(i: MicroformatRoot) => boolean>) =>
-	(i: MicroformatRoot) =>
-		predicates.every((predicate) => predicate(i));
-
-const containsPropertyValue =
-	(url: string) =>
-	({ properties }: MicroformatRoot) =>
-		Object.values(properties).some((values) => values.includes(url));
 
 const mf2author = (root: MicroformatRoot): Author => {
 	if (!root.type.includes('h-card')) {
@@ -29,89 +17,69 @@ const mf2author = (root: MicroformatRoot): Author => {
 	};
 };
 
-const isRepostOf =
-	(url: string) =>
-	({ properties }: MicroformatRoot) =>
-		properties['repost-of']?.includes(url);
+const isRepost = ({ properties }: MicroformatRoot) => properties['repost-of']?.length > 0;
 
-export const reposts = (webmention: Webmention): Repost[] => {
-	const root = mf2(webmention.parsedSource.body, { baseUrl: webmention.sourceUrl });
+export const reposts = (sourceUrl: string, html: string): Repost[] => {
+	const root = mf2(html, { baseUrl: sourceUrl });
 	const items = root.items.flatMap(allItems);
-	return items.filter(isRepostOf(webmention.targetUrl)).map((root): Like => {
+	return items.filter(isRepost).map((root): Like => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
+		const target = root.properties['repost-of']?.[0] as string;
 		return {
-			author: author ? mf2author(author) : { url: webmention.sourceUrl },
-			target: webmention.targetUrl,
-			source: webmention.sourceUrl,
-			timestamp: webmention.timestamp
+			target,
+			source: sourceUrl,
+			author: author ? mf2author(author) : { url: sourceUrl },
+			timestamp: undefined
 		};
 	});
 };
 
-const isLikeOf =
-	(url: string) =>
-	({ properties }: MicroformatRoot) =>
-		properties['like-of']?.includes(url) || properties['like']?.includes(url);
+const isLike = ({ properties }: MicroformatRoot) =>
+	properties['like-of']?.length > 0 || properties['like']?.length > 0;
 
-export const likes = (webmention: Webmention): Like[] => {
-	const targetUrl = webmention.targetUrl;
-	const sourceContent = webmention.parsedSource;
-	const root = mf2(sourceContent.body, { baseUrl: webmention.sourceUrl });
+export const likes = (sourceUrl: string, html: string): Like[] => {
+	const root = mf2(html, { baseUrl: sourceUrl });
 	const items = root.items.flatMap(allItems);
-	return items.filter(isLikeOf(targetUrl)).map((root): Like => {
+	return items.filter(isLike).map((root): Like => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
+		const likeOf = root.properties['like-of']?.[0] as string;
+		const like = root.properties['like']?.[0] as string;
+		const target = like ?? likeOf;
 		return {
-			author: author ? mf2author(author) : { url: webmention.sourceUrl },
-			target: targetUrl,
-			source: webmention.sourceUrl,
-			timestamp: webmention.timestamp
+			author: author ? mf2author(author) : { url: sourceUrl },
+			target,
+			source: sourceUrl,
+			timestamp: undefined
 		};
 	});
 };
 
-const isReplyTo =
-	(url: string) =>
-	({ properties, type }: MicroformatRoot) =>
-		type.includes('h-entry') && properties['in-reply-to']?.includes(url);
+const isReply = ({ properties }: MicroformatRoot) => properties['in-reply-to']?.length > 0;
 
-export const replies = (webmention: Webmention): Reply[] => {
-	const targetUrl = webmention.targetUrl;
-	const sourceContent = webmention.parsedSource;
-	const root = mf2(sourceContent.body, { baseUrl: webmention.sourceUrl });
+export const replies = (sourceUrl: string, html: string): Reply[] => {
+	const root = mf2(html, { baseUrl: sourceUrl });
 	const items = root.items.flatMap(allItems);
-	return items.filter(isReplyTo(targetUrl)).map((root) => {
+	return items.filter(isReply).map((root) => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
 		const content = root.properties['content']?.[0] as Html;
 		const summary = root.properties['summary']?.[0] as string;
 		const name = root.properties['name']?.[0] as string;
 		const published = root.properties['published']?.[0] as string;
 		const updated = root.properties['updated']?.[0] as string;
+		const target = root.properties['in-reply-to']?.[0] as string;
 		return {
-			target: targetUrl,
-			source: webmention.sourceUrl,
-			author: author ? mf2author(author) : { url: webmention.sourceUrl },
+			target,
+			source: sourceUrl,
+			author: author ? mf2author(author) : { url: sourceUrl },
 			content: content ? content.value : summary ? summary : name,
-			published: published ? new Date(published).getTime() : webmention.timestamp,
+			timestamp: published ? new Date(published).getTime() : undefined,
 			updated: updated ? new Date(updated).getTime() : undefined
 		};
 	});
 };
 
-const isMentionOf = (of: string) => (root: MicroformatRoot) =>
-	and(containsPropertyValue(of), not(isReplyTo(of)), not(isLikeOf(of)), not(isRepostOf(of)))(root);
-
-export const mentions = (webmention: Webmention): Mention[] => {
-	const targetUrl = webmention.targetUrl;
-	const sourceContent = webmention.parsedSource;
-	const root = mf2(sourceContent.body, { baseUrl: webmention.sourceUrl });
-	const items = root.items.flatMap(allItems);
-	return items.filter(isMentionOf(targetUrl)).map((root): Mention => {
-		const author = root.properties['author']?.[0] as MicroformatRoot;
-		return {
-			author: author ? mf2author(author) : { url: webmention.sourceUrl },
-			target: targetUrl,
-			source: webmention.sourceUrl,
-			timestamp: webmention.timestamp
-		};
-	});
-};
+export const all = (sourceUrl: string, html: string): (Reply | Like | Repost)[] => [
+	...replies(sourceUrl, html),
+	...likes(sourceUrl, html),
+	...reposts(sourceUrl, html)
+];

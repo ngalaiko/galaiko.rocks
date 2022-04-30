@@ -11,7 +11,11 @@
 			>{repost.author.name ?? new URL(repost.author.url).hostname}</a
 		> reposted this
 	</span>
-	<time class="dt-published opacity-50 text-sm" datetime={new Date(repost.timestamp).toISOString()}
-		>{format(new Date(repost.timestamp), 'MMMM dd, yyyy')}</time
-	>
+	{#if repost.timestamp}
+		<time
+			class="dt-published opacity-50 text-sm"
+			datetime={new Date(repost.timestamp).toISOString()}
+			>{format(new Date(repost.timestamp), 'MMMM dd, yyyy')}</time
+		>
+	{/if}
 </div>

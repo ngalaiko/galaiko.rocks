@@ -31,21 +31,14 @@ export type Repost = {
 	source: string;
 	target: string;
 	author: Author;
-	timestamp: number;
-};
-
-export type Mention = {
-	source: string;
-	target: string;
-	author: Author;
-	timestamp: number;
+	timestamp?: number;
 };
 
 export type Like = {
 	source: string;
 	target: string;
 	author: Author;
-	timestamp: number;
+	timestamp?: number;
 };
 
 export type Reply = {
@@ -53,6 +46,6 @@ export type Reply = {
 	source: string;
 	target: string;
 	content: string;
-	published: number;
+	timestamp?: number;
 	updated?: number;
 };

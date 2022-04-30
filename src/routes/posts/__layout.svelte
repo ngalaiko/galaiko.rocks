@@ -26,8 +26,7 @@
 				post: body,
 				replies: await fetch(url.pathname + 'replies.json').then((res) => res.json()),
 				likes: await fetch(url.pathname + 'likes.json').then((res) => res.json()),
-				reposts: await fetch(url.pathname + 'reposts.json').then((res) => res.json()),
-				mentions: await fetch(url.pathname + 'mentions.json').then((res) => res.json())
+				reposts: await fetch(url.pathname + 'reposts.json').then((res) => res.json())
 			}
 		};
 	};
@@ -35,19 +34,18 @@
 
 <script lang="ts">
 	import { Post as SinglePost, Posts } from '$lib/components';
-	import type { Reply, Like, Repost, Mention } from '$lib/webmentions';
+	import type { Reply, Like, Repost } from '$lib/webmentions';
 
 	export let likes: Like[] = [];
 	export let replies: Reply[] = [];
 	export let reposts: Repost[] = [];
-	export let mentions: Mention[] = [];
 
 	export let post: Post = null;
 	export let posts: Post[] = [];
 </script>
 
 {#if post}
-	<SinglePost {post} {replies} {likes} {reposts} {mentions}>
+	<SinglePost {post} {replies} {likes} {reposts}>
 		<slot />
 	</SinglePost>
 {:else}
