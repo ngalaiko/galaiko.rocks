@@ -1,12 +1,11 @@
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
 import { createReadStream } from 'fs';
-import { mf2 } from 'microformats-parser';
-import { type Webmention } from '../../src/lib/webmentions/types.js';
+import type { Webmention } from '../../src/lib/webmentions/types.js';
+import { all } from '../../src/lib/webmentions/microformats.js';
 import { readFile } from 'fs/promises';
 import path from 'path';
 import readdirp from 'readdirp';
-import type { ParsedDocument, RelUrls } from 'microformats-parser/dist/types';
 
 const argv = yargs(process.argv.slice(2))
 	.option('baseUrl', {
@@ -61,24 +60,19 @@ const loadHtmlFiles = async (pathname: string) =>
 			type: 'files'
 		})
 		.then((files) => files.map((file) => file.fullPath))
-		.then((files) => Promise.all(files.map(async (file) => [file, await readFile(file, 'utf8')])));
+		.then((files) => Promise.all(files.map(async (file) => [file, await readFile(file, 'utf8')])))
+		.then((files) =>
+			files
+				.map(([filepath, html]) => [filepath.split('/src/routes/').slice(-1)[0], html])
+				.map(([path, html]) => [`${argv.baseUrl}/${path}`, html])
+		);
 
-const extractRelUrls = (files: [string, string][]) =>
-	files
-		.map(([file, html]) => [file, mf2(html, { baseUrl: argv.baseUrl })])
-		.map(([file, parsed]) => [file, parsed['rel-urls']])
-		.map(([file, relUrls]) => [file, Object.keys(relUrls)] as [string, string[]])
-		.map(([file, relUrls]) => [file, relUrls.map((relUrl) => new URL(relUrl))]);
-
-const filterExternalUrls = (origin: string) => (files: [string, URL[]][]) =>
-	files.map(([file, urls]) => [file, urls.filter((url) => url.origin !== origin)]);
+const getMentions = (files: [string, string][]) => files.flatMap(([path, html]) => all(path, html));
 
 // TODO:
-//  * better detection of outgoing webmentions based on microformats
 //  * webmention endpoint discovery
 //  * store outgoing webmentions in a file
-const parseWebmentions = (pathname: string) =>
-	loadHtmlFiles(pathname).then(extractRelUrls).then(filterExternalUrls(argv.baseUrl));
+const parseWebmentions = (pathname: string) => loadHtmlFiles(pathname).then(getMentions);
 
 parseWebmentions(argv.input).then((s) => console.log(s));
 
