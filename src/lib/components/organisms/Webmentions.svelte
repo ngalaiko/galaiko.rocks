@@ -1,20 +1,18 @@
 <script lang="ts">
-	import type { Reply, Like, Repost, Mention } from '$lib/webmentions';
+	import type { Reply, Like, Repost } from '$lib/webmentions';
 	import ReplyComponent from './Reply.svelte';
 	import LikeComponent from './Like.svelte';
 	import RepostComponent from './Repost.svelte';
-	import MentionComponent from './Mention.svelte';
 
 	export let replies: Reply[];
 	export let likes: Like[];
 	export let reposts: Repost[];
-	export let mentions: Mention[];
 
 	const all = [
 		...replies.map((reply) => ({
 			component: ReplyComponent,
 			props: { reply },
-			sort: new Date(reply.updated) ?? new Date(reply.published)
+			sort: new Date(reply.updated) ?? new Date(reply.timestamp)
 		})),
 		...likes.map((like) => ({
 			component: LikeComponent,
@@ -25,11 +23,6 @@
 			component: RepostComponent,
 			props: { repost },
 			sort: new Date(repost.timestamp)
-		})),
-		...mentions.map((mention) => ({
-			component: MentionComponent,
-			props: { mention },
-			sort: new Date(mention.timestamp)
 		}))
 	].sort((a, b) => b.sort.getTime() - a.sort.getTime());
 </script>
@@ -38,7 +31,6 @@
 	<h2 class="text-xl">{all.length} mentions{all.length ? ':' : ''}</h2>
 	<ul class="flex flex-col gap-2">
 		{#each all as { component, props }}
-			{@debug props}
 			<li class="py-2">
 				<svelte:component this={component} {...props} />
 			</li>

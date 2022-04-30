@@ -14,9 +14,9 @@
 		<time class="dt-published opacity-50 text-sm" datetime={new Date(reply.updated).toISOString()}
 			>{format(new Date(reply.updated), 'MMMM dd, yyyy')}</time
 		>
-	{:else}
-		<time class="dt-published opacity-50 text-sm" datetime={new Date(reply.published).toISOString()}
-			>{format(new Date(reply.published), 'MMMM dd, yyyy')}</time
+	{:else if reply.timestamp}
+		<time class="dt-published opacity-50 text-sm" datetime={new Date(reply.timestamp).toISOString()}
+			>{format(new Date(reply.timestamp), 'MMMM dd, yyyy')}</time
 		>
 	{/if}
 </div>

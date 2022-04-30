@@ -11,7 +11,9 @@
 			>{like.author.name ?? new URL(like.author.url).hostname}</a
 		> liked this
 	</span>
-	<time class="dt-published opacity-50 text-sm" datetime={new Date(like.timestamp).toISOString()}
-		>{format(new Date(like.timestamp), 'MMMM dd, yyyy')}</time
-	>
+	{#if like.timestamp}
+		<time class="dt-published opacity-50 text-sm" datetime={new Date(like.timestamp).toISOString()}
+			>{format(new Date(like.timestamp), 'MMMM dd, yyyy')}</time
+		>
+	{/if}
 </div>

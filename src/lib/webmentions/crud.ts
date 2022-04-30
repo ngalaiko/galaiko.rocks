@@ -2,7 +2,7 @@ import { list } from '$lib/posts';
 import { nanoid } from 'nanoid';
 import { provideDB } from './database';
 import { accepted } from './json';
-import { likes, mentions, replies, reposts } from './microformats';
+import { likes, replies, reposts } from './microformats';
 import { Status, type Webmention } from './types';
 
 const validDomains = {
@@ -104,13 +104,19 @@ export const getById = async (platform: App.Platform, id: string): Promise<Webme
 	provideDB(platform).get(id);
 
 export const repliesTo = (to: URL) =>
-	accepted.flatMap(replies).filter((reply) => reply.target === to.href);
-
-export const mentionsOf = (of: URL) =>
-	accepted.flatMap(mentions).filter((mention) => mention.target === of.href);
+	accepted
+		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
+		.filter(({ targetUrl }) => targetUrl === to.href)
+		.flatMap(({ sourceUrl, parsedSource }) => replies(sourceUrl, parsedSource.body));
 
 export const likesOf = (of: URL) =>
-	accepted.flatMap(likes).filter((like) => like.target === of.href);
+	accepted
+		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
+		.filter(({ targetUrl }) => targetUrl === of.href)
+		.flatMap(({ sourceUrl, parsedSource }) => likes(sourceUrl, parsedSource.body));
 
 export const repostsOf = (of: URL) =>
-	accepted.flatMap(reposts).filter((repost) => repost.target === of.href);
+	accepted
+		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
+		.filter(({ targetUrl }) => targetUrl === of.href)
+		.flatMap(({ sourceUrl, parsedSource }) => reposts(sourceUrl, parsedSource.body));
