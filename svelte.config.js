@@ -9,9 +9,7 @@ import imagePresets, { hdPreset, densityPreset } from 'vite-plugin-image-presets
 
 const rectFor = (width, height = width) =>
 	new Buffer(
-		`<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${width / 4}" ry="${
-			height / 4
-		}"/></svg>`
+		`<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${width}" ry="${height}"/></svg>`
 	);
 
 const withRoundBorders = (image) => {
@@ -57,7 +55,8 @@ const config = {
 			enabled: true,
 			crawl: true,
 			entries: [
-				'/posts/' //  it's not linked from anywhere
+				'/posts/', //  it's not linked from anywhere
+				'/replies/' //  it's not linked from anywhere
 			]
 		},
 		trailingSlash: 'always',
@@ -74,10 +73,10 @@ const config = {
 							jpg: { quality: 50 }
 						}
 					}),
-					round: densityPreset({
+					avatar: densityPreset({
 						class: 'img density',
-						height: 100, // avoid layout shift
-						baseWidth: 100,
+						height: 48, // avoid layout shift
+						baseWidth: 48,
 						density: [1, 1.5, 2],
 						resizeOptions: {
 							fit: 'cover'

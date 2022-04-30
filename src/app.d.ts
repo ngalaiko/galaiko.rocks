@@ -19,7 +19,7 @@ declare module '*?preset=hd' {
 	export default src;
 }
 
-declare module '*?preset=round' {
+declare module '*?preset=avatar' {
 	const src: import('vite-plugin-image-presets').ImageAttrs[];
 	export default src;
 }
