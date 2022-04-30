@@ -53,7 +53,7 @@ const readExistingWebmentions = async (path: string): Promise<Webmention[]> => {
 	});
 };
 
-const loadHtmlFiles = async (pathname: string) =>
+const loadPages = async (pathname: string) =>
 	await readdirp
 		.promise(pathname, {
 			fileFilter: '*.html',
@@ -70,15 +70,21 @@ const loadHtmlFiles = async (pathname: string) =>
 				.map(([path, html]) => [`${argv.baseUrl}${path}`, html])
 		);
 
-const getMentions = (files: [string, string][]) => files.flatMap(([path, html]) => all(path, html));
+const parseMentions = (files: [string, string][]) =>
+	files.flatMap(([path, html]) => all(path, html));
 
 // TODO:
 //  * webmention endpoint discovery
 //  * store outgoing webmentions in a file
-const parseWebmentions = (pathname: string) => loadHtmlFiles(pathname).then(getMentions);
+const parseWebmentions = (pathname: string) => loadPages(pathname).then(parseMentions);
 
-parseWebmentions(argv.input).then((s) => console.log(s));
+const existingMentions = readExistingWebmentions(argv.file);
 
-// readExistingWebmentions(argv.file)
-// 	.then(extractWebmentions)
-// 	.then((mm) => console.log(mm));
+const filterOutSent = (urls: string[]) => (all: { source: string }[]) =>
+	all.filter(({ source }) => !urls.includes(source));
+
+const existingUrls = await existingMentions.then((webmentions) =>
+	webmentions.map(({ sourceUrl }) => sourceUrl)
+);
+
+parseWebmentions(argv.input).then(filterOutSent(existingUrls)).then(console.log);
