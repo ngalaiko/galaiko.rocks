@@ -7,6 +7,8 @@ import { readFile } from 'fs/promises';
 import path from 'path';
 import readdirp from 'readdirp';
 
+const svelteKitPrerenderedPrefix = '.svelte-kit/output/prerendered/pages';
+
 const argv = yargs(process.argv.slice(2))
 	.option('baseUrl', {
 		alias: 'b',
@@ -18,9 +20,7 @@ const argv = yargs(process.argv.slice(2))
 		alias: 'i',
 		type: 'string',
 		describe: 'Path to the directory containing html files to parse',
-		default: path.resolve(
-			`${path.dirname(process.argv[1])}../../../.svelte-kit/output/prerendered`
-		),
+		default: path.resolve(`${path.dirname(process.argv[1])}../../../${svelteKitPrerenderedPrefix}`),
 		demandOption: true
 	})
 	.option('file', {
@@ -63,8 +63,11 @@ const loadHtmlFiles = async (pathname: string) =>
 		.then((files) => Promise.all(files.map(async (file) => [file, await readFile(file, 'utf8')])))
 		.then((files) =>
 			files
-				.map(([filepath, html]) => [filepath.split('/src/routes/').slice(-1)[0], html])
-				.map(([path, html]) => [`${argv.baseUrl}/${path}`, html])
+				.map(([filepath, html]) => [
+					filepath.split(svelteKitPrerenderedPrefix).slice(-1)[0].replace('/index.html', '/'),
+					html
+				])
+				.map(([path, html]) => [`${argv.baseUrl}${path}`, html])
 		);
 
 const getMentions = (files: [string, string][]) => files.flatMap(([path, html]) => all(path, html));

@@ -61,7 +61,8 @@ export const replies = (sourceUrl: string, html: string): Reply[] => {
 	const items = root.items.flatMap(allItems);
 	return items.filter(isReply).map((root) => {
 		const author = root.properties['author']?.[0] as MicroformatRoot;
-		const content = root.properties['content']?.[0] as Html;
+		const contentHtml = root.properties['content']?.[0] as Html;
+		const contentString = root.properties['content']?.[0] as string;
 		const summary = root.properties['summary']?.[0] as string;
 		const name = root.properties['name']?.[0] as string;
 		const published = root.properties['published']?.[0] as string;
@@ -71,7 +72,7 @@ export const replies = (sourceUrl: string, html: string): Reply[] => {
 			target,
 			source: sourceUrl,
 			author: author ? mf2author(author) : { url: sourceUrl },
-			content: content ? content.value : summary ? summary : name,
+			content: contentHtml?.value ?? contentString ?? summary ?? name,
 			timestamp: published ? new Date(published).getTime() : undefined,
 			updated: updated ? new Date(updated).getTime() : undefined
 		};
