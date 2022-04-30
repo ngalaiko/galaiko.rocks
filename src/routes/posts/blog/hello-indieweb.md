@@ -134,11 +134,16 @@ Of course the non real timeness of the solution might be considered a downside.
 
 ### Sending
 
-TODO
+After receiving part was done I conviniently had written code that can be reused to send webmentions too. Since this
+website is fully prerendered and distributed as a set of static files, I can analyze those files and extract my
+webmentions from it.
+
+Once webmentions are extracted, it's trivial to implement [the discovery](https://www.w3.org/TR/webmention/#sender-discovers-receiver-webmention-endpoint)
+and make [script](https://github.com/ngalaiko/galaiko.rocks/blob/master/scripts/webmentions/send.ts) ping the endpoints.
 
 ## Test
 
-Webmention myself!
+The footer of this article contains a list of received webmentions, and I've already sent one!
 
 [webmentions]: https://indieweb.org/Webmention
 [indieweb]: https://indieweb.org
