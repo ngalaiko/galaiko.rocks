@@ -3,10 +3,9 @@ title: 'Hello, IndieWeb'
 tags: ['vim', 'development']
 date: '2022-04-16'
 categories: ['Blog']
-hidden: true
 ---
 
-In this post I want to share how this website connects with [IndieWeb][] and webmention myself!
+In this post I want to share how this website connects with [IndieWeb][].
 
 ## What is IndieWeb
 
@@ -21,27 +20,27 @@ On a more technical level, it's a combination of protocols like [WebMentions][],
 [some others](https://www.w3.org/TR/social-web-protocols/) that together enable a distributed social interaction on
 the Web.
 
-## What I want
+## What I would like to achieve
 
-- I'd like to be discoverable on IndieWeb
-- I'd like to be be able to interact with others on IndieWeb
-- I'd like to not use any 3rd party IndieWeb services like [webmention.io][]
-- I'd like to pay zero moneys for my setup
-- I'd like to have all of my data locally stored in a form of static files
-- I'd like my website to be full functioning without client side javascript
+- be discoverable on IndieWeb
+- be able to interact with others on IndieWeb
+- not use any 3rd party IndieWeb services like [webmention.io][]
+- pay zero moneys for my setup
+- have all of my data locally stored in a form of static files
+- my website to be full functioning without client side javascript
 
 ## Setup
 
 I used to power this website with [Hugo](https://gohugo.io) - a static website generator. But it doesn't quite fit
 IndieWeb requirements for me.
 
-Most people, as I understand, use centralized platforms like [webmention.io][] and
+Most people, as I understand, use centralized platforms like [webmention.io][] or
 [micro.blog](https://micro.blog) mixed with different [CMS plugins](https://wordpress.org/plugins/indieweb/) to be on
 IndieWeb. For me - it's no fun. I want to do it all myself - thus static website won't do it. I have to have a server
 to at least receive webmentions.
 
 Some time ago [SvelteKit](https://kit.svelte.dev) got me interested. SvelteKit is a framework to build webapps using
-[Svelte](https://svelte.dev). What is especially cool about it is that it is:
+[Svelte](https://svelte.dev). What is especially cool about it for my use-case is that it is:
 
 - prerendered by default
 - comes with [adapters](https://github.com/sveltejs/kit/tree/master/packages) for different deploy targets out of the box
@@ -59,8 +58,8 @@ with [mdsvex](https://mdsvex.com). While configuring it, there two articles help
 
 ## Microformats
 
-First is to setup [microformats](http://microformats.org). It's a data format built on top of xml that provides a
-standard way of communicating between IndieWeb sites, meaning:
+First step in IndieWeb is to setup [microformats](http://microformats.org). It's a data format built on top of xml that
+provides a standard way of communicating between IndieWeb sites, meaning:
 
 You add some attributes to your website's html:
 
@@ -100,12 +99,12 @@ You can read more [here](https://indieweb.org/microformats) and [here](http://mi
 ## Webmentions
 
 Second step is webmentions. Webmentions is a very simple protocol to let other's know that you've mentioned their page.
-A mention could be anything form a 'like' to 'comment' or 'rsvp'.
+A mention could be anything form a 'like' to 'comment' or even 'rsvp'.
 
 Since [the protocol](https://www.w3.org/TR/webmention/#updating-existing-webmentions-li-4) is so simple, I am implementing
 it myself. Both because it's more fun and to satisfy my requirements for the project.
 
-There are two parts when it comes to webmentions: I need to be able to receive and to send them.
+There are two parts when it comes to webmentions: receiving and sending.
 
 ### Receiving
 
@@ -114,7 +113,7 @@ Since I don't want to pay for the hosting, here is a plan:
 1. When someone send me a webmention, the request is be processed by a serverless handler hosted on
    [cloudflare workers](https://developers.cloudflare.com/workers/) and then stored in their
    [key value storage](https://developers.cloudflare.com/workers/platform/pricing/#workers-kv)
-2. Later, [an export script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/export.ts) is triggered
+2. Later, [an export script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/download.ts) is triggered
    by myself manually or via GitHub Actions cronjob to download all of the new
    webmentions [into my repository](https://github.com/ngalaiko/blog/blob/master/src/lib/data/webmentions.json)
 3. Then, [a processing script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/process.ts) is
