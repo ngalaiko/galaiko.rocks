@@ -1,9 +1,16 @@
 import { list } from '$lib/posts';
 import { nanoid } from 'nanoid';
 import { provideDB } from './database';
-import { accepted } from './json';
 import { likes, replies, reposts } from './microformats';
-import { Status, type Webmention } from './types';
+import parsed from '../data/webmentions.json';
+import parsedDev from '../data/webmentions.dev.json';
+import type { Webmention } from './types';
+import { dev } from '$app/env';
+
+export const accepted: Webmention[] = [
+	...(parsed as Webmention[]),
+	...(dev ? (parsedDev as Webmention[]) : [])
+].filter(({ status }) => status === 'accepted');
 
 const validDomains = {
 	'galaiko.rocks': true
@@ -90,9 +97,9 @@ export const create = async (
 		id: nanoid(),
 		sourceUrl: source.href,
 		targetUrl: target.href,
-		status: Status.Created,
+		status: 'created',
 		timestamp: new Date().getTime()
-	};
+	} as Webmention;
 
 	const db = provideDB(platform);
 	await db.put(webmention);
@@ -106,17 +113,23 @@ export const getById = async (platform: App.Platform, id: string): Promise<Webme
 export const repliesTo = (to: URL) =>
 	accepted
 		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
-		.filter(({ targetUrl }) => targetUrl === to.href)
+		.filter(({ targetUrl }) =>
+			dev ? new URL(targetUrl).pathname == to.pathname : targetUrl === to.href
+		)
 		.flatMap(({ sourceUrl, parsedSource }) => replies(sourceUrl, parsedSource.body));
 
 export const likesOf = (of: URL) =>
 	accepted
 		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
-		.filter(({ targetUrl }) => targetUrl === of.href)
+		.filter(({ targetUrl }) =>
+			dev ? new URL(targetUrl).pathname == of.pathname : targetUrl === of.href
+		)
 		.flatMap(({ sourceUrl, parsedSource }) => likes(sourceUrl, parsedSource.body));
 
 export const repostsOf = (of: URL) =>
 	accepted
 		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
-		.filter(({ targetUrl }) => targetUrl === of.href)
+		.filter(({ targetUrl }) =>
+			dev ? new URL(targetUrl).pathname == of.pathname : targetUrl === of.href
+		)
 		.flatMap(({ sourceUrl, parsedSource }) => reposts(sourceUrl, parsedSource.body));

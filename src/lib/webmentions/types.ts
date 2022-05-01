@@ -1,10 +1,3 @@
-export enum Status {
-	Created = 'created',
-	Accepted = 'accepted',
-	Rejected = 'rejected',
-	Removed = 'removed'
-}
-
 export type Parsed = {
 	body: string;
 	contentType: string;
@@ -16,7 +9,7 @@ export type Webmention = {
 	parsedSource?: Parsed;
 	targetUrl: string;
 	parsedTarget?: Parsed;
-	status: Status;
+	status: 'created' | 'accepted' | 'rejected' | 'removed';
 	message?: string;
 	timestamp: number;
 };

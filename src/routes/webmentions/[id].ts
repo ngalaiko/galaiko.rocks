@@ -1,15 +1,15 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { getById as getById, NotFoundError, Status } from '$lib/webmentions';
+import { getById as getById, NotFoundError, type Webmention } from '$lib/webmentions';
 
-const statusToCode = (status: Status): number => {
+const statusToCode = (status: Webmention['status']): number => {
 	switch (status) {
-		case Status.Created:
+		case 'created':
 			return 201;
-		case Status.Accepted:
+		case 'accepted':
 			return 202;
-		case Status.Rejected:
+		case 'rejected':
 			return 400;
-		case Status.Removed:
+		case 'removed':
 			return 202;
 	}
 };
