@@ -1,8 +1,10 @@
 <script lang="ts">
 	import type { Reply, Like, Repost } from '$lib/webmentions';
-	import ReplyComponent from './Reply.svelte';
-	import LikeComponent from './Like.svelte';
-	import RepostComponent from './Repost.svelte';
+	import {
+		Reply as ReplyComponent,
+		Like as LikeComponent,
+		Repost as RepostComponent
+	} from '$lib/components/molecules';
 
 	export let replies: Reply[];
 	export let likes: Like[];

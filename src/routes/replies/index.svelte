@@ -8,7 +8,7 @@
 	<div class="h-entry">
 		<div class="flex gap-2">
 			<a class="p-author h-card flex gap-2" href="http://galaiko.rocks">
-				<Image src={me} alt="Nikita Galaiko" />
+				<Image src={me} />
 				Nikita Galaiko</a
 			>
 			<span>
