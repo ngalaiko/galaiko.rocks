@@ -107,16 +107,16 @@ const discoverFromHEAD = async (target: string): Promise<string | null> =>
 		.then(parseFromHeaders);
 
 const findFirst =
-	(tag: string, rel: string) =>
+	(rel: string, ...tags: string[]) =>
 	(node: Node): string | null => {
 		const attrs = (node as Element).attrs || [];
 		const foundRel = attrs.find(({ name }) => name === 'rel');
 		const foundHref = attrs.find(({ name }) => name === 'href');
-		if (node.nodeName === tag && foundRel.value === rel) return foundHref.value;
+		if (tags.includes(node.nodeName) && foundRel?.value === rel) return foundHref?.value;
 		const childNodes = (node as Element).childNodes ?? [];
 		if (childNodes.length === 0) return null;
 		for (const childNode of childNodes) {
-			const result = findFirst(tag, rel)(childNode);
+			const result = findFirst(rel, ...tags)(childNode);
 			if (result) return result;
 		}
 		return null;
@@ -125,20 +125,27 @@ const findFirst =
 const discoverFromGET = async (target: string): Promise<string | null> =>
 	fetch(target, {
 		method: 'GET',
-		headers: { 'User-Agent': 'Webmention-Discovery/galaiko.rocks' }
+		headers: { 'User-Agent': 'Webmention-Discovery/galaiko.rocks' },
+		redirect: 'follow'
 	})
 		.then((response) => response.text())
 		.then((html) => {
 			const doc = parse(html);
-			const firstLink = findFirst('link', 'webmention')(doc);
-			if (firstLink) return firstLink;
-			const firstA = findFirst('a', 'webmention')(doc);
-			if (firstA) return firstA;
-			return null;
+			return findFirst('webmention', 'link', 'a')(doc);
 		});
 
-const discoverEndpoint = async (target: string): Promise<string | null> =>
-	(await discoverFromHEAD(target)) ?? (await discoverFromGET(target));
+const discoverEndpoint = async (target: string): Promise<string | null> => {
+	const endpoint = (await discoverFromHEAD(target)) ?? (await discoverFromGET(target));
+	if (!endpoint) return null;
+	try {
+		// don't change absolute links
+		const parsed = new URL(endpoint);
+		return parsed.href;
+	} catch {
+		// handle relative links
+		return new URL(endpoint, new URL(target)).href;
+	}
+};
 
 const send = async (toSend: { target: string; source: string }[]): Promise<Webmention[]> =>
 	Promise.all(
@@ -182,8 +189,10 @@ const filterOutSent = (all: Webmention[]) => (parsed: { source: string; target: 
 			!all.some(({ sourceUrl, targetUrl }) => sourceUrl === source && targetUrl === target)
 	);
 
-const storeSent = (all: Webmention[]) => async (sent: Webmention[]) =>
+const storeSent = (all: Webmention[]) => async (sent: Webmention[]) => {
+	if (argv.dryRun) return;
 	await writeJSON(argv.file)([...all, ...sent]);
+};
 
 await parseWebmentions(argv.input)
 	.then(filterOutSent(existingMentions))
