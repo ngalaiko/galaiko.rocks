@@ -1,9 +1,9 @@
 [
   {
     "payee": "La Neta",
-    "count": 25,
+    "count": 24,
     "currency": "SEK",
-    "amount": 2693
+    "amount": 2588
   },
   {
     "payee": "Tokyo Diner",
@@ -48,22 +48,16 @@
     "amount": 1595
   },
   {
+    "payee": "Meno Male",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1675
+  },
+  {
     "payee": "Weidao",
     "count": 11,
     "currency": "SEK",
-    "amount": 1480
-  },
-  {
-    "payee": "Meno Male",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1550
-  },
-  {
-    "payee": "McDonald's",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 814.37
+    "amount": 1505
   },
   {
     "payee": "StikkiNikki",
@@ -84,6 +78,12 @@
     "amount": 1240
   },
   {
+    "payee": "McDonald's",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 776.87
+  },
+  {
     "payee": "Cafe Ragazzi",
     "count": 9,
     "currency": "SEK",
@@ -102,12 +102,6 @@
     "amount": 968
   },
   {
-    "payee": "The Good Gringo",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 856
-  },
-  {
     "payee": "Tutto Bello",
     "count": 7,
     "currency": "SEK",
@@ -118,6 +112,24 @@
     "count": 7,
     "currency": "SEK",
     "amount": 925
+  },
+  {
+    "payee": "Cafe Eurobar Goes Russian",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 2300.5
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 726
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 760
   },
   {
     "payee": "Oolong Tea House",
@@ -132,22 +144,16 @@
     "amount": 815
   },
   {
-    "payee": "Villa Romana",
-    "count": 5,
+    "payee": "Indian Curry House",
+    "count": 6,
     "currency": "SEK",
-    "amount": 625
+    "amount": 755
   },
   {
     "payee": "Saigon Baguette",
     "count": 5,
     "currency": "SEK",
     "amount": 678
-  },
-  {
-    "payee": "Kaisas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 650
   },
   {
     "payee": "Pong",
@@ -162,21 +168,15 @@
     "amount": 285
   },
   {
-    "payee": "Cafe Eurobar Goes Russian",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 1650.5
-  },
-  {
-    "payee": "Indian Curry House",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 635
-  },
-  {
     "payee": "Tehran Grill",
     "count": 5,
     "currency": "SEK",
     "amount": 667
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 535
   }
 ]
