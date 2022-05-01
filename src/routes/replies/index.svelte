@@ -37,7 +37,7 @@
 						><Image src={me} />Nikita Galaiko</a
 					>
 					<span>
-						in reply to <a class=" u-in-reply-to underline" href="https://webmention.rocks/test/{i}"
+						in reply to <a class="u-in-reply-to underline" href="https://webmention.rocks/test/{i}"
 							>Test {i}</a
 						>:
 					</span>
