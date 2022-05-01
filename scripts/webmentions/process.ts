@@ -2,7 +2,7 @@ import { spawn } from 'child_process';
 import JSONStream from 'JSONStream';
 import yargs from 'yargs';
 import { createReadStream } from 'fs';
-import { Status, type Webmention } from '../../src/lib/webmentions/types.js';
+import type { Webmention } from '../../src/lib/webmentions/types.js';
 import { compareDesc } from 'date-fns';
 import fetch, { type Response } from 'node-fetch';
 import { writeJSON } from '../utils.js';
@@ -172,7 +172,7 @@ const validateSource = async (
 // downloadSource downloads the source html of the webmention and updates the status to accepted if successful
 const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 	// only dowload created webmentions
-	if (webmention.status !== Status.Created) return webmention;
+	if (webmention.status !== 'created') return webmention;
 	const sourceHref = webmention.sourceUrl;
 	console.log('downloading', sourceHref);
 	const response = await fetch(sourceHref, {
@@ -186,13 +186,13 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 		console.log(`${webmention.id} removed: ${response.status} ${response.statusText}`);
 		return update({
 			...webmention,
-			status: Status.Removed
+			status: 'removed'
 		});
 	} else if (!response.ok) {
 		console.log(`${webmention.id} rejected: ${response.status} ${response.statusText}`);
 		return update({
 			...webmention,
-			status: Status.Rejected,
+			status: 'rejected',
 			message: `failed to GET ${webmention.sourceUrl}: ${response.status} ${response.statusText}`
 		});
 	}
@@ -202,7 +202,7 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 		console.log(`${webmention.id} accepted`);
 		return update({
 			...webmention,
-			status: Status.Accepted,
+			status: 'accepted',
 			parsedSource: {
 				contentType: response.headers.get('content-type'),
 				body
@@ -211,7 +211,7 @@ const downloadSource = async (webmention: Webmention): Promise<Webmention> => {
 	} catch (error) {
 		if (error instanceof SourceValidationError) {
 			console.log(`${webmention.id} rejected: ${error.message}`);
-			return update({ ...webmention, status: Status.Rejected, message: error.message });
+			return update({ ...webmention, status: 'rejected', message: error.message });
 		}
 		throw error;
 	}
