@@ -115,23 +115,17 @@ export const getById = async (platform: App.Platform, id: string): Promise<Webme
 export const repliesTo = (to: URL) =>
 	accepted
 		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
-		.filter(({ targetUrl }) =>
-			dev ? new URL(targetUrl).pathname == to.pathname : targetUrl === to.href
-		)
-		.flatMap(({ sourceUrl, parsedSource }) => replies(sourceUrl, parsedSource.body));
+		.flatMap(({ sourceUrl, parsedSource }) => replies(sourceUrl, parsedSource.body))
+		.filter(({ target }) => new URL(target).pathname == to.pathname);
 
 export const likesOf = (of: URL) =>
 	accepted
 		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
-		.filter(({ targetUrl }) =>
-			dev ? new URL(targetUrl).pathname == of.pathname : targetUrl === of.href
-		)
-		.flatMap(({ sourceUrl, parsedSource }) => likes(sourceUrl, parsedSource.body));
+		.flatMap(({ sourceUrl, parsedSource }) => likes(sourceUrl, parsedSource.body))
+		.filter(({ target }) => new URL(target).pathname == of.pathname);
 
 export const repostsOf = (of: URL) =>
 	accepted
 		.filter(({ parsedSource }) => parsedSource.contentType.includes('text/html'))
-		.filter(({ targetUrl }) =>
-			dev ? new URL(targetUrl).pathname == of.pathname : targetUrl === of.href
-		)
-		.flatMap(({ sourceUrl, parsedSource }) => reposts(sourceUrl, parsedSource.body));
+		.flatMap(({ sourceUrl, parsedSource }) => reposts(sourceUrl, parsedSource.body))
+		.filter(({ target }) => new URL(target).pathname == of.pathname);
