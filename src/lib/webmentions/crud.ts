@@ -10,7 +10,9 @@ import { dev } from '$app/env';
 export const accepted: Webmention[] = [
 	...(parsed as Webmention[]),
 	...(dev ? (parsedDev as Webmention[]) : [])
-].filter(({ status }) => status === 'accepted');
+]
+	.filter(({ status }) => status === 'accepted')
+	.filter(({ parsedSource }) => !!parsedSource);
 
 const validDomains = {
 	'galaiko.rocks': true
