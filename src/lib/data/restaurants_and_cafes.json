@@ -6,16 +6,16 @@
     "amount": 2588
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 19,
-    "currency": "SEK",
-    "amount": 3083
-  },
-  {
     "payee": "Tony’s Pizza and Salad",
     "count": 19,
     "currency": "SEK",
     "amount": 2418
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 18,
+    "currency": "SEK",
+    "amount": 2908
   },
   {
     "payee": "Marley Café",
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 15,
+    "count": 14,
     "currency": "SEK",
-    "amount": 3926.5
+    "amount": 3681.5
   },
   {
     "payee": "Brunos Korvbar",
