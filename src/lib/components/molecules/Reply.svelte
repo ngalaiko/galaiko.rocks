@@ -7,6 +7,7 @@
 </script>
 
 <article class="p-comment h-cite flex-col ml-[50px] mt-2">
+	<link href={reply.source} rel="u-url" />
 	<div class="p-author h-card flex gap-2 font-small">
 		{#if reply.author.picture}
 			<img class="u-photo w-[50px] h-[50px] -ml-[50px]" src={reply.author.picture} alt="" />
