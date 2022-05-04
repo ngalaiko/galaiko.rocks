@@ -2,6 +2,16 @@
 	import { Article } from '$lib/components';
 	import Image from '$lib/Image.svelte';
 	import me from '$lib/assets/people/nikita.jpeg?preset=avatar';
+	import { Reply as ReplyComponent } from '$lib/components/molecules';
+	import type { Reply, Author } from '$lib/webmentions';
+
+	const nikita: Author = {
+		picture: 'https://galaiko.rocks/_app/assets/nikita.9d788a1d.png',
+		name: 'Nikita Galaiko',
+		url: 'https://galaiko.rocks'
+	};
+
+	const href = 'https://galaiko.rocks/replies/';
 
 	const range = (start: number, end: number) => {
 		const result = [];
@@ -10,40 +20,27 @@
 		}
 		return result;
 	};
+
+	const replies: Reply[] = [
+		{
+			author: nikita,
+			content: 'It works!',
+			timestamp: new Date('2022-04-30').getTime(),
+			source: href,
+			target: 'https://galaiko.rocks/posts/blog/hello-indieweb/'
+		},
+		...range(1, 23).map((i) => ({
+			author: nikita,
+			content: `Hello! This is a test reply #${i}`,
+			timestamp: new Date('2022-05-01').getTime(),
+			source: href,
+			target: `https://webmention.rocks/test/${i}`
+		}))
+	].sort((a, b) => a.timestamp - b.timestamp);
 </script>
 
 <Article>
-	<ul>
-		<li class="h-entry">
-			<div class="flex gap-2">
-				<a class="p-author h-card flex gap-2" href="http://galaiko.rocks">
-					<Image src={me} />
-					Nikita Galaiko</a
-				>
-				<span>
-					in reply to <a
-						class=" u-in-reply-to underline"
-						href="https://galaiko.rocks/posts/blog/hello-indieweb/">Hello, IndieWeb!</a
-					>:
-				</span>
-			</div>
-			<span class="p-content content pl-2">It works!</span>
-		</li>
-
-		{#each range(1, 23) as i}
-			<li class="h-entry">
-				<div class="flex gap-2">
-					<a class="p-author h-card flex gap-2" href="http://galaiko.rocks"
-						><Image src={me} />Nikita Galaiko</a
-					>
-					<span>
-						in reply to <a class="u-in-reply-to underline" href="https://webmention.rocks/test/{i}"
-							>Test {i}</a
-						>:
-					</span>
-				</div>
-				<span class="p-content content pl-2">Hello! This is a test #{i}</span>
-			</li>
-		{/each}
-	</ul>
+	{#each replies as reply}
+		<ReplyComponent {reply} detailed />
+	{/each}
 </Article>

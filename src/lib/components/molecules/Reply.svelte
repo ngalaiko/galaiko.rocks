@@ -3,6 +3,7 @@
 	import type { Reply } from '$lib/webmentions';
 
 	export let reply: Reply;
+	export let detailed = false;
 </script>
 
 <article class="p-comment h-cite flex-col ml-[50px] mt-2">
@@ -18,12 +19,21 @@
 	</div>
 	<p class="e-content ml-2 -mt-6">{reply.content}</p>
 	{#if reply.updated}
-		<time class="dt-published opacity-50 text-sm" datetime={new Date(reply.updated).toISOString()}
+		<time
+			class="dt-published opacity-50 text-sm ml-2"
+			datetime={new Date(reply.updated).toISOString()}
 			>{format(new Date(reply.updated), 'MMMM dd, yyyy')}</time
 		>
 	{:else if reply.timestamp}
-		<time class="dt-published opacity-50 text-sm" datetime={new Date(reply.timestamp).toISOString()}
+		<time
+			class="dt-published opacity-50 text-sm ml-2"
+			datetime={new Date(reply.timestamp).toISOString()}
 			>{format(new Date(reply.timestamp), 'MMMM dd, yyyy')}</time
+		>
+	{/if}
+	{#if detailed}
+		<span class="opacity-50 text-sm"
+			>in reply to <a class="u-in-reply-to underline" href={reply.target}>{reply.target}</a></span
 		>
 	{/if}
 </article>
