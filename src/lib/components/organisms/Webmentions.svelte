@@ -32,9 +32,7 @@
 <section>
 	<h2 class="text-xl">{all.length} mentions{all.length ? ':' : ''}</h2>
 	{#each all as { component, props }}
-		<article class="py-2">
-			<svelte:component this={component} {...props} />
-		</article>
+		<svelte:component this={component} {...props} />
 	{:else}
 		<a sveltekit:reload class="text-blue" href="https://indieweb.org/Webmention">Send one!</a>
 	{/each}
