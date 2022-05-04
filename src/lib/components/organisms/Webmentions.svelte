@@ -30,7 +30,9 @@
 </script>
 
 <section>
-	<h2 class="text-xl">{all.length} mentions{all.length ? ':' : ''}</h2>
+	<h2 class="text-xl">
+		{all.length} mention{#if all.length !== 1}s{/if}{all.length ? ':' : ''}
+	</h2>
 	{#each all as { component, props }}
 		<svelte:component this={component} {...props} />
 	{:else}
