@@ -5,7 +5,7 @@
 	export let repost: Repost;
 </script>
 
-<div class="p-like h-cite flex flex-col">
+<article class="p-like h-cite flex flex-col p-2">
 	<span>
 		<a class="u-author h-card underline" href={repost.source}
 			>{repost.author.name ?? new URL(repost.author.url).hostname}</a
@@ -18,4 +18,4 @@
 			>{format(new Date(repost.timestamp), 'MMMM dd, yyyy')}</time
 		>
 	{/if}
-</div>
+</article>

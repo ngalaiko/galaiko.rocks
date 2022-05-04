@@ -5,7 +5,7 @@
 	export let like: Like;
 </script>
 
-<div class="p-like h-cite flex flex-col">
+<article class="p-like h-cite flex flex-col">
 	<span>
 		<a class="u-author h-card underline" href={like.source}
 			>{like.author.name ?? new URL(like.author.url).hostname}</a
@@ -16,4 +16,4 @@
 			>{format(new Date(like.timestamp), 'MMMM dd, yyyy')}</time
 		>
 	{/if}
-</div>
+</article>

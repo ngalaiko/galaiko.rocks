@@ -5,11 +5,18 @@
 	export let reply: Reply;
 </script>
 
-<div class="u-comment h-cite flex-col">
-	<a class="u-author h-card underline" href={reply.source}
-		>{reply.author.name ?? new URL(reply.author.url).hostname}:</a
-	>
-	<p class="p-content p-name pl-2">{reply.content}</p>
+<article class="p-comment h-cite flex-col ml-[50px] mt-2">
+	<div class="p-author h-card flex gap-2 font-small">
+		{#if reply.author.picture}
+			<img class="u-photo w-[50px] h-[50px] -ml-[50px]" src={reply.author.picture} alt="" />
+		{:else}
+			<div class="w-[50px] h-[50px] -ml-[50px]" />
+		{/if}
+		<a class="p-name u-url underline" href={reply.source}>
+			{reply.author.name ?? new URL(reply.author.url).hostname}</a
+		>
+	</div>
+	<p class="e-content ml-2 -mt-6">{reply.content}</p>
 	{#if reply.updated}
 		<time class="dt-published opacity-50 text-sm" datetime={new Date(reply.updated).toISOString()}
 			>{format(new Date(reply.updated), 'MMMM dd, yyyy')}</time
@@ -19,4 +26,4 @@
 			>{format(new Date(reply.timestamp), 'MMMM dd, yyyy')}</time
 		>
 	{/if}
-</div>
+</article>
