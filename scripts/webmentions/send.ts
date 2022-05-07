@@ -77,9 +77,6 @@ const loadPages = async (pathname: string) =>
 const parseMentions = (files: [string, string][]) =>
 	files.flatMap(([path, html]) => all(path, html));
 
-// TODO:
-//  * webmention endpoint discovery
-//  * store outgoing webmentions in a file
 const parseWebmentions = (pathname: string) => loadPages(pathname).then(parseMentions);
 
 const existingMentions = await readExistingWebmentions(argv.file);

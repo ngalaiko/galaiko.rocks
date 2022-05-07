@@ -33,7 +33,8 @@
 </script>
 
 <script lang="ts">
-	import { Post as SinglePost, Posts } from '$lib/components';
+	import { WithBorder, Post as SinglePost, Posts } from '$lib/components';
+	import { Footer } from '$lib/components/molecules';
 	import type { Reply, Like, Repost } from '$lib/webmentions';
 
 	export let likes: Like[] = [];
@@ -44,10 +45,14 @@
 	export let posts: Post[] = [];
 </script>
 
-{#if post}
-	<SinglePost {post} {replies} {likes} {reposts}>
-		<slot />
-	</SinglePost>
-{:else}
-	<Posts {posts} />
-{/if}
+<WithBorder>
+	{#if post}
+		<SinglePost {post} {replies} {likes} {reposts}>
+			<slot />
+		</SinglePost>
+	{:else}
+		<Posts {posts} />
+	{/if}
+</WithBorder>
+
+<Footer />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Article } from '$lib/components';
+	import { WithBorder } from '$lib/components';
 	import me from '$lib/assets/people/nikita.jpeg?preset=avatar';
 	import { Reply as ReplyComponent } from '$lib/components/molecules';
 	import type { Reply, Author } from '$lib/webmentions';
@@ -39,8 +39,12 @@
 	].sort((a, b) => a.timestamp - b.timestamp);
 </script>
 
-<Article>
-	{#each replies as reply}
-		<ReplyComponent {reply} detailed />
-	{/each}
-</Article>
+<WithBorder>
+	<ul class="h-feed">
+		{#each replies as reply}
+			<li class="h-entry">
+				<ReplyComponent {reply} detailed />
+			</li>
+		{/each}
+	</ul>
+</WithBorder>

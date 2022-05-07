@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Article } from '$lib/components';
+	import { WithBorder } from '$lib/components';
 	import restaurantsAndCafes from '$lib/data/restaurants_and_cafes.json';
 </script>
 
-<Article>
+<WithBorder>
 	<table class="table-auto w-full">
 		<thead>
 			<tr class="text-gray text-md font-semibold text-left">
@@ -22,4 +22,4 @@
 			{/each}
 		</thead>
 	</table>
-</Article>
+</WithBorder>
