@@ -1802,7 +1802,7 @@
       "master_url": "https://api.discogs.com/masters/635950",
       "resource_url": "https://api.discogs.com/releases/8615340",
       "thumb": "",
-      "cover_image": "https://s.discogs.com/78980ed39440ce97405e987b7b51cc7ddbcf799f/images/spacer.gif",
+      "cover_image": "https://s.discogs.com/0cfc9ba1706020d48f4db57ed5320370674ab122/images/spacer.gif",
       "title": "String Quartet No. 4, Opus 83 / Piano Quintet In G Minor, Opus 57",
       "year": 1961,
       "formats": [
@@ -4406,80 +4406,6 @@
       ]
     },
     "folder_id": 1
-  },
-  {
-    "id": 16025799,
-    "instance_id": 1021832576,
-    "date_added": "2022-05-05T01:45:57-07:00",
-    "rating": 0,
-    "basic_information": {
-      "id": 16025799,
-      "master_id": 99972,
-      "master_url": "https://api.discogs.com/masters/99972",
-      "resource_url": "https://api.discogs.com/releases/16025799",
-      "thumb": "https://i.discogs.com/2PoGSOT94WyNRvDccit-IbVY_xE_Ps57d24ZTkRnoAM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDI1/Nzk5LTE2MDIxMDE4/NTktOTgxMi5qcGVn.jpeg",
-      "cover_image": "https://i.discogs.com/eUGUeAuW1N2GQMSdksWalKM3kBNe7rnLPHGrEFWWiV4/rs:fit/g:sm/q:90/h:602/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDI1/Nzk5LTE2MDIxMDE4/NTktOTgxMi5qcGVn.jpeg",
-      "title": "Legalize It",
-      "year": 1976,
-      "formats": [
-        {
-          "name": "Vinyl",
-          "qty": "1",
-          "text": "Pitman pressing",
-          "descriptions": [
-            "LP",
-            "Album",
-            "Stereo"
-          ]
-        }
-      ],
-      "labels": [
-        {
-          "name": "Columbia",
-          "catno": "PC 34253",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 1866,
-          "resource_url": "https://api.discogs.com/labels/1866"
-        },
-        {
-          "name": "Columbia",
-          "catno": "34253",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 1866,
-          "resource_url": "https://api.discogs.com/labels/1866"
-        }
-      ],
-      "artists": [
-        {
-          "name": "Peter Tosh",
-          "anv": "",
-          "join": "",
-          "role": "",
-          "tracks": "",
-          "id": 88495,
-          "resource_url": "https://api.discogs.com/artists/88495"
-        }
-      ],
-      "genres": [
-        "Reggae"
-      ],
-      "styles": [
-        "Roots Reggae"
-      ]
-    },
-    "folder_id": 1,
-    "notes": [
-      {
-        "field_id": 1,
-        "value": "Near Mint (NM or M-)"
-      },
-      {
-        "field_id": 2,
-        "value": "Near Mint (NM or M-)"
-      }
-    ]
   },
   {
     "id": 1269232,
