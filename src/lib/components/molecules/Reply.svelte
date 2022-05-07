@@ -13,7 +13,7 @@
 		{:else}
 			<div class="w-[50px] h-[50px] -ml-[50px]" />
 		{/if}
-		<a class="p-name u-url underline" href={reply.source}>
+		<a class="p-name u-url underline" href={reply.author.url}>
 			{reply.author.name ?? new URL(reply.author.url).hostname}</a
 		>
 	</div>
@@ -33,7 +33,8 @@
 	{/if}
 	{#if detailed}
 		<span class="opacity-50 text-sm"
-			>in reply to <a class="underline u-in-reply-to" sveltekit:reload href={reply.target}>{reply.target}</a
+			>in reply to <a class="underline u-in-reply-to" sveltekit:reload href={reply.target}
+				>{reply.target}</a
 			></span
 		>
 	{/if}
