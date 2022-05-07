@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Article } from '$lib/components';
+	import { WithBorder } from '$lib/components';
 	import records from '$lib/data/records.json';
 </script>
 
-<Article>
+<WithBorder>
 	<section class="grid grid-cols-3 md:grid-cols-4 gap-1">
 		{#each records as record}
 			{@const info = record['basic_information']}
@@ -17,4 +17,4 @@
 			{/if}
 		{/each}
 	</section>
-</Article>
+</WithBorder>

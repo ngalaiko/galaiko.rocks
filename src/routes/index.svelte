@@ -1,7 +1,7 @@
 <script>
 	import GlitchyLinks from '$lib/GlitchyLinks.svelte';
 	import Image from '$lib/Image.svelte';
-	import { Article } from '$lib/components';
+	import { WithBorder } from '$lib/components';
     import nikita from '$lib/assets/people/nikita.jpeg?preset=avatar';
 </script>
 
@@ -9,7 +9,7 @@
 	<title>Nikita Galaiko</title>
 </svelte:head>
 
-<Article>
+<WithBorder>
 	<div class="content h-card">
 		<header class="flex items-center gap-2">
 			<h1 class="p-name text-9xl font-bold flex-1">
@@ -62,4 +62,4 @@
 			</ul>
 		</GlitchyLinks>
 	</div>
-</Article>
+</WithBorder>

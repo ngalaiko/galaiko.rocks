@@ -1,6 +1,4 @@
 <script lang="ts">
-	import ArticleWithFooter from '../layouts/ArticleWithFooter.svelte';
-
 	import { format } from 'date-fns';
 	import type { Post } from '$lib/posts';
 	import type { Reply, Like, Repost } from '$lib/webmentions';
@@ -18,7 +16,7 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<ArticleWithFooter>
+<article class="h-entry">
 	<h1 class="p-name mb-1 text-4xl font-bold">{post.title}</h1>
 	<div class="mb-8">
 		<time class="dt-published" datetime={parsedDate.toISOString()}
@@ -35,4 +33,4 @@
 	</div>
 
 	<Webmentions {replies} {likes} {reposts} />
-</ArticleWithFooter>
+</article>

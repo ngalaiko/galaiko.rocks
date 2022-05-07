@@ -6,8 +6,7 @@
 	export let detailed = false;
 </script>
 
-<article class="p-comment h-cite flex-col ml-[50px] mt-2">
-	<link href={reply.source} rel="u-url" />
+<article class="flex-col ml-[50px] mt-2">
 	<div class="p-author h-card flex gap-2 font-small">
 		{#if reply.author.picture}
 			<img class="u-photo w-[50px] h-[50px] -ml-[50px]" src={reply.author.picture} alt="" />
@@ -34,7 +33,8 @@
 	{/if}
 	{#if detailed}
 		<span class="opacity-50 text-sm"
-			>in reply to <a class="u-in-reply-to underline" href={reply.target}>{reply.target}</a></span
+			>in reply to <a class="underline u-in-reply-to u-url" sveltekit:reload href={reply.target}>{reply.target}</a
+			></span
 		>
 	{/if}
 </article>
