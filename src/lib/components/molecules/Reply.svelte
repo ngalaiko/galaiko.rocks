@@ -17,27 +17,29 @@
 			{reply.author.name ?? new URL(reply.author.url).hostname}</a
 		>
 	</div>
-	<p class="e-content ml-2 -mt-6">{reply.content}</p>
-	<a class="u-url underline" href={reply.source}>
-		{#if reply.updated}
-			<time
-				class="dt-published opacity-50 text-sm ml-2"
-				datetime={new Date(reply.updated).toISOString()}
-				>{format(new Date(reply.updated), 'MMMM dd, yyyy')}</time
-			>
-		{:else if reply.timestamp}
-			<time
-				class="dt-published opacity-50 text-sm ml-2"
-				datetime={new Date(reply.timestamp).toISOString()}
-				>{format(new Date(reply.timestamp), 'MMMM dd, yyyy')}</time
+	<div class="ml-2">
+		<p class="e-content -mt-6">{reply.content}</p>
+		<a class="u-url underline" href={reply.source}>
+			{#if reply.updated}
+				<time
+					class="dt-published opacity-50 text-sm"
+					datetime={new Date(reply.updated).toISOString()}
+					>{format(new Date(reply.updated), 'MMMM dd, yyyy')}</time
+				>
+			{:else if reply.timestamp}
+				<time
+					class="dt-published opacity-50 text-sm"
+					datetime={new Date(reply.timestamp).toISOString()}
+					>{format(new Date(reply.timestamp), 'MMMM dd, yyyy')}</time
+				>
+			{/if}
+		</a>
+		{#if detailed}
+			<span class="opacity-50 text-sm"
+				>in reply to <a class="underline u-in-reply-to" sveltekit:reload href={reply.target}
+					>{reply.target}</a
+				></span
 			>
 		{/if}
-	</a>
-	{#if detailed}
-		<span class="opacity-50 text-sm"
-			>in reply to <a class="underline u-in-reply-to" sveltekit:reload href={reply.target}
-				>{reply.target}</a
-			></span
-		>
-	{/if}
+	</div>
 </article>
