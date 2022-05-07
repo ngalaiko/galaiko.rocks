@@ -45,6 +45,10 @@
 	export let posts: Post[] = [];
 </script>
 
+<svelte:head>
+	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
+</svelte:head>
+
 <WithBorder>
 	{#if post}
 		<SinglePost {post} {replies} {likes} {reposts}>

@@ -1,12 +1,4 @@
-export type Post = {
-	title: string;
-	date: Date;
-	path: string;
-	html: string;
-	aliases: string[];
-	categories: string[];
-	hidden: boolean;
-};
+import type { Post } from './post';
 
 export const findByPathname = async (path: string) => {
 	const posts = await list();
@@ -33,7 +25,6 @@ export const list = () =>
 					...metadata,
 					path,
 					aliases: metadata.aliases || [],
-					categories: metadata.categories || [],
 					date: new Date(metadata.date)
 				};
 			}
