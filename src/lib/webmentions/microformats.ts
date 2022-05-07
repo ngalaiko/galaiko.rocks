@@ -1,6 +1,6 @@
 import type { Author, Reply, Like, Repost } from './types';
 import { mf2 } from 'microformats-parser';
-import type { MicroformatRoot, Html } from 'microformats-parser/dist/types';
+import type { MicroformatRoot, Html, Image } from 'microformats-parser/dist/types';
 
 const allItems = (root: MicroformatRoot) =>
 	root.children ? root.children.flatMap(allItems) : [root];
@@ -9,11 +9,12 @@ const mf2author = (root: MicroformatRoot): Author => {
 	if (!root.type.includes('h-card')) {
 		throw new Error('Not a h-card');
 	}
-	const picture = root.properties['photo']?.[0] as string;
+	const pictureUrl = root.properties['photo']?.[0] as string;
+	const pictureImage = root.properties['photo']?.[0] as Image;
 	return {
 		name: root.properties['name']?.[0] as string,
 		url: root.properties['url']?.[0] as string,
-		picture
+		picture: pictureImage?.value ?? pictureUrl
 	};
 };
 
