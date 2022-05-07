@@ -3,10 +3,9 @@
 	import me from '$lib/assets/people/nikita.jpeg?preset=avatar';
 	import { Reply as ReplyComponent } from '$lib/components/molecules';
 	import type { Reply, Author } from '$lib/webmentions';
-	import { page } from '$app/stores';
 
 	const nikita: Author = {
-		picture: new URL(me.slice(-1)[0].src, $page.url.origin).href,
+		picture: me.slice(-1)[0].src,
 		name: 'Nikita Galaiko',
 		url: 'https://galaiko.rocks'
 	};
