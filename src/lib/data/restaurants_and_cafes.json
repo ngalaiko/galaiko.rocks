@@ -102,12 +102,6 @@
     "amount": 968
   },
   {
-    "payee": "Tutto Bello",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 693
-  },
-  {
     "payee": "Nem Nem Quán",
     "count": 7,
     "currency": "SEK",
@@ -118,6 +112,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 2300.5
+  },
+  {
+    "payee": "Tutto Bello",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 594
   },
   {
     "payee": "The Good Gringo",
