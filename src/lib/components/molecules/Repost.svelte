@@ -5,7 +5,7 @@
 	export let repost: Repost;
 </script>
 
-<article class="p-like h-cite flex flex-col p-2">
+<article class="h-entry p-like flex flex-col p-2">
 	<span>
 		<a class="u-author h-card underline" href={repost.source}
 			>{repost.author.name ?? new URL(repost.author.url).hostname}</a
