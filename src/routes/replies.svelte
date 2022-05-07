@@ -40,11 +40,7 @@
 </script>
 
 <WithBorder>
-	<ul class="h-feed">
-		{#each replies as reply}
-			<li class="h-entry">
-				<ReplyComponent {reply} detailed />
-			</li>
-		{/each}
-	</ul>
+	{#each replies as reply}
+		<ReplyComponent {reply} detailed />
+	{/each}
 </WithBorder>
