@@ -9,4 +9,381 @@
       "contentType": "text/html; charset=utf-8",
       "body": "<!DOCTYPE html>\n<html lang=\"en\" class=\"h-full\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n\t\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"../apple-touch-icon.png\" />\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"../favicon-32x32.png\" />\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"../favicon-16x16.png\" />\n\t\t<link rel=\"manifest\" href=\"../site.webmanifest\" />\n\n\t\t<link href=\"https://galaiko.rocks/webmentions/\" rel=\"webmention\" />\n\t\t<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Nikita Galaiko\" href=\"/rss.xml\" />\n\n\t\t<meta http-equiv=\"content-security-policy\" content=\"\"><script data-svelte=\"svelte-1pi1qos\">function getCurrentThemeFromCookie() {\n\t\t\tconst cookie = document.cookie;\n\t\t\tconst theme = cookie.split(';').find((c) => c.trim().startsWith('theme='));\n\t\t\tif (!theme) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\tconst value = theme.split('=')[1];\n\t\t\tif (value === 'theme-light' || value === 'theme-dark') {\n\t\t\t\treturn value;\n\t\t\t} else {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t}\n\n\t\tfunction getCurrentThemeFromJS() {\n\t\t\tconst currentTheme = document.documentElement.dataset.theme;\n\t\t\tif (currentTheme === 'theme-dark' || currentTheme === 'theme-light') {\n\t\t\t\treturn currentTheme;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\n\t\tfunction getCurrentThemeFromCSS() {\n\t\t\tif (window.matchMedia('(prefers-color-scheme: dark)').matches) {\n\t\t\t\treturn 'theme-dark';\n\t\t\t}\n\t\t\treturn 'theme-light';\n\t\t}\n\n\t\tfunction getCurrentTheme() {\n\t\t\tconst fromCookies = getCurrentThemeFromCookie();\n\t\t\tconst fromJS = getCurrentThemeFromJS();\n\t\t\treturn fromCookies ? fromCookies : fromJS;\n\t\t}\n\n\t\tfunction setCookie(value) {\n\t\t\tdocument.cookie = `theme=${value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;\n\t\t}\n\n\t\tfunction setTheme(theme) {\n\t\t\tif (!theme) return;\n\t\t\tdocument.documentElement.dataset.theme = theme;\n\t\t\tsetCookie(theme);\n\t\t}\n\n\t\tsetTheme(getCurrentTheme());\n\t</script>\n\t<link rel=\"stylesheet\" href=\"/_app/assets/pages/__layout.svelte-b55c7303.css\">\n\t<link rel=\"modulepreload\" href=\"/_app/start-dd8ff42c.js\">\n\t<link rel=\"modulepreload\" href=\"/_app/chunks/index-e6d1d7c2.js\">\n\t<link rel=\"modulepreload\" href=\"/_app/pages/__layout.svelte-6a0d99d6.js\">\n\t<link rel=\"modulepreload\" href=\"/_app/pages/replies/index.svelte-04e900f9.js\">\n\t<link rel=\"modulepreload\" href=\"/_app/chunks/Article-c05ac11d.js\">\n\t<link rel=\"modulepreload\" href=\"/_app/chunks/Image-b8a202e9.js\">\n\t<link rel=\"modulepreload\" href=\"/_app/chunks/nikita-07d9f395.js\">\n\t</head>\n\t<body class=\"h-full font-serif bg-background text-foreground lg:bg-background-hard\">\n\t\t\n\n\n\n\n<button class=\"hidden right-0 top-0 absolute p-1 px-2 opacity-50\" aria-label=\"Toggle Light and Dark mode\"></button>\n<main id=\"main\" class=\"bg-background max-w-3xl mx-auto lg:drop-shadow-xl lg:mt-6\"><article class=\"text-lg pt-6 pb-12 px-5 mb-32 md:px-0 md:mx-20 md:pt-12\"><ul><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>\n\t\t\t\t\tNikita Galaiko</a>\n\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://galaiko.rocks/posts/blog/hello-indieweb/\">Hello, IndieWeb!</a>:\n\t\t\t\t</span></div>\n\t\t\t<span class=\"p-content content pl-2\">It works!</span></li>\n\n\t\t<li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/1\">Test 1</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #1</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/2\">Test 2</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #2</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/3\">Test 3</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #3</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/4\">Test 4</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #4</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/5\">Test 5</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #5</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/6\">Test 6</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #6</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/7\">Test 7</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #7</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/8\">Test 8</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #8</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/9\">Test 9</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #9</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/10\">Test 10</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #10</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/11\">Test 11</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #11</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/12\">Test 12</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #12</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/13\">Test 13</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #13</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/14\">Test 14</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #14</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/15\">Test 15</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #15</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/16\">Test 16</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #16</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/17\">Test 17</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #17</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/18\">Test 18</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #18</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/19\">Test 19</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #19</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/20\">Test 20</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #20</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/21\">Test 21</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #21</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/22\">Test 22</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #22</span>\n\t\t\t</li><li class=\"h-entry\"><div class=\"flex gap-2\"><a class=\"p-author h-card flex gap-2\" href=\"https://galaiko.rocks\"><picture><source type=\"image/webp\" srcset=\"/_app/assets/nikita.5b692599.webp 1x, /_app/assets/nikita.bbd6bb61.webp 1.5x, /_app/assets/nikita.2492f0cb.webp 2x\">\n\t<img type=\"image/png\" srcset=\"/_app/assets/nikita.c8e883d6.png 1x, /_app/assets/nikita.bf313ea7.png 1.5x, /_app/assets/nikita.9d788a1d.png 2x\" loading=\"lazy\" class=\"img density\" height=\"48\" src=\"/_app/assets/nikita.9d788a1d.png\" alt=\"\"></picture>Nikita Galaiko</a>\n\t\t\t\t\t<span>in reply to <a class=\"u-in-reply-to underline\" href=\"https://webmention.rocks/test/23\">Test 23</a>:\n\t\t\t\t\t</span></div>\n\t\t\t\t<span class=\"p-content content pl-2\">Hello! This is a test #23</span>\n\t\t\t</li></ul></article></main>\n\n\n\t\t<script type=\"module\" data-hydrate=\"19nfrew\">\n\t\timport { start } from \"/_app/start-dd8ff42c.js\";\n\t\tstart({\n\t\t\ttarget: document.querySelector('[data-hydrate=\"19nfrew\"]').parentNode,\n\t\t\tpaths: {\"base\":\"\",\"assets\":\"\"},\n\t\t\tsession: {},\n\t\t\troute: true,\n\t\t\tspa: false,\n\t\t\ttrailing_slash: \"always\",\n\t\t\thydrate: {\n\t\t\t\tstatus: 200,\n\t\t\t\terror: null,\n\t\t\t\tnodes: [\n\t\t\t\t\timport(\"/_app/pages/__layout.svelte-6a0d99d6.js\"),\n\t\t\t\t\t\timport(\"/_app/pages/replies/index.svelte-04e900f9.js\")\n\t\t\t\t],\n\t\t\t\tparams: {},\n\t\t\t\trouteId: \"replies\"\n\t\t\t}\n\t\t});\n\t</script>\n\t<script defer src=\"https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194\" integrity=\"sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==\" data-cf-beacon='{\"rayId\":\"705a342529e0abd5\",\"version\":\"2021.12.0\",\"r\":1,\"token\":\"a2ae1f42932b4f15889d3213ae3353b5\",\"si\":100}' crossorigin=\"anonymous\"></script>\n</body>\n</html>\n"
     }
-  }]
+  },
+  {
+    "id": "-At5L1ti4Oysrc2U3OxV6",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/1",
+    "timestamp": 1651921336163,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/1/webmention?head=true: 200"
+  },
+  {
+    "id": "G5nCqQWJQzQ9BFBi1LPkv",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/2",
+    "timestamp": 1651921336210,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/2/webmention?head=true: 200"
+  },
+  {
+    "id": "nyahmkqmAxjHnMURZjU2F",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/3",
+    "timestamp": 1651921336212,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/3/webmention: 200"
+  },
+  {
+    "id": "q-Ol7hoUrjNRb1IE-bbg3",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/4",
+    "timestamp": 1651921336214,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/4/webmention: 200"
+  },
+  {
+    "id": "L3FDNXb16zwJbUvVxMPZ2",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/5",
+    "timestamp": 1651921336217,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/5/webmention: 200"
+  },
+  {
+    "id": "O2t408SNTF7ow_qko-Gyg",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/6",
+    "timestamp": 1651921336219,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/6/webmention: 200"
+  },
+  {
+    "id": "m2U6gPxfRsmiDaPn0vtgS",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/7",
+    "timestamp": 1651921336222,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/7/webmention?head=true: 200"
+  },
+  {
+    "id": "v-sg6JAaCKy_j5D1aCWzn",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/8",
+    "timestamp": 1651921336224,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/8/webmention?head=true: 200"
+  },
+  {
+    "id": "0S2Fp78HnYA6nfH4QM2By",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/9",
+    "timestamp": 1651921336226,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "bvaVRylc_bcJ6Qgvj7Cbc",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/10",
+    "timestamp": 1651921336229,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "rnPJ6DAlmrodCYQEWiejP",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/11",
+    "timestamp": 1651921336231,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/11/webmention: 200"
+  },
+  {
+    "id": "l4yXUy3QLVWdtygFO5T9e",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/12",
+    "timestamp": 1651921336234,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/12/webmention: 200"
+  },
+  {
+    "id": "-dR9g6sBL3z3j3ykQx7Zm",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/13",
+    "timestamp": 1651921336236,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/13/webmention: 200"
+  },
+  {
+    "id": "EUpZ1nqD82UFWhkSqxIdz",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/14",
+    "timestamp": 1651921336239,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/14/webmention: 200"
+  },
+  {
+    "id": "OwuKR9qUU1MGoyn0IuYzd",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/15",
+    "timestamp": 1651921336241,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "pviZEVtYxSkEBjqahiw4_",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/16",
+    "timestamp": 1651921336244,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/16/webmention: 200"
+  },
+  {
+    "id": "wfGzOqQsfIpkLUjmQD1b7",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/17",
+    "timestamp": 1651921336246,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/17/webmention: 200"
+  },
+  {
+    "id": "Rse2KDa3zJ3kPRhU86e2e",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/18",
+    "timestamp": 1651921336248,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/18/webmention?head=true: 200"
+  },
+  {
+    "id": "xP2IAh1QRU5zgcIf05sMj",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/19",
+    "timestamp": 1651921336251,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/19/webmention?head=true: 200"
+  },
+  {
+    "id": "dlMfHXmofxoaCo9q7DRVY",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/20",
+    "timestamp": 1651921336253,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/20/webmention: 200"
+  },
+  {
+    "id": "4h2c9PJl70VqO3L7EpzOd",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/21",
+    "timestamp": 1651921336255,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/21/webmention?query=yes: 200"
+  },
+  {
+    "id": "k5BHwzm1OL89CQ4o0NuKe",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/22",
+    "timestamp": 1651921336257,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/22/webmention: 200"
+  },
+  {
+    "id": "3Z5fIadAR0WtoaLY0Yrua",
+    "sourceUrl": "https://galaiko.rocks/replies/",
+    "targetUrl": "https://webmention.rocks/test/23",
+    "timestamp": 1651921336259,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "wwLLjn4D46WYvM0d_faRz",
+    "sourceUrl": "https://galaiko.rocks/replies/9/",
+    "targetUrl": "https://webmention.rocks/test/9",
+    "timestamp": 1651923595892,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "K3GdQGZnlrn4f29Tfkzk8",
+    "sourceUrl": "https://galaiko.rocks/replies/8/",
+    "targetUrl": "https://webmention.rocks/test/8",
+    "timestamp": 1651923595935,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/8/webmention?head=true: 200"
+  },
+  {
+    "id": "LZSs62klKACGb2am3uFKJ",
+    "sourceUrl": "https://galaiko.rocks/replies/7/",
+    "targetUrl": "https://webmention.rocks/test/7",
+    "timestamp": 1651923595937,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/7/webmention?head=true: 200"
+  },
+  {
+    "id": "Y3H71UXIzOOR7T363Oosb",
+    "sourceUrl": "https://galaiko.rocks/replies/6/",
+    "targetUrl": "https://webmention.rocks/test/6",
+    "timestamp": 1651923595939,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/6/webmention: 200"
+  },
+  {
+    "id": "wgtDX5UNLLDKLHL8WYpCN",
+    "sourceUrl": "https://galaiko.rocks/replies/5/",
+    "targetUrl": "https://webmention.rocks/test/5",
+    "timestamp": 1651923595941,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/5/webmention: 200"
+  },
+  {
+    "id": "Tjp0KPidPMKQGjmosaAO0",
+    "sourceUrl": "https://galaiko.rocks/replies/4/",
+    "targetUrl": "https://webmention.rocks/test/4",
+    "timestamp": 1651923595944,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/4/webmention: 200"
+  },
+  {
+    "id": "2o4aNPaWmaMrdJI5LF7G6",
+    "sourceUrl": "https://galaiko.rocks/replies/3/",
+    "targetUrl": "https://webmention.rocks/test/3",
+    "timestamp": 1651923595946,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/3/webmention: 200"
+  },
+  {
+    "id": "s7pEsOimXosvrgNdVvn3s",
+    "sourceUrl": "https://galaiko.rocks/replies/23/",
+    "targetUrl": "https://webmention.rocks/test/23",
+    "timestamp": 1651923595948,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "7jt4iBZCxA6L4Jo1Zy0-i",
+    "sourceUrl": "https://galaiko.rocks/replies/22/",
+    "targetUrl": "https://webmention.rocks/test/22",
+    "timestamp": 1651923595950,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/22/webmention: 200"
+  },
+  {
+    "id": "HvW2n8laOdBLb2rdOItQI",
+    "sourceUrl": "https://galaiko.rocks/replies/21/",
+    "targetUrl": "https://webmention.rocks/test/21",
+    "timestamp": 1651923595953,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/21/webmention?query=yes: 200"
+  },
+  {
+    "id": "dfQhpI04-SHbzHziJv8uC",
+    "sourceUrl": "https://galaiko.rocks/replies/20/",
+    "targetUrl": "https://webmention.rocks/test/20",
+    "timestamp": 1651923595955,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/20/webmention: 200"
+  },
+  {
+    "id": "xbbSUs3F9TkI2XAvRMmCJ",
+    "sourceUrl": "https://galaiko.rocks/replies/2/",
+    "targetUrl": "https://webmention.rocks/test/2",
+    "timestamp": 1651923595957,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/2/webmention?head=true: 200"
+  },
+  {
+    "id": "672jWGbkdm2ySskLWuaIQ",
+    "sourceUrl": "https://galaiko.rocks/replies/19/",
+    "targetUrl": "https://webmention.rocks/test/19",
+    "timestamp": 1651923595960,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/19/webmention?head=true: 200"
+  },
+  {
+    "id": "EglxwXXDnTMBa7_qXVkv1",
+    "sourceUrl": "https://galaiko.rocks/replies/18/",
+    "targetUrl": "https://webmention.rocks/test/18",
+    "timestamp": 1651923595962,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/18/webmention?head=true: 200"
+  },
+  {
+    "id": "0oo11AYSwTlMI5Df8uvFJ",
+    "sourceUrl": "https://galaiko.rocks/replies/17/",
+    "targetUrl": "https://webmention.rocks/test/17",
+    "timestamp": 1651923595964,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/17/webmention: 200"
+  },
+  {
+    "id": "-83O7EDzHPC7KHAu2_NLX",
+    "sourceUrl": "https://galaiko.rocks/replies/16/",
+    "targetUrl": "https://webmention.rocks/test/16",
+    "timestamp": 1651923595966,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/16/webmention: 200"
+  },
+  {
+    "id": "TLRXO10yDVfPKVjtQUrM4",
+    "sourceUrl": "https://galaiko.rocks/replies/15/",
+    "targetUrl": "https://webmention.rocks/test/15",
+    "timestamp": 1651923595969,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "2Wt_so_lB2LZxBMxveZo-",
+    "sourceUrl": "https://galaiko.rocks/replies/14/",
+    "targetUrl": "https://webmention.rocks/test/14",
+    "timestamp": 1651923595971,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/14/webmention: 200"
+  },
+  {
+    "id": "Yt4mT6Ac1dGCBcmpHEJvp",
+    "sourceUrl": "https://galaiko.rocks/replies/13/",
+    "targetUrl": "https://webmention.rocks/test/13",
+    "timestamp": 1651923595974,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/13/webmention: 200"
+  },
+  {
+    "id": "81nJ91MDfCel7oz3BEzFM",
+    "sourceUrl": "https://galaiko.rocks/replies/12/",
+    "targetUrl": "https://webmention.rocks/test/12",
+    "timestamp": 1651923595976,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/12/webmention: 200"
+  },
+  {
+    "id": "qmDxH9ywCwEjxMZr6KdTs",
+    "sourceUrl": "https://galaiko.rocks/replies/11/",
+    "targetUrl": "https://webmention.rocks/test/11",
+    "timestamp": 1651923595978,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/11/webmention: 200"
+  },
+  {
+    "id": "GfYKQ-s31Bfo5GHTubN1B",
+    "sourceUrl": "https://galaiko.rocks/replies/10/",
+    "targetUrl": "https://webmention.rocks/test/10",
+    "timestamp": 1651923595980,
+    "status": "rejected",
+    "message": "No endpoint found"
+  },
+  {
+    "id": "5IcYrEglREE-KmpchvTjN",
+    "sourceUrl": "https://galaiko.rocks/replies/1/",
+    "targetUrl": "https://webmention.rocks/test/1",
+    "timestamp": 1651923595983,
+    "status": "accepted",
+    "message": "POST https://webmention.rocks/test/1/webmention?head=true: 200"
+  },
+  {
+    "id": "58NPBrkiqWnEwc9ZbsfFX",
+    "sourceUrl": "https://galaiko.rocks/replies/0/",
+    "targetUrl": "https://galaiko.rocks/posts/blog/hello-indieweb/",
+    "timestamp": 1651923595985,
+    "status": "created",
+    "message": "POST https://galaiko.rocks/webmentions/: 201, location: https://galaiko.rocks/webmentions/CvOXEvco3KBAYoCcmBtkj/"
+  }
+]
