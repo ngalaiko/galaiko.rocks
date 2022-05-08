@@ -1,9 +1,9 @@
 ---
-title: "Docker compose for managing personal server"
-tags: ["docker"]
-date: "2018-07-31"
-categories: ["Blog"]
-aliases: ["/posts/docker-compose-server-manegement/"]
+title: 'Docker compose for managing personal server'
+tags: ['docker']
+date: '2018-07-31'
+categories: ['Blog']
+aliases: ['/posts/docker-compose-server-manegement/']
 ---
 
 For a long time, I tried to find the most comfortable way to manage a server where I host
