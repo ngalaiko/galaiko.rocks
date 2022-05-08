@@ -12,16 +12,6 @@
 	const parsedDate = new Date(post.date);
 </script>
 
-<svelte:head>
-	<title>{post.title}</title>
-	{#if post.previous}
-		<link rel="prev" href={post.previous.path} />
-	{/if}
-	{#if post.next}
-		<link rel="next" href={post.next.path} />
-	{/if}
-</svelte:head>
-
 <article class="h-entry">
 	<h1 class="p-name mb-1 text-4xl font-bold">{post.title}</h1>
 	<div class="mb-8">

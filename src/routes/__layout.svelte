@@ -1,10 +1,14 @@
 <script>
 	import '../app.css';
-	import { ColorToggle } from '$lib/components';
+	import { ColorToggle, WithBorder } from '$lib/components';
+	import { Footer } from '$lib/components/molecules';
 </script>
 
 <ColorToggle />
 
 <main id="main" class="mx-auto max-w-3xl">
-	<slot />
+	<WithBorder>
+		<slot />
+	</WithBorder>
+	<Footer />
 </main>
