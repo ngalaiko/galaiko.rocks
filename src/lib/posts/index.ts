@@ -1,3 +1,5 @@
+import { compareDesc } from 'date-fns';
+
 export type Post = {
 	title: string;
 	date: Date;
@@ -6,6 +8,8 @@ export type Post = {
 	aliases: string[];
 	categories: string[];
 	hidden: boolean;
+	previous?: Post;
+	next?: Post;
 };
 
 export const findByPathname = async (path: string) => {
@@ -37,4 +41,13 @@ export const list = () =>
 				date: new Date(metadata.date)
 			};
 		})
+	).then((posts) =>
+		posts
+			.filter((post) => !post.hidden)
+			.sort((a, b) => compareDesc(a.date, b.date))
+			.map((post, index, posts) => ({
+				...post,
+				previous: index > 0 ? posts[index - 1] : null,
+				next: index < posts.length - 1 ? posts[index + 1] : null
+			}))
 	);

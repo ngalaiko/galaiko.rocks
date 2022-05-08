@@ -11,8 +11,7 @@
 </script>
 
 <script lang="ts">
-	import { WithBorder, Posts } from '$lib/components';
-	import { Footer } from '$lib/components/molecules';
+	import { Posts } from '$lib/components';
 
 	export let posts: Post[];
 </script>
@@ -21,8 +20,4 @@
 	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
 </svelte:head>
 
-<WithBorder>
-	<Posts {posts} />
-</WithBorder>
-
-<Footer />
+<Posts {posts} />

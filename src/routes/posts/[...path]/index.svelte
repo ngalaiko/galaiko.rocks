@@ -25,8 +25,7 @@
 </script>
 
 <script lang="ts">
-	import { WithBorder, Post as SinglePost } from '$lib/components';
-	import { Footer } from '$lib/components/molecules';
+	import { Post as SinglePost } from '$lib/components';
 	import type { Reply, Like, Repost } from '$lib/webmentions';
 
 	export let likes: Like[] = [];
@@ -40,10 +39,6 @@
 	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
 </svelte:head>
 
-<WithBorder>
-	<SinglePost {post} {replies} {likes} {reposts}>
-		{@html post.html}
-	</SinglePost>
-</WithBorder>
-
-<Footer />
+<SinglePost {post} {replies} {likes} {reposts}>
+	{@html post.html}
+</SinglePost>
