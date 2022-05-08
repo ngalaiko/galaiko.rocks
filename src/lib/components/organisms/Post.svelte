@@ -14,6 +14,12 @@
 
 <svelte:head>
 	<title>{post.title}</title>
+	{#if post.previous}
+		<link rel="prev" href={post.previous.path} />
+	{/if}
+	{#if post.next}
+		<link rel="next" href={post.next.path} />
+	{/if}
 </svelte:head>
 
 <article class="h-entry">
@@ -28,8 +34,20 @@
 		<slot />
 	</div>
 
-	<div class="pt-4">
-		<hr class="text-gray p-4" />
+	<hr class="text-gray py-4" />
+
+	<div class="flex justify-between pb-4">
+		{#if post.previous}
+			<a href={post.previous.path}>⇐ {post.previous.title}</a>
+		{:else}
+			<span />
+		{/if}
+
+		{#if post.next}
+			<a href={post.next.path}>{post.next.title} ⇒</a>
+		{:else}
+			<span />
+		{/if}
 	</div>
 
 	<Webmentions {replies} {likes} {reposts} />
