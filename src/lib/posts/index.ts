@@ -25,18 +25,16 @@ export const findByPathname = async (path: string) => {
 
 export const list = () =>
 	Promise.all(
-		Object.entries(import.meta.glob('../../posts/**/*.md')).map(
-			async ([filename, module]): Promise<Post> => {
-				const m = await module();
-				const { metadata } = m;
-				return {
-					...metadata,
-					html: await m.default.render().html,
-					path: `/posts${filename.split('posts')[1].replace('.md', '/')}`,
-					aliases: metadata.aliases || [],
-					categories: metadata.categories || [],
-					date: new Date(metadata.date)
-				};
-			}
-		)
+		Object.entries(import.meta.glob('./**/*.md')).map(async ([filename, module]): Promise<Post> => {
+			const m = await module();
+			const { metadata } = m;
+			return {
+				...metadata,
+				html: await m.default.render().html,
+				path: `/posts${filename.slice(1).replace('.md', '/')}`,
+				aliases: metadata.aliases || [],
+				categories: metadata.categories || [],
+				date: new Date(metadata.date)
+			};
+		})
 	);
