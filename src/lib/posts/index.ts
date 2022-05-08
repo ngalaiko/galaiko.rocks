@@ -25,13 +25,14 @@ export const findByPathname = async (path: string) => {
 
 export const list = () =>
 	Promise.all(
-		Object.entries(import.meta.glob('../../routes/posts/**/*.md')).map(
+		Object.entries(import.meta.glob('../../posts/**/*.md')).map(
 			async ([filename, module]): Promise<Post> => {
-				const { metadata } = await module();
-				const path = filename.split('routes')[1].replace('.md', '/');
+				const m = await module();
+				const { metadata } = m;
 				return {
 					...metadata,
-					path,
+					html: await m.default.render().html,
+					path: `/posts${filename.split('posts')[1].replace('.md', '/')}`,
 					aliases: metadata.aliases || [],
 					categories: metadata.categories || [],
 					date: new Date(metadata.date)

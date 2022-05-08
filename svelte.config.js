@@ -4,7 +4,6 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
-import preview, { htmlFormatter } from 'remark-preview';
 import imagePresets, { hdPreset, densityPreset } from 'vite-plugin-image-presets';
 
 const rectFor = (width, height = width) =>
@@ -28,19 +27,6 @@ const config = {
 			smartypants: {
 				dashes: 'oldschool'
 			},
-			remarkPlugins: [
-				preview(
-					htmlFormatter({
-						length: 10000,
-						maxBlocks: 100,
-						headings: true,
-						ellipsis: true
-					}),
-					{
-						attribute: 'html'
-					}
-				) // add html attribute to use in rss generation
-			],
 			rehypePlugins: [
 				slug, // adds slug to headers
 				[autoLinkHeadings, { behavior: 'wrap' }] //  adds a <a> around slugged headers
