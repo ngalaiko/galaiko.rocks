@@ -37,6 +37,13 @@
 
 <svelte:head>
 	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
+	<title>{post.title}</title>
+	{#if post.previous}
+		<link rel="prev" href={post.previous.path} />
+	{/if}
+	{#if post.next}
+		<link rel="next" href={post.next.path} />
+	{/if}
 </svelte:head>
 
 <SinglePost {post} {replies} {likes} {reposts}>

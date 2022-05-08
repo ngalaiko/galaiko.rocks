@@ -12,12 +12,9 @@
 </script>
 
 <script lang="ts">
-	import WithBorder from '$lib/components/layouts/WithBorder.svelte';
 	import { Reply as ReplyComponent } from '$lib/components/molecules';
 
 	export let reply: Reply;
 </script>
 
-<WithBorder>
-	<ReplyComponent {reply} detailed />
-</WithBorder>
+<ReplyComponent {reply} detailed />

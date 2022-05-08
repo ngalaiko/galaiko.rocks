@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { WithBorder } from '$lib/components';
 	import restaurantsAndCafes from '$lib/data/restaurants_and_cafes.json';
 </script>
 
-<WithBorder>
+<svelte:head>
+	<title>Restaurants and Cafes</title>
+</svelte:head>
+
+<article>
 	<table class="table-auto w-full">
 		<thead>
 			<tr class="text-gray text-md font-semibold text-left">
@@ -22,4 +25,4 @@
 			{/each}
 		</thead>
 	</table>
-</WithBorder>
+</article>

@@ -12,14 +12,11 @@
 </script>
 
 <script lang="ts">
-	import WithBorder from '$lib/components/layouts/WithBorder.svelte';
 	import { Reply as ReplyComponent } from '$lib/components/molecules';
 
 	export let replies: Reply[] = [];
 </script>
 
-<WithBorder>
-	{#each replies as reply}
-		<ReplyComponent {reply} detailed />
-	{/each}
-</WithBorder>
+{#each replies as reply}
+	<ReplyComponent {reply} detailed />
+{/each}
