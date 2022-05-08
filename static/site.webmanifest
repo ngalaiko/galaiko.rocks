@@ -6,6 +6,8 @@
 		{ "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
 	],
 	"theme_color": "#1d2021",
-	"background_color": "#1d2021",
-	"display": "standalone"
+	"background_color": "#282828",
+	"display": "browser",
+	"lang": "en-US",
+	"start_url": "https://galaiko.rocks"
 }
