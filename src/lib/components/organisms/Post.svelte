@@ -26,7 +26,7 @@
 
 	<hr class="text-gray py-4" />
 
-	<div class="flex justify-between pb-4">
+	<div class="flex justify-between pb-4 text-sm">
 		{#if post.previous}
 			<a href={post.previous.path}>⇐ {post.previous.title}</a>
 		{:else}
