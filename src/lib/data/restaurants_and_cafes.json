@@ -7,9 +7,9 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 19,
+    "count": 20,
     "currency": "SEK",
-    "amount": 2418
+    "amount": 2553
   },
   {
     "payee": "Tokyo Diner",
@@ -19,15 +19,15 @@
   },
   {
     "payee": "Marley Café",
-    "count": 17,
+    "count": 18,
     "currency": "SEK",
-    "amount": 1180.5
+    "amount": 1278.5
   },
   {
     "payee": "Chic Konditori",
-    "count": 15,
+    "count": 14,
     "currency": "SEK",
-    "amount": 1424
+    "amount": 1350
   },
   {
     "payee": "Omnipollos Hatt",
@@ -43,9 +43,9 @@
   },
   {
     "payee": "Indian King",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1595
+    "amount": 1730
   },
   {
     "payee": "Meno Male",
@@ -73,21 +73,21 @@
   },
   {
     "payee": "Yume Sushi",
-    "count": 9,
+    "count": 10,
     "currency": "SEK",
-    "amount": 1240
+    "amount": 1500
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1515
   },
   {
     "payee": "McDonald's",
     "count": 9,
     "currency": "SEK",
     "amount": 776.87
-  },
-  {
-    "payee": "Cafe Ragazzi",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1360
   },
   {
     "payee": "Johan & Nyström",
@@ -174,9 +174,9 @@
     "amount": 667
   },
   {
-    "payee": "Hanoi Corner",
+    "payee": "AI Ramen",
     "count": 5,
     "currency": "SEK",
-    "amount": 535
+    "amount": 855
   }
 ]
