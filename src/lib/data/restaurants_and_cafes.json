@@ -12,16 +12,16 @@
     "amount": 2553
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 18,
-    "currency": "SEK",
-    "amount": 2908
-  },
-  {
     "payee": "Marley Café",
     "count": 18,
     "currency": "SEK",
     "amount": 1278.5
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 17,
+    "currency": "SEK",
+    "amount": 2763
   },
   {
     "payee": "Chic Konditori",
