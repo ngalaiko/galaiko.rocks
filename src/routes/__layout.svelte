@@ -6,7 +6,7 @@
 
 <ColorToggle />
 
-<main id="main" class="mx-auto max-w-3xl">
+<main id="main" class="mx-auto max-w-3xl min-h-screen flex flex-col justify-between">
 	<WithBorder>
 		<slot />
 	</WithBorder>
