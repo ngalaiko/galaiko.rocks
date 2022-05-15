@@ -150,12 +150,6 @@
     "amount": 755
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 678
-  },
-  {
     "payee": "Pong",
     "count": 5,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 855
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 535
   }
 ]
