@@ -9,7 +9,7 @@
     "payee": "Tony’s Pizza and Salad",
     "count": 20,
     "currency": "SEK",
-    "amount": 2553
+    "amount": 2708
   },
   {
     "payee": "Marley Café",
@@ -24,22 +24,22 @@
     "amount": 2763
   },
   {
-    "payee": "Chic Konditori",
-    "count": 14,
-    "currency": "SEK",
-    "amount": 1350
-  },
-  {
     "payee": "Omnipollos Hatt",
-    "count": 14,
+    "count": 15,
     "currency": "SEK",
-    "amount": 3681.5
+    "amount": 3816.5
   },
   {
     "payee": "Brunos Korvbar",
     "count": 13,
     "currency": "SEK",
     "amount": 1170
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 13,
+    "currency": "SEK",
+    "amount": 1252
   },
   {
     "payee": "Indian King",
@@ -102,6 +102,12 @@
     "amount": 968
   },
   {
+    "payee": "The Good Gringo",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 856
+  },
+  {
     "payee": "Cafe Eurobar Goes Russian",
     "count": 7,
     "currency": "SEK",
@@ -120,12 +126,6 @@
     "amount": 594
   },
   {
-    "payee": "The Good Gringo",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 726
-  },
-  {
     "payee": "Kaisas Fisk",
     "count": 6,
     "currency": "SEK",
@@ -138,6 +138,12 @@
     "amount": 517
   },
   {
+    "payee": "Pong",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 800
+  },
+  {
     "payee": "Levinskys",
     "count": 6,
     "currency": "SEK",
@@ -148,12 +154,6 @@
     "count": 6,
     "currency": "SEK",
     "amount": 755
-  },
-  {
-    "payee": "Pong",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 655
   },
   {
     "payee": "Aryam",
