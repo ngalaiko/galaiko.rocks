@@ -1,5 +1,6 @@
-import Fraction from 'fraction.js';
+import Fraction from '$lib/fraction';
 
+const some: Fraction = new Fraction(0);
 const one = new Fraction(1);
 const two = one.mul(2);
 const three = one.mul(3);
@@ -104,7 +105,9 @@ const lowball = {
 	title: 'Lowball'
 };
 
-type Ingridient = {
+type Measurement = [Ingredient, Fraction] | Measurement[];
+
+type Ingredient = {
 	title: string;
 };
 
@@ -264,10 +267,6 @@ const orangeWheel = {
 	title: 'Orange Wheel'
 };
 
-const lemonPeel = {
-	title: 'Lemon Peel'
-};
-
 const simpleSyrup = {
 	title: 'Simple Syrup'
 };
@@ -288,44 +287,44 @@ type Cocktail = {
 
 type Instruction = {
 	title: string;
-	ingridients?: ([Ingridient, Fraction?][] | [Ingridient, Fraction?])[];
+	ingridients?: (Measurement | Instruction)[];
 	glass?: Glass | Glass[];
 	ice?: Ice;
 };
 
 type Ice = 'cubes' | 'large cube' | 'crushed';
 
-const stir = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const stir = (...ingridients: Measurement[]) => ({
 	title: 'Stir',
 	ingridients
 });
 
-const roll = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const roll = (...ingridients: (Measurement | Instruction)[]) => ({
 	title: 'Roll',
 	ingridients
 });
 
-const muddle = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const muddle = (...ingridients: Measurement[]) => ({
 	title: 'Muddle',
 	ingridients
 });
 
-const dryShake = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const dryShake = (...ingridients: Measurement[]) => ({
 	title: 'Dry Shake',
 	ingridients
 });
 
-const shake = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const shake = (...ingridients: Measurement[]) => ({
 	title: 'Shake',
 	ingridients
 });
 
-const blend = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const blend = (...ingridients: Measurement[]) => ({
 	title: 'Blend',
 	ingridients
 });
 
-const garnish = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const garnish = (...ingridients: Measurement[]) => ({
 	title: 'Garnish',
 	ingridients
 });
@@ -355,7 +354,7 @@ const fill = ({
 }: {
 	glass: Glass;
 	ice?: Ice;
-	ingridients?: ([Ingridient, Fraction] | [Ingridient, Fraction][])[];
+	ingridients?: (Measurement | Instruction)[];
 }) => ({
 	title: 'Fill',
 	glass,
@@ -363,17 +362,17 @@ const fill = ({
 	ingridients
 });
 
-const squeeze = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const squeeze = (...ingridients: Measurement[]) => ({
 	title: 'Squeeze',
 	ingridients
 });
 
-const topUp = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+const topUp = (...ingridients: Measurement[]) => ({
 	title: 'Top Up',
 	ingridients
 });
 
-const list: Cocktail[] = [
+export const list: Cocktail[] = [
 	{
 		title: 'Kamikadze',
 		instructions: [
@@ -588,7 +587,7 @@ const list: Cocktail[] = [
 		instructions: [
 			shake([darkRum, two], [pineappleJuice, four], [freshOrangeJuice, one], [coconutCream, one]),
 			strain({ glass: hurricane, ice: 'crushed' }),
-			garnish([gratedNutmeg, undefined], [pineappleWedge, one])
+			garnish([gratedNutmeg, some], [pineappleWedge, one])
 		]
 	},
 	{
@@ -607,7 +606,7 @@ const list: Cocktail[] = [
 					[simpleSyrup, third]
 				]
 			}),
-			topUp([cola, undefined])
+			topUp([cola, some])
 		]
 	},
 	{
@@ -648,7 +647,7 @@ const list: Cocktail[] = [
 		]
 	},
 	{
-		title: 'Gun & Tonic',
+		title: 'Gin & Tonic',
 		instructions: [
 			fill({
 				glass: highball,
@@ -675,11 +674,15 @@ const list: Cocktail[] = [
 			fill({
 				glass: highball,
 				ice: 'cubes',
-				ingridients: [[clubSoda, one]]
+				ingridients: [
+					[clubSoda, one],
+					roll(
+						[lightRum, two],
+						muddle([limeWedge, four], [mintLeaf, eight], [simpleSyrup, barspoon.mul(2)])
+					)
+				]
 			}),
-			muddle([limeWedge, four], [mintLeaf, eight], [simpleSyrup, barspoon.mul(2)]),
-			roll([lightRum, two]),
-			topUp([clubSoda, undefined])
+			topUp([clubSoda, some])
 		]
 	},
 	{
@@ -698,10 +701,31 @@ const list: Cocktail[] = [
 					[limeWedge, one],
 					[lemonWedge, one]
 				],
-				[sugarRim, undefined]
+				[sugarRim, some]
 			)
 		]
 	}
 ];
 
-export default list;
+const isMeasurement = (value: Measurement | Instruction) => value instanceof Array;
+
+const instructionToIngredients = (instruction: Instruction): Measurement[] =>
+	(instruction.ingridients ?? []).flatMap((ingridient) =>
+		isMeasurement(ingridient)
+			? [ingridient as Measurement]
+			: instructionToIngredients(ingridient as Instruction)
+	);
+
+export const measurements = (cocktail: Cocktail): Measurement[] =>
+	(cocktail.instructions ?? []).flatMap(instructionToIngredients);
+
+const isDefinitiveMeasurement = (measurement: Measurement) =>
+	measurement.length == 2 && measurement[1] instanceof Fraction;
+
+export const measurementToString = (measurement: Measurement): string => {
+	if (isDefinitiveMeasurement(measurement)) {
+		const [ingridient, amount] = measurement as [Ingredient, Fraction];
+		return `${ingridient.title} ${amount.toString()}`;
+	}
+	return (measurement as [Ingredient, Fraction][]).map(measurementToString).join(' or ');
+};
