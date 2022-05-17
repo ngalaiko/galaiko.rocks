@@ -3,13 +3,18 @@ import Fraction from 'fraction.js';
 const one = new Fraction(1);
 const two = one.mul(2);
 const three = one.mul(3);
+const four = one.mul(4);
+const five = one.mul(5);
 const six = one.mul(6);
+const eight = one.mul(8);
 const ten = one.mul(10);
-const oneAndHalfParts = three.div(two);
+const oneAndHalf = three.div(two);
 const third = one.div(three);
+const sixth = one.div(six);
 const quarter = one.div(4);
 const half = one.div(two);
 const dash = new Fraction(1, 32);
+const barspoon = one.div(six);
 
 export type Glass = {
 	title: string;
@@ -27,12 +32,40 @@ const cocktail = {
 	title: 'Cocktail'
 };
 
+const iceCube = {
+	title: 'Ice cube'
+};
+
+const sugarCube = {
+	title: 'Sugar cube'
+};
+
 const oldFashioned = {
 	title: 'Old Fashioned'
 };
 
+const doubleOldFashioned = {
+	title: 'Double Old Fashioned'
+};
+
+const copper = {
+	title: 'Copper'
+};
+
+const hurricane = {
+	title: 'Hurricane'
+};
+
 const coupe = {
 	title: 'Coupe'
+};
+
+const tiki = {
+	title: 'Tiki'
+};
+
+const highball = {
+	title: 'Highball'
 };
 
 const bourbon = {
@@ -45,6 +78,22 @@ const ryeWhiskey = {
 
 const darkRum = {
 	title: 'Dark Rum'
+};
+
+const lightRum = {
+	title: 'Light Rum'
+};
+
+const coconutCream = {
+	title: 'Coconut Cream'
+};
+
+const heavyCream = {
+	title: 'Heavy Cream'
+};
+
+const pineappleJuice = {
+	title: 'Pineapple Juice'
 };
 
 const coffeeLiqueur = {
@@ -95,12 +144,28 @@ const vodka = {
 	title: 'Vodka'
 };
 
+const gingerBeer = {
+	title: 'Ginger Beer'
+};
+
+const cognac = {
+	title: 'Cognac'
+};
+
+const tequila = {
+	title: 'Tequila'
+};
+
 const hendriksGin = {
 	title: "Hendrik's Gin"
 };
 
 const gin = {
 	title: 'Gin'
+};
+
+const tonic = {
+	title: 'Tonic'
 };
 
 const campari = {
@@ -127,6 +192,10 @@ const orangeLiqueur = {
 	title: 'Orange Liqueur'
 };
 
+const agaveSyrup = {
+	title: 'Agave Syrup'
+};
+
 const freshOrangeJuice = {
 	title: 'Fresh Orange Juice'
 };
@@ -151,12 +220,40 @@ const maraschinoCherry = {
 	title: 'Maraschino Cherry'
 };
 
+const gratedNutmeg = {
+	title: 'Grated Nutmeg'
+};
+
+const pineappleWedge = {
+	title: 'Pineapple Wedge'
+};
+
 const orangeTwist = {
 	title: 'Orange Twist'
 };
 
+const lime = {
+	title: 'Lime'
+};
+
+const limeWedge = {
+	title: 'Lime Wedge'
+};
+
 const lemonTwist = {
 	title: 'Lemon Twist'
+};
+
+const lemonWedge = {
+	title: 'Lemon Wedge'
+};
+
+const sugarRim = {
+	title: 'Sugar Rim'
+};
+
+const cherry = {
+	title: 'Cherry'
 };
 
 const lemonWheel = {
@@ -175,6 +272,10 @@ const simpleSyrup = {
 	title: 'Simple Syrup'
 };
 
+const cola = {
+	title: 'Cola'
+};
+
 const raspberries = {
 	title: 'Raspberry'
 };
@@ -187,16 +288,20 @@ type Cocktail = {
 
 type Instruction = {
 	title: string;
-	// first level means and, second level means or
-	ingridients?: ([Ingridient, Fraction][] | [Ingridient, Fraction])[];
-	glass?: Glass;
+	ingridients?: ([Ingridient, Fraction?][] | [Ingridient, Fraction?])[];
+	glass?: Glass | Glass[];
 	ice?: Ice;
 };
 
-type Ice = 'cubes' | 'large cube';
+type Ice = 'cubes' | 'large cube' | 'crushed';
 
 const stir = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
 	title: 'Stir',
+	ingridients
+});
+
+const roll = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+	title: 'Roll',
 	ingridients
 });
 
@@ -215,6 +320,11 @@ const shake = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][
 	ingridients
 });
 
+const blend = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+	title: 'Blend',
+	ingridients
+});
+
 const garnish = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
 	title: 'Garnish',
 	ingridients
@@ -226,10 +336,36 @@ const doubleStrain = ({ glass, ice }: { glass: Glass; ice?: Ice }) => ({
 	ice
 });
 
-const strain = ({ glass, ice }: { glass: Glass; ice?: Ice }) => ({
+const dump = ({ glass, ice }: { glass: Glass | Glass[]; ice?: Ice }) => ({
+	title: 'Dump',
+	glass,
+	ice
+});
+
+const strain = ({ glass, ice }: { glass: Glass | Glass[]; ice?: Ice }) => ({
 	title: 'Strain',
 	glass,
 	ice
+});
+
+const fill = ({
+	glass,
+	ice,
+	ingridients
+}: {
+	glass: Glass;
+	ice?: Ice;
+	ingridients?: ([Ingridient, Fraction] | [Ingridient, Fraction][])[];
+}) => ({
+	title: 'Fill',
+	glass,
+	ice,
+	ingridients
+});
+
+const squeeze = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
+	title: 'Squeeze',
+	ingridients
 });
 
 const topUp = (...ingridients: ([Ingridient, Fraction] | [Ingridient, Fraction][])[]) => ({
@@ -269,11 +405,7 @@ const list: Cocktail[] = [
 	{
 		title: 'Artillery',
 		instructions: [
-			stir(
-				[londonDryGin, oneAndHalfParts],
-				[sweetVermouth, oneAndHalfParts],
-				[orangeBitter, dash.mul(2)]
-			),
+			stir([londonDryGin, oneAndHalf], [sweetVermouth, oneAndHalf], [orangeBitter, dash.mul(2)]),
 			strain({ glass: cocktail }),
 			garnish([orangePeel, one])
 		]
@@ -282,7 +414,7 @@ const list: Cocktail[] = [
 		title: 'Rogue 75',
 		instructions: [
 			muddle([lemonTwist, one], [raspberries, two], [simpleSyrup, one]),
-			shake([gin, oneAndHalfParts]),
+			shake([gin, oneAndHalf]),
 			strain({ glass: nickAndNora }),
 			topUp([champagne, one]),
 			garnish([lemonTwist, one])
@@ -299,7 +431,7 @@ const list: Cocktail[] = [
 	{
 		title: 'Frensh 75',
 		instructions: [
-			shake([gin, oneAndHalfParts], [freshLemonJuice, half], [simpleSyrup, half]),
+			shake([gin, oneAndHalf], [freshLemonJuice, half], [simpleSyrup, half]),
 			strain({ glass: flute }),
 			topUp([champagne, three])
 		]
@@ -325,7 +457,7 @@ const list: Cocktail[] = [
 		title: 'Chicago South Side',
 		instructions: [
 			shake(
-				[gin, oneAndHalfParts],
+				[gin, oneAndHalf],
 				[freshLimeJuice, third],
 				[simpleSyrup, third],
 				[angosturaBitters, dash.mul(7)],
@@ -339,7 +471,7 @@ const list: Cocktail[] = [
 		title: 'Gin Campari Sour',
 		instructions: [
 			dryShake(
-				[gin, oneAndHalfParts],
+				[gin, oneAndHalf],
 				[campari, third],
 				[freshLemonJuice, third],
 				[simpleSyrup, half],
@@ -435,6 +567,139 @@ const list: Cocktail[] = [
 				[angosturaBitters, dash.mul(4)]
 			),
 			strain({ glass: oldFashioned, ice: 'cubes' })
+		]
+	},
+	{
+		title: 'Piña Colada',
+		instructions: [
+			blend(
+				[lightRum, two],
+				[coconutCream, one],
+				[heavyCream, one],
+				[pineappleJuice, six],
+				[iceCube, five]
+			),
+			strain({ glass: [tiki, highball] }),
+			garnish([maraschinoCherry, one])
+		]
+	},
+	{
+		title: 'Painkiller',
+		instructions: [
+			shake([darkRum, two], [pineappleJuice, four], [freshOrangeJuice, one], [coconutCream, one]),
+			strain({ glass: hurricane, ice: 'crushed' }),
+			garnish([gratedNutmeg, undefined], [pineappleWedge, one])
+		]
+	},
+	{
+		title: 'Long Island Iced Tea',
+		instructions: [
+			fill({
+				glass: highball,
+				ice: 'cubes',
+				ingridients: [
+					[gin, half],
+					[vodka, half],
+					[tequila, half],
+					[lightRum, half],
+					[tripleSec, half],
+					[freshLemonJuice, third],
+					[simpleSyrup, third]
+				]
+			}),
+			topUp([cola, undefined])
+		]
+	},
+	{
+		title: 'Champagne cocktail',
+		instructions: [
+			fill({
+				glass: flute,
+				ingridients: [
+					[sugarCube, one],
+					[angosturaBitters, dash.mul(2)]
+				]
+			}),
+			topUp([cognac, sixth]),
+			topUp([champagne, three]),
+			garnish([lemonTwist, one], [cherry, one])
+		]
+	},
+	{
+		title: 'Frozen Margarita',
+		instructions: [
+			blend([tequila, two], [orangeLiqueur, third], [freshLimeJuice, one], [iceCube, five])
+		]
+	},
+	{
+		title: 'Moscow Mule',
+		instructions: [
+			fill({
+				glass: copper,
+				ice: 'crushed',
+				ingridients: [
+					[vodka, two],
+					[freshLimeJuice, one]
+				]
+			}),
+			squeeze([lime, quarter]),
+			topUp([gingerBeer, four]),
+			garnish([limeWedge, one])
+		]
+	},
+	{
+		title: 'Gun & Tonic',
+		instructions: [
+			fill({
+				glass: highball,
+				ice: 'cubes',
+				ingridients: [[gin, two]]
+			}),
+			squeeze([lime, quarter]),
+			garnish([lime, quarter]),
+			topUp([tonic, five])
+		]
+	},
+	{
+		title: 'Whiskey Smash',
+		instructions: [
+			muddle([lemonWedge, four], [simpleSyrup, third]),
+			muddle([mintLeaf, eight]),
+			shake([bourbon, two]),
+			dump({ glass: doubleOldFashioned, ice: 'cubes' })
+		]
+	},
+	{
+		title: 'Mojito',
+		instructions: [
+			fill({
+				glass: highball,
+				ice: 'cubes',
+				ingridients: [[clubSoda, one]]
+			}),
+			muddle([limeWedge, four], [mintLeaf, eight], [simpleSyrup, barspoon.mul(2)]),
+			roll([lightRum, two]),
+			topUp([clubSoda, undefined])
+		]
+	},
+	{
+		title: 'Dulce De Tequila',
+		instructions: [
+			shake(
+				[tequila, two],
+				[cognac, one],
+				[orangeLiqueur, one],
+				[freshLimeJuice, half],
+				[agaveSyrup, barspoon]
+			),
+			strain({ glass: cocktail }),
+			garnish(
+				[
+					[limeWedge, one],
+					[lemonWedge, one]
+				],
+				[sugarRim, undefined]
+			)
 		]
 	}
 ];
