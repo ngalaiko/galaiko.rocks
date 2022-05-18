@@ -30,12 +30,6 @@
     "amount": 3816.5
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 13,
-    "currency": "SEK",
-    "amount": 1170
-  },
-  {
     "payee": "Chic Konditori",
     "count": 13,
     "currency": "SEK",
@@ -46,6 +40,12 @@
     "count": 13,
     "currency": "SEK",
     "amount": 1730
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1105
   },
   {
     "payee": "Meno Male",
@@ -114,12 +114,6 @@
     "amount": 2300.5
   },
   {
-    "payee": "Nem Nem Quán",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 780
-  },
-  {
     "payee": "Tutto Bello",
     "count": 6,
     "currency": "SEK",
@@ -154,6 +148,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 755
+  },
+  {
+    "payee": "Nem Nem Quán",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 635
   },
   {
     "payee": "Aryam",
