@@ -60,12 +60,6 @@
     "amount": 1505
   },
   {
-    "payee": "StikkiNikki",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 481
-  },
-  {
     "payee": "DropCoffee",
     "count": 10,
     "currency": "SEK",
@@ -88,6 +82,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 776.87
+  },
+  {
+    "payee": "StikkiNikki",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 442
   },
   {
     "payee": "Johan & Nyström",
@@ -150,12 +150,6 @@
     "amount": 755
   },
   {
-    "payee": "Nem Nem Quán",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 635
-  },
-  {
     "payee": "Aryam",
     "count": 5,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 535
+  },
+  {
+    "payee": "Prime Burger",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 715
   }
 ]
