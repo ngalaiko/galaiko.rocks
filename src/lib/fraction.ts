@@ -7,6 +7,14 @@ export default class Fraction {
 		this.denominator = denominator ?? 1;
 	}
 
+	public compare(target: Fraction | number) {
+		if (target instanceof Fraction) {
+			return this.numerator / this.denominator - target.numerator / target.denominator;
+		} else {
+			return this.numerator / this.denominator - target;
+		}
+	}
+
 	public mul(target: Fraction | number) {
 		if (target instanceof Fraction) {
 			return new Fraction(this.numerator * target.numerator, this.denominator * target.denominator);
@@ -36,5 +44,9 @@ export default class Fraction {
 
 	public toString() {
 		return `${this.numerator}/${this.denominator}`;
+	}
+
+	public toNumber() {
+		return this.numerator / this.denominator;
 	}
 }

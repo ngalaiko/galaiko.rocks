@@ -1,6 +1,5 @@
 import Fraction from '$lib/fraction';
 
-const some: Fraction = new Fraction(0);
 const one = new Fraction(1);
 const two = one.mul(2);
 const three = one.mul(3);
@@ -10,7 +9,6 @@ const six = one.mul(6);
 const eight = one.mul(8);
 const ten = one.mul(10);
 const oneAndHalf = three.div(two);
-const third = one.div(three);
 const sixth = one.div(six);
 const quarter = one.div(4);
 const half = one.div(two);
@@ -32,15 +30,6 @@ const flute = {
 const cocktail = {
 	title: 'Cocktail'
 };
-
-const iceCube = {
-	title: 'Ice cube'
-};
-
-const sugarCube = {
-	title: 'Sugar cube'
-};
-
 const oldFashioned = {
 	title: 'Old Fashioned'
 };
@@ -69,36 +58,56 @@ const highball = {
 	title: 'Highball'
 };
 
+const iceCube = {
+	title: 'Ice cube',
+	plural: 'Ice cubes',
+	unit: 'number' as const
+};
+
+const sugarCube = {
+	title: 'Sugar cube',
+	plural: 'Sugar cubes',
+	unit: 'number' as const
+};
+
 const bourbon = {
-	title: 'Bourbon'
+	title: 'Bourbon',
+	unit: 'parts' as const
 };
 
 const ryeWhiskey = {
-	title: 'Rye Whiskey'
+	title: 'Rye Whiskey',
+	unit: 'parts' as const
 };
 
 const darkRum = {
-	title: 'Dark Rum'
+	title: 'Dark Rum',
+	unit: 'parts' as const
 };
 
 const lightRum = {
-	title: 'Light Rum'
+	title: 'Light Rum',
+	unit: 'parts' as const
 };
 
 const coconutCream = {
-	title: 'Coconut Cream'
+	title: 'Coconut Cream',
+	unit: 'parts' as const
 };
 
 const heavyCream = {
-	title: 'Heavy Cream'
+	title: 'Heavy Cream',
+	unit: 'parts' as const
 };
 
 const pineappleJuice = {
-	title: 'Pineapple Juice'
+	title: 'Pineapple Juice',
+	unit: 'parts' as const
 };
 
 const coffeeLiqueur = {
-	title: 'Coffee Liqueur'
+	title: 'Coffee Liqueur',
+	unit: 'parts' as const
 };
 
 const lowball = {
@@ -107,176 +116,237 @@ const lowball = {
 
 type Measurement = [Ingredient, Fraction] | Measurement[];
 
+type Unit = 'parts' | 'number' | 'undefined';
+
 type Ingredient = {
 	title: string;
+	plural?: string;
+	unit: Unit;
 };
 
 const londonDryGin = {
-	title: 'London Dry Gin'
+	title: 'London Dry Gin',
+	unit: 'parts' as const
 };
 
 const eggWhite = {
-	title: 'Egg White'
+	title: 'Egg Whites',
+	unit: 'parts' as const
 };
 
 const clubSoda = {
-	title: 'Club Soda'
+	title: 'Club Soda',
+	unit: 'parts' as const
 };
 
 const dryVermouth = {
-	title: 'Dry Vermouth'
+	title: 'Dry Vermouth',
+	unit: 'parts' as const
 };
 
 const sweetVermouth = {
-	title: 'Sweet Vermouth'
+	title: 'Sweet Vermouth',
+	unit: 'parts' as const
 };
 
 const orangeBitter = {
-	title: 'Orange Bitters'
+	title: 'Orange Bitters',
+	unit: 'parts' as const
 };
 
 const angosturaBitters = {
-	title: 'Angostura Bitters'
+	title: 'Angostura Bitters',
+	unit: 'parts' as const
 };
 
 const olive = {
-	title: 'Olive'
+	title: 'Olive',
+	plural: 'Olives',
+	unit: 'number' as const
 };
 
 const vodka = {
-	title: 'Vodka'
+	title: 'Vodka',
+	unit: 'parts' as const
 };
 
 const gingerBeer = {
-	title: 'Ginger Beer'
+	title: 'Ginger Beer',
+	unit: 'parts' as const
 };
 
 const cognac = {
-	title: 'Cognac'
+	title: 'Cognac',
+	unit: 'parts' as const
 };
 
 const tequila = {
-	title: 'Tequila'
+	title: 'Tequila',
+	unit: 'parts' as const
 };
 
 const hendriksGin = {
-	title: "Hendrik's Gin"
+	title: "Hendrik's Gin",
+	unit: 'parts' as const
 };
 
 const gin = {
-	title: 'Gin'
+	title: 'Gin',
+	unit: 'parts' as const
 };
 
 const tonic = {
-	title: 'Tonic'
+	title: 'Tonic',
+	unit: 'parts' as const
 };
 
 const campari = {
-	title: 'Campari'
+	title: 'Campari',
+	unit: 'parts' as const
 };
 
 const mintLeaf = {
-	title: 'Meant Leaf'
+	title: 'Meant Leaf',
+	plural: 'Meant Leaves',
+	unit: 'number' as const
 };
 
 const cucumberSlice = {
-	title: 'Cucumber slice'
+	title: 'Cucumber slice',
+	plural: 'Cucumber slices',
+	unit: 'number' as const
 };
 
 const champagne = {
-	title: 'Champagne'
+	title: 'Champagne',
+	unit: 'parts' as const
 };
 
 const tripleSec = {
-	title: 'Triple Sec'
+	title: 'Triple Sec',
+	unit: 'parts' as const
 };
 
 const orangeLiqueur = {
-	title: 'Orange Liqueur'
+	title: 'Orange Liqueur',
+	unit: 'parts' as const
 };
 
 const agaveSyrup = {
-	title: 'Agave Syrup'
+	title: 'Agave Syrup',
+	unit: 'parts' as const
 };
 
 const freshOrangeJuice = {
-	title: 'Fresh Orange Juice'
+	title: 'Fresh Orange Juice',
+	unit: 'parts' as const
 };
 
 const freshLimeJuice = {
-	title: 'Fresh Lime Juice'
+	title: 'Fresh Lime Juice',
+	unit: 'parts' as const
 };
 
 const freshLemonJuice = {
-	title: 'Fresh Lemon Juice'
+	title: 'Fresh Lemon Juice',
+	unit: 'parts' as const
 };
 
 const pickledOnion = {
-	title: 'Pickled Onion'
+	title: 'Pickled Onion',
+	plural: 'Pickled Onions',
+	unit: 'number' as const
 };
 
 const orangePeel = {
-	title: 'Orange Peel'
+	title: 'Orange Peel',
+	plural: 'Orange Peels',
+	unit: 'number' as const
 };
 
 const maraschinoCherry = {
-	title: 'Maraschino Cherry'
+	title: 'Maraschino Cherry',
+	plural: 'Maraschino Cherries',
+	unit: 'number' as const
 };
 
 const gratedNutmeg = {
-	title: 'Grated Nutmeg'
+	title: 'Grated Nutmeg',
+	unit: 'undefined' as const
 };
 
 const pineappleWedge = {
-	title: 'Pineapple Wedge'
+	title: 'Pineapple Wedge',
+	plural: 'Pineapple Wedges',
+	unit: 'number' as const
 };
 
 const orangeTwist = {
-	title: 'Orange Twist'
+	title: 'Orange Twist',
+	plural: 'Orange Twists',
+	unit: 'number' as const
 };
 
 const lime = {
-	title: 'Lime'
+	title: 'Lime',
+	unit: 'number' as const
 };
 
 const limeWedge = {
-	title: 'Lime Wedge'
+	title: 'Lime Wedge',
+	plural: 'Lime Wedges',
+	unit: 'number' as const
 };
 
 const lemonTwist = {
-	title: 'Lemon Twist'
+	title: 'Lemon Twist',
+	plural: 'Lemon Twists',
+	unit: 'number' as const
 };
 
 const lemonWedge = {
-	title: 'Lemon Wedge'
+	title: 'Lemon Wedge',
+	plural: 'Lemon Wedges',
+	unit: 'number' as const
 };
 
 const sugarRim = {
-	title: 'Sugar Rim'
+	title: 'Sugar Rim',
+	unit: 'undefined' as const
 };
 
 const cherry = {
-	title: 'Cherry'
+	title: 'Cherry',
+	plural: 'Cherries',
+	unit: 'number' as const
 };
 
 const lemonWheel = {
-	title: 'Lemon Wheel'
+	title: 'Lemon Wheel',
+	plural: 'Lemon Wheels',
+	unit: 'number' as const
 };
 
 const orangeWheel = {
-	title: 'Orange Wheel'
+	title: 'Orange Wheel',
+	plural: 'Orange Wheels',
+	unit: 'number' as const
 };
 
 const simpleSyrup = {
-	title: 'Simple Syrup'
+	title: 'Simple Syrup',
+	unit: 'parts' as const
 };
 
 const cola = {
-	title: 'Cola'
+	title: 'Cola',
+	unit: 'parts' as const
 };
 
 const raspberries = {
-	title: 'Raspberry'
+	title: 'Raspberry',
+	plural: 'Raspberries',
+	unit: 'number' as const
 };
 
 type Cocktail = {
@@ -397,7 +467,7 @@ export const list: Cocktail[] = [
 		instructions: [
 			stir([londonDryGin, two], [dryVermouth, one]),
 			strain({ glass: cocktail }),
-			garnish([[pickledOnion, three]])
+			garnish([pickledOnion, three])
 		],
 		note: 'Make sure glass is ice cold'
 	},
@@ -422,7 +492,12 @@ export const list: Cocktail[] = [
 	{
 		title: 'Gin Fizz',
 		instructions: [
-			dryShake([londonDryGin, two], [freshLemonJuice, one], [simpleSyrup, third], [eggWhite, half]),
+			dryShake(
+				[londonDryGin, two],
+				[freshLemonJuice, one],
+				[simpleSyrup, quarter.mul(3)],
+				[eggWhite, half]
+			),
 			strain({ glass: lowball, ice: 'cubes' }),
 			topUp([clubSoda, one])
 		]
@@ -438,7 +513,7 @@ export const list: Cocktail[] = [
 	{
 		title: 'East Side',
 		instructions: [
-			muddle([cucumberSlice, three], [simpleSyrup, third], [mintLeaf, six]),
+			muddle([cucumberSlice, three], [simpleSyrup, quarter.mul(3)], [mintLeaf, six]),
 			shake([hendriksGin, two], [freshLimeJuice, one]),
 			doubleStrain({ glass: nickAndNora }),
 			garnish([mintLeaf, one])
@@ -457,8 +532,8 @@ export const list: Cocktail[] = [
 		instructions: [
 			shake(
 				[gin, oneAndHalf],
-				[freshLimeJuice, third],
-				[simpleSyrup, third],
+				[freshLimeJuice, quarter.mul(3)],
+				[simpleSyrup, quarter.mul(3)],
 				[angosturaBitters, dash.mul(7)],
 				[mintLeaf, ten]
 			),
@@ -471,8 +546,8 @@ export const list: Cocktail[] = [
 		instructions: [
 			dryShake(
 				[gin, oneAndHalf],
-				[campari, third],
-				[freshLemonJuice, third],
+				[campari, quarter.mul(3)],
+				[freshLemonJuice, quarter.mul(3)],
 				[simpleSyrup, half],
 				[orangeBitter, dash],
 				[eggWhite, half]
@@ -587,7 +662,7 @@ export const list: Cocktail[] = [
 		instructions: [
 			shake([darkRum, two], [pineappleJuice, four], [freshOrangeJuice, one], [coconutCream, one]),
 			strain({ glass: hurricane, ice: 'crushed' }),
-			garnish([gratedNutmeg, some], [pineappleWedge, one])
+			garnish([gratedNutmeg, undefined], [pineappleWedge, one])
 		]
 	},
 	{
@@ -602,11 +677,11 @@ export const list: Cocktail[] = [
 					[tequila, half],
 					[lightRum, half],
 					[tripleSec, half],
-					[freshLemonJuice, third],
-					[simpleSyrup, third]
+					[freshLemonJuice, quarter.mul(3)],
+					[simpleSyrup, quarter.mul(3)]
 				]
 			}),
-			topUp([cola, some])
+			topUp([cola, undefined])
 		]
 	},
 	{
@@ -627,7 +702,7 @@ export const list: Cocktail[] = [
 	{
 		title: 'Frozen Margarita',
 		instructions: [
-			blend([tequila, two], [orangeLiqueur, third], [freshLimeJuice, one], [iceCube, five])
+			blend([tequila, two], [orangeLiqueur, quarter.mul(3)], [freshLimeJuice, one], [iceCube, five])
 		]
 	},
 	{
@@ -662,7 +737,7 @@ export const list: Cocktail[] = [
 	{
 		title: 'Whiskey Smash',
 		instructions: [
-			muddle([lemonWedge, four], [simpleSyrup, third]),
+			muddle([lemonWedge, four], [simpleSyrup, quarter.mul(3)]),
 			muddle([mintLeaf, eight]),
 			shake([bourbon, two]),
 			dump({ glass: doubleOldFashioned, ice: 'cubes' })
@@ -682,7 +757,7 @@ export const list: Cocktail[] = [
 					)
 				]
 			}),
-			topUp([clubSoda, some])
+			topUp([clubSoda, undefined])
 		]
 	},
 	{
@@ -701,7 +776,7 @@ export const list: Cocktail[] = [
 					[limeWedge, one],
 					[lemonWedge, one]
 				],
-				[sugarRim, some]
+				[sugarRim, undefined]
 			)
 		]
 	}
@@ -719,13 +794,56 @@ const instructionToIngredients = (instruction: Instruction): Measurement[] =>
 export const measurements = (cocktail: Cocktail): Measurement[] =>
 	(cocktail.instructions ?? []).flatMap(instructionToIngredients);
 
-const isDefinitiveMeasurement = (measurement: Measurement) =>
-	measurement.length == 2 && measurement[1] instanceof Fraction;
+const isDefinitiveMeasurement = (measurement: Measurement) => !(measurement[1] instanceof Array);
+
+const isInt = (value: number) => value % 1 === 0;
 
 export const measurementToString = (measurement: Measurement): string => {
 	if (isDefinitiveMeasurement(measurement)) {
 		const [ingridient, amount] = measurement as [Ingredient, Fraction];
-		return `${ingridient.title} ${amount.toString()}`;
+		if (amount === undefined) {
+			return ingridient.title;
+		}
+		switch (ingridient.unit) {
+			case 'undefined':
+				throw new Error(`Expected undefined amount for ${ingridient}, got ${amount}`);
+			case 'parts':
+				if (isInt(amount.div(one).toNumber())) {
+					return `${amount.mul(30).toNumber()}ml of ${ingridient.title}`;
+				} else if (isInt(amount.div(half).toNumber())) {
+					return `${amount.mul(30).toNumber()}ml of ${ingridient.title}`;
+				} else if (isInt(amount.div(quarter).toNumber())) {
+					return `${amount.mul(30).toNumber()}ml of ${ingridient.title}`;
+				} else if (isInt(amount.div(barspoon).toNumber())) {
+					const number = amount.div(barspoon).toNumber();
+					return number == 1
+						? `Single barspoon of ${ingridient.title}`
+						: `${amount.div(barspoon).toNumber()} barspoons of ${ingridient.title}`;
+				} else if (isInt(amount.div(dash).toNumber())) {
+					const number = amount.div(dash).toNumber();
+					return number == 1
+						? `Single dash of ${ingridient.title}`
+						: `${amount.div(dash).toNumber()} dashes of ${ingridient.title}`;
+				} else {
+					throw new Error(`Unsupported measurement ${measurement}`);
+				}
+			case 'number':
+				if (isInt(amount.div(one).toNumber())) {
+					const number = amount.div(one).toNumber();
+					return number == 1
+						? `One ${ingridient.title}`
+						: `${number} ${ingridient.plural ?? ingridient.title}`;
+				} else if (isInt(amount.div(half).toNumber())) {
+					const number = amount.div(half).toNumber();
+					return number == 1 ? `Half of ${ingridient.title}` : `${number} ${ingridient.title}`;
+				} else if (isInt(amount.div(quarter).toNumber())) {
+					const number = amount.div(quarter).toNumber();
+					return number == 1 ? `Quarter of ${ingridient.title}` : `${number} ${ingridient.title}`;
+				} else {
+					throw new Error(`Unsupported measurement ${measurement}`);
+				}
+		}
+	} else {
+		return (measurement as [Ingredient, Fraction][]).map(measurementToString).join(' or ');
 	}
-	return (measurement as [Ingredient, Fraction][]).map(measurementToString).join(' or ');
 };
