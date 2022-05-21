@@ -114,12 +114,6 @@
     "amount": 2300.5
   },
   {
-    "payee": "Tutto Bello",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 594
-  },
-  {
     "payee": "Kaisas Fisk",
     "count": 6,
     "currency": "SEK",
@@ -154,6 +148,12 @@
     "count": 5,
     "currency": "SEK",
     "amount": 285
+  },
+  {
+    "payee": "Tutto Bello",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 495
   },
   {
     "payee": "Tehran Grill",
