@@ -6,6 +6,8 @@ import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import imagePresets, { hdPreset, densityPreset } from 'vite-plugin-image-presets';
 
+import pluginCooklang from './plugins/rollup-plugin-cooklang.js';
+
 const rectFor = (width, height = width) =>
 	new Buffer(
 		`<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${width}" ry="${height}"/></svg>`
@@ -48,6 +50,7 @@ const config = {
 		trailingSlash: 'always',
 		vite: {
 			plugins: [
+				pluginCooklang(),
 				imagePresets({
 					hd: hdPreset({
 						class: 'img hd',
