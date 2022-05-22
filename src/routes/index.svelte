@@ -30,21 +30,31 @@
 			> if you are into it
 		</p>
 
-		<p>
-			i have a <a href="https://github.com/ngalaiko" rel="me">github</a> account if you want to checkout
-			stuff i occasionaly do for fun (programming wise)
-		</p>
+		<p>this is not a very large website, it only consists of a few pages, for example:</p>
+		<ul>
+			<li>
+				there is a page on this website with a <a sveltekit:prefetch href="/records/"
+					>list of vinyl records i own</a
+				>. it mirrors my
+				<a sveltekit:reload href="https://www.discogs.com/user/ngalaiko">discogs account</a>
+			</li>
+
+			<li>
+				and here are <a sveltekit:prefetch href="/restaurants_and_cafes/"
+					>30 restaurants and cafes</a
+				>
+				i went to most often last year (updated weekly)
+			</li>
+
+			<li>
+				<a sveltekit:prefetch href="/cocktails/">a list of cocktails</a> that i respect and
+				occasionaly make to consume at home
+			</li>
+		</ul>
 
 		<p>
-			there is a page on this website with a <a sveltekit:prefetch href="/records/"
-				>list of vinyl records i own</a
-			>
-		</p>
-
-		<p>
-			and here is a <a sveltekit:prefetch href="/restaurants_and_cafes/"
-				>top 30 restaurants and cafes</a
-			> i visited since last year (updated weekly!)
+			i also have a <a sveltekit:reload href="https://github.com/ngalaiko" rel="me">github</a> account
+			if you want to checkout stuff i occasionaly do for fun (programming wise)
 		</p>
 
 		<h3>currently</h3>
