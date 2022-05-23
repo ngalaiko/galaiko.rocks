@@ -11,9 +11,11 @@
 </script>
 
 <script lang="ts">
+	import Image from '$lib/Image.svelte';
+
 	export let cocktails: Cocktail[];
 
-    const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, '-');
+	const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, '-');
 </script>
 
 <svelte:head>
@@ -21,15 +23,14 @@
 </svelte:head>
 <ul class="flex flex-col gap-6">
 	{#each cocktails as cocktail}
-        {@const slug = slugify(cocktail.title)}
+		{@const slug = slugify(cocktail.title)}
 		<li class="flex flex-col gap-2">
-            <h2 id={slug}>
-			    <a href={'#' + slug} class="font-semibold underline">{cocktail.title}</a>
-            </h2>
-			<ul>
+			<h2 id={slug}>
+				<a href={'#' + slug} class="font-semibold underline">{cocktail.title}</a>
+			</h2>
+			<ul class="list-disc ml-5 ">
 				{#each cocktail.ingredients as ingredient}
 					<li>
-						<span>-</span>
 						<span>{ingredient.name}{ingredient.quantity ? ':' : ''}</span>
 						{#if ingredient.quantity}
 							<span>{ingredient.quantity}</span>
@@ -37,8 +38,11 @@
 					</li>
 				{/each}
 			</ul>
-
 			<p>{cocktail.steps.join(' ')}</p>
+
+			{#await import(`../../lib/cocktails/${cocktail.title}.jpeg?preset=hd`) then image}
+				<Image src={image.default} alt={cocktail.title} />
+			{/await}
 		</li>
 	{/each}
 </ul>
