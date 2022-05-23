@@ -55,7 +55,9 @@ const config = {
 					hd: hdPreset({
 						class: 'img hd',
 						widths: [440, 700],
-						sizes: '(min-width: 700px) 700px, 100vw',
+						height: 2000,
+						loading: 'lazy',
+						sizes: '(min-width: 700px) 700px, 700vw',
 						formats: {
 							avif: { quality: 44 },
 							webp: { quality: 44 },
