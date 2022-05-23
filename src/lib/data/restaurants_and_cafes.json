@@ -7,9 +7,9 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 20,
+    "count": 19,
     "currency": "SEK",
-    "amount": 2708
+    "amount": 2578
   },
   {
     "payee": "Marley Café",
@@ -30,16 +30,16 @@
     "amount": 3816.5
   },
   {
-    "payee": "Chic Konditori",
-    "count": 13,
-    "currency": "SEK",
-    "amount": 1252
-  },
-  {
     "payee": "Indian King",
     "count": 13,
     "currency": "SEK",
     "amount": 1730
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1120
   },
   {
     "payee": "Meno Male",
@@ -114,6 +114,12 @@
     "amount": 2300.5
   },
   {
+    "payee": "Levinskys",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 950
+  },
+  {
     "payee": "Kaisas Fisk",
     "count": 6,
     "currency": "SEK",
@@ -132,10 +138,10 @@
     "amount": 800
   },
   {
-    "payee": "Levinskys",
+    "payee": "Aryam",
     "count": 6,
     "currency": "SEK",
-    "amount": 815
+    "amount": 391
   },
   {
     "payee": "Indian Curry House",
@@ -144,10 +150,16 @@
     "amount": 755
   },
   {
-    "payee": "Aryam",
+    "payee": "Prime Burger",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 860
+  },
+  {
+    "payee": "Lillebrors Bageri",
     "count": 5,
     "currency": "SEK",
-    "amount": 285
+    "amount": 586
   },
   {
     "payee": "Tutto Bello",
@@ -156,27 +168,15 @@
     "amount": 495
   },
   {
+    "payee": "Le Kebab",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 651
+  },
+  {
     "payee": "Tehran Grill",
     "count": 5,
     "currency": "SEK",
     "amount": 667
-  },
-  {
-    "payee": "AI Ramen",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 855
-  },
-  {
-    "payee": "Hanoi Corner",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 535
-  },
-  {
-    "payee": "Prime Burger",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 715
   }
 ]
