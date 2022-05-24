@@ -11,8 +11,6 @@
 </script>
 
 <script lang="ts">
-	import Image from '$lib/Image.svelte';
-
 	export let cocktails: Cocktail[];
 
 	const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, '-');
@@ -39,10 +37,6 @@
 				{/each}
 			</ul>
 			<p>{cocktail.steps.join(' ')}</p>
-
-			{#await import(`../../lib/cocktails/${cocktail.title}.jpeg?preset=hd`) then image}
-				<Image src={image.default} alt={cocktail.title} />
-			{/await}
 		</li>
 	{/each}
 </ul>
