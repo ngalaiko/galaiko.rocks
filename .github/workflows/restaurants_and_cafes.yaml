@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
+          lfs: true
 
       - name: Checkout ledger
         uses: actions/checkout@v3
