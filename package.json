@@ -21,7 +21,7 @@
 		"@cooklang/cooklang-ts": "^1.0.1",
 		"@fast-csv/parse": "^4.3.6",
 		"@sveltejs/adapter-cloudflare": "^1.0.0-next.17",
-		"@sveltejs/kit": "1.0.0-next.336",
+		"@sveltejs/kit": "1.0.0-next.344",
 		"@tailwindcss/aspect-ratio": "^0.4.0",
 		"@tailwindcss/line-clamp": "^0.4.0",
 		"@tailwindcss/typography": "^0.5.2",
