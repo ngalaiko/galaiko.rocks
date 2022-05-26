@@ -48,12 +48,6 @@
     "amount": 1675
   },
   {
-    "payee": "Weidao",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1505
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 11,
     "currency": "SEK",
@@ -70,6 +64,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1500
+  },
+  {
+    "payee": "Weidao",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1375
   },
   {
     "payee": "Cafe Ragazzi",
