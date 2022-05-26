@@ -13,12 +13,15 @@
 			.map((sliced) => `${sliced.slice(0, -1).join('%20')} ${sliced.slice(-1)[0]}`)
 			.join(', ');
 
+	const escapeSrc = (src: string) => src?.split(' ').map((s) => s.split('%20').join(' '));
+
 	const allSources = Array.isArray(src)
-		? src.map(({ srcset, ...rest }) => ({
+		? src.map(({ srcset, src, ...rest }) => ({
 				...rest,
-				srcset: escapeSrcset(srcset)
+				srcset: escapeSrcset(srcset),
+				src: escapeSrc(src)
 		  }))
-		: [{ srcset: escapeSrcset(src) }];
+		: [{ srcset: src }];
 
 	const sources = allSources.slice(0, -1);
 	const lastSource = allSources[allSources.length - 1];
