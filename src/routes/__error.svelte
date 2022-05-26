@@ -1,10 +1,11 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = ({ status }) => {
+	export const load: Load = ({ status, error }) => {
 		return {
 			props: {
-				title: status === 404 ? 'Page not found.' : 'Something went wrong.'
+				title: status === 404 ? 'Page not found.' : 'Something went wrong.',
+				error: error
 			}
 		};
 	};
@@ -12,6 +13,8 @@
 
 <script lang="ts">
 	export let title: string;
+	export let error: Error;
+	console.log(error);
 </script>
 
 <svelte:head>
