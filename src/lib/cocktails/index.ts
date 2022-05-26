@@ -1,4 +1,5 @@
 import type { Step, StepIngredient } from '@cooklang/cooklang-ts';
+import type { ImageAttrs } from 'vite-plugin-image-presets';
 
 export type Ingredient = {
 	name: string;
@@ -7,11 +8,21 @@ export type Ingredient = {
 
 export type Cocktail = {
 	title: string;
+	source?: URL;
 	ingredients: Ingredient[];
 	steps: string[];
+	image: ImageAttrs[];
 };
 
 const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
+const images = import.meta.importGlob('./*.jpeg', {
+	import: 'default',
+	eager: true,
+	query: {
+		preset: 'hd'
+	}
+});
 
 export const list = () =>
 	Promise.all(
@@ -44,7 +55,13 @@ export const list = () =>
 						}
 					}, '')
 				);
-				return { title, ingredients, steps };
+				const image = images[`./${title}.jpeg`];
+				try {
+					const source = new URL(m.metadata.source);
+					return { title, ingredients, steps, image, source };
+				} catch {
+					return { title, ingredients, steps, image };
+				}
 			}
 		)
 	).then((cocktails) => cocktails.sort((a, b) => a.title.localeCompare(b.title)));
