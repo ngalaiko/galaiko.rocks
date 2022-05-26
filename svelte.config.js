@@ -7,6 +7,7 @@ import autoLinkHeadings from 'rehype-autolink-headings';
 import imagePresets, { hdPreset, densityPreset } from 'vite-plugin-image-presets';
 
 import pluginCooklang from './plugins/rollup-plugin-cooklang.js';
+import pluginGlob from 'vite-plugin-glob';
 
 const rectFor = (width, height = width) =>
 	new Buffer(
@@ -50,6 +51,8 @@ const config = {
 		trailingSlash: 'always',
 		vite: {
 			plugins: [
+				pluginGlob({
+				}),
 				pluginCooklang(),
 				imagePresets({
 					hd: hdPreset({
