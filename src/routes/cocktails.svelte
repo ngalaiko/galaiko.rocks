@@ -1,11 +1,9 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
-	import type { Cocktail } from '$lib/cocktails';
+	import { type Cocktail, list } from '$lib/cocktails';
 
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch('/cocktails.json');
-		if (!res.ok) return { status: 500, error: 'Something went wrong' };
-		const cocktails = (await res.json()) as Cocktail[];
+	export const load: Load = async () => {
+		const cocktails = await list();
 		return { status: 200, props: { cocktails } };
 	};
 </script>
