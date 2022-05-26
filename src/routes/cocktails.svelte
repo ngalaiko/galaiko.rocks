@@ -22,10 +22,10 @@
 <div class="grid grid-cols-3 gap-x-4">
 	{#each cocktails as { title, ingredients, steps, image, source }, i}
 		{@const slug = slugify(title)}
-		<h2 id={slug} class="col-span-2 mb-4" class:mt-6={i !== 0}>
+		<h2 id={slug} class="col-span-3 sm:col-span-2 mb-4" class:mt-6={i !== 0}>
 			<a href={'#' + slug} class="font-semibold underline">{title}</a>
 		</h2>
-		<div class="flex flex-col gap-2 col-span-2">
+		<div class="flex flex-col gap-2 col-span-3 sm:col-span-2">
 			<ul class="list-disc ml-5 ">
 				{#each ingredients as { name, quantity }}
 					<li>
@@ -38,11 +38,11 @@
 			</ul>
 			<p>{steps.join(' ')}</p>
 			{#if source}
-				<small class="text-foreground-2 -mt-1.5">
+				<small class="text-foreground-4 -mt-1.5">
 					source: <a class="underline" href={source.toString()}>{source.hostname}</a></small
 				>
 			{/if}
 		</div>
-		<Image src={image} alt={title} />
+		<Image src={image} alt={title} class="col-span-3 sm:col-span-1 my-4"/>
 	{/each}
 </div>
