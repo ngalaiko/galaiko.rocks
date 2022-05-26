@@ -8,7 +8,7 @@ export type Ingredient = {
 
 export type Cocktail = {
 	title: string;
-	source?: URL;
+	source?: string;
 	ingredients: Ingredient[];
 	steps: string[];
 	image: ImageAttrs[];
@@ -56,12 +56,8 @@ export const list = () =>
 					}, '')
 				);
 				const image = images[`./${title}.jpeg`];
-				try {
-					const source = new URL(m.metadata.source);
-					return { title, ingredients, steps, image, source };
-				} catch {
-					return { title, ingredients, steps, image };
-				}
+				const source = m.metadata.source;
+				return { title, ingredients, steps, image, source };
 			}
 		)
 	).then((cocktails) => cocktails.sort((a, b) => a.title.localeCompare(b.title)));
