@@ -121,15 +121,15 @@
     esbuild "^0.14.29"
     worktop "0.8.0-next.14"
 
-"@sveltejs/kit@1.0.0-next.336":
-  version "1.0.0-next.336"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.336.tgz#18f4ba17d95f5ad31a81b454017052c0e9c80325"
-  integrity sha512-DfERqclfwI8Gdx8/p5qIU3vwEOQfWqC8+BXR12bNykbXFM1k8koDplRDpmGzcsXyhslf83j+RmchnkifbNLjsw==
+"@sveltejs/kit@1.0.0-next.345":
+  version "1.0.0-next.345"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.345.tgz#4e2a02c3edcb8c6c0fa1052ce8c5e0c8b56126d3"
+  integrity sha512-2nLZoXZ02uXMSxqRAMRCr/J4aCphqgKLxEhRRyh3c3aWLAjWiDWLDcvSB770eHt3y0MkYrTvp7JrDF7RhfyuBA==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.44"
     chokidar "^3.5.3"
     sade "^1.7.4"
-    vite "^2.9.0"
+    vite "^2.9.9"
 
 "@sveltejs/vite-plugin-svelte@^1.0.0-next.44":
   version "1.0.0-next.44"
@@ -2800,7 +2800,7 @@ vite-plugin-image-presets@^0.3.1:
     pathe "^0.2.0"
     sharp "^0.29.3"
 
-vite@^2.9.0:
+vite@^2.9.9:
   version "2.9.9"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.9.tgz#8b558987db5e60fedec2f4b003b73164cb081c5e"
   integrity sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==
