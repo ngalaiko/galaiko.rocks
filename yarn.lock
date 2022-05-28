@@ -619,7 +619,7 @@ concat-map@0.0.1:
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
-  integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
+  integrity sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -782,7 +782,7 @@ defined@^1.0.0:
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
-  integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
+  integrity sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==
 
 detect-indent@^6.0.0:
   version "6.1.0"
@@ -792,7 +792,7 @@ detect-indent@^6.0.0:
 detect-libc@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
-  integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+  integrity sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==
 
 detect-libc@^2.0.0:
   version "2.0.1"
@@ -2790,10 +2790,8 @@ vite-plugin-glob@^0.3.2:
     micromatch "^4.0.5"
     ufo "^0.8.3"
 
-vite-plugin-image-presets@^0.3.1:
+"vite-plugin-image-presets@file:./vendor/vite-plugin-image-presets":
   version "0.3.1"
-  resolved "https://registry.yarnpkg.com/vite-plugin-image-presets/-/vite-plugin-image-presets-0.3.1.tgz#05fe196b7c00e9fcfe9dcbc9ff5cc680d607617a"
-  integrity sha512-0hitwSel75v5VQ9ntaKUSRx7JKVe3lS9PL2b6Qn01tsQv4cmPLcVW6KeMfby4dz7QwQJ/uYJSLTAwXf5g+fnbg==
   dependencies:
     "@nuxt/devalue" "^2.0.0"
     debug "^4.3"

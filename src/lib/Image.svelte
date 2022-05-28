@@ -6,27 +6,7 @@
 	let className = '';
 	export { className as class };
 
-	const escapeSrc = (src: string) => (src ? encodeURI(src) : src);
-
-	const escapeSrcset = (srcset: string) =>
-		srcset
-			?.split(', ')
-			.map((s) => {
-				const lastSpace = s.lastIndexOf(' ');
-				return lastSpace === -1
-					? escapeSrc(s)
-					: escapeSrc(s.substring(0, lastSpace)) + ' ' + s.substring(lastSpace);
-			})
-			.join(', ');
-
-	const allSources = Array.isArray(src)
-		? src.map(({ srcset, src, ...rest }) => ({
-				...rest,
-				srcset: escapeSrcset(srcset),
-				src: escapeSrc(src)
-		  }))
-		: [{ srcset: src }];
-
+	const allSources = Array.isArray(src) ? src : [{ srcset: src }];
 	const sources = allSources.slice(0, -1);
 	const lastSource = allSources[allSources.length - 1];
 </script>
