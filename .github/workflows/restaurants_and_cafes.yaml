@@ -29,9 +29,9 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: yarn.lock
 
-      - name: Yarn build
+      - name: Yarn install
         run: |
-          yarn build
+          yarn install --frozen-lockfile
 
       - name: Setup hledger
         run: |
