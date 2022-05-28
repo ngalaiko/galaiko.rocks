@@ -6,14 +6,18 @@
 	let className = '';
 	export { className as class };
 
+	const escapeSrc = (src: string) => (src ? encodeURI(src) : src);
+
 	const escapeSrcset = (srcset: string) =>
 		srcset
 			?.split(', ')
-			.map((s) => s.split(' '))
-			.map((sliced) => `${sliced.slice(0, -1).join('%20')} ${sliced.slice(-1)[0]}`)
+			.map((s) => {
+				const lastSpace = s.lastIndexOf(' ');
+				return lastSpace === -1
+					? escapeSrc(s)
+					: escapeSrc(s.substring(0, lastSpace)) + ' ' + s.substring(lastSpace);
+			})
 			.join(', ');
-
-	const escapeSrc = (src: string) => src?.split(' ').map((s) => s.split('%20').join(' '));
 
 	const allSources = Array.isArray(src)
 		? src.map(({ srcset, src, ...rest }) => ({
