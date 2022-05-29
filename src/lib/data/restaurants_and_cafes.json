@@ -1,9 +1,9 @@
 [
   {
     "payee": "La Neta",
-    "count": 21,
+    "count": 20,
     "currency": "SEK",
-    "amount": 2273
+    "amount": 2168
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -18,28 +18,22 @@
     "amount": 1278.5
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 15,
-    "currency": "SEK",
-    "amount": 2473
-  },
-  {
     "payee": "Omnipollos Hatt",
     "count": 15,
     "currency": "SEK",
     "amount": 3816.5
   },
   {
+    "payee": "Tokyo Diner",
+    "count": 14,
+    "currency": "SEK",
+    "amount": 2298
+  },
+  {
     "payee": "Indian King",
     "count": 13,
     "currency": "SEK",
     "amount": 1730
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 1120
   },
   {
     "payee": "Meno Male",
@@ -52,6 +46,12 @@
     "count": 11,
     "currency": "SEK",
     "amount": 1060
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 990
   },
   {
     "payee": "DropCoffee",
