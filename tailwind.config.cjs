@@ -5,8 +5,10 @@ module.exports = {
 	mode: 'jit',
 	theme: {
 		fontFamily: {
-			serif: '"Iowan Old Style", Iowan, Garamond, Palatino, "Times New Roman", serif',
-			mono: '"SF Mono", Consolas, monospace'
+			sans: '-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif',
+			serif:
+				'Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+			mono: 'Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace'
 		},
 
 		colors: {
