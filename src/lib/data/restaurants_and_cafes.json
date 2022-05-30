@@ -1,9 +1,9 @@
 [
   {
     "payee": "La Neta",
-    "count": 20,
+    "count": 21,
     "currency": "SEK",
-    "amount": 2168
+    "amount": 2283
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -43,9 +43,9 @@
   },
   {
     "payee": "Brunos Korvbar",
-    "count": 11,
+    "count": 12,
     "currency": "SEK",
-    "amount": 1060
+    "amount": 1200
   },
   {
     "payee": "Chic Konditori",
@@ -66,6 +66,12 @@
     "amount": 1500
   },
   {
+    "payee": "McDonald's",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 906.87
+  },
+  {
     "payee": "Weidao",
     "count": 10,
     "currency": "SEK",
@@ -78,28 +84,22 @@
     "amount": 1515
   },
   {
-    "payee": "McDonald's",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 776.87
-  },
-  {
     "payee": "StikkiNikki",
     "count": 9,
     "currency": "SEK",
     "amount": 442
   },
   {
+    "payee": "Esperanza",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1097
+  },
+  {
     "payee": "Johan & Nyström",
     "count": 8,
     "currency": "SEK",
     "amount": 380
-  },
-  {
-    "payee": "Esperanza",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 968
   },
   {
     "payee": "The Good Gringo",
