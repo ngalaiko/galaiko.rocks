@@ -1625,10 +1625,10 @@ mdn-data@2.0.14:
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
   integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
 
-mdsvex@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/mdsvex/-/mdsvex-0.10.5.tgz#a8b905d2ff8fbff17fc3c8cfa8c4475ec6d8fb24"
-  integrity sha512-/B23WZn5Vjrjh7Qp2YsOXLkU9YFm59IEylKNXC10o05ZaCP4LNv32tGXKP6aEssss6hk/LdISJuneELHFIS2pQ==
+mdsvex@^0.10.6:
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/mdsvex/-/mdsvex-0.10.6.tgz#5ba975f4616e5255ca31cd93d33e2c2a22845631"
+  integrity sha512-aGRDY0r5jx9+OOgFdyB9Xm3EBr9OUmcrTDPWLB7a7g8VPRxzPy4MOBmcVYgz7ErhAJ7bZ/coUoj6aHio3x/2mA==
   dependencies:
     "@types/unist" "^2.0.3"
     prism-svelte "^0.4.7"
