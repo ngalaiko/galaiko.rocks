@@ -24,16 +24,16 @@
     "amount": 3816.5
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 14,
-    "currency": "SEK",
-    "amount": 2298
-  },
-  {
     "payee": "Indian King",
     "count": 13,
     "currency": "SEK",
     "amount": 1730
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 13,
+    "currency": "SEK",
+    "amount": 2123
   },
   {
     "payee": "Meno Male",
@@ -46,6 +46,12 @@
     "count": 12,
     "currency": "SEK",
     "amount": 1200
+  },
+  {
+    "payee": "McDonald's",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1021.87
   },
   {
     "payee": "Chic Konditori",
@@ -64,12 +70,6 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1500
-  },
-  {
-    "payee": "McDonald's",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 906.87
   },
   {
     "payee": "Weidao",
@@ -144,10 +144,22 @@
     "amount": 391
   },
   {
+    "payee": "Tutto Bello",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 604
+  },
+  {
     "payee": "Indian Curry House",
     "count": 6,
     "currency": "SEK",
     "amount": 755
+  },
+  {
+    "payee": "Tehran Grill",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1946
   },
   {
     "payee": "Prime Burger",
@@ -162,21 +174,9 @@
     "amount": 586
   },
   {
-    "payee": "Tutto Bello",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 495
-  },
-  {
     "payee": "Le Kebab",
     "count": 5,
     "currency": "SEK",
     "amount": 651
-  },
-  {
-    "payee": "Tehran Grill",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 667
   }
 ]
