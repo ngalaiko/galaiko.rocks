@@ -19,9 +19,9 @@
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 15,
+    "count": 16,
     "currency": "SEK",
-    "amount": 3816.5
+    "amount": 4306.5
   },
   {
     "payee": "Indian King",
@@ -102,10 +102,10 @@
     "amount": 380
   },
   {
-    "payee": "The Good Gringo",
+    "payee": "Aryam",
     "count": 7,
     "currency": "SEK",
-    "amount": 856
+    "amount": 451
   },
   {
     "payee": "Cafe Eurobar Goes Russian",
@@ -138,16 +138,16 @@
     "amount": 800
   },
   {
-    "payee": "Aryam",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 391
-  },
-  {
     "payee": "Tutto Bello",
     "count": 6,
     "currency": "SEK",
     "amount": 604
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 726
   },
   {
     "payee": "Indian Curry House",
