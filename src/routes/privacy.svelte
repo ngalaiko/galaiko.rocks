@@ -12,7 +12,7 @@
 			href="https://pages.cloudflare.com/">Cloudflare Pages</a
 		>. It means that all your requests go through their servers and
 		<a sveltekit:reload href="https://www.cloudflare.com/en-gb/privacypolicy/"
-			>Cloudflare'd Privacy policy</a
+			>Cloudflare's Privacy policy</a
 		> is applied.
 	</p>
 
