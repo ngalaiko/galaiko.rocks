@@ -5511,6 +5511,84 @@
     "folder_id": 1
   },
   {
+    "id": 5034494,
+    "instance_id": 1046858654,
+    "date_added": "2022-06-04T08:01:49-07:00",
+    "rating": 0,
+    "basic_information": {
+      "id": 5034494,
+      "master_id": 35276,
+      "master_url": "https://api.discogs.com/masters/35276",
+      "resource_url": "https://api.discogs.com/releases/5034494",
+      "thumb": "https://i.discogs.com/YRyCA3xODSzi91uNS0-pT5J3jcsl8Tpz5l4_FYbzTLk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwMzQ0/OTQtMTYwNDQzOTc5/Ny04MTc0LmpwZWc.jpeg",
+      "cover_image": "https://i.discogs.com/H13_FvgRZD69GvhsZ01RD-17szBfdVsQrIZwvPia6Ks/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwMzQ0/OTQtMTYwNDQzOTc5/Ny04MTc0LmpwZWc.jpeg",
+      "title": "The Velvet Underground & Nico",
+      "year": 2008,
+      "formats": [
+        {
+          "name": "Vinyl",
+          "qty": "1",
+          "descriptions": [
+            "LP",
+            "Album",
+            "Picture Disc",
+            "Reissue",
+            "Stereo"
+          ]
+        }
+      ],
+      "labels": [
+        {
+          "name": "Vinyl Lovers",
+          "catno": "999051",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 110343,
+          "resource_url": "https://api.discogs.com/labels/110343"
+        },
+        {
+          "name": "Lilith Records Ltd.",
+          "catno": "999051LPP",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 174164,
+          "resource_url": "https://api.discogs.com/labels/174164"
+        }
+      ],
+      "artists": [
+        {
+          "name": "The Velvet Underground",
+          "anv": "",
+          "join": "&",
+          "role": "",
+          "tracks": "",
+          "id": 39766,
+          "resource_url": "https://api.discogs.com/artists/39766"
+        },
+        {
+          "name": "Nico (3)",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 158676,
+          "resource_url": "https://api.discogs.com/artists/158676"
+        }
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Psychedelic Rock",
+        "Garage Rock",
+        "Folk Rock",
+        "Experimental",
+        "Art Rock"
+      ]
+    },
+    "folder_id": 1
+  },
+  {
     "id": 6864962,
     "instance_id": 745795423,
     "date_added": "2021-07-02T07:51:04-07:00",
