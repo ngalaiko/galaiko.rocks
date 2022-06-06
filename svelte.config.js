@@ -55,11 +55,10 @@ const config = {
 				pluginCooklang(),
 				imagePresets({
 					hd: hdPreset({
-						class: 'img hd',
 						widths: [440, 700],
-						height: 2000,
+						class: 'zoomable',
 						loading: 'lazy',
-						sizes: '(min-width: 700px) 700px, 700vw',
+						sizes: '(min-width: 700px) 700px, 100vw',
 						formats: {
 							avif: { quality: 44 },
 							webp: { quality: 44 },
@@ -67,7 +66,6 @@ const config = {
 						}
 					}),
 					avatar: densityPreset({
-						class: 'img density',
 						height: 48, // avoid layout shift
 						baseWidth: 48,
 						density: [1, 1.5, 2],
