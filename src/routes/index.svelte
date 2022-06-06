@@ -15,7 +15,7 @@
 			<span class="p-family-name">Galaiko</span>
 		</h1>
 		<link class="u-url" href="https://galaiko.rocks" />
-		<Image class="u-photo" src={nikita} />
+		<Image class="u-photo" src={nikita} zoomable={false} />
 	</header>
 
 	<GlitchyLinks>
@@ -47,8 +47,8 @@
 			</li>
 
 			<li>
-				<a sveltekit:prefetch href="/cocktails/">a list of cocktails</a> that i respect and
-				occasionaly make to consume at home
+				<a sveltekit:prefetch href="/cocktails/">a list of cocktails</a> that i respect and occasionaly
+				make to consume at home
 			</li>
 		</ul>
 

@@ -56,7 +56,6 @@ const config = {
 				imagePresets({
 					hd: hdPreset({
 						widths: [440, 700],
-						class: 'zoomable',
 						loading: 'lazy',
 						sizes: '(min-width: 700px) 700px, 100vw',
 						formats: {
