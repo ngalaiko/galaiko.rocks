@@ -64,6 +64,7 @@
 				<span class="p-country-name">Sweden</span>
 			</li>
 			<li>working on <a href="https://getsturdy.com">code collaboration</a></li>
+			<li><a href="https://codeball.ai">fighting code review</a></li>
 		</ul>
 	</GlitchyLinks>
 </article>
