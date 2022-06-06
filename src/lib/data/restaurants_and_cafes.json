@@ -19,21 +19,21 @@
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 15,
+    "count": 16,
     "currency": "SEK",
-    "amount": 4070
+    "amount": 4567
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 14,
+    "currency": "SEK",
+    "amount": 2298
   },
   {
     "payee": "Indian King",
     "count": 13,
     "currency": "SEK",
     "amount": 1730
-  },
-  {
-    "payee": "Tokyo Diner",
-    "count": 13,
-    "currency": "SEK",
-    "amount": 2123
   },
   {
     "payee": "Meno Male",
@@ -138,6 +138,12 @@
     "amount": 800
   },
   {
+    "payee": "Lillebrors Bageri",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 639
+  },
+  {
     "payee": "Tutto Bello",
     "count": 6,
     "currency": "SEK",
@@ -166,12 +172,6 @@
     "count": 6,
     "currency": "SEK",
     "amount": 860
-  },
-  {
-    "payee": "Lillebrors Bageri",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 586
   },
   {
     "payee": "Le Kebab",
