@@ -2,6 +2,7 @@
 	"private": true,
 	"scripts": {
 		"ledger:restaurants-and-cafes": "ts-node-esm ./scripts/ledger/restaurants-and-cafes.ts",
+		"cloudflare:analytics:download": "ts-node-esm ./scripts/cloudflare/analytics/download.ts",
 		"discogs:download": "ts-node-esm ./scripts/discogs/download.ts",
 		"webmentions:download": "ts-node-esm ./scripts/webmentions/download.ts",
 		"webmentions:process": "ts-node-esm ./scripts/webmentions/process.ts",
