@@ -54,7 +54,7 @@
 
 		<p>
 			i also have a <a sveltekit:reload href="https://github.com/ngalaiko" rel="me">github</a> account
-			if you want to checkout stuff i occasionaly do for fun (programming wise)
+            if you are interested
 		</p>
 
 		<h3>currently</h3>
