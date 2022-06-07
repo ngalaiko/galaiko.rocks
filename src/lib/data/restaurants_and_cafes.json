@@ -60,12 +60,6 @@
     "amount": 990
   },
   {
-    "payee": "DropCoffee",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 745
-  },
-  {
     "payee": "Yume Sushi",
     "count": 10,
     "currency": "SEK",
@@ -82,6 +76,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1515
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 685
   },
   {
     "payee": "StikkiNikki",
