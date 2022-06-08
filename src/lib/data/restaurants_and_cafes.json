@@ -30,12 +30,6 @@
     "amount": 2298
   },
   {
-    "payee": "Indian King",
-    "count": 13,
-    "currency": "SEK",
-    "amount": 1730
-  },
-  {
     "payee": "Meno Male",
     "count": 12,
     "currency": "SEK",
@@ -46,6 +40,12 @@
     "count": 12,
     "currency": "SEK",
     "amount": 1200
+  },
+  {
+    "payee": "Indian King",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1605
   },
   {
     "payee": "McDonald's",
