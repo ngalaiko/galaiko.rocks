@@ -30,12 +30,6 @@
     "amount": 2298
   },
   {
-    "payee": "Meno Male",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 1675
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 12,
     "currency": "SEK",
@@ -46,6 +40,12 @@
     "count": 12,
     "currency": "SEK",
     "amount": 1605
+  },
+  {
+    "payee": "Meno Male",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1556
   },
   {
     "payee": "McDonald's",
