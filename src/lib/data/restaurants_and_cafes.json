@@ -25,15 +25,9 @@
   },
   {
     "payee": "Tokyo Diner",
-    "count": 14,
+    "count": 13,
     "currency": "SEK",
-    "amount": 2298
-  },
-  {
-    "payee": "Brunos Korvbar",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 1200
+    "amount": 2123
   },
   {
     "payee": "Indian King",
@@ -52,6 +46,12 @@
     "count": 11,
     "currency": "SEK",
     "amount": 1021.87
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1135
   },
   {
     "payee": "Chic Konditori",
