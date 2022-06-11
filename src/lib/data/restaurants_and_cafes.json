@@ -36,12 +36,6 @@
     "amount": 1605
   },
   {
-    "payee": "Meno Male",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1556
-  },
-  {
     "payee": "McDonald's",
     "count": 11,
     "currency": "SEK",
@@ -58,6 +52,12 @@
     "count": 11,
     "currency": "SEK",
     "amount": 990
+  },
+  {
+    "payee": "Meno Male",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1437
   },
   {
     "payee": "Yume Sushi",
