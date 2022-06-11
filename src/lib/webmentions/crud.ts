@@ -15,7 +15,8 @@ export const accepted: Webmention[] = [
 	.filter(({ parsedSource }) => !!parsedSource);
 
 const validDomains = {
-	'galaiko.rocks': true
+	'galaiko.rocks': true,
+	'nikita.galaiko.rocks': true
 };
 
 if (import.meta.env.DEV) validDomains['localhost'] = true;
