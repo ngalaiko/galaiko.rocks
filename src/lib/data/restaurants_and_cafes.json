@@ -54,12 +54,6 @@
     "amount": 990
   },
   {
-    "payee": "Meno Male",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1437
-  },
-  {
     "payee": "Yume Sushi",
     "count": 10,
     "currency": "SEK",
@@ -76,6 +70,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1515
+  },
+  {
+    "payee": "Meno Male",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1318
   },
   {
     "payee": "DropCoffee",
