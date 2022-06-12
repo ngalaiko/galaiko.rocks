@@ -3521,6 +3521,72 @@
     "folder_id": 1
   },
   {
+    "id": 23063069,
+    "instance_id": 1052542469,
+    "date_added": "2022-06-11T08:46:12-07:00",
+    "rating": 0,
+    "basic_information": {
+      "id": 23063069,
+      "master_id": 36937,
+      "master_url": "https://api.discogs.com/masters/36937",
+      "resource_url": "https://api.discogs.com/releases/23063069",
+      "thumb": "https://i.discogs.com/yh-jh9qpY5r1gewSKDM5jY8BHen8N0jnkK7TDlGhbZM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMDYz/MDY5LTE2NTI3MDE0/NjktOTc3Ny5qcGVn.jpeg",
+      "cover_image": "https://i.discogs.com/EGbzYe0OO9jRCKRwmOV7HC2haSW997A3ccJs1fp-2Tk/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMDYz/MDY5LTE2NTI3MDE0/NjktOTc3Ny5qcGVn.jpeg",
+      "title": "Face To Face",
+      "year": 2022,
+      "formats": [
+        {
+          "name": "Vinyl",
+          "qty": "1",
+          "text": "Violet Vinyl",
+          "descriptions": [
+            "LP",
+            "Album",
+            "Limited Edition",
+            "Reissue",
+            "Mono"
+          ]
+        }
+      ],
+      "labels": [
+        {
+          "name": "BMG",
+          "catno": "NPL18149XI",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 1003,
+          "resource_url": "https://api.discogs.com/labels/1003"
+        },
+        {
+          "name": "BMG",
+          "catno": "NPL18149",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 1003,
+          "resource_url": "https://api.discogs.com/labels/1003"
+        }
+      ],
+      "artists": [
+        {
+          "name": "The Kinks",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 94078,
+          "resource_url": "https://api.discogs.com/artists/94078"
+        }
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Pop Rock"
+      ]
+    },
+    "folder_id": 1
+  },
+  {
     "id": 18212281,
     "instance_id": 686341297,
     "date_added": "2021-04-26T09:05:44-07:00",
@@ -5082,6 +5148,62 @@
       "styles": [
         "Opera",
         "Romantic"
+      ]
+    },
+    "folder_id": 1
+  },
+  {
+    "id": 860453,
+    "instance_id": 1052541449,
+    "date_added": "2022-06-11T08:44:49-07:00",
+    "rating": 0,
+    "basic_information": {
+      "id": 860453,
+      "master_id": 108728,
+      "master_url": "https://api.discogs.com/masters/108728",
+      "resource_url": "https://api.discogs.com/releases/860453",
+      "thumb": "https://i.discogs.com/F96vZpygyNkhktzCf5ESjgEEGy0lksKXneILOGTTwAM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2MDQ1/My0xNjU0NDI0MTkw/LTk1MDIuanBlZw.jpeg",
+      "cover_image": "https://i.discogs.com/AAgqMTZvo1Q91aqaY0xJFgr0GfRX1AEyaIlHYIz7Pg8/rs:fit/g:sm/q:90/h:585/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2MDQ1/My0xNjU0NDI0MTkw/LTk1MDIuanBlZw.jpeg",
+      "title": "Just A Poke",
+      "year": 1970,
+      "formats": [
+        {
+          "name": "Vinyl",
+          "qty": "1",
+          "descriptions": [
+            "LP",
+            "Album",
+            "Stereo"
+          ]
+        }
+      ],
+      "labels": [
+        {
+          "name": "Columbia",
+          "catno": "1 C 062-28 886",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 1866,
+          "resource_url": "https://api.discogs.com/labels/1866"
+        }
+      ],
+      "artists": [
+        {
+          "name": "Sweet Smoke",
+          "anv": "",
+          "join": "",
+          "role": "",
+          "tracks": "",
+          "id": 163585,
+          "resource_url": "https://api.discogs.com/artists/163585"
+        }
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "styles": [
+        "Psychedelic Rock",
+        "Prog Rock"
       ]
     },
     "folder_id": 1
