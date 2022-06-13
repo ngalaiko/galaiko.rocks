@@ -6,16 +6,16 @@
     "amount": 2283
   },
   {
+    "payee": "Marley Café",
+    "count": 19,
+    "currency": "SEK",
+    "amount": 1428.5
+  },
+  {
     "payee": "Tony’s Pizza and Salad",
     "count": 18,
     "currency": "SEK",
     "amount": 2453
-  },
-  {
-    "payee": "Marley Café",
-    "count": 18,
-    "currency": "SEK",
-    "amount": 1278.5
   },
   {
     "payee": "Omnipollos Hatt",
@@ -36,6 +36,18 @@
     "amount": 1605
   },
   {
+    "payee": "Chic Konditori",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1097
+  },
+  {
+    "payee": "Yume Sushi",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1650
+  },
+  {
     "payee": "McDonald's",
     "count": 11,
     "currency": "SEK",
@@ -46,18 +58,6 @@
     "count": 11,
     "currency": "SEK",
     "amount": 1135
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 990
-  },
-  {
-    "payee": "Yume Sushi",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1500
   },
   {
     "payee": "Weidao",
@@ -120,6 +120,12 @@
     "amount": 950
   },
   {
+    "payee": "Indian Curry House",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 875
+  },
+  {
     "payee": "Kaisas Fisk",
     "count": 6,
     "currency": "SEK",
@@ -154,12 +160,6 @@
     "count": 6,
     "currency": "SEK",
     "amount": 726
-  },
-  {
-    "payee": "Indian Curry House",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 755
   },
   {
     "payee": "Tehran Grill",
