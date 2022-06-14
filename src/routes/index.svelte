@@ -11,8 +11,8 @@
 <article class="content h-card">
 	<header class="flex items-center gap-2">
 		<h1 class="p-name text-9xl font-bold flex-1">
-			<span class="p-given-name">Nikita</span>
-			<span class="p-family-name">Galaiko</span>
+			<span class="p-given-name">Nikíta</span>
+			<span class="p-family-name">Galáiko</span>
 		</h1>
 		<link class="u-url" href="https://galaiko.rocks" />
 		<Image class="u-photo" src={nikita} zoomable={false} />
@@ -54,7 +54,7 @@
 
 		<p>
 			i also have a <a sveltekit:reload href="https://github.com/ngalaiko" rel="me">github</a> account
-            if you are interested
+			if you are interested
 		</p>
 
 		<h3>currently</h3>
