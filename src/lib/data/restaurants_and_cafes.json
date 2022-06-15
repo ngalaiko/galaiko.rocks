@@ -72,12 +72,6 @@
     "amount": 1530
   },
   {
-    "payee": "Meno Male",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1318
-  },
-  {
     "payee": "DropCoffee",
     "count": 9,
     "currency": "SEK",
@@ -94,6 +88,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 1097
+  },
+  {
+    "payee": "Meno Male",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 958
   },
   {
     "payee": "Johan & Nyström",
@@ -124,12 +124,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 875
-  },
-  {
-    "payee": "Kaisas Fisk",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 760
   },
   {
     "payee": "Oolong Tea House",
@@ -172,6 +166,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 860
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 630
   },
   {
     "payee": "Le Kebab",
