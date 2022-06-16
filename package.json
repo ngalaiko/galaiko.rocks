@@ -18,7 +18,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^3.5.1",
+		"@cloudflare/workers-types": "^3.12.0",
 		"@cooklang/cooklang-ts": "^1.0.1",
 		"@fast-csv/parse": "^4.3.6",
 		"@rollup/pluginutils": "^4.2.1",
