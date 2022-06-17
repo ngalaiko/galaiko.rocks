@@ -106,15 +106,34 @@ Promise.all(
 	generatePeriods({
 		from: new Date('2022-04-03T15:47:36.061747Z'),
 		to: new Date(),
-		interval: 3600 * 24 // 1 day
+		interval: 3600 // 1 hour
 	}).map(async ({ from, to }) => {
-		const { data, errors } = await list({ from, to });
+		const { data, errors } = await list({ from, to }).catch((err) => ({
+			errors: [err],
+			data: null
+		}));
+		if (!data) return { from, to, metrics: {} };
 		if (errors) throw new Error(errors.map((e) => e.message).join('\n'));
-		if (!data) throw new Error('No data');
 		const metrics = data.viewer.accounts[0].topPaths.reduce(
 			(acc, { metric: { requestPath }, count }) => ({ ...acc, [requestPath]: count }),
 			{}
 		);
 		return { from, to, metrics };
 	})
-).then(console.log);
+)
+	.then((periods) =>
+		periods.reduce((acc, { metrics }) => {
+			Object.entries(metrics).forEach(([key, value]) => {
+				if (acc[key]) {
+					acc[key] += value;
+				} else {
+					acc[key] = value;
+				}
+			});
+			return acc;
+		}, {})
+	)
+	.then((metrics) =>
+		Object.entries(metrics).sort((a: [string, number], b: [string, number]) => b[1] - a[1])
+	)
+	.then(console.log);
