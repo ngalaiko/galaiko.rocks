@@ -90,16 +90,16 @@
     "amount": 1097
   },
   {
-    "payee": "Meno Male",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 958
-  },
-  {
     "payee": "Johan & Nyström",
     "count": 8,
     "currency": "SEK",
     "amount": 380
+  },
+  {
+    "payee": "Meno Male",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 839
   },
   {
     "payee": "Aryam",
