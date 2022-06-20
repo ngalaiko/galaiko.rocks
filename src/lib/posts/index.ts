@@ -50,7 +50,7 @@ export const list = () =>
 			.sort((a, b) => compareDesc(a.date, b.date))
 			.map((post, index, posts) => ({
 				...post,
-				previous: index > 0 ? posts[index - 1] : null,
-				next: index < posts.length - 1 ? posts[index + 1] : null
+				next: index > 0 ? posts[index - 1] : null,
+				previous: index < posts.length - 1 ? posts[index + 1] : null
 			}))
 	);
