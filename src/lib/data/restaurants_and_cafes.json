@@ -48,6 +48,12 @@
     "amount": 1135
   },
   {
+    "payee": "Cafe Ragazzi",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1650
+  },
+  {
     "payee": "Weidao",
     "count": 10,
     "currency": "SEK",
@@ -58,12 +64,6 @@
     "count": 10,
     "currency": "SEK",
     "amount": 956.87
-  },
-  {
-    "payee": "Cafe Ragazzi",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1515
   },
   {
     "payee": "Yume Sushi",
@@ -114,6 +114,12 @@
     "amount": 2300.5
   },
   {
+    "payee": "The Good Gringo",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 861
+  },
+  {
     "payee": "Levinskys",
     "count": 7,
     "currency": "SEK",
@@ -124,12 +130,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 875
-  },
-  {
-    "payee": "Oolong Tea House",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 517
   },
   {
     "payee": "Pong",
@@ -150,12 +150,6 @@
     "amount": 604
   },
   {
-    "payee": "The Good Gringo",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 726
-  },
-  {
     "payee": "Tehran Grill",
     "count": 6,
     "currency": "SEK",
@@ -174,9 +168,15 @@
     "amount": 630
   },
   {
-    "payee": "Le Kebab",
+    "payee": "Oolong Tea House",
     "count": 5,
     "currency": "SEK",
-    "amount": 651
+    "amount": 448
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 507
   }
 ]
