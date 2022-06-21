@@ -4,7 +4,6 @@ import yargs from 'yargs';
 import { createReadStream } from 'fs';
 import type { Webmention } from '../../src/lib/webmentions/types.js';
 import { compareDesc } from 'date-fns';
-import fetch, { type Response } from 'node-fetch';
 import { writeJSON } from '../utils.js';
 import parse5, { type Node, type Element } from 'parse5';
 
