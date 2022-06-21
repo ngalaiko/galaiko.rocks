@@ -1,5 +1,4 @@
 import yargs from 'yargs';
-import fetch from 'node-fetch';
 import { addSeconds, differenceInSeconds } from 'date-fns';
 import { writeJSON } from '../../utils.js';
 

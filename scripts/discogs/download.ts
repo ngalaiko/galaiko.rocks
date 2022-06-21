@@ -1,5 +1,4 @@
 import yargs from 'yargs';
-import fetch from 'node-fetch';
 import { writeJSON } from '../utils.js';
 
 const argv = yargs(process.argv.slice(2))

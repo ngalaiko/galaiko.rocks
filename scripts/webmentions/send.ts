@@ -7,7 +7,6 @@ import { all } from '../../src/lib/webmentions/microformats.js';
 import { readFile } from 'fs/promises';
 import path from 'path';
 import readdirp from 'readdirp';
-import fetch from 'node-fetch';
 import { type Node, type Element, parse } from 'parse5';
 import { writeJSON } from '../utils.js';
 
