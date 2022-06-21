@@ -72,12 +72,6 @@
     "amount": 1530
   },
   {
-    "payee": "DropCoffee",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 685
-  },
-  {
     "payee": "StikkiNikki",
     "count": 9,
     "currency": "SEK",
@@ -94,6 +88,12 @@
     "count": 8,
     "currency": "SEK",
     "amount": 380
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 635
   },
   {
     "payee": "Meno Male",
