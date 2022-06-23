@@ -96,12 +96,6 @@
     "amount": 635
   },
   {
-    "payee": "Meno Male",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 839
-  },
-  {
     "payee": "Aryam",
     "count": 7,
     "currency": "SEK",
@@ -130,6 +124,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 875
+  },
+  {
+    "payee": "Meno Male",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 720
   },
   {
     "payee": "Pong",
