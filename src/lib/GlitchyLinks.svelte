@@ -11,6 +11,7 @@
 
 		angle += angleIncrement * ratio;
 		angle %= TWO_PI;
+
 		main.style.setProperty('--moveX', distanceMultiplier * offsetBase * Math.cos(angle) + 'px');
 		main.style.setProperty('--moveY', distanceMultiplier * offsetBase * Math.sin(angle) + 'px');
 	};
@@ -63,11 +64,8 @@
 
 <style>
 	:global(.glitchy-links a) {
-		display: inline-block;
 		color: var(--color-blue);
 		position: relative;
-		font-weight: 500;
-		text-decoration: none;
 		transition: color 0.5s linear 0.2s;
 	}
 
@@ -97,23 +95,16 @@
 	:global(.glitchy-links a:focus),
 	:global(.glitchy-links a:hover) {
 		color: var(--color-green);
-		transition-delay: 0s;
 	}
 
 	:global(.glitchy-links a:focus:before),
 	:global(.glitchy-links a:hover:before) {
-		transform: translate3d(var(--moveOffset), var(--moveOffset), 0);
-		transform: translate3d(var(--moveX, var(--moveOffset)), var(--moveY, var(--moveOffset)), 0);
+		transform: translate3d(var(--moveX, 1.35px), var(--moveY, 1.35px), 0);
 	}
 
 	:global(.glitchy-links a:focus:after),
 	:global(.glitchy-links a:hover:after) {
 		color: var(--color-blue);
-		transform: translate3d(calc(-1 * var(--moveOffset)), calc(-1 * var(--moveOffset)), 0);
-		transform: translate3d(
-			calc(-1 * var(--moveX, var(--moveOffset))),
-			calc(-1 * var(--moveY, var(--moveOffset))),
-			0
-		);
+		transform: translate3d(calc(-1 * var(--moveX, 1.35px)), calc(-1 * var(--moveY, 1.35px)), 0);
 	}
 </style>
