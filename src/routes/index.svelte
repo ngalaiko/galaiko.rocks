@@ -1,5 +1,5 @@
 <script>
-	import GlitchyLinks from '$lib/GlitchyLinks.svelte';
+	import A from '$lib/GlitchyLink.svelte';
 	import Image from '$lib/Image.svelte';
 	import nikita from '$lib/assets/people/nikita.jpeg?preset=avatar';
 </script>
@@ -18,53 +18,49 @@
 		<Image class="u-photo" src={nikita} zoomable={false} />
 	</header>
 
-	<GlitchyLinks>
-		<p>hi, welcome to my homepage!</p>
+	<p>hi, welcome to my homepage!</p>
 
-		<p>
-			if you want to contact me for any reason, the best way is to send an email to
-			<a class="u-email" href="mailto:nikita@galaiko.rocks" rel="me">nikita@galaiko.rocks</a>.
-			consider using my
-			<a sveltekit:reload class="u-key" href="/keys/nikita@galaiko.rocks.asc" rel="me pgpkey authn"
-				>pgp key</a
-			> if you are into it
-		</p>
+	<p>
+		if you want to contact me for any reason, the best way is to send an email to
+		<A class="u-email" href="mailto:nikita@galaiko.rocks" rel="me">nikita@galaiko.rocks</A>.
+		consider using my
+		<A sveltekit:reload class="u-key" href="/keys/nikita@galaiko.rocks.asc" rel="me pgpkey authn"
+			>pgp key</A
+		> if you are into it
+	</p>
 
-		<p>this is not a very large website, it only consists of a few pages, for example:</p>
-		<ul>
-			<li>
-				there is a page on this website with a <a sveltekit:prefetch href="/records/"
-					>list of vinyl records i own</a
-				>. it mirrors my
-				<a sveltekit:reload href="https://www.discogs.com/user/ngalaiko">discogs account</a>
-			</li>
+	<p>this is not a very large website, it only consists of a few pages, for example:</p>
+	<ul>
+		<li>
+			there is a page on this website with a <A sveltekit:prefetch href="/records/"
+				>list of vinyl records i own</A
+			>. it mirrors my
+			<A sveltekit:reload href="https://www.discogs.com/user/ngalaiko">discogs account</A>
+		</li>
 
-			<li>
-				and here are <a sveltekit:prefetch href="/restaurants_and_cafes/"
-					>30 restaurants and cafes</a
-				>
-				i went to most often last year (updated weekly)
-			</li>
+		<li>
+			and here are <A sveltekit:prefetch href="/restaurants_and_cafes/">30 restaurants and cafes</A>
+			i went to most often last year (updated weekly)
+		</li>
 
-			<li>
-				<a sveltekit:prefetch href="/cocktails/">a list of cocktails</a> that i respect and occasionaly
-				make to consume at home
-			</li>
-		</ul>
+		<li>
+			<A sveltekit:prefetch href="/cocktails/">a list of cocktails</A> that i respect and occasionaly
+			make to consume at home
+		</li>
+	</ul>
 
-		<p>
-			i also have a <a sveltekit:reload href="https://github.com/ngalaiko" rel="me">github</a> account
-            if you are interested
-		</p>
+	<p>
+		i also have a <A sveltekit:reload href="https://github.com/ngalaiko" rel="me">github</A> account
+		if you are interested
+	</p>
 
-		<h3>currently</h3>
-		<ul>
-			<li>
-				living in <span class="p-locality">Stockholm</span>,
-				<span class="p-country-name">Sweden</span>
-			</li>
-			<li>working on <a href="https://getsturdy.com">code collaboration</a></li>
-			<li><a href="https://codeball.ai">fighting code review</a></li>
-		</ul>
-	</GlitchyLinks>
+	<h3>currently</h3>
+	<ul>
+		<li>
+			living in <span class="p-locality">Stockholm</span>,
+			<span class="p-country-name">Sweden</span>
+		</li>
+		<li>working on <A href="https://getsturdy.com">code collaboration</A></li>
+		<li><A href="https://codeball.ai">fighting code review</A></li>
+	</ul>
 </article>
