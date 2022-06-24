@@ -1,9 +1,9 @@
 [
   {
     "payee": "La Neta",
-    "count": 20,
+    "count": 19,
     "currency": "SEK",
-    "amount": 2178
+    "amount": 2073
   },
   {
     "payee": "Marley Café",
@@ -42,12 +42,6 @@
     "amount": 1097
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1135
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 11,
     "currency": "SEK",
@@ -58,6 +52,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1375
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1070
   },
   {
     "payee": "McDonald's",
