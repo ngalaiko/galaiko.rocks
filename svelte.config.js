@@ -10,7 +10,7 @@ import pluginCooklang from './plugins/rollup-plugin-cooklang.js';
 import pluginGlob from 'vite-plugin-glob';
 
 const rectFor = (width, height = width) =>
-	new Buffer(
+	Buffer.from(
 		`<svg><rect x="0" y="0" width="${width}" height="${height}" rx="${width}" ry="${height}"/></svg>`
 	);
 
