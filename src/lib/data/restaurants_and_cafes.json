@@ -19,9 +19,9 @@
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 16,
+    "count": 17,
     "currency": "SEK",
-    "amount": 4567
+    "amount": 4836
   },
   {
     "payee": "Indian King",
@@ -78,12 +78,6 @@
     "amount": 1097
   },
   {
-    "payee": "Johan & Nyström",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 380
-  },
-  {
     "payee": "StikkiNikki",
     "count": 8,
     "currency": "SEK",
@@ -96,10 +90,22 @@
     "amount": 635
   },
   {
+    "payee": "Levinskys",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1085
+  },
+  {
     "payee": "Aryam",
     "count": 7,
     "currency": "SEK",
     "amount": 451
+  },
+  {
+    "payee": "Johan & Nyström",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 330
   },
   {
     "payee": "Cafe Eurobar Goes Russian",
@@ -112,12 +118,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 861
-  },
-  {
-    "payee": "Levinskys",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 950
   },
   {
     "payee": "Indian Curry House",
