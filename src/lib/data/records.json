@@ -1802,7 +1802,7 @@
       "master_url": "https://api.discogs.com/masters/635950",
       "resource_url": "https://api.discogs.com/releases/8615340",
       "thumb": "",
-      "cover_image": "https://s.discogs.com/1b5fc0271421d37c7577f31eb382d6a0cf01d264/images/spacer.gif",
+      "cover_image": "https://s.discogs.com/0e5051b2daa92e545efc0dbb66545d5b0b140a7a/images/spacer.gif",
       "title": "String Quartet No. 4, Opus 83 / Piano Quintet In G Minor, Opus 57",
       "year": 1961,
       "formats": [
@@ -3538,7 +3538,7 @@
         {
           "name": "Vinyl",
           "qty": "1",
-          "text": "Violet Vinyl",
+          "text": "Violet",
           "descriptions": [
             "LP",
             "Album",
@@ -3564,6 +3564,14 @@
           "entity_type_name": "Label",
           "id": 1003,
           "resource_url": "https://api.discogs.com/labels/1003"
+        },
+        {
+          "name": "Sanctuary Records Group Ltd.",
+          "catno": "NPL18149XI",
+          "entity_type": "1",
+          "entity_type_name": "Label",
+          "id": 133661,
+          "resource_url": "https://api.discogs.com/labels/133661"
         }
       ],
       "artists": [
