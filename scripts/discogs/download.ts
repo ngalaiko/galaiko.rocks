@@ -1,5 +1,6 @@
 import yargs from 'yargs';
 import { writeJSON } from '../utils.js';
+import type { Record } from '../../src/lib/records/index.js';
 
 const argv = yargs(process.argv.slice(2))
 	.usage('Usage: $0 <command> [options]')
@@ -33,4 +34,17 @@ const download = async (token: string, page = 1) =>
 			return next ? [...releases, ...(await download(token, page + 1))] : releases;
 		});
 
-await download(argv.argv.apiToken).then(writeJSON(argv.argv.output));
+download(argv.argv.apiToken)
+	.then((records: any): Record[] =>
+		records.map((raw: any) => ({
+			artist: {
+				name: raw.basic_information.artists[0].name
+			},
+			info: {
+				id: raw.basic_information.id,
+				title: raw.basic_information.title,
+				coverImage: raw.basic_information.cover_image
+			}
+		}))
+	)
+	.then(writeJSON(argv.argv.output));
