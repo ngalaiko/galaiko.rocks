@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Image from '$lib/Image.svelte';
 	import { list } from '$lib/records';
 </script>
 
@@ -8,16 +9,18 @@
 
 <article>
 	<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1">
-		{#each list() as { artist, info }}
+		{#each list() as [{ artist, info }, image]}
 			{@const fullName = `${artist.name} ${info.title}`}
 			{@const discogsUrl = `https://www.discogs.com/release/${info.id}`}
-			{#if info.coverImage}
-				<li>
-					<a href={discogsUrl}>
+			<li>
+				<a href={discogsUrl}>
+					{#if image}
+						<Image src={image} alt={fullName} zoomable={false} />
+					{:else}
 						<img src={info.coverImage} alt={fullName} lazy={true} />
-					</a>
-				</li>
-			{/if}
+					{/if}
+				</a>
+			</li>
 		{/each}
 	</ul>
 </article>

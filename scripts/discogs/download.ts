@@ -36,15 +36,18 @@ const download = async (token: string, page = 1) =>
 
 download(argv.argv.apiToken)
 	.then((records: any): Record[] =>
-		records.map((raw: any) => ({
-			artist: {
-				name: raw.basic_information.artists[0].name
-			},
-			info: {
-				id: raw.basic_information.id,
-				title: raw.basic_information.title,
-				coverImage: raw.basic_information.cover_image
-			}
-		}))
+		records
+			.filter((record: any) => record.basic_information.cover_image)
+			.filter((record: any) => record.basic_information.thumb)
+			.map((raw: any) => ({
+				artist: {
+					name: raw.basic_information.artists[0].name
+				},
+				info: {
+					id: raw.basic_information.id,
+					title: raw.basic_information.title,
+					coverImage: raw.basic_information.cover_image
+				}
+			}))
 	)
 	.then(writeJSON(argv.argv.output));
