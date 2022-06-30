@@ -29,7 +29,7 @@ jobs:
         run: |
           yarn discogs:download \
             --api-token "${{ secrets.DISCOGS_API_KEY}}" \
-            --output ./src/lib/data/records.json
+            --output ./src/lib/records/data.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:

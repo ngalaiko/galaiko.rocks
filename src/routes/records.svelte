@@ -1,5 +1,5 @@
 <script lang="ts">
-	import records from '$lib/data/records.json';
+	import { list } from '$lib/records';
 </script>
 
 <svelte:head>
@@ -7,16 +7,14 @@
 </svelte:head>
 
 <article>
-	<ul class="grid grid-cols-3 md:grid-cols-4 gap-1">
-		{#each records as record}
-			{@const info = record['basic_information']}
-			{@const artist = info['artists'][0]}
+	<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1">
+		{#each list() as { artist, info }}
 			{@const fullName = `${artist.name} ${info.title}`}
 			{@const discogsUrl = `https://www.discogs.com/release/${info.id}`}
-			{#if info.thumb}
+			{#if info.coverImage}
 				<li>
 					<a href={discogsUrl}>
-						<img src={info.cover_image} alt={fullName} lazy={true} />
+						<img src={info.coverImage} alt={fullName} lazy={true} />
 					</a>
 				</li>
 			{/if}
