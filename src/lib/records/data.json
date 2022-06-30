@@ -281,24 +281,6 @@
   },
   {
     "artist": {
-      "name": "Dmitri Shostakovich"
-    },
-    "info": {
-      "id": 8615340,
-<<<<<<< HEAD
-      "master_id": 635950,
-      "master_url": "https://api.discogs.com/masters/635950",
-      "resource_url": "https://api.discogs.com/releases/8615340",
-      "thumb": "",
-      "cover_image": "https://s.discogs.com/6ed4aab167ae411099a575bef5125ad71afbb933/images/spacer.gif",
-=======
->>>>>>> fed1b27 (records: reduce json size)
-      "title": "String Quartet No. 4, Opus 83 / Piano Quintet In G Minor, Opus 57",
-      "coverImage": "https://s.discogs.com/6ed4aab167ae411099a575bef5125ad71afbb933/images/spacer.gif"
-    }
-  },
-  {
-    "artist": {
       "name": "The Doors"
     },
     "info": {
@@ -544,71 +526,8 @@
     "info": {
       "id": 23063069,
       "title": "Face To Face",
-<<<<<<< HEAD
-      "year": 2022,
-      "formats": [
-        {
-          "name": "Vinyl",
-          "qty": "1",
-          "text": "Violet",
-          "descriptions": [
-            "LP",
-            "Album",
-            "Limited Edition",
-            "Reissue",
-            "Mono"
-          ]
-        }
-      ],
-      "labels": [
-        {
-          "name": "BMG",
-          "catno": "NPL18149XI",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 1003,
-          "resource_url": "https://api.discogs.com/labels/1003"
-        },
-        {
-          "name": "BMG",
-          "catno": "NPL18149",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 1003,
-          "resource_url": "https://api.discogs.com/labels/1003"
-        },
-        {
-          "name": "Sanctuary Records Group Ltd.",
-          "catno": "NPL18149XI",
-          "entity_type": "1",
-          "entity_type_name": "Label",
-          "id": 133661,
-          "resource_url": "https://api.discogs.com/labels/133661"
-        }
-      ],
-      "artists": [
-        {
-          "name": "The Kinks",
-          "anv": "",
-          "join": "",
-          "role": "",
-          "tracks": "",
-          "id": 94078,
-          "resource_url": "https://api.discogs.com/artists/94078"
-        }
-      ],
-      "genres": [
-        "Rock"
-      ],
-      "styles": [
-        "Pop Rock"
-      ]
-    },
-    "folder_id": 1
-=======
       "coverImage": "https://i.discogs.com/EGbzYe0OO9jRCKRwmOV7HC2haSW997A3ccJs1fp-2Tk/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMDYz/MDY5LTE2NTI3MDE0/NjktOTc3Ny5qcGVn.jpeg"
     }
->>>>>>> fed1b27 (records: reduce json size)
   },
   {
     "artist": {

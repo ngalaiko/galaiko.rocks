@@ -5,6 +5,7 @@ import { mdsvex } from 'mdsvex';
 import slug from 'rehype-slug';
 import autoLinkHeadings from 'rehype-autolink-headings';
 import imagePresets, { hdPreset, densityPreset } from 'vite-plugin-image-presets';
+import { VitePluginRemoteAssets as remoteAssets } from 'vite-plugin-remote-assets';
 
 import pluginCooklang from './plugins/rollup-plugin-cooklang.js';
 import pluginGlob from 'vite-plugin-glob';
@@ -53,6 +54,20 @@ const config = {
 			plugins: [
 				pluginGlob(),
 				pluginCooklang(),
+				...(process.env.NODE_ENV == 'production'
+					? [
+							remoteAssets({
+								assetsDir: 'src/lib/records/covers',
+								awaitDownload: true,
+								resolveMode: 'relative',
+								rules: [
+									{
+										match: /\https:\/\/i\.discogs\.com.*?\.(?:png|jpeg|jpg)/gi
+									}
+								]
+							})
+					  ]
+					: []),
 				imagePresets({
 					hd: hdPreset({
 						widths: [440, 700],

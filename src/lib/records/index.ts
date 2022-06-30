@@ -7,8 +7,19 @@ export type Record = {
 	info: {
 		id: number;
 		title: string;
-		coverImage?: string;
+		coverImage: string;
 	};
 };
 
-export const list = () => records as Record[];
+// covers are populated with vite-plugin-remote-assets
+const images = import.meta.importGlob('./covers/*.jpeg', {
+	import: 'default',
+	eager: true,
+	query: {
+		preset: 'hd'
+	}
+});
+
+export const list = () =>
+	records
+		.map((record) => [record, images[`./covers/${record.info.coverImage.split('/').pop()}`]]);
