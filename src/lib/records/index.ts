@@ -5,21 +5,10 @@ export type Record = {
 		name: string;
 	};
 	info: {
-		id: string;
+		id: number;
 		title: string;
 		coverImage?: string;
 	};
 };
 
-const all = records.map((raw: any) => ({
-	artist: {
-		name: raw.basic_information.artists[0].name
-	},
-	info: {
-		id: raw.basic_information.id,
-		title: raw.basic_information.title,
-		coverImage: raw.basic_information.cover_image
-	}
-}));
-
-export const list = () => all;
+export const list = () => records as Record[];
