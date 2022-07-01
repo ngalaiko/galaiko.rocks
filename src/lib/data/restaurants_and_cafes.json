@@ -67,9 +67,9 @@
   },
   {
     "payee": "Weidao",
-    "count": 9,
+    "count": 10,
     "currency": "SEK",
-    "amount": 1245
+    "amount": 1400
   },
   {
     "payee": "Esperanza",
@@ -132,12 +132,6 @@
     "amount": 875
   },
   {
-    "payee": "Pong",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 800
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 6,
     "currency": "SEK",
@@ -148,6 +142,18 @@
     "count": 6,
     "currency": "SEK",
     "amount": 604
+  },
+  {
+    "payee": "Pong",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 820
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 873
   },
   {
     "payee": "Prime Burger",
@@ -172,11 +178,5 @@
     "count": 5,
     "currency": "SEK",
     "amount": 511.5
-  },
-  {
-    "payee": "Oolong Tea House",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 448
   }
 ]
