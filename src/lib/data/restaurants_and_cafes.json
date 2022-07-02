@@ -54,16 +54,16 @@
     "amount": 1290
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1773
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 11,
     "currency": "SEK",
     "amount": 1650
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1598
   },
   {
     "payee": "Weidao",
