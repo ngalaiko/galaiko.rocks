@@ -24,12 +24,6 @@
     "amount": 2308
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 930
-  },
-  {
     "payee": "McDonald's",
     "count": 12,
     "currency": "SEK",
@@ -60,6 +54,12 @@
     "amount": 1650
   },
   {
+    "payee": "Brunos Korvbar",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 865
+  },
+  {
     "payee": "Tokyo Diner",
     "count": 10,
     "currency": "SEK",
@@ -84,12 +84,6 @@
     "amount": 1016
   },
   {
-    "payee": "StikkiNikki",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 403
-  },
-  {
     "payee": "Aryam",
     "count": 8,
     "currency": "SEK",
@@ -112,6 +106,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 330
+  },
+  {
+    "payee": "StikkiNikki",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 364
   },
   {
     "payee": "Cafe Eurobar Goes Russian",
@@ -162,12 +162,6 @@
     "amount": 860
   },
   {
-    "payee": "Meno Male",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 601
-  },
-  {
     "payee": "Kaisas Fisk",
     "count": 5,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 511.5
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 448
   }
 ]
