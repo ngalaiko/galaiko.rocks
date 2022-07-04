@@ -7,21 +7,21 @@
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 21,
+    "count": 22,
     "currency": "SEK",
-    "amount": 4151
+    "amount": 4051
+  },
+  {
+    "payee": "Tony’s Pizza and Salad",
+    "count": 20,
+    "currency": "SEK",
+    "amount": 2443
   },
   {
     "payee": "La Neta",
     "count": 19,
     "currency": "SEK",
     "amount": 2073
-  },
-  {
-    "payee": "Tony’s Pizza and Salad",
-    "count": 19,
-    "currency": "SEK",
-    "amount": 2308
   },
   {
     "payee": "McDonald's",
@@ -72,6 +72,12 @@
     "amount": 1400
   },
   {
+    "payee": "Aryam",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 405
+  },
+  {
     "payee": "Esperanza",
     "count": 9,
     "currency": "SEK",
@@ -82,12 +88,6 @@
     "count": 9,
     "currency": "SEK",
     "amount": 1016
-  },
-  {
-    "payee": "Aryam",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 405
   },
   {
     "payee": "DropCoffee",
