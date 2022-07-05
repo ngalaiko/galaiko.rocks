@@ -102,18 +102,6 @@
     "amount": 1085
   },
   {
-    "payee": "Johan & Nyström",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 330
-  },
-  {
-    "payee": "StikkiNikki",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 364
-  },
-  {
     "payee": "Cafe Eurobar Goes Russian",
     "count": 7,
     "currency": "SEK",
@@ -142,6 +130,18 @@
     "count": 6,
     "currency": "SEK",
     "amount": 604
+  },
+  {
+    "payee": "StikkiNikki",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 325
+  },
+  {
+    "payee": "Johan & Nyström",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 285
   },
   {
     "payee": "Pong",
