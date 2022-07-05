@@ -211,6 +211,16 @@
   },
   {
     "artist": {
+      "name": "Björk"
+    },
+    "info": {
+      "id": 7575128,
+      "title": "Post",
+      "coverImage": "https://i.discogs.com/vkpJEA-52oToSweBXeLl7qdoRbsWXUurebYa_YlAo6Q/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc1NzUx/MjgtMTQ1NTAxMDM0/NC02Njk1LmpwZWc.jpeg"
+    }
+  },
+  {
+    "artist": {
       "name": "Blondie"
     },
     "info": {
@@ -227,6 +237,16 @@
       "id": 7596232,
       "title": "Blonde On Blonde",
       "coverImage": "https://i.discogs.com/jUa7GGag1f-fHGhLO91XlxLCm87qrkqrhzRasyz_vWE/rs:fit/g:sm/q:90/h:587/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc1OTYy/MzItMTQ0NDc5Mjkw/MS0yMjExLmpwZWc.jpeg"
+    }
+  },
+  {
+    "artist": {
+      "name": "Bob Dylan"
+    },
+    "info": {
+      "id": 4577604,
+      "title": "The Times They Are A-Changin'",
+      "coverImage": "https://i.discogs.com/u3RENHEtRmSytdxNw6tPZKJERK8n5i3EikDzL1H2NbU/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1Nzc2/MDQtMTU4OTk5OTc3/OS0xOTQwLmpwZWc.jpeg"
     }
   },
   {
