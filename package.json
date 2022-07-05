@@ -29,7 +29,7 @@
 		"@tailwindcss/typography": "^0.5.2",
 		"@types/node": "^18.0.0",
 		"@types/parse5": "^6.0.3",
-		"@typescript-eslint/eslint-plugin": "^5.10.1",
+		"@typescript-eslint/eslint-plugin": "^5.30.5",
 		"@typescript-eslint/parser": "^5.10.1",
 		"JSONStream": "^1.3.5",
 		"autoprefixer": "^10.4.4",
