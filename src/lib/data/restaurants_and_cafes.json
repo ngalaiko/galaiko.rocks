@@ -144,6 +144,12 @@
     "amount": 285
   },
   {
+    "payee": "Oolong Tea House",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 512
+  },
+  {
     "payee": "Pong",
     "count": 6,
     "currency": "SEK",
@@ -172,11 +178,5 @@
     "count": 5,
     "currency": "SEK",
     "amount": 511.5
-  },
-  {
-    "payee": "Oolong Tea House",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 448
   }
 ]
