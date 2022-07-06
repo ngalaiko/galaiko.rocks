@@ -7,5 +7,7 @@
 	<span>&#183;</span>
 	<span>2018...{new Date().getFullYear()}</span>
 	<span>&#183;</span>
-	<a rel="privacy" href="/privacy/">Privacy Policy</a>
+	<a rel="privacy" href="/privacy/">privacy policy</a>
+	<span>&#183;</span>
+	<a sveltekit:reload href="https://github.com/ngalaiko/galaiko.rocks">source</a>
 </footer>
