@@ -24,7 +24,7 @@
 	<h2>JavaScript</h2>
 	<p>
 		This website is build with <a sveltekit:reload href="https://kit.svelte.dev">SvelteKit</a> and by
-		default uses JavaScript to act like a Single Page Application to enhance user expirience.
+		default uses JavaScript to act like a Single Page Application for enhanced user expirience.
 	</p>
 
 	<p>
@@ -38,7 +38,7 @@
 
 	<h2>Analytics</h2>
 	<p>
-		I use <a href="https://www.cloudflare.com/en-gb/web-analytics/">Cloudflare's Web Analytics</a>
+		I use <a sveltekit:reload href="https://www.cloudflare.com/en-gb/web-analytics/">Cloudflare's Web Analytics</a>
 		to track some basic information about the visitors of the website.
 	</p>
 
@@ -48,4 +48,7 @@
 
 	<h2>Cookies</h2>
 	<p>No cookies usage.</p>
+
+    <h2>Source</h2>
+    <p>You can find the website's source code on <a sveltekit:reload href="https://github.com/ngalaiko/galaiko.rocks">GitHub</a>.
 </arcicle>
