@@ -60,16 +60,16 @@
     "amount": 865
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1598
-  },
-  {
     "payee": "Weidao",
     "count": 10,
     "currency": "SEK",
     "amount": 1400
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1423
   },
   {
     "payee": "Aryam",
