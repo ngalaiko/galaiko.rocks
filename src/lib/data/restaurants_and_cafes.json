@@ -120,12 +120,6 @@
     "amount": 875
   },
   {
-    "payee": "Lillebrors Bageri",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 639
-  },
-  {
     "payee": "Tutto Bello",
     "count": 6,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 511.5
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 507
   }
 ]
