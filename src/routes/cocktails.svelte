@@ -27,6 +27,7 @@
 <svelte:head>
 	<title>Cocktails</title>
 </svelte:head>
+
 <div class="grid grid-cols-3 gap-x-4">
 	{#each cocktails as { title, ingredients, steps, image, source }, i}
 		{@const slug = slugify(title)}
