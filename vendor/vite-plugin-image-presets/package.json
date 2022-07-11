@@ -52,7 +52,7 @@
     "@nuxt/devalue": "^2.0.0",
     "debug": "^4.3",
     "pathe": "^0.2.0",
-    "sharp": "^0.30.5"
+    "sharp": "^0.29.3"
   },
   "devDependencies": {
     "@mussi/eslint-config": "^0.5",
