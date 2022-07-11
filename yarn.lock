@@ -113,10 +113,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@sveltejs/adapter-cloudflare@^1.0.0-next.25":
-  version "1.0.0-next.25"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-1.0.0-next.25.tgz#088291bc355f0a5b8114d6e5cbfa75dd3fc714ed"
-  integrity sha512-fhjH4LInepYxJ6ubuNO38sJeor04cUBKMPF5hpwrXLhKHrYTVwq1Oi7xNVbnrrIQzGRyiHOCvMy8E/MNnO3xLw==
+"@sveltejs/adapter-cloudflare@^1.0.0-next.26":
+  version "1.0.0-next.26"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-cloudflare/-/adapter-cloudflare-1.0.0-next.26.tgz#c78513fba22510278589d9a06d9c73c44f9fbb86"
+  integrity sha512-70GQzX5iHedlWdvfdlBmS4qrIReocZem5TPOARF3yYQYCliMH2bd+dbcHt0sGugx73Gks11HxWj+/WpPw0LljA==
   dependencies:
     esbuild "^0.14.42"
     worktop "0.8.0-next.14"
