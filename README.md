@@ -8,14 +8,20 @@ my website with a basic webmentions support
 
 ## cloudflare pages deployment
 
-Build command:
-```
-yarn install --frozen-lockfile && yarn build && yarn build
-```
+Environment variables:
 
-Note: double build is not a mistake. This is required to make sure that records' covers are downloaded for ssr.
+| NODE_VERSION | 17  |
+| ------------ | --- |
+| NPM_FLAGS    | 17  |
+
+Build command:
+
+```
+npm install -g pnpm && pnpm install && pnpm build && pnpm build
+```
 
 Build output directory:
+
 ```
 .svelte-kit/cloudflare
 ```
