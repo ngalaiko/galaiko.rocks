@@ -10,9 +10,10 @@ my website with a basic webmentions support
 
 Environment variables:
 
-| NODE_VERSION | 17  |
-| ------------ | --- |
-| NPM_FLAGS    | 17  |
+| name         | value |
+| ------------ | ----- |
+| NODE_VERSION | 17    |
+| NPM_FLAGS    | 17    |
 
 Build command:
 
