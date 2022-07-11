@@ -1,15 +1,15 @@
 [
   {
+    "payee": "Omnipollos Hatt",
+    "count": 23,
+    "currency": "SEK",
+    "amount": 4312
+  },
+  {
     "payee": "Marley Café",
     "count": 22,
     "currency": "SEK",
     "amount": 1281.5
-  },
-  {
-    "payee": "Omnipollos Hatt",
-    "count": 22,
-    "currency": "SEK",
-    "amount": 4051
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -102,22 +102,28 @@
     "amount": 1085
   },
   {
-    "payee": "Cafe Eurobar Goes Russian",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1920.5
-  },
-  {
     "payee": "The Good Gringo",
     "count": 7,
     "currency": "SEK",
     "amount": 861
   },
   {
+    "payee": "Falloumi",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 626.5
+  },
+  {
     "payee": "Indian Curry House",
     "count": 7,
     "currency": "SEK",
     "amount": 875
+  },
+  {
+    "payee": "Lillebrors Bageri",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 544
   },
   {
     "payee": "Tutto Bello",
@@ -130,6 +136,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 325
+  },
+  {
+    "payee": "Cafe Eurobar Goes Russian",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1602.5
   },
   {
     "payee": "Johan & Nyström",
@@ -166,17 +178,5 @@
     "count": 5,
     "currency": "SEK",
     "amount": 630
-  },
-  {
-    "payee": "Falloumi",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 511.5
-  },
-  {
-    "payee": "Kafé Ritorno",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 507
   }
 ]
