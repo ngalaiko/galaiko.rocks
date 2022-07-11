@@ -8,17 +8,20 @@
 </svelte:head>
 
 <article>
-	<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1">
+	<ul class="grid grid-cols-2 sm:grid-cols-3 gap-3">
 		{#each list() as [{ artist, info }, image]}
-			{@const fullName = `${artist.name} ${info.title}`}
+			{@const fullName = `${artist.name} - ${info.title}`}
 			{@const discogsUrl = `https://www.discogs.com/release/${info.id}`}
 			<li>
 				<a href={discogsUrl}>
-					{#if image}
-						<Image src={image} alt={fullName} zoomable={false} />
-					{:else}
-						<img src={info.coverImage} alt={fullName} lazy={true} />
-					{/if}
+					<figure>
+						{#if image}
+							<Image src={image} alt={fullName} zoomable={false} />
+						{:else}
+							<img src={info.coverImage} alt={fullName} lazy={true} />
+						{/if}
+						<figcaption class="text-sm text-center m-1">{fullName}</figcaption>
+					</figure>
 				</a>
 			</li>
 		{/each}
