@@ -18,12 +18,13 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@actus/svelte": "^2.3.2",
 		"@cloudflare/workers-types": "^3.5.1",
 		"@cooklang/cooklang-ts": "^1.0.1",
 		"@fast-csv/parse": "^4.3.6",
 		"@rollup/pluginutils": "^4.2.1",
 		"@sveltejs/adapter-cloudflare": "^1.0.0-next.25",
-		"@sveltejs/kit": "1.0.0-next.358",
+		"@sveltejs/kit": "1.0.0-next.367",
 		"@tailwindcss/aspect-ratio": "^0.4.0",
 		"@tailwindcss/line-clamp": "^0.4.0",
 		"@tailwindcss/typography": "^0.5.2",
@@ -56,6 +57,7 @@
 		"ts-node": "^10.7.0",
 		"tslib": "^2.3.1",
 		"typescript": "^4.6.3",
+		"vite": "^2.0.0",
 		"vite-plugin-glob": "^0.3.2",
 		"vite-plugin-image-presets": "file:./vendor/vite-plugin-image-presets",
 		"vite-plugin-remote-assets": "^0.2.2",
