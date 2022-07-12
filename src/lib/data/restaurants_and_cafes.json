@@ -90,16 +90,16 @@
     "amount": 1016
   },
   {
-    "payee": "DropCoffee",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 635
-  },
-  {
     "payee": "Levinskys",
     "count": 8,
     "currency": "SEK",
     "amount": 1085
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 585
   },
   {
     "payee": "The Good Gringo",
@@ -112,6 +112,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 626.5
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 581
   },
   {
     "payee": "Indian Curry House",
@@ -148,12 +154,6 @@
     "count": 6,
     "currency": "SEK",
     "amount": 285
-  },
-  {
-    "payee": "Oolong Tea House",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 512
   },
   {
     "payee": "Pong",
