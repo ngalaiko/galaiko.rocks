@@ -15,19 +15,19 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Set up node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Pnpm install
-        run: |
-          pnpm install
-
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.1.5
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
       - name: Fetch records info
         run: |
-          yarn discogs:download \
+          pnpm discogs:download \
             --api-token "${{ secrets.DISCOGS_API_KEY}}" \
             --output ./src/lib/records/data.json
 

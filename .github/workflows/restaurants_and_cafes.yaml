@@ -23,15 +23,16 @@ jobs:
           ref: 'master'
 
       - name: Set up node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Pnpm install
-        run: |
-          pnpm install
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.1.5
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
 
       - name: Setup hledger
         run: |
@@ -46,7 +47,7 @@ jobs:
 
       - name: Fetch list
         run: |
-          yarn ledger:restaurants-and-cafes \
+          pnpm ledger:restaurants-and-cafes \
             --file "$GITHUB_WORKSPACE/ledger/main.ledger" \
             --number 30 \
             --output ./src/lib/data/restaurants_and_cafes.json
