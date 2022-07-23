@@ -14,7 +14,7 @@ const statusToCode = (status: Webmention['status']): number => {
 	}
 };
 
-export const get: RequestHandler = async ({ params, platform }) => {
+export const GET: RequestHandler = async ({ params, platform }) => {
 	try {
 		const webmention = await getById(platform, params.id);
 		const status = statusToCode(webmention.status);

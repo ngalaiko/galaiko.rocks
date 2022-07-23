@@ -2,7 +2,7 @@ import { findByPathname } from '$lib/posts';
 import { likesOf, repliesTo, repostsOf } from '$lib/webmentions';
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const get: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ url }) => {
 	const pathname = url.pathname.replace('.json', '/');
 	if (pathname.endsWith('/replies/')) {
 		const postURL = new URL(pathname.replace('replies/', ''), url.origin);

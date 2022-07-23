@@ -4,7 +4,7 @@ import { compareDesc, max } from 'date-fns';
 
 const baseUrl = 'https://galaiko.rocks/';
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	const posts = await list();
 	const body = render(
 		posts

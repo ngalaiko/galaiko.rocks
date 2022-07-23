@@ -56,7 +56,7 @@ const replies: (Reply & { id: string })[] = [
 	)
 ];
 
-export const get: RequestHandler = async () => ({
+export const GET: RequestHandler = async () => ({
 	status: 200,
 	body: replies.sort((a, b) => a.timestamp - b.timestamp)
 });
