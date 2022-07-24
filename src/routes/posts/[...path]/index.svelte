@@ -3,7 +3,7 @@
 	import type { Post } from '$lib/posts';
 	const trimRight = (str: string, char: string) => str.replace(new RegExp(`${char}+$`), '');
 	// this page is either an alias to a post - then we redirect
-    // or a 404 - then we show the 404 page
+	// or a 404 - then we show the 404 page
 	// or an error - then we error
 	export const load: Load = async ({ url, fetch }) => {
 		const res = await fetch(trimRight(url.pathname, '/') + '.json');

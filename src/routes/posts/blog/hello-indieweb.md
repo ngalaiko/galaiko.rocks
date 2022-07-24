@@ -144,6 +144,10 @@ and make [script](https://github.com/ngalaiko/galaiko.rocks/blob/master/scripts/
 
 The footer of this article contains a list of received webmentions, and I've already sent one!
 
+## Update
+
+I've decided to drop this to simplify my setup. Feel free to drop me an [email](mailto:nikita@galiko.rocks) instead.
+
 [webmentions]: https://indieweb.org/Webmention
 [indieweb]: https://indieweb.org
 [microsub]: https://indieweb.org/Microsub
