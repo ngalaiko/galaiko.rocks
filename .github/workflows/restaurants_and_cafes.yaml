@@ -50,7 +50,7 @@ jobs:
           pnpm ledger:restaurants-and-cafes \
             --file "$GITHUB_WORKSPACE/ledger/main.ledger" \
             --number 30 \
-            --output ./src/lib/data/restaurants_and_cafes.json
+            --output ./src/lib/restaurants-and-cafes/data.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
