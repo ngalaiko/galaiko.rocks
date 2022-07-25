@@ -17,7 +17,7 @@ export const provideDB = (platform: App.Platform): IDatabase => {
 };
 
 class FileKV implements IDatabase {
-	private readonly filename: string = '../../data/webmentions.dev.json';
+	private readonly filename: string = './webmentions.dev.json';
 
 	async #readFileContent() {
 		const { readFileSync } = await import('fs');

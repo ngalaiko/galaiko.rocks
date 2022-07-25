@@ -42,7 +42,7 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           pnpm webmentions:download \
-            --file ./src/lib/data/webmentions.json
+            --file ./src/lib/webmentions/webmentions.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:

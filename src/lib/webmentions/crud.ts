@@ -2,8 +2,8 @@ import { list } from '$lib/posts';
 import { nanoid } from 'nanoid';
 import { provideDB } from './database';
 import { likes, replies, reposts } from './microformats';
-import parsed from '../data/webmentions.json';
-import parsedDev from '../data/webmentions.dev.json';
+import parsed from './webmentions.json';
+import parsedDev from './webmentions.dev.json';
 import type { Webmention } from './types';
 import { dev } from '$app/env';
 
@@ -16,7 +16,6 @@ export const accepted: Webmention[] = [
 
 const validDomains = {
 	'galaiko.rocks': true,
-	'nikita.galaiko.rocks': true
 };
 
 if (import.meta.env.DEV) validDomains['localhost'] = true;
