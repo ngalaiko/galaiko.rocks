@@ -54,12 +54,6 @@
     "amount": 686.37
   },
   {
-    "payee": "Weidao",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1400
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 10,
     "currency": "SEK",
@@ -76,6 +70,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 1097
+  },
+  {
+    "payee": "Weidao",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1270
   },
   {
     "payee": "Tehran Grill",
