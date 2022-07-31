@@ -132,18 +132,6 @@
     "amount": 544
   },
   {
-    "payee": "Cafe Eurobar Goes Russian",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 1602.5
-  },
-  {
-    "payee": "Tokyo Diner",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 918
-  },
-  {
     "payee": "Johan & Nyström",
     "count": 6,
     "currency": "SEK",
@@ -178,5 +166,17 @@
     "count": 5,
     "currency": "SEK",
     "amount": 505
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 507
+  },
+  {
+    "payee": "Le Kebab",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 651
   }
 ]
