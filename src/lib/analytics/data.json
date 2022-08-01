@@ -1,0 +1,13 @@
+[
+  {
+    "from": "2022-07-30T22:00:00.000Z",
+    "to": "2022-07-31T22:00:00.000Z",
+    "metrics": {
+      "/": 3,
+      "/posts/dcp/problem-5/": 3,
+      "/posts/blog/peer-to-peer/": 1,
+      "/posts/dcp/problem-2/": 1,
+      "/posts/dcp/problem-7/": 1
+    }
+  }
+]

@@ -1,4 +1,14 @@
-import { writeFile } from 'fs';
+import { writeFile, readFile } from 'fs';
+
+export const readJSON = (path: string): any =>
+	new Promise((resolve, reject) => {
+		readFile(path, 'utf8', (err, data) => {
+			if (err) {
+				reject(err);
+			}
+			resolve(JSON.parse(data));
+		});
+	});
 
 export const writeJSON =
 	(path: string) =>
