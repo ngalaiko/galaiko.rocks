@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 24,
+    "count": 26,
     "currency": "SEK",
-    "amount": 4587
+    "amount": 4866
   },
   {
     "payee": "Marley Café",
@@ -13,9 +13,9 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 19,
+    "count": 20,
     "currency": "SEK",
-    "amount": 2348
+    "amount": 2468
   },
   {
     "payee": "La Neta",
@@ -84,10 +84,22 @@
     "amount": 1016
   },
   {
+    "payee": "AI Ramen",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1245
+  },
+  {
     "payee": "Levinskys",
     "count": 8,
     "currency": "SEK",
     "amount": 1085
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 640
   },
   {
     "payee": "The Good Gringo",
@@ -108,22 +120,10 @@
     "amount": 626.5
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 581
-  },
-  {
     "payee": "Indian Curry House",
     "count": 7,
     "currency": "SEK",
     "amount": 875
-  },
-  {
-    "payee": "AI Ramen",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1020
   },
   {
     "payee": "Lillebrors Bageri",
