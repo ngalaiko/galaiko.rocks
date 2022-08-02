@@ -28,10 +28,7 @@ jobs:
 
       - name: Download Cloudflare analytics
         run: |
-          pnpm cloudflare:analytics:download \
-            --email "nikita@galaiko.rocks" \ 
-            --api-token "${{ secrets.CF_ANALYTICS_TOKEN }}" \
-            --output "./src/lib/analytics/data.json"
+          pnpm cloudflare:analytics:download --email "nikita@galaiko.rocks" --api-token "${{ secrets.CF_ANALYTICS_TOKEN }}" --output "./src/lib/analytics/data.json"
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
