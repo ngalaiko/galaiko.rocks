@@ -9,5 +9,14 @@
       "/posts/dcp/problem-2/": 1,
       "/posts/dcp/problem-7/": 1
     }
+  },
+  {
+    "from": "2022-07-31T22:00:00.000Z",
+    "to": "2022-08-01T22:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/problem-5/": 3,
+      "/posts/blog/privacy/": 1,
+      "/posts/dcp/problem-2/": 1
+    }
   }
 ]
