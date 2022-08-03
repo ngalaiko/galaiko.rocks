@@ -36,12 +36,6 @@
     "amount": 1290
   },
   {
-    "payee": "Indian King",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1490
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 11,
     "currency": "SEK",
@@ -58,6 +52,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1505
+  },
+  {
+    "payee": "Indian King",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1365
   },
   {
     "payee": "Aryam",
