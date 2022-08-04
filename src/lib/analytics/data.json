@@ -30,5 +30,16 @@
       "/posts/dcp/problem-7/": 1,
       "/posts/dcp/probability/": 1
     }
+  },
+  {
+    "from": "2022-08-03T00:00:00.000Z",
+    "to": "2022-08-04T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/maze/": 2,
+      "/posts/blog/half-a-year-with-vim/": 1,
+      "/": 1,
+      "/posts/dcp/problem-5/": 1,
+      "/posts/dcp/intro/": 1
+    }
   }
 ]
