@@ -18,16 +18,16 @@
     "amount": 2353
   },
   {
-    "payee": "La Neta",
-    "count": 13,
-    "currency": "SEK",
-    "amount": 1443
-  },
-  {
     "payee": "Chic Konditori",
     "count": 12,
     "currency": "SEK",
     "amount": 1097
+  },
+  {
+    "payee": "La Neta",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1338
   },
   {
     "payee": "Yume Sushi",
