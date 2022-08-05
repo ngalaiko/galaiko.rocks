@@ -102,12 +102,6 @@
     "amount": 640
   },
   {
-    "payee": "The Good Gringo",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 861
-  },
-  {
     "payee": "DropCoffee",
     "count": 7,
     "currency": "SEK",
@@ -136,6 +130,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 820
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 752
   },
   {
     "payee": "Saigon Baguette",
