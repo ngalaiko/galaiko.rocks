@@ -18,12 +18,6 @@
     "amount": 2353
   },
   {
-    "payee": "Chic Konditori",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 1097
-  },
-  {
     "payee": "La Neta",
     "count": 12,
     "currency": "SEK",
@@ -40,6 +34,12 @@
     "count": 11,
     "currency": "SEK",
     "amount": 865
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 955
   },
   {
     "payee": "McDonald's",
@@ -90,16 +90,16 @@
     "amount": 1245
   },
   {
-    "payee": "Levinskys",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1085
-  },
-  {
     "payee": "Oolong Tea House",
     "count": 8,
     "currency": "SEK",
     "amount": 640
+  },
+  {
+    "payee": "Levinskys",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 955
   },
   {
     "payee": "DropCoffee",
