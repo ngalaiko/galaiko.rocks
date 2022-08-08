@@ -13,21 +13,27 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 19,
+    "count": 17,
     "currency": "SEK",
-    "amount": 2353
+    "amount": 2203
   },
   {
     "payee": "La Neta",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1338
+    "amount": 1453
   },
   {
     "payee": "Yume Sushi",
     "count": 12,
     "currency": "SEK",
     "amount": 1290
+  },
+  {
+    "payee": "Aryam",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 453
   },
   {
     "payee": "Brunos Korvbar",
@@ -52,12 +58,6 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1365
-  },
-  {
-    "payee": "Aryam",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 405
   },
   {
     "payee": "Cafe Ragazzi",
@@ -96,6 +96,12 @@
     "amount": 640
   },
   {
+    "payee": "Lillebrors Bageri",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 597
+  },
+  {
     "payee": "Levinskys",
     "count": 7,
     "currency": "SEK",
@@ -120,10 +126,10 @@
     "amount": 875
   },
   {
-    "payee": "Lillebrors Bageri",
-    "count": 7,
+    "payee": "Kaisas Fisk",
+    "count": 6,
     "currency": "SEK",
-    "amount": 544
+    "amount": 760
   },
   {
     "payee": "Pong",
@@ -148,12 +154,6 @@
     "count": 6,
     "currency": "SEK",
     "amount": 860
-  },
-  {
-    "payee": "Kaisas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 630
   },
   {
     "payee": "Johan & Nyström",
