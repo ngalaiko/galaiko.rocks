@@ -69,5 +69,16 @@
       "/posts/dcp/problem-2/": 1,
       "/posts/dcp/problem-1/": 1
     }
+  },
+  {
+    "from": "2022-08-07T00:00:00.000Z",
+    "to": "2022-08-08T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/problem-5/": 4,
+      "/posts/dcp/problem-4/": 1,
+      "/posts/dcp/": 1,
+      "/posts/dcp/problem-2/": 1,
+      "/posts/dcp/problem-3/": 1
+    }
   }
 ]
