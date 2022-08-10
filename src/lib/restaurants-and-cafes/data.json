@@ -54,16 +54,16 @@
     "amount": 686.37
   },
   {
-    "payee": "Indian King",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1365
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 9,
     "currency": "SEK",
     "amount": 1350
+  },
+  {
+    "payee": "Indian King",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1240
   },
   {
     "payee": "Esperanza",
