@@ -13,9 +13,9 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 17,
+    "count": 16,
     "currency": "SEK",
-    "amount": 2203
+    "amount": 2039
   },
   {
     "payee": "La Neta",
@@ -28,12 +28,6 @@
     "count": 12,
     "currency": "SEK",
     "amount": 1290
-  },
-  {
-    "payee": "Aryam",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 453
   },
   {
     "payee": "Brunos Korvbar",
@@ -52,6 +46,12 @@
     "count": 11,
     "currency": "SEK",
     "amount": 686.37
+  },
+  {
+    "payee": "Aryam",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 398
   },
   {
     "payee": "Cafe Ragazzi",
