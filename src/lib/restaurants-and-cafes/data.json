@@ -30,12 +30,6 @@
     "amount": 1290
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 865
-  },
-  {
     "payee": "Chic Konditori",
     "count": 11,
     "currency": "SEK",
@@ -52,6 +46,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 398
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 800
   },
   {
     "payee": "Cafe Ragazzi",
@@ -126,12 +126,6 @@
     "amount": 875
   },
   {
-    "payee": "Kaisas Fisk",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 760
-  },
-  {
     "payee": "Pong",
     "count": 6,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 651
+  },
+  {
+    "payee": "Cafe Eurobar Goes Russian",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 1067.5
   }
 ]
