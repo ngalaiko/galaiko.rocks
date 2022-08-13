@@ -118,5 +118,13 @@
       "/posts/blog/privacy/": 1,
       "/posts/dcp/problem-1/": 1
     }
+  },
+  {
+    "from": "2022-08-12T00:00:00.000Z",
+    "to": "2022-08-13T00:00:00.000Z",
+    "metrics": {
+      "/": 3,
+      "/posts/dcp/problem-5/": 3
+    }
   }
 ]
