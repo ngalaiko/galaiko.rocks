@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 26,
+    "count": 25,
     "currency": "SEK",
-    "amount": 4866
+    "amount": 4662
   },
   {
     "payee": "Marley Café",
@@ -54,12 +54,6 @@
     "amount": 800
   },
   {
-    "payee": "Cafe Ragazzi",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1350
-  },
-  {
     "payee": "Indian King",
     "count": 9,
     "currency": "SEK",
@@ -94,6 +88,12 @@
     "count": 8,
     "currency": "SEK",
     "amount": 640
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1195
   },
   {
     "payee": "Lillebrors Bageri",
