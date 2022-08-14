@@ -18,22 +18,16 @@
     "amount": 2039
   },
   {
-    "payee": "La Neta",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 1343
-  },
-  {
     "payee": "Yume Sushi",
     "count": 12,
     "currency": "SEK",
     "amount": 1290
   },
   {
-    "payee": "Chic Konditori",
+    "payee": "La Neta",
     "count": 11,
     "currency": "SEK",
-    "amount": 955
+    "amount": 1238
   },
   {
     "payee": "McDonald's",
@@ -46,6 +40,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 398
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 883
   },
   {
     "payee": "Brunos Korvbar",
@@ -150,12 +150,6 @@
     "amount": 860
   },
   {
-    "payee": "Johan & Nyström",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 235
-  },
-  {
     "payee": "Tutto Bello",
     "count": 5,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 1067.5
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 630
   }
 ]
