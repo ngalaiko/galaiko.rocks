@@ -7,9 +7,9 @@
   },
   {
     "payee": "Marley Café",
-    "count": 21,
+    "count": 20,
     "currency": "SEK",
-    "amount": 1197.5
+    "amount": 1107.5
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -18,28 +18,28 @@
     "amount": 2039
   },
   {
+    "payee": "La Neta",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1353
+  },
+  {
+    "payee": "Aryam",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 446
+  },
+  {
     "payee": "Yume Sushi",
     "count": 12,
     "currency": "SEK",
     "amount": 1290
   },
   {
-    "payee": "La Neta",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1238
-  },
-  {
     "payee": "McDonald's",
     "count": 11,
     "currency": "SEK",
     "amount": 686.37
-  },
-  {
-    "payee": "Aryam",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 398
   },
   {
     "payee": "Chic Konditori",
@@ -54,6 +54,12 @@
     "amount": 800
   },
   {
+    "payee": "Weidao",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1425
+  },
+  {
     "payee": "Indian King",
     "count": 9,
     "currency": "SEK",
@@ -64,12 +70,6 @@
     "count": 9,
     "currency": "SEK",
     "amount": 1097
-  },
-  {
-    "payee": "Weidao",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1270
   },
   {
     "payee": "Tehran Grill",
@@ -84,6 +84,12 @@
     "amount": 1245
   },
   {
+    "payee": "Lillebrors Bageri",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 650
+  },
+  {
     "payee": "Oolong Tea House",
     "count": 8,
     "currency": "SEK",
@@ -94,12 +100,6 @@
     "count": 8,
     "currency": "SEK",
     "amount": 1195
-  },
-  {
-    "payee": "Lillebrors Bageri",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 597
   },
   {
     "payee": "Levinskys",
@@ -144,10 +144,22 @@
     "amount": 873
   },
   {
+    "payee": "Hanoi Corner",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 660
+  },
+  {
     "payee": "Prime Burger",
     "count": 6,
     "currency": "SEK",
     "amount": 860
+  },
+  {
+    "payee": "Tbilisi’s Hörna",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 947.5
   },
   {
     "payee": "Tutto Bello",
@@ -166,17 +178,5 @@
     "count": 5,
     "currency": "SEK",
     "amount": 651
-  },
-  {
-    "payee": "Cafe Eurobar Goes Russian",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 1067.5
-  },
-  {
-    "payee": "Kaisas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 630
   }
 ]
