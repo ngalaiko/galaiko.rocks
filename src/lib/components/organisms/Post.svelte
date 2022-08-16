@@ -1,13 +1,8 @@
 <script lang="ts">
 	import { format } from 'date-fns';
 	import type { Post } from '$lib/posts';
-	import type { Reply, Like, Repost } from '$lib/webmentions';
-	import Webmentions from './Webmentions.svelte';
 
 	export let post: Post;
-	export let likes: Like[];
-	export let replies: Reply[];
-	export let reposts: Repost[];
 
 	const parsedDate = new Date(post.date);
 </script>
@@ -39,6 +34,4 @@
 			<span />
 		{/if}
 	</div>
-
-	<Webmentions {replies} {likes} {reposts} />
 </article>
