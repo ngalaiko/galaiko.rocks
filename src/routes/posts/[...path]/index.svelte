@@ -15,23 +15,15 @@
 		const post = (await res.json()) as Post;
 		if (post.path !== url.pathname) return { status: 301, redirect: post.path };
 
-		const replies = await fetch(url.pathname + 'replies.json').then((res) => res.json());
-		const likes = await fetch(url.pathname + 'likes.json').then((res) => res.json());
-		const reposts = await fetch(url.pathname + 'reposts.json').then((res) => res.json());
 		return {
 			status: 200,
-			props: { post, replies, likes, reposts }
+			props: { post }
 		};
 	};
 </script>
 
 <script lang="ts">
 	import { Post as SinglePost } from '$lib/components';
-	import type { Reply, Like, Repost } from '$lib/webmentions';
-
-	export let likes: Like[] = [];
-	export let replies: Reply[] = [];
-	export let reposts: Repost[] = [];
 
 	export let post: Post;
 </script>
@@ -47,6 +39,6 @@
 	{/if}
 </svelte:head>
 
-<SinglePost {post} {replies} {likes} {reposts}>
+<SinglePost {post}>
 	{@html post.html}
 </SinglePost>

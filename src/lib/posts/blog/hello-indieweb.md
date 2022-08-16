@@ -113,10 +113,10 @@ Since I don't want to pay for the hosting, here is a plan:
 1. When someone send me a webmention, the request is be processed by a serverless handler hosted on
    [cloudflare workers](https://developers.cloudflare.com/workers/) and then stored in their
    [key value storage](https://developers.cloudflare.com/workers/platform/pricing/#workers-kv)
-2. Later, [an export script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/download.ts) is triggered
+2. Later, [an export script](https://github.com/ngalaiko/blog/blob/12021e08b9310aaae9b3d8aa3a179cc9e3549473/scripts/webmentions/download.ts) is triggered
    by myself manually or via GitHub Actions cronjob to download all of the new
-   webmentions [into my repository](https://github.com/ngalaiko/blog/blob/master/src/lib/data/webmentions.json)
-3. Then, [a processing script](https://github.com/ngalaiko/blog/blob/master/scripts/webmentions/process.ts) is
+   webmentions [into my repository](https://github.com/ngalaiko/blog/blob/12021e08b9310aaae9b3d8aa3a179cc9e3549473/src/lib/data/webmentions.json)
+3. Then, [a processing script](https://github.com/ngalaiko/blog/blob/12021e08b9310aaae9b3d8aa3a179cc9e3549473/scripts/webmentions/process.ts) is
    triggered in a similar manner to process new webmentions
 4. Viola, now all the raw webmentions data is available in
    my repository at all times, and I can use it to render static pages
@@ -138,11 +138,15 @@ website is fully prerendered and distributed as a set of static files, I can ana
 webmentions from it.
 
 Once webmentions are extracted, it's trivial to implement [the discovery](https://www.w3.org/TR/webmention/#sender-discovers-receiver-webmention-endpoint)
-and make [script](https://github.com/ngalaiko/galaiko.rocks/blob/master/scripts/webmentions/send.ts) ping the endpoints.
+and make [script](https://github.com/ngalaiko/galaiko.rocks/blob/12021e08b9310aaae9b3d8aa3a179cc9e3549473/scripts/webmentions/send.ts) ping the endpoints.
 
 ## Test
 
 The footer of this article contains a list of received webmentions, and I've already sent one!
+
+## Update
+
+Support for webmentions was successfully removed, since I do not use it :)
 
 [webmentions]: https://indieweb.org/Webmention
 [indieweb]: https://indieweb.org

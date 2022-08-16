@@ -2,15 +2,8 @@
 
 declare namespace App {
 	interface Locals {}
-
-	interface Platform {
-		env: {
-			WEB_MENTIONS: KVNamespace;
-		};
-	}
-
+	interface Platform {}
 	interface Session {}
-
 	interface Stuff {}
 }
 
