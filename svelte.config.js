@@ -29,7 +29,6 @@ const config = {
 			crawl: true,
 			entries: [
 				'/posts/', //  it's not linked from anywhere
-				'/replies/' //  it's not linked from anywhere
 			]
 		},
 		trailingSlash: 'always'
