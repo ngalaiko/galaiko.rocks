@@ -144,5 +144,15 @@
       "/posts/dcp/problem-7/": 2,
       "/posts/dcp/problem-1/": 1
     }
+  },
+  {
+    "from": "2022-08-15T00:00:00.000Z",
+    "to": "2022-08-16T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/probability/inde/": 1,
+      "/posts/blog/privacy/": 1,
+      "/posts/dcp/problem-2/": 1,
+      "/posts/dcp/problem-5/": 1
+    }
   }
 ]
