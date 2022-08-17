@@ -154,5 +154,21 @@
       "/posts/dcp/problem-2/": 1,
       "/posts/dcp/problem-5/": 1
     }
+  },
+  {
+    "from": "2022-08-16T00:00:00.000Z",
+    "to": "2022-08-17T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/problem-5/": 6,
+      "/": 2,
+      "/posts/dcp/": 2,
+      "/posts/blog/privacy/": 1,
+      "/posts/dcp/problem-2/": 1,
+      "/cocktails/": 1,
+      "/posts/dcp/problem-3/": 1,
+      "/posts/dcp/problem-1/": 1,
+      "/posts/dcp/problem-7/": 3,
+      "/posts/dcp/boring/": 1
+    }
   }
 ]
