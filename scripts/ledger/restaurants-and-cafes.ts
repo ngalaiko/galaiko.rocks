@@ -23,7 +23,8 @@ const argv = yargs(process.argv.slice(2))
 		type: 'string',
 		description: 'Output file',
 		demandOption: true
-	}).argv;
+	})
+	.parseSync();
 
 type Transaction = { date: Date; amount: currency; payee: string; currency: string };
 
@@ -84,7 +85,7 @@ export const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => 
 		return previous;
 	}, {} as Record<K, T[]>);
 
-await exportTransactions(argv.file)
+exportTransactions(argv.file)
 	.then((transactions) =>
 		Object.entries(groupBy(transactions, (t: Transaction) => t.payee))
 			.map(([payee, transactions]) => ({

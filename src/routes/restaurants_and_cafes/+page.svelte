@@ -1,16 +1,6 @@
-<script lang="ts" context="module">
-	import { list, type Place } from '$lib/restaurants-and-cafes';
-	import type { Load } from '@sveltejs/kit';
-
-	export const load: Load = async () => ({
-		props: {
-			places: list()
-		}
-	});
-</script>
-
 <script lang="ts">
-	export let places: Place[];
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -25,7 +15,7 @@
 				<th scope="col" class="pt-3 px-2">Times</th>
 				<th scope="col" class="pt-3 px-2">Spent</th>
 			</tr>
-			{#each places as { payee, count, amount, currency }}
+			{#each data.places as { payee, count, amount, currency }}
 				<tr>
 					<td class="md:whitespace-nowrap px-2 md:px-3 py-4">{payee}</td>
 					<td class="whitespace-nowrap px-2 md:px-3 py-4">{count}</td>

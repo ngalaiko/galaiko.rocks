@@ -21,7 +21,8 @@ const argv = yargs(process.argv.slice(2))
 		describe: 'The output file',
 		type: 'string',
 		demandOption: true
-	});
+	})
+	.parseSync();
 
 const variables = ({ from, to }: { from: Date; to: Date }) => ({
 	accountTag: 'd9eda3671dd279e79c22103ce1f879dd',
@@ -79,8 +80,8 @@ const list = async ({ from, to }: { from: Date; to: Date }): Promise<Response> =
 	fetch('https://api.cloudflare.com/client/v4/graphql', {
 		method: 'POST',
 		headers: {
-			authorization: `bearer ${argv.argv.apiToken}`,
-			'x-auth-email': argv.argv.email,
+			authorization: `bearer ${argv.apiToken}`,
+			'x-auth-email': argv.email,
 			'content-Type': 'application/json'
 		},
 		body: JSON.stringify({
@@ -98,7 +99,7 @@ const download = async () => {
 		data: null
 	}));
 	if (!data) return { from, to, metrics: {} };
-	if (errors) throw new Error(errors.map((e) => e.message).join('\n'));
+	if (errors) throw new Error(errors.map((e: any) => e.message).join('\n'));
 	const metrics = data.viewer.accounts[0].topPaths.reduce(
 		(acc, { metric: { requestPath }, count }) => ({ ...acc, [requestPath]: count }),
 		{}
@@ -106,6 +107,6 @@ const download = async () => {
 	return { from, to, metrics };
 };
 
-Promise.all([download(), readJSON(argv.argv.output)])
+Promise.all([download(), readJSON(argv.output)])
 	.then(([data, existing]) => [...existing, data])
-	.then(writeJSON(argv.argv.output));
+	.then(writeJSON(argv.output));

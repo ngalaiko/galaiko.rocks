@@ -38,7 +38,7 @@ I don't think that this approach is super scalable and makes sense in the real w
 resources for a single user. But I have chosen it because it is more fun to implement for me as it needs more
 infrastructure work.
 
-<Image src={cloud} alt="cloud" />
+<Image src={cloud} alt="cloud"/>
 
 ## Peer
 

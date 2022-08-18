@@ -38,7 +38,9 @@
 
 	<h2>Analytics</h2>
 	<p>
-		I use <a sveltekit:reload href="https://www.cloudflare.com/en-gb/web-analytics/">Cloudflare's Web Analytics</a>
+		I use <a sveltekit:reload href="https://www.cloudflare.com/en-gb/web-analytics/"
+			>Cloudflare's Web Analytics</a
+		>
 		to track some basic information about the visitors of the website.
 	</p>
 
@@ -49,6 +51,11 @@
 	<h2>Cookies</h2>
 	<p>No cookies usage.</p>
 
-    <h2>Source</h2>
-    <p>You can find the website's source code on <a sveltekit:reload href="https://github.com/ngalaiko/galaiko.rocks">GitHub</a>.
-</arcicle>
+	<h2>Source</h2>
+	<p>
+		You can find the website's source code on <a
+			sveltekit:reload
+			href="https://github.com/ngalaiko/galaiko.rocks">GitHub</a
+		>.
+	</p></arcicle
+>

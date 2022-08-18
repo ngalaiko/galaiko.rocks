@@ -4,21 +4,19 @@ import { compareDesc, max } from 'date-fns';
 
 const baseUrl = 'https://galaiko.rocks/';
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	const posts = await list();
 	const body = render(
 		posts
 			.filter(({ hidden }) => !hidden)
 			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 	);
-	const headers = {
-		'Cache-Control': 'max-age=0, s-maxage=3600',
-		'Content-Type': 'application/atom+xml'
-	};
-	return {
-		body,
-		headers
-	};
+	return new Response(body, {
+		headers: {
+			'Cache-Control': 'max-age=0, s-maxage=3600',
+			'Content-Type': 'application/atom+xml'
+		}
+	});
 };
 
 const renderPost = (post: Post) => `
@@ -29,7 +27,7 @@ const renderPost = (post: Post) => `
             <published>${post.date.toISOString()}</published>
             <updated>${post.date.toISOString()}</updated>
             ${post.categories.map((c) => `<category term="${c}">`).join('\n            ')}
-            <content type="html"><![CDATA[${post.html}]]></content>
+            <content type="html"><![CDATA[${post.default.render()}]]></content>
         </entry>`;
 
 const render = (posts: Post[]) =>

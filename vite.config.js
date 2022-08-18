@@ -31,7 +31,7 @@ const config = {
 						resolveMode: 'relative',
 						rules: [
 							{
-								match: /\https:\/\/i\.discogs\.com.*?\.(?:png|jpeg|jpg)/gi
+								match: /https:\/\/i\.discogs\.com.*?\.(?:png|jpeg|jpg)/gi
 							}
 						]
 					})

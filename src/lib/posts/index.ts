@@ -3,7 +3,7 @@ import { compareDesc } from 'date-fns';
 export type Post = {
 	title: string;
 	date: Date;
-    html: string;
+	default: any;
 	path: string;
 	aliases: string[];
 	categories: string[];
@@ -36,7 +36,7 @@ export const list = () =>
 			const { metadata } = m;
 			return {
 				...metadata,
-                html: await m.default.render().html,
+				default: m.default,
 				path: filenameToPath(filename),
 				aliases: metadata.aliases || [],
 				categories: metadata.categories || [],
