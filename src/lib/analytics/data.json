@@ -170,5 +170,19 @@
       "/posts/dcp/problem-7/": 3,
       "/posts/dcp/boring/": 1
     }
+  },
+  {
+    "from": "2022-08-17T00:00:00.000Z",
+    "to": "2022-08-18T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/problem-5/": 4,
+      "/posts/dcp/problem-3/": 3,
+      "/": 2,
+      "/posts/dcp/problem-2/": 2,
+      "/posts/dcp/problem-6/": 1,
+      "/posts/dcp/maze/": 1,
+      "/posts/dcp/problem-1/": 1,
+      "/posts/dcp/intro/": 1
+    }
   }
 ]
