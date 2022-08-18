@@ -1,9 +1,9 @@
 ---
-title: "Daily Coding Problem: Problem #5"
-tags: ["go", "development", "interview"]
-date: "2018-07-06"
-categories: ["Daily Coding Problem"]
-aliases: ["/posts/2018-07-06/"]
+title: 'Daily Coding Problem: Problem #5'
+tags: ['go', 'development', 'interview']
+date: '2018-07-06'
+categories: ['Daily Coding Problem']
+aliases: ['/posts/2018-07-06/']
 ---
 
 # Problem

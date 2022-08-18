@@ -7,4 +7,4 @@ export type Place = {
 	amount: number;
 };
 
-export const list = () => places;
+export const list = async () => places;

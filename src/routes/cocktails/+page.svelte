@@ -1,17 +1,8 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	import { type Cocktail, list } from '$lib/cocktails';
-
-	export const load: Load = async () => {
-		const cocktails = await list();
-		return { status: 200, props: { cocktails } };
-	};
-</script>
-
 <script lang="ts">
 	import Image from '$lib/Image.svelte';
+	import type { PageData } from './$types';
 
-	export let cocktails: Cocktail[];
+	export let data: PageData;
 
 	const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, '-');
 	const parseSource = (s?: string) => {
@@ -29,7 +20,7 @@
 </svelte:head>
 
 <div class="grid grid-cols-3 gap-x-4">
-	{#each cocktails as { title, ingredients, steps, image, source }, i}
+	{#each data.cocktails as { title, ingredients, steps, image, source }, i}
 		{@const slug = slugify(title)}
 		{@const parsedSource = parseSource(source)}
 		<h2 id={slug} class="col-span-3 sm:col-span-2 mb-4" class:mt-6={i !== 0}>

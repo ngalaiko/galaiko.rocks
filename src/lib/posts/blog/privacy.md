@@ -25,7 +25,7 @@ and it doesn't hurt daily usage at all. Instead,
 now I have nice stats of a website I visit and handy tools to block/whitelist
 some of them.
 
-<Image src={pihole} alt="Pihole" />
+<Image src={pihole} alt="Pihole"/>
 
 You can install it directly on your router, on every device that you use.
 For MacBook and AppleTV I changed DNS settings to use my custom IP address,

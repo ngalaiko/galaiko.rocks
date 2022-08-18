@@ -28,7 +28,7 @@ const config = {
 			enabled: true,
 			crawl: true,
 			entries: [
-				'/posts/', //  it's not linked from anywhere
+				'/posts/' //  it's not linked from anywhere
 			]
 		},
 		trailingSlash: 'always'

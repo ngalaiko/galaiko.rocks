@@ -20,6 +20,8 @@ const images = import.meta.importGlob('./covers/*.jpeg', {
 	}
 });
 
-export const list = () =>
-	records
-		.map((record) => [record, images[`./covers/${record.info.coverImage.split('/').pop()}`]]);
+export const list = async () =>
+	records.map((record) => ({
+		...record,
+		image: images[`./covers/${record.info.coverImage.split('/').pop()}`]
+	}));

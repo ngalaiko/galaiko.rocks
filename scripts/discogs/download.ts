@@ -15,7 +15,8 @@ const argv = yargs(process.argv.slice(2))
 		describe: 'The output file',
 		type: 'string',
 		demandOption: true
-	});
+	})
+	.parseSync();
 
 const download = async (token: string, page = 1) =>
 	fetch(
@@ -34,7 +35,7 @@ const download = async (token: string, page = 1) =>
 			return next ? [...releases, ...(await download(token, page + 1))] : releases;
 		});
 
-download(argv.argv.apiToken)
+download(argv.apiToken)
 	.then((records: any): Record[] =>
 		records
 			.filter((record: any) => record.basic_information.cover_image)
@@ -50,4 +51,4 @@ download(argv.argv.apiToken)
 				}
 			}))
 	)
-	.then(writeJSON(argv.argv.output));
+	.then(writeJSON(argv.output));

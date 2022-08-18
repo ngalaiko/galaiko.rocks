@@ -8,7 +8,24 @@
 	let className = '';
 	export { className as class };
 
-	const allSources = Array.isArray(src) ? src : [{ srcset: src }];
+	// for some reason, src becomes relative when ran in the browser. possibly it has
+    // to do something with browser vs node
+	// nevertheless, this is a hack to make src absolute again
+	const ensureAbsoluteSrc = (src: string) => {
+		const index = src.indexOf('/assets/');
+		if (index === 0) {
+			return src;
+		}
+		return src.substring(index);
+	};
+	const allSources = (Array.isArray(src) ? src : [{ srcset: src }]).map(
+		({ srcset, src, ...rest }) => ({
+			...rest,
+			src: src ? ensureAbsoluteSrc(src) : src,
+			srcset: srcset.split(', ').map(ensureAbsoluteSrc).join(', ')
+		})
+	);
+
 	const sources = allSources.slice(0, -1);
 	const lastSource = allSources[allSources.length - 1];
 </script>

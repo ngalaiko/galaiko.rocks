@@ -10,7 +10,7 @@ categories: ['Daily Coding Problem']
     import maze from '$lib/assets/posts/dcp/maze/maze.png?preset=hd'
 </script>
 
-<Image src={maze} alt="maze" />
+<Image src={maze} alt="maze"/>
 
 # Problem
 
