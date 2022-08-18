@@ -1,6 +1,7 @@
 name: Update Restaurants and Cafes list
 
 on:
+  push:
   schedule:
     # every day at 3am
     - cron: '0 3 * * *'
@@ -14,14 +15,6 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Checkout ledger
-        uses: actions/checkout@v3
-        with:
-          repository: ngalaiko/ledger
-          token: ${{ secrets.GH_PAT }}
-          path: 'ledger'
-          ref: 'master'
-
       - name: Set up node
         uses: actions/setup-node@v3
         with:
@@ -33,6 +26,14 @@ jobs:
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Checkout ledger
+        uses: actions/checkout@v3
+        with:
+          repository: ngalaiko/ledger
+          token: ${{ secrets.GH_PAT }}
+          path: 'ledger'
+          ref: 'master'
 
       - name: Setup hledger
         run: |
