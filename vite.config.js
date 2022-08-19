@@ -23,7 +23,7 @@ const config = {
 		sveltekit(),
 		pluginGlob(),
 		pluginCooklang(),
-		...(process.env.NODE_ENV == 'production'
+		process.env.NODE_ENV == 'production'
 			? [
 					remoteAssets({
 						assetsDir: 'src/lib/records/covers',
@@ -36,7 +36,7 @@ const config = {
 						]
 					})
 			  ]
-			: []),
+			: [],
 		imagePresets({
 			hd: hdPreset({
 				widths: [440, 700],
