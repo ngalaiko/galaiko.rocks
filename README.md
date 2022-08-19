@@ -17,8 +17,10 @@ Environment variables:
 Build command:
 
 ```
-npm install -g pnpm && pnpm install && pnpm build && pnpm build
+npm install -g pnpm && pnpm install && (pnpm build || true) && pnpm build
 ```
+
+The first `build` will fail once, because records covers won't be downloaded for the first run.
 
 Build output directory:
 
