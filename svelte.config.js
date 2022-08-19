@@ -31,6 +31,12 @@ const config = {
 				'/posts/' //  it's not linked from anywhere
 			]
 		},
+		csp: {
+			directives: {
+				'default-src': ['self'],
+				'connect-src': ['self', 'vitals.vercel-insights.com']
+			}
+		},
 		trailingSlash: 'always'
 	}
 };
