@@ -27,7 +27,7 @@ const renderPost = (post: Post) => `
             <published>${post.date.toISOString()}</published>
             <updated>${post.date.toISOString()}</updated>
             ${post.categories.map((c) => `<category term="${c}">`).join('\n            ')}
-            <content type="html"><![CDATA[${post.default.render()}]]></content>
+            <content type="html"><![CDATA[${post.default.render().html}]]></content>
         </entry>`;
 
 const render = (posts: Post[]) =>
