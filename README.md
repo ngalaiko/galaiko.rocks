@@ -25,5 +25,5 @@ The first `build` will fail once, because records covers won't be downloaded for
 Build output directory:
 
 ```
-.svelte-kit/cloudflare
+build
 ```
