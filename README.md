@@ -5,14 +5,7 @@
 
 my website
 
-## cloudflare pages deployment
-
-Environment variables:
-
-| name         | value |
-| ------------ | ----- |
-| NODE_VERSION | 17    |
-| NPM_FLAGS    | 17    |
+## deployment
 
 Build command:
 
