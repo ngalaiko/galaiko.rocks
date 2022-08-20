@@ -1,182 +1,182 @@
 [
-	{
-		"payee": "Omnipollos Hatt",
-		"count": 24,
-		"currency": "SEK",
-		"amount": 4377
-	},
-	{
-		"payee": "Marley Café",
-		"count": 20,
-		"currency": "SEK",
-		"amount": 1107.5
-	},
-	{
-		"payee": "Tony’s Pizza and Salad",
-		"count": 16,
-		"currency": "SEK",
-		"amount": 2039
-	},
-	{
-		"payee": "La Neta",
-		"count": 12,
-		"currency": "SEK",
-		"amount": 1353
-	},
-	{
-		"payee": "Aryam",
-		"count": 12,
-		"currency": "SEK",
-		"amount": 446
-	},
-	{
-		"payee": "Yume Sushi",
-		"count": 12,
-		"currency": "SEK",
-		"amount": 1290
-	},
-	{
-		"payee": "McDonald's",
-		"count": 11,
-		"currency": "SEK",
-		"amount": 686.37
-	},
-	{
-		"payee": "Chic Konditori",
-		"count": 10,
-		"currency": "SEK",
-		"amount": 883
-	},
-	{
-		"payee": "Brunos Korvbar",
-		"count": 10,
-		"currency": "SEK",
-		"amount": 800
-	},
-	{
-		"payee": "Weidao",
-		"count": 10,
-		"currency": "SEK",
-		"amount": 1425
-	},
-	{
-		"payee": "Indian King",
-		"count": 9,
-		"currency": "SEK",
-		"amount": 1240
-	},
-	{
-		"payee": "Esperanza",
-		"count": 9,
-		"currency": "SEK",
-		"amount": 1097
-	},
-	{
-		"payee": "Tehran Grill",
-		"count": 9,
-		"currency": "SEK",
-		"amount": 1016
-	},
-	{
-		"payee": "AI Ramen",
-		"count": 9,
-		"currency": "SEK",
-		"amount": 1245
-	},
-	{
-		"payee": "Lillebrors Bageri",
-		"count": 9,
-		"currency": "SEK",
-		"amount": 650
-	},
-	{
-		"payee": "Oolong Tea House",
-		"count": 8,
-		"currency": "SEK",
-		"amount": 640
-	},
-	{
-		"payee": "Cafe Ragazzi",
-		"count": 8,
-		"currency": "SEK",
-		"amount": 1195
-	},
-	{
-		"payee": "Levinskys",
-		"count": 7,
-		"currency": "SEK",
-		"amount": 955
-	},
-	{
-		"payee": "DropCoffee",
-		"count": 7,
-		"currency": "SEK",
-		"amount": 485
-	},
-	{
-		"payee": "Falloumi",
-		"count": 7,
-		"currency": "SEK",
-		"amount": 626.5
-	},
-	{
-		"payee": "Indian Curry House",
-		"count": 7,
-		"currency": "SEK",
-		"amount": 875
-	},
-	{
-		"payee": "Pong",
-		"count": 6,
-		"currency": "SEK",
-		"amount": 820
-	},
-	{
-		"payee": "The Good Gringo",
-		"count": 6,
-		"currency": "SEK",
-		"amount": 752
-	},
-	{
-		"payee": "Saigon Baguette",
-		"count": 6,
-		"currency": "SEK",
-		"amount": 873
-	},
-	{
-		"payee": "Hanoi Corner",
-		"count": 6,
-		"currency": "SEK",
-		"amount": 660
-	},
-	{
-		"payee": "Prime Burger",
-		"count": 6,
-		"currency": "SEK",
-		"amount": 860
-	},
-	{
-		"payee": "Tbilisi’s Hörna",
-		"count": 5,
-		"currency": "SEK",
-		"amount": 947.5
-	},
-	{
-		"payee": "Tutto Bello",
-		"count": 5,
-		"currency": "SEK",
-		"amount": 505
-	},
-	{
-		"payee": "Kafé Ritorno",
-		"count": 5,
-		"currency": "SEK",
-		"amount": 507
-	},
-	{
-		"payee": "Le Kebab",
-		"count": 5,
-		"currency": "SEK",
-		"amount": 651
-	}
+  {
+    "payee": "Omnipollos Hatt",
+    "count": 24,
+    "currency": "SEK",
+    "amount": 4377
+  },
+  {
+    "payee": "Marley Café",
+    "count": 19,
+    "currency": "SEK",
+    "amount": 1062.5
+  },
+  {
+    "payee": "Tony’s Pizza and Salad",
+    "count": 16,
+    "currency": "SEK",
+    "amount": 2039
+  },
+  {
+    "payee": "Aryam",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 446
+  },
+  {
+    "payee": "Yume Sushi",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1290
+  },
+  {
+    "payee": "McDonald's",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 686.37
+  },
+  {
+    "payee": "La Neta",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1248
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 883
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 800
+  },
+  {
+    "payee": "Weidao",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1425
+  },
+  {
+    "payee": "Esperanza",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1097
+  },
+  {
+    "payee": "Tehran Grill",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1016
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1245
+  },
+  {
+    "payee": "Lillebrors Bageri",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 650
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 640
+  },
+  {
+    "payee": "Indian King",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1125
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1195
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 485
+  },
+  {
+    "payee": "Falloumi",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 626.5
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 875
+  },
+  {
+    "payee": "Levinskys",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 825
+  },
+  {
+    "payee": "Pong",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 820
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 752
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 873
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 660
+  },
+  {
+    "payee": "Prime Burger",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 860
+  },
+  {
+    "payee": "Tbilisi’s Hörna",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 947.5
+  },
+  {
+    "payee": "Tutto Bello",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 505
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 507
+  },
+  {
+    "payee": "Le Kebab",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 651
+  }
 ]
