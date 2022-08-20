@@ -34,7 +34,9 @@ const config = {
 		csp: {
 			directives: {
 				'default-src': ['self'],
-				'connect-src': ['self', 'vitals.vercel-insights.com']
+				'script-src': ['self', 'static.cloudflareinsights.com'],
+				'connect-src': ['self', 'vitals.vercel-insights.com'],
+				'style-src': ['self', 'unsafe-inline']
 			}
 		},
 		trailingSlash: 'always'
