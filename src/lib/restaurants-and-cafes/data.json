@@ -9,7 +9,7 @@
     "payee": "Marley Café",
     "count": 19,
     "currency": "SEK",
-    "amount": 1062.5
+    "amount": 1115.5
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -18,16 +18,16 @@
     "amount": 1914
   },
   {
-    "payee": "Aryam",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 446
-  },
-  {
     "payee": "Yume Sushi",
     "count": 12,
     "currency": "SEK",
     "amount": 1290
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 921
   },
   {
     "payee": "McDonald's",
@@ -42,10 +42,10 @@
     "amount": 1248
   },
   {
-    "payee": "Chic Konditori",
-    "count": 10,
+    "payee": "Aryam",
+    "count": 11,
     "currency": "SEK",
-    "amount": 883
+    "amount": 391
   },
   {
     "payee": "Brunos Korvbar",
@@ -60,6 +60,18 @@
     "amount": 1425
   },
   {
+    "payee": "AI Ramen",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1395
+  },
+  {
+    "payee": "Indian King",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1245
+  },
+  {
     "payee": "Esperanza",
     "count": 9,
     "currency": "SEK",
@@ -72,12 +84,6 @@
     "amount": 1016
   },
   {
-    "payee": "AI Ramen",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1245
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 9,
     "currency": "SEK",
@@ -88,12 +94,6 @@
     "count": 8,
     "currency": "SEK",
     "amount": 640
-  },
-  {
-    "payee": "Indian King",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1125
   },
   {
     "payee": "Cafe Ragazzi",
