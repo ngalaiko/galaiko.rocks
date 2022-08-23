@@ -102,12 +102,6 @@
     "amount": 1195
   },
   {
-    "payee": "DropCoffee",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 485
-  },
-  {
     "payee": "Falloumi",
     "count": 7,
     "currency": "SEK",
@@ -118,6 +112,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 875
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 450
   },
   {
     "payee": "Levinskys",
