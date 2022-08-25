@@ -7,9 +7,9 @@
   },
   {
     "payee": "Marley Café",
-    "count": 19,
+    "count": 18,
     "currency": "SEK",
-    "amount": 1115.5
+    "amount": 1070.5
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -102,12 +102,6 @@
     "amount": 1195
   },
   {
-    "payee": "Falloumi",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 626.5
-  },
-  {
     "payee": "Indian Curry House",
     "count": 7,
     "currency": "SEK",
@@ -154,6 +148,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 860
+  },
+  {
+    "payee": "Falloumi",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 531.5
   },
   {
     "payee": "Tbilisi’s Hörna",
