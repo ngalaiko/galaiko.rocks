@@ -19,13 +19,7 @@ const config = {
 				[autoLinkHeadings, { behavior: 'wrap' }] //  adds a <a> around slugged headers
 			]
 		}),
-		preprocess({
-			postcss: true,
-			typescript: true,
-			replace: [
-				['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
-			]
-		})
+		preprocess({ postcss: true, typescript: true })
 	],
 	kit: {
 		adapter: adapter(),
@@ -36,6 +30,14 @@ const config = {
 			entries: [
 				'/posts/' //  it's not linked from anywhere
 			]
+		},
+		csp: {
+			directives: {
+				'default-src': ['self'],
+				'script-src': ['self', 'static.cloudflareinsights.com'],
+				'connect-src': ['self', 'vitals.vercel-insights.com'],
+				'style-src': ['self', 'unsafe-inline']
+			}
 		},
 		trailingSlash: 'always'
 	}
