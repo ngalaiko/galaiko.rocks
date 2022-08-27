@@ -13,21 +13,15 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 15,
+    "count": 14,
     "currency": "SEK",
-    "amount": 1914
+    "amount": 1799
   },
   {
     "payee": "Yume Sushi",
     "count": 12,
     "currency": "SEK",
     "amount": 1290
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 921
   },
   {
     "payee": "McDonald's",
@@ -52,6 +46,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 800
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 817
   },
   {
     "payee": "Weidao",
@@ -106,12 +106,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 875
-  },
-  {
-    "payee": "DropCoffee",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 450
   },
   {
     "payee": "Levinskys",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 651
+  },
+  {
+    "payee": "Cafe Eurobar Goes Russian",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 1067.5
   }
 ]
