@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 24,
+    "count": 23,
     "currency": "SEK",
-    "amount": 4377
+    "amount": 4143
   },
   {
     "payee": "Marley Café",
@@ -90,12 +90,6 @@
     "amount": 650
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 640
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 8,
     "currency": "SEK",
@@ -106,6 +100,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 875
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 576
   },
   {
     "payee": "Levinskys",
