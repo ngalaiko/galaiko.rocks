@@ -1,15 +1,15 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 23,
+    "count": 24,
     "currency": "SEK",
-    "amount": 4143
+    "amount": 4278
   },
   {
     "payee": "Marley Café",
-    "count": 18,
+    "count": 19,
     "currency": "SEK",
-    "amount": 1070.5
+    "amount": 1118.5
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -24,6 +24,12 @@
     "amount": 1290
   },
   {
+    "payee": "Aryam",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 439
+  },
+  {
     "payee": "McDonald's",
     "count": 11,
     "currency": "SEK",
@@ -34,12 +40,6 @@
     "count": 11,
     "currency": "SEK",
     "amount": 1248
-  },
-  {
-    "payee": "Aryam",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 391
   },
   {
     "payee": "Brunos Korvbar",
@@ -72,6 +72,12 @@
     "amount": 1245
   },
   {
+    "payee": "Cafe Ragazzi",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1360
+  },
+  {
     "payee": "Esperanza",
     "count": 9,
     "currency": "SEK",
@@ -90,16 +96,10 @@
     "amount": 650
   },
   {
-    "payee": "Cafe Ragazzi",
+    "payee": "Indian Curry House",
     "count": 8,
     "currency": "SEK",
-    "amount": 1195
-  },
-  {
-    "payee": "Indian Curry House",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 875
+    "amount": 1010
   },
   {
     "payee": "Oolong Tea House",
