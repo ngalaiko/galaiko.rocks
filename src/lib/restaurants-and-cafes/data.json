@@ -30,16 +30,16 @@
     "amount": 439
   },
   {
-    "payee": "McDonald's",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 686.37
-  },
-  {
     "payee": "La Neta",
     "count": 11,
     "currency": "SEK",
     "amount": 1248
+  },
+  {
+    "payee": "McDonald's",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 658.24
   },
   {
     "payee": "Brunos Korvbar",
