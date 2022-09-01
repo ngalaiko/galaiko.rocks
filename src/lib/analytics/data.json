@@ -303,5 +303,20 @@
       "/posts/2018-07-01": 1,
       "/posts/dcp/problem-5/": 1
     }
+  },
+  {
+    "from": "2022-08-31T00:00:00.000Z",
+    "to": "2022-09-01T00:00:00.000Z",
+    "metrics": {
+      "/": 2,
+      "/posts/2018-07-05/": 1,
+      "/posts/privacy/": 1,
+      "/posts/2018-07-06/": 1,
+      "/posts/2018-07-02/": 1,
+      "/posts/privacy": 1,
+      "/posts/dcp/problem-5/": 1,
+      "/posts/half-a-year-with-vim": 1,
+      "/restaurants_and_cafes/": 1
+    }
   }
 ]
