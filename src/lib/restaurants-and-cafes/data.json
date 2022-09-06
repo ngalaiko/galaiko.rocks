@@ -13,9 +13,9 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 14,
+    "count": 15,
     "currency": "SEK",
-    "amount": 1799
+    "amount": 1934
   },
   {
     "payee": "Yume Sushi",
@@ -84,6 +84,12 @@
     "amount": 1097
   },
   {
+    "payee": "Indian Curry House",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1145
+  },
+  {
     "payee": "Tehran Grill",
     "count": 9,
     "currency": "SEK",
@@ -96,10 +102,10 @@
     "amount": 650
   },
   {
-    "payee": "Indian Curry House",
-    "count": 8,
+    "payee": "Levinskys",
+    "count": 7,
     "currency": "SEK",
-    "amount": 1010
+    "amount": 960
   },
   {
     "payee": "Oolong Tea House",
@@ -108,10 +114,10 @@
     "amount": 576
   },
   {
-    "payee": "Levinskys",
-    "count": 6,
+    "payee": "Cafe Eurobar Goes Russian",
+    "count": 7,
     "currency": "SEK",
-    "amount": 825
+    "amount": 1397.5
   },
   {
     "payee": "Pong",
@@ -130,6 +136,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 873
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 898
   },
   {
     "payee": "Hanoi Corner",
@@ -166,17 +178,5 @@
     "count": 5,
     "currency": "SEK",
     "amount": 507
-  },
-  {
-    "payee": "Le Kebab",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 651
-  },
-  {
-    "payee": "Cafe Eurobar Goes Russian",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 1067.5
   }
 ]
