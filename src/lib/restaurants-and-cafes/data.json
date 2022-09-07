@@ -36,12 +36,6 @@
     "amount": 1248
   },
   {
-    "payee": "McDonald's",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 658.24
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 10,
     "currency": "SEK",
@@ -70,6 +64,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 1245
+  },
+  {
+    "payee": "McDonald's",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 628.5
   },
   {
     "payee": "Cafe Ragazzi",
