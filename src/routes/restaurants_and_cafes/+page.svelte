@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { addYears, formatRelative } from 'date-fns';
+
 	export let data: PageData;
 </script>
 
@@ -7,7 +9,14 @@
 	<title>Restaurants and Cafes</title>
 </svelte:head>
 
-<article>
+<article class="flex flex-col gap-2">
+	<h1 class="text-2xl text-bold">Restaurants and Cafes</h1>
+	<p>
+		food establishments i went to the most since {formatRelative(
+			addYears(new Date(), -1),
+			new Date()
+		)}:
+	</p>
 	<table class="table-auto w-full">
 		<thead>
 			<tr class="text-gray text-md font-semibold text-left">
