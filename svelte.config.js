@@ -31,14 +31,6 @@ const config = {
 				'/posts/' //  it's not linked from anywhere
 			]
 		},
-		csp: {
-			directives: {
-				'default-src': ['self'],
-				'script-src': ['self', 'static.cloudflareinsights.com'],
-				'connect-src': ['self', 'vitals.vercel-insights.com'],
-				'style-src': ['self', 'unsafe-inline']
-			}
-		},
 		trailingSlash: 'always'
 	}
 };
