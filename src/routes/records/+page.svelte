@@ -6,10 +6,13 @@
 </script>
 
 <svelte:head>
-	<title>Records</title>
+	<title>Vinyl Records</title>
 </svelte:head>
 
-<article>
+<article class="flex flex-col gap-2">
+	<h1 class="text-2xl text-bold">Vinyl Records</h1>
+	<p>here are all vinyl records that i have:</p>
+
 	<ul class="grid grid-cols-2 sm:grid-cols-3 gap-3">
 		{#each data.records as { artist, info, image }}
 			{@const fullName = `${artist.name} - ${info.title}`}

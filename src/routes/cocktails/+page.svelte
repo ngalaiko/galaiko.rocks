@@ -19,46 +19,51 @@
 	<title>Cocktails</title>
 </svelte:head>
 
-<ul class="flex flex-col gap-6">
-	{#each data.cocktails as { title, ingredients, steps, image, source }, i}
-		{@const slug = slugify(title)}
-		{@const parsedSource = parseSource(source)}
-		<li class="flex flex-col gap-2">
-			<a href={'#' + slug}>
-				<h2 id={slug} class="font-semibold underline">
-					{title}
-				</h2>
-			</a>
+<article class="flex flex-col gap-2">
+	<h1 class="text-2xl font-bold">Cocktails</h1>
+	<p>cocktails that i like and make:</p>
 
-			<div class="grid grid-cols-3 gap-2">
-				<div class="flex flex-col gap-2 col-span-2">
-					<ul class="list-disc ml-5">
-						{#each ingredients as { name, quantity }}
-							<li>
-								<span>{name}{quantity ? ':' : ''}</span>
-								{#if quantity}
-									<span>{quantity}</span>
+	<ul class="flex flex-col gap-6">
+		{#each data.cocktails as { title, ingredients, steps, image, source }}
+			{@const slug = slugify(title)}
+			{@const parsedSource = parseSource(source)}
+			<li class="flex flex-col gap-2">
+				<a href={'#' + slug}>
+					<h2 id={slug} class="font-semibold underline">
+						{title}
+					</h2>
+				</a>
+
+				<div class="grid grid-cols-3 gap-2">
+					<div class="flex flex-col gap-2 col-span-2">
+						<ul class="list-disc ml-5">
+							{#each ingredients as { name, quantity }}
+								<li>
+									<span>{name}{quantity ? ':' : ''}</span>
+									{#if quantity}
+										<span>{quantity}</span>
+									{/if}
+								</li>
+							{/each}
+						</ul>
+
+						<p>{steps.join(' ')}</p>
+
+						{#if source}
+							<small class="text-foreground-4 -mt-1.5">
+								source:
+								{#if parsedSource instanceof URL}
+									<a class="underline" href={parsedSource.toString()}>{parsedSource.hostname}</a>
+								{:else}
+									{parsedSource}
 								{/if}
-							</li>
-						{/each}
-					</ul>
+							</small>
+						{/if}
+					</div>
 
-					<p>{steps.join(' ')}</p>
-
-					{#if source}
-						<small class="text-foreground-4 -mt-1.5">
-							source:
-							{#if parsedSource instanceof URL}
-								<a class="underline" href={parsedSource.toString()}>{parsedSource.hostname}</a>
-							{:else}
-								{parsedSource}
-							{/if}
-						</small>
-					{/if}
+					<Image src={image} alt={title} class="col-span-3 sm:col-span-1" />
 				</div>
-
-				<Image src={image} alt={title} class="col-span-3 sm:col-span-1" />
-			</div>
-		</li>
-	{/each}
-</ul>
+			</li>
+		{/each}
+	</ul>
+</article>
