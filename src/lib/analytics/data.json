@@ -365,5 +365,16 @@
     "metrics": {
       "/posts/2018-07-02/": 1
     }
+  },
+  {
+    "from": "2022-09-07T00:00:00.000Z",
+    "to": "2022-09-08T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/problem-5/": 3,
+      "/": 1,
+      "/posts/blog/peer-to-peer/": 1,
+      "/posts/dcp/problem-2/": 1,
+      "/cocktails/": 1
+    }
   }
 ]
