@@ -20,7 +20,7 @@
 						{#if image}
 							<Image src={image} alt={fullName} zoomable={false} />
 						{:else}
-							<img src={info.coverImage} alt={fullName} lazy={true} />
+							<img src={info.coverImage} alt={fullName} />
 						{/if}
 						<figcaption class="text-sm text-center m-1">{fullName}</figcaption>
 					</figure>
