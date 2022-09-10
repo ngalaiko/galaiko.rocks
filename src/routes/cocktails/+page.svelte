@@ -35,7 +35,7 @@
 				</a>
 
 				<div class="grid grid-cols-3 gap-2">
-					<div class="flex flex-col gap-2 col-span-2">
+					<div class="flex flex-col gap-2 col-span-3 sm:col-span-2">
 						<ul class="list-disc ml-5">
 							{#each ingredients as { name, quantity }}
 								<li>
