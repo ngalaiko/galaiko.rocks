@@ -409,5 +409,16 @@
       "/cocktails/": 1,
       "/posts/2018-07-03": 1
     }
+  },
+  {
+    "from": "2022-09-11T00:00:00.000Z",
+    "to": "2022-09-12T00:00:00.000Z",
+    "metrics": {
+      "/": 4,
+      "/posts/dcp/problem-5/": 1,
+      "/posts/half-a-year-with-vim": 1,
+      "/records/": 1,
+      "/cocktails/": 1
+    }
   }
 ]
