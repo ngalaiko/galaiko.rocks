@@ -420,5 +420,15 @@
       "/records/": 1,
       "/cocktails/": 1
     }
+  },
+  {
+    "from": "2022-09-12T00:00:00.000Z",
+    "to": "2022-09-13T00:00:00.000Z",
+    "metrics": {
+      "/posts/2018-07-06/": 1,
+      "/posts/2018-07-02/": 1,
+      "/posts/privacy": 1,
+      "/posts/dcp/problem-5/": 1
+    }
   }
 ]
