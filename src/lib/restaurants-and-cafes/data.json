@@ -102,12 +102,6 @@
     "amount": 650
   },
   {
-    "payee": "Levinskys",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 960
-  },
-  {
     "payee": "Oolong Tea House",
     "count": 7,
     "currency": "SEK",
@@ -124,6 +118,12 @@
     "count": 6,
     "currency": "SEK",
     "amount": 820
+  },
+  {
+    "payee": "Levinskys",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 795
   },
   {
     "payee": "The Good Gringo",
