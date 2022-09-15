@@ -3,7 +3,6 @@ import { list, type Post } from '$lib/posts';
 import { compareDesc, max } from 'date-fns';
 
 const baseUrl = 'https://galaiko.rocks/';
-export const prerender = true;
 
 export const GET: RequestHandler = async () => {
 	const posts = await list();

@@ -24,6 +24,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
+			default: true,
 			enabled: true,
 			crawl: true,
 			entries: [
