@@ -60,12 +60,6 @@
     "amount": 1395
   },
   {
-    "payee": "Indian King",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1245
-  },
-  {
     "payee": "McDonald's",
     "count": 9,
     "currency": "SEK",
@@ -100,6 +94,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 650
+  },
+  {
+    "payee": "Indian King",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1125
   },
   {
     "payee": "Oolong Tea House",
