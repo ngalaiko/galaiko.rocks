@@ -60,18 +60,6 @@
     "amount": 1395
   },
   {
-    "payee": "McDonald's",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 628.5
-  },
-  {
-    "payee": "Cafe Ragazzi",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1360
-  },
-  {
     "payee": "Esperanza",
     "count": 9,
     "currency": "SEK",
@@ -100,6 +88,18 @@
     "count": 8,
     "currency": "SEK",
     "amount": 1125
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1215
+  },
+  {
+    "payee": "McDonald's",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 556.5
   },
   {
     "payee": "Oolong Tea House",
