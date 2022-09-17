@@ -30,12 +30,6 @@
     "amount": 439
   },
   {
-    "payee": "La Neta",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1248
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 10,
     "currency": "SEK",
@@ -52,6 +46,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1425
+  },
+  {
+    "payee": "La Neta",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1143
   },
   {
     "payee": "AI Ramen",
