@@ -30,12 +30,6 @@
     "amount": 439
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 800
-  },
-  {
     "payee": "Chic Konditori",
     "count": 10,
     "currency": "SEK",
@@ -78,6 +72,12 @@
     "amount": 1016
   },
   {
+    "payee": "Brunos Korvbar",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 730
+  },
+  {
     "payee": "Lillebrors Bageri",
     "count": 9,
     "currency": "SEK",
@@ -112,12 +112,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 1397.5
-  },
-  {
-    "payee": "Pong",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 820
   },
   {
     "payee": "Levinskys",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 507
+  },
+  {
+    "payee": "Le Kebab",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 651
   }
 ]
