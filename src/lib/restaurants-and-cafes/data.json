@@ -19,9 +19,9 @@
   },
   {
     "payee": "Yume Sushi",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1290
+    "amount": 1325
   },
   {
     "payee": "Aryam",
@@ -102,6 +102,18 @@
     "amount": 556.5
   },
   {
+    "payee": "Levinskys",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 930
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 867
+  },
+  {
     "payee": "Oolong Tea House",
     "count": 7,
     "currency": "SEK",
@@ -112,18 +124,6 @@
     "count": 7,
     "currency": "SEK",
     "amount": 1397.5
-  },
-  {
-    "payee": "Levinskys",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 795
-  },
-  {
-    "payee": "The Good Gringo",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 752
   },
   {
     "payee": "Saigon Baguette",
