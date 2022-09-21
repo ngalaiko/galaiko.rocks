@@ -498,5 +498,16 @@
       "/posts/dcp/": 1,
       "/posts/dcp/probability/": 1
     }
+  },
+  {
+    "from": "2022-09-20T00:00:00.000Z",
+    "to": "2022-09-21T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/maze/": 4,
+      "/posts/dcp/problem-5/": 3,
+      "/posts/privacy": 1,
+      "/posts/2018-07-08/": 1,
+      "/posts/dcp/problem-7/": 1
+    }
   }
 ]
