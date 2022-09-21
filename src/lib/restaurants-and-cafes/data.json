@@ -84,12 +84,6 @@
     "amount": 650
   },
   {
-    "payee": "Indian King",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1125
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 8,
     "currency": "SEK",
@@ -124,6 +118,12 @@
     "count": 7,
     "currency": "SEK",
     "amount": 1397.5
+  },
+  {
+    "payee": "Indian King",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 980
   },
   {
     "payee": "Saigon Baguette",
