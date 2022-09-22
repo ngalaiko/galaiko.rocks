@@ -509,5 +509,19 @@
       "/posts/2018-07-08/": 1,
       "/posts/dcp/problem-7/": 1
     }
+  },
+  {
+    "from": "2022-09-21T00:00:00.000Z",
+    "to": "2022-09-22T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/problem-5/": 7,
+      "/posts/blog/cluster/": 1,
+      "/posts/privacy/": 1,
+      "/posts/2018-07-02/": 1,
+      "/posts/2018-07-01": 1,
+      "/posts/2018-07-04": 1,
+      "/posts/dcp/problem-4/": 1,
+      "/posts/dcp/problem-3/": 1
+    }
   }
 ]
