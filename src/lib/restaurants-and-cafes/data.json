@@ -54,12 +54,6 @@
     "amount": 1395
   },
   {
-    "payee": "Esperanza",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1097
-  },
-  {
     "payee": "Indian Curry House",
     "count": 9,
     "currency": "SEK",
@@ -82,6 +76,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 650
+  },
+  {
+    "payee": "Esperanza",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 959
   },
   {
     "payee": "Cafe Ragazzi",
