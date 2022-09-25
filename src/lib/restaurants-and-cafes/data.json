@@ -30,12 +30,6 @@
     "amount": 439
   },
   {
-    "payee": "Chic Konditori",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 817
-  },
-  {
     "payee": "Weidao",
     "count": 10,
     "currency": "SEK",
@@ -52,6 +46,12 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1395
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 641
   },
   {
     "payee": "Indian Curry House",
