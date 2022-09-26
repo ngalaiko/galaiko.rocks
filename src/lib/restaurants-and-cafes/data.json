@@ -1,15 +1,15 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 24,
+    "count": 26,
     "currency": "SEK",
-    "amount": 4278
+    "amount": 4539
   },
   {
     "payee": "Marley Café",
-    "count": 18,
+    "count": 17,
     "currency": "SEK",
-    "amount": 980.5
+    "amount": 931.5
   },
   {
     "payee": "Tony’s Pizza and Salad",
@@ -30,6 +30,12 @@
     "amount": 439
   },
   {
+    "payee": "AI Ramen",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1540
+  },
+  {
     "payee": "Weidao",
     "count": 10,
     "currency": "SEK",
@@ -40,12 +46,6 @@
     "count": 10,
     "currency": "SEK",
     "amount": 1143
-  },
-  {
-    "payee": "AI Ramen",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1395
   },
   {
     "payee": "Chic Konditori",
@@ -156,12 +156,6 @@
     "amount": 531.5
   },
   {
-    "payee": "Tbilisi’s Hörna",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 947.5
-  },
-  {
     "payee": "Tutto Bello",
     "count": 5,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 651
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 630
   }
 ]
