@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 26,
+    "count": 25,
     "currency": "SEK",
-    "amount": 4539
+    "amount": 4274
   },
   {
     "payee": "Marley Café",
@@ -24,16 +24,16 @@
     "amount": 1325
   },
   {
-    "payee": "Aryam",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 439
-  },
-  {
     "payee": "AI Ramen",
     "count": 11,
     "currency": "SEK",
     "amount": 1540
+  },
+  {
+    "payee": "Aryam",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 384
   },
   {
     "payee": "Weidao",
