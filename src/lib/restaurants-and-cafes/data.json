@@ -156,12 +156,6 @@
     "amount": 531.5
   },
   {
-    "payee": "Tutto Bello",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 505
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 5,
     "currency": "SEK",
@@ -178,5 +172,11 @@
     "count": 5,
     "currency": "SEK",
     "amount": 630
+  },
+  {
+    "payee": "Pong",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 695
   }
 ]
