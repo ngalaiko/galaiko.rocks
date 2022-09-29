@@ -78,12 +78,6 @@
     "amount": 650
   },
   {
-    "payee": "Esperanza",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 959
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 8,
     "currency": "SEK",
@@ -94,6 +88,12 @@
     "count": 8,
     "currency": "SEK",
     "amount": 556.5
+  },
+  {
+    "payee": "Esperanza",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 840
   },
   {
     "payee": "Levinskys",
