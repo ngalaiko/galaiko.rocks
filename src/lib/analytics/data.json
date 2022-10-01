@@ -592,5 +592,15 @@
       "/": 9,
       "/about/": 1
     }
+  },
+  {
+    "from": "2022-09-30T00:00:00.000Z",
+    "to": "2022-10-01T00:00:00.000Z",
+    "metrics": {
+      "/posts/dcp/maze/": 2,
+      "/posts/2018-07-03/": 1,
+      "/posts/privacy/": 1,
+      "/posts/blog/peer-to-peer/": 1
+    }
   }
 ]
