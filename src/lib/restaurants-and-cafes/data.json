@@ -48,12 +48,6 @@
     "amount": 1143
   },
   {
-    "payee": "Chic Konditori",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 641
-  },
-  {
     "payee": "Indian Curry House",
     "count": 9,
     "currency": "SEK",
@@ -76,6 +70,12 @@
     "count": 9,
     "currency": "SEK",
     "amount": 650
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 569
   },
   {
     "payee": "Cafe Ragazzi",
