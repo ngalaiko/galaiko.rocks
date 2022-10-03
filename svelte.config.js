@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 
 import { mdsvex } from 'mdsvex';
@@ -19,7 +19,11 @@ const config = {
 				[autoLinkHeadings, { behavior: 'wrap' }] //  adds a <a> around slugged headers
 			]
 		}),
-		preprocess({ postcss: true, typescript: true })
+		preprocess({
+			postcss: true,
+			typescript: true,
+			replace: [['import.meta.env.GITHUB_TOKEN', JSON.stringify(process.env.GITHUB_TOKEN)]]
+		})
 	],
 	kit: {
 		adapter: adapter(),

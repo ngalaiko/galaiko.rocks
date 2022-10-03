@@ -1,14 +1,14 @@
 declare module '*?preset=hd' {
-	const src: import('vite-plugin-image-presets').ImageAttrs[];
-	export default src;
+    const src: import('vite-plugin-image-presets').ImageAttrs[];
+    export default src;
 }
 
 declare module '*?preset=avatar' {
-	const src: import('vite-plugin-image-presets').ImageAttrs[];
-	export default src;
+    const src: import('vite-plugin-image-presets').ImageAttrs[];
+    export default src;
 }
 
 declare module '*.cook' {
-	const recipe: import('@cooklang/cooklang-ts').ParseResult;
-	export default recipe;
+    const recipe: import('@cooklang/cooklang-ts').ParseResult;
+    export default recipe;
 }
