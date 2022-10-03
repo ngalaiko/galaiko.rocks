@@ -35,7 +35,7 @@
 
 	<hr class="text-gray" />
 
-	<div class="flex justify-between  text-sm">
+	<div class="flex justify-between text-sm">
 		{#if data.post.previous}
 			<a data-sveltekit-reload href={data.post.previous.path}>⇐ {data.post.previous.title}</a>
 		{:else}
@@ -50,12 +50,12 @@
 	</div>
 
 	{#if form && form.message && form.success}
-		<p>{form.message}</p>
+		<p class="text-base">{form.message}</p>
 	{:else}
-		<form method="POST" class="flex flex-col gap-2" use:enhance>
+		<form method="POST" class="flex flex-col gap-2 text-base" use:enhance>
 			<div class="flex gap-2 items-ceter justify-between">
 				<div class="flex items-center whitespace-nowrap">
-					<label for="author_name"> Name: </label>
+					<label for="author_name"> Your name: </label>
 					<input
 						name="author_name"
 						type="text"

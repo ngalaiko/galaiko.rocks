@@ -45,7 +45,7 @@ export const actions: Actions = {
         } else {
             const res = await trigger({ body, author_name, pathname });
             if (res.status !== 204) {
-                return invalid(500, { message: await res.json() });
+                return invalid(500, { message: await res.text() });
             } else {
                 return {
                     success: true,
