@@ -2,7 +2,6 @@
 	"private": true,
 	"scripts": {
 		"ledger:restaurants-and-cafes": "ts-node-esm ./scripts/ledger/restaurants-and-cafes.ts",
-		"cloudflare:analytics:download": "ts-node-esm ./scripts/cloudflare/analytics/download.ts",
 		"discogs:download": "ts-node-esm ./scripts/discogs/download.ts",
 		"dev": "vite dev",
 		"build": "vite build",
