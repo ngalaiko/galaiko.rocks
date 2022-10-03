@@ -7,15 +7,15 @@
   },
   {
     "payee": "Marley Café",
-    "count": 17,
+    "count": 16,
     "currency": "SEK",
-    "amount": 931.5
+    "amount": 882.5
   },
   {
     "payee": "Tony’s Pizza and Salad",
     "count": 14,
     "currency": "SEK",
-    "amount": 1809
+    "amount": 1799
   },
   {
     "payee": "Yume Sushi",
@@ -90,6 +90,12 @@
     "amount": 556.5
   },
   {
+    "payee": "Oolong Tea House",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 704
+  },
+  {
     "payee": "Esperanza",
     "count": 7,
     "currency": "SEK",
@@ -108,10 +114,10 @@
     "amount": 867
   },
   {
-    "payee": "Oolong Tea House",
+    "payee": "Saigon Baguette",
     "count": 7,
     "currency": "SEK",
-    "amount": 576
+    "amount": 1037
   },
   {
     "payee": "Cafe Eurobar Goes Russian",
@@ -126,10 +132,10 @@
     "amount": 980
   },
   {
-    "payee": "Saigon Baguette",
+    "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
-    "amount": 873
+    "amount": 647
   },
   {
     "payee": "Tokyo Diner",
@@ -154,12 +160,6 @@
     "count": 6,
     "currency": "SEK",
     "amount": 531.5
-  },
-  {
-    "payee": "Kafé Ritorno",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 507
   },
   {
     "payee": "Le Kebab",
