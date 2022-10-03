@@ -13,17 +13,17 @@
 	<h2>Hosting</h2>
 	<p>
 		First thing to know, this website is hosted on <a
-			sveltekit:reload
+			data-sveltekit-reload
 			href="https://pages.cloudflare.com/">Cloudflare Pages</a
 		>. It means that all your requests go through their servers and
-		<a sveltekit:reload href="https://www.cloudflare.com/en-gb/privacypolicy/"
+		<a data-sveltekit-reload href="https://www.cloudflare.com/en-gb/privacypolicy/"
 			>Cloudflare's Privacy policy</a
 		> is applied.
 	</p>
 
 	<h2>JavaScript</h2>
 	<p>
-		This website is build with <a sveltekit:reload href="https://kit.svelte.dev">SvelteKit</a> and by
+		This website is build with <a data-sveltekit-reload href="https://kit.svelte.dev">SvelteKit</a> and by
 		default uses JavaScript to act like a Single Page Application for enhanced user expirience.
 	</p>
 
@@ -38,7 +38,7 @@
 
 	<h2>Analytics</h2>
 	<p>
-		I use <a sveltekit:reload href="https://www.cloudflare.com/en-gb/web-analytics/"
+		I use <a data-sveltekit-reload href="https://www.cloudflare.com/en-gb/web-analytics/"
 			>Cloudflare's Web Analytics</a
 		>
 		to track some basic information about the visitors of the website.
@@ -54,7 +54,7 @@
 	<h2>Source</h2>
 	<p>
 		You can find the website's source code on <a
-			sveltekit:reload
+			data-sveltekit-reload
 			href="https://github.com/ngalaiko/galaiko.rocks">GitHub</a
 		>.
 	</p></arcicle

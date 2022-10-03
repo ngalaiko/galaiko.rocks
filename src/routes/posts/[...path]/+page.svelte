@@ -32,13 +32,13 @@
 
 	<div class="flex justify-between pb-4 text-sm">
 		{#if data.post.previous}
-			<a sveltekit:reload href={data.post.previous.path}>⇐ {data.post.previous.title}</a>
+			<a data-sveltekit-reload href={data.post.previous.path}>⇐ {data.post.previous.title}</a>
 		{:else}
 			<span />
 		{/if}
 
 		{#if data.post.next}
-			<a sveltekit:reload href={data.post.next.path}>{data.post.next.title} ⇒</a>
+			<a data-sveltekit-reload href={data.post.next.path}>{data.post.next.title} ⇒</a>
 		{:else}
 			<span />
 		{/if}

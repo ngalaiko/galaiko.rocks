@@ -24,7 +24,7 @@
 		if you want to contact me for any reason, the best way is to send an email to
 		<A class="u-email" href="mailto:nikita@galaiko.rocks" rel="me">nikita@galaiko.rocks</A>.
 		consider using my
-		<A sveltekit:reload class="u-key" href="/keys/nikita@galaiko.rocks.asc" rel="me pgpkey authn"
+		<A data-sveltekit-reload class="u-key" href="/keys/nikita@galaiko.rocks.asc" rel="me pgpkey authn"
 			>pgp key</A
 		> if you are into it
 	</p>
@@ -32,25 +32,27 @@
 	<p>this is not a very large website, it only consists of a few pages, for example:</p>
 	<ul>
 		<li>
-			there is a page on this website with a <A sveltekit:prefetch href="/records/"
+			there is a page on this website with a <A data-sveltekit-prefetch href="/records/"
 				>list of vinyl records i own</A
 			>. it mirrors my
-			<A sveltekit:reload href="https://www.discogs.com/user/ngalaiko">discogs account</A>
+			<A data-sveltekit-reload href="https://www.discogs.com/user/ngalaiko">discogs account</A>
 		</li>
 
 		<li>
-			and here are <A sveltekit:prefetch href="/restaurants_and_cafes/">30 restaurants and cafes</A>
+			and here are <A data-sveltekit-prefetch href="/restaurants_and_cafes/"
+				>30 restaurants and cafes</A
+			>
 			i went to most often last year (updated weekly)
 		</li>
 
 		<li>
-			<A sveltekit:prefetch href="/cocktails/">a list of cocktails</A> that i respect and occasionaly
+			<A data-sveltekit-prefetch href="/cocktails/">a list of cocktails</A> that i respect and occasionaly
 			make to consume at home
 		</li>
 	</ul>
 
 	<p>
-		i also have a <A sveltekit:reload href="https://github.com/ngalaiko" rel="me">github</A> account
+		i also have a <A data-sveltekit-reload href="https://github.com/ngalaiko" rel="me">github</A> account
 		if you are interested
 	</p>
 
