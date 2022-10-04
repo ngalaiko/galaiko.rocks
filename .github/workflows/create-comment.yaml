@@ -26,15 +26,15 @@ jobs:
 
       - name: Create comment
         run: |
-          export TIMESTAMP="$(date '+%s')"
-          export FILENAME="./src/lib/comments/${TIMESTAMP}.md"
-          mkdir -p "$(dirname $FILENAME)"
+          export DIRNAME="./src/lib/comments${{ inputs.pathname }}"
+          export ID=$(ls "$DIRNAME" | wc -l)
+          export FILENAME="$DIRNAME/$ID.md"
+          mkdir -p "${DIRNAME}"
 
           cat << EOF > "${FILENAME}"
           ---
-          pathname: "${{ inputs.pathname }}"
-          author-name: "${{ inputs.author_name }}"
-          timestamp: "${TIMESTAMP}"
+          author_name: "${{ inputs.author_name }}"
+          timestamp: $(date '+%s')
           ---
 
           ${{ inputs.body}} 

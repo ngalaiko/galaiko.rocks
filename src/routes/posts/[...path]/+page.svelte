@@ -49,53 +49,74 @@
 		{/if}
 	</div>
 
-	{#if form && form.message && form.success}
-		<p class="text-base">{form.message}</p>
-	{:else}
-		<form method="POST" class="flex flex-col gap-2 text-base" use:enhance>
-			<div class="flex gap-2 items-ceter justify-between">
-				<div class="flex items-center whitespace-nowrap">
-					<label for="author_name"> Your name: </label>
-					<input
-						name="author_name"
+	<ul class="flex flex-col gap-4">
+		<h3>Comments:</h3>
+		{#each data.comments as comment}
+			<li>
+				<div class="flex justify-between">
+					<span>{comment.authorName}</span>
+					<time datetime={data.post.date.toISOString()}
+						>{format(data.post.date, 'MMMM dd, yyyy')}</time
+					>
+				</div>
+				<svelte:component this={comment.default} />
+			</li>
+		{:else}
+			<li>
+				<p>No comments yet</p>
+			</li>
+		{/each}
+
+		<li>
+			{#if form && form.message && form.success}
+				<p class="text-base">{form.message}</p>
+			{:else}
+				<form method="POST" class="flex flex-col gap-2 text-base" use:enhance>
+					<div class="flex gap-2 items-ceter justify-between">
+						<div class="flex items-center whitespace-nowrap">
+							<label for="author_name"> Your name: </label>
+							<input
+								name="author_name"
+								type="text"
+								class="bg-background-soft border-b-2 p-1 focus:outline-none"
+								required
+							/>
+						</div>
+
+						<div class="flex gap-2 items-center whitespace-nowrap">
+							<label for="solution">{data.challange} = </label>
+							<input
+								name="solution"
+								type="text"
+								class="focus:outline-none w-[2em] bg-background-soft border-b-2 p-1"
+								required
+							/>
+						</div>
+					</div>
+
+					<textarea
+						rows="3"
+						class="focus:outline-none bg-background-soft border-2 p-1"
+						name="body"
 						type="text"
-						class="bg-background-soft border-b-2 p-1 focus:outline-none"
 						required
 					/>
-				</div>
 
-				<div class="flex gap-2 items-center whitespace-nowrap">
-					<label for="solution">{data.challange} = </label>
-					<input
-						name="solution"
-						type="text"
-						class="focus:outline-none w-[2em] bg-background-soft border-b-2 p-1"
-						required
-					/>
-				</div>
-			</div>
+					<input name="pathname" value={$page.url.pathname} type="text" hidden />
+					<input name="challange" value={data.challange} type="text" hidden />
 
-			<textarea
-				rows="3"
-				class="focus:outline-none bg-background-soft border-2 p-1"
-				name="body"
-				type="text"
-				required
-			/>
-
-			<input name="pathname" value={$page.url.pathname} type="text" hidden />
-			<input name="challange" value={data.challange} type="text" hidden />
-
-			<div class="flex flex-row-reverse justify-between">
-				<input
-					type="submit"
-					class="cursor-pointer underline hover:text-foreground-1"
-					value="Comment"
-				/>
-				{#if form && form.message}
-					<p class="text-red">{form.message}</p>
-				{/if}
-			</div>
-		</form>
-	{/if}
+					<div class="flex flex-row-reverse justify-between">
+						<input
+							type="submit"
+							class="cursor-pointer underline hover:text-foreground-1"
+							value="Comment"
+						/>
+						{#if form && form.message}
+							<p class="text-red">{form.message}</p>
+						{/if}
+					</div>
+				</form>
+			{/if}
+		</li>
+	</ul>
 </div>
