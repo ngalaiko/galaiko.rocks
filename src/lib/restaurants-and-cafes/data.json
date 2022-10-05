@@ -72,12 +72,6 @@
     "amount": 650
   },
   {
-    "payee": "Chic Konditori",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 569
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 8,
     "currency": "SEK",
@@ -132,10 +126,10 @@
     "amount": 980
   },
   {
-    "payee": "Kafé Ritorno",
-    "count": 6,
+    "payee": "Chic Konditori",
+    "count": 7,
     "currency": "SEK",
-    "amount": 647
+    "amount": 509
   },
   {
     "payee": "Tokyo Diner",
@@ -166,6 +160,12 @@
     "count": 5,
     "currency": "SEK",
     "amount": 651
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 532
   },
   {
     "payee": "Kaisas Fisk",
