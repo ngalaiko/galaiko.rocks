@@ -14,7 +14,7 @@
 		"@fast-csv/parse": "^4.3.6",
 		"@rollup/pluginutils": "^4.2.1",
 		"@sveltejs/adapter-auto": "1.0.0-next.80",
-		"@sveltejs/kit": "1.0.0-next.507",
+		"@sveltejs/kit": "1.0.0-next.509",
 		"@tailwindcss/aspect-ratio": "^0.4.0",
 		"@tailwindcss/line-clamp": "^0.4.0",
 		"@tailwindcss/typography": "^0.5.3",
