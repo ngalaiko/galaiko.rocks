@@ -49,7 +49,7 @@ jobs:
         run: |
           pnpm ledger:restaurants-and-cafes \
             --file "$GITHUB_WORKSPACE/ledger/main.ledger" \
-            --number 30 \
+            --number 2 \
             --output ./src/lib/restaurants-and-cafes/data.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4

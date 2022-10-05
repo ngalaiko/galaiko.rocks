@@ -24,8 +24,11 @@
 		if you want to contact me for any reason, the best way is to send an email to
 		<A class="u-email" href="mailto:nikita@galaiko.rocks" rel="me">nikita@galaiko.rocks</A>.
 		consider using my
-		<A data-sveltekit-reload class="u-key" href="/keys/nikita@galaiko.rocks.asc" rel="me pgpkey authn"
-			>pgp key</A
+		<A
+			data-sveltekit-reload
+			class="u-key"
+			href="/keys/nikita@galaiko.rocks.asc"
+			rel="me pgpkey authn">pgp key</A
 		> if you are into it
 	</p>
 
@@ -40,9 +43,9 @@
 
 		<li>
 			and here are <A data-sveltekit-prefetch href="/restaurants_and_cafes/"
-				>30 restaurants and cafes</A
+				>restaurants and cafes</A
 			>
-			i went to most often last year (updated weekly)
+			i went to at least twice since last year (updated weekly)
 		</li>
 
 		<li>
