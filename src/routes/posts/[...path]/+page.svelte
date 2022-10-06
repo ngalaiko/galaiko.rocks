@@ -55,8 +55,8 @@
 			<li>
 				<div class="flex justify-between">
 					<span>{comment.authorName}</span>
-					<time datetime={data.post.date.toISOString()}
-						>{format(data.post.date, 'MMMM dd, yyyy')}</time
+					<time datetime={comment.created.toISOString()}
+						>{format(comment.created, 'MMMM dd, yyyy')}</time
 					>
 				</div>
 				<svelte:component this={comment.default} />
