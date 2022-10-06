@@ -70,16 +70,6 @@
     ]
   },
   {
-    "payee": "Cafe Ragazzi",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1215,
-    "location": [
-      59.335918,
-      18.059252
-    ]
-  },
-  {
     "payee": "AI Ramen",
     "count": 8,
     "currency": "SEK",
@@ -177,6 +167,16 @@
     "location": [
       59.317398,
       18.063439
+    ]
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1065,
+    "location": [
+      59.335918,
+      18.059252
     ]
   },
   {
