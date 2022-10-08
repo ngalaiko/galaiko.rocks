@@ -30,16 +30,6 @@
     ]
   },
   {
-    "payee": "Weidao",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1425,
-    "location": [
-      59.331949,
-      18.057649
-    ]
-  },
-  {
     "payee": "La Neta",
     "count": 10,
     "currency": "SEK",
@@ -67,6 +57,16 @@
     "location": [
       59.329504,
       18.043632
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1270,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
