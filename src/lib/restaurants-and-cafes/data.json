@@ -230,16 +230,6 @@
     ]
   },
   {
-    "payee": "Le Kebab",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 651,
-    "location": [
-      59.34188,
-      18.0491
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 5,
     "currency": "SEK",
@@ -377,6 +367,16 @@
     "location": [
       59.32881,
       18.045246
+    ]
+  },
+  {
+    "payee": "Le Kebab",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 482,
+    "location": [
+      59.34188,
+      18.0491
     ]
   },
   {
