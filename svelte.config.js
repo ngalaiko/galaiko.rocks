@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
 import { mdsvex } from 'mdsvex';
@@ -26,7 +26,10 @@ const config = {
         })
     ],
     kit: {
-        adapter: adapter(),
+        adapter: adapter({
+            split: true,
+            edge: true
+        }),
         prerender: {
             enabled: true,
             crawl: true,
