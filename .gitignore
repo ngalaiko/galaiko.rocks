@@ -1,6 +1,5 @@
 node_modules
-.svelte-kit/**/*
-!.svelte-kit/tsconfig.json
+.svelte-kit
 /build
 /package
 .env
