@@ -34,13 +34,15 @@
 
 <section id="navigation">
 	{#if data.post.previous}
-		<a data-sveltekit-reload href={data.post.previous.path}>⇐ {data.post.previous.title}</a>
+		<a id="previous" data-sveltekit-reload href={data.post.previous.path}
+			>⇐ {data.post.previous.title}</a
+		>
 	{:else}
 		<span />
 	{/if}
 
 	{#if data.post.next}
-		<a data-sveltekit-reload href={data.post.next.path}>{data.post.next.title} ⇒</a>
+		<a id="next" data-sveltekit-reload href={data.post.next.path}>{data.post.next.title} ⇒</a>
 	{:else}
 		<span />
 	{/if}
@@ -112,11 +114,20 @@
 		margin-top: 3rem;
 		padding-top: 1rem;
 		border-top: 1px solid var(--foreground);
-	}
 
-	#navigation {
 		display: flex;
 		justify-content: space-between;
+
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+
+	#navigation #next {
+		padding-left: 1rem;
+	}
+
+	#navigation #previous {
+		padding-right: 1rem;
 	}
 
 	#solution {
