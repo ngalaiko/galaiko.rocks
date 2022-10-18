@@ -9,11 +9,11 @@
 	<title>Vinyl Records</title>
 </svelte:head>
 
-<article class="flex flex-col gap-2">
-	<h1 class="text-2xl text-bold">Vinyl Records</h1>
+<article>
+	<h1>Vinyl Records</h1>
 	<p>here are all vinyl records that i have:</p>
 
-	<ul class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+	<ul>
 		{#each data.records as { artist, info, image }}
 			{@const fullName = `${artist.name} - ${info.title}`}
 			{@const discogsUrl = `https://www.discogs.com/release/${info.id}`}
@@ -25,10 +25,27 @@
 						{:else}
 							<img src={info.coverImage} alt={fullName} />
 						{/if}
-						<figcaption class="text-sm text-center m-1">{fullName}</figcaption>
+						<figcaption>{fullName}</figcaption>
 					</figure>
 				</a>
 			</li>
 		{/each}
 	</ul>
 </article>
+
+<style>
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+
+	@media (min-width: 1024px) {
+		ul {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+</style>

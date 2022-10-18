@@ -11,7 +11,7 @@ export const findByPathname = async (pathname: string) =>
     list().then((comments) =>
         comments
             .filter((c) => c.pathname === pathname)
-            .sort((a, b) => compareDesc(a.created, b.created))
+            .sort((a, b) => compareDesc(b.created, a.created))
     );
 
 const filenameToPath = (filename: string) =>

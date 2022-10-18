@@ -8,9 +8,9 @@
 	<title>Nikita Galaiko</title>
 </svelte:head>
 
-<article class="content h-card">
-	<header class="flex items-center gap-2">
-		<h1 class="p-name text-9xl font-bold flex-1">
+<article class="h-card">
+	<header>
+		<h1 class="p-name">
 			<span class="p-given-name">Nikita</span>
 			<span class="p-family-name">Galaiko</span>
 		</h1>
@@ -59,7 +59,7 @@
 		if you are interested
 	</p>
 
-	<h3>currently</h3>
+	<h2>currently</h2>
 	<ul>
 		<li>
 			living in <span class="p-locality">Stockholm</span>,
@@ -69,3 +69,11 @@
 		<li><A href="https://codeball.ai">fighting code review</A></li>
 	</ul>
 </article>
+
+<style>
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+</style>

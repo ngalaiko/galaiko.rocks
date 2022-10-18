@@ -19,24 +19,24 @@
 	<title>Cocktails</title>
 </svelte:head>
 
-<article class="flex flex-col gap-2">
-	<h1 class="text-2xl font-bold">Cocktails</h1>
+<article>
+	<h1>Cocktails</h1>
 	<p>cocktails that i like and make:</p>
 
-	<ul class="flex flex-col gap-6">
+	<ul id="cocktails">
 		{#each data.cocktails as { title, ingredients, steps, image, source }}
 			{@const slug = slugify(title)}
 			{@const parsedSource = parseSource(source)}
-			<li class="flex flex-col gap-2">
+			<li id="cocktail">
 				<a href={'#' + slug}>
-					<h2 id={slug} class="font-semibold underline">
+					<h2 id={slug}>
 						{title}
 					</h2>
 				</a>
 
-				<div class="grid grid-cols-3 gap-2">
-					<div class="flex flex-col gap-2 col-span-3 sm:col-span-2">
-						<ul class="list-disc ml-5">
+				<div>
+					<div>
+						<ul>
 							{#each ingredients as { name, quantity }}
 								<li>
 									<span>{name}{quantity ? ':' : ''}</span>
@@ -50,10 +50,10 @@
 						<p>{steps.join(' ')}</p>
 
 						{#if source}
-							<small class="text-foreground-4 -mt-1.5">
+							<small>
 								source:
 								{#if parsedSource instanceof URL}
-									<a class="underline" href={parsedSource.toString()}>{parsedSource.hostname}</a>
+									<a href={parsedSource.toString()}>{parsedSource.hostname}</a>
 								{:else}
 									{parsedSource}
 								{/if}
@@ -61,9 +61,44 @@
 						{/if}
 					</div>
 
-					<Image src={image} alt={title} class="col-span-3 sm:col-span-1" />
+					<Image src={image} alt={title} />
 				</div>
 			</li>
 		{/each}
 	</ul>
 </article>
+
+<style>
+	#cocktails {
+		list-style: none;
+		padding: 0;
+	}
+
+	#cocktail > div {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	#cocktail > div > div {
+		grid-column: span 3 / span 3;
+	}
+
+	:global(#cocktail > div > picture) {
+		grid-column: span 3 / span 3;
+	}
+
+	@media (min-width: 1024px) {
+		#cocktail > div > div {
+			grid-column: span 2 / span 2;
+		}
+
+		:global(#cocktail > div > picture) {
+			grid-column: span 1 / span 1;
+		}
+	}
+
+	small {
+		color: var(--foreground-4);
+	}
+</style>

@@ -47,9 +47,14 @@
 
 <style>
 	a {
-		color: var(--color-blue);
+		display: inline-block;
+		color: var(--blue);
 		position: relative;
 		transition: color 0.5s linear 0.2s;
+	}
+
+	a:visited {
+		color: var(--blue-dim);
 	}
 
 	a:after,
@@ -68,15 +73,28 @@
 	}
 
 	a:before {
-		color: var(--color-red);
+		color: var(--red);
+	}
+
+	a:before:visited {
+		color: var(--red-dim);
 	}
 
 	a:focus,
 	a:hover {
-		color: var(--color-green);
+		color: var(--green);
+	}
+
+	a:focus:visited,
+	a:hover:visited {
+		color: var(--green-dim);
 	}
 
 	a:after {
-		color: var(--color-blue);
+		color: var(--blue);
+	}
+
+	a:after:visited {
+		color: var(--blue-dim);
 	}
 </style>
