@@ -11,7 +11,7 @@
 			const L = await import('leaflet');
 
 			// expand the div to make it visible when js is on
-			map.classList.add('h-[400px]');
+			map.style.height = '400px';
 
 			// init map with stockholm in the middle
 			m = L.map(map, {
@@ -34,7 +34,7 @@
 				L.marker(place.location as [number, number], {
 					icon: L.divIcon({
 						html: div,
-						className: `rounded-full h-4 w-4 bg-orange`
+						className: 'icon'
 					}),
 					title: place.payee,
 					alt: place.payee,
@@ -59,8 +59,8 @@
 	<title>Restaurants and Cafes</title>
 </svelte:head>
 
-<article class="flex flex-col gap-2">
-	<h1 class="text-2xl text-bold">Restaurants and Cafes</h1>
+<article>
+	<h1>Restaurants and Cafes</h1>
 	<p>
 		food establishments i went to the most since {formatRelative(
 			addYears(new Date(), -1),
@@ -70,20 +70,37 @@
 
 	<div use:map />
 
-	<table class="table-auto w-full">
+	<table>
 		<thead>
-			<tr class="text-gray text-md font-semibold text-left">
-				<th scope="col" class="pt-3 px-2">Place</th>
-				<th scope="col" class="pt-3 px-2">Times</th>
-				<th scope="col" class="pt-3 px-2">Spent</th>
+			<tr>
+				<th scope="col"><h2>Place</h2></th>
+				<th scope="col"><h2>Times</h2></th>
+				<th scope="col"><h2>Spent</h2></th>
 			</tr>
 			{#each data.places as { payee, count, amount, currency }}
 				<tr>
-					<td class="md:whitespace-nowrap px-2 md:px-3 py-4">{payee}</td>
-					<td class="whitespace-nowrap px-2 md:px-3 py-4">{count}</td>
-					<td class="whitespace-nowrap px-2 md:px-3 py-4">{amount.toLocaleString()} {currency}</td>
+					<td>{payee}</td>
+					<td>{count}</td>
+					<td>{amount.toLocaleString()} {currency}</td>
 				</tr>
 			{/each}
 		</thead>
 	</table>
 </article>
+
+<style>
+	:global(.icon) {
+		background-color: var(--orange);
+		border-radius: 9999px;
+	}
+
+	table {
+		table-layout: auto;
+		width: 100%;
+		text-align: left;
+	}
+
+	td {
+		padding-top: 1rem;
+	}
+</style>

@@ -2,7 +2,7 @@
 	<title>Privacy Policy</title>
 </svelte:head>
 
-<arcicle class="content">
+<arcicle>
 	<h1>Privacy Policy</h1>
 
 	<h2>Hosting</h2>
@@ -38,5 +38,5 @@
 			data-sveltekit-reload
 			href="https://github.com/ngalaiko/galaiko.rocks">GitHub</a
 		>.
-	</p></arcicle
->
+	</p>
+</arcicle>
