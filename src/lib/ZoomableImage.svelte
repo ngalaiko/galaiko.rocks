@@ -18,4 +18,10 @@
 	});
 </script>
 
-<img {...attrs} {alt} class="cursor-zoom-in" bind:this={img} />
+<img {...attrs} {alt} bind:this={img} />
+
+<style>
+	img {
+		cursor: zoom-in;
+	}
+</style>
