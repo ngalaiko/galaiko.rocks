@@ -73,5 +73,7 @@ export default {
     'Kungsholmens Glassfabrik': [59.330233, 18.045708],
     'Waan Thai': [59.341723, 18.038336],
     'Ki mama': [59.34034, 18.050425],
-    'Kolgrill Sam': [59.428415, 17.938238]
+    'Kolgrill Sam': [59.428415, 17.938238],
+    Belgobaren: [59.332907, 18.058313],
+    'Shanti Shukriya': [59.33836, 18.039952]
 };
