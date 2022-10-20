@@ -14,7 +14,7 @@ const config = {
                 dashes: 'oldschool'
             },
             rehypePlugins: [
-                slug, // adds slug to headers
+                slug // adds slug to headers
             ]
         }),
         preprocess({
@@ -23,9 +23,7 @@ const config = {
         })
     ],
     kit: {
-        adapter: adapter({
-            split: true,
-        }),
+        adapter: adapter(),
         prerender: {
             enabled: true,
             crawl: true,
