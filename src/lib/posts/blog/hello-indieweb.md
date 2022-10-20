@@ -2,7 +2,7 @@
 title: 'Hello, IndieWeb'
 tags: ['vim', 'development']
 date: '2022-04-16'
-categories: ['Blog']
+section: 'Blog'
 ---
 
 In this post I want to share how this website connects with [IndieWeb][].

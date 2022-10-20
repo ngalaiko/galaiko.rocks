@@ -2,7 +2,7 @@
 title: 'Building a peer to peer messenger'
 tags: ['p2p', 'go', 'traefik', 'swarm', 'consul']
 date: '2019-03-20'
-categories: ['Blog']
+section: 'Blog'
 ---
 
 <script>

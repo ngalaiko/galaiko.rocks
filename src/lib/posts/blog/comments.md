@@ -2,7 +2,7 @@
 title: 'GitHub powered comments for a static website'
 tags: ['blog', 'sveltekit']
 date: 2022-10-04
-categories: ['Blog']
+section: 'Blog'
 ---
 
 after [implementing and then removing indieweb's webmentions][], i still kept thinking about a good way to allow comments on this website.

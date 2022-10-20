@@ -2,7 +2,7 @@
 title: 'Half a year with vim'
 tags: ['vim', 'development']
 date: '2018-07-21'
-categories: ['Blog']
+section: 'Blog'
 aliases: ['/posts/half-a-year-with-vim/']
 ---
 

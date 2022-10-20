@@ -1,8 +1,8 @@
 ---
-title: 'Daily Coding Problem'
+title: 'Daily Coding Problems'
 tags: ['go', 'development', 'interview']
 date: '2018-07-01'
-categories: ['Daily Coding Problem', 'Blog']
+section: 'Daily Coding Problems'
 aliases: ['/posts/2018-07-01/']
 ---
 

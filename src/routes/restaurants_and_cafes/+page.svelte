@@ -57,6 +57,12 @@
 
 <svelte:head>
 	<title>Restaurants and Cafes</title>
+	<meta property="og:title" content="Restaurants and Cafes" />
+	<meta
+		property="og:description"
+		content="Restaurants and cafes I went to the most since last year."
+	/>
+	<meta property="og:type" content="website" />
 </svelte:head>
 
 <article>

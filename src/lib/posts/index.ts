@@ -6,7 +6,7 @@ export type Post = {
 	default: any;
 	path: string;
 	aliases: string[];
-	categories: string[];
+	section: string;
 	hidden: boolean;
 	previous?: Post;
 	next?: Post;
@@ -39,7 +39,7 @@ export const list = () =>
 				default: m.default,
 				path: filenameToPath(filename),
 				aliases: metadata.aliases || [],
-				categories: metadata.categories || [],
+				section: metadata.section,
 				date: new Date(metadata.date)
 			};
 		})

@@ -7,6 +7,9 @@
 
 <svelte:head>
 	<title>Vinyl Records</title>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Vinyl Records" />
+	<meta property="og:description" content="Vinyl Records i own." />
 </svelte:head>
 
 <article>
