@@ -1,3 +1,7 @@
+declare module '*?b64' {
+    export default string;
+}
+
 declare module '*?preset=hd' {
     const src: import('vite-plugin-image-presets').ImageAttrs[];
     export default src;
