@@ -6,6 +6,12 @@
 
 <svelte:head>
 	<title>Nikita Galaiko</title>
+	<meta property="og:title" content="Nikita Galaiko" />
+	<meta property="og:type" content="profile" />
+	<meta property="profile:first_name" content="Nikita" />
+	<meta property="profile:last_name" content="Galaiko" />
+	<meta property="profile:username" content="ngalaiko" />
+	<meta property="profile:gender" content="male" />
 </svelte:head>
 
 <article class="h-card">

@@ -27,7 +27,7 @@ const renderPost = (post: Post) => `
             <id>${post.path}</id>
             <published>${post.date.toISOString()}</published>
             <updated>${post.date.toISOString()}</updated>
-            ${post.categories.map((c) => `<category term="${c}">`).join('\n            ')}
+            <category term="${post.section}">
             <content type="html"><![CDATA[${post.default.render().html}]]></content>
         </entry>`;
 

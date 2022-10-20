@@ -2,7 +2,7 @@
 title: 'Daily Coding Problem #15'
 tags: ['go', 'development', 'interview']
 date: '2018-07-16'
-categories: ['Daily Coding Problem']
+section: 'Daily Coding Problems'
 aliases: ['/posts/probability/']
 ---
 

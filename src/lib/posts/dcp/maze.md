@@ -2,7 +2,7 @@
 title: 'Daily Coding Problem #23'
 tags: ['go', 'development', 'interview', 'maze']
 date: '2018-09-01'
-categories: ['Daily Coding Problem']
+section: 'Daily Coding Problems'
 ---
 
 <script>

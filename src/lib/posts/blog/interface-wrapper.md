@@ -2,7 +2,7 @@
 title: 'Forcing interface wrapper'
 tags: ['go']
 date: 2019-03-24T10:03:39+01:00
-categories: ['Blog']
+section: 'Blog'
 ---
 
 Let's take this interface as an example:

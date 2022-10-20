@@ -1,7 +1,7 @@
 ---
 title: 'Words Count'
 tags: ['algorithm', 'go']
-categories: ['Blog']
+section: 'Blog'
 date: 2019-05-11T11:01:45+02:00
 ---
 

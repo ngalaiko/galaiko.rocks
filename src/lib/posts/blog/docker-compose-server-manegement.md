@@ -2,7 +2,7 @@
 title: 'Docker compose for managing personal server'
 tags: ['docker']
 date: '2018-07-31'
-categories: ['Blog']
+section: 'Blog'
 aliases: ['/posts/docker-compose-server-manegement/']
 ---
 

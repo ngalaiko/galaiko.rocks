@@ -1,6 +1,13 @@
 <script lang="ts">
 	import '../app.css';
+	import { page } from '$app/stores';
 </script>
+
+<svelte:head>
+	<meta property="og:url" content={$page.url.toString()} />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="Nikita Galaiko's personal website" />
+</svelte:head>
 
 <main>
 	<slot />

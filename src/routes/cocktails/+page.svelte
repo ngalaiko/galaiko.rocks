@@ -17,6 +17,9 @@
 
 <svelte:head>
 	<title>Cocktails</title>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Cocktails" />
+	<meta property="og:description" content="List of cocktails that I like and make" />
 </svelte:head>
 
 <article>

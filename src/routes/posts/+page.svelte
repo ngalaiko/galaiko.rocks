@@ -6,8 +6,11 @@
 </script>
 
 <svelte:head>
-	<title>Posts</title>
+	<title>Posts by Nikita Galaiko</title>
 	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Posts by Nikita Galaiko" />
+	<meta property="og:description" content="Index page for all posts on the website" />
 </svelte:head>
 
 <article>

@@ -2,7 +2,7 @@
 title: 'Selfhosted RaspberryPI based Docker Swarm Cluster'
 tags: ['raspberry pi', 'docker swarm']
 date: 2018-11-02
-categories: ['Blog']
+section: 'Blog'
 ---
 
 <script>

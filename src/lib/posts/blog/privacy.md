@@ -2,7 +2,7 @@
 title: 'Internet privacy starter pack'
 tags: ['privacy']
 date: '2018-08-20'
-categories: ['Blog']
+section: 'Blog'
 aliases: ['/posts/privacy/']
 ---
 

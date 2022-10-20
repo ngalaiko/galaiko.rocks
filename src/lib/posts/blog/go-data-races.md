@@ -2,7 +2,7 @@
 title: 'Golang: Data races'
 tags: ['go', 'data race', 'race condition']
 date: '2019-02-02'
-categories: ['Blog']
+section: 'Blog'
 ---
 
 I have noticed that many people who have started using go have troubles when it

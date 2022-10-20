@@ -17,6 +17,15 @@
 	{#if data.post.next}
 		<link rel="next" href={data.post.next.path} />
 	{/if}
+
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={data.post.title} />
+	<meta property="article:published_time" content={data.post.date.toISOString()} />
+	<meta property="article:author" content="Nikita Galaiko" />
+	<meta property="article:section" content={data.post.section} />
+	{#each data.post.tags as tag}
+		<meta property="article:tag" content={tag} />
+	{/each}
 </svelte:head>
 
 <article class="h-entry">

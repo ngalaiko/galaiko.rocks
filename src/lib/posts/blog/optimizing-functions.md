@@ -2,7 +2,7 @@
 title: 'Optimizing a function'
 tags: ['algorithm', 'go', 'personnummer']
 date: '2018-11-30'
-categories: ['Blog']
+section: 'Blog'
 ---
 
 <script>

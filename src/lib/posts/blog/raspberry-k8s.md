@@ -1,5 +1,6 @@
 ---
 title: 'Raspberry Pi: K8s cluster'
+section: 'Blog'
 date: 2019-06-24T21:28:26+02:00
 ---
 

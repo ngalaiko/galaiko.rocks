@@ -1,5 +1,8 @@
 <svelte:head>
 	<title>Privacy Policy</title>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Privacy policy" />
+	<meta property="og:description" content="Website's privacy policy" />
 </svelte:head>
 
 <arcicle>
