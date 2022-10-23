@@ -50,16 +50,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1375,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "Oolong Tea House",
     "count": 8,
     "currency": "SEK",
@@ -147,6 +137,16 @@
     "location": [
       59.334456,
       18.062486
+    ]
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1220,
+    "location": [
+      59.333392,
+      18.057954
     ]
   },
   {
