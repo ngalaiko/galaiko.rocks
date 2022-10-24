@@ -1,22 +1,12 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 21,
+    "count": 22,
     "currency": "SEK",
-    "amount": 4926,
+    "amount": 5180,
     "location": [
       59.318041,
       18.072196
-    ]
-  },
-  {
-    "payee": "Tony’s Pizza and Salad",
-    "count": 13,
-    "currency": "SEK",
-    "amount": 1799,
-    "location": [
-      59.319056,
-      18.064821
     ]
   },
   {
@@ -27,6 +17,16 @@
     "location": [
       59.313615,
       18.07998
+    ]
+  },
+  {
+    "payee": "Tony’s Pizza and Salad",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1684,
+    "location": [
+      59.319056,
+      18.064821
     ]
   },
   {
@@ -50,6 +50,26 @@
     ]
   },
   {
+    "payee": "Lillebrors Bageri",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 748,
+    "location": [
+      59.340093,
+      18.033877
+    ]
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1135,
+    "location": [
+      59.329504,
+      18.043632
+    ]
+  },
+  {
     "payee": "Oolong Tea House",
     "count": 8,
     "currency": "SEK",
@@ -70,23 +90,23 @@
     ]
   },
   {
-    "payee": "Lillebrors Bageri",
+    "payee": "Indian King",
     "count": 8,
     "currency": "SEK",
-    "amount": 650,
+    "amount": 1115,
     "location": [
-      59.340093,
-      18.033877
+      59.337053,
+      18.052454
     ]
   },
   {
-    "payee": "Indian Curry House",
+    "payee": "Chic Konditori",
     "count": 8,
     "currency": "SEK",
-    "amount": 1015,
+    "amount": 583,
     "location": [
-      59.329504,
-      18.043632
+      59.317398,
+      18.063439
     ]
   },
   {
@@ -100,16 +120,6 @@
     ]
   },
   {
-    "payee": "Indian King",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 980,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
     "payee": "The Good Gringo",
     "count": 7,
     "currency": "SEK",
@@ -117,16 +127,6 @@
     "location": [
       59.332369,
       18.04524
-    ]
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 509,
-    "location": [
-      59.317398,
-      18.063439
     ]
   },
   {
@@ -170,6 +170,26 @@
     ]
   },
   {
+    "payee": "McDonald's",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 775.5,
+    "location": [
+      59.317889,
+      18.05361
+    ]
+  },
+  {
+    "payee": "Levinskys",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 968,
+    "location": [
+      59.33983,
+      18.033982
+    ]
+  },
+  {
     "payee": "Aryam",
     "count": 7,
     "currency": "SEK",
@@ -187,26 +207,6 @@
     "location": [
       59.335554,
       18.053908
-    ]
-  },
-  {
-    "payee": "McDonald's",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 588.5,
-    "location": [
-      59.317889,
-      18.05361
-    ]
-  },
-  {
-    "payee": "Levinskys",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 800,
-    "location": [
-      59.33983,
-      18.033982
     ]
   },
   {
@@ -370,6 +370,16 @@
     ]
   },
   {
+    "payee": "Tbilisi’s Hörna",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 1188.5,
+    "location": [
+      59.298094,
+      18.088214
+    ]
+  },
+  {
     "payee": "Falloumi",
     "count": 4,
     "currency": "SEK",
@@ -430,13 +440,13 @@
     ]
   },
   {
-    "payee": "Johan & Nyström",
-    "count": 3,
+    "payee": "Bano City",
+    "count": 4,
     "currency": "SEK",
-    "amount": 145,
+    "amount": 588,
     "location": [
-      59.316273,
-      18.063965
+      59.337541,
+      18.057392
     ]
   },
   {
@@ -480,13 +490,13 @@
     ]
   },
   {
-    "payee": "Tbilisi’s Hörna",
+    "payee": "Eatnam",
     "count": 3,
     "currency": "SEK",
-    "amount": 733.5,
+    "amount": 445,
     "location": [
-      59.298094,
-      18.088214
+      59.341795,
+      18.047249
     ]
   },
   {
@@ -507,16 +517,6 @@
     "location": [
       59.338245,
       18.038156
-    ]
-  },
-  {
-    "payee": "Bano City",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 453,
-    "location": [
-      59.337541,
-      18.057392
     ]
   },
   {
@@ -570,16 +570,6 @@
     ]
   },
   {
-    "payee": "Eatnam",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 310,
-    "location": [
-      59.341795,
-      18.047249
-    ]
-  },
-  {
     "payee": "Jafaris Donuts",
     "count": 2,
     "currency": "SEK",
@@ -627,6 +617,16 @@
     "location": [
       59.315597,
       18.073084
+    ]
+  },
+  {
+    "payee": "Johan & Nyström",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 84,
+    "location": [
+      59.316273,
+      18.063965
     ]
   },
   {
