@@ -70,26 +70,6 @@
     ]
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 755,
-    "location": [
-      59.3167,
-      18.055242
-    ]
-  },
-  {
-    "payee": "Indian King",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1115,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
     "payee": "Chic Konditori",
     "count": 8,
     "currency": "SEK",
@@ -150,6 +130,16 @@
     ]
   },
   {
+    "payee": "Indian King",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 995,
+    "location": [
+      59.337053,
+      18.052454
+    ]
+  },
+  {
     "payee": "Gute Grill Bar",
     "count": 7,
     "currency": "SEK",
@@ -177,6 +167,16 @@
     "location": [
       59.33983,
       18.033982
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 685,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
