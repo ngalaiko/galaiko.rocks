@@ -240,16 +240,6 @@
     ]
   },
   {
-    "payee": "Kaisas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 630,
-    "location": [
-      59.334262,
-      18.062618
-    ]
-  },
-  {
     "payee": "Pong",
     "count": 5,
     "currency": "SEK",
@@ -337,6 +327,16 @@
     "location": [
       59.340032,
       18.032727
+    ]
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 500,
+    "location": [
+      59.334262,
+      18.062618
     ]
   },
   {
