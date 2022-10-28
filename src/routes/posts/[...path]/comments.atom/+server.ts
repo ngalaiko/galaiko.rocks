@@ -40,8 +40,8 @@ const render = (baseUrl: string, post: Post, comments: Comment[]) =>
     <id>${new URL('comments.atom', new URL(post.path, baseUrl))}</id>
     <link rel="alternate" type="text/html" href="${baseUrl}"/>
     <link href="${new URL('/posts.atom', baseUrl)}" rel="self"/>
-    <updated>${max(comments.map(({ created }) => created)).toISOString()}</updated>
-    <icon>${new URL('favicon.png', baseUrl)}</icon>
+    <updated>${max([...comments.map(({ created }) => created), 0]).toISOString()}</updated>
+    < icon > ${new URL('favicon.png', baseUrl)} </icon>
     ${comments
         .map((post, index, all) => renderComment(baseUrl, post, all.length - index - 1))
         .join('')}
