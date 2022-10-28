@@ -3,6 +3,7 @@
 	import type { PageData, ActionData } from './$types';
 	import { format } from 'date-fns';
 	import { enhance } from '$app/forms';
+	import { IconRss } from '$lib/assets/icons';
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -10,6 +11,7 @@
 
 <svelte:head>
 	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
+	<link rel="alternate" title="Comments" type="application/atom+xml" href="comments.atom" />
 	<title>{data.post.title}</title>
 	{#if data.post.previous}
 		<link rel="prev" href={data.post.previous.path} />
@@ -58,7 +60,12 @@
 </section>
 
 <section id="comments">
-	<h3>Comments:</h3>
+	<header>
+		<h3>Comments:</h3>
+		<a data-sveltekit-reload href="comments.atom">
+			<IconRss />
+		</a>
+	</header>
 	<ul>
 		{#each data.comments as comment}
 			<li>
@@ -110,11 +117,17 @@
 </section>
 
 <style>
-	#comments {
+	section#comments {
 		margin-top: 3rem;
 	}
 
-	#comments > ul {
+	section#comments > header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	section#comments > ul {
 		padding: 0;
 		list-style-type: none;
 	}
@@ -153,7 +166,7 @@
 	}
 
 	article header {
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 
 	button,

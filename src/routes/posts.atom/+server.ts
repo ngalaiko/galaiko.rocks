@@ -2,25 +2,25 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { list, type Post } from '$lib/posts';
 import { compareDesc, max } from 'date-fns';
 
-const baseUrl = 'https://galaiko.rocks/';
 export const prerender = true;
 
-export const GET: RequestHandler = async () => {
-	const posts = await list();
-	const body = render(
-		posts
-			.filter(({ hidden }) => !hidden)
-			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-	);
-	return new Response(body, {
-		headers: {
-			'Cache-Control': 'max-age=0, s-maxage=3600',
-			'Content-Type': 'application/atom+xml'
-		}
-	});
+export const GET: RequestHandler = async ({ url }) => {
+    const posts = await list();
+    const body = render(
+        url.origin,
+        posts
+            .filter(({ hidden }) => !hidden)
+            .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+    );
+    return new Response(body, {
+        headers: {
+            'Cache-Control': 'max-age=0, s-maxage=3600',
+            'Content-Type': 'application/atom+xml'
+        }
+    });
 };
 
-const renderPost = (post: Post) => `
+const renderPost = (baseUrl: string, post: Post) => `
         <entry>
             <title>${post.title}</title>
             <link rel="alternate" type="text/html" href="${new URL(post.path, baseUrl)}"/>
@@ -31,8 +31,8 @@ const renderPost = (post: Post) => `
             <content type="html"><![CDATA[${post.default.render().html}]]></content>
         </entry>`;
 
-const render = (posts: Post[]) =>
-	`<?xml version="1.0" encoding="UTF-8"?>
+const render = (baseUrl: string, posts: Post[]) =>
+    `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Posts | Nikita Galaiko</title>
     <id>${new URL('/posts', baseUrl)}</id>
@@ -45,5 +45,5 @@ const render = (posts: Post[]) =>
         <uri>${baseUrl}</uri>
         <email>nikita@galaiko.rocks</email>
 	</author>
-    ${posts.map(renderPost).join('')}
+    ${posts.map((post) => renderPost(baseUrl, post)).join('')}
 </feed>`;
