@@ -106,6 +106,12 @@
 		text-align: left;
 	}
 
+	th,
+	td {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+
 	td {
 		padding-top: 1rem;
 	}
