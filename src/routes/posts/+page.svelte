@@ -29,8 +29,9 @@
 			{:else if post.date.getMonth() != data.posts[i - 1].date.getMonth()}
 				<h2>
 					<time datetime={post.date.toISOString()}>
-						<span>{format(post.date, 'MMMM')}</span>
-					</time>
+						<span />
+						<span>{format(post.date, 'MMMM')}<span /></span></time
+					>
 				</h2>
 			{/if}
 			<li class="h-entry">
