@@ -8,4 +8,12 @@
 	<title>{title}</title>
 </svelte:head>
 
-<h1 class="w-full h-[50vh] flex items-center justify-center">{title}</h1>
+<article>
+	<h1 class="w-full h-[50vh] flex items-center justify-center">{title}</h1>
+</article>
+
+<style>
+	h1 {
+		text-align: center;
+	}
+</style>
