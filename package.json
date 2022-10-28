@@ -15,7 +15,7 @@
 		"@resvg/resvg-js": "^2.1.0",
 		"@sveltejs/adapter-vercel": "^1.0.0-next.79",
 		"@sveltejs/kit": "1.0.0-next.520",
-		"@types/leaflet": "^1.8.0",
+		"@types/leaflet": "^1.9.0",
 		"@types/node": "^18.0.3",
 		"@types/yargs": "^17.0.11",
 		"@typescript-eslint/eslint-plugin": "^5.30.5",
