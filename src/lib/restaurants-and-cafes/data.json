@@ -10,16 +10,6 @@
     ]
   },
   {
-    "payee": "Marley Café",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 833.5,
-    "location": [
-      59.313615,
-      18.07998
-    ]
-  },
-  {
     "payee": "Tony’s Pizza and Salad",
     "count": 12,
     "currency": "SEK",
@@ -30,6 +20,26 @@
     ]
   },
   {
+    "payee": "Marley Café",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 759.5,
+    "location": [
+      59.313615,
+      18.07998
+    ]
+  },
+  {
+    "payee": "Yume Sushi",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1610,
+    "location": [
+      59.317338,
+      18.057767
+    ]
+  },
+  {
     "payee": "La Neta",
     "count": 10,
     "currency": "SEK",
@@ -37,26 +47,6 @@
     "location": [
       59.336673,
       18.058082
-    ]
-  },
-  {
-    "payee": "Yume Sushi",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1340,
-    "location": [
-      59.317338,
-      18.057767
-    ]
-  },
-  {
-    "payee": "Lillebrors Bageri",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 748,
-    "location": [
-      59.340093,
-      18.033877
     ]
   },
   {
@@ -80,6 +70,16 @@
     ]
   },
   {
+    "payee": "Indian King",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1130,
+    "location": [
+      59.337053,
+      18.052454
+    ]
+  },
+  {
     "payee": "Weidao",
     "count": 8,
     "currency": "SEK",
@@ -87,6 +87,16 @@
     "location": [
       59.331949,
       18.057649
+    ]
+  },
+  {
+    "payee": "Lillebrors Bageri",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 703,
+    "location": [
+      59.340093,
+      18.033877
     ]
   },
   {
@@ -117,16 +127,6 @@
     "location": [
       59.335918,
       18.059252
-    ]
-  },
-  {
-    "payee": "Indian King",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 995,
-    "location": [
-      59.337053,
-      18.052454
     ]
   },
   {
@@ -250,6 +250,16 @@
     ]
   },
   {
+    "payee": "Tehran Grill",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 667,
+    "location": [
+      59.340032,
+      18.032727
+    ]
+  },
+  {
     "payee": "Le Kebab",
     "count": 5,
     "currency": "SEK",
@@ -317,16 +327,6 @@
     "location": [
       59.33308,
       18.044915
-    ]
-  },
-  {
-    "payee": "Tehran Grill",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 522,
-    "location": [
-      59.340032,
-      18.032727
     ]
   },
   {
@@ -447,26 +447,6 @@
     "location": [
       59.337541,
       18.057392
-    ]
-  },
-  {
-    "payee": "Phil’s burger",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 517,
-    "location": [
-      59.337722,
-      18.057471
-    ]
-  },
-  {
-    "payee": "Eat Greenii",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 342,
-    "location": [
-      59.33463,
-      18.056129
     ]
   },
   {
@@ -610,6 +590,16 @@
     ]
   },
   {
+    "payee": "Eat Greenii",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 228,
+    "location": [
+      59.33463,
+      18.056129
+    ]
+  },
+  {
     "payee": "Max",
     "count": 2,
     "currency": "SEK",
@@ -647,6 +637,16 @@
     "location": [
       59.331007,
       18.044476
+    ]
+  },
+  {
+    "payee": "Phil’s burger",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 338,
+    "location": [
+      59.337722,
+      18.057471
     ]
   },
   {
@@ -737,6 +737,26 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "PWC",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 285,
+    "location": [
+      59.337622,
+      18.04086
+    ]
+  },
+  {
+    "payee": "Ta'ameya",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 270,
+    "location": [
+      59.339728,
+      18.060213
     ]
   }
 ]
