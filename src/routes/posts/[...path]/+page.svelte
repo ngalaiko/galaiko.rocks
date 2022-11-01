@@ -10,7 +10,6 @@
 </script>
 
 <svelte:head>
-	<link rel="alternate" title="All Posts" type="application/atom+xml" href="/posts.atom" />
 	<link rel="alternate" title="Comments" type="application/atom+xml" href="comments.atom" />
 	<title>{data.post.title}</title>
 	{#if data.post.previous}

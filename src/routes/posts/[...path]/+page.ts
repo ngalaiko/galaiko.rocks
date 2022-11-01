@@ -21,5 +21,3 @@ export const load: PageLoad = async ({ url }) => {
         };
     }
 };
-
-export const prerender = false;
