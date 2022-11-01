@@ -43,7 +43,7 @@
 		"vite-plugin-glob": "^0.3.2",
 		"vite-plugin-image-presets": "^0.3.2",
 		"vite-plugin-remote-assets": "^0.3.0",
-		"yargs": "^17.5.1"
+		"yargs": "^17.6.0"
 	},
 	"type": "module"
 }
