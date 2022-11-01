@@ -39,6 +39,7 @@ export const list = () =>
 				default: m.default,
 				path: filenameToPath(filename),
 				aliases: metadata.aliases || [],
+				tags: metadata.tags || [],
 				section: metadata.section,
 				date: new Date(metadata.date)
 			};
