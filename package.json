@@ -34,7 +34,7 @@
 		"rehype-slug": "^5.0.1",
 		"satori": "^0.0.43",
 		"satori-html": "^0.3.0",
-		"svelte": "^3.49.0",
+		"svelte": "^3.52.0",
 		"svelte-preprocess": "^4.10.7",
 		"ts-node": "^10.9.1",
 		"tslib": "^2.4.0",
