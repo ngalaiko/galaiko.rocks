@@ -5,6 +5,8 @@ import { env } from '$env/dynamic/private';
 
 const GITHUB_TOKEN = env.GITHUB_TOKEN;
 
+export const prerender = false;
+
 const trigger = (inputs: any) =>
     fetch(
         'https://api.github.com/repos/ngalaiko/galaiko.rocks/actions/workflows/create-comment.yaml/dispatches',
