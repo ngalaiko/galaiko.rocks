@@ -34,7 +34,7 @@ specifiers:
   vite-plugin-glob: ^0.3.2
   vite-plugin-image-presets: ^0.3.2
   vite-plugin-remote-assets: ^0.3.0
-  yargs: ^17.5.1
+  yargs: ^17.6.0
 
 devDependencies:
   '@cooklang/cooklang-ts': 1.0.1
@@ -70,7 +70,7 @@ devDependencies:
   vite-plugin-glob: 0.3.2
   vite-plugin-image-presets: 0.3.2
   vite-plugin-remote-assets: 0.3.0_vite@3.2.2
-  yargs: 17.5.1
+  yargs: 17.6.0
 
 packages:
 
@@ -834,8 +834,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /cliui/7.0.4:
-    resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
+  /cliui/8.0.1:
+    resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
+    engines: {node: '>=12'}
     dependencies:
       string-width: 4.2.3
       strip-ansi: 6.0.1
@@ -3161,11 +3162,11 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /yargs/17.5.1:
-    resolution: {integrity: sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==}
+  /yargs/17.6.0:
+    resolution: {integrity: sha512-8H/wTDqlSwoSnScvV2N/JHfLWOKuh5MVla9hqLjK3nsfyy6Y4kDSYSvkU5YCUEPOSnRXfIyx3Sq+B/IWudTo4g==}
     engines: {node: '>=12'}
     dependencies:
-      cliui: 7.0.4
+      cliui: 8.0.1
       escalade: 3.1.1
       get-caller-file: 2.0.5
       require-directory: 2.1.1
