@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "Chic Konditori",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 583,
-    "location": [
-      59.317398,
-      18.063439
-    ]
-  },
-  {
     "payee": "Indian King",
     "count": 8,
     "currency": "SEK",
@@ -180,6 +170,16 @@
     ]
   },
   {
+    "payee": "Chic Konditori",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 505,
+    "location": [
+      59.317398,
+      18.063439
+    ]
+  },
+  {
     "payee": "Aryam",
     "count": 7,
     "currency": "SEK",
@@ -287,16 +287,6 @@
     "location": [
       59.31837,
       18.059678
-    ]
-  },
-  {
-    "payee": "Magnolia",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 633,
-    "location": [
-      59.319797,
-      18.062845
     ]
   },
   {
@@ -460,6 +450,16 @@
     ]
   },
   {
+    "payee": "A bowl of poke",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 465,
+    "location": [
+      59.319777,
+      18.062516
+    ]
+  },
+  {
     "payee": "Bröd & Salt",
     "count": 3,
     "currency": "SEK",
@@ -500,6 +500,16 @@
     ]
   },
   {
+    "payee": "Magnolia",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 478,
+    "location": [
+      59.319797,
+      18.062845
+    ]
+  },
+  {
     "payee": "La Neta Bar",
     "count": 3,
     "currency": "SEK",
@@ -527,16 +537,6 @@
     "location": [
       59.33836,
       18.039952
-    ]
-  },
-  {
-    "payee": "A bowl of poke",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 325,
-    "location": [
-      59.319777,
-      18.062516
     ]
   },
   {
