@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@cooklang/cooklang-ts': ^1.0.1
+  '@cooklang/cooklang-ts': ^1.2.0
   '@fast-csv/parse': ^4.3.6
   '@resvg/resvg-js': ^2.1.0
   '@sveltejs/adapter-vercel': ^1.0.0-next.79
@@ -37,7 +37,7 @@ specifiers:
   yargs: ^17.6.0
 
 devDependencies:
-  '@cooklang/cooklang-ts': 1.0.1
+  '@cooklang/cooklang-ts': 1.2.0
   '@fast-csv/parse': 4.3.6
   '@resvg/resvg-js': 2.1.0
   '@sveltejs/adapter-vercel': 1.0.0-next.79
@@ -74,8 +74,8 @@ devDependencies:
 
 packages:
 
-  /@cooklang/cooklang-ts/1.0.1:
-    resolution: {integrity: sha512-+aFAidhCJ+vJ2BZBxveg3xqGVGMcp8R9fR0rF3qw34xfeZkvQPWP+pvMMPmRTGd5ADad/fmQNPOzhbdjLDKQ9g==}
+  /@cooklang/cooklang-ts/1.2.0:
+    resolution: {integrity: sha512-9OOQQfx41Op3KzZ9dz6Cr2Nyx8RgV/12s+34vhTA9d4ctVuurrhpg0m/PfFn0wzeAPVazVV/8AFmmedHqhy73w==}
     dev: true
 
   /@cspotcode/source-map-support/0.8.1:
