@@ -28,7 +28,7 @@
 
 	<ul id="cocktails">
 		{#each data.cocktails as { title, ingredients, steps, image, source }}
-			{@const slug = slugify(title)}
+			{@const slug = encodeURI(slugify(title))}
 			{@const parsedSource = parseSource(source)}
 			<li id="cocktail">
 				<a href={'#' + slug}>
