@@ -22,7 +22,7 @@ specifiers:
   mdsvex: ^0.10.6
   prettier: ^2.7.1
   prettier-plugin-svelte: ^2.7.0
-  rehype-slug: ^5.0.1
+  rehype-slug: ^5.1.0
   satori: ^0.0.43
   satori-html: ^0.3.0
   svelte: ^3.52.0
@@ -58,7 +58,7 @@ devDependencies:
   mdsvex: 0.10.6_svelte@3.52.0
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0_lrllcp5xtrkmmdzifit4hd52ze
-  rehype-slug: 5.0.1
+  rehype-slug: 5.1.0
   satori: 0.0.43
   satori-html: 0.3.0
   svelte: 3.52.0
@@ -1780,8 +1780,8 @@ packages:
     resolution: {integrity: sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=}
     dev: true
 
-  /github-slugger/1.4.0:
-    resolution: {integrity: sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==}
+  /github-slugger/2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
     dev: true
 
   /glob-parent/5.1.2:
@@ -2458,11 +2458,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /rehype-slug/5.0.1:
-    resolution: {integrity: sha512-X5v3wV/meuOX9NFcGhJvUpEjIvQl2gDvjg3z40RVprYFt7q3th4qMmYLULiu3gXvbNX1ppx+oaa6JyY1W67pTA==}
+  /rehype-slug/5.1.0:
+    resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
     dependencies:
       '@types/hast': 2.3.4
-      github-slugger: 1.4.0
+      github-slugger: 2.0.0
       hast-util-has-property: 2.0.0
       hast-util-heading-rank: 2.1.0
       hast-util-to-string: 2.0.0
