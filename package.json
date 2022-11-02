@@ -30,7 +30,7 @@
 		"lightense-images": "^1.0.17",
 		"mdsvex": "^0.10.6",
 		"prettier": "^2.7.1",
-		"prettier-plugin-svelte": "^2.7.0",
+		"prettier-plugin-svelte": "^2.8.0",
 		"rehype-slug": "^5.0.1",
 		"satori": "^0.0.43",
 		"satori-html": "^0.3.0",
