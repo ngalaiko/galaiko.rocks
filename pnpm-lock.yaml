@@ -5,7 +5,7 @@ specifiers:
   '@fast-csv/parse': ^4.3.6
   '@resvg/resvg-js': ^2.1.0
   '@sveltejs/adapter-vercel': ^1.0.0-next.79
-  '@sveltejs/kit': 1.0.0-next.531
+  '@sveltejs/kit': 1.0.0-next.532
   '@types/leaflet': ^1.9.0
   '@types/node': ^18.0.3
   '@types/yargs': ^17.0.13
@@ -41,7 +41,7 @@ devDependencies:
   '@fast-csv/parse': 4.3.6
   '@resvg/resvg-js': 2.1.0
   '@sveltejs/adapter-vercel': 1.0.0-next.79
-  '@sveltejs/kit': 1.0.0-next.531_svelte@3.52.0+vite@3.2.2
+  '@sveltejs/kit': 1.0.0-next.532_svelte@3.52.0+vite@3.2.2
   '@types/leaflet': 1.9.0
   '@types/node': 18.0.3
   '@types/yargs': 17.0.13
@@ -369,8 +369,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.531_svelte@3.52.0+vite@3.2.2:
-    resolution: {integrity: sha512-8uBJF5BweIFoyw+Kqv0jsDSfndNw2mTF222qi8rDuptOy7gjoWXYFy2F0kd8orNeZUnjFrHE+g/qDNHq7zzEJg==}
+  /@sveltejs/kit/1.0.0-next.532_svelte@3.52.0+vite@3.2.2:
+    resolution: {integrity: sha512-g+t+dncoz/DBc1mfwSfBaIBqE5pl0caMUy7yZzjsnyw0WG3AevC04d2KfTOgtOMgXVDnSVqZxlTR+MM5tnKeyw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
