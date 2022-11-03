@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 21,
+    "count": 22,
     "currency": "SEK",
-    "amount": 4890,
+    "amount": 5157,
     "location": [
       59.318041,
       18.072196
@@ -87,16 +87,6 @@
     "location": [
       59.340093,
       18.033877
-    ]
-  },
-  {
-    "payee": "Tokyo Diner",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1053,
-    "location": [
-      59.334456,
-      18.062486
     ]
   },
   {
@@ -237,6 +227,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 878,
+    "location": [
+      59.334456,
+      18.062486
     ]
   },
   {
