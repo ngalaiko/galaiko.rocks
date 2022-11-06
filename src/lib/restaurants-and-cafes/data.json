@@ -90,16 +90,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1220,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 7,
     "currency": "SEK",
@@ -230,6 +220,16 @@
     ]
   },
   {
+    "payee": "AI Ramen",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1065,
+    "location": [
+      59.333392,
+      18.057954
+    ]
+  },
+  {
     "payee": "Tokyo Diner",
     "count": 6,
     "currency": "SEK",
@@ -287,16 +287,6 @@
     "location": [
       59.31837,
       18.059678
-    ]
-  },
-  {
-    "payee": "Kafé Ritorno",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 427,
-    "location": [
-      59.336319,
-      18.048464
     ]
   },
   {
@@ -487,6 +477,16 @@
     "location": [
       59.308404,
       18.066223
+    ]
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 382,
+    "location": [
+      59.336319,
+      18.048464
     ]
   },
   {
