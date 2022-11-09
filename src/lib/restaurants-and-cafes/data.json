@@ -90,16 +90,6 @@
     ]
   },
   {
-    "payee": "Cafe Ragazzi",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1065,
-    "location": [
-      59.335918,
-      18.059252
-    ]
-  },
-  {
     "payee": "Gute Grill Bar",
     "count": 7,
     "currency": "SEK",
@@ -167,6 +157,16 @@
     "location": [
       59.31845,
       18.070466
+    ]
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 920,
+    "location": [
+      59.335918,
+      18.059252
     ]
   },
   {
