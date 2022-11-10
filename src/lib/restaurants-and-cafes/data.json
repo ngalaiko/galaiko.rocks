@@ -520,16 +520,6 @@
     ]
   },
   {
-    "payee": "Spice Of India",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 245,
-    "location": [
-      59.33836,
-      18.039952
-    ]
-  },
-  {
     "payee": "Joe & The Juice",
     "count": 2,
     "currency": "SEK",
