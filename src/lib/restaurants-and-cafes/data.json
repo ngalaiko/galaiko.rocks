@@ -40,16 +40,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1158,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "Indian Curry House",
     "count": 9,
     "currency": "SEK",
@@ -57,6 +47,16 @@
     "location": [
       59.329504,
       18.043632
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1053,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
