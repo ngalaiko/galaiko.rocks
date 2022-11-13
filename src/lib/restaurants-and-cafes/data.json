@@ -70,6 +70,16 @@
     ]
   },
   {
+    "payee": "Oolong Tea House",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 640,
+    "location": [
+      59.33199,
+      18.067811
+    ]
+  },
+  {
     "payee": "Lillebrors Bageri",
     "count": 8,
     "currency": "SEK",
@@ -130,16 +140,6 @@
     ]
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 576,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
     "payee": "Chic Konditori",
     "count": 7,
     "currency": "SEK",
@@ -177,6 +177,16 @@
     "location": [
       59.335554,
       18.053908
+    ]
+  },
+  {
+    "payee": "Pong",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 850,
+    "location": [
+      59.336459,
+      18.058798
     ]
   },
   {
@@ -280,6 +290,16 @@
     ]
   },
   {
+    "payee": "Hemma Vasastan",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 660,
+    "location": [
+      59.339585,
+      18.047905
+    ]
+  },
+  {
     "payee": "Fullmoon Wook",
     "count": 5,
     "currency": "SEK",
@@ -340,16 +360,6 @@
     ]
   },
   {
-    "payee": "Pong",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 560,
-    "location": [
-      59.336459,
-      18.058798
-    ]
-  },
-  {
     "payee": "Falloumi",
     "count": 4,
     "currency": "SEK",
@@ -380,13 +390,13 @@
     ]
   },
   {
-    "payee": "Hemma Vasastan",
+    "payee": "Max",
     "count": 4,
     "currency": "SEK",
-    "amount": 520,
+    "amount": 217,
     "location": [
-      59.339585,
-      18.047905
+      59.315597,
+      18.073084
     ]
   },
   {
@@ -500,6 +510,16 @@
     ]
   },
   {
+    "payee": "Amida",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 409,
+    "location": [
+      59.314721,
+      18.078432
+    ]
+  },
+  {
     "payee": "Magnolia",
     "count": 3,
     "currency": "SEK",
@@ -517,6 +537,16 @@
     "location": [
       59.333599,
       18.070247
+    ]
+  },
+  {
+    "payee": "Belgobaren",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 447,
+    "location": [
+      59.332907,
+      18.058313
     ]
   },
   {
@@ -590,16 +620,6 @@
     ]
   },
   {
-    "payee": "Max",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 135,
-    "location": [
-      59.315597,
-      18.073084
-    ]
-  },
-  {
     "payee": "Johan & Nyström",
     "count": 2,
     "currency": "SEK",
@@ -627,6 +647,16 @@
     "location": [
       59.331007,
       18.044476
+    ]
+  },
+  {
+    "payee": "Vigarga",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 291,
+    "location": [
+      59.333651,
+      18.056886
     ]
   },
   {
@@ -680,16 +710,6 @@
     ]
   },
   {
-    "payee": "Amida",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 250,
-    "location": [
-      59.314721,
-      18.078432
-    ]
-  },
-  {
     "payee": "Ki mama",
     "count": 2,
     "currency": "SEK",
@@ -707,16 +727,6 @@
     "location": [
       59.428415,
       17.938238
-    ]
-  },
-  {
-    "payee": "Belgobaren",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 298,
-    "location": [
-      59.332907,
-      18.058313
     ]
   },
   {
@@ -747,6 +757,16 @@
     "location": [
       59.339728,
       18.060213
+    ]
+  },
+  {
+    "payee": "Djingis Khan",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 290,
+    "location": [
+      59.336377,
+      18.063073
     ]
   }
 ]
