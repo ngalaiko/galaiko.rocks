@@ -160,16 +160,6 @@
     ]
   },
   {
-    "payee": "Cafe Ragazzi",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 920,
-    "location": [
-      59.335918,
-      18.059252
-    ]
-  },
-  {
     "payee": "Hanoi Corner",
     "count": 6,
     "currency": "SEK",
@@ -277,6 +267,16 @@
     "location": [
       59.334262,
       18.062618
+    ]
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 765,
+    "location": [
+      59.335918,
+      18.059252
     ]
   },
   {
