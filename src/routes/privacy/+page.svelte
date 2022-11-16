@@ -30,7 +30,19 @@
 	</p>
 
 	<h2>Analytics</h2>
-	<p>No information about website visitors is collected.</p>
+	<p>
+		I collect basic info using privacy-friendly analytics engine called <a href="https://umami.is/"
+			>umami</a
+		>. I host it myself using
+		<a data-sveltekit-reload href="https://vercel.com/">Vercel</a> and
+		<a data-sveltekit-reload href="https://supabase.com">Supabase</a>.
+	</p>
+
+	<p>
+		You can see all the data it has on the
+		<a href="https://umami.galaiko.rocks/share/6GLJwDAP/galaiko.rocks">public dashboard</a>. If you
+		don't want to be tracked, make sure your browser has 'Do not track' preference enabled.
+	</p>
 
 	<h2>Cookies</h2>
 	<p>No cookies usage.</p>
