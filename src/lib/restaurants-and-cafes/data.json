@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Itamae",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 582,
-    "location": [
-      59.33308,
-      18.044915
-    ]
-  },
-  {
     "payee": "Franky's",
     "count": 4,
     "currency": "SEK",
@@ -467,6 +457,16 @@
     "location": [
       59.316889,
       18.062711
+    ]
+  },
+  {
+    "payee": "Itamae",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 433,
+    "location": [
+      59.33308,
+      18.044915
     ]
   },
   {
