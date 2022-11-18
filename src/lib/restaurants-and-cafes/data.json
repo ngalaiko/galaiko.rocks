@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Tehran Grill",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 667,
-    "location": [
-      59.340032,
-      18.032727
-    ]
-  },
-  {
     "payee": "Kaisas Fisk",
     "count": 5,
     "currency": "SEK",
@@ -307,6 +297,16 @@
     "location": [
       59.342143,
       18.04923
+    ]
+  },
+  {
+    "payee": "Tehran Grill",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 548,
+    "location": [
+      59.340032,
+      18.032727
     ]
   },
   {
