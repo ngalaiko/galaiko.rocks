@@ -90,16 +90,6 @@
     ]
   },
   {
-    "payee": "Gute Grill Bar",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1025,
-    "location": [
-      59.336739,
-      18.069433
-    ]
-  },
-  {
     "payee": "Indian King",
     "count": 7,
     "currency": "SEK",
@@ -167,6 +157,16 @@
     "location": [
       59.335554,
       18.053908
+    ]
+  },
+  {
+    "payee": "Gute Grill Bar",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 890,
+    "location": [
+      59.336739,
+      18.069433
     ]
   },
   {
