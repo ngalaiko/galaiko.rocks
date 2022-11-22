@@ -10,16 +10,6 @@
     ]
   },
   {
-    "payee": "Tony’s Pizza and Salad",
-    "count": 12,
-    "currency": "SEK",
-    "amount": 1684,
-    "location": [
-      59.319056,
-      18.064821
-    ]
-  },
-  {
     "payee": "Marley Café",
     "count": 11,
     "currency": "SEK",
@@ -37,6 +27,16 @@
     "location": [
       59.317338,
       18.057767
+    ]
+  },
+  {
+    "payee": "Tony’s Pizza and Salad",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1569,
+    "location": [
+      59.319056,
+      18.064821
     ]
   },
   {
