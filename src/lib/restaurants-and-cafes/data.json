@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Kaisas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 630,
-    "location": [
-      59.334262,
-      18.062618
-    ]
-  },
-  {
     "payee": "Meno Male",
     "count": 5,
     "currency": "SEK",
@@ -357,6 +347,16 @@
     "location": [
       59.308163,
       18.077789
+    ]
+  },
+  {
+    "payee": "Kaisas Fisk",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 500,
+    "location": [
+      59.334262,
+      18.062618
     ]
   },
   {
