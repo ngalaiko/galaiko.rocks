@@ -150,16 +150,6 @@
     ]
   },
   {
-    "payee": "Hanoi Corner",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 660,
-    "location": [
-      59.335554,
-      18.053908
-    ]
-  },
-  {
     "payee": "Gute Grill Bar",
     "count": 6,
     "currency": "SEK",
@@ -287,6 +277,16 @@
     "location": [
       59.339585,
       18.047905
+    ]
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 555,
+    "location": [
+      59.335554,
+      18.053908
     ]
   },
   {
