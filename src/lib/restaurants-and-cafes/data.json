@@ -40,16 +40,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1053,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "McDonald's",
     "count": 8,
     "currency": "SEK",
@@ -77,6 +67,16 @@
     "location": [
       59.340093,
       18.033877
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 948,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
