@@ -1,10 +1,13 @@
 <script lang="ts">
 	import '../app.css';
+	import { inject } from '@vercel/analytics';
 	import { page } from '$app/stores';
 	import { dev } from '$app/environment';
+	import { onMount } from 'svelte';
 
 	$: ogImageUrl =
 		$page.url.pathname === '/' ? '/index.png' : $page.url.pathname.slice(0, -1) + '.png';
+	onMount(inject);
 </script>
 
 <svelte:head>
@@ -18,7 +21,8 @@
 			defer
 			data-website-id="321c3af4-17a6-42c2-8e71-91110894d255"
 			data-do-not-track="true"
-			src="https://umami.galaiko.rocks/umami.js"></script>
+			src="https://umami.galaiko.rocks/umami.js"
+		></script>
 	{/if}
 </svelte:head>
 
