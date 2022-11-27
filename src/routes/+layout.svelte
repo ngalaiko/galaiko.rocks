@@ -7,7 +7,7 @@
 
 	$: ogImageUrl =
 		$page.url.pathname === '/' ? '/index.png' : $page.url.pathname.slice(0, -1) + '.png';
-	onMount(inject);
+	if (!dev) onMount(inject);
 </script>
 
 <svelte:head>
@@ -15,15 +15,6 @@
 	<meta property="og:image" content={ogImageUrl} />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Nikita Galaiko's personal website" />
-	{#if !dev}
-		<script
-			async
-			defer
-			data-website-id="321c3af4-17a6-42c2-8e71-91110894d255"
-			data-do-not-track="true"
-			src="https://umami.galaiko.rocks/umami.js"
-		></script>
-	{/if}
 </svelte:head>
 
 <main>

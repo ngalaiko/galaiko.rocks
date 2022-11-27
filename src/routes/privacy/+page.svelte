@@ -31,11 +31,9 @@
 
 	<h2>Analytics</h2>
 	<p>
-		I collect basic info using privacy-friendly analytics engine called <a href="https://umami.is/"
-			>umami</a
-		>. I host it myself using
-		<a data-sveltekit-reload href="https://vercel.com/">Vercel</a> and
-		<a data-sveltekit-reload href="https://supabase.com">Supabase</a>.
+		I have vercel collecting, <a href="https://vercel.com/docs/concepts/analytics/audiences"
+			>audiences</a
+		> analytics.
 	</p>
 
 	<p>
