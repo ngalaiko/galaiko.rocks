@@ -81,5 +81,7 @@ export default {
     'Brisket & Friends': [59.33687, 18.054108],
     Vigarga: [59.333651, 18.056886],
     'Djingis Khan': [59.336377, 18.063073],
-    "Carl's Deli": [59.334257, 18.063021]
+    "Carl's Deli": [59.334257, 18.063021],
+    'Mormors Dumpling': [59.313618, 18.085532],
+    'Haymarket': [59.334656, 18.061438]
 };
