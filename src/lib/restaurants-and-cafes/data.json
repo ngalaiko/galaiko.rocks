@@ -100,16 +100,6 @@
     ]
   },
   {
-    "payee": "Indian King",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 995,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
     "payee": "Levinskys",
     "count": 7,
     "currency": "SEK",
@@ -237,6 +227,16 @@
     "location": [
       59.31837,
       18.059678
+    ]
+  },
+  {
+    "payee": "Indian King",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 875,
+    "location": [
+      59.337053,
+      18.052454
     ]
   },
   {
