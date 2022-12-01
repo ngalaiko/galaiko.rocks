@@ -440,16 +440,6 @@
     ]
   },
   {
-    "payee": "Bröd & Salt",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 405.33,
-    "location": [
-      59.339866,
-      18.037079
-    ]
-  },
-  {
     "payee": "Eatnam",
     "count": 3,
     "currency": "SEK",
@@ -587,6 +577,16 @@
     "location": [
       59.318803,
       18.071292
+    ]
+  },
+  {
+    "payee": "Bröd & Salt",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 267.01,
+    "location": [
+      59.339866,
+      18.037079
     ]
   },
   {
