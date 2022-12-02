@@ -120,6 +120,26 @@
     ]
   },
   {
+    "payee": "Prime Burger",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1000,
+    "location": [
+      59.336478,
+      18.061049
+    ]
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1053,
+    "location": [
+      59.334456,
+      18.062486
+    ]
+  },
+  {
     "payee": "Chic Konditori",
     "count": 7,
     "currency": "SEK",
@@ -170,16 +190,6 @@
     ]
   },
   {
-    "payee": "Prime Burger",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 860,
-    "location": [
-      59.336478,
-      18.061049
-    ]
-  },
-  {
     "payee": "Saigon Baguette",
     "count": 6,
     "currency": "SEK",
@@ -207,16 +217,6 @@
     "location": [
       59.333392,
       18.057954
-    ]
-  },
-  {
-    "payee": "Tokyo Diner",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 878,
-    "location": [
-      59.334456,
-      18.062486
     ]
   },
   {
@@ -307,16 +307,6 @@
     "location": [
       59.314721,
       18.078432
-    ]
-  },
-  {
-    "payee": "Tehran Grill",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 548,
-    "location": [
-      59.340032,
-      18.032727
     ]
   },
   {
@@ -477,6 +467,16 @@
     "location": [
       59.340846,
       18.032985
+    ]
+  },
+  {
+    "payee": "Tehran Grill",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 429,
+    "location": [
+      59.340032,
+      18.032727
     ]
   },
   {
