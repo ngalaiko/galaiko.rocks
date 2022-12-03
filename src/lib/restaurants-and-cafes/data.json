@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Franky's",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 672,
-    "location": [
-      59.339843,
-      18.060667
-    ]
-  },
-  {
     "payee": "Cafe Eurobar Goes Russian",
     "count": 4,
     "currency": "SEK",
@@ -507,6 +497,16 @@
     "location": [
       59.336319,
       18.048464
+    ]
+  },
+  {
+    "payee": "Franky's",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 487,
+    "location": [
+      59.339843,
+      18.060667
     ]
   },
   {
