@@ -150,6 +150,16 @@
     ]
   },
   {
+    "payee": "Falafelbaren",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 920,
+    "location": [
+      59.31837,
+      18.059678
+    ]
+  },
+  {
     "payee": "Aryam",
     "count": 7,
     "currency": "SEK",
@@ -220,16 +230,6 @@
     ]
   },
   {
-    "payee": "Falafelbaren",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 805,
-    "location": [
-      59.31837,
-      18.059678
-    ]
-  },
-  {
     "payee": "Indian King",
     "count": 6,
     "currency": "SEK",
@@ -237,6 +237,16 @@
     "location": [
       59.337053,
       18.052454
+    ]
+  },
+  {
+    "payee": "Amida",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1057,
+    "location": [
+      59.314721,
+      18.078432
     ]
   },
   {
@@ -297,16 +307,6 @@
     "location": [
       59.342143,
       18.04923
-    ]
-  },
-  {
-    "payee": "Amida",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 892,
-    "location": [
-      59.314721,
-      18.078432
     ]
   },
   {
@@ -387,6 +387,16 @@
     "location": [
       59.363667,
       17.966166
+    ]
+  },
+  {
+    "payee": "Il Forno",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 505,
+    "location": [
+      59.338245,
+      18.038156
     ]
   },
   {
@@ -507,16 +517,6 @@
     "location": [
       59.339843,
       18.060667
-    ]
-  },
-  {
-    "payee": "Il Forno",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 375,
-    "location": [
-      59.338245,
-      18.038156
     ]
   },
   {
