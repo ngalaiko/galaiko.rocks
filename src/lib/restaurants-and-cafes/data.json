@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Meno Male",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 617,
-    "location": [
-      59.32881,
-      18.045246
-    ]
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 5,
     "currency": "SEK",
@@ -317,6 +307,16 @@
     "location": [
       59.298094,
       18.088214
+    ]
+  },
+  {
+    "payee": "Meno Male",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 498,
+    "location": [
+      59.32881,
+      18.045246
     ]
   },
   {
