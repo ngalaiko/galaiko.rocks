@@ -10,16 +10,6 @@
     ]
   },
   {
-    "payee": "Yume Sushi",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1480,
-    "location": [
-      59.317338,
-      18.057767
-    ]
-  },
-  {
     "payee": "Tony’s Pizza and Salad",
     "count": 11,
     "currency": "SEK",
@@ -37,6 +27,16 @@
     "location": [
       59.313615,
       18.07998
+    ]
+  },
+  {
+    "payee": "Yume Sushi",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1370,
+    "location": [
+      59.317338,
+      18.057767
     ]
   },
   {
