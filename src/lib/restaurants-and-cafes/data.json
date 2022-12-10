@@ -50,16 +50,6 @@
     ]
   },
   {
-    "payee": "McDonald's",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 831.5,
-    "location": [
-      59.317889,
-      18.05361
-    ]
-  },
-  {
     "payee": "Weidao",
     "count": 8,
     "currency": "SEK",
@@ -157,6 +147,16 @@
     "location": [
       59.31837,
       18.059678
+    ]
+  },
+  {
+    "payee": "McDonald's",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 725.5,
+    "location": [
+      59.317889,
+      18.05361
     ]
   },
   {
