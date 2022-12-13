@@ -20,16 +20,6 @@
     ]
   },
   {
-    "payee": "Marley Café",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 661.5,
-    "location": [
-      59.313615,
-      18.07998
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 10,
     "currency": "SEK",
@@ -37,6 +27,16 @@
     "location": [
       59.317338,
       18.057767
+    ]
+  },
+  {
+    "payee": "Marley Café",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 612.5,
+    "location": [
+      59.313615,
+      18.07998
     ]
   },
   {
