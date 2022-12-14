@@ -260,16 +260,6 @@
     ]
   },
   {
-    "payee": "Cafe Ragazzi",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 765,
-    "location": [
-      59.335918,
-      18.059252
-    ]
-  },
-  {
     "payee": "Le Kebab",
     "count": 5,
     "currency": "SEK",
@@ -357,6 +347,16 @@
     "location": [
       59.338836,
       18.055326
+    ]
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 610,
+    "location": [
+      59.335918,
+      18.059252
     ]
   },
   {
