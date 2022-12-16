@@ -50,16 +50,6 @@
     ]
   },
   {
-    "payee": "Weidao",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1140,
-    "location": [
-      59.331949,
-      18.057649
-    ]
-  },
-  {
     "payee": "Oolong Tea House",
     "count": 8,
     "currency": "SEK",
@@ -137,6 +127,16 @@
     "location": [
       59.336478,
       18.061049
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1010,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
