@@ -180,16 +180,6 @@
     ]
   },
   {
-    "payee": "Gute Grill Bar",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 890,
-    "location": [
-      59.336739,
-      18.069433
-    ]
-  },
-  {
     "payee": "Pong",
     "count": 6,
     "currency": "SEK",
@@ -267,6 +257,16 @@
     "location": [
       59.34188,
       18.0491
+    ]
+  },
+  {
+    "payee": "Gute Grill Bar",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 755,
+    "location": [
+      59.336739,
+      18.069433
     ]
   },
   {
