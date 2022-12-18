@@ -100,16 +100,6 @@
     ]
   },
   {
-    "payee": "Levinskys",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 968,
-    "location": [
-      59.33983,
-      18.033982
-    ]
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 7,
     "currency": "SEK",
@@ -247,6 +237,16 @@
     "location": [
       59.337053,
       18.052454
+    ]
+  },
+  {
+    "payee": "Levinskys",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 838,
+    "location": [
+      59.33983,
+      18.033982
     ]
   },
   {
