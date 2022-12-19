@@ -83,5 +83,7 @@ export default {
     'Djingis Khan': [59.336377, 18.063073],
     "Carl's Deli": [59.334257, 18.063021],
     'Mormors Dumpling': [59.313618, 18.085532],
-    'Haymarket': [59.334656, 18.061438]
+    Haymarket: [59.334656, 18.061438],
+    Brödernas: [59.331213, 18.044646],
+    'Washoku Tomo': [59.318771, 18.059878]
 };
