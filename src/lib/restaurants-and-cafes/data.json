@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Tbilisi’s Hörna",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 1188.5,
-    "location": [
-      59.298094,
-      18.088214
-    ]
-  },
-  {
     "payee": "Meno Male",
     "count": 4,
     "currency": "SEK",
@@ -537,6 +527,16 @@
     "location": [
       59.339843,
       18.060667
+    ]
+  },
+  {
+    "payee": "Tbilisi’s Hörna",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 944,
+    "location": [
+      59.298094,
+      18.088214
     ]
   },
   {
