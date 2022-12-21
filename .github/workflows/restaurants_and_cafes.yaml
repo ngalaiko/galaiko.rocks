@@ -35,15 +35,7 @@ jobs:
           ref: 'master'
 
       - name: Setup hledger
-        run: |
-          TMP_DIR=$(mktemp -d -t ci-XXXXXXXXXX)
-          pushd "$TMP_DIR"
-          curl -LO "https://github.com/simonmichael/hledger/releases/download/1.25/hledger-linux-x64.zip"
-          unzip hledger-linux-x64.zip
-          mkdir -p "$HOME/.local/bin"
-          cp hledger-linux-x64 "$HOME/.local/bin/hledger"
-          chmod +x "$HOME/.local/bin/hledger"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+        uses: ngalaiko/setup-hledger@v1
 
       - name: Fetch list
         run: |
