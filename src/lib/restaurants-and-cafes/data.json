@@ -180,16 +180,6 @@
     ]
   },
   {
-    "payee": "Pong",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 850,
-    "location": [
-      59.336459,
-      18.058798
-    ]
-  },
-  {
     "payee": "Esperanza",
     "count": 6,
     "currency": "SEK",
@@ -247,6 +237,16 @@
     "location": [
       59.33983,
       18.033982
+    ]
+  },
+  {
+    "payee": "Pong",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 715,
+    "location": [
+      59.336459,
+      18.058798
     ]
   },
   {
