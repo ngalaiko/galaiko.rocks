@@ -100,16 +100,6 @@
     ]
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 685,
-    "location": [
-      59.3167,
-      18.055242
-    ]
-  },
-  {
     "payee": "Prime Burger",
     "count": 7,
     "currency": "SEK",
@@ -177,6 +167,16 @@
     "location": [
       59.31845,
       18.070466
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 545,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
@@ -420,16 +420,6 @@
     ]
   },
   {
-    "payee": "Eatnam",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 445,
-    "location": [
-      59.341795,
-      18.047249
-    ]
-  },
-  {
     "payee": "Jafaris Donuts",
     "count": 3,
     "currency": "SEK",
@@ -587,6 +577,16 @@
     "location": [
       59.318524,
       18.061989
+    ]
+  },
+  {
+    "payee": "Eatnam",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 290,
+    "location": [
+      59.341795,
+      18.047249
     ]
   },
   {
