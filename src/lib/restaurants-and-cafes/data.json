@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 23,
+    "count": 25,
     "currency": "SEK",
-    "amount": 5483,
+    "amount": 6043,
     "location": [
       59.318041,
       18.072196
@@ -50,6 +50,26 @@
     ]
   },
   {
+    "payee": "La Neta",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1068,
+    "location": [
+      59.336673,
+      18.058082
+    ]
+  },
+  {
+    "payee": "Amida",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1553,
+    "location": [
+      59.314721,
+      18.078432
+    ]
+  },
+  {
     "payee": "Oolong Tea House",
     "count": 8,
     "currency": "SEK",
@@ -70,16 +90,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 948,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "McDonald's",
     "count": 8,
     "currency": "SEK",
@@ -87,16 +97,6 @@
     "location": [
       59.317889,
       18.05361
-    ]
-  },
-  {
-    "payee": "Amida",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1388,
-    "location": [
-      59.314721,
-      18.078432
     ]
   },
   {
@@ -300,6 +300,16 @@
     ]
   },
   {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 522,
+    "location": [
+      59.336319,
+      18.048464
+    ]
+  },
+  {
     "payee": "Meno Male",
     "count": 4,
     "currency": "SEK",
@@ -500,13 +510,13 @@
     ]
   },
   {
-    "payee": "Kafé Ritorno",
+    "payee": "Vigårda",
     "count": 3,
     "currency": "SEK",
-    "amount": 382,
+    "amount": 441,
     "location": [
-      59.336319,
-      18.048464
+      59.333651,
+      18.056886
     ]
   },
   {
@@ -557,6 +567,26 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "PWC",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 430,
+    "location": [
+      59.337622,
+      18.04086
+    ]
+  },
+  {
+    "payee": "Haymarket",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 645,
+    "location": [
+      59.334656,
+      18.061438
     ]
   },
   {
@@ -660,16 +690,6 @@
     ]
   },
   {
-    "payee": "Vigarga",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 291,
-    "location": [
-      59.333651,
-      18.056886
-    ]
-  },
-  {
     "payee": "K4 Pampas",
     "count": 2,
     "currency": "SEK",
@@ -760,16 +780,6 @@
     ]
   },
   {
-    "payee": "PWC",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 285,
-    "location": [
-      59.337622,
-      18.04086
-    ]
-  },
-  {
     "payee": "Ta'ameya",
     "count": 2,
     "currency": "SEK",
@@ -787,16 +797,6 @@
     "location": [
       59.336377,
       18.063073
-    ]
-  },
-  {
-    "payee": "Haymarket",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 430,
-    "location": [
-      59.334656,
-      18.061438
     ]
   }
 ]
