@@ -58,6 +58,10 @@
 			<A data-sveltekit-prefetch href="/cocktails/">a list of cocktails</A> that i respect and occasionaly
 			make to consume at home
 		</li>
+
+		<li>
+			<A data-sveltekit-prefetch href="/uses/">list of things i use</A>
+		</li>
 	</ul>
 
 	<p>
