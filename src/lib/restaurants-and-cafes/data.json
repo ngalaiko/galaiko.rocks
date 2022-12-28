@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 25,
+    "count": 24,
     "currency": "SEK",
-    "amount": 6043,
+    "amount": 5793,
     "location": [
       59.318041,
       18.072196
@@ -70,16 +70,6 @@
     ]
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 640,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 8,
     "currency": "SEK",
@@ -117,6 +107,16 @@
     "location": [
       59.331949,
       18.057649
+    ]
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 512,
+    "location": [
+      59.33199,
+      18.067811
     ]
   },
   {
@@ -167,16 +167,6 @@
     "location": [
       59.31845,
       18.070466
-    ]
-  },
-  {
-    "payee": "Brunos Korvbar",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 545,
-    "location": [
-      59.3167,
-      18.055242
     ]
   },
   {
@@ -277,6 +267,16 @@
     "location": [
       59.339585,
       18.047905
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 405,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
@@ -427,16 +427,6 @@
     "location": [
       59.333599,
       18.070247
-    ]
-  },
-  {
-    "payee": "Jafaris Donuts",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 185,
-    "location": [
-      59.329551,
-      18.065829
     ]
   },
   {
@@ -647,6 +637,16 @@
     "location": [
       59.33687,
       18.054108
+    ]
+  },
+  {
+    "payee": "Jafaris Donuts",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 155,
+    "location": [
+      59.329551,
+      18.065829
     ]
   },
   {
