@@ -1,13 +1,14 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { list, type Post } from '$lib/posts';
 import { compareDesc, max } from 'date-fns';
+import { dev } from '$app/environment';
 
 export const prerender = true;
 
 export const GET: RequestHandler = async ({ url }) => {
     const posts = await list();
     const body = render(
-        url.origin,
+        dev ? url.origin : 'https://galaiko.rocks/',
         posts
             .filter(({ hidden }) => !hidden)
             .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
