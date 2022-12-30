@@ -7,9 +7,10 @@ section: 'blog'
 i do not wish to know which movies i've seen last year.
 or how many steps i've walked last month.
 i do not care which artist i've listened to the most.
-'my favorite places' list in the map app is now empty.
+i've removed all bookmarks and do not plan to use it again.
 
-an lru cache which is my memory provides me with perfectly good suggestions of eigher of those things.
+accumulating useless information like that only stresses me and is not useful at all.
+i usually rememeber what i actually liked and will use that from now on.
 
-still, some journaling i consider important. 
-like keeping a [ledger](https://hledger.org) of my financial history - that is useful sometimes.
+still, some journaling i consider important.
+like keeping a [ledger](https://hledger.org) of my financial history - that is useful.
