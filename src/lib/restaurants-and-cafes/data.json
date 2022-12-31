@@ -430,16 +430,6 @@
     ]
   },
   {
-    "payee": "DropCoffee",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 345,
-    "location": [
-      59.316889,
-      18.062711
-    ]
-  },
-  {
     "payee": "Birkastans Pizzeria",
     "count": 3,
     "currency": "SEK",
@@ -607,6 +597,16 @@
     "location": [
       59.341795,
       18.047249
+    ]
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 195,
+    "location": [
+      59.316889,
+      18.062711
     ]
   },
   {
