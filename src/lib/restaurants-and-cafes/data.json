@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 24,
+    "count": 25,
     "currency": "SEK",
-    "amount": 5793,
+    "amount": 6070,
     "location": [
       59.318041,
       18.072196
@@ -11,9 +11,9 @@
   },
   {
     "payee": "Tony’s Pizza and Salad",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1694,
+    "amount": 1829,
     "location": [
       59.319056,
       18.064821
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Yume Sushi",
-    "count": 10,
+    "count": 11,
     "currency": "SEK",
-    "amount": 1370,
+    "amount": 1505,
     "location": [
       59.317338,
       18.057767
@@ -37,6 +37,16 @@
     "location": [
       59.329504,
       18.043632
+    ]
+  },
+  {
+    "payee": "Amida",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1688,
+    "location": [
+      59.314721,
+      18.078432
     ]
   },
   {
@@ -60,13 +70,13 @@
     ]
   },
   {
-    "payee": "Amida",
+    "payee": "McDonald's",
     "count": 9,
     "currency": "SEK",
-    "amount": 1553,
+    "amount": 919.5,
     "location": [
-      59.314721,
-      18.078432
+      59.317889,
+      18.05361
     ]
   },
   {
@@ -80,13 +90,13 @@
     ]
   },
   {
-    "payee": "McDonald's",
+    "payee": "Chic Konditori",
     "count": 8,
     "currency": "SEK",
-    "amount": 817.5,
+    "amount": 543,
     "location": [
-      59.317889,
-      18.05361
+      59.317398,
+      18.063439
     ]
   },
   {
@@ -137,16 +147,6 @@
     "location": [
       59.334456,
       18.062486
-    ]
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 505,
-    "location": [
-      59.317398,
-      18.063439
     ]
   },
   {
@@ -540,6 +540,16 @@
     ]
   },
   {
+    "payee": "Mormors Dumpling",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 422,
+    "location": [
+      59.313618,
+      18.085532
+    ]
+  },
+  {
     "payee": "Shanti Shukriya",
     "count": 3,
     "currency": "SEK",
@@ -757,16 +767,6 @@
     "location": [
       59.428415,
       17.938238
-    ]
-  },
-  {
-    "payee": "Mormors Dumpling",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 293,
-    "location": [
-      59.313618,
-      18.085532
     ]
   },
   {
