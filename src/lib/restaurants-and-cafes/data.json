@@ -80,16 +80,6 @@
     ]
   },
   {
-    "payee": "Lillebrors Bageri",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 703,
-    "location": [
-      59.340093,
-      18.033877
-    ]
-  },
-  {
     "payee": "Chic Konditori",
     "count": 8,
     "currency": "SEK",
@@ -117,6 +107,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "Lillebrors Bageri",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 458,
+    "location": [
+      59.340093,
+      18.033877
     ]
   },
   {
@@ -287,16 +287,6 @@
     "location": [
       59.336319,
       18.048464
-    ]
-  },
-  {
-    "payee": "Meno Male",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 498,
-    "location": [
-      59.32881,
-      18.045246
     ]
   },
   {
@@ -507,6 +497,16 @@
     "location": [
       59.339843,
       18.060667
+    ]
+  },
+  {
+    "payee": "Meno Male",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 379,
+    "location": [
+      59.32881,
+      18.045246
     ]
   },
   {
