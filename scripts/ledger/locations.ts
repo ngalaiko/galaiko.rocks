@@ -27,7 +27,7 @@ export default {
     'Cafe Eurobar Goes Russian': [59.309799, 18.079108],
     'Brunos Korvbar': [59.3167, 18.055242],
     'Indian King': [59.337053, 18.052454],
-    'Kaisas Fisk': [59.334262, 18.062618],
+    'Kajsas Fisk': [59.334262, 18.062618],
     'Phil’s burger': [59.337722, 18.057471],
     'Lillebrors Bageri': [59.340093, 18.033877],
     'Eat Greenii': [59.33463, 18.056129],
