@@ -230,16 +230,6 @@
     ]
   },
   {
-    "payee": "Kajsas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 630,
-    "location": [
-      59.334262,
-      18.062618
-    ]
-  },
-  {
     "payee": "Pizza Hut",
     "count": 5,
     "currency": "SEK",
@@ -357,6 +347,16 @@
     "location": [
       59.363667,
       17.966166
+    ]
+  },
+  {
+    "payee": "Kajsas Fisk",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 500,
+    "location": [
+      59.334262,
+      18.062618
     ]
   },
   {
