@@ -590,16 +590,6 @@
     ]
   },
   {
-    "payee": "Bröd & Salt",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 267.01,
-    "location": [
-      59.339866,
-      18.037079
-    ]
-  },
-  {
     "payee": "Ming Palace",
     "count": 2,
     "currency": "SEK",
