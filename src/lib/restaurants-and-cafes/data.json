@@ -230,16 +230,6 @@
     ]
   },
   {
-    "payee": "Pizza Hut",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 581,
-    "location": [
-      59.33183,
-      18.059651
-    ]
-  },
-  {
     "payee": "Tutto Bello",
     "count": 5,
     "currency": "SEK",
@@ -367,6 +357,16 @@
     "location": [
       59.338245,
       18.038156
+    ]
+  },
+  {
+    "payee": "Pizza Hut",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 476,
+    "location": [
+      59.33183,
+      18.059651
     ]
   },
   {
