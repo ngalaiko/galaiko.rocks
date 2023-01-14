@@ -150,16 +150,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 906,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "AI Ramen",
     "count": 6,
     "currency": "SEK",
@@ -287,6 +277,16 @@
     "location": [
       59.335918,
       18.059252
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 775,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
