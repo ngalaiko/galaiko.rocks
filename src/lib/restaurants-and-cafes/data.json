@@ -220,16 +220,6 @@
     ]
   },
   {
-    "payee": "Tutto Bello",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 525,
-    "location": [
-      59.338836,
-      18.055326
-    ]
-  },
-  {
     "payee": "Hemma Vasastan",
     "count": 5,
     "currency": "SEK",
@@ -297,6 +287,16 @@
     "location": [
       59.336459,
       18.058798
+    ]
+  },
+  {
+    "payee": "Tutto Bello",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 426,
+    "location": [
+      59.338836,
+      18.055326
     ]
   },
   {
