@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 25,
+    "count": 27,
     "currency": "SEK",
-    "amount": 6070,
+    "amount": 6501,
     "location": [
       59.318041,
       18.072196
@@ -90,16 +90,6 @@
     ]
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 512,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
     "payee": "The Good Gringo",
     "count": 7,
     "currency": "SEK",
@@ -107,6 +97,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1230,
+    "location": [
+      59.333392,
+      18.057954
     ]
   },
   {
@@ -150,13 +150,23 @@
     ]
   },
   {
-    "payee": "AI Ramen",
+    "payee": "Brunos Korvbar",
     "count": 6,
     "currency": "SEK",
-    "amount": 1065,
+    "amount": 480,
     "location": [
-      59.333392,
-      18.057954
+      59.3167,
+      18.055242
+    ]
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 448,
+    "location": [
+      59.33199,
+      18.067811
     ]
   },
   {
@@ -200,6 +210,16 @@
     ]
   },
   {
+    "payee": "Saigon Baguette",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 939,
+    "location": [
+      59.333528,
+      18.058477
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
@@ -230,16 +250,6 @@
     ]
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 405,
-    "location": [
-      59.3167,
-      18.055242
-    ]
-  },
-  {
     "payee": "Hanoi Corner",
     "count": 5,
     "currency": "SEK",
@@ -267,16 +277,6 @@
     "location": [
       59.335918,
       18.059252
-    ]
-  },
-  {
-    "payee": "Saigon Baguette",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 775,
-    "location": [
-      59.333528,
-      18.058477
     ]
   },
   {
@@ -410,13 +410,23 @@
     ]
   },
   {
-    "payee": "Birkastans Pizzeria",
-    "count": 3,
+    "payee": "Belgobaren",
+    "count": 4,
     "currency": "SEK",
-    "amount": 413.5,
+    "amount": 596,
     "location": [
-      59.340846,
-      18.032985
+      59.332907,
+      18.058313
+    ]
+  },
+  {
+    "payee": "Shanti Shukriya",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 540,
+    "location": [
+      59.33836,
+      18.039952
     ]
   },
   {
@@ -457,6 +467,16 @@
     "location": [
       59.33308,
       18.044915
+    ]
+  },
+  {
+    "payee": "SEN Street Kitchen",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 377,
+    "location": [
+      59.333376,
+      18.054404
     ]
   },
   {
@@ -540,16 +560,6 @@
     ]
   },
   {
-    "payee": "Belgobaren",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 447,
-    "location": [
-      59.332907,
-      18.058313
-    ]
-  },
-  {
     "payee": "Mormors Dumpling",
     "count": 3,
     "currency": "SEK",
@@ -557,16 +567,6 @@
     "location": [
       59.313618,
       18.085532
-    ]
-  },
-  {
-    "payee": "Shanti Shukriya",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 395,
-    "location": [
-      59.33836,
-      18.039952
     ]
   },
   {
@@ -590,16 +590,6 @@
     ]
   },
   {
-    "payee": "Ming Palace",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 481,
-    "location": [
-      59.318524,
-      18.061989
-    ]
-  },
-  {
     "payee": "Eatnam",
     "count": 2,
     "currency": "SEK",
@@ -617,16 +607,6 @@
     "location": [
       59.316889,
       18.062711
-    ]
-  },
-  {
-    "payee": "SEN Street Kitchen",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 238,
-    "location": [
-      59.333376,
-      18.054404
     ]
   },
   {
@@ -767,6 +747,16 @@
     "location": [
       59.318771,
       18.059878
+    ]
+  },
+  {
+    "payee": "Birkastans Pizzeria",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 306,
+    "location": [
+      59.340846,
+      18.032985
     ]
   },
   {
