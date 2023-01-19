@@ -18,7 +18,7 @@
 
 	<ul class="h-feed">
 		{#each data.posts as post, i}
-			{@const day = post.date.getDay() + 1}
+			{@const day = post.date.getDate()}
 			{#if i == 0 || post.date.getFullYear() != data.posts[i - 1].date.getFullYear()}
 				<h2>
 					<time datetime={post.date.toISOString()}>
