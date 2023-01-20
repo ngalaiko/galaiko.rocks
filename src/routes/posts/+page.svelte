@@ -14,8 +14,6 @@
 </svelte:head>
 
 <article>
-	<h1 class="p-name">{data.posts.length} posts</h1>
-
 	<ul class="h-feed">
 		{#each data.posts as post, i}
 			{@const day = post.date.getDate()}
