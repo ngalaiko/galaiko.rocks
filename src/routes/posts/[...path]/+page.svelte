@@ -31,10 +31,11 @@
 
 <article class="h-entry">
 	<header>
-		<h1 class="p-name ">{data.post.title}</h1>
-		<time class="dt-published" datetime={data.post.date.toISOString()}
-			>{format(data.post.date, 'MMMM dd, yyyy')}</time
-		>
+		<time class="dt-published" datetime={data.post.date.toISOString()}>
+			{format(data.post.date, 'MMMM dd, yyyy')}
+		</time>
+
+		<h1 class="p-name">{data.post.title}</h1>
 	</header>
 
 	<div class="e-content">
@@ -116,6 +117,19 @@
 </section>
 
 <style>
+	article > header {
+		margin-top: 3em;
+		margin-bottom: 2em;
+	}
+
+    article > header > time {
+        font-size: smaller;
+    }
+
+	article > header > h1 {
+		margin: 0;
+	}
+
 	section#comments {
 		margin-top: 3rem;
 	}
@@ -158,14 +172,6 @@
 
 	#solution input {
 		width: 2em;
-	}
-
-	article header h1 {
-		margin-bottom: 0.5rem;
-	}
-
-	article header {
-		margin-bottom: 1em;
 	}
 
 	button,
