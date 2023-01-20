@@ -590,16 +590,6 @@
     ]
   },
   {
-    "payee": "Eatnam",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 290,
-    "location": [
-      59.341795,
-      18.047249
-    ]
-  },
-  {
     "payee": "DropCoffee",
     "count": 2,
     "currency": "SEK",
