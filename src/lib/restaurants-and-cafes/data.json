@@ -240,16 +240,6 @@
     ]
   },
   {
-    "payee": "Hemma Vasastan",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 660,
-    "location": [
-      59.339585,
-      18.047905
-    ]
-  },
-  {
     "payee": "Hanoi Corner",
     "count": 5,
     "currency": "SEK",
@@ -337,6 +327,16 @@
     "location": [
       59.363667,
       17.966166
+    ]
+  },
+  {
+    "payee": "Hemma Vasastan",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 530,
+    "location": [
+      59.339585,
+      18.047905
     ]
   },
   {
