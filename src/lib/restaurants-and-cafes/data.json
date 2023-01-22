@@ -20,16 +20,6 @@
     ]
   },
   {
-    "payee": "Indian Curry House",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1265,
-    "location": [
-      59.329504,
-      18.043632
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 10,
     "currency": "SEK",
@@ -47,6 +37,16 @@
     "location": [
       59.314721,
       18.078432
+    ]
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 9,
+    "currency": "SEK",
+    "amount": 1130,
+    "location": [
+      59.329504,
+      18.043632
     ]
   },
   {
@@ -137,16 +137,6 @@
     "location": [
       59.31845,
       18.070466
-    ]
-  },
-  {
-    "payee": "Brunos Korvbar",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 480,
-    "location": [
-      59.3167,
-      18.055242
     ]
   },
   {
@@ -267,6 +257,16 @@
     "location": [
       59.335918,
       18.059252
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 410,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
