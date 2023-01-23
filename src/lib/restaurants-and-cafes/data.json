@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 27,
+    "count": 29,
     "currency": "SEK",
-    "amount": 6501,
+    "amount": 7015,
     "location": [
       59.318041,
       18.072196
@@ -120,6 +120,16 @@
     ]
   },
   {
+    "payee": "Prime Burger",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 985,
+    "location": [
+      59.336478,
+      18.061049
+    ]
+  },
+  {
     "payee": "Falafelbaren",
     "count": 7,
     "currency": "SEK",
@@ -147,16 +157,6 @@
     "location": [
       59.33199,
       18.067811
-    ]
-  },
-  {
-    "payee": "Prime Burger",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 820,
-    "location": [
-      59.336478,
-      18.061049
     ]
   },
   {
@@ -287,6 +287,16 @@
     "location": [
       59.338836,
       18.055326
+    ]
+  },
+  {
+    "payee": "Tehran Grill",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 564,
+    "location": [
+      59.340032,
+      18.032727
     ]
   },
   {
@@ -430,26 +440,6 @@
     ]
   },
   {
-    "payee": "Falloumi",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 405.5,
-    "location": [
-      59.308163,
-      18.077789
-    ]
-  },
-  {
-    "payee": "Tehran Grill",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 429,
-    "location": [
-      59.340032,
-      18.032727
-    ]
-  },
-  {
     "payee": "Cafe Eurobar Goes Russian",
     "count": 3,
     "currency": "SEK",
@@ -477,6 +467,16 @@
     "location": [
       59.333376,
       18.054404
+    ]
+  },
+  {
+    "payee": "Brisket & Friends",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 527.4,
+    "location": [
+      59.33687,
+      18.054108
     ]
   },
   {
@@ -530,6 +530,16 @@
     ]
   },
   {
+    "payee": "Phil’s burger",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 497,
+    "location": [
+      59.337722,
+      18.057471
+    ]
+  },
+  {
     "payee": "Tbilisi’s Hörna",
     "count": 3,
     "currency": "SEK",
@@ -580,6 +590,16 @@
     ]
   },
   {
+    "payee": "Djingis Khan",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 435,
+    "location": [
+      59.336377,
+      18.063073
+    ]
+  },
+  {
     "payee": "Haymarket",
     "count": 3,
     "currency": "SEK",
@@ -607,16 +627,6 @@
     "location": [
       59.334257,
       18.063021
-    ]
-  },
-  {
-    "payee": "Brisket & Friends",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 332.4,
-    "location": [
-      59.33687,
-      18.054108
     ]
   },
   {
@@ -680,16 +690,6 @@
     ]
   },
   {
-    "payee": "Phil’s burger",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 338,
-    "location": [
-      59.337722,
-      18.057471
-    ]
-  },
-  {
     "payee": "Villa Romana",
     "count": 2,
     "currency": "SEK",
@@ -707,6 +707,16 @@
     "location": [
       59.365031,
       17.968327
+    ]
+  },
+  {
+    "payee": "Falloumi",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 279.5,
+    "location": [
+      59.308163,
+      18.077789
     ]
   },
   {
@@ -757,16 +767,6 @@
     "location": [
       59.339728,
       18.060213
-    ]
-  },
-  {
-    "payee": "Djingis Khan",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 290,
-    "location": [
-      59.336377,
-      18.063073
     ]
   }
 ]
