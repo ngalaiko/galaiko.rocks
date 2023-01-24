@@ -50,7 +50,8 @@ const config = {
                     avif: { quality: 44 },
                     webp: { quality: 44 },
                     jpg: { quality: 50 }
-                }
+                },
+                inferDimensions: true
             }),
             avatar: densityPreset({
                 height: 48, // avoid layout shift
