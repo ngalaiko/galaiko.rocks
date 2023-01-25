@@ -90,16 +90,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1230,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 7,
     "currency": "SEK",
@@ -217,6 +207,16 @@
     "location": [
       59.33983,
       18.033982
+    ]
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1075,
+    "location": [
+      59.333392,
+      18.057954
     ]
   },
   {
