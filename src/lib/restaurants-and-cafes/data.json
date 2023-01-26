@@ -230,16 +230,6 @@
     ]
   },
   {
-    "payee": "Hanoi Corner",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 555,
-    "location": [
-      59.335554,
-      18.053908
-    ]
-  },
-  {
     "payee": "Esperanza",
     "count": 5,
     "currency": "SEK",
@@ -337,6 +327,16 @@
     "location": [
       59.363667,
       17.966166
+    ]
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 450,
+    "location": [
+      59.335554,
+      18.053908
     ]
   },
   {
