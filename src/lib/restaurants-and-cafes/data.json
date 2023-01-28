@@ -90,16 +90,6 @@
     ]
   },
   {
-    "payee": "Lillebrors Bageri",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 458,
-    "location": [
-      59.340093,
-      18.033877
-    ]
-  },
-  {
     "payee": "Tokyo Diner",
     "count": 7,
     "currency": "SEK",
@@ -230,6 +220,16 @@
     ]
   },
   {
+    "payee": "Lillebrors Bageri",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 363,
+    "location": [
+      59.340093,
+      18.033877
+    ]
+  },
+  {
     "payee": "Esperanza",
     "count": 5,
     "currency": "SEK",
@@ -267,16 +267,6 @@
     "location": [
       59.336459,
       18.058798
-    ]
-  },
-  {
-    "payee": "Tutto Bello",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 426,
-    "location": [
-      59.338836,
-      18.055326
     ]
   },
   {
@@ -467,6 +457,16 @@
     "location": [
       59.333376,
       18.054404
+    ]
+  },
+  {
+    "payee": "Tutto Bello",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 327,
+    "location": [
+      59.338836,
+      18.055326
     ]
   },
   {
