@@ -270,16 +270,6 @@
     ]
   },
   {
-    "payee": "Tehran Grill",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 564,
-    "location": [
-      59.340032,
-      18.032727
-    ]
-  },
-  {
     "payee": "Gute Grill Bar",
     "count": 4,
     "currency": "SEK",
@@ -517,6 +507,16 @@
     "location": [
       59.339843,
       18.060667
+    ]
+  },
+  {
+    "payee": "Tehran Grill",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 419,
+    "location": [
+      59.340032,
+      18.032727
     ]
   },
   {
