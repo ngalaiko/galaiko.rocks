@@ -85,5 +85,7 @@ export default {
     'Mormors Dumpling': [59.313618, 18.085532],
     Haymarket: [59.334656, 18.061438],
     Brödernas: [59.331213, 18.044646],
-    'Washoku Tomo': [59.318771, 18.059878]
+    'Washoku Tomo': [59.318771, 18.059878],
+    'Petite France': [59.32802, 18.037138],
+    "D'abramo": [59.334457, 18.056224]
 };

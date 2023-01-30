@@ -20,6 +20,16 @@
     ]
   },
   {
+    "payee": "Amida",
+    "count": 11,
+    "currency": "SEK",
+    "amount": 1853,
+    "location": [
+      59.314721,
+      18.078432
+    ]
+  },
+  {
     "payee": "Yume Sushi",
     "count": 10,
     "currency": "SEK",
@@ -27,16 +37,6 @@
     "location": [
       59.317338,
       18.057767
-    ]
-  },
-  {
-    "payee": "Amida",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 1688,
-    "location": [
-      59.314721,
-      18.078432
     ]
   },
   {
@@ -320,6 +320,16 @@
     ]
   },
   {
+    "payee": "Franky's",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 650,
+    "location": [
+      59.339843,
+      18.060667
+    ]
+  },
+  {
     "payee": "Hemma Vasastan",
     "count": 4,
     "currency": "SEK",
@@ -420,16 +430,6 @@
     ]
   },
   {
-    "payee": "Cafe Eurobar Goes Russian",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 907.5,
-    "location": [
-      59.309799,
-      18.079108
-    ]
-  },
-  {
     "payee": "Itamae",
     "count": 3,
     "currency": "SEK",
@@ -497,16 +497,6 @@
     "location": [
       59.333651,
       18.056886
-    ]
-  },
-  {
-    "payee": "Franky's",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 487,
-    "location": [
-      59.339843,
-      18.060667
     ]
   },
   {
@@ -590,6 +580,16 @@
     ]
   },
   {
+    "payee": "Ta'ameya",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 415,
+    "location": [
+      59.339728,
+      18.060213
+    ]
+  },
+  {
     "payee": "Djingis Khan",
     "count": 3,
     "currency": "SEK",
@@ -670,6 +670,16 @@
     ]
   },
   {
+    "payee": "Petite France",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 443,
+    "location": [
+      59.32802,
+      18.037138
+    ]
+  },
+  {
     "payee": "Spisa hos Helena",
     "count": 2,
     "currency": "SEK",
@@ -687,6 +697,16 @@
     "location": [
       59.343774,
       18.006291
+    ]
+  },
+  {
+    "payee": "Cafe Eurobar Goes Russian",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 600,
+    "location": [
+      59.309799,
+      18.079108
     ]
   },
   {
@@ -760,13 +780,13 @@
     ]
   },
   {
-    "payee": "Ta'ameya",
+    "payee": "D'abramo",
     "count": 2,
     "currency": "SEK",
-    "amount": 270,
+    "amount": 74,
     "location": [
-      59.339728,
-      18.060213
+      59.334457,
+      18.056224
     ]
   }
 ]
