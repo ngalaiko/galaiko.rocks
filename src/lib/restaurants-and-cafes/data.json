@@ -130,16 +130,6 @@
     ]
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 448,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
     "payee": "Fullmoon Wook",
     "count": 6,
     "currency": "SEK",
@@ -267,6 +257,16 @@
     "location": [
       59.336459,
       18.058798
+    ]
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 384,
+    "location": [
+      59.33199,
+      18.067811
     ]
   },
   {
