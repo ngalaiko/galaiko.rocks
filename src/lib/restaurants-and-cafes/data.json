@@ -130,6 +130,16 @@
     ]
   },
   {
+    "payee": "The Good Gringo",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 844,
+    "location": [
+      59.332369,
+      18.04524
+    ]
+  },
+  {
     "payee": "Fullmoon Wook",
     "count": 6,
     "currency": "SEK",
@@ -197,16 +207,6 @@
     "location": [
       59.334456,
       18.062486
-    ]
-  },
-  {
-    "payee": "The Good Gringo",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 729,
-    "location": [
-      59.332369,
-      18.04524
     ]
   },
   {
@@ -430,16 +430,6 @@
     ]
   },
   {
-    "payee": "Itamae",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 433,
-    "location": [
-      59.33308,
-      18.044915
-    ]
-  },
-  {
     "payee": "SEN Street Kitchen",
     "count": 3,
     "currency": "SEK",
@@ -650,6 +640,16 @@
     ]
   },
   {
+    "payee": "Itamae",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 294,
+    "location": [
+      59.33308,
+      18.044915
+    ]
+  },
+  {
     "payee": "Johan & Nyström",
     "count": 2,
     "currency": "SEK",
@@ -777,6 +777,16 @@
     "location": [
       59.340846,
       18.032985
+    ]
+  },
+  {
+    "payee": "Eatnam",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 300,
+    "location": [
+      59.341795,
+      18.047249
     ]
   },
   {
