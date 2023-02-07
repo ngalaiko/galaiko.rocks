@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "Marley Café",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 563.5,
-    "location": [
-      59.313615,
-      18.07998
-    ]
-  },
-  {
     "payee": "La Neta",
     "count": 8,
     "currency": "SEK",
@@ -107,6 +97,16 @@
     "location": [
       59.31837,
       18.059678
+    ]
+  },
+  {
+    "payee": "Marley Café",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 492,
+    "location": [
+      59.313615,
+      18.07998
     ]
   },
   {
