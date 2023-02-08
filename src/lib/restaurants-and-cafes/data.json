@@ -220,16 +220,6 @@
     ]
   },
   {
-    "payee": "Esperanza",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 602,
-    "location": [
-      59.337541,
-      18.057392
-    ]
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 5,
     "currency": "SEK",
@@ -307,6 +297,16 @@
     "location": [
       59.363667,
       17.966166
+    ]
+  },
+  {
+    "payee": "Esperanza",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 483,
+    "location": [
+      59.337541,
+      18.057392
     ]
   },
   {
