@@ -80,16 +80,6 @@
     ]
   },
   {
-    "payee": "Prime Burger",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 985,
-    "location": [
-      59.336478,
-      18.061049
-    ]
-  },
-  {
     "payee": "Falafelbaren",
     "count": 7,
     "currency": "SEK",
@@ -167,6 +157,16 @@
     "location": [
       59.337053,
       18.052454
+    ]
+  },
+  {
+    "payee": "Prime Burger",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 845,
+    "location": [
+      59.336478,
+      18.061049
     ]
   },
   {
