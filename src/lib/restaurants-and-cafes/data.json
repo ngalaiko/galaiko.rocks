@@ -430,16 +430,6 @@
     ]
   },
   {
-    "payee": "Tutto Bello",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 327,
-    "location": [
-      59.338836,
-      18.055326
-    ]
-  },
-  {
     "payee": "Brisket & Friends",
     "count": 3,
     "currency": "SEK",
@@ -727,6 +717,16 @@
     "location": [
       59.308163,
       18.077789
+    ]
+  },
+  {
+    "payee": "Tutto Bello",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 228,
+    "location": [
+      59.338836,
+      18.055326
     ]
   },
   {
