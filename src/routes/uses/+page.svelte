@@ -63,7 +63,7 @@
 		</li>
 
 		<li>
-			<h3><a href="https://calibre-ebook.com">calible</a></h3>
+			<h3><a href="https://calibre-ebook.com">calibre</a></h3>
 			<p>just a great e-book management software</p>
 		</li>
 
