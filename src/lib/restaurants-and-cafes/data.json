@@ -270,16 +270,6 @@
     ]
   },
   {
-    "payee": "Gute Grill Bar",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 610,
-    "location": [
-      59.336739,
-      18.069433
-    ]
-  },
-  {
     "payee": "Le Kebab",
     "count": 4,
     "currency": "SEK",
@@ -507,6 +497,16 @@
     "location": [
       59.298094,
       18.088214
+    ]
+  },
+  {
+    "payee": "Gute Grill Bar",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 465,
+    "location": [
+      59.336739,
+      18.069433
     ]
   },
   {
