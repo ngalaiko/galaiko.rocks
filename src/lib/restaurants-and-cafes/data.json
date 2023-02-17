@@ -30,16 +30,6 @@
     ]
   },
   {
-    "payee": "Indian Curry House",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1130,
-    "location": [
-      59.329504,
-      18.043632
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 9,
     "currency": "SEK",
@@ -77,6 +67,16 @@
     "location": [
       59.317398,
       18.063439
+    ]
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1010,
+    "location": [
+      59.329504,
+      18.043632
     ]
   },
   {
