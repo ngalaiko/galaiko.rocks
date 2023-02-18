@@ -150,16 +150,6 @@
     ]
   },
   {
-    "payee": "Fullmoon Wook",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 647,
-    "location": [
-      59.342143,
-      18.04923
-    ]
-  },
-  {
     "payee": "Weidao",
     "count": 6,
     "currency": "SEK",
@@ -227,6 +217,16 @@
     "location": [
       59.315597,
       18.073084
+    ]
+  },
+  {
+    "payee": "Fullmoon Wook",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 553,
+    "location": [
+      59.342143,
+      18.04923
     ]
   },
   {
@@ -417,16 +417,6 @@
     "location": [
       59.33836,
       18.039952
-    ]
-  },
-  {
-    "payee": "Brisket & Friends",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 527.4,
-    "location": [
-      59.33687,
-      18.054108
     ]
   },
   {
@@ -767,6 +757,16 @@
     "location": [
       59.341795,
       18.047249
+    ]
+  },
+  {
+    "payee": "Brisket & Friends",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 365,
+    "location": [
+      59.33687,
+      18.054108
     ]
   },
   {
