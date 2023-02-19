@@ -420,16 +420,6 @@
     ]
   },
   {
-    "payee": "Brödernas",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 475,
-    "location": [
-      59.331213,
-      18.044646
-    ]
-  },
-  {
     "payee": "Holy Cow",
     "count": 3,
     "currency": "SEK",
@@ -687,6 +677,16 @@
     "location": [
       59.365031,
       17.968327
+    ]
+  },
+  {
+    "payee": "Brödernas",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 320,
+    "location": [
+      59.331213,
+      18.044646
     ]
   },
   {
