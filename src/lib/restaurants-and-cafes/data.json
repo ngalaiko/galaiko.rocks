@@ -30,16 +30,6 @@
     ]
   },
   {
-    "payee": "Yume Sushi",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1265,
-    "location": [
-      59.317338,
-      18.057767
-    ]
-  },
-  {
     "payee": "McDonald's",
     "count": 9,
     "currency": "SEK",
@@ -47,16 +37,6 @@
     "location": [
       59.317889,
       18.05361
-    ]
-  },
-  {
-    "payee": "La Neta",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 963,
-    "location": [
-      59.336673,
-      18.058082
     ]
   },
   {
@@ -70,6 +50,16 @@
     ]
   },
   {
+    "payee": "Yume Sushi",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1145,
+    "location": [
+      59.317338,
+      18.057767
+    ]
+  },
+  {
     "payee": "Indian Curry House",
     "count": 8,
     "currency": "SEK",
@@ -77,6 +67,16 @@
     "location": [
       59.329504,
       18.043632
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 925,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
@@ -150,6 +150,16 @@
     ]
   },
   {
+    "payee": "Fullmoon Wook",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 657,
+    "location": [
+      59.342143,
+      18.04923
+    ]
+  },
+  {
     "payee": "Weidao",
     "count": 6,
     "currency": "SEK",
@@ -217,16 +227,6 @@
     "location": [
       59.315597,
       18.073084
-    ]
-  },
-  {
-    "payee": "Fullmoon Wook",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 553,
-    "location": [
-      59.342143,
-      18.04923
     ]
   },
   {
@@ -350,6 +350,16 @@
     ]
   },
   {
+    "payee": "Tbilisi’s Hörna",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 1163,
+    "location": [
+      59.298094,
+      18.088214
+    ]
+  },
+  {
     "payee": "Il Forno",
     "count": 4,
     "currency": "SEK",
@@ -470,16 +480,6 @@
     ]
   },
   {
-    "payee": "Tbilisi’s Hörna",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 944,
-    "location": [
-      59.298094,
-      18.088214
-    ]
-  },
-  {
     "payee": "Gute Grill Bar",
     "count": 3,
     "currency": "SEK",
@@ -560,13 +560,13 @@
     ]
   },
   {
-    "payee": "Jafaris Donuts",
-    "count": 2,
+    "payee": "Nem Nem Quan",
+    "count": 3,
     "currency": "SEK",
-    "amount": 155,
+    "amount": 417,
     "location": [
-      59.329551,
-      18.065829
+      59.334247,
+      18.062669
     ]
   },
   {
