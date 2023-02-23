@@ -220,16 +220,6 @@
     ]
   },
   {
-    "payee": "Max",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 337,
-    "location": [
-      59.315597,
-      18.073084
-    ]
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 5,
     "currency": "SEK",
@@ -400,6 +390,16 @@
     ]
   },
   {
+    "payee": "Max",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 268,
+    "location": [
+      59.315597,
+      18.073084
+    ]
+  },
+  {
     "payee": "Bano City",
     "count": 4,
     "currency": "SEK",
@@ -567,16 +567,6 @@
     "location": [
       59.334247,
       18.062669
-    ]
-  },
-  {
-    "payee": "Eat Greenii",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 228,
-    "location": [
-      59.33463,
-      18.056129
     ]
   },
   {
