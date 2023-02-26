@@ -40,16 +40,6 @@
     ]
   },
   {
-    "payee": "Chic Konditori",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 543,
-    "location": [
-      59.317398,
-      18.063439
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 8,
     "currency": "SEK",
@@ -110,6 +100,16 @@
     ]
   },
   {
+    "payee": "Chic Konditori",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 471,
+    "location": [
+      59.317398,
+      18.063439
+    ]
+  },
+  {
     "payee": "Levinskys",
     "count": 7,
     "currency": "SEK",
@@ -147,16 +147,6 @@
     "location": [
       59.332369,
       18.04524
-    ]
-  },
-  {
-    "payee": "Fullmoon Wook",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 657,
-    "location": [
-      59.342143,
-      18.04923
     ]
   },
   {
@@ -237,6 +227,16 @@
     "location": [
       59.336459,
       18.058798
+    ]
+  },
+  {
+    "payee": "Fullmoon Wook",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 539,
+    "location": [
+      59.342143,
+      18.04923
     ]
   },
   {
