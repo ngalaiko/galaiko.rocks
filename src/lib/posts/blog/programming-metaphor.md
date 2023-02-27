@@ -4,8 +4,8 @@ date: 2023-01-19T15:25:00+01:00
 ---
 
 in this post i will be describing a programming metaphor.
-i use it to explain to people outside of it what does it mean to work as a software engineer.
-it proved itself very useful and i do not recall seeing it anywhere else. here it is:
+i use it to explain to people outside it what does it mean to work as a software engineer.
+it proved itself useful and i do not recall seeing it anywhere else. here it is:
 
 first, being a software engineer is a mix between being an architect and being a writer.
 most people can imagine what both architects' and writers' do.
@@ -60,8 +60,8 @@ writer part:
 
 * using a language
 
-    writing down means using a language.
-    of course, computers do not understand english yet, but similar aspects matter.
+    writing means using a language.
+    computers do not understand english yet, but similar aspects matter.
     is it easy to read?
     how well is it structured?
     and so on.

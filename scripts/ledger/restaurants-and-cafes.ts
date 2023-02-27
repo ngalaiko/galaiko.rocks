@@ -99,7 +99,8 @@ exportTransactions(argv.file)
             .filter((e) => e.count >= argv.number)
             .sort((a, b) => b.count - a.count)
             .map((entry) => {
-                const location = locations[entry.payee];
+                const payee = entry.payee.trim();
+                const location = locations[payee];
                 if (!location) throw new Error(`${entry.payee}: location missing`);
                 return { ...entry, location };
             })
