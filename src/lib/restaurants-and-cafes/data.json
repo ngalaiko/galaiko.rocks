@@ -70,16 +70,6 @@
     ]
   },
   {
-    "payee": "Marley Café",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 492,
-    "location": [
-      59.313615,
-      18.07998
-    ]
-  },
-  {
     "payee": "Indian King",
     "count": 7,
     "currency": "SEK",
@@ -197,6 +187,16 @@
     "location": [
       59.333392,
       18.057954
+    ]
+  },
+  {
+    "payee": "Marley Café",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 394,
+    "location": [
+      59.313615,
+      18.07998
     ]
   },
   {
