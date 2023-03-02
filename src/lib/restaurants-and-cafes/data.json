@@ -230,6 +230,16 @@
     ]
   },
   {
+    "payee": "Cafe Ragazzi",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 800,
+    "location": [
+      59.335918,
+      18.059252
+    ]
+  },
+  {
     "payee": "Pong",
     "count": 5,
     "currency": "SEK",
@@ -327,16 +337,6 @@
     "location": [
       59.334262,
       18.062618
-    ]
-  },
-  {
-    "payee": "Cafe Ragazzi",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 620,
-    "location": [
-      59.335918,
-      18.059252
     ]
   },
   {
