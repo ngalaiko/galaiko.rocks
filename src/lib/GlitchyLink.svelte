@@ -67,6 +67,10 @@
 		left: 0;
 	}
 
+	a:hover {
+		text-decoration: none;
+	}
+
 	a:hover:after,
 	a:hover:before {
 		opacity: 0.75;
