@@ -280,16 +280,6 @@
     ]
   },
   {
-    "payee": "Le Kebab",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 502,
-    "location": [
-      59.34188,
-      18.0491
-    ]
-  },
-  {
     "payee": "Omnipollos Kyrka",
     "count": 4,
     "currency": "SEK",
@@ -467,6 +457,16 @@
     "location": [
       59.32881,
       18.045246
+    ]
+  },
+  {
+    "payee": "Le Kebab",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 373,
+    "location": [
+      59.34188,
+      18.0491
     ]
   },
   {
