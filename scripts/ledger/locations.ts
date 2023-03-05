@@ -22,7 +22,7 @@ export default {
     'Saigon Baguette': [59.333528, 18.058477],
     'AI Ramen': [59.333392, 18.057954],
     'AI Ramen Sofia': [59.314408, 18.089957],
-    'Tony’s Pizza and Salad': [59.319056, 18.064821],
+    "Tony's Pizza and Salad": [59.319056, 18.064821],
     'Oolong Tea House': [59.33199, 18.067811],
     'Cafe Eurobar Goes Russian': [59.309799, 18.079108],
     'Brunos Korvbar': [59.3167, 18.055242],
