@@ -200,16 +200,6 @@
     ]
   },
   {
-    "payee": "Brunos Korvbar",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 410,
-    "location": [
-      59.3167,
-      18.055242
-    ]
-  },
-  {
     "payee": "Hanoi Corner",
     "count": 5,
     "currency": "SEK",
@@ -317,6 +307,16 @@
     "location": [
       59.339585,
       18.047905
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 270,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
