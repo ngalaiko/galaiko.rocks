@@ -1,19 +1,19 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 30,
+    "count": 31,
     "currency": "SEK",
-    "amount": 7787,
+    "amount": 7911,
     "location": [
       59.318041,
       18.072196
     ]
   },
   {
-    "payee": "Tony’s Pizza and Salad",
-    "count": 12,
+    "payee": "Tony's Pizza and Salad",
+    "count": 14,
     "currency": "SEK",
-    "amount": 1579,
+    "amount": 1844,
     "location": [
       59.319056,
       18.064821
@@ -100,6 +100,16 @@
     ]
   },
   {
+    "payee": "AI Ramen",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1240,
+    "location": [
+      59.333392,
+      18.057954
+    ]
+  },
+  {
     "payee": "Tokyo Diner",
     "count": 7,
     "currency": "SEK",
@@ -170,16 +180,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 1075,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "Marley Café",
     "count": 6,
     "currency": "SEK",
@@ -217,6 +217,16 @@
     "location": [
       59.331949,
       18.057649
+    ]
+  },
+  {
+    "payee": "Hemma Vasastan",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 670,
+    "location": [
+      59.339585,
+      18.047905
     ]
   },
   {
@@ -270,6 +280,16 @@
     ]
   },
   {
+    "payee": "Shanti Shukriya",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 690,
+    "location": [
+      59.33836,
+      18.039952
+    ]
+  },
+  {
     "payee": "Omnipollos Kyrka",
     "count": 4,
     "currency": "SEK",
@@ -297,16 +317,6 @@
     "location": [
       59.339843,
       18.060667
-    ]
-  },
-  {
-    "payee": "Hemma Vasastan",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 530,
-    "location": [
-      59.339585,
-      18.047905
     ]
   },
   {
@@ -407,16 +417,6 @@
     "location": [
       59.332907,
       18.058313
-    ]
-  },
-  {
-    "payee": "Shanti Shukriya",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 540,
-    "location": [
-      59.33836,
-      18.039952
     ]
   },
   {
