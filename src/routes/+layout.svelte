@@ -3,11 +3,10 @@
 	import { inject } from '@vercel/analytics';
 	import { page } from '$app/stores';
 	import { dev } from '$app/environment';
-	import { onMount } from 'svelte';
 
 	$: ogImageUrl =
 		$page.url.pathname === '/' ? '/index.png' : $page.url.pathname.slice(0, -1) + '.png';
-	if (!dev) onMount(inject);
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <svelte:head>
