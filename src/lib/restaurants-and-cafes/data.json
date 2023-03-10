@@ -30,16 +30,6 @@
     ]
   },
   {
-    "payee": "McDonald's",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 919.5,
-    "location": [
-      59.317889,
-      18.05361
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 8,
     "currency": "SEK",
@@ -67,6 +57,16 @@
     "location": [
       59.336673,
       18.058082
+    ]
+  },
+  {
+    "payee": "McDonald's",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 844.5,
+    "location": [
+      59.317889,
+      18.05361
     ]
   },
   {
@@ -200,16 +200,6 @@
     ]
   },
   {
-    "payee": "Hanoi Corner",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 580,
-    "location": [
-      59.335554,
-      18.053908
-    ]
-  },
-  {
     "payee": "Weidao",
     "count": 5,
     "currency": "SEK",
@@ -287,6 +277,16 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 475,
+    "location": [
+      59.335554,
+      18.053908
     ]
   },
   {
