@@ -70,26 +70,6 @@
     ]
   },
   {
-    "payee": "Indian King",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1010,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 471,
-    "location": [
-      59.317398,
-      18.063439
-    ]
-  },
-  {
     "payee": "Levinskys",
     "count": 7,
     "currency": "SEK",
@@ -180,6 +160,16 @@
     ]
   },
   {
+    "payee": "Chic Konditori",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 399,
+    "location": [
+      59.317398,
+      18.063439
+    ]
+  },
+  {
     "payee": "Marley Café",
     "count": 6,
     "currency": "SEK",
@@ -187,6 +177,16 @@
     "location": [
       59.313615,
       18.07998
+    ]
+  },
+  {
+    "payee": "Indian King",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 770,
+    "location": [
+      59.337053,
+      18.052454
     ]
   },
   {
