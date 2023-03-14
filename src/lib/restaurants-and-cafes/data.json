@@ -560,16 +560,6 @@
     ]
   },
   {
-    "payee": "Holy Cow",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 780,
-    "location": [
-      59.308404,
-      18.066223
-    ]
-  },
-  {
     "payee": "StikkiNikki",
     "count": 2,
     "currency": "SEK",
