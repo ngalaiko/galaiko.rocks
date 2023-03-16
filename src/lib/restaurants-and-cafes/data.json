@@ -120,16 +120,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 939,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
@@ -197,6 +187,16 @@
     "location": [
       59.331949,
       18.057649
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 803,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
