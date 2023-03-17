@@ -120,16 +120,6 @@
     ]
   },
   {
-    "payee": "Kafé Ritorno",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 652,
-    "location": [
-      59.336319,
-      18.048464
-    ]
-  },
-  {
     "payee": "Falafelbaren",
     "count": 6,
     "currency": "SEK",
@@ -247,6 +237,16 @@
     "location": [
       59.342143,
       18.04923
+    ]
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 525,
+    "location": [
+      59.336319,
+      18.048464
     ]
   },
   {
