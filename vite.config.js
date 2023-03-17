@@ -29,16 +29,16 @@ const config = {
         pluginRawFont(['.ttf']),
         process.env.NODE_ENV == 'production'
             ? [
-                remoteAssets({
-                    assetsDir: 'src/lib/records/covers',
-                    awaitDownload: true,
-                    resolveMode: 'relative',
-                    rules: [
-                        {
-                            match: /https:\/\/i\.discogs\.com.*?\.(?:png|jpeg|jpg)/gi
-                        }
-                    ]
-                })
+                // remoteAssets({
+                //     assetsDir: 'src/lib/records/covers',
+                //     awaitDownload: true,
+                //     resolveMode: 'relative',
+                //     rules: [
+                //         {
+                //             match: /https:\/\/i\.discogs\.com.*?\.(?:png|jpeg|jpg)/gi
+                //         }
+                //     ]
+                // })
             ]
             : [],
         imagePresets({
