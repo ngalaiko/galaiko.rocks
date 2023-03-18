@@ -280,16 +280,6 @@
     ]
   },
   {
-    "payee": "Hanoi Corner",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 475,
-    "location": [
-      59.335554,
-      18.053908
-    ]
-  },
-  {
     "payee": "Franky's",
     "count": 4,
     "currency": "SEK",
@@ -407,6 +397,16 @@
     "location": [
       59.337541,
       18.057392
+    ]
+  },
+  {
+    "payee": "Hanoi Corner",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 365,
+    "location": [
+      59.335554,
+      18.053908
     ]
   },
   {
