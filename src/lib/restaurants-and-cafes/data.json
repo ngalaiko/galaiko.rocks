@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 31,
+    "count": 32,
     "currency": "SEK",
-    "amount": 7911,
+    "amount": 8167,
     "location": [
       59.318041,
       18.072196
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Amida",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 2012,
+    "amount": 2147,
     "location": [
       59.314721,
       18.078432
@@ -120,13 +120,13 @@
     ]
   },
   {
-    "payee": "Falafelbaren",
-    "count": 6,
+    "payee": "Kafé Ritorno",
+    "count": 7,
     "currency": "SEK",
-    "amount": 810,
+    "amount": 665,
     "location": [
-      59.31837,
-      18.059678
+      59.336319,
+      18.048464
     ]
   },
   {
@@ -147,6 +147,16 @@
     "location": [
       59.313615,
       18.07998
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1026.5,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
@@ -180,16 +190,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 803,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "Prime Burger",
     "count": 5,
     "currency": "SEK",
@@ -207,6 +207,16 @@
     "location": [
       59.339585,
       18.047905
+    ]
+  },
+  {
+    "payee": "Kajsas Fisk",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 635,
+    "location": [
+      59.334262,
+      18.062618
     ]
   },
   {
@@ -230,6 +240,16 @@
     ]
   },
   {
+    "payee": "Falafelbaren",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 680,
+    "location": [
+      59.31837,
+      18.059678
+    ]
+  },
+  {
     "payee": "Fullmoon Wook",
     "count": 5,
     "currency": "SEK",
@@ -237,16 +257,6 @@
     "location": [
       59.342143,
       18.04923
-    ]
-  },
-  {
-    "payee": "Kafé Ritorno",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 525,
-    "location": [
-      59.336319,
-      18.048464
     ]
   },
   {
@@ -260,6 +270,16 @@
     ]
   },
   {
+    "payee": "Max",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 312,
+    "location": [
+      59.315597,
+      18.073084
+    ]
+  },
+  {
     "payee": "La Neta Bar",
     "count": 5,
     "currency": "SEK",
@@ -267,6 +287,16 @@
     "location": [
       59.333599,
       18.070247
+    ]
+  },
+  {
+    "payee": "Belgobaren",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 745,
+    "location": [
+      59.332907,
+      18.058313
     ]
   },
   {
@@ -297,16 +327,6 @@
     "location": [
       59.3167,
       18.055242
-    ]
-  },
-  {
-    "payee": "Kajsas Fisk",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 500,
-    "location": [
-      59.334262,
-      18.062618
     ]
   },
   {
@@ -360,16 +380,6 @@
     ]
   },
   {
-    "payee": "Max",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 268,
-    "location": [
-      59.315597,
-      18.073084
-    ]
-  },
-  {
     "payee": "Bano City",
     "count": 4,
     "currency": "SEK",
@@ -380,13 +390,23 @@
     ]
   },
   {
-    "payee": "Belgobaren",
+    "payee": "PWC",
     "count": 4,
     "currency": "SEK",
-    "amount": 596,
+    "amount": 570,
     "location": [
-      59.332907,
-      18.058313
+      59.337622,
+      18.04086
+    ]
+  },
+  {
+    "payee": "Djingis Khan",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 580,
+    "location": [
+      59.336377,
+      18.063073
     ]
   },
   {
@@ -500,16 +520,6 @@
     ]
   },
   {
-    "payee": "PWC",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 430,
-    "location": [
-      59.337622,
-      18.04086
-    ]
-  },
-  {
     "payee": "Ta'ameya",
     "count": 3,
     "currency": "SEK",
@@ -517,16 +527,6 @@
     "location": [
       59.339728,
       18.060213
-    ]
-  },
-  {
-    "payee": "Djingis Khan",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 435,
-    "location": [
-      59.336377,
-      18.063073
     ]
   },
   {
@@ -557,16 +557,6 @@
     "location": [
       59.334247,
       18.062669
-    ]
-  },
-  {
-    "payee": "StikkiNikki",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 130,
-    "location": [
-      59.31877,
-      18.06354
     ]
   },
   {
@@ -680,6 +670,16 @@
     ]
   },
   {
+    "payee": "Itamae",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 288,
+    "location": [
+      59.33308,
+      18.044915
+    ]
+  },
+  {
     "payee": "Ki mama",
     "count": 2,
     "currency": "SEK",
@@ -740,6 +740,16 @@
     ]
   },
   {
+    "payee": "The Market",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 360,
+    "location": [
+      59.331216,
+      18.059258
+    ]
+  },
+  {
     "payee": "Haikyuu Sushi & Poke ",
     "count": 2,
     "currency": "SEK",
@@ -747,6 +757,16 @@
     "location": [
       59.329799,
       18.04503
+    ]
+  },
+  {
+    "payee": "Xulo",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 285,
+    "location": [
+      59.331216,
+      18.059258
     ]
   }
 ]
