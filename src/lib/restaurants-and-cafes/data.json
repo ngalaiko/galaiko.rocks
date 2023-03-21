@@ -560,16 +560,6 @@
     ]
   },
   {
-    "payee": "Petite France",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 443,
-    "location": [
-      59.32802,
-      18.037138
-    ]
-  },
-  {
     "payee": "Spisa hos Helena",
     "count": 2,
     "currency": "SEK",
