@@ -40,16 +40,6 @@
     ]
   },
   {
-    "payee": "Levinskys",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 963,
-    "location": [
-      59.33983,
-      18.033982
-    ]
-  },
-  {
     "payee": "AI Ramen",
     "count": 7,
     "currency": "SEK",
@@ -167,6 +157,16 @@
     "location": [
       59.337053,
       18.052454
+    ]
+  },
+  {
+    "payee": "Levinskys",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 833,
+    "location": [
+      59.33983,
+      18.033982
     ]
   },
   {
