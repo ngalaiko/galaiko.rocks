@@ -180,16 +180,6 @@
     ]
   },
   {
-    "payee": "Weidao",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 750,
-    "location": [
-      59.331949,
-      18.057649
-    ]
-  },
-  {
     "payee": "Prime Burger",
     "count": 5,
     "currency": "SEK",
@@ -327,6 +317,16 @@
     "location": [
       59.3167,
       18.055242
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 595,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
