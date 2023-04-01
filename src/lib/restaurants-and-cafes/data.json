@@ -110,16 +110,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 1026.5,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "Tokyo Diner",
     "count": 6,
     "currency": "SEK",
@@ -237,6 +227,16 @@
     "location": [
       59.31837,
       18.059678
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 861.5,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
