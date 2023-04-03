@@ -35,7 +35,7 @@ specifiers:
   vite: ^3.2.5
   vite-plugin-glob: ^0.3.2
   vite-plugin-image-presets: ^0.3.4
-  vite-plugin-remote-assets: ngalaiko/vite-plugin-remote-assets#next
+  vite-plugin-remote-assets: ^0.3.2
   yargs: ^17.7.1
 
 devDependencies:
@@ -73,7 +73,7 @@ devDependencies:
   vite: 3.2.5_@types+node@18.14.6
   vite-plugin-glob: 0.3.2
   vite-plugin-image-presets: 0.3.4
-  vite-plugin-remote-assets: github.com/ngalaiko/vite-plugin-remote-assets/a707ebe94316f3e8b5e18854401847d7815b1691_vite@3.2.5
+  vite-plugin-remote-assets: 0.3.2_vite@3.2.5
   yargs: 17.7.1
 
 packages:
@@ -1778,8 +1778,8 @@ packages:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
     dev: true
 
-  /fs-extra/11.1.0:
-    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+  /fs-extra/11.1.1:
+    resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
     engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.10
@@ -3169,6 +3169,20 @@ packages:
       - supports-color
     dev: true
 
+  /vite-plugin-remote-assets/0.3.2_vite@3.2.5:
+    resolution: {integrity: sha512-E0xS2fHpoJffpsU4W82XDaBRxx2Yh4Zwl4Q668V/HXa/b0nNDaQyo5ff5tS6D4pwGBVuAKlGYyUEE63P/RfiwA==}
+    peerDependencies:
+      vite: ^2.0.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      axios: 1.3.4_debug@4.3.4
+      debug: 4.3.4
+      fs-extra: 11.1.1
+      magic-string: 0.30.0
+      vite: 3.2.5_@types+node@18.14.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /vite/3.2.5_@types+node@18.14.6:
     resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -3299,21 +3313,4 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@types/yoga-layout': 1.9.2
-    dev: true
-
-  github.com/ngalaiko/vite-plugin-remote-assets/a707ebe94316f3e8b5e18854401847d7815b1691_vite@3.2.5:
-    resolution: {tarball: https://codeload.github.com/ngalaiko/vite-plugin-remote-assets/tar.gz/a707ebe94316f3e8b5e18854401847d7815b1691}
-    id: github.com/ngalaiko/vite-plugin-remote-assets/a707ebe94316f3e8b5e18854401847d7815b1691
-    name: vite-plugin-remote-assets
-    version: 0.3.1
-    peerDependencies:
-      vite: ^2.0.0 || ^3.0.0 || ^4.0.0
-    dependencies:
-      axios: 1.3.4_debug@4.3.4
-      debug: 4.3.4
-      fs-extra: 11.1.0
-      magic-string: 0.30.0
-      vite: 3.2.5_@types+node@18.14.6
-    transitivePeerDependencies:
-      - supports-color
     dev: true
