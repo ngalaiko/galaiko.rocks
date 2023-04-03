@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 34,
+    "count": 35,
     "currency": "SEK",
-    "amount": 8787,
+    "amount": 9087,
     "location": [
       59.318041,
       18.072196
@@ -11,9 +11,9 @@
   },
   {
     "payee": "Tony's Pizza and Salad",
-    "count": 14,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1844,
+    "amount": 1724,
     "location": [
       59.319056,
       18.064821
@@ -31,12 +31,22 @@
   },
   {
     "payee": "McDonald's",
-    "count": 8,
+    "count": 9,
     "currency": "SEK",
-    "amount": 844.5,
+    "amount": 874.5,
     "location": [
       59.317889,
       18.05361
+    ]
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 959,
+    "location": [
+      59.332369,
+      18.04524
     ]
   },
   {
@@ -67,16 +77,6 @@
     "location": [
       59.317338,
       18.057767
-    ]
-  },
-  {
-    "payee": "The Good Gringo",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 844,
-    "location": [
-      59.332369,
-      18.04524
     ]
   },
   {
@@ -150,6 +150,16 @@
     ]
   },
   {
+    "payee": "Franky's",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 821,
+    "location": [
+      59.339843,
+      18.060667
+    ]
+  },
+  {
     "payee": "Hemma Vasastan",
     "count": 5,
     "currency": "SEK",
@@ -177,6 +187,16 @@
     "location": [
       59.313615,
       18.07998
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 765,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
@@ -300,16 +320,6 @@
     ]
   },
   {
-    "payee": "Franky's",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 650,
-    "location": [
-      59.339843,
-      18.060667
-    ]
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 4,
     "currency": "SEK",
@@ -317,16 +327,6 @@
     "location": [
       59.3167,
       18.055242
-    ]
-  },
-  {
-    "payee": "Weidao",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 595,
-    "location": [
-      59.331949,
-      18.057649
     ]
   },
   {
@@ -750,6 +750,26 @@
     ]
   },
   {
+    "payee": "Take Ramen",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 315,
+    "location": [
+      59.340591,
+      18.040607
+    ]
+  },
+  {
+    "payee": "An Nam",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 498,
+    "location": [
+      59.339906,
+      18.061644
+    ]
+  },
+  {
     "payee": "Xulo",
     "count": 2,
     "currency": "SEK",
@@ -757,6 +777,16 @@
     "location": [
       59.331216,
       18.059258
+    ]
+  },
+  {
+    "payee": "Günter's korvar",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 170,
+    "location": [
+      59.342537,
+      18.032653
     ]
   }
 ]
