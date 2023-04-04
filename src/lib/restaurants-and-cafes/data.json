@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 35,
+    "count": 34,
     "currency": "SEK",
-    "amount": 9087,
+    "amount": 8831,
     "location": [
       59.318041,
       18.072196
@@ -30,16 +30,6 @@
     ]
   },
   {
-    "payee": "McDonald's",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 874.5,
-    "location": [
-      59.317889,
-      18.05361
-    ]
-  },
-  {
     "payee": "The Good Gringo",
     "count": 8,
     "currency": "SEK",
@@ -50,13 +40,13 @@
     ]
   },
   {
-    "payee": "Aryam",
-    "count": 7,
+    "payee": "McDonald's",
+    "count": 8,
     "currency": "SEK",
-    "amount": 384,
+    "amount": 718.5,
     "location": [
-      59.31845,
-      18.070466
+      59.317889,
+      18.05361
     ]
   },
   {
@@ -137,6 +127,16 @@
     "location": [
       59.340093,
       18.033877
+    ]
+  },
+  {
+    "payee": "Aryam",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 324,
+    "location": [
+      59.31845,
+      18.070466
     ]
   },
   {
