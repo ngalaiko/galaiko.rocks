@@ -1,12 +1,23 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { addYears, formatRelative } from 'date-fns';
-	import type { Map } from 'leaflet';
+	import type { Map, Marker } from 'leaflet';
 
 	export let data: PageData;
 
+	export let markers: Marker[] = [];
+
+	let m: Map;
+	let mapElement: HTMLElement;
+	const select = (payee: string) => {
+		const index = data.places.findIndex((p) => p.payee === payee);
+		if (index === -1) return;
+		mapElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		markers[index].openPopup();
+		m.flyTo(data.places[index].location as [number, number], 16);
+	};
+
 	const map = (map: HTMLElement) => {
-		let m: Map;
 		import('leaflet/dist/leaflet.css').then(async () => {
 			const L = await import('leaflet');
 
@@ -29,11 +40,10 @@
 
 			const max = data.places.map((p) => p.count).sort((a, b) => b - a)[0];
 
-			data.places.forEach((place) => {
-				const div = document.createElement('div');
+			markers = data.places.map((place) =>
 				L.marker(place.location as [number, number], {
 					icon: L.divIcon({
-						html: div,
+						html: document.createElement('div'),
 						className: 'icon'
 					}),
 					title: place.payee,
@@ -48,8 +58,8 @@
 							`spent: ${place.amount} ${place.currency}`
 						].join('<br/>')
 					)
-					.addTo(m);
-			});
+					.addTo(m)
+			);
 		});
 		return { destroy: () => m.remove() };
 	};
@@ -74,7 +84,7 @@
 		)}:
 	</p>
 
-	<div use:map />
+	<div use:map bind:this={mapElement} />
 
 	<table>
 		<thead>
@@ -84,11 +94,13 @@
 				<th scope="col"><h2>Spent</h2></th>
 			</tr>
 			{#each data.places as { payee, count, amount, currency }}
-				<tr>
-					<td>{payee}</td>
-					<td>{count}</td>
-					<td>{amount.toLocaleString()} {currency}</td>
-				</tr>
+				<button on:click={() => select(payee)}>
+					<tr>
+						<td>{payee}</td>
+						<td>{count}</td>
+						<td>{amount.toLocaleString()} {currency}</td>
+					</tr>
+				</button>
 			{/each}
 		</thead>
 	</table>
@@ -106,13 +118,39 @@
 		text-align: left;
 	}
 
-	th,
-	td {
-		padding-left: 0.5em;
-		padding-right: 0.5em;
+	thead {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
 	}
 
-	td {
-		padding-top: 1rem;
+	tr {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		gap: 0.5em;
+	}
+
+	td,
+	th {
+		text-align: right;
+		display: flex;
+		flex: 1 1 0%;
+		width: 100%;
+	}
+
+	button {
+		display: flex;
+		background: none;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		color: inherit;
+		outline: inherit;
+	}
+
+	button:hover {
+		text-decoration: underline;
 	}
 </style>
