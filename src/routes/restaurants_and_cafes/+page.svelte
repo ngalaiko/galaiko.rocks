@@ -89,18 +89,20 @@
 	<table>
 		<thead>
 			<tr>
-				<th scope="col"><h2>Place</h2></th>
-				<th scope="col"><h2>Times</h2></th>
-				<th scope="col"><h2>Spent</h2></th>
+				<th style:text-align="left" scope="col"><h2>Place</h2></th>
+				<th style:text-align="center" scope="col"><h2>Times</h2></th>
+				<th style:text-align="right" scope="col"><h2>Spent</h2></th>
 			</tr>
 			{#each data.places as { payee, count, amount, currency }}
-				<button on:click={() => select(payee)}>
-					<tr>
-						<td>{payee}</td>
-						<td>{count}</td>
-						<td>{amount.toLocaleString()} {currency}</td>
-					</tr>
-				</button>
+				<tr>
+					<td style:text-align="left">
+						<button on:click={() => select(payee)}>
+							{payee}
+						</button>
+					</td>
+					<td style:text-align="center">{count}</td>
+					<td style:text-align="right">{amount.toLocaleString()} {currency}</td>
+				</tr>
 			{/each}
 		</thead>
 	</table>
@@ -113,34 +115,20 @@
 	}
 
 	table {
-		table-layout: auto;
+		table-layout: fixed;
+		white-space: nowrap;
 		width: 100%;
 		text-align: left;
 	}
 
-	thead {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5em;
-	}
-
-	tr {
-		display: flex;
-		width: 100%;
-		justify-content: space-between;
-		gap: 0.5em;
-	}
-
-	td,
-	th {
-		text-align: right;
-		display: flex;
-		flex: 1 1 0%;
-		width: 100%;
+	th,
+	td {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding: 0 0.5rem;
 	}
 
 	button {
-		display: flex;
 		background: none;
 		border: none;
 		padding: 0;
