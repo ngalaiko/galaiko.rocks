@@ -130,16 +130,6 @@
     ]
   },
   {
-    "payee": "Prime Burger",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 740,
-    "location": [
-      59.336478,
-      18.061049
-    ]
-  },
-  {
     "payee": "Franky's",
     "count": 5,
     "currency": "SEK",
@@ -317,6 +307,16 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "Prime Burger",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 585,
+    "location": [
+      59.336478,
+      18.061049
     ]
   },
   {
