@@ -110,8 +110,36 @@
 		<li>playstation 5</li>
 
 		<li>
-			<a href="https://www.audio-technica.com/en-us/at-lp120xusb">audio technica lp120xUSB</a>
+			vinyl setup
+			<ul>
+				<li>
+					<a href="https://www.audio-technica.com/en-us/at-lp120xusb">audio technica lp120xUSB</a>
+					turntable
+				</li>
+
+				<li>
+					<a href="https://www.hifiengine.com/manual_library/sansui/1000x.shtml">sansui 1000x</a>
+					receiver
+				</li>
+			</ul>
 		</li>
+
+		<li>
+			espresso setup
+			<ul>
+				<li>
+					<a href="https://www.lapavoni.com/en/product/europiccola-black-base/"
+						>lapavoni europiccola</a
+					>
+					(pre-millenium edition)
+				</li>
+				<li>
+					<a href="https://www.eureka.co.it/en/eureka_oro.aspx"> eureka oro mignon single dose </a>
+					grider
+				</li>
+			</ul>
+		</li>
+
 		<li>
 			<a href="https://us.kobobooks.com/products/kobo-libra-h2o">kobo libra h2o</a>
 		</li>
