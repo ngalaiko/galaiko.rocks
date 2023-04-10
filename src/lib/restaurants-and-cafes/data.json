@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 34,
+    "count": 36,
     "currency": "SEK",
-    "amount": 8831,
+    "amount": 9141,
     "location": [
       59.318041,
       18.072196
@@ -11,9 +11,9 @@
   },
   {
     "payee": "Tony's Pizza and Salad",
-    "count": 13,
+    "count": 14,
     "currency": "SEK",
-    "amount": 1724,
+    "amount": 1854,
     "location": [
       59.319056,
       18.064821
@@ -21,12 +21,22 @@
   },
   {
     "payee": "Amida",
-    "count": 13,
+    "count": 14,
     "currency": "SEK",
-    "amount": 2147,
+    "amount": 2311,
     "location": [
       59.314721,
       18.078432
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 950,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
@@ -50,16 +60,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 820,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 7,
     "currency": "SEK",
@@ -80,6 +80,16 @@
     ]
   },
   {
+    "payee": "Kajsas Fisk",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 900,
+    "location": [
+      59.334262,
+      18.062618
+    ]
+  },
+  {
     "payee": "AI Ramen",
     "count": 7,
     "currency": "SEK",
@@ -87,6 +97,16 @@
     "location": [
       59.333392,
       18.057954
+    ]
+  },
+  {
+    "payee": "Aryam",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 389,
+    "location": [
+      59.31845,
+      18.070466
     ]
   },
   {
@@ -120,16 +140,6 @@
     ]
   },
   {
-    "payee": "Aryam",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 324,
-    "location": [
-      59.31845,
-      18.070466
-    ]
-  },
-  {
     "payee": "Franky's",
     "count": 5,
     "currency": "SEK",
@@ -160,6 +170,16 @@
     ]
   },
   {
+    "payee": "Brunos Korvbar",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 375,
+    "location": [
+      59.3167,
+      18.055242
+    ]
+  },
+  {
     "payee": "Marley Café",
     "count": 5,
     "currency": "SEK",
@@ -177,16 +197,6 @@
     "location": [
       59.331949,
       18.057649
-    ]
-  },
-  {
-    "payee": "Kajsas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 635,
-    "location": [
-      59.334262,
-      18.062618
     ]
   },
   {
@@ -317,16 +327,6 @@
     "location": [
       59.336478,
       18.061049
-    ]
-  },
-  {
-    "payee": "Brunos Korvbar",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 270,
-    "location": [
-      59.3167,
-      18.055242
     ]
   },
   {
@@ -767,6 +767,16 @@
     "location": [
       59.339906,
       18.061644
+    ]
+  },
+  {
+    "payee": "Mikkeller",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 270.25,
+    "location": [
+      59.314857,
+      18.076491
     ]
   },
   {
