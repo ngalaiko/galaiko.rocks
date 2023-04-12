@@ -550,16 +550,6 @@
     ]
   },
   {
-    "payee": "Esperanza",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 277,
-    "location": [
-      59.337541,
-      18.057392
-    ]
-  },
-  {
     "payee": "K4 Pampas",
     "count": 2,
     "currency": "SEK",
