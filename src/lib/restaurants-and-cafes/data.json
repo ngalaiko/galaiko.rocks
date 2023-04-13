@@ -30,16 +30,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 950,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "The Good Gringo",
     "count": 8,
     "currency": "SEK",
@@ -107,6 +97,16 @@
     "location": [
       59.31845,
       18.070466
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 835,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
