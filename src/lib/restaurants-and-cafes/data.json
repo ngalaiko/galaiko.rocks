@@ -140,16 +140,6 @@
     ]
   },
   {
-    "payee": "Franky's",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 821,
-    "location": [
-      59.339843,
-      18.060667
-    ]
-  },
-  {
     "payee": "Hemma Vasastan",
     "count": 5,
     "currency": "SEK",
@@ -347,6 +337,16 @@
     "location": [
       59.338245,
       18.038156
+    ]
+  },
+  {
+    "payee": "Franky's",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 653,
+    "location": [
+      59.339843,
+      18.060667
     ]
   },
   {
