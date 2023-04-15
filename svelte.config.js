@@ -25,13 +25,16 @@ const config = {
     kit: {
         adapter: adapter(),
         prerender: {
-            enabled: true,
             crawl: true,
             entries: [
                 '/posts/' //  it's not linked from anywhere
-            ]
-        },
-        trailingSlash: 'always'
+            ],
+            handleMissingId: ({ path, message }) => {
+                if (!path.startsWith('/cocktails')) {
+                    throw new Error(message);
+                }
+            }
+        }
     }
 };
 
