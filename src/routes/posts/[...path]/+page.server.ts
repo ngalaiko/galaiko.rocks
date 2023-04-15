@@ -1,5 +1,5 @@
 import { solve } from '$lib/challange';
-import { invalid } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
 import { env } from '$env/dynamic/private';
 
@@ -33,21 +33,21 @@ export const actions: Actions = {
         const challange = data.get('challange');
 
         if (body === '') {
-            return invalid(400, { message: 'Message can not be empty' });
+            return fail(400, { message: 'Message can not be empty' });
         }
 
         if (author_name === '') {
-            return invalid(400, { message: 'Please, fill in name' });
+            return fail(400, { message: 'Please, fill in name' });
         }
 
         if (solution === '') {
-            return invalid(400, { message: 'Challange solution is empty' });
+            return fail(400, { message: 'Challange solution is empty' });
         } else if (solution !== solve(challange as string)) {
-            return invalid(400, { message: 'Wrong solution' });
+            return fail(400, { message: 'Wrong solution' });
         } else {
             const res = await trigger({ body, author_name, pathname });
             if (res.status !== 204) {
-                return invalid(500, { message: await res.text() });
+                return fail(500, { message: await res.text() });
             } else {
                 return {
                     success: true,
