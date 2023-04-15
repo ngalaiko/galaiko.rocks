@@ -140,16 +140,6 @@
     ]
   },
   {
-    "payee": "Hemma Vasastan",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 670,
-    "location": [
-      59.339585,
-      18.047905
-    ]
-  },
-  {
     "payee": "Chic Konditori",
     "count": 5,
     "currency": "SEK",
@@ -317,6 +307,16 @@
     "location": [
       59.336478,
       18.061049
+    ]
+  },
+  {
+    "payee": "Hemma Vasastan",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 540,
+    "location": [
+      59.339585,
+      18.047905
     ]
   },
   {
