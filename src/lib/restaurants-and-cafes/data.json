@@ -10,16 +10,6 @@
     ]
   },
   {
-    "payee": "Tony's Pizza and Salad",
-    "count": 14,
-    "currency": "SEK",
-    "amount": 1854,
-    "location": [
-      59.319056,
-      18.064821
-    ]
-  },
-  {
     "payee": "Amida",
     "count": 14,
     "currency": "SEK",
@@ -27,6 +17,16 @@
     "location": [
       59.314721,
       18.078432
+    ]
+  },
+  {
+    "payee": "Tony's Pizza and Salad",
+    "count": 13,
+    "currency": "SEK",
+    "amount": 1729,
+    "location": [
+      59.319056,
+      18.064821
     ]
   },
   {
