@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Prime Burger",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 585,
-    "location": [
-      59.336478,
-      18.061049
-    ]
-  },
-  {
     "payee": "Hemma Vasastan",
     "count": 4,
     "currency": "SEK",
@@ -457,6 +447,16 @@
     "location": [
       59.337722,
       18.057471
+    ]
+  },
+  {
+    "payee": "Prime Burger",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 450,
+    "location": [
+      59.336478,
+      18.061049
     ]
   },
   {
