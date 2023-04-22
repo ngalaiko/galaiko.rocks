@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Hemma Vasastan",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 540,
-    "location": [
-      59.339585,
-      18.047905
-    ]
-  },
-  {
     "payee": "Tbilisi’s Hörna",
     "count": 4,
     "currency": "SEK",
@@ -467,6 +457,16 @@
     "location": [
       59.338836,
       18.055326
+    ]
+  },
+  {
+    "payee": "Hemma Vasastan",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 410,
+    "location": [
+      59.339585,
+      18.047905
     ]
   },
   {
