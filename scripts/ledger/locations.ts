@@ -96,5 +96,6 @@ export default {
     'Take Ramen': [59.340591, 18.040607],
     'An Nam': [59.339906, 18.061644],
     "Günter's korvar": [59.342537, 18.032653],
-    'M.O.A.S Rörstrandsgatan': [59.339997, 18.033302]
+    'M.O.A.S Rörstrandsgatan': [59.339997, 18.033302],
+    'Kimchistan': [59.333083, 18.064476],
 };
