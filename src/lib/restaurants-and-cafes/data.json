@@ -3,7 +3,7 @@
     "payee": "Omnipollos Hatt",
     "count": 37,
     "currency": "SEK",
-    "amount": 9441,
+    "amount": 9451,
     "location": [
       59.318041,
       18.072196
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Aryam",
-    "count": 8,
+    "count": 9,
     "currency": "SEK",
-    "amount": 438,
+    "amount": 487,
     "location": [
       59.31845,
       18.070466
@@ -100,6 +100,16 @@
     ]
   },
   {
+    "payee": "Levinskys",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 982,
+    "location": [
+      59.33983,
+      18.033982
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 7,
     "currency": "SEK",
@@ -120,16 +130,6 @@
     ]
   },
   {
-    "payee": "Levinskys",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 833,
-    "location": [
-      59.33983,
-      18.033982
-    ]
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 6,
     "currency": "SEK",
@@ -137,26 +137,6 @@
     "location": [
       59.340093,
       18.033877
-    ]
-  },
-  {
-    "payee": "Brunos Korvbar",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 375,
-    "location": [
-      59.3167,
-      18.055242
-    ]
-  },
-  {
-    "payee": "Marley Café",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 345,
-    "location": [
-      59.313615,
-      18.07998
     ]
   },
   {
@@ -310,6 +290,16 @@
     ]
   },
   {
+    "payee": "Marley Café",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 296,
+    "location": [
+      59.313615,
+      18.07998
+    ]
+  },
+  {
     "payee": "Il Forno",
     "count": 4,
     "currency": "SEK",
@@ -317,6 +307,16 @@
     "location": [
       59.338245,
       18.038156
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 275,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
@@ -400,6 +400,16 @@
     ]
   },
   {
+    "payee": "D'abramo",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 204,
+    "location": [
+      59.334457,
+      18.056224
+    ]
+  },
+  {
     "payee": "Meno Male",
     "count": 3,
     "currency": "SEK",
@@ -480,6 +490,16 @@
     ]
   },
   {
+    "payee": "Snø",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 160,
+    "location": [
+      59.340793,
+      18.04166
+    ]
+  },
+  {
     "payee": "Kolgrill Sam",
     "count": 3,
     "currency": "SEK",
@@ -500,6 +520,16 @@
     ]
   },
   {
+    "payee": "Birkastans Pizzeria",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 425,
+    "location": [
+      59.340846,
+      18.032985
+    ]
+  },
+  {
     "payee": "Ta'ameya",
     "count": 3,
     "currency": "SEK",
@@ -517,16 +547,6 @@
     "location": [
       59.334257,
       18.063021
-    ]
-  },
-  {
-    "payee": "D'abramo",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 139,
-    "location": [
-      59.334457,
-      18.056224
     ]
   },
   {
@@ -640,16 +660,6 @@
     ]
   },
   {
-    "payee": "Snø",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 115,
-    "location": [
-      59.340793,
-      18.04166
-    ]
-  },
-  {
     "payee": "Hanoi Corner",
     "count": 2,
     "currency": "SEK",
@@ -667,16 +677,6 @@
     "location": [
       59.318771,
       18.059878
-    ]
-  },
-  {
-    "payee": "Birkastans Pizzeria",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 306,
-    "location": [
-      59.340846,
-      18.032985
     ]
   },
   {
@@ -727,6 +727,16 @@
     "location": [
       59.339997,
       18.033302
+    ]
+  },
+  {
+    "payee": "Kimchistan",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 324,
+    "location": [
+      59.333083,
+      18.064476
     ]
   },
   {
