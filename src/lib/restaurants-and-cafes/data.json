@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "Indian Curry House",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 890,
-    "location": [
-      59.329504,
-      18.043632
-    ]
-  },
-  {
     "payee": "Kajsas Fisk",
     "count": 7,
     "currency": "SEK",
@@ -137,6 +127,16 @@
     "location": [
       59.340093,
       18.033877
+    ]
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 770,
+    "location": [
+      59.329504,
+      18.043632
     ]
   },
   {
