@@ -410,16 +410,6 @@
     ]
   },
   {
-    "payee": "Meno Male",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 379,
-    "location": [
-      59.32881,
-      18.045246
-    ]
-  },
-  {
     "payee": "Le Kebab",
     "count": 3,
     "currency": "SEK",
@@ -677,6 +667,16 @@
     "location": [
       59.318771,
       18.059878
+    ]
+  },
+  {
+    "payee": "Meno Male",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 254,
+    "location": [
+      59.32881,
+      18.045246
     ]
   },
   {
