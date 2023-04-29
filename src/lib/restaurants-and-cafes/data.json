@@ -140,16 +140,6 @@
     ]
   },
   {
-    "payee": "Weidao",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 765,
-    "location": [
-      59.331949,
-      18.057649
-    ]
-  },
-  {
     "payee": "Indian King",
     "count": 5,
     "currency": "SEK",
@@ -367,6 +357,16 @@
     "location": [
       59.341723,
       18.038336
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 635,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
