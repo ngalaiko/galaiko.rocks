@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "Kajsas Fisk",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 900,
-    "location": [
-      59.334262,
-      18.062618
-    ]
-  },
-  {
     "payee": "AI Ramen",
     "count": 7,
     "currency": "SEK",
@@ -137,6 +127,16 @@
     "location": [
       59.329504,
       18.043632
+    ]
+  },
+  {
+    "payee": "Kajsas Fisk",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 790,
+    "location": [
+      59.334262,
+      18.062618
     ]
   },
   {
