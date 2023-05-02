@@ -98,4 +98,6 @@ export default {
     "Günter's korvar": [59.342537, 18.032653],
     'M.O.A.S Rörstrandsgatan': [59.339997, 18.033302],
     'Kimchistan': [59.333083, 18.064476],
+    'The Italian Cousins - Odengatan': [59.341505, 18.044753],
+    'The Italian Cousins - Hornsgatan': [59.318534, 18.058827],
 };
