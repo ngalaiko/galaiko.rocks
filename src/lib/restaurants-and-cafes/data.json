@@ -160,16 +160,6 @@
     ]
   },
   {
-    "payee": "Indian King",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 660,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 5,
     "currency": "SEK",
@@ -387,6 +377,16 @@
     "location": [
       59.337541,
       18.057392
+    ]
+  },
+  {
+    "payee": "Indian King",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 525,
+    "location": [
+      59.337053,
+      18.052454
     ]
   },
   {
