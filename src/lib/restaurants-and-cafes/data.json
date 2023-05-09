@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 39,
+    "count": 40,
     "currency": "SEK",
-    "amount": 10051,
+    "amount": 10309.5,
     "location": [
       59.318041,
       18.072196
@@ -87,16 +87,6 @@
     "location": [
       59.336319,
       18.048464
-    ]
-  },
-  {
-    "payee": "Yume Sushi",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 880,
-    "location": [
-      59.317338,
-      18.057767
     ]
   },
   {
@@ -200,6 +190,16 @@
     ]
   },
   {
+    "payee": "Yume Sushi",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 735,
+    "location": [
+      59.317338,
+      18.057767
+    ]
+  },
+  {
     "payee": "Max",
     "count": 5,
     "currency": "SEK",
@@ -250,26 +250,6 @@
     ]
   },
   {
-    "payee": "Tbilisi’s Hörna",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 1163,
-    "location": [
-      59.298094,
-      18.088214
-    ]
-  },
-  {
-    "payee": "Marley Café",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 296,
-    "location": [
-      59.313615,
-      18.07998
-    ]
-  },
-  {
     "payee": "Il Forno",
     "count": 4,
     "currency": "SEK",
@@ -287,6 +267,16 @@
     "location": [
       59.336478,
       18.061049
+    ]
+  },
+  {
+    "payee": "Falloumi",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 544.5,
+    "location": [
+      59.308163,
+      18.077789
     ]
   },
   {
@@ -460,6 +450,16 @@
     ]
   },
   {
+    "payee": "Marley Café",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 247,
+    "location": [
+      59.313615,
+      18.07998
+    ]
+  },
+  {
     "payee": "Magnolia",
     "count": 3,
     "currency": "SEK",
@@ -477,6 +477,16 @@
     "location": [
       59.340793,
       18.04166
+    ]
+  },
+  {
+    "payee": "Tbilisi’s Hörna",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 964,
+    "location": [
+      59.298094,
+      18.088214
     ]
   },
   {
@@ -587,16 +597,6 @@
     "location": [
       59.331213,
       18.044646
-    ]
-  },
-  {
-    "payee": "Falloumi",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 279.5,
-    "location": [
-      59.308163,
-      18.077789
     ]
   },
   {
@@ -760,6 +760,16 @@
     ]
   },
   {
+    "payee": "Lao Lao",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 248,
+    "location": [
+      59.317697,
+      18.054071
+    ]
+  },
+  {
     "payee": "The Italian Cousins - Odengatan",
     "count": 2,
     "currency": "SEK",
@@ -797,6 +807,16 @@
     "location": [
       59.342537,
       18.032653
+    ]
+  },
+  {
+    "payee": "Fang Yuan Shi Wu",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 280,
+    "location": [
+      59.310311,
+      18.082277
     ]
   }
 ]
