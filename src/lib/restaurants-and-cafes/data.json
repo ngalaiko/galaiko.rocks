@@ -560,16 +560,6 @@
     ]
   },
   {
-    "payee": "Villa Romana",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 255,
-    "location": [
-      59.33173,
-      18.04942
-    ]
-  },
-  {
     "payee": "Le Kebab",
     "count": 2,
     "currency": "SEK",
