@@ -36,7 +36,7 @@ specifiers:
   vite-plugin-glob: ^0.3.2
   vite-plugin-image-presets: ^0.3.4
   vite-plugin-remote-assets: ^0.3.2
-  yargs: ^17.7.1
+  yargs: ^17.7.2
 
 devDependencies:
   '@cooklang/cooklang-ts': 1.2.3
@@ -74,7 +74,7 @@ devDependencies:
   vite-plugin-glob: 0.3.2
   vite-plugin-image-presets: 0.3.4
   vite-plugin-remote-assets: 0.3.2_vite@4.2.1
-  yargs: 17.7.1
+  yargs: 17.7.2
 
 packages:
 
@@ -3238,8 +3238,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /yargs/17.7.1:
-    resolution: {integrity: sha512-cwiTb08Xuv5fqF4AovYacTFNxk62th7LKJ6BL9IGUpTJrWoU7/7WdQGTP2SjKf1dUNBGzDd28p/Yfs/GI6JrLw==}
+  /yargs/17.7.2:
+    resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
     dependencies:
       cliui: 8.0.1
