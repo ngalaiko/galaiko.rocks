@@ -10,7 +10,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@cooklang/cooklang-ts": "^1.2.3",
+		"@cooklang/cooklang-ts": "^1.2.4",
 		"@fast-csv/parse": "^4.3.6",
 		"@resvg/resvg-js": "^2.4.1",
 		"@sveltejs/adapter-vercel": "^2.4.3",
