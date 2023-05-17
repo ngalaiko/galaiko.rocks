@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Il Forno",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 505,
-    "location": [
-      59.338245,
-      18.038156
-    ]
-  },
-  {
     "payee": "Prime Burger",
     "count": 4,
     "currency": "SEK",
@@ -467,6 +457,16 @@
     "location": [
       59.313615,
       18.07998
+    ]
+  },
+  {
+    "payee": "Il Forno",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 370,
+    "location": [
+      59.338245,
+      18.038156
     ]
   },
   {
