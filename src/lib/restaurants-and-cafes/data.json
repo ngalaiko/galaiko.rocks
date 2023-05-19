@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "Levinskys",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 982,
-    "location": [
-      59.33983,
-      18.033982
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 7,
     "currency": "SEK",
@@ -77,16 +67,6 @@
     "location": [
       59.336319,
       18.048464
-    ]
-  },
-  {
-    "payee": "Lillebrors Bageri",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 363,
-    "location": [
-      59.340093,
-      18.033877
     ]
   },
   {
@@ -117,6 +97,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "Levinskys",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 847,
+    "location": [
+      59.33983,
+      18.033982
     ]
   },
   {
@@ -187,6 +177,16 @@
     "location": [
       59.342143,
       18.04923
+    ]
+  },
+  {
+    "payee": "Lillebrors Bageri",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 310,
+    "location": [
+      59.340093,
+      18.033877
     ]
   },
   {
