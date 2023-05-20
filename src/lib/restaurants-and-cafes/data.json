@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Prime Burger",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 600,
-    "location": [
-      59.336478,
-      18.061049
-    ]
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 4,
     "currency": "SEK",
@@ -547,6 +537,16 @@
     "location": [
       59.341795,
       18.047249
+    ]
+  },
+  {
+    "payee": "Prime Burger",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 455,
+    "location": [
+      59.336478,
+      18.061049
     ]
   },
   {
