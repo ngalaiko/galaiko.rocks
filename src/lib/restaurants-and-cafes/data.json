@@ -580,16 +580,6 @@
     ]
   },
   {
-    "payee": "Delibriket",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 278,
-    "location": [
-      59.365031,
-      17.968327
-    ]
-  },
-  {
     "payee": "Brödernas",
     "count": 2,
     "currency": "SEK",
