@@ -101,5 +101,9 @@ export default {
 	'The Italian Cousins - Odengatan': [59.341505, 18.044753],
 	'The Italian Cousins - Hornsgatan': [59.318534, 18.058827],
 	'Lao Lao': [59.317697, 18.054071],
-	'Fang Yuan Shi Wu': [59.310311, 18.082277]
+	'Fang Yuan Shi Wu': [59.310311, 18.082277],
+	'Ja Thai': [59.319702, 18.068247],
+	'Falafelbaren - Götgatan': [59.309401, 18.075404],
+	Susherian: [59.308812, 18.077144],
+	'Indiska Källaren': [59.308648, 18.077166]
 };
