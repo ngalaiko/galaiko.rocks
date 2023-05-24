@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 40,
+    "count": 41,
     "currency": "SEK",
-    "amount": 10324.5,
+    "amount": 10624.5,
     "location": [
       59.318041,
       18.072196
@@ -31,22 +31,12 @@
   },
   {
     "payee": "Aryam",
-    "count": 10,
+    "count": 9,
     "currency": "SEK",
-    "amount": 552,
+    "amount": 492,
     "location": [
       59.31845,
       18.070466
-    ]
-  },
-  {
-    "payee": "McDonald's",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 803.5,
-    "location": [
-      59.317889,
-      18.05361
     ]
   },
   {
@@ -60,6 +50,16 @@
     ]
   },
   {
+    "payee": "McDonald's",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 715.5,
+    "location": [
+      59.317889,
+      18.05361
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 7,
     "currency": "SEK",
@@ -67,16 +67,6 @@
     "location": [
       59.336319,
       18.048464
-    ]
-  },
-  {
-    "payee": "Falafelbaren",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 805,
-    "location": [
-      59.31837,
-      18.059678
     ]
   },
   {
@@ -140,16 +130,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 861.5,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "Falloumi",
     "count": 5,
     "currency": "SEK",
@@ -197,6 +177,16 @@
     "location": [
       59.317338,
       18.057767
+    ]
+  },
+  {
+    "payee": "Falafelbaren",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 595,
+    "location": [
+      59.31837,
+      18.059678
     ]
   },
   {
@@ -327,6 +317,16 @@
     "location": [
       59.341723,
       18.038336
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 715.5,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
@@ -620,6 +620,16 @@
     ]
   },
   {
+    "payee": "Ja Thai",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 345,
+    "location": [
+      59.319702,
+      18.068247
+    ]
+  },
+  {
     "payee": "Hanoi Corner",
     "count": 2,
     "currency": "SEK",
@@ -787,6 +797,36 @@
     "location": [
       59.342537,
       18.032653
+    ]
+  },
+  {
+    "payee": "Falafelbaren - Götgatan",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 235,
+    "location": [
+      59.309401,
+      18.075404
+    ]
+  },
+  {
+    "payee": "Susherian",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 350,
+    "location": [
+      59.308812,
+      18.077144
+    ]
+  },
+  {
+    "payee": "Indiska Källaren",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 258,
+    "location": [
+      59.308648,
+      18.077166
     ]
   }
 ]
