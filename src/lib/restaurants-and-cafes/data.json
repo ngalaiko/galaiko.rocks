@@ -130,16 +130,6 @@
     ]
   },
   {
-    "payee": "Falloumi",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 684.5,
-    "location": [
-      59.308163,
-      18.077789
-    ]
-  },
-  {
     "payee": "Tokyo Diner",
     "count": 5,
     "currency": "SEK",
@@ -337,6 +327,16 @@
     "location": [
       59.331949,
       18.057649
+    ]
+  },
+  {
+    "payee": "Falloumi",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 520,
+    "location": [
+      59.308163,
+      18.077789
     ]
   },
   {
