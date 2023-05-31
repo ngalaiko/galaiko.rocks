@@ -105,5 +105,6 @@ export default {
 	'Ja Thai': [59.319702, 18.068247],
 	'Falafelbaren - Götgatan': [59.309401, 18.075404],
 	Susherian: [59.308812, 18.077144],
-	'Indiska Källaren': [59.308648, 18.077166]
+	'Indiska Källaren': [59.308648, 18.077166],
+    'Caput Mundi - Hornsgatan': [59.315738, 18.036400]
 };
