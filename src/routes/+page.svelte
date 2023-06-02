@@ -75,8 +75,7 @@
 			living in <span class="p-locality">Stockholm</span>,
 			<span class="p-country-name">Sweden</span>
 		</li>
-		<li>working on <A href="https://getsturdy.com">code collaboration</A></li>
-		<li><A href="https://codeball.ai">fighting code review</A></li>
+		<li>working on the <A href="https://gitbutler.com">future of source code managemen</A></li>
 	</ul>
 </article>
 
