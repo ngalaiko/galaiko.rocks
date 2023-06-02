@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 41,
+    "count": 40,
     "currency": "SEK",
-    "amount": 10624.5,
+    "amount": 10484.5,
     "location": [
       59.318041,
       18.072196
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Aryam",
-    "count": 9,
+    "count": 8,
     "currency": "SEK",
-    "amount": 492,
+    "amount": 432,
     "location": [
       59.31845,
       18.070466
