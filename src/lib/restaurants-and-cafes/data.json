@@ -410,16 +410,6 @@
     ]
   },
   {
-    "payee": "Hemma Vasastan",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 410,
-    "location": [
-      59.339585,
-      18.047905
-    ]
-  },
-  {
     "payee": "Gute Grill Bar",
     "count": 3,
     "currency": "SEK",
@@ -707,6 +697,16 @@
     "location": [
       59.33687,
       18.054108
+    ]
+  },
+  {
+    "payee": "Hemma Vasastan",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 280,
+    "location": [
+      59.339585,
+      18.047905
     ]
   },
   {
