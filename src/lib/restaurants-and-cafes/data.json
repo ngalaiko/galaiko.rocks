@@ -3,7 +3,7 @@
     "payee": "Omnipollos Hatt",
     "count": 40,
     "currency": "SEK",
-    "amount": 10484.5,
+    "amount": 10487.5,
     "location": [
       59.318041,
       18.072196
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Tony's Pizza and Salad",
-    "count": 11,
+    "count": 12,
     "currency": "SEK",
-    "amount": 1459,
+    "amount": 1594,
     "location": [
       59.319056,
       18.064821
@@ -120,6 +120,16 @@
     ]
   },
   {
+    "payee": "Max",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 374,
+    "location": [
+      59.315597,
+      18.073084
+    ]
+  },
+  {
     "payee": "AI Ramen",
     "count": 6,
     "currency": "SEK",
@@ -170,16 +180,6 @@
     ]
   },
   {
-    "payee": "Max",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 312,
-    "location": [
-      59.315597,
-      18.073084
-    ]
-  },
-  {
     "payee": "La Neta Bar",
     "count": 5,
     "currency": "SEK",
@@ -220,6 +220,16 @@
     ]
   },
   {
+    "payee": "D'abramo",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 243,
+    "location": [
+      59.334457,
+      18.056224
+    ]
+  },
+  {
     "payee": "Pizza Hut",
     "count": 4,
     "currency": "SEK",
@@ -227,6 +237,16 @@
     "location": [
       59.33183,
       18.059651
+    ]
+  },
+  {
+    "payee": "Gute Grill Bar",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 620,
+    "location": [
+      59.336739,
+      18.069433
     ]
   },
   {
@@ -370,13 +390,13 @@
     ]
   },
   {
-    "payee": "D'abramo",
+    "payee": "The Market",
     "count": 4,
     "currency": "SEK",
-    "amount": 204,
+    "amount": 730,
     "location": [
-      59.334457,
-      18.056224
+      59.331216,
+      18.059258
     ]
   },
   {
@@ -387,6 +407,16 @@
     "location": [
       59.314857,
       18.076491
+    ]
+  },
+  {
+    "payee": "Fang Yuan Shi Wu",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 538,
+    "location": [
+      59.310311,
+      18.082277
     ]
   },
   {
@@ -407,16 +437,6 @@
     "location": [
       59.308648,
       18.077166
-    ]
-  },
-  {
-    "payee": "Gute Grill Bar",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 465,
-    "location": [
-      59.336739,
-      18.069433
     ]
   },
   {
@@ -550,16 +570,6 @@
     ]
   },
   {
-    "payee": "The Market",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 545,
-    "location": [
-      59.331216,
-      18.059258
-    ]
-  },
-  {
     "payee": "Nem Nem Quan",
     "count": 3,
     "currency": "SEK",
@@ -570,13 +580,13 @@
     ]
   },
   {
-    "payee": "Fang Yuan Shi Wu",
+    "payee": "Günter's korvar",
     "count": 3,
     "currency": "SEK",
-    "amount": 409,
+    "amount": 275,
     "location": [
-      59.310311,
-      18.082277
+      59.342537,
+      18.032653
     ]
   },
   {
@@ -817,16 +827,6 @@
     "location": [
       59.331216,
       18.059258
-    ]
-  },
-  {
-    "payee": "Günter's korvar",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 170,
-    "location": [
-      59.342537,
-      18.032653
     ]
   },
   {
