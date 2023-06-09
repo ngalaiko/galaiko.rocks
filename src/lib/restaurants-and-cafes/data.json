@@ -70,16 +70,6 @@
     ]
   },
   {
-    "payee": "Indian Curry House",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 770,
-    "location": [
-      59.329504,
-      18.043632
-    ]
-  },
-  {
     "payee": "The Good Gringo",
     "count": 6,
     "currency": "SEK",
@@ -187,6 +177,16 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 650,
+    "location": [
+      59.329504,
+      18.043632
     ]
   },
   {
@@ -597,16 +597,6 @@
     "location": [
       59.308812,
       18.077144
-    ]
-  },
-  {
-    "payee": "Kungsholmens Glassfabrik",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 73,
-    "location": [
-      59.330233,
-      18.045708
     ]
   },
   {
