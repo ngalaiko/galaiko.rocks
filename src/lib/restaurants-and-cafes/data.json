@@ -410,16 +410,6 @@
     ]
   },
   {
-    "payee": "Marley Café",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 247,
-    "location": [
-      59.313615,
-      18.07998
-    ]
-  },
-  {
     "payee": "Il Forno",
     "count": 3,
     "currency": "SEK",
@@ -647,6 +637,16 @@
     "location": [
       59.335554,
       18.053908
+    ]
+  },
+  {
+    "payee": "Marley Café",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 146,
+    "location": [
+      59.313615,
+      18.07998
     ]
   },
   {
