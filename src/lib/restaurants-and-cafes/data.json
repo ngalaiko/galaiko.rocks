@@ -11,9 +11,9 @@
   },
   {
     "payee": "Amida",
-    "count": 14,
+    "count": 15,
     "currency": "SEK",
-    "amount": 2311,
+    "amount": 2476,
     "location": [
       59.314721,
       18.078432
@@ -31,22 +31,12 @@
   },
   {
     "payee": "Aryam",
-    "count": 8,
+    "count": 9,
     "currency": "SEK",
-    "amount": 432,
+    "amount": 527,
     "location": [
       59.31845,
       18.070466
-    ]
-  },
-  {
-    "payee": "Kafé Ritorno",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 665,
-    "location": [
-      59.336319,
-      18.048464
     ]
   },
   {
@@ -140,13 +130,23 @@
     ]
   },
   {
-    "payee": "Yume Sushi",
-    "count": 5,
+    "payee": "Kafé Ritorno",
+    "count": 6,
     "currency": "SEK",
-    "amount": 735,
+    "amount": 550,
     "location": [
-      59.317338,
-      18.057767
+      59.336319,
+      18.048464
+    ]
+  },
+  {
+    "payee": "Fang Yuan Shi Wu",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 796,
+    "location": [
+      59.310311,
+      18.082277
     ]
   },
   {
@@ -330,6 +330,16 @@
     ]
   },
   {
+    "payee": "Yume Sushi",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 585,
+    "location": [
+      59.317338,
+      18.057767
+    ]
+  },
+  {
     "payee": "Djingis Khan",
     "count": 4,
     "currency": "SEK",
@@ -380,16 +390,6 @@
     ]
   },
   {
-    "payee": "Fang Yuan Shi Wu",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 538,
-    "location": [
-      59.310311,
-      18.082277
-    ]
-  },
-  {
     "payee": "Falafelbaren - Götgatan",
     "count": 4,
     "currency": "SEK",
@@ -397,6 +397,26 @@
     "location": [
       59.309401,
       18.075404
+    ]
+  },
+  {
+    "payee": "ilcaffè",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 196,
+    "location": [
+      59.312661,
+      18.081021
+    ]
+  },
+  {
+    "payee": "Susherian",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 620,
+    "location": [
+      59.308812,
+      18.077144
     ]
   },
   {
@@ -577,16 +597,6 @@
     "location": [
       59.342537,
       18.032653
-    ]
-  },
-  {
-    "payee": "Susherian",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 485,
-    "location": [
-      59.308812,
-      18.077144
     ]
   },
   {
@@ -827,6 +837,26 @@
     "location": [
       59.315738,
       18.0364
+    ]
+  },
+  {
+    "payee": "StikkiNikki",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 114,
+    "location": [
+      59.31877,
+      18.06354
+    ]
+  },
+  {
+    "payee": "Indio Kitchen",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 374,
+    "location": [
+      59.314665,
+      18.083247
     ]
   }
 ]
