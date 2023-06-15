@@ -106,5 +106,7 @@ export default {
 	'Falafelbaren - Götgatan': [59.309401, 18.075404],
 	Susherian: [59.308812, 18.077144],
 	'Indiska Källaren': [59.308648, 18.077166],
-    'Caput Mundi - Hornsgatan': [59.315738, 18.036400]
+	'Caput Mundi - Hornsgatan': [59.315738, 18.0364],
+	'Indio Kitchen': [59.314665, 18.083247],
+	ilcaffè: [59.312661, 18.081021]
 };
