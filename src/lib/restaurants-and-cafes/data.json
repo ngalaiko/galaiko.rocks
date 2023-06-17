@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "The Good Gringo",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 730,
-    "location": [
-      59.332369,
-      18.04524
-    ]
-  },
-  {
     "payee": "Levinskys",
     "count": 6,
     "currency": "SEK",
@@ -197,6 +187,16 @@
     "location": [
       59.337622,
       18.04086
+    ]
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 595,
+    "location": [
+      59.332369,
+      18.04524
     ]
   },
   {
