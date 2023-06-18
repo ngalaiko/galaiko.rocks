@@ -210,16 +210,6 @@
     ]
   },
   {
-    "payee": "Cafe Ragazzi",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 645,
-    "location": [
-      59.335918,
-      18.059252
-    ]
-  },
-  {
     "payee": "Falafelbaren",
     "count": 4,
     "currency": "SEK",
@@ -487,6 +477,16 @@
     "location": [
       59.313618,
       18.085532
+    ]
+  },
+  {
+    "payee": "Cafe Ragazzi",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 510,
+    "location": [
+      59.335918,
+      18.059252
     ]
   },
   {
