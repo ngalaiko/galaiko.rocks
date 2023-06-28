@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Pong",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 580,
-    "location": [
-      59.336459,
-      18.058798
-    ]
-  },
-  {
     "payee": "Waan Thai",
     "count": 4,
     "currency": "SEK",
@@ -527,6 +517,16 @@
     "location": [
       59.339728,
       18.060213
+    ]
+  },
+  {
+    "payee": "Pong",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 435,
+    "location": [
+      59.336459,
+      18.058798
     ]
   },
   {
