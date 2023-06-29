@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Waan Thai",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 502,
-    "location": [
-      59.341723,
-      18.038336
-    ]
-  },
-  {
     "payee": "Saigon Baguette",
     "count": 4,
     "currency": "SEK",
@@ -427,6 +417,16 @@
     "location": [
       59.340793,
       18.04166
+    ]
+  },
+  {
+    "payee": "Waan Thai",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 383,
+    "location": [
+      59.341723,
+      18.038336
     ]
   },
   {
