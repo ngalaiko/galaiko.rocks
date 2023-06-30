@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 715.5,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "Weidao",
     "count": 4,
     "currency": "SEK",
@@ -517,6 +507,16 @@
     "location": [
       59.339728,
       18.060213
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 551.5,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
