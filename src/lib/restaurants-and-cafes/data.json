@@ -3,7 +3,7 @@
     "payee": "Omnipollos Hatt",
     "count": 40,
     "currency": "SEK",
-    "amount": 10518.5,
+    "amount": 10623.5,
     "location": [
       59.318041,
       18.072196
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Tony's Pizza and Salad",
-    "count": 12,
+    "count": 11,
     "currency": "SEK",
-    "amount": 1594,
+    "amount": 1459,
     "location": [
       59.319056,
       18.064821
@@ -31,19 +31,29 @@
   },
   {
     "payee": "Aryam",
-    "count": 10,
+    "count": 9,
     "currency": "SEK",
-    "amount": 622,
+    "amount": 562,
     "location": [
       59.31845,
       18.070466
     ]
   },
   {
-    "payee": "Falloumi",
-    "count": 7,
+    "payee": "ilcaffè",
+    "count": 9,
     "currency": "SEK",
-    "amount": 942,
+    "amount": 420,
+    "location": [
+      59.312661,
+      18.081021
+    ]
+  },
+  {
+    "payee": "Falloumi",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1112,
     "location": [
       59.308163,
       18.077789
@@ -80,6 +90,16 @@
     ]
   },
   {
+    "payee": "Indiska Källaren",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 790,
+    "location": [
+      59.308648,
+      18.077166
+    ]
+  },
+  {
     "payee": "Oolong Tea House",
     "count": 6,
     "currency": "SEK",
@@ -110,6 +130,16 @@
     ]
   },
   {
+    "payee": "La Neta Bar",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 827,
+    "location": [
+      59.333599,
+      18.070247
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
@@ -117,6 +147,16 @@
     "location": [
       59.336319,
       18.048464
+    ]
+  },
+  {
+    "payee": "D'abramo",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 282,
+    "location": [
+      59.334457,
+      18.056224
     ]
   },
   {
@@ -130,23 +170,13 @@
     ]
   },
   {
-    "payee": "Indiska Källaren",
+    "payee": "Falafelbaren - Götgatan",
     "count": 6,
     "currency": "SEK",
-    "amount": 656,
+    "amount": 725,
     "location": [
-      59.308648,
-      18.077166
-    ]
-  },
-  {
-    "payee": "La Neta Bar",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 697,
-    "location": [
-      59.333599,
-      18.070247
+      59.309401,
+      18.075404
     ]
   },
   {
@@ -210,36 +240,6 @@
     ]
   },
   {
-    "payee": "D'abramo",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 243,
-    "location": [
-      59.334457,
-      18.056224
-    ]
-  },
-  {
-    "payee": "Falafelbaren - Götgatan",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 605,
-    "location": [
-      59.309401,
-      18.075404
-    ]
-  },
-  {
-    "payee": "ilcaffè",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 242,
-    "location": [
-      59.312661,
-      18.081021
-    ]
-  },
-  {
     "payee": "Susherian",
     "count": 5,
     "currency": "SEK",
@@ -267,6 +267,16 @@
     "location": [
       59.342143,
       18.04923
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 650,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
@@ -407,16 +417,6 @@
     "location": [
       59.341723,
       18.038336
-    ]
-  },
-  {
-    "payee": "Weidao",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 480,
-    "location": [
-      59.331949,
-      18.057649
     ]
   },
   {
