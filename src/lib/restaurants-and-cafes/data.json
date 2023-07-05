@@ -100,16 +100,6 @@
     ]
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 498,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
     "payee": "Max",
     "count": 6,
     "currency": "SEK",
@@ -177,6 +167,16 @@
     "location": [
       59.309401,
       18.075404
+    ]
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 434,
+    "location": [
+      59.33199,
+      18.067811
     ]
   },
   {
@@ -367,16 +367,6 @@
     "location": [
       59.314857,
       18.076491
-    ]
-  },
-  {
-    "payee": "Falafelbaren",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 350,
-    "location": [
-      59.31837,
-      18.059678
     ]
   },
   {
@@ -727,6 +717,16 @@
     "location": [
       59.33687,
       18.054108
+    ]
+  },
+  {
+    "payee": "Falafelbaren",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 235,
+    "location": [
+      59.31837,
+      18.059678
     ]
   },
   {
