@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 39,
+    "count": 40,
     "currency": "SEK",
-    "amount": 10362.5,
+    "amount": 10662.5,
     "location": [
       59.318041,
       18.072196
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Tony's Pizza and Salad",
-    "count": 11,
+    "count": 12,
     "currency": "SEK",
-    "amount": 1459,
+    "amount": 1594,
     "location": [
       59.319056,
       18.064821
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Aryam",
-    "count": 9,
+    "count": 10,
     "currency": "SEK",
-    "amount": 562,
+    "amount": 641,
     "location": [
       59.31845,
       18.070466
@@ -57,6 +57,16 @@
     "location": [
       59.308163,
       18.077789
+    ]
+  },
+  {
+    "payee": "Indiska Källaren",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 930,
+    "location": [
+      59.308648,
+      18.077166
     ]
   },
   {
@@ -90,13 +100,23 @@
     ]
   },
   {
-    "payee": "Indiska Källaren",
+    "payee": "Fang Yuan Shi Wu",
     "count": 7,
     "currency": "SEK",
-    "amount": 790,
+    "amount": 925,
     "location": [
-      59.308648,
-      18.077166
+      59.310311,
+      18.082277
+    ]
+  },
+  {
+    "payee": "Falafelbaren - Götgatan",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 860,
+    "location": [
+      59.309401,
+      18.075404
     ]
   },
   {
@@ -150,23 +170,13 @@
     ]
   },
   {
-    "payee": "Fang Yuan Shi Wu",
+    "payee": "Susherian",
     "count": 6,
     "currency": "SEK",
-    "amount": 796,
+    "amount": 890,
     "location": [
-      59.310311,
-      18.082277
-    ]
-  },
-  {
-    "payee": "Falafelbaren - Götgatan",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 725,
-    "location": [
-      59.309401,
-      18.075404
+      59.308812,
+      18.077144
     ]
   },
   {
@@ -237,26 +247,6 @@
     "location": [
       59.332369,
       18.04524
-    ]
-  },
-  {
-    "payee": "Susherian",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 755,
-    "location": [
-      59.308812,
-      18.077144
-    ]
-  },
-  {
-    "payee": "Lillebrors Bageri",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 257,
-    "location": [
-      59.340093,
-      18.033877
     ]
   },
   {
@@ -370,16 +360,6 @@
     ]
   },
   {
-    "payee": "ESA Sushi",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 430,
-    "location": [
-      59.341436,
-      18.037335
-    ]
-  },
-  {
     "payee": "Magnolia",
     "count": 3,
     "currency": "SEK",
@@ -397,6 +377,16 @@
     "location": [
       59.340793,
       18.04166
+    ]
+  },
+  {
+    "payee": "Lillebrors Bageri",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 204,
+    "location": [
+      59.340093,
+      18.033877
     ]
   },
   {
@@ -627,6 +617,16 @@
     "location": [
       59.34034,
       18.050425
+    ]
+  },
+  {
+    "payee": "ESA Sushi",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 280,
+    "location": [
+      59.341436,
+      18.037335
     ]
   },
   {
