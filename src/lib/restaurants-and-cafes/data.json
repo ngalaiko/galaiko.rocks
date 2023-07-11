@@ -50,16 +50,6 @@
     ]
   },
   {
-    "payee": "Falloumi",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 1112,
-    "location": [
-      59.308163,
-      18.077789
-    ]
-  },
-  {
     "payee": "Indiska Källaren",
     "count": 8,
     "currency": "SEK",
@@ -117,6 +107,16 @@
     "location": [
       59.309401,
       18.075404
+    ]
+  },
+  {
+    "payee": "Falloumi",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 997,
+    "location": [
+      59.308163,
+      18.077789
     ]
   },
   {
