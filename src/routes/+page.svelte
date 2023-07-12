@@ -72,7 +72,7 @@
 	<h2>currently</h2>
 	<ul>
 		<li>
-			living in <span class="p-locality">Stockholm</span>,
+			living in <span class="p-locality">Göteborg</span>,
 			<span class="p-country-name">Sweden</span>
 		</li>
 		<li>working on the <A href="https://gitbutler.com">future of source code management</A></li>
