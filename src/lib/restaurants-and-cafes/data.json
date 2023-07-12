@@ -11,9 +11,9 @@
   },
   {
     "payee": "Amida",
-    "count": 15,
+    "count": 14,
     "currency": "SEK",
-    "amount": 2476,
+    "amount": 2351,
     "location": [
       59.314721,
       18.078432
@@ -180,16 +180,6 @@
     ]
   },
   {
-    "payee": "Oolong Tea House",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 434,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
     "payee": "Belgobaren",
     "count": 5,
     "currency": "SEK",
@@ -247,6 +237,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 365,
+    "location": [
+      59.33199,
+      18.067811
     ]
   },
   {
