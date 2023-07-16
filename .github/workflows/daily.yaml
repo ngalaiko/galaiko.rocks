@@ -1,0 +1,90 @@
+name: Daily job
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # every day at 3am
+    - cron: '0 3 * * *'
+
+env:
+  NODE_VERSION: 20
+  PNPM_VERSION: 8.6.7
+
+jobs:
+  update-movies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: '${{ env.PNPM_VERSION }}'
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Fetch records info
+        run: |
+          pnpm letterboxd:update \
+            --output ./src/lib/movies/data.json
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update movies
+
+  update-records:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: '${{ env.PNPM_VERSION }}'
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Fetch records info
+        run: |
+          pnpm discogs:download \
+            --api-token "${{ secrets.DISCOGS_API_KEY}}" \
+            --output ./src/lib/records/data.json
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update records
+
+  update-restaurants-and-cafes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: '${{ env.PNPM_VERSION }}'
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Checkout ledger
+        uses: actions/checkout@v3
+        with:
+          repository: ngalaiko/ledger
+          token: ${{ secrets.GH_PAT }}
+          path: 'ledger'
+          ref: 'master'
+      - name: Setup hledger
+        uses: ngalaiko/setup-hledger@v1
+      - name: Fetch list
+        run: |
+          pnpm ledger:restaurants-and-cafes \
+            --file "$GITHUB_WORKSPACE/ledger/main.ledger" \
+            --number 2 \
+            --output ./src/lib/restaurants-and-cafes/data.json
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Restaurants and Cafes
