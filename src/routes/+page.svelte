@@ -51,8 +51,8 @@
 		</li>
 
 		<li>
-			<A data-sveltekit-prefetch href="/cocktails/">cocktails</A> i respect and occasionaly make
-			to consume at home
+			<A data-sveltekit-prefetch href="/cocktails/">cocktails</A> i respect and occasionaly make to consume
+			at home
 		</li>
 
 		<li>

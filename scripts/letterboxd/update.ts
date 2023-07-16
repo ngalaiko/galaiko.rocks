@@ -38,7 +38,10 @@ Promise.all([read(argv.output), download()])
 		const toAdd = downloaded.filter(
 			(downloaded) =>
 				!read.some(
-					(read) => read.title === downloaded.title && read.watchedDate === downloaded.watchedDate
+					(read) =>
+						read.title === downloaded.title &&
+						read.watchedDate === downloaded.watchedDate &&
+						read.rewatch == downloaded.rewatch
 				)
 		);
 		return [...read, ...toAdd];
