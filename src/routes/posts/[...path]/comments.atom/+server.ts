@@ -4,20 +4,20 @@ import { findByPathname as commentsByPathname, type Comment } from '$lib/comment
 import { findByPathname as postsByPathname, type Post } from '$lib/posts';
 
 export const GET: RequestHandler = async ({ url }) => {
-    const comments = await commentsByPathname(url.pathname.replace('comments.atom', ''));
-    const post = await postsByPathname(url.pathname.replace('comments.atom', ''));
-    if (!post) throw error(404, 'not found');
-    const body = render(
-        url.origin,
-        post,
-        comments.sort((a, b) => compareDesc(new Date(a.created), new Date(b.created)))
-    );
-    return new Response(body, {
-        headers: {
-            'Cache-Control': 'max-age=0, s-maxage=3600',
-            'Content-Type': 'application/atom+xml'
-        }
-    });
+	const comments = await commentsByPathname(url.pathname.replace('comments.atom', ''));
+	const post = await postsByPathname(url.pathname.replace('comments.atom', ''));
+	if (!post) throw error(404, 'not found');
+	const body = render(
+		url.origin,
+		post,
+		comments.sort((a, b) => compareDesc(new Date(a.created), new Date(b.created)))
+	);
+	return new Response(body, {
+		headers: {
+			'Cache-Control': 'max-age=0, s-maxage=3600',
+			'Content-Type': 'application/atom+xml'
+		}
+	});
 };
 
 const renderComment = (baseUrl: string, comment: Comment, index: number) => `
@@ -34,7 +34,7 @@ const renderComment = (baseUrl: string, comment: Comment, index: number) => `
         </entry>`;
 
 const render = (baseUrl: string, post: Post, comments: Comment[]) =>
-    `<?xml version="1.0" encoding="UTF-8"?>
+	`<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Comments for ${post.title}</title>
     <id>${new URL('comments.atom', new URL(post.path, baseUrl))}</id>
@@ -43,6 +43,6 @@ const render = (baseUrl: string, post: Post, comments: Comment[]) =>
     <updated>${max([...comments.map(({ created }) => created), 0]).toISOString()}</updated>
     < icon > ${new URL('favicon.png', baseUrl)} </icon>
     ${comments
-        .map((post, index, all) => renderComment(baseUrl, post, all.length - index - 1))
-        .join('')}
+			.map((post, index, all) => renderComment(baseUrl, post, all.length - index - 1))
+			.join('')}
 </feed>`;
