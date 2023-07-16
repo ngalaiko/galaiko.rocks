@@ -11,27 +11,27 @@ const height = 630;
 const width = 1200;
 
 export const image = async (props: { message?: string } = {}) => {
-    const component = Card.render(props);
-    const html = toHTML(`${component.html}<style>${component.css.code}</style>`);
+	const component = Card.render(props);
+	const html = toHTML(`${component.html}<style>${component.css.code}</style>`);
 
-    const svg = await satori(html, {
-        fonts: [
-            {
-                name: 'Iowan Old Style',
-                data: Buffer.from(IowanOldStyle),
-                style: 'normal'
-            }
-        ],
-        height,
-        width
-    });
+	const svg = await satori(html, {
+		fonts: [
+			{
+				name: 'Iowan Old Style',
+				data: Buffer.from(IowanOldStyle),
+				style: 'normal'
+			}
+		],
+		height,
+		width
+	});
 
-    const resvg = new Resvg(svg, {
-        fitTo: {
-            mode: 'width',
-            value: width
-        }
-    });
+	const resvg = new Resvg(svg, {
+		fitTo: {
+			mode: 'width',
+			value: width
+		}
+	});
 
-    return resvg.render();
+	return resvg.render();
 };

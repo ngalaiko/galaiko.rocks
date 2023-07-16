@@ -122,9 +122,9 @@
 		margin-bottom: 2em;
 	}
 
-    article > header > time {
-        font-size: smaller;
-    }
+	article > header > time {
+		font-size: smaller;
+	}
 
 	article > header > h1 {
 		margin: 0;

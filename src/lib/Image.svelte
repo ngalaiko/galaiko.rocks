@@ -9,7 +9,7 @@
 	export { className as class };
 
 	// for some reason, src becomes relative when ran in the browser. possibly it has
-    // to do something with browser vs node
+	// to do something with browser vs node
 	// nevertheless, this is a hack to make src absolute again
 	const ensureAbsoluteSrc = (src: string) => {
 		const index = src.indexOf('/assets/');

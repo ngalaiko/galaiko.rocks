@@ -6,19 +6,19 @@ import { dev } from '$app/environment';
 export const prerender = true;
 
 export const GET: RequestHandler = async ({ url }) => {
-    const posts = await list();
-    const body = render(
-        dev ? url.origin : 'https://galaiko.rocks/',
-        posts
-            .filter(({ hidden }) => !hidden)
-            .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-    );
-    return new Response(body, {
-        headers: {
-            'Cache-Control': 'max-age=0, s-maxage=3600',
-            'Content-Type': 'application/atom+xml'
-        }
-    });
+	const posts = await list();
+	const body = render(
+		dev ? url.origin : 'https://galaiko.rocks/',
+		posts
+			.filter(({ hidden }) => !hidden)
+			.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+	);
+	return new Response(body, {
+		headers: {
+			'Cache-Control': 'max-age=0, s-maxage=3600',
+			'Content-Type': 'application/atom+xml'
+		}
+	});
 };
 
 const renderPost = (baseUrl: string, post: Post) => `
@@ -33,7 +33,7 @@ const renderPost = (baseUrl: string, post: Post) => `
         </entry>`;
 
 const render = (baseUrl: string, posts: Post[]) =>
-    `<?xml version="1.0" encoding="UTF-8"?>
+	`<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Posts | Nikita Galaiko</title>
     <id>${new URL('/posts', baseUrl)}</id>
