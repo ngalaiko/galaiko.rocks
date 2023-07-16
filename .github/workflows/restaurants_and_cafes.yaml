@@ -12,17 +12,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
 
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2
         with:
-          version: 7.1.5
+          version: 8.6.7
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
