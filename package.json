@@ -1,8 +1,9 @@
 {
 	"private": true,
 	"scripts": {
-		"ledger:restaurants-and-cafes": "ts-node-esm ./scripts/ledger/restaurants-and-cafes.ts",
-		"discogs:download": "ts-node-esm ./scripts/discogs/download.ts",
+		"ledger:restaurants-and-cafes": "node --loader ts-node/esm ./scripts/ledger/restaurants-and-cafes.ts",
+		"discogs:download": "node --loader ts-node/esm ./scripts/discogs/download.ts",
+		"letterboxd:update": "node --loader ts-node/esm ./scripts/letterboxd/update.ts",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -17,6 +18,7 @@
 		"@sveltejs/kit": "^1.22.3",
 		"@types/leaflet": "^1.9.3",
 		"@types/node": "^18.15.11",
+		"@types/xml2js": "^0.4.11",
 		"@types/yargs": "^17.0.24",
 		"@typescript-eslint/eslint-plugin": "^5.58.0",
 		"@typescript-eslint/parser": "^5.58.0",
@@ -44,6 +46,7 @@
 		"vite-plugin-glob": "^0.3.2",
 		"vite-plugin-image-presets": "^0.3.4",
 		"vite-plugin-remote-assets": "^0.3.2",
+		"xml2js": "^0.6.0",
 		"yargs": "^17.7.2"
 	},
 	"type": "module"

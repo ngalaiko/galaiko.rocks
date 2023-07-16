@@ -16,7 +16,7 @@
 		"baseUrl": ".",
 		"allowJs": true,
 		"checkJs": true,
-		"types": ["@cloudflare/workers-types", "node"]
+		"types": ["node"]
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "scripts/*.ts"]
 }

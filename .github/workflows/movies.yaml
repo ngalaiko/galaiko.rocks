@@ -1,4 +1,4 @@
-name: Update records list
+name: Update movies list
 
 on:
   workflow_dispatch: {}
@@ -7,7 +7,7 @@ on:
     - cron: '0 3 * * *'
 
 jobs:
-  update-records:
+  update-movies:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,10 +27,9 @@ jobs:
 
       - name: Fetch records info
         run: |
-          pnpm discogs:download \
-            --api-token "${{ secrets.DISCOGS_API_KEY}}" \
-            --output ./src/lib/records/data.json
+          pnpm letterboxd:update \
+            --output ./src/lib/movies/data.json
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update records
+          commit_message: Update movies
