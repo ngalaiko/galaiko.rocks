@@ -41,26 +41,26 @@
 	<p>this is not a very large website, it only consists of a few pages, for example:</p>
 	<ul>
 		<li>
-			there is a page on this website with a <A data-sveltekit-prefetch href="/records/"
-				>list of vinyl records i own</A
-			>. it mirrors my
+			<A data-sveltekit-prefetch href="/records/">list of vinyl records i own</A>. it mirrors my
 			<A data-sveltekit-reload href="https://www.discogs.com/user/ngalaiko">discogs account</A>
 		</li>
 
 		<li>
-			and here are <A data-sveltekit-prefetch href="/restaurants_and_cafes/"
-				>restaurants and cafes</A
-			>
-			i went to at least twice since last year (updated weekly)
+			<A data-sveltekit-prefetch href="/restaurants_and_cafes/">restaurants and cafes</A>
+			i went to at least twice since last year
 		</li>
 
 		<li>
-			<A data-sveltekit-prefetch href="/cocktails/">a list of cocktails</A> that i respect and occasionaly
-			make to consume at home
+			<A data-sveltekit-prefetch href="/cocktails/">cocktails</A> i respect and occasionaly make
+			to consume at home
 		</li>
 
 		<li>
-			<A data-sveltekit-prefetch href="/uses/">list of things i use</A>
+			<A data-sveltekit-prefetch href="/uses/">things i use</A>
+		</li>
+
+		<li>
+			<A data-sveltekit-prefetch href="/movies/">movies i watch</A>
 		</li>
 	</ul>
 
