@@ -109,5 +109,8 @@ export default {
 	'Caput Mundi - Hornsgatan': [59.315738, 18.0364],
 	'Indio Kitchen': [59.314665, 18.083247],
 	ilcaffè: [59.312661, 18.081021],
-    'Caput Mundi': [59.313771, 18.081182]
+	'Caput Mundi': [59.313771, 18.081182],
+	'Tonys Coffeebar': [57.697588, 11.986249],
+	'Bar Centro': [57.705447, 11.969766],
+	'EDO Sushi': [57.705322, 11.967964]
 };
