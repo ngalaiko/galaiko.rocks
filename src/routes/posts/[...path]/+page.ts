@@ -8,16 +8,16 @@ import { findByPathname as commentsByPathname } from '$lib/comments';
 // or a 404 - then we show the 404 page
 // or an error - then we error
 export const load: PageLoad = async ({ url }) => {
-	const post = await postByPathname(url.pathname);
-	if (!post) {
-		throw error(404);
-	} else if (post.path !== url.pathname) {
-		throw redirect(301, post.path);
-	} else {
-		return {
-			post,
-			challange: generate(),
-			comments: commentsByPathname(url.pathname)
-		};
-	}
+  const post = await postByPathname(url.pathname);
+  if (!post) {
+    throw error(404);
+  } else if (post.path !== url.pathname) {
+    throw redirect(301, post.path);
+  } else {
+    return {
+      post,
+      challange: generate(),
+      comments: commentsByPathname(url.pathname)
+    };
+  }
 };
