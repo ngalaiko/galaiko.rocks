@@ -1,197 +1,197 @@
 :root {
-	--background-hard: #f9f5d7;
-	--background: #fbf1c7;
-	--background-soft: #f2e5bc;
-	--background-1: #ebdbb2;
-	--background-2: #d5c4a1;
-	--background-3: #bdae93;
-	--background-4: #a89984;
+  --background-hard: #f9f5d7;
+  --background: #fbf1c7;
+  --background-soft: #f2e5bc;
+  --background-1: #ebdbb2;
+  --background-2: #d5c4a1;
+  --background-3: #bdae93;
+  --background-4: #a89984;
 
-	--foreground: #282828;
-	--foreground-1: #3c3836;
-	--foreground-2: #504945;
-	--foreground-3: #665c54;
-	--foreground-4: #7c6f64;
+  --foreground: #282828;
+  --foreground-1: #3c3836;
+  --foreground-2: #504945;
+  --foreground-3: #665c54;
+  --foreground-4: #7c6f64;
 
-	--red: #9d0006;
-	--green: #79740e;
-	--yellow: #b57614;
-	--blue: #076678;
-	--purple: #8f3f71;
-	--aqua: #427b58;
-	--orange: #af3a03;
-	--gray: #928374;
+  --red: #9d0006;
+  --green: #79740e;
+  --yellow: #b57614;
+  --blue: #076678;
+  --purple: #8f3f71;
+  --aqua: #427b58;
+  --orange: #af3a03;
+  --gray: #928374;
 
-	--red-dim: #cc2412;
-	--green-dim: #98971a;
-	--yellow-dim: #d79921;
-	--blue-dim: #458598;
-	--purple-dim: #b16286;
-	--aqua-dim: #689d6a;
-	--orange-dim: #d65d0e;
-	--gray-dim: #7c6f64;
+  --red-dim: #cc2412;
+  --green-dim: #98971a;
+  --yellow-dim: #d79921;
+  --blue-dim: #458598;
+  --purple-dim: #b16286;
+  --aqua-dim: #689d6a;
+  --orange-dim: #d65d0e;
+  --gray-dim: #7c6f64;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--background-hard: #1d2021;
-		--background: #282828;
-		--background-soft: #32302f;
-		--background-1: #3c3836;
-		--background-2: #504945;
-		--background-3: #665c54;
-		--background-4: #7c6f64;
+  :root {
+    --background-hard: #1d2021;
+    --background: #282828;
+    --background-soft: #32302f;
+    --background-1: #3c3836;
+    --background-2: #504945;
+    --background-3: #665c54;
+    --background-4: #7c6f64;
 
-		--foreground: #fbf1c7;
-		--foreground-1: #ebdbb2;
-		--foreground-2: #d5c4a1;
-		--foreground-3: #bdae93;
-		--foreground-4: #a89984;
+    --foreground: #fbf1c7;
+    --foreground-1: #ebdbb2;
+    --foreground-2: #d5c4a1;
+    --foreground-3: #bdae93;
+    --foreground-4: #a89984;
 
-		--red: #fb4934;
-		--green: #b8bb26;
-		--yellow: #fabd2f;
-		--blue: #83a598;
-		--purple: #d3869b;
-		--aqua: #8ec07c;
-		--gray: #928374;
-		--orange: #fe8019;
+    --red: #fb4934;
+    --green: #b8bb26;
+    --yellow: #fabd2f;
+    --blue: #83a598;
+    --purple: #d3869b;
+    --aqua: #8ec07c;
+    --gray: #928374;
+    --orange: #fe8019;
 
-		--red-dim: #cc2412;
-		--green-dim: #98971a;
-		--yellow-dim: #d79921;
-		--blue-dim: #458588;
-		--purple-dim: #b16286;
-		--aqua-dim: #689d6a;
-		--gray-dim: #a89984;
-		--orange-dim: #d65d0e;
-	}
+    --red-dim: #cc2412;
+    --green-dim: #98971a;
+    --yellow-dim: #d79921;
+    --blue-dim: #458588;
+    --purple-dim: #b16286;
+    --aqua-dim: #689d6a;
+    --gray-dim: #a89984;
+    --orange-dim: #d65d0e;
+  }
 }
 
 body {
-	color: var(--foreground-1);
-	background-color: var(--background-soft);
+  color: var(--foreground-1);
+  background-color: var(--background-soft);
 
-	padding: 1em;
+  padding: 1em;
 
-	font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
-		Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times,
+    Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 main {
-	background-color: var(--background-soft);
-	padding: 2rem 0rem 5rem 0rem;
+  background-color: var(--background-soft);
+  padding: 2rem 0rem 5rem 0rem;
 }
 
 @media (min-width: 1024px) {
-	body {
-		background-color: var(--background);
-	}
-	main {
-		padding: 2rem 5rem 5rem 5rem;
-	}
+  body {
+    background-color: var(--background);
+  }
+  main {
+    padding: 2rem 5rem 5rem 5rem;
+  }
 }
 
 main,
 footer {
-	margin: 0 auto;
-	max-width: 38em;
+  margin: 0 auto;
+  max-width: 38em;
 
-	font-size: 1.125rem;
-	line-height: 1.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 h1 {
-	font-size: 2.25rem;
-	line-height: 2.5rem;
-	text-align: left;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  text-align: left;
 }
 
 h2 {
-	font-size: 1.43rem;
-	margin-top: 1em;
-	padding-top: 1em;
+  font-size: 1.43rem;
+  margin-top: 1em;
+  padding-top: 1em;
 }
 
 h1,
 h2,
 strong {
-	color: var(--foreground);
+  color: var(--foreground);
 }
 
 code,
 pre {
-	background: var(--background-1);
-	overflow-x: scroll;
+  background: var(--background-1);
+  overflow-x: scroll;
 }
 
 @font-face {
-	font-family: 'Berkeley Mono';
-	src: url('/fonts/BerkeleyMono/Regular.woff2') format('woff2'),
-		url('/fonts/BerkeleyMono/Bold.woff2') format('woff2'),
-		url('/fonts/BerkeleyMono/Italic.woff2') format('woff2'),
-		url('/fonts/BerkeleyMono/BoldItalic.woff2') format('woff2'),
-		url('/fonts/BerkeleyMono/Regular.woff') format('woff'),
-		url('/fonts/BerkeleyMono/Bold.woff') format('woff'),
-		url('/fonts/BerkeleyMono/Italic.woff') format('woff'),
-		url('/fonts/BerkeleyMono/BoldItalic.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Berkeley Mono';
+  src: url('/fonts/BerkeleyMono/Regular.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/Bold.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/Italic.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/BoldItalic.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/Regular.woff') format('woff'),
+    url('/fonts/BerkeleyMono/Bold.woff') format('woff'),
+    url('/fonts/BerkeleyMono/Italic.woff') format('woff'),
+    url('/fonts/BerkeleyMono/BoldItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 code {
-	padding: 2px 4px;
-	vertical-align: text-bottom;
-	font-family: Berkeley Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-	font-size: initial;
-	line-height: initial;
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+  font-family: Berkeley Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: initial;
+  line-height: initial;
 }
 
 pre {
-	padding: 1em;
+  padding: 1em;
 }
 
 a {
-	color: var(--blue);
-	text-decoration: none;
+  color: var(--blue);
+  text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 a:visited {
-	color: var(--blue-dim);
+  color: var(--blue-dim);
 }
 
 pre {
-	border-bottom: 1px solid var(--background-2);
-	color: var(--foreground-2);
+  border-bottom: 1px solid var(--background-2);
+  color: var(--foreground-2);
 }
 
 pre {
-	border-left: 2px solid var(--green);
+  border-left: 2px solid var(--green);
 }
 
 blockquote {
-	font-style: italic;
+  font-style: italic;
 }
 
 ul {
-	list-style-type: circle;
+  list-style-type: circle;
 }
 
 img {
-	height: auto;
-	max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 figure {
-	margin: 0;
+  margin: 0;
 }
 
 figcaption {
-	font-size: 0.875rem;
-	line-height: 1.25rem;
-	text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
 }

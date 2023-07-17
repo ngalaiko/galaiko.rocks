@@ -1,10 +1,10 @@
 {
-	"name": "Nikita Galaiko",
-	"short_name": "Nikita Galaiko",
-	"icons": [
-		{ "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-		{ "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
-	],
-	"display": "browser",
-	"lang": "en-US"
+  "name": "Nikita Galaiko",
+  "short_name": "Nikita Galaiko",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "display": "browser",
+  "lang": "en-US"
 }
