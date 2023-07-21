@@ -3,7 +3,7 @@
   "scripts": {
     "ledger:restaurants-and-cafes": "node --loader ts-node/esm ./scripts/ledger/restaurants-and-cafes.ts --number 2 --output ./src/lib/restaurants-and-cafes/data.json",
     "discogs:download": "node --loader ts-node/esm ./scripts/discogs/download.ts --output ./src/lib/records/data.json",
-    "letterboxd:update": "node --loader ts-node/esm ./scripts/letterboxd/update.ts --output ./src/lib/movies/data.json",
+    "letterboxd:update": "node --loader ts-node/esm ./scripts/letterboxd/update.ts --username ngalaiko --output ./src/lib/movies/data.json",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
