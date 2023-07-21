@@ -5,6 +5,12 @@ import type { Movie } from '../../src/lib/movies/index.js';
 
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: $0 <command> [options]')
+  .option('username', {
+    alias: 'u',
+    describe: 'The username to fetch',
+    type: 'string',
+    demandOption: true
+  })
   .option('output', {
     alias: 'o',
     describe: 'The output file',
@@ -16,7 +22,7 @@ const argv = yargs(process.argv.slice(2))
 const read = async (path: string): Promise<Movie[]> => readJSON(path);
 
 const download = async (): Promise<Movie[]> => {
-  const xml = await fetch('https://letterboxd.com/krista_bullin/rss/');
+  const xml = await fetch('https://letterboxd.com/ngalaiko/rss/');
   const text = await xml.text();
   const json = await parseStringPromise(text);
   return json.rss.channel[0].item.map((item: any) => {
