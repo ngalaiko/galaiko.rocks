@@ -1096,5 +1096,17 @@
     "watchedDate": "2023-07-21",
     "rewatch": true,
     "href": "https://letterboxd.com/ngalaiko/film/night-watch-2004/"
+  },
+  {
+    "title": "Interstate 60",
+    "watchedDate": "2023-07-22",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/interstate-60/"
+  },
+  {
+    "title": "The Graduate",
+    "watchedDate": "2023-07-22",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/the-graduate/"
   }
 ]
