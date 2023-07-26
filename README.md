@@ -1,7 +1,6 @@
 # galaiko.rocks
 
-[![Update Restaurants and Cafes list](https://github.com/ngalaiko/blog/actions/workflows/restaurants_and_cafes.yaml/badge.svg)](https://github.com/ngalaiko/blog/actions/workflows/restaurants_and_cafes.yaml)
-[![Update records list](https://github.com/ngalaiko/blog/actions/workflows/records.yaml/badge.svg)](https://github.com/ngalaiko/blog/actions/workflows/records.yaml)
+[![Daily job](https://github.com/ngalaiko/galaiko.rocks/actions/workflows/daily.yaml/badge.svg)](https://github.com/ngalaiko/galaiko.rocks/actions/workflows/daily.yaml)
 
 my website
 
@@ -13,7 +12,7 @@ Build command:
 npm install -g pnpm && pnpm install && (pnpm build || true) && pnpm build
 ```
 
-The first `build` will fail once, because records covers won't be downloaded for the first run.
+The first `build` will fail because records covers won't be downloaded for the first run.
 
 Build output directory:
 
