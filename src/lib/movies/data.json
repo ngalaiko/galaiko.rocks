@@ -1138,5 +1138,11 @@
     "watchedDate": "2022-10-22",
     "rewatch": false,
     "href": "https://letterboxd.com/ngalaiko/film/triangle-of-sadness/"
+  },
+  {
+    "title": "Day Watch",
+    "watchedDate": "2023-07-26",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/day-watch/"
   }
 ]
