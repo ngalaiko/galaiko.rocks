@@ -831,6 +831,16 @@
   },
   {
     "artist": {
+      "name": "Udo Lindenberg"
+    },
+    "info": {
+      "id": 1137895,
+      "title": "Песни Вместо Писем = Songs Instead Of Letters",
+      "coverImage": "https://i.discogs.com/w5WL8CQV4ZlWKLV3rXQo1SEXi1HVBxLvR9vJGaNyCug/rs:fit/g:sm/q:90/h:608/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMzc4/OTUtMTI0NzA2MDU2/MC5qcGVn.jpeg"
+    }
+  },
+  {
+    "artist": {
       "name": "Various"
     },
     "info": {
