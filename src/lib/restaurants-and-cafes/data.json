@@ -60,16 +60,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 1220,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "La Neta",
     "count": 7,
     "currency": "SEK",
@@ -137,6 +127,16 @@
     "location": [
       59.333599,
       18.070247
+    ]
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 995,
+    "location": [
+      59.333392,
+      18.057954
     ]
   },
   {
@@ -587,16 +587,6 @@
     "location": [
       57.697588,
       11.986249
-    ]
-  },
-  {
-    "payee": "Caput Mundi",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 116,
-    "location": [
-      59.313771,
-      18.081182
     ]
   },
   {
