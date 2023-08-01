@@ -20,16 +20,6 @@
     ]
   },
   {
-    "payee": "Tony's Pizza and Salad",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1459,
-    "location": [
-      59.319056,
-      18.064821
-    ]
-  },
-  {
     "payee": "Aryam",
     "count": 10,
     "currency": "SEK",
@@ -37,6 +27,16 @@
     "location": [
       59.31845,
       18.070466
+    ]
+  },
+  {
+    "payee": "Tony's Pizza and Salad",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1339,
+    "location": [
+      59.319056,
+      18.064821
     ]
   },
   {
@@ -237,6 +237,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "Bar Centro",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 245,
+    "location": [
+      57.705447,
+      11.969766
     ]
   },
   {
@@ -847,16 +857,6 @@
     "location": [
       57.697989,
       11.978
-    ]
-  },
-  {
-    "payee": "Bar Centro",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 70,
-    "location": [
-      57.705447,
-      11.969766
     ]
   },
   {
