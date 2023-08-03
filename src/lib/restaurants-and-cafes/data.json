@@ -360,16 +360,6 @@
     ]
   },
   {
-    "payee": "Snø",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 160,
-    "location": [
-      59.340793,
-      18.04166
-    ]
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 3,
     "currency": "SEK",
@@ -600,16 +590,6 @@
     ]
   },
   {
-    "payee": "Ki mama",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 300,
-    "location": [
-      59.34034,
-      18.050425
-    ]
-  },
-  {
     "payee": "ESA Sushi",
     "count": 2,
     "currency": "SEK",
@@ -797,6 +777,16 @@
     "location": [
       59.340591,
       18.040607
+    ]
+  },
+  {
+    "payee": "Snø",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 90,
+    "location": [
+      59.340793,
+      18.04166
     ]
   },
   {
