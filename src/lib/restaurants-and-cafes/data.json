@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Fullmoon Wook",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 415,
-    "location": [
-      59.342143,
-      18.04923
-    ]
-  },
-  {
     "payee": "Weidao",
     "count": 4,
     "currency": "SEK",
@@ -477,6 +467,16 @@
     "location": [
       59.336459,
       18.058798
+    ]
+  },
+  {
+    "payee": "Fullmoon Wook",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 297,
+    "location": [
+      59.342143,
+      18.04923
     ]
   },
   {
