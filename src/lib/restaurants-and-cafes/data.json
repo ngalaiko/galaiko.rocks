@@ -30,6 +30,16 @@
     ]
   },
   {
+    "payee": "Bar Centro",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 560,
+    "location": [
+      57.705447,
+      11.969766
+    ]
+  },
+  {
     "payee": "Aryam",
     "count": 9,
     "currency": "SEK",
@@ -237,16 +247,6 @@
     "location": [
       59.334262,
       18.062618
-    ]
-  },
-  {
-    "payee": "Bar Centro",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 245,
-    "location": [
-      57.705447,
-      11.969766
     ]
   },
   {
@@ -847,6 +847,46 @@
     "location": [
       57.705322,
       11.967964
+    ]
+  },
+  {
+    "payee": "Koie Ramen",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 360,
+    "location": [
+      57.704636,
+      11.961785
+    ]
+  },
+  {
+    "payee": "Banh Mi Shop",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 245,
+    "location": [
+      57.703682,
+      11.968214
+    ]
+  },
+  {
+    "payee": "Alexandras Grekiska Soppkök",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 229,
+    "location": [
+      57.703553,
+      11.96789
+    ]
+  },
+  {
+    "payee": "Gelaterian Göteborg",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 156,
+    "location": [
+      57.703553,
+      11.96789
     ]
   }
 ]
