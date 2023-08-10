@@ -110,16 +110,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 735,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "La Neta Bar",
     "count": 6,
     "currency": "SEK",
@@ -237,6 +227,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 620,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
