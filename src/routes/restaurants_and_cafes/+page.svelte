@@ -24,10 +24,10 @@
       // expand the div to make it visible when js is on
       map.style.height = '400px';
 
-      // init map with stockholm in the middle
+      // init map with gothenburg in the middle
       m = L.map(map, {
-        center: [59.32799, 18.05467],
-        zoom: 12
+        center: [57.704218, 11.969256],
+        zoom: 13
       });
 
       // use carto maps as a base layer
