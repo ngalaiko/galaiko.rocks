@@ -570,16 +570,6 @@
     ]
   },
   {
-    "payee": "Hanoi Corner",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 255,
-    "location": [
-      59.335554,
-      18.053908
-    ]
-  },
-  {
     "payee": "Lillebrors Bageri",
     "count": 2,
     "currency": "SEK",
