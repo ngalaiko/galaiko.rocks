@@ -40,16 +40,6 @@
     ]
   },
   {
-    "payee": "Aryam",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 593,
-    "location": [
-      59.31845,
-      18.070466
-    ]
-  },
-  {
     "payee": "ilcaffè",
     "count": 9,
     "currency": "SEK",
@@ -57,6 +47,16 @@
     "location": [
       59.312661,
       18.081021
+    ]
+  },
+  {
+    "payee": "Aryam",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 545,
+    "location": [
+      59.31845,
+      18.070466
     ]
   },
   {
@@ -247,16 +247,6 @@
     "location": [
       59.334262,
       18.062618
-    ]
-  },
-  {
-    "payee": "Weidao",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 650,
-    "location": [
-      59.331949,
-      18.057649
     ]
   },
   {
@@ -507,6 +497,16 @@
     "location": [
       59.341795,
       18.047249
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 495,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
