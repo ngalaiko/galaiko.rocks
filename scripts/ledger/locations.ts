@@ -118,4 +118,5 @@ export default {
   'Banh Mi Shop': [57.703682, 11.968214],
   'Alexandras Grekiska Soppkök': [57.703553, 11.967890],
   'Gelaterian Göteborg': [57.703553, 11.967890],
+  'House of Vietnam': [57.709422, 11.980116],
 };
