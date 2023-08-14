@@ -20,6 +20,16 @@
     ]
   },
   {
+    "payee": "Bar Centro",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 699,
+    "location": [
+      57.705447,
+      11.969766
+    ]
+  },
+  {
     "payee": "Tony's Pizza and Salad",
     "count": 10,
     "currency": "SEK",
@@ -27,16 +37,6 @@
     "location": [
       59.319056,
       18.064821
-    ]
-  },
-  {
-    "payee": "Bar Centro",
-    "count": 10,
-    "currency": "SEK",
-    "amount": 560,
-    "location": [
-      57.705447,
-      11.969766
     ]
   },
   {
@@ -340,16 +340,6 @@
     ]
   },
   {
-    "payee": "Tbilisi’s Hörna",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 964,
-    "location": [
-      59.298094,
-      18.088214
-    ]
-  },
-  {
     "payee": "Kolgrill Sam",
     "count": 3,
     "currency": "SEK",
@@ -570,6 +560,36 @@
     ]
   },
   {
+    "payee": "Koie Ramen",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 530,
+    "location": [
+      57.704636,
+      11.961785
+    ]
+  },
+  {
+    "payee": "Banh Mi Shop",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 395,
+    "location": [
+      57.703682,
+      11.968214
+    ]
+  },
+  {
+    "payee": "Gelaterian Göteborg",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 228,
+    "location": [
+      57.703553,
+      11.96789
+    ]
+  },
+  {
     "payee": "Marley Café",
     "count": 2,
     "currency": "SEK",
@@ -617,6 +637,16 @@
     "location": [
       59.337722,
       18.057471
+    ]
+  },
+  {
+    "payee": "Tbilisi’s Hörna",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 674,
+    "location": [
+      59.298094,
+      18.088214
     ]
   },
   {
@@ -820,23 +850,13 @@
     ]
   },
   {
-    "payee": "Koie Ramen",
+    "payee": "House of Vietnam",
     "count": 2,
     "currency": "SEK",
-    "amount": 360,
+    "amount": 240,
     "location": [
-      57.704636,
-      11.961785
-    ]
-  },
-  {
-    "payee": "Banh Mi Shop",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 245,
-    "location": [
-      57.703682,
-      11.968214
+      57.709422,
+      11.980116
     ]
   },
   {
@@ -844,16 +864,6 @@
     "count": 2,
     "currency": "SEK",
     "amount": 229,
-    "location": [
-      57.703553,
-      11.96789
-    ]
-  },
-  {
-    "payee": "Gelaterian Göteborg",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 156,
     "location": [
       57.703553,
       11.96789
