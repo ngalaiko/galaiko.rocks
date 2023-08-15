@@ -340,16 +340,6 @@
     ]
   },
   {
-    "payee": "Kolgrill Sam",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 653,
-    "location": [
-      59.428415,
-      17.938238
-    ]
-  },
-  {
     "payee": "Chic Konditori",
     "count": 3,
     "currency": "SEK",
@@ -627,6 +617,16 @@
     "location": [
       59.338245,
       18.038156
+    ]
+  },
+  {
+    "payee": "Kolgrill Sam",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 463,
+    "location": [
+      59.428415,
+      17.938238
     ]
   },
   {
