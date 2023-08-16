@@ -110,16 +110,6 @@
     ]
   },
   {
-    "payee": "La Neta Bar",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 827,
-    "location": [
-      59.333599,
-      18.070247
-    ]
-  },
-  {
     "payee": "AI Ramen",
     "count": 6,
     "currency": "SEK",
@@ -230,6 +220,16 @@
     ]
   },
   {
+    "payee": "La Neta Bar",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 651,
+    "location": [
+      59.333599,
+      18.070247
+    ]
+  },
+  {
     "payee": "La Neta",
     "count": 5,
     "currency": "SEK",
@@ -247,16 +247,6 @@
     "location": [
       59.334262,
       18.062618
-    ]
-  },
-  {
-    "payee": "Bano City",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 588,
-    "location": [
-      59.337541,
-      18.057392
     ]
   },
   {
@@ -337,6 +327,16 @@
     "location": [
       59.314857,
       18.076491
+    ]
+  },
+  {
+    "payee": "Bano City",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 419,
+    "location": [
+      59.337541,
+      18.057392
     ]
   },
   {
