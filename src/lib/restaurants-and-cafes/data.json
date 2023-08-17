@@ -250,16 +250,6 @@
     ]
   },
   {
-    "payee": "Indian King",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 525,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
     "payee": "Tokyo Diner",
     "count": 4,
     "currency": "SEK",
@@ -477,6 +467,16 @@
     "location": [
       59.341795,
       18.047249
+    ]
+  },
+  {
+    "payee": "Indian King",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 405,
+    "location": [
+      59.337053,
+      18.052454
     ]
   },
   {
