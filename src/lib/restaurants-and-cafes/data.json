@@ -110,16 +110,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 995,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
@@ -207,6 +197,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 845,
+    "location": [
+      59.333392,
+      18.057954
     ]
   },
   {
