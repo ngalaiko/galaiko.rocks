@@ -320,26 +320,6 @@
     ]
   },
   {
-    "payee": "Bano City",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 419,
-    "location": [
-      59.337541,
-      18.057392
-    ]
-  },
-  {
-    "payee": "Chic Konditori",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 150,
-    "location": [
-      59.317398,
-      18.063439
-    ]
-  },
-  {
     "payee": "Mormors Dumpling",
     "count": 3,
     "currency": "SEK",
@@ -600,6 +580,16 @@
     ]
   },
   {
+    "payee": "Bano City",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 270,
+    "location": [
+      59.337541,
+      18.057392
+    ]
+  },
+  {
     "payee": "Meno Male",
     "count": 2,
     "currency": "SEK",
@@ -637,6 +627,16 @@
     "location": [
       59.337722,
       18.057471
+    ]
+  },
+  {
+    "payee": "Chic Konditori",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 112,
+    "location": [
+      59.317398,
+      18.063439
     ]
   },
   {
