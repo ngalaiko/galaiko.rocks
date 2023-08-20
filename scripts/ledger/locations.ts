@@ -119,4 +119,6 @@ export default {
   'Alexandras Grekiska Soppkök': [57.703553, 11.967890],
   'Gelaterian Göteborg': [57.703553, 11.967890],
   'House of Vietnam': [57.709422, 11.980116],
+  'Bombay Street': [57.693698, 11.989474],
+  'Ullevi Thaikök': [57.708449, 11.986409]
 };
