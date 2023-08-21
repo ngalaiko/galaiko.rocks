@@ -21,9 +21,9 @@
   },
   {
     "payee": "Bar Centro",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 699,
+    "amount": 771,
     "location": [
       57.705447,
       11.969766
@@ -320,16 +320,6 @@
     ]
   },
   {
-    "payee": "Mormors Dumpling",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 422,
-    "location": [
-      59.313618,
-      18.085532
-    ]
-  },
-  {
     "payee": "Cafe Ragazzi",
     "count": 3,
     "currency": "SEK",
@@ -530,6 +520,16 @@
     ]
   },
   {
+    "payee": "House of Vietnam",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 360,
+    "location": [
+      57.709422,
+      11.980116
+    ]
+  },
+  {
     "payee": "Koie Ramen",
     "count": 3,
     "currency": "SEK",
@@ -550,6 +550,16 @@
     ]
   },
   {
+    "payee": "Alexandras Grekiska Soppkök",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 339,
+    "location": [
+      57.703553,
+      11.96789
+    ]
+  },
+  {
     "payee": "Gelaterian Göteborg",
     "count": 3,
     "currency": "SEK",
@@ -557,16 +567,6 @@
     "location": [
       57.703553,
       11.96789
-    ]
-  },
-  {
-    "payee": "Marley Café",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 146,
-    "location": [
-      59.313615,
-      18.07998
     ]
   },
   {
@@ -710,6 +710,16 @@
     ]
   },
   {
+    "payee": "Mormors Dumpling",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 278,
+    "location": [
+      59.313618,
+      18.085532
+    ]
+  },
+  {
     "payee": "M.O.A.S Rörstrandsgatan",
     "count": 2,
     "currency": "SEK",
@@ -850,23 +860,23 @@
     ]
   },
   {
-    "payee": "House of Vietnam",
+    "payee": "Bombay Street",
     "count": 2,
     "currency": "SEK",
-    "amount": 240,
+    "amount": 717,
     "location": [
-      57.709422,
-      11.980116
+      57.693698,
+      11.989474
     ]
   },
   {
-    "payee": "Alexandras Grekiska Soppkök",
+    "payee": "Ullevi Thaikök",
     "count": 2,
     "currency": "SEK",
-    "amount": 229,
+    "amount": 258,
     "location": [
-      57.703553,
-      11.96789
+      57.708449,
+      11.986409
     ]
   }
 ]
