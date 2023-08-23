@@ -1216,5 +1216,23 @@
     "watchedDate": "2023-08-19",
     "rewatch": true,
     "href": "https://letterboxd.com/ngalaiko/film/its-kind-of-a-funny-story/"
+  },
+  {
+    "title": "WALL·E",
+    "watchedDate": "2022-10-02",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/walle/1/"
+  },
+  {
+    "title": "Starship Troopers",
+    "watchedDate": "2022-10-02",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/starship-troopers/1/"
+  },
+  {
+    "title": "Moscow Does Not Believe in Tears",
+    "watchedDate": "2022-09-30",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/moscow-does-not-believe-in-tears/"
   }
 ]
