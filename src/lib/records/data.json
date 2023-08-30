@@ -221,6 +221,16 @@
   },
   {
     "artist": {
+      "name": "Beirut"
+    },
+    "info": {
+      "id": 14054827,
+      "title": "Gulag Orkestar",
+      "coverImage": "https://i.discogs.com/9oeNcgsfeTxBRTjjwjwB0WO2R_akLoa2u63v-00M1Ak/rs:fit/g:sm/q:90/h:567/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MDU0/ODI3LTE1Njk0ODQx/MzYtOTQ0Mi5qcGVn.jpeg"
+    }
+  },
+  {
+    "artist": {
       "name": "Björk"
     },
     "info": {
@@ -277,6 +287,16 @@
       "id": 3633317,
       "title": "Fifth Dimension",
       "coverImage": "https://i.discogs.com/XjYVpkjkHj1gexjmcQpcV_fBz6IBu3vvZ1EebRAjVB0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzMz/MTctMTYyOTAyMDk4/OC0zNjgwLmpwZWc.jpeg"
+    }
+  },
+  {
+    "artist": {
+      "name": "Can"
+    },
+    "info": {
+      "id": 5789703,
+      "title": "Tago Mago",
+      "coverImage": "https://i.discogs.com/IAD9kX7YPv_90Bm9-GKAqmpp_fMg25nJu-LyYfmmdb4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3ODk3/MDMtMTQwMjc0NTU3/MS0yODMxLmpwZWc.jpeg"
     }
   },
   {
