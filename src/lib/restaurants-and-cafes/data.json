@@ -220,16 +220,6 @@
     ]
   },
   {
-    "payee": "Tokyo Diner",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 660,
-    "location": [
-      59.334456,
-      18.062486
-    ]
-  },
-  {
     "payee": "Indian Curry House",
     "count": 4,
     "currency": "SEK",
@@ -457,6 +447,16 @@
     "location": [
       59.3167,
       18.055242
+    ]
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 505,
+    "location": [
+      59.334456,
+      18.062486
     ]
   },
   {
