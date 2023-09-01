@@ -1240,5 +1240,11 @@
     "watchedDate": "2023-08-25",
     "rewatch": false,
     "href": "https://letterboxd.com/ngalaiko/film/fifty-shades-darker/"
+  },
+  {
+    "title": "Little Women",
+    "watchedDate": "2023-08-31",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/little-women-2019/1/"
   }
 ]
