@@ -220,16 +220,6 @@
     ]
   },
   {
-    "payee": "Indian Curry House",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 515,
-    "location": [
-      59.329504,
-      18.043632
-    ]
-  },
-  {
     "payee": "Levinskys",
     "count": 4,
     "currency": "SEK",
@@ -467,6 +457,16 @@
     "location": [
       59.341795,
       18.047249
+    ]
+  },
+  {
+    "payee": "Indian Curry House",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 380,
+    "location": [
+      59.329504,
+      18.043632
     ]
   },
   {
