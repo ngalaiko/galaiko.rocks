@@ -19,7 +19,10 @@ const config = {
     }),
     preprocess({
       typescript: true,
-      replace: [['import.meta.env.GITHUB_TOKEN', JSON.stringify(process.env.GITHUB_TOKEN)]]
+      replace: [
+        ['import.meta.env.GITHUB_TOKEN', JSON.stringify(process.env.GITHUB_TOKEN)],
+        ['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
+      ]
     })
   ],
   kit: {
