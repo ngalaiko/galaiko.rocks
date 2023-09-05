@@ -2,11 +2,21 @@
   import '../app.css';
   import { inject } from '@vercel/analytics';
   import { page } from '$app/stores';
-  import { dev } from '$app/environment';
+  import { browser, dev } from '$app/environment';
+  import { webVitals } from '$lib/webvitals';
 
   $: ogImageUrl =
     $page.url.pathname === '/' ? '/index.png' : $page.url.pathname.slice(0, -1) + '.png';
   inject({ mode: dev ? 'development' : 'production' });
+
+  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+  $: if (browser && analyticsId) {
+    webVitals({
+      path: $page.url.pathname,
+      params: $page.params,
+      analyticsId
+    });
+  }
 </script>
 
 <svelte:head>

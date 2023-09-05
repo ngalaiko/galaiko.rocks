@@ -4,7 +4,7 @@
     "plugins": [{ "name": "vite-plugin-iso-import" }],
     "moduleResolution": "node",
     "module": "esnext",
-    "lib": ["esnext", "DOM"],
+    "lib": ["esnext", "dom"],
     "target": "esnext",
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
