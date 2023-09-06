@@ -24,6 +24,8 @@
   <meta property="og:image" content={ogImageUrl} />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Nikita Galaiko's personal website" />
+
+  <link rel="me" href="https://mastodon.online/@ngalaiko" />
 </svelte:head>
 
 <main>
