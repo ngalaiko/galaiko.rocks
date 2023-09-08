@@ -123,4 +123,5 @@ export default {
   'Ullevi Thaikök': [57.708449, 11.986409],
   'Nordstan Kebab': [57.707136, 11.968511],
   'Morgon Coffee Roasters': [57.708091, 11.951323],
+  Gourmetkorv: [57.702785, 11.963998]
 };
