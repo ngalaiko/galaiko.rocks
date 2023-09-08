@@ -11,9 +11,9 @@
   },
   {
     "payee": "Bar Centro",
-    "count": 17,
+    "count": 22,
     "currency": "SEK",
-    "amount": 1040,
+    "amount": 1434,
     "location": [
       57.705447,
       11.969766
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Tony's Pizza and Salad",
-    "count": 10,
+    "count": 9,
     "currency": "SEK",
-    "amount": 1339,
+    "amount": 1204,
     "location": [
       59.319056,
       18.064821
@@ -150,6 +150,16 @@
     ]
   },
   {
+    "payee": "Ullevi Thaikök",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 784,
+    "location": [
+      57.708449,
+      11.986409
+    ]
+  },
+  {
     "payee": "PWC",
     "count": 5,
     "currency": "SEK",
@@ -207,16 +217,6 @@
     "location": [
       59.334262,
       18.062618
-    ]
-  },
-  {
-    "payee": "Ullevi Thaikök",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 655,
-    "location": [
-      57.708449,
-      11.986409
     ]
   },
   {
@@ -320,6 +320,16 @@
     ]
   },
   {
+    "payee": "Banh Mi Shop",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 520,
+    "location": [
+      57.703682,
+      11.968214
+    ]
+  },
+  {
     "payee": "Alexandras Grekiska Soppkök",
     "count": 4,
     "currency": "SEK",
@@ -337,16 +347,6 @@
     "location": [
       57.703553,
       11.96789
-    ]
-  },
-  {
-    "payee": "Pizza Hut",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 367,
-    "location": [
-      59.33183,
-      18.059651
     ]
   },
   {
@@ -560,26 +560,6 @@
     ]
   },
   {
-    "payee": "Banh Mi Shop",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 395,
-    "location": [
-      57.703682,
-      11.968214
-    ]
-  },
-  {
-    "payee": "Bano City",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 270,
-    "location": [
-      59.337541,
-      18.057392
-    ]
-  },
-  {
     "payee": "Meno Male",
     "count": 2,
     "currency": "SEK",
@@ -617,6 +597,16 @@
     "location": [
       59.337722,
       18.057471
+    ]
+  },
+  {
+    "payee": "Pizza Hut",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 248,
+    "location": [
+      59.33183,
+      18.059651
     ]
   },
   {
@@ -877,6 +867,16 @@
     "location": [
       57.693698,
       11.989474
+    ]
+  },
+  {
+    "payee": "Gourmetkorv",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 248,
+    "location": [
+      57.702785,
+      11.963998
     ]
   },
   {
