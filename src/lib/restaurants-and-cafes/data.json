@@ -350,16 +350,6 @@
     ]
   },
   {
-    "payee": "Birkastans Pizzeria",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 425,
-    "location": [
-      59.340846,
-      18.032985
-    ]
-  },
-  {
     "payee": "Franky's",
     "count": 3,
     "currency": "SEK",
@@ -687,6 +677,16 @@
     "location": [
       59.333651,
       18.056886
+    ]
+  },
+  {
+    "payee": "Birkastans Pizzeria",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 277,
+    "location": [
+      59.340846,
+      18.032985
     ]
   },
   {
