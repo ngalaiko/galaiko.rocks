@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 37,
+    "count": 38,
     "currency": "SEK",
-    "amount": 9973.5,
+    "amount": 10315.5,
     "location": [
       59.318041,
       18.072196
@@ -30,6 +30,16 @@
     ]
   },
   {
+    "payee": "ilcaffè",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 455,
+    "location": [
+      59.312661,
+      18.081021
+    ]
+  },
+  {
     "payee": "Tony's Pizza and Salad",
     "count": 9,
     "currency": "SEK",
@@ -37,16 +47,6 @@
     "location": [
       59.319056,
       18.064821
-    ]
-  },
-  {
-    "payee": "ilcaffè",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 420,
-    "location": [
-      59.312661,
-      18.081021
     ]
   },
   {
@@ -110,6 +110,16 @@
     ]
   },
   {
+    "payee": "Ullevi Thaikök",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 913,
+    "location": [
+      57.708449,
+      11.986409
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
@@ -147,16 +157,6 @@
     "location": [
       59.308812,
       18.077144
-    ]
-  },
-  {
-    "payee": "Ullevi Thaikök",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 784,
-    "location": [
-      57.708449,
-      11.986409
     ]
   },
   {
@@ -217,6 +217,16 @@
     "location": [
       59.334262,
       18.062618
+    ]
+  },
+  {
+    "payee": "koie ramen",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 944,
+    "location": [
+      57.704636,
+      11.961785
     ]
   },
   {
@@ -307,16 +317,6 @@
     "location": [
       59.314857,
       18.076491
-    ]
-  },
-  {
-    "payee": "koie ramen",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 710,
-    "location": [
-      57.704636,
-      11.961785
     ]
   },
   {
@@ -547,6 +547,16 @@
     "location": [
       57.709422,
       11.980116
+    ]
+  },
+  {
+    "payee": "Gourmetkorv",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 335,
+    "location": [
+      57.702785,
+      11.963998
     ]
   },
   {
@@ -870,13 +880,13 @@
     ]
   },
   {
-    "payee": "Gourmetkorv",
+    "payee": "Mahogny",
     "count": 2,
     "currency": "SEK",
-    "amount": 248,
+    "amount": 89,
     "location": [
-      57.702785,
-      11.963998
+      57.707827,
+      11.965388
     ]
   },
   {
@@ -887,6 +897,16 @@
     "location": [
       57.708091,
       11.951323
+    ]
+  },
+  {
+    "payee": "DropCoffee",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 137,
+    "location": [
+      59.316889,
+      18.062711
     ]
   }
 ]
