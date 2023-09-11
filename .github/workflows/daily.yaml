@@ -14,7 +14,7 @@ jobs:
   update-movies:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up node
         uses: actions/setup-node@v3
         with:
@@ -42,7 +42,7 @@ jobs:
           commit_message: Update records
 
       - name: Checkout ledger
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ngalaiko/ledger
           token: ${{ secrets.GH_PAT }}
