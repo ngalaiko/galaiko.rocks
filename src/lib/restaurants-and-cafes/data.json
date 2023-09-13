@@ -160,16 +160,6 @@
     ]
   },
   {
-    "payee": "PWC",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 715,
-    "location": [
-      59.337622,
-      18.04086
-    ]
-  },
-  {
     "payee": "The Good Gringo",
     "count": 5,
     "currency": "SEK",
@@ -267,6 +257,16 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "PWC",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 570,
+    "location": [
+      59.337622,
+      18.04086
     ]
   },
   {
