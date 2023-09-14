@@ -160,16 +160,6 @@
     ]
   },
   {
-    "payee": "The Good Gringo",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 595,
-    "location": [
-      59.332369,
-      18.04524
-    ]
-  },
-  {
     "payee": "AI Ramen",
     "count": 5,
     "currency": "SEK",
@@ -257,6 +247,16 @@
     "location": [
       59.33836,
       18.039952
+    ]
+  },
+  {
+    "payee": "The Good Gringo",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 480,
+    "location": [
+      59.332369,
+      18.04524
     ]
   },
   {
