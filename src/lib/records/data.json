@@ -311,6 +311,16 @@
   },
   {
     "artist": {
+      "name": "Creedence Clearwater Revival"
+    },
+    "info": {
+      "id": 27979191,
+      "title": "The Complete Hit-Album",
+      "coverImage": "https://i.discogs.com/69EIC5ET0bYlMW7wUv74sJXw60nxvpQfBcwJPKZBFS8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3OTc5/MTkxLTE2OTIwOTY3/NTctMjcxNC5qcGVn.jpeg"
+    }
+  },
+  {
+    "artist": {
       "name": "David Bowie"
     },
     "info": {
