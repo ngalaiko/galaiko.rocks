@@ -210,16 +210,6 @@
     ]
   },
   {
-    "payee": "Levinskys",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 577,
-    "location": [
-      59.33983,
-      18.033982
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 4,
     "currency": "SEK",
@@ -457,6 +447,16 @@
     "location": [
       59.337053,
       18.052454
+    ]
+  },
+  {
+    "payee": "Levinskys",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 442,
+    "location": [
+      59.33983,
+      18.033982
     ]
   },
   {
