@@ -11,9 +11,9 @@
   },
   {
     "payee": "Bar Centro",
-    "count": 22,
+    "count": 25,
     "currency": "SEK",
-    "amount": 1434,
+    "amount": 1545,
     "location": [
       57.705447,
       11.969766
@@ -51,9 +51,9 @@
   },
   {
     "payee": "McDonald's",
-    "count": 8,
+    "count": 9,
     "currency": "SEK",
-    "amount": 805,
+    "amount": 857,
     "location": [
       59.317889,
       18.05361
@@ -67,6 +67,16 @@
     "location": [
       59.308648,
       18.077166
+    ]
+  },
+  {
+    "payee": "Ullevi Thaikök",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1042,
+    "location": [
+      57.708449,
+      11.986409
     ]
   },
   {
@@ -110,16 +120,6 @@
     ]
   },
   {
-    "payee": "Ullevi Thaikök",
-    "count": 7,
-    "currency": "SEK",
-    "amount": 913,
-    "location": [
-      57.708449,
-      11.986409
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 6,
     "currency": "SEK",
@@ -157,6 +157,16 @@
     "location": [
       59.308812,
       18.077144
+    ]
+  },
+  {
+    "payee": "koie ramen",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1089,
+    "location": [
+      57.704636,
+      11.961785
     ]
   },
   {
@@ -200,23 +210,13 @@
     ]
   },
   {
-    "payee": "koie ramen",
+    "payee": "Alexandras Grekiska Soppkök",
     "count": 5,
     "currency": "SEK",
-    "amount": 944,
+    "amount": 559,
     "location": [
-      57.704636,
-      11.961785
-    ]
-  },
-  {
-    "payee": "Yume Sushi",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 585,
-    "location": [
-      59.317338,
-      18.057767
+      57.703553,
+      11.96789
     ]
   },
   {
@@ -310,6 +310,16 @@
     ]
   },
   {
+    "payee": "House of Vietnam",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 480,
+    "location": [
+      57.709422,
+      11.980116
+    ]
+  },
+  {
     "payee": "Banh Mi Shop",
     "count": 4,
     "currency": "SEK",
@@ -317,16 +327,6 @@
     "location": [
       57.703682,
       11.968214
-    ]
-  },
-  {
-    "payee": "Alexandras Grekiska Soppkök",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 449,
-    "location": [
-      57.703553,
-      11.96789
     ]
   },
   {
@@ -407,6 +407,16 @@
     "location": [
       59.3167,
       18.055242
+    ]
+  },
+  {
+    "payee": "Yume Sushi",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 430,
+    "location": [
+      59.317338,
+      18.057767
     ]
   },
   {
@@ -527,16 +537,6 @@
     "location": [
       57.697588,
       11.986249
-    ]
-  },
-  {
-    "payee": "House of Vietnam",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 360,
-    "location": [
-      57.709422,
-      11.980116
     ]
   },
   {
