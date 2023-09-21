@@ -550,16 +550,6 @@
     ]
   },
   {
-    "payee": "Il Forno",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 260,
-    "location": [
-      59.338245,
-      18.038156
-    ]
-  },
-  {
     "payee": "Kolgrill Sam",
     "count": 2,
     "currency": "SEK",
