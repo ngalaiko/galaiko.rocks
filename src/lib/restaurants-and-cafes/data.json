@@ -170,16 +170,6 @@
     ]
   },
   {
-    "payee": "AI Ramen",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 845,
-    "location": [
-      59.333392,
-      18.057954
-    ]
-  },
-  {
     "payee": "La Neta Bar",
     "count": 5,
     "currency": "SEK",
@@ -287,6 +277,16 @@
     "location": [
       59.334656,
       18.061438
+    ]
+  },
+  {
+    "payee": "AI Ramen",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 700,
+    "location": [
+      59.333392,
+      18.057954
     ]
   },
   {
