@@ -124,5 +124,7 @@ export default {
   'Nordstan Kebab': [57.707136, 11.968511],
   'Morgon Coffee Roasters': [57.708091, 11.951323],
   Gourmetkorv: [57.702785, 11.963998],
-  Mahogny: [57.707827, 11.965388]
+  Mahogny: [57.707827, 11.965388],
+  Zozaki: [57.707053, 11.973963],
+  'Hasselsson - Saluhallen': [57.703598, 11.967959]
 };
