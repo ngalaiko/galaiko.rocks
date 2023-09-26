@@ -550,16 +550,6 @@
     ]
   },
   {
-    "payee": "Kolgrill Sam",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 463,
-    "location": [
-      59.428415,
-      17.938238
-    ]
-  },
-  {
     "payee": "Phil’s burger",
     "count": 2,
     "currency": "SEK",
