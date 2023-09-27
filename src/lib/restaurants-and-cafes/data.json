@@ -120,16 +120,6 @@
     ]
   },
   {
-    "payee": "Kafé Ritorno",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 550,
-    "location": [
-      59.336319,
-      18.048464
-    ]
-  },
-  {
     "payee": "Max",
     "count": 6,
     "currency": "SEK",
@@ -207,6 +197,16 @@
     "location": [
       59.334262,
       18.062618
+    ]
+  },
+  {
+    "payee": "Kafé Ritorno",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 410,
+    "location": [
+      59.336319,
+      18.048464
     ]
   },
   {
