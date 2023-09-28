@@ -550,16 +550,6 @@
     ]
   },
   {
-    "payee": "Phil’s burger",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 308,
-    "location": [
-      59.337722,
-      18.057471
-    ]
-  },
-  {
     "payee": "Pizza Hut",
     "count": 2,
     "currency": "SEK",
