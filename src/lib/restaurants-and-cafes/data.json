@@ -340,16 +340,6 @@
     ]
   },
   {
-    "payee": "Saigon Baguette",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 551.5,
-    "location": [
-      59.333528,
-      18.058477
-    ]
-  },
-  {
     "payee": "Pong",
     "count": 3,
     "currency": "SEK",
@@ -697,6 +687,16 @@
     "location": [
       59.335918,
       18.059252
+    ]
+  },
+  {
+    "payee": "Saigon Baguette",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 387.5,
+    "location": [
+      59.333528,
+      18.058477
     ]
   },
   {
