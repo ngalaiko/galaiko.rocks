@@ -340,16 +340,6 @@
     ]
   },
   {
-    "payee": "Pong",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 435,
-    "location": [
-      59.336459,
-      18.058798
-    ]
-  },
-  {
     "payee": "Fullmoon Wook",
     "count": 3,
     "currency": "SEK",
@@ -617,6 +607,16 @@
     "location": [
       59.31837,
       18.059678
+    ]
+  },
+  {
+    "payee": "Pong",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 290,
+    "location": [
+      59.336459,
+      18.058798
     ]
   },
   {
