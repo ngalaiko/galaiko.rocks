@@ -40,16 +40,6 @@
     ]
   },
   {
-    "payee": "Tony's Pizza and Salad",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1204,
-    "location": [
-      59.319056,
-      18.064821
-    ]
-  },
-  {
     "payee": "McDonald's",
     "count": 9,
     "currency": "SEK",
@@ -67,6 +57,16 @@
     "location": [
       57.708449,
       11.986409
+    ]
+  },
+  {
+    "payee": "Tony's Pizza and Salad",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 1084,
+    "location": [
+      59.319056,
+      18.064821
     ]
   },
   {
@@ -337,16 +337,6 @@
     "location": [
       57.703553,
       11.96789
-    ]
-  },
-  {
-    "payee": "Oolong Tea House",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 306,
-    "location": [
-      59.33199,
-      18.067811
     ]
   },
   {
@@ -627,6 +617,16 @@
     "location": [
       59.333651,
       18.056886
+    ]
+  },
+  {
+    "payee": "Oolong Tea House",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 178,
+    "location": [
+      59.33199,
+      18.067811
     ]
   },
   {
