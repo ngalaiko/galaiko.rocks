@@ -11,9 +11,9 @@
   },
   {
     "payee": "Bar Centro",
-    "count": 29,
+    "count": 32,
     "currency": "SEK",
-    "amount": 1863,
+    "amount": 2065,
     "location": [
       57.705447,
       11.969766
@@ -40,6 +40,16 @@
     ]
   },
   {
+    "payee": "Ullevi Thaikök",
+    "count": 10,
+    "currency": "SEK",
+    "amount": 1300,
+    "location": [
+      57.708449,
+      11.986409
+    ]
+  },
+  {
     "payee": "McDonald's",
     "count": 9,
     "currency": "SEK",
@@ -47,16 +57,6 @@
     "location": [
       59.317889,
       18.05361
-    ]
-  },
-  {
-    "payee": "Ullevi Thaikök",
-    "count": 9,
-    "currency": "SEK",
-    "amount": 1171,
-    "location": [
-      57.708449,
-      11.986409
     ]
   },
   {
@@ -77,6 +77,16 @@
     "location": [
       59.308648,
       18.077166
+    ]
+  },
+  {
+    "payee": "Alexandras Grekiska Soppkök",
+    "count": 8,
+    "currency": "SEK",
+    "amount": 889,
+    "location": [
+      57.703553,
+      11.96789
     ]
   },
   {
@@ -160,26 +170,6 @@
     ]
   },
   {
-    "payee": "Alexandras Grekiska Soppkök",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 669,
-    "location": [
-      57.703553,
-      11.96789
-    ]
-  },
-  {
-    "payee": "La Neta Bar",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 651,
-    "location": [
-      59.333599,
-      18.070247
-    ]
-  },
-  {
     "payee": "La Neta",
     "count": 5,
     "currency": "SEK",
@@ -207,6 +197,26 @@
     "location": [
       59.336319,
       18.048464
+    ]
+  },
+  {
+    "payee": "Banh Mi Shop",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 645,
+    "location": [
+      57.703682,
+      11.968214
+    ]
+  },
+  {
+    "payee": "Gelaterian Göteborg",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 332,
+    "location": [
+      57.703553,
+      11.96789
     ]
   },
   {
@@ -320,26 +330,6 @@
     ]
   },
   {
-    "payee": "Banh Mi Shop",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 520,
-    "location": [
-      57.703682,
-      11.968214
-    ]
-  },
-  {
-    "payee": "Gelaterian Göteborg",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 280,
-    "location": [
-      57.703553,
-      11.96789
-    ]
-  },
-  {
     "payee": "Gute Grill Bar",
     "count": 3,
     "currency": "SEK",
@@ -440,6 +430,16 @@
     ]
   },
   {
+    "payee": "La Neta Bar",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 370,
+    "location": [
+      59.333599,
+      18.070247
+    ]
+  },
+  {
     "payee": "Nem Nem Quan",
     "count": 3,
     "currency": "SEK",
@@ -487,6 +487,16 @@
     "location": [
       57.697588,
       11.986249
+    ]
+  },
+  {
+    "payee": "Mahogny",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 136,
+    "location": [
+      57.707827,
+      11.965388
     ]
   },
   {
@@ -847,16 +857,6 @@
     "location": [
       57.693698,
       11.989474
-    ]
-  },
-  {
-    "payee": "Mahogny",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 89,
-    "location": [
-      57.707827,
-      11.965388
     ]
   },
   {
