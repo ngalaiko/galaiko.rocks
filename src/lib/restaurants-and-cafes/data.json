@@ -220,16 +220,6 @@
     ]
   },
   {
-    "payee": "Belgobaren",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 596,
-    "location": [
-      59.332907,
-      18.058313
-    ]
-  },
-  {
     "payee": "Shanti Shukriya",
     "count": 4,
     "currency": "SEK",
@@ -407,6 +397,16 @@
     "location": [
       59.33983,
       18.033982
+    ]
+  },
+  {
+    "payee": "Belgobaren",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 447,
+    "location": [
+      59.332907,
+      18.058313
     ]
   },
   {
