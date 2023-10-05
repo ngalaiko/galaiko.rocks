@@ -320,16 +320,6 @@
     ]
   },
   {
-    "payee": "Gute Grill Bar",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 465,
-    "location": [
-      59.336739,
-      18.069433
-    ]
-  },
-  {
     "payee": "Brunos Korvbar",
     "count": 3,
     "currency": "SEK",
@@ -517,6 +507,16 @@
     "location": [
       57.702785,
       11.963998
+    ]
+  },
+  {
+    "payee": "Gute Grill Bar",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 310,
+    "location": [
+      59.336739,
+      18.069433
     ]
   },
   {
