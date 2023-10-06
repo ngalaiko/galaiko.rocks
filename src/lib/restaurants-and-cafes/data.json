@@ -170,16 +170,6 @@
     ]
   },
   {
-    "payee": "La Neta",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 620,
-    "location": [
-      59.336673,
-      18.058082
-    ]
-  },
-  {
     "payee": "Kajsas Fisk",
     "count": 5,
     "currency": "SEK",
@@ -277,6 +267,16 @@
     "location": [
       59.334656,
       18.061438
+    ]
+  },
+  {
+    "payee": "La Neta",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 500,
+    "location": [
+      59.336673,
+      18.058082
     ]
   },
   {
