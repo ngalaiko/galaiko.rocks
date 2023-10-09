@@ -1,9 +1,9 @@
 [
   {
     "payee": "Omnipollos Hatt",
-    "count": 35,
+    "count": 34,
     "currency": "SEK",
-    "amount": 9512.5,
+    "amount": 9247.5,
     "location": [
       59.318041,
       18.072196
@@ -307,16 +307,6 @@
     "location": [
       57.709422,
       11.980116
-    ]
-  },
-  {
-    "payee": "Brunos Korvbar",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 205,
-    "location": [
-      59.3167,
-      18.055242
     ]
   },
   {
@@ -697,6 +687,16 @@
     "location": [
       59.333528,
       18.058477
+    ]
+  },
+  {
+    "payee": "Brunos Korvbar",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 180,
+    "location": [
+      59.3167,
+      18.055242
     ]
   },
   {
