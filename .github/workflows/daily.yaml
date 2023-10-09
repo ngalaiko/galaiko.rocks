@@ -29,7 +29,7 @@ jobs:
       - name: Fetch movies info
         run: |
           pnpm letterboxd:update
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update movies
 
@@ -37,7 +37,7 @@ jobs:
         run: |
           pnpm discogs:download \
             --api-token "${{ secrets.DISCOGS_API_KEY}}"
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update records
 
@@ -54,6 +54,6 @@ jobs:
         run: |
           pnpm ledger:restaurants-and-cafes \
             --file "$GITHUB_WORKSPACE/ledger/main.ledger"
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes
