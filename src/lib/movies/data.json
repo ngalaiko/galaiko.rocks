@@ -1612,5 +1612,23 @@
     "watchedDate": "2023-10-13",
     "rewatch": false,
     "href": "https://letterboxd.com/ngalaiko/film/meg-2-the-trench/"
+  },
+  {
+    "title": "The End of the Tour",
+    "watchedDate": "2023-10-15",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/the-end-of-the-tour/1/"
+  },
+  {
+    "title": "Raving Riot",
+    "watchedDate": "2023-10-15",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/raving-riot/"
+  },
+  {
+    "title": "The Unbearable Weight of Massive Talent",
+    "watchedDate": "2023-10-14",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/the-unbearable-weight-of-massive-talent/1/"
   }
 ]
