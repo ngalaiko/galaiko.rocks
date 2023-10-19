@@ -126,5 +126,8 @@ export default {
   Gourmetkorv: [57.702785, 11.963998],
   Mahogny: [57.707827, 11.965388],
   Zozaki: [57.707053, 11.973963],
-  'Hasselsson - Saluhallen': [57.703598, 11.967959]
+  'Hasselsson - Saluhallen': [57.703598, 11.967959],
+  'Steamy Pho': [57.709426, 11.985551],
+  Hoze: [57.699405, 11.935068],
+  'Landvetters Stenugnsbageri': [57.700682, 11.982264]
 };
