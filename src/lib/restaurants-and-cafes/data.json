@@ -1,22 +1,22 @@
 [
   {
-    "payee": "Omnipollos Hatt",
-    "count": 34,
-    "currency": "SEK",
-    "amount": 9247.5,
-    "location": [
-      59.318041,
-      18.072196
-    ]
-  },
-  {
     "payee": "Bar Centro",
-    "count": 32,
+    "count": 39,
     "currency": "SEK",
-    "amount": 2065,
+    "amount": 2799,
     "location": [
       57.705447,
       11.969766
+    ]
+  },
+  {
+    "payee": "Omnipollos Hatt",
+    "count": 33,
+    "currency": "SEK",
+    "amount": 9112.5,
+    "location": [
+      59.318041,
+      18.072196
     ]
   },
   {
@@ -30,6 +30,16 @@
     ]
   },
   {
+    "payee": "Ullevi Thaikök",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1558,
+    "location": [
+      57.708449,
+      11.986409
+    ]
+  },
+  {
     "payee": "ilcaffè",
     "count": 10,
     "currency": "SEK",
@@ -40,13 +50,13 @@
     ]
   },
   {
-    "payee": "Ullevi Thaikök",
-    "count": 10,
+    "payee": "Alexandras Grekiska Soppkök",
+    "count": 9,
     "currency": "SEK",
-    "amount": 1300,
+    "amount": 999,
     "location": [
-      57.708449,
-      11.986409
+      57.703553,
+      11.96789
     ]
   },
   {
@@ -77,16 +87,6 @@
     "location": [
       59.308648,
       18.077166
-    ]
-  },
-  {
-    "payee": "Alexandras Grekiska Soppkök",
-    "count": 8,
-    "currency": "SEK",
-    "amount": 889,
-    "location": [
-      57.703553,
-      11.96789
     ]
   },
   {
@@ -130,6 +130,16 @@
     ]
   },
   {
+    "payee": "koie ramen",
+    "count": 7,
+    "currency": "SEK",
+    "amount": 1259,
+    "location": [
+      57.704636,
+      11.961785
+    ]
+  },
+  {
     "payee": "Max",
     "count": 6,
     "currency": "SEK",
@@ -157,16 +167,6 @@
     "location": [
       59.308812,
       18.077144
-    ]
-  },
-  {
-    "payee": "koie ramen",
-    "count": 6,
-    "currency": "SEK",
-    "amount": 1089,
-    "location": [
-      57.704636,
-      11.961785
     ]
   },
   {
@@ -207,16 +207,6 @@
     "location": [
       57.703553,
       11.96789
-    ]
-  },
-  {
-    "payee": "The Good Gringo",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 480,
-    "location": [
-      59.332369,
-      18.04524
     ]
   },
   {
@@ -300,6 +290,16 @@
     ]
   },
   {
+    "payee": "Tonys Coffeebar",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 243,
+    "location": [
+      57.697588,
+      11.986249
+    ]
+  },
+  {
     "payee": "House of Vietnam",
     "count": 4,
     "currency": "SEK",
@@ -307,46 +307,6 @@
     "location": [
       57.709422,
       11.980116
-    ]
-  },
-  {
-    "payee": "Yume Sushi",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 430,
-    "location": [
-      59.317338,
-      18.057767
-    ]
-  },
-  {
-    "payee": "Tokyo Diner",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 505,
-    "location": [
-      59.334456,
-      18.062486
-    ]
-  },
-  {
-    "payee": "Eatnam",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 435,
-    "location": [
-      59.341795,
-      18.047249
-    ]
-  },
-  {
-    "payee": "Indian Curry House",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 380,
-    "location": [
-      59.329504,
-      18.043632
     ]
   },
   {
@@ -420,6 +380,16 @@
     ]
   },
   {
+    "payee": "The Good Gringo",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 345,
+    "location": [
+      59.332369,
+      18.04524
+    ]
+  },
+  {
     "payee": "Nem Nem Quan",
     "count": 3,
     "currency": "SEK",
@@ -460,13 +430,13 @@
     ]
   },
   {
-    "payee": "Tonys Coffeebar",
+    "payee": "Nordstan Kebab",
     "count": 3,
     "currency": "SEK",
-    "amount": 177,
+    "amount": 328,
     "location": [
-      57.697588,
-      11.986249
+      57.707136,
+      11.968511
     ]
   },
   {
@@ -497,16 +467,6 @@
     "location": [
       57.702785,
       11.963998
-    ]
-  },
-  {
-    "payee": "Pizza Hut",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 248,
-    "location": [
-      59.33183,
-      18.059651
     ]
   },
   {
@@ -547,6 +507,16 @@
     "location": [
       59.340032,
       18.032727
+    ]
+  },
+  {
+    "payee": "Yume Sushi",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 275,
+    "location": [
+      59.317338,
+      18.057767
     ]
   },
   {
@@ -630,6 +600,16 @@
     ]
   },
   {
+    "payee": "Indian Curry House",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 260,
+    "location": [
+      59.329504,
+      18.043632
+    ]
+  },
+  {
     "payee": "Mormors Dumpling",
     "count": 2,
     "currency": "SEK",
@@ -637,6 +617,16 @@
     "location": [
       59.313618,
       18.085532
+    ]
+  },
+  {
+    "payee": "Tokyo Diner",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 350,
+    "location": [
+      59.334456,
+      18.062486
     ]
   },
   {
@@ -730,6 +720,16 @@
     ]
   },
   {
+    "payee": "Eatnam",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 300,
+    "location": [
+      59.341795,
+      18.047249
+    ]
+  },
+  {
     "payee": "Haikyuu Sushi & Poke ",
     "count": 2,
     "currency": "SEK",
@@ -820,16 +820,6 @@
     ]
   },
   {
-    "payee": "Nordstan Kebab",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 219,
-    "location": [
-      57.707136,
-      11.968511
-    ]
-  },
-  {
     "payee": "EDO Sushi",
     "count": 2,
     "currency": "SEK",
@@ -860,6 +850,16 @@
     ]
   },
   {
+    "payee": "Steamy Pho",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 330,
+    "location": [
+      57.709426,
+      11.985551
+    ]
+  },
+  {
     "payee": "Morgon Coffee Roasters",
     "count": 2,
     "currency": "SEK",
@@ -870,6 +870,16 @@
     ]
   },
   {
+    "payee": "Hoze",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 9500,
+    "location": [
+      57.699405,
+      11.935068
+    ]
+  },
+  {
     "payee": "DropCoffee",
     "count": 2,
     "currency": "SEK",
@@ -877,6 +887,16 @@
     "location": [
       59.316889,
       18.062711
+    ]
+  },
+  {
+    "payee": "Landvetters Stenugnsbageri",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 132,
+    "location": [
+      57.700682,
+      11.982264
     ]
   }
 ]
