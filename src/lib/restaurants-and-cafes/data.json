@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Levinskys",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 442,
-    "location": [
-      59.33983,
-      18.033982
-    ]
-  },
-  {
     "payee": "Belgobaren",
     "count": 3,
     "currency": "SEK",
@@ -717,6 +707,16 @@
     "location": [
       59.333083,
       18.064476
+    ]
+  },
+  {
+    "payee": "Levinskys",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 274,
+    "location": [
+      59.33983,
+      18.033982
     ]
   },
   {
