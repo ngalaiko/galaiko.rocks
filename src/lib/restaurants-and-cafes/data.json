@@ -1,9 +1,9 @@
 [
   {
     "payee": "Bar Centro",
-    "count": 39,
+    "count": 42,
     "currency": "SEK",
-    "amount": 2799,
+    "amount": 3104,
     "location": [
       57.705447,
       11.969766
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Ullevi Thaikök",
-    "count": 12,
+    "count": 13,
     "currency": "SEK",
-    "amount": 1558,
+    "amount": 1687,
     "location": [
       57.708449,
       11.986409
@@ -51,9 +51,9 @@
   },
   {
     "payee": "Alexandras Grekiska Soppkök",
-    "count": 9,
+    "count": 10,
     "currency": "SEK",
-    "amount": 999,
+    "amount": 1109,
     "location": [
       57.703553,
       11.96789
@@ -310,6 +310,16 @@
     ]
   },
   {
+    "payee": "Hasselsson - Saluhallen",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 447,
+    "location": [
+      57.703598,
+      11.967959
+    ]
+  },
+  {
     "payee": "Belgobaren",
     "count": 3,
     "currency": "SEK",
@@ -427,16 +437,6 @@
     "location": [
       57.707827,
       11.965388
-    ]
-  },
-  {
-    "payee": "Hasselsson - Saluhallen",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 328,
-    "location": [
-      57.703598,
-      11.967959
     ]
   },
   {
@@ -850,6 +850,16 @@
     ]
   },
   {
+    "payee": "Helenes Smørrebrød",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 248,
+    "location": [
+      57.698781,
+      11.983269
+    ]
+  },
+  {
     "payee": "Morgon Coffee Roasters",
     "count": 2,
     "currency": "SEK",
@@ -877,6 +887,16 @@
     "location": [
       59.316889,
       18.062711
+    ]
+  },
+  {
+    "payee": "Hagabions Cafe",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 701,
+    "location": [
+      57.696563,
+      11.95073
     ]
   },
   {

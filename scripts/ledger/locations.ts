@@ -129,5 +129,7 @@ export default {
   'Hasselsson - Saluhallen': [57.703598, 11.967959],
   'Steamy Pho': [57.709426, 11.985551],
   Hoze: [57.699405, 11.935068],
-  'Landvetters Stenugnsbageri': [57.700682, 11.982264]
+  'Landvetters Stenugnsbageri': [57.700682, 11.982264],
+  'Helenes Smørrebrød': [57.698781, 11.983269],
+  'Hagabions Cafe': [57.696563, 11.950730],
 };
