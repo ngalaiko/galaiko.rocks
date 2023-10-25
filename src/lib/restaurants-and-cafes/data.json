@@ -450,16 +450,6 @@
     ]
   },
   {
-    "payee": "Ta'ameya",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 285,
-    "location": [
-      59.339728,
-      18.060213
-    ]
-  },
-  {
     "payee": "Tehran Grill",
     "count": 2,
     "currency": "SEK",
