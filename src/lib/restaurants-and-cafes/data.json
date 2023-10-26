@@ -210,16 +210,6 @@
     ]
   },
   {
-    "payee": "PWC",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 570,
-    "location": [
-      59.337622,
-      18.04086
-    ]
-  },
-  {
     "payee": "Djingis Khan",
     "count": 4,
     "currency": "SEK",
@@ -377,6 +367,16 @@
     "location": [
       59.332369,
       18.04524
+    ]
+  },
+  {
+    "payee": "PWC",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 430,
+    "location": [
+      59.337622,
+      18.04086
     ]
   },
   {
