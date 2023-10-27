@@ -210,16 +210,6 @@
     ]
   },
   {
-    "payee": "Djingis Khan",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 580,
-    "location": [
-      59.336377,
-      18.063073
-    ]
-  },
-  {
     "payee": "Carl's Deli",
     "count": 4,
     "currency": "SEK",
@@ -317,6 +307,16 @@
     "location": [
       59.332907,
       18.058313
+    ]
+  },
+  {
+    "payee": "Djingis Khan",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 435,
+    "location": [
+      59.336377,
+      18.063073
     ]
   },
   {
