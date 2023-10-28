@@ -450,16 +450,6 @@
     ]
   },
   {
-    "payee": "Tehran Grill",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 280,
-    "location": [
-      59.340032,
-      18.032727
-    ]
-  },
-  {
     "payee": "Indian King",
     "count": 2,
     "currency": "SEK",
