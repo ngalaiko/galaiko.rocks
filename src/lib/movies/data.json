@@ -1654,5 +1654,11 @@
     "watchedDate": "2023-10-21",
     "rewatch": true,
     "href": "https://letterboxd.com/ngalaiko/film/the-karate-kid/"
+  },
+  {
+    "title": "The Thing",
+    "watchedDate": "2023-10-28",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/the-thing/"
   }
 ]
