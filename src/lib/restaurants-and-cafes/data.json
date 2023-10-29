@@ -450,16 +450,6 @@
     ]
   },
   {
-    "payee": "Indian King",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 270,
-    "location": [
-      59.337053,
-      18.052454
-    ]
-  },
-  {
     "payee": "Yume Sushi",
     "count": 2,
     "currency": "SEK",
