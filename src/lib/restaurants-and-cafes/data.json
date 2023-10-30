@@ -1,9 +1,9 @@
 [
   {
     "payee": "Bar Centro",
-    "count": 42,
+    "count": 44,
     "currency": "SEK",
-    "amount": 3104,
+    "amount": 3354,
     "location": [
       57.705447,
       11.969766
@@ -450,13 +450,23 @@
     ]
   },
   {
-    "payee": "Yume Sushi",
-    "count": 2,
+    "payee": "Morgon Coffee Roasters",
+    "count": 3,
     "currency": "SEK",
-    "amount": 275,
+    "amount": 180,
     "location": [
-      59.317338,
-      18.057767
+      57.708091,
+      11.951323
+    ]
+  },
+  {
+    "payee": "Hagabions Cafe",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 933,
+    "location": [
+      57.696563,
+      11.95073
     ]
   },
   {
@@ -820,16 +830,6 @@
     ]
   },
   {
-    "payee": "Morgon Coffee Roasters",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 55,
-    "location": [
-      57.708091,
-      11.951323
-    ]
-  },
-  {
     "payee": "Hoze",
     "count": 2,
     "currency": "SEK",
@@ -847,16 +847,6 @@
     "location": [
       59.316889,
       18.062711
-    ]
-  },
-  {
-    "payee": "Hagabions Cafe",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 701,
-    "location": [
-      57.696563,
-      11.95073
     ]
   },
   {
