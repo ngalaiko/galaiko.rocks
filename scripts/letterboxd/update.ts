@@ -25,30 +25,29 @@ const download = async (): Promise<Movie[]> => {
   const xml = await fetch('https://letterboxd.com/ngalaiko/rss/');
   const text = await xml.text();
   const json = await parseStringPromise(text);
-  return json.rss.channel[0].item.map((item: any) => {
-    const title = item['letterboxd:filmTitle'][0];
-    const watchedDate = item['letterboxd:watchedDate'][0];
-    const rewatch = item['letterboxd:rewatch'][0] === 'Yes';
-    const href = item.link[0];
-    return {
-      title,
-      watchedDate,
-      rewatch,
-      href
-    };
-  });
+  return Promise.all(
+    json.rss.channel[0].item.map(async (item: any) => {
+      const title = item['letterboxd:filmTitle'][0];
+      const watchedDate = item['letterboxd:watchedDate'][0];
+      const rewatch = item['letterboxd:rewatch'][0] === 'Yes';
+      const href = item.link[0];
+      const description = await parseStringPromise(item.description[0]);
+      const poster = description.p.img[0]['$'].src;
+      return {
+        title,
+        watchedDate,
+        rewatch,
+        href,
+        poster
+      };
+    })
+  );
 };
 
 Promise.all([read(argv.output), download()])
   .then(([read, downloaded]) => {
     const toAdd = downloaded.filter(
-      (downloaded) =>
-        !read.some(
-          (read) =>
-            read.title === downloaded.title &&
-            read.watchedDate === downloaded.watchedDate &&
-            read.rewatch == downloaded.rewatch
-        )
+      (downloaded) => !read.some((read) => read.href === downloaded.href)
     );
     return [...read, ...toAdd];
   })
