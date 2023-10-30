@@ -5,6 +5,7 @@ export type Movie = {
   watchedDate: string;
   href: string;
   rewatch: boolean;
+  poster: string;
 };
 
 export const list = (): Movie[] => movies;
