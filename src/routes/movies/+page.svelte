@@ -14,6 +14,9 @@
 </svelte:head>
 
 <article>
+  <h1>Movies</h1>
+  <p>here are movies i watched:</p>
+
   <ul class="h-feed">
     {#each data.movies as movie, i}
       {@const date = movie.watchedDate}
