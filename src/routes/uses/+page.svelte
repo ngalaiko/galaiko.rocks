@@ -86,7 +86,9 @@
 
     <li>iphone 13 mini</li>
 
-    <li>air pods pro 2</li>
+    <li>air pods pro</li>
+
+    <li>air pods max</li>
 
     <li>
       <a href="https://store.ui.com/collections/unifi-network-unifi-os-consoles/products/udm-us"
@@ -150,5 +152,7 @@
     <li>
       <a href="https://www.brompton.com">brompton m6l</a>
     </li>
+
+    <li>custom fixed gear bike</li>
   </ul>
 </arcicle>
