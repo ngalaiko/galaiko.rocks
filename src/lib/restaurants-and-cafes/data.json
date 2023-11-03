@@ -170,16 +170,6 @@
     ]
   },
   {
-    "payee": "Kajsas Fisk",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 660,
-    "location": [
-      59.334262,
-      18.062618
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 5,
     "currency": "SEK",
@@ -237,6 +227,16 @@
     "location": [
       59.336673,
       18.058082
+    ]
+  },
+  {
+    "payee": "Kajsas Fisk",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 530,
+    "location": [
+      59.334262,
+      18.062618
     ]
   },
   {
