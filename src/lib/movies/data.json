@@ -1660,5 +1660,19 @@
     "watchedDate": "2023-10-28",
     "rewatch": false,
     "href": "https://letterboxd.com/ngalaiko/film/the-thing/"
+  },
+  {
+    "title": "The Pervert's Guide to Ideology",
+    "watchedDate": "2023-11-04",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/the-perverts-guide-to-ideology/1/",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/9/9/8/7/4/99874-the-pervert-s-guide-to-ideology-0-600-0-900-crop.jpg?v=1938017514"
+  },
+  {
+    "title": "Nostalgia",
+    "watchedDate": "2023-11-04",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/nostalgia-1983/",
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/sh/zk/fh/9l/9LmJxdap9iaeQe6AAA9FzZytq79-0-600-0-900-crop.jpg?v=fc5f972431"
   }
 ]
