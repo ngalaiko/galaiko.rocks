@@ -470,16 +470,6 @@
     ]
   },
   {
-    "payee": "Brisket & Friends",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 365,
-    "location": [
-      59.33687,
-      18.054108
-    ]
-  },
-  {
     "payee": "Falafelbaren",
     "count": 2,
     "currency": "SEK",
