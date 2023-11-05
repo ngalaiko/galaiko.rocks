@@ -132,4 +132,5 @@ export default {
   'Landvetters Stenugnsbageri': [57.700682, 11.982264],
   'Helenes Smørrebrød': [57.698781, 11.983269],
   'Hagabions Cafe': [57.696563, 11.950730],
+  'Trattoria Da Pasquale': [57.700095, 11.984407]
 };
