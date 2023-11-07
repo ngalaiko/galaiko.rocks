@@ -11,9 +11,9 @@
   },
   {
     "payee": "Omnipollos Hatt",
-    "count": 31,
+    "count": 30,
     "currency": "SEK",
-    "amount": 8591.5,
+    "amount": 8314.5,
     "location": [
       59.318041,
       18.072196
@@ -477,16 +477,6 @@
     "location": [
       57.708091,
       11.951323
-    ]
-  },
-  {
-    "payee": "Falafelbaren",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 235,
-    "location": [
-      59.31837,
-      18.059678
     ]
   },
   {
