@@ -480,16 +480,6 @@
     ]
   },
   {
-    "payee": "Pong",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 290,
-    "location": [
-      59.336459,
-      18.058798
-    ]
-  },
-  {
     "payee": "Hemma Vasastan",
     "count": 2,
     "currency": "SEK",
