@@ -310,16 +310,6 @@
     ]
   },
   {
-    "payee": "Belgobaren",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 447,
-    "location": [
-      59.332907,
-      18.058313
-    ]
-  },
-  {
     "payee": "Djingis Khan",
     "count": 3,
     "currency": "SEK",
@@ -597,6 +587,16 @@
     "location": [
       59.3167,
       18.055242
+    ]
+  },
+  {
+    "payee": "Belgobaren",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 298,
+    "location": [
+      59.332907,
+      18.058313
     ]
   },
   {
