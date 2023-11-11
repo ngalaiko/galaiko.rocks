@@ -1681,5 +1681,19 @@
     "rewatch": true,
     "href": "https://letterboxd.com/ngalaiko/film/fight-club/",
     "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/5/6/8/51568-fight-club-0-600-0-900-crop.jpg?v=768b32dfa4"
+  },
+  {
+    "title": "They Live",
+    "watchedDate": "2023-01-29",
+    "rewatch": false,
+    "href": "https://letterboxd.com/ngalaiko/film/they-live/2/",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/7/9/8/47798-they-live-0-600-0-900-crop.jpg?v=816bf826a0"
+  },
+  {
+    "title": "They Live",
+    "watchedDate": "2023-11-10",
+    "rewatch": true,
+    "href": "https://letterboxd.com/ngalaiko/film/they-live/1/",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/7/9/8/47798-they-live-0-600-0-900-crop.jpg?v=816bf826a0"
   }
 ]
