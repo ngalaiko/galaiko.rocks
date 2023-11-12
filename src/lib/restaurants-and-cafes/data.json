@@ -160,16 +160,6 @@
     ]
   },
   {
-    "payee": "Max",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 349,
-    "location": [
-      59.315597,
-      18.073084
-    ]
-  },
-  {
     "payee": "Kafé Ritorno",
     "count": 5,
     "currency": "SEK",
@@ -247,6 +237,16 @@
     "location": [
       59.333392,
       18.057954
+    ]
+  },
+  {
+    "payee": "Max",
+    "count": 4,
+    "currency": "SEK",
+    "amount": 307,
+    "location": [
+      59.315597,
+      18.073084
     ]
   },
   {
@@ -457,16 +457,6 @@
     "location": [
       57.708091,
       11.951323
-    ]
-  },
-  {
-    "payee": "Vigårda",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 282,
-    "location": [
-      59.333651,
-      18.056886
     ]
   },
   {
