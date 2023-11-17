@@ -1,9 +1,9 @@
 [
   {
     "payee": "Bar Centro",
-    "count": 45,
+    "count": 49,
     "currency": "SEK",
-    "amount": 3479,
+    "amount": 3865,
     "location": [
       57.705447,
       11.969766
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Ullevi Thaikök",
-    "count": 15,
+    "count": 16,
     "currency": "SEK",
-    "amount": 1945,
+    "amount": 2074,
     "location": [
       57.708449,
       11.986409
@@ -31,9 +31,9 @@
   },
   {
     "payee": "Amida",
-    "count": 13,
+    "count": 12,
     "currency": "SEK",
-    "amount": 2226,
+    "amount": 2067,
     "location": [
       59.314721,
       18.078432
@@ -160,6 +160,26 @@
     ]
   },
   {
+    "payee": "Hasselsson - Saluhallen",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 701,
+    "location": [
+      57.703598,
+      11.967959
+    ]
+  },
+  {
+    "payee": "Banh Mi Shop",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 760,
+    "location": [
+      57.703682,
+      11.968214
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 5,
     "currency": "SEK",
@@ -167,16 +187,6 @@
     "location": [
       59.336319,
       18.048464
-    ]
-  },
-  {
-    "payee": "Banh Mi Shop",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 645,
-    "location": [
-      57.703682,
-      11.968214
     ]
   },
   {
@@ -190,23 +200,13 @@
     ]
   },
   {
-    "payee": "Carl's Deli",
-    "count": 4,
+    "payee": "Hagabions Cafe",
+    "count": 5,
     "currency": "SEK",
-    "amount": 570,
+    "amount": 1345,
     "location": [
-      59.334257,
-      18.063021
-    ]
-  },
-  {
-    "payee": "Haymarket",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 860,
-    "location": [
-      59.334656,
-      18.061438
+      57.696563,
+      11.95073
     ]
   },
   {
@@ -290,26 +290,6 @@
     ]
   },
   {
-    "payee": "Hasselsson - Saluhallen",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 447,
-    "location": [
-      57.703598,
-      11.967959
-    ]
-  },
-  {
-    "payee": "Hagabions Cafe",
-    "count": 4,
-    "currency": "SEK",
-    "amount": 1113,
-    "location": [
-      57.696563,
-      11.95073
-    ]
-  },
-  {
     "payee": "Shanti Shukriya",
     "count": 3,
     "currency": "SEK",
@@ -327,6 +307,16 @@
     "location": [
       59.331949,
       18.057649
+    ]
+  },
+  {
+    "payee": "Haymarket",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 645,
+    "location": [
+      59.334656,
+      18.061438
     ]
   },
   {
@@ -367,6 +357,16 @@
     "location": [
       59.337622,
       18.04086
+    ]
+  },
+  {
+    "payee": "Carl's Deli",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 435,
+    "location": [
+      59.334257,
+      18.063021
     ]
   },
   {
@@ -457,26 +457,6 @@
     "location": [
       57.708091,
       11.951323
-    ]
-  },
-  {
-    "payee": "Oolong Tea House",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 178,
-    "location": [
-      59.33199,
-      18.067811
-    ]
-  },
-  {
-    "payee": "Birkastans Pizzeria",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 277,
-    "location": [
-      59.340846,
-      18.032985
     ]
   },
   {
