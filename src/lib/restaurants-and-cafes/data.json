@@ -290,16 +290,6 @@
     ]
   },
   {
-    "payee": "Shanti Shukriya",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 420,
-    "location": [
-      59.33836,
-      18.039952
-    ]
-  },
-  {
     "payee": "Weidao",
     "count": 3,
     "currency": "SEK",
@@ -567,6 +557,16 @@
     "location": [
       59.333376,
       18.054404
+    ]
+  },
+  {
+    "payee": "Shanti Shukriya",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 295,
+    "location": [
+      59.33836,
+      18.039952
     ]
   },
   {
