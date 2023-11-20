@@ -131,6 +131,8 @@ export default {
   Hoze: [57.699405, 11.935068],
   'Landvetters Stenugnsbageri': [57.700682, 11.982264],
   'Helenes Smørrebrød': [57.698781, 11.983269],
-  'Hagabions Cafe': [57.696563, 11.950730],
-  'Trattoria Da Pasquale': [57.700095, 11.984407]
+  'Hagabions Cafe': [57.696563, 11.95073],
+  'Trattoria Da Pasquale': [57.700095, 11.984407],
+  'La Terrazza': [57.699998, 11.984547],
+  'Gansu Köket': [57.708635, 11.965104]
 };
