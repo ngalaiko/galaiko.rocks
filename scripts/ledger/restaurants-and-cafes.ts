@@ -17,6 +17,7 @@ const argv = yargs(process.argv.slice(2))
   .option('number', {
     alias: 'n',
     type: 'number',
+    default: 2,
     description: 'Minimum number of visits'
   })
   .option('output', {
@@ -87,8 +88,8 @@ export const groupBy = <T, K extends keyof any>(list: T[], getKey: (item: T) => 
   }, {} as Record<K, T[]>);
 
 exportTransactions(argv.file)
-  .then((transactions) =>
-    Object.entries(groupBy(transactions, (t: Transaction) => t.payee))
+  .then((transactions) => {
+    const entries = Object.entries(groupBy(transactions, (t: Transaction) => t.payee))
       .map(([payee, transactions]) => ({
         payee,
         // filter out negative transactions as they are refunds
@@ -101,9 +102,20 @@ exportTransactions(argv.file)
       .map((entry) => {
         const payee = entry.payee.trim();
         const location = locations[payee];
-        if (!location) throw new Error(`${entry.payee}: location missing`);
-        return { ...entry, location };
-      })
-  )
+        if (!location) {
+          return [null, payee];
+        } else {
+          return [{ ...entry, location }, null];
+        }
+      });
+
+    const missing = entries
+      .filter(([entry, _location]) => entry == null)
+      .map(([_entry, location]) => location);
+
+    if (missing.length > 1) throw new Error(`Missing locations for: ${missing.join(', ')}`);
+
+    return entries.map(([entry, _location]) => entry);
+  })
   .then(writeJSON(argv.output))
   .then(() => console.log('done!'));
