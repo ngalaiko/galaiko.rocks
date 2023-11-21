@@ -1,9 +1,9 @@
 [
   {
     "payee": "Bar Centro",
-    "count": 49,
+    "count": 51,
     "currency": "SEK",
-    "amount": 3865,
+    "amount": 4068,
     "location": [
       57.705447,
       11.969766
@@ -30,6 +30,16 @@
     ]
   },
   {
+    "payee": "Alexandras Grekiska Soppkök",
+    "count": 12,
+    "currency": "SEK",
+    "amount": 1439,
+    "location": [
+      57.703553,
+      11.96789
+    ]
+  },
+  {
     "payee": "Amida",
     "count": 11,
     "currency": "SEK",
@@ -37,16 +47,6 @@
     "location": [
       59.314721,
       18.078432
-    ]
-  },
-  {
-    "payee": "Alexandras Grekiska Soppkök",
-    "count": 11,
-    "currency": "SEK",
-    "amount": 1219,
-    "location": [
-      57.703553,
-      11.96789
     ]
   },
   {
@@ -450,6 +450,16 @@
     ]
   },
   {
+    "payee": "Landvetters Stenugnsbageri",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 176,
+    "location": [
+      57.700682,
+      11.982264
+    ]
+  },
+  {
     "payee": "Indian Curry House",
     "count": 2,
     "currency": "SEK",
@@ -770,16 +780,6 @@
     ]
   },
   {
-    "payee": "Landvetters Stenugnsbageri",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 132,
-    "location": [
-      57.700682,
-      11.982264
-    ]
-  },
-  {
     "payee": "Trattoria Da Pasquale",
     "count": 2,
     "currency": "SEK",
@@ -787,6 +787,26 @@
     "location": [
       57.700095,
       11.984407
+    ]
+  },
+  {
+    "payee": "La Terrazza",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 766,
+    "location": [
+      57.699998,
+      11.984547
+    ]
+  },
+  {
+    "payee": "Gansu Köket",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 254,
+    "location": [
+      57.708635,
+      11.965104
     ]
   }
 ]
