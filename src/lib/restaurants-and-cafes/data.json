@@ -290,16 +290,6 @@
     ]
   },
   {
-    "payee": "Weidao",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 495,
-    "location": [
-      59.331949,
-      18.057649
-    ]
-  },
-  {
     "payee": "Haymarket",
     "count": 3,
     "currency": "SEK",
@@ -687,6 +677,16 @@
     "location": [
       59.341915,
       18.036938
+    ]
+  },
+  {
+    "payee": "Weidao",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 340,
+    "location": [
+      59.331949,
+      18.057649
     ]
   },
   {
