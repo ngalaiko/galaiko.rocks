@@ -290,16 +290,6 @@
     ]
   },
   {
-    "payee": "Haymarket",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 645,
-    "location": [
-      59.334656,
-      18.061438
-    ]
-  },
-  {
     "payee": "Prime Burger",
     "count": 3,
     "currency": "SEK",
@@ -497,6 +487,16 @@
     "location": [
       59.338836,
       18.055326
+    ]
+  },
+  {
+    "payee": "Haymarket",
+    "count": 2,
+    "currency": "SEK",
+    "amount": 430,
+    "location": [
+      59.334656,
+      18.061438
     ]
   },
   {
