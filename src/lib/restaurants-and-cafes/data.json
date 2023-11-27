@@ -1,9 +1,9 @@
 [
   {
     "payee": "Bar Centro",
-    "count": 51,
+    "count": 54,
     "currency": "SEK",
-    "amount": 4068,
+    "amount": 4353,
     "location": [
       57.705447,
       11.969766
@@ -21,9 +21,9 @@
   },
   {
     "payee": "Ullevi Thaikök",
-    "count": 16,
+    "count": 17,
     "currency": "SEK",
-    "amount": 2074,
+    "amount": 2203,
     "location": [
       57.708449,
       11.986409
@@ -41,9 +41,9 @@
   },
   {
     "payee": "Amida",
-    "count": 11,
+    "count": 10,
     "currency": "SEK",
-    "amount": 1749,
+    "amount": 1584,
     "location": [
       59.314721,
       18.078432
@@ -180,6 +180,16 @@
     ]
   },
   {
+    "payee": "Hagabions Cafe",
+    "count": 6,
+    "currency": "SEK",
+    "amount": 1755,
+    "location": [
+      57.696563,
+      11.95073
+    ]
+  },
+  {
     "payee": "Kafé Ritorno",
     "count": 5,
     "currency": "SEK",
@@ -190,6 +200,16 @@
     ]
   },
   {
+    "payee": "House of Vietnam",
+    "count": 5,
+    "currency": "SEK",
+    "amount": 600,
+    "location": [
+      57.709422,
+      11.980116
+    ]
+  },
+  {
     "payee": "Gelaterian Göteborg",
     "count": 5,
     "currency": "SEK",
@@ -197,16 +217,6 @@
     "location": [
       57.703553,
       11.96789
-    ]
-  },
-  {
-    "payee": "Hagabions Cafe",
-    "count": 5,
-    "currency": "SEK",
-    "amount": 1345,
-    "location": [
-      57.696563,
-      11.95073
     ]
   },
   {
@@ -280,13 +290,13 @@
     ]
   },
   {
-    "payee": "House of Vietnam",
+    "payee": "Morgon Coffee Roasters",
     "count": 4,
     "currency": "SEK",
-    "amount": 480,
+    "amount": 218,
     "location": [
-      57.709422,
-      11.980116
+      57.708091,
+      11.951323
     ]
   },
   {
@@ -420,16 +430,6 @@
     ]
   },
   {
-    "payee": "Morgon Coffee Roasters",
-    "count": 3,
-    "currency": "SEK",
-    "amount": 180,
-    "location": [
-      57.708091,
-      11.951323
-    ]
-  },
-  {
     "payee": "Landvetters Stenugnsbageri",
     "count": 3,
     "currency": "SEK",
@@ -437,6 +437,16 @@
     "location": [
       57.700682,
       11.982264
+    ]
+  },
+  {
+    "payee": "Gansu Köket",
+    "count": 3,
+    "currency": "SEK",
+    "amount": 389,
+    "location": [
+      57.708635,
+      11.965104
     ]
   },
   {
@@ -787,16 +797,6 @@
     "location": [
       57.699998,
       11.984547
-    ]
-  },
-  {
-    "payee": "Gansu Köket",
-    "count": 2,
-    "currency": "SEK",
-    "amount": 254,
-    "location": [
-      57.708635,
-      11.965104
     ]
   }
 ]
