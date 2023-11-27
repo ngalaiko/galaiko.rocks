@@ -24,7 +24,7 @@
     <Image class="u-photo" src={nikita} zoomable={false} />
   </header>
 
-  <p>hi, welcome to my homepage!</p>
+  <p>hello and welcome to my homepage!</p>
 
   <p>
     if you want to contact me for any reason, the best way is to send an email to
@@ -38,11 +38,10 @@
     > if you are into it
   </p>
 
-  <p>this is not a very large website, it only consists of a few pages, for example:</p>
+  <p>this is not a very large website. however, here is a list of lists that you can explore:</p>
   <ul>
     <li>
-      <A data-sveltekit-prefetch href="/records/">list of vinyl records i own</A>. it mirrors my
-      <A data-sveltekit-reload href="https://www.discogs.com/user/ngalaiko">discogs account</A>
+      <A data-sveltekit-prefetch href="/records/">vinyl records i own</A>
     </li>
 
     <li>
@@ -52,7 +51,6 @@
 
     <li>
       <A data-sveltekit-prefetch href="/cocktails/">cocktails</A> i respect and occasionaly make to consume
-      at home
     </li>
 
     <li>
@@ -62,20 +60,26 @@
     <li>
       <A data-sveltekit-prefetch href="/movies/">movies i watch</A>
     </li>
+
+    <li>
+      <A data-sveltekit-prefetch href="/now/">what i am up to now</A>
+    </li>
   </ul>
 
-  <p>
-    i also have a <A data-sveltekit-reload href="https://github.com/ngalaiko" rel="me">github</A> account
-    if you are interested
-  </p>
-
-  <h2>currently</h2>
+  <p>if you are into liking and subscribing, check this out:</p>
   <ul>
     <li>
-      living in <span class="p-locality">Göteborg</span>,
-      <span class="p-country-name">Sweden</span>
+      <A data-sveltekit-reload href="https://github.com/ngalaiko" rel="me">github</A>
     </li>
-    <li>working on the <A href="https://gitbutler.com">future of source code management</A></li>
+    <li>
+      <A data-sveltekit-reload href="https://letterboxd.com/ngalaiko" rel="me">letterboxd</A>
+    </li>
+    <li>
+      <A data-sveltekit-reload href="https://www.discogs.com/user/ngalaiko" rel="me">discogs</A>
+    </li>
+    <li>
+      <A data-sveltekit-reload href="https://mastodon.online/@ngalaiko" rel="me">mastodon</A>
+    </li>
   </ul>
 </article>
 

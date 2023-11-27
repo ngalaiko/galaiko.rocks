@@ -1,8 +1,8 @@
 <svelte:head>
   <title>uses</title>
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Uses" />
-  <meta property="og:description" content="what i use" />
+  <meta property="og:title" content="uses" />
+  <meta property="og:description" content="things i use" />
 </svelte:head>
 
 <arcicle>
