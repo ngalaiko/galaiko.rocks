@@ -1,0 +1,31 @@
+[package]
+name = "www"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+debug = false
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "deny"
+perf = "deny"
+correctness = "deny"
+complexity = "deny"
+style = "deny"
+pedantic = "deny"
+restrictions = "deny"
+
+[dependencies]
+chrono = "0.4.31"
+clap = { version = "4.4.10", features = ["derive"] }
+markdown = "1.0.0-alpha.15"
+maud = "0.25.0"
+pulldown-cmark = "0.9.3"
+rust-embed = { version = "8.0.0", features = [ "include-exclude" ] }
+yaml-rust = "0.4.5"
