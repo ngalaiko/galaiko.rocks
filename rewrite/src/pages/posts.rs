@@ -1,48 +1,26 @@
 use pulldown_cmark::{Event, Tag};
 use yaml_rust::YamlLoader;
 
-pub fn iter() -> impl Iterator<
-    Item = (
-        std::path::PathBuf,
-        Result<(Frontmatter, maud::Markup), ConvertError>,
-    ),
-> {
-    Posts::iter().map(|asset| {
-        let path = std::path::PathBuf::from(asset.as_ref());
-        let path = if let Some("index.md") = path.file_name().and_then(|name| name.to_str()) {
-            // If the file is named `index.md`, then we want to use the parent directory as the
-            // path.
-            path.parent().unwrap().to_path_buf()
-        } else {
-            // Otherwise, we want to use the file name as the path.
-            path
-        }
-        .with_extension("html");
-
-        (
-            path,
-            convert_post(&Posts::get(asset.as_ref()).expect("always found")),
-        )
-    })
+pub struct Post {
+    pub frontmatter: Frontmatter,
+    pub body: maud::Markup,
 }
 
-#[derive(rust_embed::RustEmbed)]
-#[folder = "assets/pages/posts"]
-#[include = "**/*.md"]
-struct Posts;
+impl TryFrom<&[u8]> for Post {
+    type Error = ConvertError;
 
-fn convert_post(
-    asset: &rust_embed::EmbeddedFile,
-) -> Result<(Frontmatter, maud::Markup), ConvertError> {
-    let md = std::str::from_utf8(asset.data.as_ref()).map_err(ConvertError::Utf8)?;
+    fn try_from(raw: &[u8]) -> Result<Self, Self::Error> {
+        let md = std::str::from_utf8(raw).map_err(ConvertError::Utf8)?;
+        let parser = pulldown_cmark::Parser::new(md);
+        let (frontmatter, body) = extract_frontmatter(parser).map_err(ConvertError::Frontmatter)?;
+        let mut html = String::new();
+        pulldown_cmark::html::push_html(&mut html, body.into_iter());
 
-    let parser = pulldown_cmark::Parser::new(md);
-    let (frontmatter, body) = extract_frontmatter(parser).map_err(ConvertError::Frontmatter)?;
-
-    let mut html = String::new();
-    pulldown_cmark::html::push_html(&mut html, body.into_iter());
-
-    Ok((frontmatter, maud::PreEscaped(html)))
+        Ok(Self {
+            frontmatter,
+            body: maud::PreEscaped(html),
+        })
+    }
 }
 
 pub struct Frontmatter {

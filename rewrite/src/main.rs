@@ -1,4 +1,5 @@
 mod pages;
+mod assets;
 
 #[derive(clap::Parser)]
 struct Cli {
