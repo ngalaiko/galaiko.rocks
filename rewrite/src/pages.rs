@@ -9,7 +9,18 @@ pub fn iter() -> impl Iterator<Item = (std::path::PathBuf, Result<Vec<u8>, PageE
                 path.with_extension("html"),
                 markdown::Markdown::try_from(&embeded_file)
                     .map_err(PageError::Markdown)
-                    .map(|md| md.body.into_string().as_bytes().to_owned()),
+                    .map(|md| {
+                        maud::html! {
+                            (maud::DOCTYPE)
+                            head {
+                                meta charset="utf-8";
+                                meta name="viewport" content="width=device-width, initial-scale=1";
+                                link rel="stylesheet" href="/index.css";
+                            }
+                            (md.body)
+                        }
+                    })
+                    .map(|html| html.into_string().as_bytes().to_owned()),
             ),
             _ => (path, Ok(embeded_file.data.to_vec())),
         },

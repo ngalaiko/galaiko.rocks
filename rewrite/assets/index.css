@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('/fonts/BerkeleyMono/Regular.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/Bold.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/Italic.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/BoldItalic.woff2') format('woff2'),
+    url('/fonts/BerkeleyMono/Regular.woff') format('woff'),
+    url('/fonts/BerkeleyMono/Bold.woff') format('woff'),
+    url('/fonts/BerkeleyMono/Italic.woff') format('woff'),
+    url('/fonts/BerkeleyMono/BoldItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Berkeley Mono', monospace;
+}
