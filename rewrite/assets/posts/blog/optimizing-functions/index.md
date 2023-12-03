@@ -1,7 +1,4 @@
----
-title: Optimizing a function
-date: 2018-11-30T12:00:00+02:00
----
+# Optimizing a function
 
 In the golang community slack, someone shared a link to a package used to
 validate Swedish personnumer. Personnumer is a swedish version of an ID, and its

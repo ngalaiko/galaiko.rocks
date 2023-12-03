@@ -1,10 +1,6 @@
----
-title: 'Daily Coding Problem: Problem #4'
-date: 2018-07-05T12:00:00+02:00
-aliases: ['/posts/2018-07-05/']
----
+# Daily Coding Problem: Problem #4
 
-# Problem
+## Problem
 
 This problem was asked by Stripe.
 
@@ -14,7 +10,7 @@ This problem was asked by Stripe.
 >
 > You can modify the input array in-place.
 
-# Solution
+## Solution
 
 To solve this, you should think what’s common between array indexes and a
 positive integer: it’s the same thing.
@@ -25,7 +21,7 @@ first missing.
 
 If we don’t, return length plus one (=next).
 
-# Code
+## Code
 
 ```go
 func solution(aa []int) int {
@@ -50,7 +46,7 @@ func solution(aa []int) int {
 }
 ```
 
-# Benchmarks
+## Benchmarks
 
 ```go
 goos: darwin
@@ -70,7 +66,7 @@ PASS
 ok      github.com/ngalayko/dcp/problems/2018-07-05     19.293s
 ```
 
-# UPDATE
+## UPDATE
 
 As it was mentioned in the comments, the first solution fails in
 case of [3,2,4,-1,1]
@@ -112,6 +108,6 @@ func solution(aa []int) int {
 }
 ```
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-05)

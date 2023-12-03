@@ -1,7 +1,4 @@
----
-title: 'my ideal haircut'
-date: 2023-01-06T16:22:00+01:00
----
+# my ideal haircut
 
 i was just about to go outside to grap something to eat.
 and while i was putting my hat on (because it's winter outside), it hit me with a perfect description of a what an ideal haircut is to me.

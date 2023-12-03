@@ -1,7 +1,4 @@
----
-title: 'Golang: Data races'
-date: 2019-02-02T12:00:00+02:00
----
+# Golang: Data races
 
 I have noticed that many people who have started using go have troubles when it
 comes to concurrent programming. Concurrency in go is indeed the most

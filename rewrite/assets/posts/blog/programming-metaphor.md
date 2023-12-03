@@ -1,7 +1,4 @@
----
-title: 'programming metaphor'
-date: 2023-01-19T15:25:00+01:00
----
+# programming metaphor
 
 in this post i will be describing a programming metaphor.
 i use it to explain to people outside it what does it mean to work as a software engineer.

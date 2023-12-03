@@ -2,11 +2,11 @@ pub struct Markdown {
     pub body: maud::Markup,
 }
 
-impl TryFrom<&[u8]> for Markdown {
+impl TryFrom<&rust_embed::EmbeddedFile> for Markdown {
     type Error = ConvertError;
 
-    fn try_from(raw: &[u8]) -> Result<Self, Self::Error> {
-        let md = std::str::from_utf8(raw).map_err(ConvertError::Utf8)?;
+    fn try_from(raw: &rust_embed::EmbeddedFile) -> Result<Self, Self::Error> {
+        let md = std::str::from_utf8(&raw.data).map_err(ConvertError::Utf8)?;
 
         let parser = pulldown_cmark::Parser::new(md);
 

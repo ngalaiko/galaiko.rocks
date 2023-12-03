@@ -1,8 +1,4 @@
----
-title: 'Raspberry Pi: K8s cluster'
-section: 'Blog'
-date: 2019-06-24T21:28:26+02:00
----
+# Raspberry Pi: K8s cluster
 
 I spent too much time configuring Kubernetes cluster on Raspberry Pi today, so here are notes for my future
 self on how to do that:

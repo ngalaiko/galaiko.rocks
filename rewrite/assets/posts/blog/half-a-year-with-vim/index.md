@@ -1,8 +1,4 @@
----
-title: Half a year with vim
-date: 2018-07-21T12:00:00+02:00
-aliases: ['/posts/half-a-year-with-vim/']
----
+# Half a year with vim
 
 ![Vim learning curve](./vim.jpg)
 

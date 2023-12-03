@@ -310,12 +310,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "89d92a4743f9a61002fae18374ed11e7973f530cb3a3255fb354818118b2203c"
 
 [[package]]
-name = "linked-hash-map"
-version = "0.5.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0717cef1bc8b636c6e1c1bbdefc09e6322da8a9321966e8928ef80d20f7f770f"
-
-[[package]]
 name = "log"
 version = "0.4.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -459,8 +453,7 @@ checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
 [[package]]
 name = "rust-embed"
 version = "8.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1e7d90385b59f0a6bf3d3b757f3ca4ece2048265d70db20a2016043d4509a40"
+source = "git+https://github.com/ngalaiko/rust-embed.git?branch=master#d308513c998b32b158e0a9603262d9ed0bf4a8bc"
 dependencies = [
  "rust-embed-impl",
  "rust-embed-utils",
@@ -470,8 +463,7 @@ dependencies = [
 [[package]]
 name = "rust-embed-impl"
 version = "8.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3c3d8c6fd84090ae348e63a84336b112b5c3918b3bf0493a581f7bd8ee623c29"
+source = "git+https://github.com/ngalaiko/rust-embed.git?branch=master#d308513c998b32b158e0a9603262d9ed0bf4a8bc"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -483,8 +475,7 @@ dependencies = [
 [[package]]
 name = "rust-embed-utils"
 version = "8.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "873feff8cb7bf86fdf0a71bb21c95159f4e4a37dd7a4bd1855a940909b583ada"
+source = "git+https://github.com/ngalaiko/rust-embed.git?branch=master#d308513c998b32b158e0a9603262d9ed0bf4a8bc"
 dependencies = [
  "globset",
  "sha2",
@@ -784,14 +775,4 @@ dependencies = [
  "maud",
  "pulldown-cmark",
  "rust-embed",
- "yaml-rust",
-]
-
-[[package]]
-name = "yaml-rust"
-version = "0.4.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85"
-dependencies = [
- "linked-hash-map",
 ]

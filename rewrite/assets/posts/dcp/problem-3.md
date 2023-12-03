@@ -1,10 +1,6 @@
----
-title: 'Daily Coding Problem: Problem #3'
-date: 2018-07-04T12:00:00+02:00
-aliases: ['/posts/2018-07-04/']
----
+# Daily Coding Problem: Problem #3
 
-# Problem
+## Problem
 
 This problem was asked by Google:
 
@@ -27,11 +23,11 @@ This problem was asked by Google:
 > assert deserialize(serialize(node)).left.left.val == 'left.left'
 > ```
 
-# Solution
+## Solution
 
 This one is weird. It doesn't say we can't use standard library, so I will just use it.
 
-# Code
+## Code
 
 ```go
 type node struct {
@@ -62,6 +58,6 @@ func Deserialize(s string) (*node, error) {
 }
 ```
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-04)

@@ -1,8 +1,4 @@
----
-title: Daily Coding Problems
-date: 2018-07-01T12:00:00+02:00
-aliases: ['/posts/2018-07-01/']
----
+# Daily Coding Problems
 
 Recently found this website [Daily Coding Problem](https://www.dailycodingproblem.com/]),
 where you can subscribe to a newsletter and get one problem a day.

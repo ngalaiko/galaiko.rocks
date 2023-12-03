@@ -1,7 +1,4 @@
----
-title: 'My daily apps at the end of 2023'
-date: 2023-11-07T12:00:00+02:00
----
+# My daily apps at the end of 2023
 
 jumping on a [hype train](https://defaults.rknight.me) here:
 

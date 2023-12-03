@@ -1,10 +1,6 @@
----
-title: 'Daily Coding Problem: Boring'
-date: 2018-07-12T12:00:00+02:00
-aliases: ['/posts/2018-07-12/']
----
+# Daily Coding Problem: Boring
 
-# Problem
+## Problem
 
 Hardest problem to solve so far: _describing 30min trivial problems turned out to be much less fun than I imagined._
 
@@ -17,6 +13,6 @@ Hardest problem to solve so far: _describing 30min trivial problems turned out t
 
 I will keep updating GitHub, but not sure about the website.
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/)

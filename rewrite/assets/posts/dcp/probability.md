@@ -1,18 +1,14 @@
----
-title: 'Daily Coding Problem #15'
-date: 2018-07-16T12:00:00+02:00
-aliases: ['/posts/probability/']
----
+# Daily Coding Problem #15
 
 Today problem is a `probability` problem.
 
-# Problem
+## Problem
 
 This problem was asked by Facebook:
 
 > Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
 
-# Solution
+## Solution
 
 There are many variations of such problems, and before solving it, I want to show some basic examples that I met.
 
@@ -104,7 +100,7 @@ So, in this case, we can **assign** a random value to each element with the same
 Let's do it: for each element, we generate a float number between **[0..1]**. Also, we remember
 maximum value that we generated, an element from the stream associated with it - random element.
 
-# Code
+## Code
 
 ```go
 func solution(in <-chan int) <-chan int {
@@ -125,6 +121,6 @@ func solution(in <-chan int) <-chan int {
 }
 ```
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-16)

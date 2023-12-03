@@ -1,7 +1,4 @@
----
-title: 'No more tracking'
-date: 2022-12-30T22:41:00+01:00
----
+# No more tracking
 
 i do not wish to know which movies i've seen last year.
 or how many steps i've walked last month.

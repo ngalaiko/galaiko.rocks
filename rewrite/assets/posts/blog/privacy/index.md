@@ -1,9 +1,3 @@
----
-title: 'Internet privacy starter pack'
-date: 2018-08-19T12:00:00+02:00
-aliases: ['/posts/privacy/']
----
-
 About a month ago I began using some systems to protect my security on the internet a bit more than nothing.
 
 ## PiHole

@@ -1,8 +1,4 @@
----
-title: 'Docker compose for managing personal server'
-date: 2018-07-31T12:00:00+02:00
-aliases: ['/posts/docker-compose-server-manegement/']
----
+# Docker compose for managing personal server
 
 For a long time, I tried to find the most comfortable way to manage a server where I host
 something for myself, some kind of DevOps framework. And I think I found the best way so far.

@@ -1,9 +1,4 @@
----
-title: 'Words Count'
-tags: ['algorithm', 'go']
-section: 'Blog'
-date: 2019-05-11T11:01:45+02:00
----
+# Words Count
 
 Last week I participated in a small competiotion at work. The goal was to calculate the
 top 10 the most common words in a file and print them with number of occurences. For

@@ -1,8 +1,4 @@
----
-title: 'Daily Coding Problem: Problem #7'
-date: 2018-07-08T12:00:00+02:00
-aliases: ['/posts/2018-07-08/']
----
+# Daily Coding Problem: Problem #7
 
 # Problem
 

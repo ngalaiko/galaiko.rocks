@@ -1,10 +1,6 @@
----
-title: 'Daily Coding Problem: Problem #1'
-date: 2018-07-02T12:00:00+02:00
-aliases: ['/posts/2018-07-02/']
----
+# Daily Coding Problem: Problem #1'
 
-# Problem
+## Problem
 
 This problem was recently asked by Google:
 
@@ -14,7 +10,7 @@ This problem was recently asked by Google:
 >
 > Bonus: Can you do this in one pass?
 
-# Solution
+## Solution
 
 If we want to find the sum of every combination of two array elements most
 obvious way is to create two `for` loops over an array and check if they
@@ -27,7 +23,7 @@ on each step of the first loop, all previous elements are already compared to ea
 So the solution is to iterate over an array, and for each element try to find if
 it adds up any next array element up to 17.
 
-# Code
+## Code
 
 ```go
 func solution(aa []int, k int) bool {
@@ -43,6 +39,6 @@ func solution(aa []int, k int) bool {
 }
 ```
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-02)

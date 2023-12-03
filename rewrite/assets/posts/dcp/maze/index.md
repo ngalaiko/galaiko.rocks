@@ -1,11 +1,8 @@
----
-title: 'Daily Coding Problem #23'
-date: 2018-09-01T12:00:00+02:00
----
+# Daily Coding Problem #23
 
 ![maze](./maze.png)
 
-# Problem
+## Problem
 
 You are given an M by N matrix consisting of booleans that represents a board.
 Each True boolean represents a wall. Each False boolean represents a tile you can walk on.
@@ -30,7 +27,7 @@ and start = (3, 0) (bottom left) and end = (0, 0) (top left), the minimum number
 of steps required to reach the end is 7, since we would need to go through,
 (1, 2) because there is a wall everywhere else on the second row.
 
-# Solution
+## Solution
 
 It is a new type of problems I faced. I remember, I solved some during
 university, but it was pretty hard to come up with the solution right away.
@@ -53,7 +50,7 @@ walls and previously marked cells on each iteration.
 This is a basic solution and can be optimized for a given problem.
 For example, we can stop our recursive calls once we meet finish cell.
 
-# Code
+## Code
 
 ```go
 // the maze is a matrix that represents a maze.
@@ -116,6 +113,6 @@ func markP(maze [][]int, i, j, n int) bool {
 }
 ```
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-09-01)

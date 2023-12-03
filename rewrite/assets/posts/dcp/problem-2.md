@@ -1,10 +1,6 @@
----
-title: 'Daily Coding Problem: Problem #2'
-date: 2018-07-03T12:00:00+02:00
-aliases: ['/posts/2018-07-03/']
----
+# Daily Coding Problem: Problem #2
 
-# Problem
+## Problem
 
 This problem was asked by Uber:
 
@@ -16,13 +12,13 @@ This problem was asked by Uber:
 >
 > Follow-up: what if you can't use division?
 
-# Solution
+## Solution
 
 For this one, I have 2 solutions, with and without division. Follow-up in the
 problem text should mean that it’s easier to solve it if you don’t have division,
 but in reality, division causes many problems, since you can accidentally divide by zero.
 
-## First
+### First
 
 Without edge cases it’s pretty straightforward: get the product of all array elements,
 then in the loop, divide that product by each element. As a result,
@@ -69,7 +65,7 @@ calculated and all other elements to zero.
 If we don’t have zeros in an array, all these conditions are skipped,
 and we get the correct result.
 
-## Code
+### Code
 
 ```go
 func solution(aa []int) []int {
@@ -103,13 +99,13 @@ func solution(aa []int) []int {
 }
 ```
 
-## Second
+### Second
 
 The second solution is more complicated because it's always O(n^2), but there are no edge cases here.
 Just use common logic from yesterday [Problem #1](/posts/dcp/problem-1/), and get production of each
 elements pairs, except with itself.
 
-## Code
+### Code
 
 ```go
 func solution2(aa []int) []int {
@@ -131,6 +127,6 @@ func solution2(aa []int) []int {
 }
 ```
 
-# Links
+## Links
 
 - [github](https://github.com/ngalayko/dcp/tree/master/problems/2018-07-03)

@@ -1,7 +1,4 @@
----
-title: Building a peer to peer messenger
-date: 2019-03-20T12:00:00+02:00
----
+# Building a peer to peer messenger
 
 ![](./p2p.jpg)
 
