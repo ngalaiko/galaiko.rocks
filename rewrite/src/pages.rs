@@ -3,21 +3,17 @@ use crate::assets;
 mod markdown;
 
 pub fn iter() -> impl Iterator<Item = (std::path::PathBuf, Result<Vec<u8>, PageError>)> {
-    assets::iter().map(|(path, embeded_file)| {
-        match (
-            path.extension().and_then(|ext| ext.to_str()),
-            path.file_name().and_then(|name| name.to_str()),
-            path.parent(),
-        ) {
-            (Some("md"), _, _) => (
+    assets::iter().map(
+        |(path, embeded_file)| match path.extension().and_then(|ext| ext.to_str()) {
+            Some("md") => (
                 path.with_extension("html"),
                 markdown::Markdown::try_from(&embeded_file)
                     .map_err(PageError::Markdown)
                     .map(|md| md.body.into_string().as_bytes().to_owned()),
             ),
-            (_, _, _) => (path, Ok(embeded_file.data.to_vec())),
-        }
-    })
+            _ => (path, Ok(embeded_file.data.to_vec())),
+        },
+    )
 }
 
 #[derive(Debug)]
