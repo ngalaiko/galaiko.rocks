@@ -1,0 +1,8 @@
+- cocktails
+- restaurants & cafes 
+- movies 
+- records
+- rss / atom
+- previews
+- image optimization
+- redirects
