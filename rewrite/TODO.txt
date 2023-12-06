@@ -1,9 +1,10 @@
-- dev server
+- access logs
 - cocktails
+- live reload
 - restaurants & cafes 
 - movies 
 - records
 - rss / atom
-- previews
-- image optimization
-- redirects
+- generate previews
+- optimize asset images
+- keep track of redirects

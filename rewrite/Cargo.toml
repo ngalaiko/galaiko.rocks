@@ -22,9 +22,9 @@ pedantic = "deny"
 restrictions = "deny"
 
 [dependencies]
-chrono = "0.4.31"
-clap = { version = "4.4.10", features = ["derive"] }
-markdown = "1.0.0-alpha.15"
+mime_guess = "2.0.4"
+rust-embed = { git = "https://github.com/pyrossh/rust-embed.git", branch = "master", features = [ "include-exclude" ] }
+tokio = { version = "1", features = ["full"] }
+warp = "0.3.6"
 maud = "0.25.0"
 pulldown-cmark = "0.9.3"
-rust-embed = { git = "https://github.com/ngalaiko/rust-embed.git", branch = "master", features = [ "include-exclude" ] }
