@@ -1,3 +1,5 @@
+# Internet privacy starter pack
+
 About a month ago I began using some systems to protect my security on the internet a bit more than nothing.
 
 ## PiHole

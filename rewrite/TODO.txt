@@ -1,6 +1,6 @@
+- live reload
 - access logs
 - cocktails
-- live reload
 - restaurants & cafes 
 - movies 
 - records

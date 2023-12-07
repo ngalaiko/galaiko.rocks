@@ -1,4 +1,4 @@
-# Daily Coding Problem: Problem #1'
+# Daily Coding Problem: Problem #1
 
 ## Problem
 
