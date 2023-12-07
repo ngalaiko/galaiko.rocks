@@ -2,11 +2,38 @@ use warp::{filters::path::FullPath, reject, reply, Filter, Rejection, Reply};
 
 #[tokio::main]
 async fn main() {
+    std::env::set_var("RUST_LOG", "www=info");
+    env_logger::init();
+
     // TODO: get only.
-    let routes = warp::path::full().and_then(serve);
+    let routes = warp::path::full().and_then(serve_asset)
+        .with(warp::log("www"));
 
     println!("listening on http://127.0.0.1:8080");
     warp::serve(routes).run(([127, 0, 0, 1], 8080)).await;
+}
+
+async fn serve_asset(requested_path: FullPath) -> Result<impl Reply, Rejection> {
+    find_asset(requested_path.as_str())
+        .and_then(|asset| {
+            asset
+                .content
+                .to_vec()
+                .ok()
+                .map(|content| (asset.content_type, content))
+        })
+        .map(|(content_type, content)| reply::with_header(content, "content-type", content_type))
+        .ok_or_else(reject::not_found)
+}
+
+fn find_asset(request_path: &str) -> Option<Asset> {
+    let clean_request_path = cleanup_requested_path(request_path);
+    Assets::iter()
+        .find(|asset_path| {
+            let clean_asset_path = cleanup_asset_path(asset_path);
+            clean_asset_path == clean_request_path
+        })
+        .and_then(|asset_path| Asset::load(asset_path.as_ref()))
 }
 
 #[derive(rust_embed::RustEmbed)]
@@ -19,7 +46,7 @@ struct Asset {
 }
 
 impl Asset {
-    fn fetch(path: &str) -> Option<Asset> {
+    fn load(path: &str) -> Option<Asset> {
         Assets::get(path).map(|asset| {
             match std::path::Path::new(path)
                 .extension()
@@ -52,46 +79,27 @@ impl AssetContent {
     }
 }
 
-fn get_asset(request_path: &str) -> Option<Asset> {
-    let clean_request_path = cleanup_requested_path(request_path);
-    Assets::iter()
-        .find(|asset_path| {
-            let clean_asset_path = cleanup_asset_path(asset_path);
-            clean_asset_path == clean_request_path
-        })
-        .and_then(|asset_path| Asset::fetch(asset_path.as_ref()))
-}
-
-async fn serve(requested_path: FullPath) -> Result<impl Reply, Rejection> {
-    get_asset(requested_path.as_str())
-        .and_then(|asset| {
-            asset
-                .content
-                .to_vec()
-                .ok()
-                .map(|content| (asset.content_type, content))
-        })
-        .map(|(content_type, content)| reply::with_header(content, "content-type", content_type))
-        .ok_or_else(reject::not_found)
-}
-
 fn convert_md(data: &[u8]) -> Result<Vec<u8>, std::str::Utf8Error> {
     let md = std::str::from_utf8(data)?;
     let parser = pulldown_cmark::Parser::new(md);
     let mut html = String::new();
     pulldown_cmark::html::push_html(&mut html, parser);
 
-    let doc = maud::html! {
+    let doc = build_page(&maud::PreEscaped(html));
+
+    Ok(doc.into_string().as_bytes().to_owned())
+}
+
+fn build_page(content: &maud::Markup) -> maud::Markup {
+    maud::html! {
         (maud::DOCTYPE)
         head {
             meta charset="utf-8";
             meta name="viewport" content="width=device-width, initial-scale=1";
             link rel="stylesheet" href="/index.css";
         }
-        (maud::PreEscaped(html))
-    };
-
-    Ok(doc.into_string().as_bytes().to_owned())
+        (content)
+    }
 }
 
 fn cleanup_asset_path(path: &str) -> String {

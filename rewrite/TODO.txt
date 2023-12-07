@@ -1,5 +1,4 @@
-- live reload
-- access logs
+- posts index
 - cocktails
 - restaurants & cafes 
 - movies 

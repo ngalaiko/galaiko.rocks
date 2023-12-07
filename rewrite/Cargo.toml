@@ -22,6 +22,7 @@ pedantic = "deny"
 restrictions = "deny"
 
 [dependencies]
+env_logger = "0.10.1"
 maud = "0.25.0"
 pulldown-cmark = "0.9.3"
 rust-embed = { git = "https://github.com/pyrossh/rust-embed.git", branch = "master", features = [ "include-exclude", "mime-guess" ] }
