@@ -6,7 +6,8 @@ async fn main() {
     env_logger::init();
 
     // TODO: get only.
-    let routes = warp::path::full().and_then(serve_asset)
+    let routes = warp::path::full()
+        .and_then(serve_asset)
         .with(warp::log("www"));
 
     println!("listening on http://127.0.0.1:8080");
@@ -15,79 +16,114 @@ async fn main() {
 
 async fn serve_asset(requested_path: FullPath) -> Result<impl Reply, Rejection> {
     find_asset(requested_path.as_str())
-        .and_then(|asset| {
-            asset
-                .content
-                .to_vec()
-                .ok()
-                .map(|content| (asset.content_type, content))
-        })
-        .map(|(content_type, content)| reply::with_header(content, "content-type", content_type))
+        .map(|(content_type, body)| reply::with_header(body, "content-type", content_type))
         .ok_or_else(reject::not_found)
 }
 
-fn find_asset(request_path: &str) -> Option<Asset> {
+fn posts_index_page() -> maud::Markup {
+    let mut posts = Assets::iter()
+        .filter(|asset_path| asset_path.starts_with("posts/"))
+        .filter(|asset_path| asset_path.ends_with(".md"))
+        .map(|asset_path| {
+            let path = std::path::Path::new(asset_path.as_ref());
+            (
+                if let Some("index.md") = path.file_name().and_then(|s| s.to_str()) {
+                    path.parent().unwrap().file_stem().unwrap().to_str().unwrap().to_string()
+                } else {
+                    path.file_stem().unwrap().to_str().unwrap().to_string()
+                },
+                format!("/{}", cleanup_asset_path(&asset_path)),
+                Assets::get(&asset_path)
+                    .expect("always found")
+                    .metadata
+                    .created()
+                    .map_or(chrono::NaiveDate::from_ymd_opt(1970, 1, 1).expect("valid date"), |created_ts| {
+                        chrono::naive::NaiveDateTime::from_timestamp_opt(
+                            created_ts.try_into().unwrap(),
+                            0,
+                        )
+                        .expect("valid timestamp")
+                        .date()
+                    }),
+            )
+        }).collect::<Vec<_>>();
+    posts.sort_by(|(_,_, a), (_,_, b)| b.cmp(a));
+    maud::html! {
+        h1 {
+            "Posts"
+        }
+        ul {
+            @for (title, path, created) in posts {
+                li {
+                    a href=(path) {
+                        (title)
+                    }
+                    " "
+                    span class="created" {
+                        (created.format("%Y-%m-%d"))
+                    }
+                }
+            }
+        }
+    }
+}
+
+fn find_asset(request_path: &str) -> Option<(String, Vec<u8>)> {
     let clean_request_path = cleanup_requested_path(request_path);
-    Assets::iter()
-        .find(|asset_path| {
-            let clean_asset_path = cleanup_asset_path(asset_path);
-            clean_asset_path == clean_request_path
-        })
-        .and_then(|asset_path| Asset::load(asset_path.as_ref()))
+    match clean_request_path.as_str() {
+        "posts/index.html" => Some((
+            "text/html; charset=utf-8".to_string(),
+            build_page(&posts_index_page()).into_string().into_bytes(),
+        )),
+        _ => Assets::iter()
+            .find(|asset_path| {
+                let clean_asset_path = cleanup_asset_path(asset_path);
+                clean_asset_path == clean_request_path
+            })
+            .and_then(|asset_path| Asset::load(asset_path.as_ref()))
+            .and_then(|asset| match asset {
+                Ok(Asset::Html(content)) => Some((
+                    "text/html; charset=utf-8".to_string(),
+                    build_page(&content).into_string().into_bytes(),
+                )),
+                Ok(Asset::Binary { content_type, body }) => Some((content_type, body)),
+                Err(_) => None,
+            }),
+    }
 }
 
 #[derive(rust_embed::RustEmbed)]
 #[folder = "assets"]
 struct Assets;
 
-struct Asset {
-    content: AssetContent,
-    content_type: String,
-}
-
 impl Asset {
-    fn load(path: &str) -> Option<Asset> {
+    fn load(path: &str) -> Option<Result<Asset, std::str::Utf8Error>> {
         Assets::get(path).map(|asset| {
             match std::path::Path::new(path)
                 .extension()
                 .and_then(|s| s.to_str())
             {
-                Some("md") => Asset {
-                    content_type: "text/html".to_string(),
-                    content: AssetContent::Markdown(asset.data.to_vec()),
-                },
-                _ => Asset {
-                    content: AssetContent::Binary(asset.data.to_vec()),
+                Some("md") => convert_md(&asset.data).map(Asset::Html),
+                _ => Ok(Asset::Binary {
+                    body: asset.data.to_vec(),
                     content_type: asset.metadata.mimetype().to_string(),
-                },
+                }),
             }
         })
     }
 }
 
-enum AssetContent {
-    Markdown(Vec<u8>),
-    Binary(Vec<u8>),
+enum Asset {
+    Html(maud::Markup),
+    Binary { content_type: String, body: Vec<u8> },
 }
 
-impl AssetContent {
-    fn to_vec(&self) -> Result<Vec<u8>, std::str::Utf8Error> {
-        match self {
-            AssetContent::Markdown(data) => convert_md(data),
-            AssetContent::Binary(data) => Ok(data.to_owned()),
-        }
-    }
-}
-
-fn convert_md(data: &[u8]) -> Result<Vec<u8>, std::str::Utf8Error> {
+fn convert_md(data: &[u8]) -> Result<maud::Markup, std::str::Utf8Error> {
     let md = std::str::from_utf8(data)?;
     let parser = pulldown_cmark::Parser::new(md);
     let mut html = String::new();
     pulldown_cmark::html::push_html(&mut html, parser);
-
-    let doc = build_page(&maud::PreEscaped(html));
-
-    Ok(doc.into_string().as_bytes().to_owned())
+    Ok(maud::PreEscaped(html))
 }
 
 fn build_page(content: &maud::Markup) -> maud::Markup {
@@ -98,7 +134,11 @@ fn build_page(content: &maud::Markup) -> maud::Markup {
             meta name="viewport" content="width=device-width, initial-scale=1";
             link rel="stylesheet" href="/index.css";
         }
-        (content)
+        main {
+            article {
+                (content)
+            }
+        }
     }
 }
 
