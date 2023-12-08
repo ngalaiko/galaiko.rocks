@@ -6,12 +6,12 @@ consider using my [pgp key](./keys/nikita@galaiko.rocks.asc)
 
 this is not a very large website. however, here is a list of lists that you can explore:
 
-- [vinyl records i own](./records)
-- [i went to at least twice since last year](./restaurants_and_cafes)
-- [cocktails](./cocktails) i respect and occasionaly make to consume
-- [things i use](./uses)
-- [movies i watch](./movies)
-- [what i am up to now](./now)
+- [vinyl records i own](./records.html)
+- [i went to at least twice since last year](./restaurants_and_cafes.html)
+- [cocktails](./cocktails.html) i respect and occasionaly make to consume
+- [things i use](./uses.md)
+- [movies i watch](./movies.html)
+- [what i am up to now](./now.md)
 
 if you are into liking and subscribing, check this out:
 
