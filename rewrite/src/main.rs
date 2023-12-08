@@ -18,12 +18,18 @@ async fn main() {
 }
 
 async fn serve_asset(requested_path: FullPath) -> Result<impl Reply, Rejection> {
-    let path = assets::Path::from_str(requested_path.as_str());
+    let requested_path = urlencoding::decode(requested_path.as_str()).map_err(|error| {
+        log::error!("URL decoding error: {}", error);
+        reject::not_found()
+    })?;
+
+    dbg!(&requested_path);
+
+    let path = assets::Path::from_str(&requested_path);
     if path == assets::Path::from_str("/posts/index.html") {
         let page = build_page(&pages::posts());
         let response = warp::reply::Response::new(page.into_string().into());
-        let reply =
-            warp::reply::with_header(response, "content-type", "text/html; charset=utf-8");
+        let reply = warp::reply::with_header(response, "content-type", "text/html; charset=utf-8");
         return Ok(reply);
     }
 

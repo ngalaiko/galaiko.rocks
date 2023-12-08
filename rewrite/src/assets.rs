@@ -132,8 +132,6 @@ impl Path {
         new_path.push("/");
         if let Some(parent) = parent {
             for component in parent.components() {
-                let component = component.as_os_str().to_string_lossy();
-                let component = slug::slugify(component);
                 new_path.push(component);
             }
         }
@@ -144,14 +142,14 @@ impl Path {
                     new_path.set_extension("html");
                 }
                 Some(file_stem) => {
-                    new_path.push(slug::slugify(file_stem));
+                    new_path.push(file_stem);
                     new_path.set_extension("html");
                 }
                 None => unreachable!(),
             },
             Some(ext) => {
                 if let Some(file_stem) = file_stem.and_then(|s| s.to_str()) {
-                    new_path.push(slug::slugify(file_stem));
+                    new_path.push(file_stem);
                     new_path.set_extension(ext);
                 } else {
                     unreachable!();
@@ -159,7 +157,7 @@ impl Path {
             }
             None => {
                 if let Some(file_stem) = file_stem.and_then(|s| s.to_str()) {
-                    new_path.push(slug::slugify(file_stem));
+                    new_path.push(file_stem);
                     new_path.push("index.html");
                 } else {
                     new_path.push("index.html");
@@ -171,39 +169,39 @@ impl Path {
     }
 }
 
+fn fix_link(root: &Path, link: &str) -> String {
+    root.join(link).to_string()
+}
+
 fn convert_md(root: &Path, data: &[u8]) -> Result<maud::Markup, std::str::Utf8Error> {
     let md = std::str::from_utf8(data)?;
     let parser = pulldown_cmark::Parser::new(md);
     let parser = parser.map(|event| match event {
         pulldown_cmark::Event::Start(pulldown_cmark::Tag::Image(typ, link, title)) => {
-            let link = root.join(link.to_string());
             pulldown_cmark::Event::Start(pulldown_cmark::Tag::Image(
                 typ,
-                pulldown_cmark::CowStr::Boxed(link.to_str().unwrap().to_string().into_boxed_str()),
+                pulldown_cmark::CowStr::Boxed(fix_link(root, &link).into_boxed_str()),
                 title,
             ))
         }
         pulldown_cmark::Event::End(pulldown_cmark::Tag::Image(typ, link, title)) => {
-            let link = root.join(link.to_string());
             pulldown_cmark::Event::End(pulldown_cmark::Tag::Image(
                 typ,
-                pulldown_cmark::CowStr::Boxed(link.to_str().unwrap().to_string().into_boxed_str()),
+                pulldown_cmark::CowStr::Boxed(fix_link(root, &link).into_boxed_str()),
                 title,
             ))
         }
         pulldown_cmark::Event::Start(pulldown_cmark::Tag::Link(typ, link, title)) => {
-            let link = root.join(link.to_string());
             pulldown_cmark::Event::Start(pulldown_cmark::Tag::Link(
                 typ,
-                pulldown_cmark::CowStr::Boxed(link.to_str().unwrap().to_string().into_boxed_str()),
+                pulldown_cmark::CowStr::Boxed(fix_link(root, &link).into_boxed_str()),
                 title,
             ))
         }
         pulldown_cmark::Event::End(pulldown_cmark::Tag::Link(typ, link, title)) => {
-            let link = root.join(link.to_string());
             pulldown_cmark::Event::End(pulldown_cmark::Tag::Link(
                 typ,
-                pulldown_cmark::CowStr::Boxed(link.to_str().unwrap().to_string().into_boxed_str()),
+                pulldown_cmark::CowStr::Boxed(fix_link(root, &link).into_boxed_str()),
                 title,
             ))
         }
