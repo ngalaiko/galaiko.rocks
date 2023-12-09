@@ -1,53 +1,57 @@
-use warp::{filters::path::FullPath, reject, Filter, Rejection, Reply};
+#[async_std::main]
+async fn main() -> tide::Result<()> {
+    femme::start();
 
-#[tokio::main]
-async fn main() {
-    std::env::set_var("RUST_LOG", "www=info");
-    env_logger::init();
+    let mut app = tide::new();
+    app.with(tide::log::LogMiddleware::new());
+    app.at("/").get(serve_asset);
+    app.at("/*path").get(serve_asset);
 
-    // TODO: get only.
-    let routes = warp::path::full()
-        .and_then(serve_asset)
-        .with(warp::log("www"));
+    app.listen("127.0.0.1:8080").await?;
 
-    println!("listening on http://127.0.0.1:8080");
-    warp::serve(routes).run(([127, 0, 0, 1], 8080)).await;
+    Ok(())
 }
 
-async fn serve_asset(requested_path: FullPath) -> Result<impl Reply, Rejection> {
-    let requested_path = urlencoding::decode(requested_path.as_str()).map_err(|error| {
-        log::error!("URL decoding error: {}", error);
-        reject::not_found()
-    })?;
+async fn serve_asset(req: tide::Request<()>) -> tide::Result {
+    let requested_path = req.url().path();
+    let requested_path = urlencoding::decode(requested_path)
+        .map_err(|error| tide::Error::new(tide::StatusCode::BadRequest, error))?;
 
     let path = path::normalize(&requested_path);
+    dbg!(&requested_path, &path);
     if path == path::normalize("/posts/index.html") {
         let page = build_page(&pages::posts());
-        let response = warp::reply::Response::new(page.into_string().into());
-        let reply = warp::reply::with_header(response, "content-type", "text/html; charset=utf-8");
-        return Ok(reply);
-    }
+        let body = tide::Body::from(page.into_string());
+        Ok(tide::Response::builder(tide::StatusCode::Ok)
+            .header("content-type", "text/html; charset=utf-8")
+            .body(body)
+            .build())
+    } else {
+        let asset = assets::get(&path).map_err(|error| match error {
+            assets::GetAssetError::NotFound(_) => {
+                tide::Error::new(tide::StatusCode::NotFound, error)
+            }
+            assets::GetAssetError::Utf8Error(error) => {
+                tide::Error::new(tide::StatusCode::InternalServerError, error)
+            }
+        })?;
 
-    let asset = assets::get(&path).map_err(|error| match error {
-        assets::GetAssetError::NotFound(_) => reject::not_found(),
-        assets::GetAssetError::Utf8Error(error) => {
-            log::error!("UTF-8 error: {}", error);
-            reject::not_found()
-        }
-    })?;
-
-    match asset.content {
-        assets::Content::Html(content) => {
-            let page = build_page(&content);
-            let response = warp::reply::Response::new(page.into_string().into());
-            let reply =
-                warp::reply::with_header(response, "content-type", "text/html; charset=utf-8");
-            Ok(reply)
-        }
-        assets::Content::Binary { content_type, body } => {
-            let response = warp::reply::Response::new(body.into());
-            let reply = warp::reply::with_header(response, "content-type", content_type);
-            Ok(reply)
+        match asset.content {
+            assets::Content::Html(content) => {
+                let page = build_page(&content);
+                let body = tide::Body::from(page.into_string());
+                Ok(tide::Response::builder(tide::StatusCode::Ok)
+                    .header("content-type", "text/html; charset=utf-8")
+                    .body(body)
+                    .build())
+            }
+            assets::Content::Binary { content_type, body } => {
+                let body = tide::Body::from(body);
+                Ok(tide::Response::builder(tide::StatusCode::Ok)
+                    .header("content-type", content_type)
+                    .body(body)
+                    .build())
+            }
         }
     }
 }

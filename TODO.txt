@@ -1,9 +1,10 @@
-- posts index
+- create times
+- redirects
 - cocktails
 - restaurants & cafes 
 - movies 
 - records
+- css
 - rss / atom
 - generate previews
 - optimize asset images
-- keep track of redirects

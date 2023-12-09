@@ -22,12 +22,11 @@ pedantic = "deny"
 restrictions = "deny"
 
 [dependencies]
+async-std = { version = "1.12.0", features = ["default", "attributes"] }
 chrono = "0.4.31"
-env_logger = "0.10.1"
-log = "0.4.20"
+femme = "2.2.1"
 maud = "0.25.0"
 pulldown-cmark = "0.9.3"
-rust-embed = { version = "8.1.0", features = [ "include-exclude", "mime-guess" ] }
-tokio = { version = "1", features = [ "full" ] }
+rust-embed = { version = "8.1.0", features = ["include-exclude","mime-guess"] }
+tide = { version = "0.16.0", features = ["default"] }
 urlencoding = "2.1.3"
-warp = "0.3.6"
