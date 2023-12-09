@@ -1,9 +1,0 @@
-/node_modules
-/.svelte-kit
-/.vercel
-/build
-
-/vite.config.js
-/tsconfig.json
-/svelte.config.js
-/.eslintrc.cjs
