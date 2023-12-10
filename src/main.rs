@@ -46,18 +46,8 @@ impl TryFrom<&Response> for tide::Response {
                 response.insert_header("Location", path.to_str().unwrap());
                 Ok(response)
             }
-            Response::Asset(
-                assets::Asset::Markdown { html } | assets::Asset::Generated { html },
-            ) => {
+            Response::Asset(assets::Asset::Markdown { html, .. }) => {
                 let html = build_page(html);
-                let body = tide::Body::from(html.clone().into_string());
-                Ok(tide::Response::builder(tide::StatusCode::Ok)
-                    .header("content-type", "text/html")
-                    .body(body)
-                    .build())
-            }
-            Response::Asset(assets::Asset::Post(post)) => {
-                let html = build_page(&post.html);
                 let body = tide::Body::from(html.into_string());
                 Ok(tide::Response::builder(tide::StatusCode::Ok)
                     .header("content-type", "text/html")
@@ -107,30 +97,36 @@ impl State {
 
         let mut routes = HashMap::new();
 
-        for (asset_path, asset) in assets {
-            if let assets::Asset::Post(post) = &asset {
-                for alias in &post.frontmatter.aliases {
-                    routes.insert(
-                        path::normalize(alias),
-                        Response::Redirect(asset_path.clone()),
-                    );
+        for (asset_path, asset) in &assets {
+            if let assets::Asset::Markdown {
+                frontmatter: Some(frontmatter),
+                ..
+            } = &asset
+            {
+                for alias in &frontmatter.aliases {
+                    routes.insert(alias.clone(), Response::Redirect(asset_path.clone()));
                 }
             }
-            routes.insert(asset_path, Response::Asset(asset));
+            routes.insert(asset_path.clone(), Response::Asset(asset.clone()));
         }
 
         routes.insert(
             std::path::PathBuf::from("/posts/index.html"),
             Response::Asset(pages::posts(
-                &mut routes
-                    .iter()
-                    .filter_map(|(path, asset)| match asset {
-                        Response::Asset(assets::Asset::Post(post)) => {
-                            Some((path.clone(), post.clone()))
+                assets
+                    .into_iter()
+                    .filter(|(path, _)| path.starts_with("/posts/"))
+                    .filter_map(|(path, asset)| {
+                        if let assets::Asset::Markdown { frontmatter, .. } = &asset {
+                            frontmatter
+                                .as_ref()
+                                .map(|frontmatter| (path.clone(), frontmatter.clone()))
+                        } else {
+                            None
                         }
-                        _ => None,
                     })
-                    .collect::<Vec<_>>(),
+                    .collect::<Vec<_>>()
+                    .as_mut_slice(),
             )),
         );
 
@@ -238,10 +234,14 @@ mod assets {
 
     #[derive(Debug, Clone)]
     pub enum Asset {
-        Post(Post),
-        Markdown { html: maud::Markup },
-        Generated { html: maud::Markup },
-        Other { mimetype: String, data: Vec<u8> },
+        Markdown {
+            frontmatter: Option<markdown::Frontmatter>,
+            html: maud::Markup,
+        },
+        Other {
+            mimetype: String,
+            data: Vec<u8>,
+        },
     }
 
     pub fn get(path: &PathBuf) -> Result<Asset, GetAssetError> {
@@ -253,16 +253,11 @@ mod assets {
             Assets::get(&asset_path).expect("Assets::iter() returned a non-existent path");
 
         match embedded_file.metadata.mimetype() {
-            "text/markdown" if path.starts_with("/posts") => {
+            "text/markdown" => {
                 let (frontmatter, md) = markdown::extract_frontmatter(&embedded_file.data)
                     .map_err(GetAssetError::Frontmatter)?;
                 let html = markdown::to_html(path, &md).expect("Error parsing markdown");
-                Ok(Asset::Post(Post { frontmatter, html }))
-            }
-            "text/markdown" => {
-                let md = embedded_file.data.to_vec();
-                let html = markdown::to_html(path, &md).map_err(GetAssetError::ToHtml)?;
-                Ok(Asset::Markdown { html })
+                Ok(Asset::Markdown { frontmatter, html })
             }
             mimetype => Ok(Asset::Other {
                 mimetype: mimetype.to_string(),
@@ -326,7 +321,7 @@ mod markdown {
     /// Returns parsed frontmatter and the remaining markdown.
     pub fn extract_frontmatter(
         markdown: &[u8],
-    ) -> Result<(Frontmatter, Vec<u8>), FrontmatterError> {
+    ) -> Result<(Option<Frontmatter>, Vec<u8>), FrontmatterError> {
         let lines = markdown.split(|b| *b == b'\n');
         let mut frontmatter = Vec::new();
         let mut markdown = Vec::new();
@@ -342,8 +337,11 @@ mod markdown {
                 markdown.push(b'\n');
             }
         }
-        let frontmatter =
-            serde_yaml::from_slice(&frontmatter).map_err(FrontmatterError::SerdeYaml)?;
+        let frontmatter = if frontmatter.is_empty() {
+            None
+        } else {
+            Some(serde_yaml::from_slice(&frontmatter).map_err(FrontmatterError::SerdeYaml)?)
+        };
         Ok((frontmatter, markdown))
     }
 
@@ -412,12 +410,15 @@ mod markdown {
 }
 
 mod pages {
+    use crate::markdown::Frontmatter;
+
     use super::assets;
 
-    pub fn posts(posts: &mut [(std::path::PathBuf, assets::Post)]) -> assets::Asset {
-        posts.sort_by(|(_, a), (_, b)| b.frontmatter.date.cmp(&a.frontmatter.date));
+    pub fn posts(posts: &mut [(std::path::PathBuf, Frontmatter)]) -> assets::Asset {
+        posts.sort_by(|(_, a), (_, b)| b.date.cmp(&a.date));
 
-        assets::Asset::Generated {
+        assets::Asset::Markdown {
+            frontmatter: None,
             html: maud::html! {
                 h1 {
                     "Posts"
@@ -426,11 +427,11 @@ mod pages {
                     @for (path, post) in posts {
                         li {
                             a href=(path.display()) {
-                                (post.frontmatter.title)
+                                (post.title)
                             }
                             " "
-                            time datetime=(post.frontmatter.date.format("%Y-%m-%d")) {
-                                (post.frontmatter.date.format("%Y-%m-%d"))
+                            time datetime=(post.date.format("%Y-%m-%d")) {
+                                (post.date.format("%Y-%m-%d"))
                             }
                         }
                     }
