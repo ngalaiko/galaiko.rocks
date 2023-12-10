@@ -1,4 +1,6 @@
-# /uses/
+---
+title: /uses
+---
 
 on this page you can find most of the things that i use.
 

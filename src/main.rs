@@ -68,7 +68,9 @@ impl TryFrom<&Response> for tide::Response {
                 response.insert_header("Location", path.to_str().unwrap());
                 Ok(response)
             }
-            Response::Asset(assets::Asset::Markdown { html, .. }) => {
+            Response::Asset(
+                assets::Asset::Post { html, .. } | assets::Asset::Page { html, .. },
+            ) => {
                 let html = build_page(html);
                 let body = tide::Body::from(html.into_string());
                 Ok(tide::Response::builder(tide::StatusCode::Ok)
@@ -120,11 +122,7 @@ impl State {
         let mut routes = HashMap::new();
 
         for (asset_path, asset) in &assets {
-            if let assets::Asset::Markdown {
-                frontmatter: Some(frontmatter),
-                ..
-            } = &asset
-            {
+            if let assets::Asset::Post { frontmatter, .. } = &asset {
                 for alias in &frontmatter.aliases {
                     routes.insert(alias.clone(), Response::Redirect(asset_path.clone()));
                 }
@@ -139,10 +137,8 @@ impl State {
                     .into_iter()
                     .filter(|(path, _)| path.starts_with("/posts/"))
                     .filter_map(|(path, asset)| {
-                        if let assets::Asset::Markdown { frontmatter, .. } = &asset {
-                            frontmatter
-                                .as_ref()
-                                .map(|frontmatter| (path.clone(), frontmatter.clone()))
+                        if let assets::Asset::Post { frontmatter, .. } = &asset {
+                            Some((path.clone(), frontmatter.clone()))
                         } else {
                             None
                         }
@@ -249,15 +245,13 @@ mod assets {
     }
 
     #[derive(Debug, Clone)]
-    pub struct Post {
-        pub frontmatter: markdown::Frontmatter,
-        pub html: maud::Markup,
-    }
-
-    #[derive(Debug, Clone)]
     pub enum Asset {
-        Markdown {
-            frontmatter: Option<markdown::Frontmatter>,
+        Post {
+            frontmatter: markdown::PostFrontmatter,
+            html: maud::Markup,
+        },
+        Page {
+            frontmatter: markdown::PageFrontmatter,
             html: maud::Markup,
         },
         Other {
@@ -275,11 +269,27 @@ mod assets {
             Assets::get(&asset_path).expect("Assets::iter() returned a non-existent path");
 
         match embedded_file.metadata.mimetype() {
-            "text/markdown" => {
-                let (frontmatter, md) = markdown::extract_frontmatter(&embedded_file.data)
+            "text/markdown" if path.starts_with("/posts/") => {
+                let (frontmatter, md) = markdown::extract_frontmatter(&embedded_file.data);
+                let frontmatter = frontmatter
+                    .map_or(Err(FrontmatterError::NotFound), |frontmatter| {
+                        serde_yaml::from_slice(&frontmatter).map_err(FrontmatterError::SerdeYaml)
+                    })
                     .map_err(GetAssetError::Frontmatter)?;
+
                 let html = markdown::to_html(path, &md).expect("Error parsing markdown");
-                Ok(Asset::Markdown { frontmatter, html })
+                Ok(Asset::Post { frontmatter, html })
+            }
+            "text/markdown" => {
+                let (frontmatter, md) = markdown::extract_frontmatter(&embedded_file.data);
+                let frontmatter = frontmatter
+                    .map_or(Err(FrontmatterError::NotFound), |frontmatter| {
+                        serde_yaml::from_slice(&frontmatter).map_err(FrontmatterError::SerdeYaml)
+                    })
+                    .map_err(GetAssetError::Frontmatter)?;
+
+                let html = markdown::to_html(path, &md).expect("Error parsing markdown");
+                Ok(Asset::Page { frontmatter, html })
             }
             mimetype => Ok(Asset::Other {
                 mimetype: mimetype.to_string(),
@@ -289,10 +299,27 @@ mod assets {
     }
 
     #[derive(Debug)]
+    pub enum FrontmatterError {
+        NotFound,
+        SerdeYaml(serde_yaml::Error),
+    }
+
+    impl std::fmt::Display for FrontmatterError {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            match self {
+                FrontmatterError::NotFound => write!(f, "Frontmatter not found"),
+                FrontmatterError::SerdeYaml(error) => write!(f, "{error}"),
+            }
+        }
+    }
+
+    impl std::error::Error for FrontmatterError {}
+
+    #[derive(Debug)]
     pub enum GetAssetError {
         NotFound,
         ToHtml(markdown::ToHtmlError),
-        Frontmatter(markdown::FrontmatterError),
+        Frontmatter(FrontmatterError),
     }
 
     impl std::fmt::Display for GetAssetError {
@@ -318,32 +345,20 @@ mod markdown {
     use crate::path;
 
     #[derive(Debug, Clone, serde::Deserialize)]
-    pub struct Frontmatter {
+    pub struct PostFrontmatter {
         pub title: String,
         pub date: chrono::NaiveDate,
         pub aliases: Vec<std::path::PathBuf>,
     }
 
-    #[derive(Debug)]
-    pub enum FrontmatterError {
-        SerdeYaml(serde_yaml::Error),
+    #[derive(Debug, Clone, serde::Deserialize)]
+    pub struct PageFrontmatter {
+        pub title: String,
     }
-
-    impl std::fmt::Display for FrontmatterError {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            match self {
-                FrontmatterError::SerdeYaml(error) => write!(f, "{error}"),
-            }
-        }
-    }
-
-    impl std::error::Error for FrontmatterError {}
 
     /// Extracts the frontmatter from a markdown file.
     /// Returns parsed frontmatter and the remaining markdown.
-    pub fn extract_frontmatter(
-        markdown: &[u8],
-    ) -> Result<(Option<Frontmatter>, Vec<u8>), FrontmatterError> {
+    pub fn extract_frontmatter(markdown: &[u8]) -> (Option<Vec<u8>>, Vec<u8>) {
         let lines = markdown.split(|b| *b == b'\n');
         let mut frontmatter = Vec::new();
         let mut markdown = Vec::new();
@@ -362,9 +377,9 @@ mod markdown {
         let frontmatter = if frontmatter.is_empty() {
             None
         } else {
-            Some(serde_yaml::from_slice(&frontmatter).map_err(FrontmatterError::SerdeYaml)?)
+            Some(frontmatter)
         };
-        Ok((frontmatter, markdown))
+        (frontmatter, markdown)
     }
 
     #[derive(Debug)]
@@ -432,19 +447,17 @@ mod markdown {
 }
 
 mod pages {
-    use crate::markdown::Frontmatter;
-
     use super::assets;
+    use super::markdown;
 
-    pub fn posts(posts: &mut [(std::path::PathBuf, Frontmatter)]) -> assets::Asset {
+    pub fn posts(posts: &mut [(std::path::PathBuf, markdown::PostFrontmatter)]) -> assets::Asset {
         posts.sort_by(|(_, a), (_, b)| b.date.cmp(&a.date));
 
-        assets::Asset::Markdown {
-            frontmatter: None,
+        assets::Asset::Page {
+            frontmatter: markdown::PageFrontmatter {
+                title: "Posts".to_string(),
+            },
             html: maud::html! {
-                h1 {
-                    "Posts"
-                }
                 ul {
                     @for (path, post) in posts {
                         li {
