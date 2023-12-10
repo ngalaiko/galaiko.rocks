@@ -1,5 +1,3 @@
-- create times
-- redirects
 - cocktails
 - restaurants & cafes 
 - movies 
