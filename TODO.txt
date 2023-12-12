@@ -6,3 +6,4 @@
 - rss / atom
 - generate previews
 - optimize asset images
+- ssh interface
