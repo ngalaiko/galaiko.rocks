@@ -19,7 +19,6 @@ correctness = "deny"
 complexity = "deny"
 style = "deny"
 pedantic = "deny"
-restrictions = "deny"
 
 [dependencies]
 notify = "6.1.1"
