@@ -1,9 +1,8 @@
-- images
-- restaurants & cafes 
-- movies 
 - records
+- movies 
+- restaurants & cafes 
+- optimize asset images
 - css
 - rss / atom
 - generate previews
-- optimize asset images
 - ssh interface

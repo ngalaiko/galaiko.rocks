@@ -1,5 +1,3 @@
-use crate::path;
-
 /// Extracts the frontmatter from a markdown file.
 /// Returns parsed frontmatter and the remaining markdown.
 pub fn extract_frontmatter(markdown: &[u8]) -> (Option<Vec<u8>>, Vec<u8>) {
@@ -41,50 +39,10 @@ impl std::fmt::Display for ToHtmlError {
 
 impl std::error::Error for ToHtmlError {}
 
-pub fn to_html(path: &std::path::Path, data: &[u8]) -> Result<maud::Markup, ToHtmlError> {
+pub fn to_html(data: &[u8]) -> Result<maud::Markup, ToHtmlError> {
     let md = std::str::from_utf8(data).map_err(ToHtmlError::Utf8)?;
     let parser = pulldown_cmark::Parser::new(md);
-    let parser = parser.map(|event| match event {
-        pulldown_cmark::Event::Start(pulldown_cmark::Tag::Image(typ, link, title)) => {
-            pulldown_cmark::Event::Start(pulldown_cmark::Tag::Image(
-                typ,
-                pulldown_cmark::CowStr::Boxed(fix_link(path, &link).into_boxed_str()),
-                title,
-            ))
-        }
-        pulldown_cmark::Event::End(pulldown_cmark::Tag::Image(typ, link, title)) => {
-            pulldown_cmark::Event::End(pulldown_cmark::Tag::Image(
-                typ,
-                pulldown_cmark::CowStr::Boxed(fix_link(path, &link).into_boxed_str()),
-                title,
-            ))
-        }
-        pulldown_cmark::Event::Start(pulldown_cmark::Tag::Link(typ, link, title)) => {
-            pulldown_cmark::Event::Start(pulldown_cmark::Tag::Link(
-                typ,
-                pulldown_cmark::CowStr::Boxed(fix_link(path, &link).into_boxed_str()),
-                title,
-            ))
-        }
-        pulldown_cmark::Event::End(pulldown_cmark::Tag::Link(typ, link, title)) => {
-            pulldown_cmark::Event::End(pulldown_cmark::Tag::Link(
-                typ,
-                pulldown_cmark::CowStr::Boxed(fix_link(path, &link).into_boxed_str()),
-                title,
-            ))
-        }
-        _ => event,
-    });
     let mut html = String::new();
     pulldown_cmark::html::push_html(&mut html, parser);
     Ok(maud::PreEscaped(html))
-}
-
-fn fix_link(path: &std::path::Path, link: &str) -> String {
-    let link = path::normalize(link);
-    path.parent()
-        .unwrap()
-        .join(link)
-        .to_string_lossy()
-        .to_string()
 }

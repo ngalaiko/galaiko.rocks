@@ -37,7 +37,7 @@ impl TryFrom<&assets::Asset> for Page {
         let (frontmatter, md) = markdown::extract_frontmatter(&asset.data);
         let frontmatter = frontmatter.ok_or(FromError::FrontmatterNotFound)?;
         let frontmatter = serde_yaml::from_slice(&frontmatter).map_err(FromError::Frontmatter)?;
-        let body = markdown::to_html(&asset.path, &md).map_err(FromError::Body)?;
+        let body = markdown::to_html(&md).map_err(FromError::Body)?;
         Ok(Page {
             path: asset.path.clone(),
             frontmatter,

@@ -30,7 +30,7 @@ I don't think that this approach is super scalable and makes sense in the real w
 resources for a single user. But I have chosen it because it is more fun to implement for me as it needs more
 infrastructure work.
 
-![cloud](./cloud.jpg)
+![cloud](./p2p.cloud.jpg)
 
 ## Peer
 
@@ -96,7 +96,7 @@ and proxies the connection between two peers.
 
 Final architecture:
 
-![bridge](./bridge.jpg)
+![bridge](./p2p.bridge.jpg)
 
 You can find the code and maybe participate at [github](https://github.com/ngalayko/p2p).
 

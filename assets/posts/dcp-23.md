@@ -5,7 +5,7 @@ aliases:
   - "/posts/dcp/maze/"
 ---
 
-![maze](./maze.png)
+![maze](./dcp-23.png)
 
 ## Problem
 
