@@ -1,4 +1,4 @@
-- cocktails
+- images
 - restaurants & cafes 
 - movies 
 - records

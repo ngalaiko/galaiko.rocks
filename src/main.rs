@@ -1,4 +1,6 @@
 mod assets;
+mod cocktails;
+mod cooklang;
 mod generated;
 mod markdown;
 mod pages;
@@ -93,6 +95,7 @@ pub enum BuildError {
     GetAsset(std::path::PathBuf, assets::GetAssetError),
     BuildPost(std::path::PathBuf, posts::FromError),
     BuildPage(std::path::PathBuf, pages::FromError),
+    BuildCocktail(std::path::PathBuf, cocktails::FromError),
 }
 
 impl std::fmt::Display for BuildError {
@@ -106,6 +109,9 @@ impl std::fmt::Display for BuildError {
             }
             BuildError::BuildPage(path, error) => {
                 write!(f, "Error building page {}: {}", path.display(), error)
+            }
+            BuildError::BuildCocktail(path, error) => {
+                write!(f, "Error building cocktail {}: {}", path.display(), error)
             }
         }
     }
@@ -134,9 +140,22 @@ impl State {
             })
             .collect::<Result<Vec<_>, _>>()?;
 
+        let (cocktails, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+            asset.path.starts_with("/cocktails/") && asset.mimetype == "application/octet-stream"
+        });
+
+        let cocktails = cocktails
+            .iter()
+            .map(|asset| {
+                cocktails::Cocktail::try_from(asset)
+                    .map_err(|error| BuildError::BuildCocktail(asset.path.clone(), error))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+
         let (pages, remaining): (Vec<_>, Vec<_>) = assets
             .into_iter()
             .partition(|asset| asset.mimetype == "text/markdown");
+
         let pages = pages
             .iter()
             .map(|asset| {
@@ -158,6 +177,17 @@ impl State {
             },
         );
 
+        routes.insert(
+            std::path::PathBuf::from("/cocktails/index.html"),
+            Response::Content {
+                mimetype: "text/html".to_string(),
+                body: build_page(&generated::cocktails(&cocktails))
+                    .into_string()
+                    .as_bytes()
+                    .to_vec(),
+            },
+        );
+
         for post in posts {
             for alias in &post.frontmatter.aliases {
                 routes.insert(alias.clone(), Response::Redirect(post.path.clone()));
@@ -167,6 +197,16 @@ impl State {
                 Response::Content {
                     mimetype: "text/html".to_string(),
                     body: build_page(&post.body).into_string().as_bytes().to_vec(),
+                },
+            );
+        }
+
+        for cocktail in cocktails {
+            routes.insert(
+                cocktail.path.clone(),
+                Response::Content {
+                    mimetype: "text/html".to_string(),
+                    body: build_page(&cocktail.body).into_string().as_bytes().to_vec(),
                 },
             );
         }

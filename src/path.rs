@@ -7,7 +7,7 @@ pub fn normalize<P: AsRef<std::path::Path>>(s: P) -> std::path::PathBuf {
         path.push("index.html");
     };
     match path.extension().and_then(|e| e.to_str()) {
-        Some("md") => {
+        Some("md" | "cook") => {
             path.set_extension("html");
         }
         Some(_) => {}
@@ -55,4 +55,16 @@ fn md_directory_file() {
         path,
         std::path::PathBuf::from("/posts/some title/index.html")
     );
+}
+
+#[test]
+fn cook_file() {
+    let path = normalize("/posts/some title.cook");
+    assert_eq!(path, std::path::PathBuf::from("/posts/some title.html"));
+}
+
+#[test]
+fn cook_directory_file() {
+    let path = normalize("/some title/index.cook");
+    assert_eq!(path, std::path::PathBuf::from("/some title/index.html"));
 }
