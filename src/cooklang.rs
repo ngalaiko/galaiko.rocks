@@ -135,7 +135,6 @@ pub fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
 #[derive(Debug)]
 pub enum ParseError {
     Utf8(std::str::Utf8Error),
-    NoName,
     Cooklang(String),
 }
 
@@ -143,7 +142,6 @@ impl std::fmt::Display for ParseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             ParseError::Utf8(error) => write!(f, "{error}"),
-            ParseError::NoName => write!(f, "No name"),
             ParseError::Cooklang(error) => write!(f, "{error}"),
         }
     }
