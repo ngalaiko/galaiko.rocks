@@ -32,6 +32,8 @@ pub async fn update(resource: &Resource) -> Result<(), Box<dyn std::error::Error
 pub enum MoviesError {
     Surf(surf::Error),
     FromEntry(FromEntryError),
+    Ser(serde_json::Error),
+    Io(std::io::Error),
 }
 
 impl std::fmt::Display for MoviesError {
@@ -39,6 +41,8 @@ impl std::fmt::Display for MoviesError {
         match self {
             Self::Surf(error) => write!(f, "{error}"),
             Self::FromEntry(error) => write!(f, "{error}"),
+            Self::Io(error) => write!(f, "{error}"),
+            Self::Ser(error) => write!(f, "{error}"),
         }
     }
 }
@@ -117,8 +121,9 @@ impl TryFrom<select::node::Node<'_>> for movies::Entry {
             .map(|path| format!("https://letterboxd.com{path}"))
             .ok_or(FromEntryError::Href)?;
 
-        let slug = details
+        let title_slug = details
             .and_then(|node| node.attr("data-film-slug"))
+            .map(std::string::ToString::to_string)
             .ok_or(FromEntryError::Slug)?;
 
         let id = details
@@ -131,7 +136,7 @@ impl TryFrom<select::node::Node<'_>> for movies::Entry {
                 href += char.to_string().as_str();
                 href += "/";
             }
-            href += &format!("{id}-{slug}-0-600-0-900-crop.jpg");
+            href += &format!("{id}-{title_slug}-0-600-0-900-crop.jpg");
             href
         };
 
@@ -144,6 +149,7 @@ impl TryFrom<select::node::Node<'_>> for movies::Entry {
 
         Ok(movies::Entry {
             title,
+            title_slug,
             date,
             is_rewatch,
             is_liked,
@@ -198,6 +204,9 @@ async fn update_movies() -> Result<(), MoviesError> {
             break;
         }
     }
+
+    let serialized = serde_json::to_vec_pretty(&entries).map_err(MoviesError::Ser)?;
+    std::fs::write("./assets/movies/index.json", serialized).map_err(MoviesError::Io)?;
 
     Ok(())
 }

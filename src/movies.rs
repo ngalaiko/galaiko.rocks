@@ -1,6 +1,7 @@
-#[derive(Debug)]
+#[derive(Debug, serde::Serialize)]
 pub struct Entry {
     pub title: String,
+    pub title_slug: String,
     pub date: chrono::NaiveDate,
     pub is_rewatch: bool,
     pub is_liked: bool,

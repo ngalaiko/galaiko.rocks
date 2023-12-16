@@ -3305,6 +3305,7 @@ dependencies = [
  "rust-embed",
  "select",
  "serde",
+ "serde_json",
  "serde_yaml",
  "surf",
  "tide",
