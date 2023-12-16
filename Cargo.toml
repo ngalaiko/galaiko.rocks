@@ -35,3 +35,5 @@ urlencoding = "2.1.3"
 cooklang = { git = "https://github.com/cooklang/cooklang-rs.git", branch = "main" }
 once_cell = "1.19.0"
 clap = { version = "4.4.11", features = ["derive"] }
+select = "0.6.0"
+surf = "2.3.2"
