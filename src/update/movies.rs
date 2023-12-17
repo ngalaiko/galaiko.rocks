@@ -178,7 +178,9 @@ pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
     }
 
     let serialized = serde_json::to_vec_pretty(&entries).map_err(Error::Ser)?;
-    std::fs::write(output.as_ref(), serialized).map_err(Error::Io)?;
+    async_std::fs::write(output.as_ref(), serialized)
+        .await
+        .map_err(Error::Io)?;
 
     Ok(())
 }

@@ -1,0 +1,377 @@
+[
+  {
+    "name": "Bar Centro",
+    "spent": 4927.0,
+    "times": 51
+  },
+  {
+    "name": "Omnipollos Hatt",
+    "spent": 8054.5,
+    "times": 29
+  },
+  {
+    "name": "Ullevi Thaikök",
+    "spent": 2461.0,
+    "times": 19
+  },
+  {
+    "name": "Alexandras Grekiska Soppkök",
+    "spent": 1439.0,
+    "times": 12
+  },
+  {
+    "name": "Hagabions Cafe",
+    "spent": 2228.0,
+    "times": 8
+  },
+  {
+    "name": "Tony's Pizza and Salad",
+    "spent": 1084.0,
+    "times": 8
+  },
+  {
+    "name": "Amida",
+    "spent": 1088.0,
+    "times": 7
+  },
+  {
+    "name": "Aryam",
+    "spent": 497.0,
+    "times": 7
+  },
+  {
+    "name": "Falafelbaren - Götgatan",
+    "spent": 860.0,
+    "times": 7
+  },
+  {
+    "name": "Falloumi",
+    "spent": 997.0,
+    "times": 7
+  },
+  {
+    "name": "Fang Yuan Shi Wu",
+    "spent": 925.0,
+    "times": 7
+  },
+  {
+    "name": "Hasselsson - Saluhallen",
+    "spent": 820.0,
+    "times": 7
+  },
+  {
+    "name": "Indiska Källaren",
+    "spent": 930.0,
+    "times": 7
+  },
+  {
+    "name": "koie ramen",
+    "spent": 1259.0,
+    "times": 7
+  },
+  {
+    "name": "Banh Mi Shop",
+    "spent": 760.0,
+    "times": 6
+  },
+  {
+    "name": "D'abramo",
+    "spent": 282.0,
+    "times": 6
+  },
+  {
+    "name": "Susherian",
+    "spent": 890.0,
+    "times": 6
+  },
+  {
+    "name": "ilcaffè",
+    "spent": 455.0,
+    "times": 6
+  },
+  {
+    "name": "Gansu Köket",
+    "spent": 643.0,
+    "times": 5
+  },
+  {
+    "name": "Gelaterian Göteborg",
+    "spent": 332.0,
+    "times": 5
+  },
+  {
+    "name": "House of Vietnam",
+    "spent": 600.0,
+    "times": 5
+  },
+  {
+    "name": "McDonald's",
+    "spent": 416.0,
+    "times": 5
+  },
+  {
+    "name": "A43",
+    "spent": 255.0,
+    "times": 4
+  },
+  {
+    "name": "AI Ramen",
+    "spent": 700.0,
+    "times": 4
+  },
+  {
+    "name": "Kajsas Fisk",
+    "spent": 530.0,
+    "times": 4
+  },
+  {
+    "name": "La Neta",
+    "spent": 500.0,
+    "times": 4
+  },
+  {
+    "name": "Max",
+    "spent": 307.0,
+    "times": 4
+  },
+  {
+    "name": "Mikkeller",
+    "spent": 649.75,
+    "times": 4
+  },
+  {
+    "name": "The Market",
+    "spent": 730.0,
+    "times": 4
+  },
+  {
+    "name": "Tonys Coffeebar",
+    "spent": 243.0,
+    "times": 4
+  },
+  {
+    "name": "Carl's Deli",
+    "spent": 435.0,
+    "times": 3
+  },
+  {
+    "name": "Gourmetkorv",
+    "spent": 335.0,
+    "times": 3
+  },
+  {
+    "name": "Günter's korvar",
+    "spent": 275.0,
+    "times": 3
+  },
+  {
+    "name": "Indio Kitchen",
+    "spent": 593.0,
+    "times": 3
+  },
+  {
+    "name": "Kafé Ritorno",
+    "spent": 305.0,
+    "times": 3
+  },
+  {
+    "name": "Landvetters Stenugnsbageri",
+    "spent": 176.0,
+    "times": 3
+  },
+  {
+    "name": "Lao Lao",
+    "spent": 367.0,
+    "times": 3
+  },
+  {
+    "name": "Mahogny",
+    "spent": 136.0,
+    "times": 3
+  },
+  {
+    "name": "Morgon Coffee Roasters",
+    "spent": 218.0,
+    "times": 3
+  },
+  {
+    "name": "Nordstan Kebab",
+    "spent": 328.0,
+    "times": 3
+  },
+  {
+    "name": "PWC",
+    "spent": 430.0,
+    "times": 3
+  },
+  {
+    "name": "Trattoria Da Pasquale",
+    "spent": 1041.65,
+    "times": 3
+  },
+  {
+    "name": "Alexandra Grekiska Soppkök",
+    "spent": 220.0,
+    "times": 2
+  },
+  {
+    "name": "An Nam",
+    "spent": 498.0,
+    "times": 2
+  },
+  {
+    "name": "Belgobaren",
+    "spent": 298.0,
+    "times": 2
+  },
+  {
+    "name": "Bombay Street",
+    "spent": 717.0,
+    "times": 2
+  },
+  {
+    "name": "Brunos Korvbar",
+    "spent": 180.0,
+    "times": 2
+  },
+  {
+    "name": "Cafe Ragazzi",
+    "spent": 345.0,
+    "times": 2
+  },
+  {
+    "name": "Caput Mundi - Hornsgatan",
+    "spent": 110.0,
+    "times": 2
+  },
+  {
+    "name": "Djingis Khan",
+    "spent": 290.0,
+    "times": 2
+  },
+  {
+    "name": "EDO Sushi",
+    "spent": 238.0,
+    "times": 2
+  },
+  {
+    "name": "Eatnam",
+    "spent": 300.0,
+    "times": 2
+  },
+  {
+    "name": "Franky's",
+    "spent": 334.0,
+    "times": 2
+  },
+  {
+    "name": "Haikyuu Sushi & Poke ",
+    "spent": 406.0,
+    "times": 2
+  },
+  {
+    "name": "Haymarket",
+    "spent": 430.0,
+    "times": 2
+  },
+  {
+    "name": "Helenes Smørrebrød",
+    "spent": 248.0,
+    "times": 2
+  },
+  {
+    "name": "Hoze",
+    "spent": 9500.0,
+    "times": 2
+  },
+  {
+    "name": "Kimchistan",
+    "spent": 324.0,
+    "times": 2
+  },
+  {
+    "name": "La Neta Bar",
+    "spent": 250.0,
+    "times": 2
+  },
+  {
+    "name": "La Terrazza",
+    "spent": 766.0,
+    "times": 2
+  },
+  {
+    "name": "Levinskys",
+    "spent": 274.0,
+    "times": 2
+  },
+  {
+    "name": "Nem Nem Quan",
+    "spent": 417.0,
+    "times": 2
+  },
+  {
+    "name": "Prime Burger",
+    "spent": 315.0,
+    "times": 2
+  },
+  {
+    "name": "SEN Street Kitchen",
+    "spent": 288.0,
+    "times": 2
+  },
+  {
+    "name": "Saigon Baguette",
+    "spent": 387.5,
+    "times": 2
+  },
+  {
+    "name": "Shanti Shukriya",
+    "spent": 295.0,
+    "times": 2
+  },
+  {
+    "name": "Snø",
+    "spent": 90.0,
+    "times": 2
+  },
+  {
+    "name": "Steamy Pho",
+    "spent": 330.0,
+    "times": 2
+  },
+  {
+    "name": "StikkiNikki",
+    "spent": 114.0,
+    "times": 2
+  },
+  {
+    "name": "Take Ramen",
+    "spent": 315.0,
+    "times": 2
+  },
+  {
+    "name": "The Good Gringo",
+    "spent": 230.0,
+    "times": 2
+  },
+  {
+    "name": "The Italian Cousins - Odengatan",
+    "spent": 290.0,
+    "times": 2
+  },
+  {
+    "name": "Weidao",
+    "spent": 340.0,
+    "times": 2
+  },
+  {
+    "name": "Xulo",
+    "spent": 285.0,
+    "times": 2
+  },
+  {
+    "name": "Zozaki",
+    "spent": 242.0,
+    "times": 2
+  }
+]

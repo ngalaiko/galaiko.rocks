@@ -8,6 +8,7 @@ mod pages;
 mod path;
 mod posts;
 mod records;
+mod restaurands_and_cafes;
 mod serve;
 mod update;
 
@@ -41,6 +42,12 @@ enum UpdateSubcommand {
         #[arg(long, default_value = "./assets/movies/index.json")]
         output: String,
     },
+    RestaurantsAndCafes {
+        #[arg(long)]
+        file: Option<String>,
+        #[arg(long, default_value = "./assets/restaurants_and_cafes/index.json")]
+        output: String,
+    },
 }
 
 #[async_std::main]
@@ -55,6 +62,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         Commands::Update(UpdateSubcommand::Records { token, output }) => {
             update::records(&token, &output).await.map_err(Into::into)
+        }
+        Commands::Update(UpdateSubcommand::RestaurantsAndCafes { file, output }) => {
+            update::restaurants_and_cafes(file.as_deref(), &output)
+                .await
+                .map_err(Into::into)
         }
     }
 }
