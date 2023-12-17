@@ -7,6 +7,7 @@ mod movies;
 mod pages;
 mod path;
 mod posts;
+mod records;
 mod serve;
 mod update;
 
@@ -24,9 +25,21 @@ enum Commands {
         #[arg(default_value = "127.0.0.1:8080")]
         address: String,
     },
-    Update {
-        #[arg(value_enum, default_value_t = update::Resource::All)]
-        resource: update::Resource,
+    #[command(subcommand)]
+    Update(UpdateSubcommand),
+}
+
+#[derive(Subcommand)]
+enum UpdateSubcommand {
+    Records {
+        #[arg(long)]
+        token: String,
+        #[arg(long, default_value = "./assets/records/index.json")]
+        output: String,
+    },
+    Movies {
+        #[arg(long, default_value = "./assets/movies/index.json")]
+        output: String,
     },
 }
 
@@ -37,6 +50,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
     match cli.command {
         Commands::Serve { address } => serve::serve(&address).await,
-        Commands::Update { resource } => update::update(&resource).await,
+        Commands::Update(UpdateSubcommand::Movies { output }) => {
+            update::movies(&output).await.map_err(Into::into)
+        }
+        Commands::Update(UpdateSubcommand::Records { token, output }) => {
+            update::records(&token, &output).await.map_err(Into::into)
+        }
     }
 }
