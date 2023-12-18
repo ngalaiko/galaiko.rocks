@@ -1,5 +1,9 @@
 {
   "name": "Indio Kitchen",
   "spent": 593.0,
-  "times": 3
+  "times": 3,
+  "location": [
+    59.314665,
+    18.083247
+  ]
 }

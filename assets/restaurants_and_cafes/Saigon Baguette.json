@@ -1,5 +1,9 @@
 {
   "name": "Saigon Baguette",
   "spent": 387.5,
-  "times": 2
+  "times": 2,
+  "location": [
+    59.333528,
+    18.058477
+  ]
 }

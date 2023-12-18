@@ -242,7 +242,7 @@ impl State {
                     .into_string()
                     .as_bytes()
                     .to_vec(),
-            }
+            },
         );
 
         routes.insert(

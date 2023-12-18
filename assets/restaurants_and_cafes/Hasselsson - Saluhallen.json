@@ -1,5 +1,9 @@
 {
   "name": "Hasselsson - Saluhallen",
   "spent": 820.0,
-  "times": 7
+  "times": 7,
+  "location": [
+    57.703598,
+    11.967959
+  ]
 }

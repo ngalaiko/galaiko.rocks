@@ -1,5 +1,9 @@
 {
   "name": "Mikkeller",
   "spent": 649.75,
-  "times": 4
+  "times": 4,
+  "location": [
+    59.314857,
+    18.076491
+  ]
 }

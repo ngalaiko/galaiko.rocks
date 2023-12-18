@@ -1,5 +1,9 @@
 {
   "name": "Gelaterian Göteborg",
   "spent": 332.0,
-  "times": 5
+  "times": 5,
+  "location": [
+    57.703553,
+    11.96789
+  ]
 }

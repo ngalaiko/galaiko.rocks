@@ -1,5 +1,9 @@
 {
   "name": "Hagabions Cafe",
   "spent": 2228.0,
-  "times": 8
+  "times": 8,
+  "location": [
+    57.696563,
+    11.95073
+  ]
 }

@@ -1,5 +1,9 @@
 {
   "name": "La Terrazza",
   "spent": 766.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    57.699998,
+    11.984547
+  ]
 }

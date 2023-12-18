@@ -1,5 +1,9 @@
 {
   "name": "ilcaffè",
   "spent": 455.0,
-  "times": 6
+  "times": 6,
+  "location": [
+    59.312661,
+    18.081021
+  ]
 }

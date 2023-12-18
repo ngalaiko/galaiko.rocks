@@ -1,5 +1,9 @@
 {
   "name": "Cafe Ragazzi",
   "spent": 345.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    59.335918,
+    18.059252
+  ]
 }

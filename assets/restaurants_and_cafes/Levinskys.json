@@ -1,5 +1,9 @@
 {
   "name": "Levinskys",
   "spent": 274.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    59.33983,
+    18.033982
+  ]
 }

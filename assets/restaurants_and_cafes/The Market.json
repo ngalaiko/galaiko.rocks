@@ -1,5 +1,9 @@
 {
   "name": "The Market",
   "spent": 730.0,
-  "times": 4
+  "times": 4,
+  "location": [
+    59.331216,
+    18.059258
+  ]
 }

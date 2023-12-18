@@ -1,5 +1,9 @@
 {
   "name": "La Neta Bar",
   "spent": 250.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    59.333599,
+    18.070247
+  ]
 }

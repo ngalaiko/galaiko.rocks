@@ -1,5 +1,9 @@
 {
   "name": "Zozaki",
   "spent": 242.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    57.707053,
+    11.973963
+  ]
 }

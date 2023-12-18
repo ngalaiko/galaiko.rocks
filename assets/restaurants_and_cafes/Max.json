@@ -1,5 +1,9 @@
 {
   "name": "Max",
   "spent": 307.0,
-  "times": 4
+  "times": 4,
+  "location": [
+    59.315597,
+    18.073084
+  ]
 }

@@ -1,5 +1,9 @@
 {
   "name": "Nordstan Kebab",
   "spent": 328.0,
-  "times": 3
+  "times": 3,
+  "location": [
+    57.707136,
+    11.968511
+  ]
 }

@@ -1,5 +1,9 @@
 {
   "name": "Tonys Coffeebar",
   "spent": 243.0,
-  "times": 4
+  "times": 4,
+  "location": [
+    57.697588,
+    11.986249
+  ]
 }

@@ -1,5 +1,9 @@
 {
   "name": "McDonald's",
   "spent": 416.0,
-  "times": 5
+  "times": 5,
+  "location": [
+    59.317889,
+    18.05361
+  ]
 }

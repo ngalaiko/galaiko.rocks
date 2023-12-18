@@ -1,5 +1,9 @@
 {
   "name": "EDO Sushi",
   "spent": 238.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    57.705322,
+    11.967964
+  ]
 }

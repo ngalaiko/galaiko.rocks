@@ -1,5 +1,9 @@
 {
   "name": "Günter's korvar",
   "spent": 275.0,
-  "times": 3
+  "times": 3,
+  "location": [
+    59.342537,
+    18.032653
+  ]
 }

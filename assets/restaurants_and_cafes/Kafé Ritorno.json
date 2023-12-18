@@ -1,5 +1,9 @@
 {
   "name": "Kafé Ritorno",
   "spent": 305.0,
-  "times": 3
+  "times": 3,
+  "location": [
+    59.336319,
+    18.048464
+  ]
 }

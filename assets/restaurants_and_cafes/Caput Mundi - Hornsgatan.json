@@ -1,5 +1,9 @@
 {
   "name": "Caput Mundi - Hornsgatan",
   "spent": 110.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    59.315738,
+    18.0364
+  ]
 }

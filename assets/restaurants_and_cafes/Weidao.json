@@ -1,5 +1,9 @@
 {
   "name": "Weidao",
   "spent": 340.0,
-  "times": 2
+  "times": 2,
+  "location": [
+    59.331949,
+    18.057649
+  ]
 }

@@ -1,5 +1,9 @@
 {
   "name": "Fang Yuan Shi Wu",
   "spent": 925.0,
-  "times": 7
+  "times": 7,
+  "location": [
+    59.310311,
+    18.082277
+  ]
 }

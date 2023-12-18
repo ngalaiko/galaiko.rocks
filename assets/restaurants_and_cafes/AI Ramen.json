@@ -1,5 +1,9 @@
 {
   "name": "AI Ramen",
   "spent": 700.0,
-  "times": 4
+  "times": 4,
+  "location": [
+    59.333392,
+    18.057954
+  ]
 }

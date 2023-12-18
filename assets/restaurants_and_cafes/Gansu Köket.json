@@ -1,5 +1,9 @@
 {
   "name": "Gansu Köket",
   "spent": 643.0,
-  "times": 5
+  "times": 5,
+  "location": [
+    57.708635,
+    11.965104
+  ]
 }

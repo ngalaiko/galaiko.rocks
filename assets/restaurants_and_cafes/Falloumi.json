@@ -1,5 +1,9 @@
 {
   "name": "Falloumi",
   "spent": 997.0,
-  "times": 7
+  "times": 7,
+  "location": [
+    59.308163,
+    18.077789
+  ]
 }

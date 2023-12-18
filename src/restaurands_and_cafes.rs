@@ -5,6 +5,7 @@ pub struct Place {
     pub name: String,
     pub spent: f64,
     pub times: u8,
+    pub location: (f64, f64),
 }
 
 impl TryFrom<&assets::Asset> for Place {

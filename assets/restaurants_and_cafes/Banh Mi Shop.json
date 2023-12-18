@@ -1,5 +1,9 @@
 {
   "name": "Banh Mi Shop",
   "spent": 760.0,
-  "times": 6
+  "times": 6,
+  "location": [
+    57.703682,
+    11.968214
+  ]
 }

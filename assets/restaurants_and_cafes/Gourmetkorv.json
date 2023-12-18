@@ -1,5 +1,9 @@
 {
   "name": "Gourmetkorv",
   "spent": 335.0,
-  "times": 3
+  "times": 3,
+  "location": [
+    57.702785,
+    11.963998
+  ]
 }

@@ -1,5 +1,4 @@
-- restaurants & cafes locations
-- css
+- css for all pages
 - optimized images
 - rss / atom
 - generated previews

@@ -1,5 +1,9 @@
 {
   "name": "PWC",
   "spent": 430.0,
-  "times": 3
+  "times": 3,
+  "location": [
+    59.337622,
+    18.04086
+  ]
 }
