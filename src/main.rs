@@ -44,7 +44,7 @@ enum UpdateSubcommand {
     RestaurantsAndCafes {
         #[arg(long)]
         file: Option<String>,
-        #[arg(long, default_value = "./assets/restaurants_and_cafes/index.json")]
+        #[arg(long, default_value = "./assets/restaurants_and_cafes/")]
         output: String,
     },
 }
