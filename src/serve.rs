@@ -1,4 +1,6 @@
-use crate::{assets, cocktails, generated, movies, pages, path, posts, records};
+use crate::{
+    assets, cocktails, generated, movies, pages, path, posts, records, restaurands_and_cafes,
+};
 
 use std::{
     collections::HashMap,
@@ -88,6 +90,7 @@ pub enum BuildError {
     BuildCocktail(std::path::PathBuf, cocktails::FromError),
     BuildMovie(std::path::PathBuf, movies::FromError),
     BuildRecord(std::path::PathBuf, records::FromError),
+    BuildPlace(std::path::PathBuf, restaurands_and_cafes::FromError),
 }
 
 impl std::fmt::Display for BuildError {
@@ -110,6 +113,9 @@ impl std::fmt::Display for BuildError {
             }
             BuildError::BuildRecord(path, error) => {
                 write!(f, "Error building record {}: {}", path.display(), error)
+            }
+            BuildError::BuildPlace(path, error) => {
+                write!(f, "Error building place {}: {}", path.display(), error)
             }
         }
     }
@@ -171,6 +177,17 @@ impl State {
             })
             .collect::<Result<Vec<_>, _>>()?;
 
+        let (places, assets): (Vec<_>, Vec<_>) = assets
+            .into_iter()
+            .partition(|asset| asset.path.starts_with("/restaurants_and_cafes/"));
+        let places = places
+            .iter()
+            .map(|asset| {
+                restaurands_and_cafes::Place::try_from(asset)
+                    .map_err(|error| BuildError::BuildPlace(asset.path.clone(), error))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+
         let (pages, assets): (Vec<_>, Vec<_>) = assets
             .into_iter()
             .partition(|asset| asset.mimetype == "text/markdown");
@@ -215,6 +232,17 @@ impl State {
                     .as_bytes()
                     .to_vec(),
             },
+        );
+
+        routes.insert(
+            std::path::PathBuf::from("/restaurants_and_cafes/index.html"),
+            Response::Content {
+                mimetype: "text/html".to_string(),
+                body: build_page(&generated::restaurants_and_cafes(&places))
+                    .into_string()
+                    .as_bytes()
+                    .to_vec(),
+            }
         );
 
         routes.insert(

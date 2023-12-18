@@ -1,4 +1,4 @@
-use crate::{cocktails, movies, posts, records};
+use crate::{cocktails, movies, posts, records, restaurands_and_cafes};
 
 pub fn posts(posts: &[posts::Post]) -> maud::Markup {
     let mut posts = posts.to_vec();
@@ -66,10 +66,29 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
             @for record in records {
                 li {
                     a href=(format!("https://www.discogs.com/release/{}", record.id)) {
-                        (record.basic_information.title) "-" (record.basic_information.artists[0].name)
+                       (record.basic_information.artists[0].name) " - " (record.basic_information.title)
                     }
                     " "
                     (record.date_added.format("%Y-%m-%d"))
+                }
+            }
+        }
+    }
+}
+
+pub fn restaurants_and_cafes(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
+    let mut places = places.to_vec();
+    places.sort_by(|a, b| b.times.cmp(&a.times));
+
+    maud::html! {
+        ul {
+            @for place in places {
+                li {
+                    (place.name)
+                    " "
+                    (place.times)
+                    " "
+                    (place.spent)
                 }
             }
         }

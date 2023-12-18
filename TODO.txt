@@ -1,6 +1,4 @@
-- records page
-- movies page
-- restaurants & cafes page
+- restaurants & cafes locations
 - css
 - optimized images
 - rss / atom
