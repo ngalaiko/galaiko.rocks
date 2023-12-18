@@ -54,8 +54,8 @@ impl From<Row> for Entry {
 }
 
 pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Result<(), Error> {
-    use std::collections::BTreeMap;
     use async_std::prelude::*;
+    use std::collections::BTreeMap;
 
     let year_ago = chrono::Local::now() - chrono::Duration::days(365);
 

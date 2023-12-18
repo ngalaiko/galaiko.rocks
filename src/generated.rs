@@ -1,4 +1,4 @@
-use crate::{cocktails, movies, posts};
+use crate::{cocktails, movies, posts, records};
 
 pub fn posts(posts: &[posts::Post]) -> maud::Markup {
     let mut posts = posts.to_vec();
@@ -51,6 +51,25 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
                     }
                     " "
                     (movie.date.format("%Y-%m-%d"))
+                }
+            }
+        }
+    }
+}
+
+pub fn records(records: &[records::Record]) -> maud::Markup {
+    let mut records = records.to_vec();
+    records.sort_by(|a, b| b.date_added.cmp(&a.date_added));
+
+    maud::html! {
+        ul {
+            @for record in records {
+                li {
+                    a href=(format!("https://www.discogs.com/release/{}", record.id)) {
+                        (record.basic_information.title) "-" (record.basic_information.artists[0].name)
+                    }
+                    " "
+                    (record.date_added.format("%Y-%m-%d"))
                 }
             }
         }

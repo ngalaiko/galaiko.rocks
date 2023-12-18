@@ -1,4 +1,4 @@
-use crate::{assets, cocktails, movies, generated, pages, path, posts};
+use crate::{assets, cocktails, generated, movies, pages, path, posts, records};
 
 use std::{
     collections::HashMap,
@@ -87,6 +87,7 @@ pub enum BuildError {
     BuildPage(std::path::PathBuf, pages::FromError),
     BuildCocktail(std::path::PathBuf, cocktails::FromError),
     BuildMovie(std::path::PathBuf, movies::FromError),
+    BuildRecord(std::path::PathBuf, records::FromError),
 }
 
 impl std::fmt::Display for BuildError {
@@ -106,6 +107,9 @@ impl std::fmt::Display for BuildError {
             }
             BuildError::BuildMovie(path, error) => {
                 write!(f, "Error building movie {}: {}", path.display(), error)
+            }
+            BuildError::BuildRecord(path, error) => {
+                write!(f, "Error building record {}: {}", path.display(), error)
             }
         }
     }
@@ -145,14 +149,25 @@ impl State {
             })
             .collect::<Result<Vec<_>, _>>()?;
 
-        let (movies, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
-            asset.path.starts_with("/movies/") 
-        });
+        let (movies, assets): (Vec<_>, Vec<_>) = assets
+            .into_iter()
+            .partition(|asset| asset.path.starts_with("/movies/"));
         let movies = movies
             .iter()
             .map(|asset| {
                 movies::Entry::try_from(asset)
                     .map_err(|error| BuildError::BuildMovie(asset.path.clone(), error))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+
+        let (records, assets): (Vec<_>, Vec<_>) = assets
+            .into_iter()
+            .partition(|asset| asset.path.starts_with("/records/"));
+        let records = records
+            .iter()
+            .map(|asset| {
+                records::Record::try_from(asset)
+                    .map_err(|error| BuildError::BuildRecord(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -181,6 +196,17 @@ impl State {
         );
 
         routes.insert(
+            std::path::PathBuf::from("/records/index.html"),
+            Response::Content {
+                mimetype: "text/html".to_string(),
+                body: build_page(&generated::records(&records))
+                    .into_string()
+                    .as_bytes()
+                    .to_vec(),
+            },
+        );
+
+        routes.insert(
             std::path::PathBuf::from("/cocktails/index.html"),
             Response::Content {
                 mimetype: "text/html".to_string(),
@@ -190,7 +216,7 @@ impl State {
                     .to_vec(),
             },
         );
-        
+
         routes.insert(
             std::path::PathBuf::from("/movies/index.html"),
             Response::Content {
