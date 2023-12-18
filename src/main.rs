@@ -1,10 +1,9 @@
 mod assets;
 mod cocktails;
-mod cooklang;
 mod generated;
-mod markdown;
 mod movies;
 mod pages;
+mod parse;
 mod path;
 mod posts;
 mod records;

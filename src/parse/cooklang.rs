@@ -2,18 +2,19 @@ static PARSER: once_cell::sync::Lazy<cooklang::CooklangParser> = once_cell::sync
     cooklang::CooklangParser::new(cooklang::Extensions::all(), cooklang::Converter::default())
 });
 
-pub fn parse(data: &[u8]) -> Result<cooklang::ScaledRecipe, ParseError> {
+pub fn parse(data: &[u8]) -> Result<maud::Markup, ParseError> {
     let src = std::str::from_utf8(data).map_err(ParseError::Utf8)?;
     let (recipe, _) = PARSER
         .parse(src)
         .into_result()
         .map_err(|e| ParseError::Cooklang(e.to_string()))?;
 
-    Ok(recipe.default_scale())
+    let html = to_html(&recipe.default_scale());
+    Ok(html)
 }
 
 #[allow(clippy::too_many_lines)]
-pub fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
+fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
     let ingredient_list = recipe.group_ingredients(PARSER.converter());
     maud::html! {
         @if !recipe.metadata.map.is_empty() {

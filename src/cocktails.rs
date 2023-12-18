@@ -1,4 +1,4 @@
-use crate::{assets, cooklang};
+use crate::{assets, parse};
 
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Frontmatter {
@@ -22,20 +22,19 @@ impl TryFrom<&assets::Asset> for Cocktail {
             .and_then(|s| s.to_str())
             .map(std::borrow::ToOwned::to_owned)
             .ok_or(FromError::NoTitle)?;
-        cooklang::parse(&asset.data)
-            .map(|recipe| Cocktail {
-                body: cooklang::to_html(&recipe),
-                frontmatter: Frontmatter { title },
-                path: asset.path.clone(),
-            })
-            .map_err(FromError::Cooklang)
+        let body = parse::cooklang(&asset.data).map_err(FromError::Cooklang)?;
+        Ok(Cocktail {
+            body,
+            frontmatter: Frontmatter { title },
+            path: asset.path.clone(),
+        })
     }
 }
 
 #[derive(Debug)]
 pub enum FromError {
     NoTitle,
-    Cooklang(cooklang::ParseError),
+    Cooklang(parse::CooklangParseError),
 }
 
 impl std::fmt::Display for FromError {
