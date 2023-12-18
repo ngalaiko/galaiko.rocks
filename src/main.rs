@@ -38,7 +38,7 @@ enum UpdateSubcommand {
         output: String,
     },
     Movies {
-        #[arg(long, default_value = "./assets/movies/index.json")]
+        #[arg(long, default_value = "./assets/movies/")]
         output: String,
     },
     RestaurantsAndCafes {

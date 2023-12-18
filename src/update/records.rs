@@ -83,6 +83,5 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
         }
     }
 
-  
     Ok(())
 }
