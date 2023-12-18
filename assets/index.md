@@ -13,7 +13,7 @@ this is not a very large website. however, here is a list of lists that you can 
 - [restaurants and cafes](./restaurants_and_cafes.md) i went to at least twice since last year
 - [cocktails](./cocktails/) i respect and occasionaly make to consume
 - [things i use](./uses.md)
-- [movies i watch](./movies.md)
+- [movies i watch](./movies/)
 - [what i am up to now](./now.md)
 - very bad [posts](./posts/)
 

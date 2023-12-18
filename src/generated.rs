@@ -1,4 +1,4 @@
-use crate::{cocktails, posts};
+use crate::{cocktails, movies, posts};
 
 pub fn posts(posts: &[posts::Post]) -> maud::Markup {
     let mut posts = posts.to_vec();
@@ -32,6 +32,25 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
                     a href=(cocktail.path.display()) {
                         (cocktail.frontmatter.title)
                     }
+                }
+            }
+        }
+    }
+}
+
+pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
+    let mut movies = movies.to_vec();
+    movies.sort_by(|a, b| b.date.cmp(&a.date));
+
+    maud::html! {
+        ul {
+            @for movie in movies {
+                li {
+                    a href=(movie.href) {
+                        (movie.title)
+                    }
+                    " "
+                    (movie.date.format("%Y-%m-%d"))
                 }
             }
         }

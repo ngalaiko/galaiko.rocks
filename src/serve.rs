@@ -1,4 +1,4 @@
-use crate::{assets, cocktails, generated, pages, path, posts};
+use crate::{assets, cocktails, movies, generated, pages, path, posts};
 
 use std::{
     collections::HashMap,
@@ -86,6 +86,7 @@ pub enum BuildError {
     BuildPost(std::path::PathBuf, posts::FromError),
     BuildPage(std::path::PathBuf, pages::FromError),
     BuildCocktail(std::path::PathBuf, cocktails::FromError),
+    BuildMovie(std::path::PathBuf, movies::FromError),
 }
 
 impl std::fmt::Display for BuildError {
@@ -103,6 +104,9 @@ impl std::fmt::Display for BuildError {
             BuildError::BuildCocktail(path, error) => {
                 write!(f, "Error building cocktail {}: {}", path.display(), error)
             }
+            BuildError::BuildMovie(path, error) => {
+                write!(f, "Error building movie {}: {}", path.display(), error)
+            }
         }
     }
 }
@@ -110,6 +114,7 @@ impl std::fmt::Display for BuildError {
 impl std::error::Error for BuildError {}
 
 impl State {
+    #[allow(clippy::too_many_lines)]
     fn build() -> Result<Self, BuildError> {
         let assets = assets::iter()
             .map(|asset_path| {
@@ -137,6 +142,17 @@ impl State {
             .map(|asset| {
                 cocktails::Cocktail::try_from(asset)
                     .map_err(|error| BuildError::BuildCocktail(asset.path.clone(), error))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+
+        let (movies, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+            asset.path.starts_with("/movies/") 
+        });
+        let movies = movies
+            .iter()
+            .map(|asset| {
+                movies::Entry::try_from(asset)
+                    .map_err(|error| BuildError::BuildMovie(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -169,6 +185,17 @@ impl State {
             Response::Content {
                 mimetype: "text/html".to_string(),
                 body: build_page(&generated::cocktails(&cocktails))
+                    .into_string()
+                    .as_bytes()
+                    .to_vec(),
+            },
+        );
+        
+        routes.insert(
+            std::path::PathBuf::from("/movies/index.html"),
+            Response::Content {
+                mimetype: "text/html".to_string(),
+                body: build_page(&generated::movies(&movies))
                     .into_string()
                     .as_bytes()
                     .to_vec(),
