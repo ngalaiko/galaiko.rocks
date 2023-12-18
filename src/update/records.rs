@@ -36,6 +36,8 @@ struct Urls {
 impl std::error::Error for Error {}
 
 pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result<(), Error> {
+    use async_std::prelude::*;
+
     let mut records = vec![];
     let mut page_url =
         "https://api.discogs.com/users/ngalaiko/collection/folders/0/releases?sort=artist"
@@ -56,10 +58,31 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
         }
     }
 
-    let serialized = serde_json::to_vec_pretty(&records).map_err(Error::Ser)?;
-    async_std::fs::write(output.as_ref(), serialized)
+    let mut outputs = vec![];
+    for record in &records {
+        let title = record.basic_information.title.replace('/', "-");
+        let output = output.as_ref().join(format!("{title}.json"));
+        let serialized = serde_json::to_vec_pretty(&record).map_err(Error::Ser)?;
+        async_std::fs::write(&output, serialized)
+            .await
+            .map_err(Error::Io)?;
+        outputs.push(output);
+    }
+
+    let mut entries = async_std::fs::read_dir(output.as_ref())
         .await
         .map_err(Error::Io)?;
 
+    while let Some(res) = entries.next().await {
+        let entry = res.map_err(Error::Io)?;
+        let path = std::path::PathBuf::from(entry.path().display().to_string());
+        if !outputs.contains(&path) {
+            async_std::fs::remove_file(entry.path())
+                .await
+                .map_err(Error::Io)?;
+        }
+    }
+
+  
     Ok(())
 }

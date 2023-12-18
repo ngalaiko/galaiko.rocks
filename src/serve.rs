@@ -121,7 +121,6 @@ impl State {
         let (posts, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
             asset.path.starts_with("/posts/") && asset.mimetype == "text/markdown"
         });
-
         let posts = posts
             .iter()
             .map(|asset| {
@@ -133,7 +132,6 @@ impl State {
         let (cocktails, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
             asset.path.starts_with("/cocktails/") && asset.mimetype == "application/octet-stream"
         });
-
         let cocktails = cocktails
             .iter()
             .map(|asset| {
@@ -142,10 +140,9 @@ impl State {
             })
             .collect::<Result<Vec<_>, _>>()?;
 
-        let (pages, remaining): (Vec<_>, Vec<_>) = assets
+        let (pages, assets): (Vec<_>, Vec<_>) = assets
             .into_iter()
             .partition(|asset| asset.mimetype == "text/markdown");
-
         let pages = pages
             .iter()
             .map(|asset| {
@@ -211,7 +208,7 @@ impl State {
             );
         }
 
-        for rest in remaining {
+        for rest in assets {
             routes.insert(
                 rest.path.clone(),
                 Response::Content {

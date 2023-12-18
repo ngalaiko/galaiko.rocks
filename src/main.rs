@@ -34,7 +34,7 @@ enum UpdateSubcommand {
     Records {
         #[arg(long)]
         token: String,
-        #[arg(long, default_value = "./assets/records/index.json")]
+        #[arg(long, default_value = "./assets/records/")]
         output: String,
     },
     Movies {
