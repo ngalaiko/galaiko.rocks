@@ -6,3 +6,4 @@
 - rss / atom
 - generated previews
 - ssh interface
+- https://codemadness.org/stagit.html
