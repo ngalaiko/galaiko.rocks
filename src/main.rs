@@ -7,6 +7,7 @@ mod pages;
 mod parse;
 mod path;
 mod posts;
+mod public;
 mod records;
 mod restaurands_and_cafes;
 mod routes;

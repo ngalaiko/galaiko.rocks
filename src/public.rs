@@ -1,8 +1,8 @@
 use crate::path;
 
 #[derive(rust_embed::RustEmbed)]
-#[folder = "assets"]
-struct Assets;
+#[folder = "public"]
+struct Public;
 
 #[derive(Debug, Clone)]
 pub struct Asset {
@@ -12,9 +12,9 @@ pub struct Asset {
 }
 
 pub fn iter() -> impl Iterator<Item = Asset> {
-    Assets::iter().map(|asset_path| {
+    Public::iter().map(|asset_path| {
         let embedded_file =
-            Assets::get(&asset_path).expect("Assets::iter() returned a non-existent path");
+            Public::get(&asset_path).expect("Public::iter() returned a non-existent path");
         Asset {
             path: path::normalize(asset_path.to_string()),
             mimetype: embedded_file.metadata.mimetype().to_string(),

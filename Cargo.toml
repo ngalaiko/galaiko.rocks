@@ -21,7 +21,6 @@ style = "deny"
 pedantic = "deny"
 
 [dependencies]
-notify = "6.1.1"
 async-std = { version = "1.12.0", features = ["default", "attributes"] }
 chrono = "0.4.31"
 femme = "2.2.1"

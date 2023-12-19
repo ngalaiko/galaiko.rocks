@@ -1,6 +1,8 @@
 use std::collections::HashMap;
 
-use crate::{assets, cocktails, generated, movies, pages, posts, records, restaurands_and_cafes};
+use crate::{
+    assets, cocktails, generated, movies, pages, posts, public, records, restaurands_and_cafes,
+};
 
 #[derive(Clone)]
 pub struct Routes(HashMap<std::path::PathBuf, Route>);
@@ -16,14 +18,30 @@ impl Routes {
         self.0.get(path)
     }
 
-    #[allow(clippy::too_many_lines)]
-    pub fn build() -> Result<Self, BuildError> {
-        let assets = assets::iter()
-            .map(|asset_path| {
-                assets::get(&asset_path)
-                    .map_err(|error| BuildError::GetAsset(asset_path.clone(), error))
+    pub fn iter(&self) -> impl Iterator<Item = (&std::path::PathBuf, &Route)> {
+        self.0.iter()
+    }
+
+    pub fn read_from_public() -> Self {
+        let routes = public::iter()
+            .filter(|asset| asset.path.extension() != Some(std::ffi::OsStr::new("redirect")))
+            .map(|asset| {
+                (
+                    asset.path.clone(),
+                    Route::Content {
+                        mimetype: asset.mimetype.clone(),
+                        body: asset.data.clone(),
+                    },
+                )
             })
-            .collect::<Result<Vec<_>, _>>()?;
+            .collect::<HashMap<_, _>>();
+
+        Self(routes)
+    }
+
+    #[allow(clippy::too_many_lines)]
+    pub fn build_from_assets() -> Result<Self, BuildError> {
+        let assets = assets::iter();
 
         let (posts, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
             asset.path.starts_with("/posts/") && asset.mimetype == "text/markdown"
@@ -32,7 +50,7 @@ impl Routes {
             .iter()
             .map(|asset| {
                 posts::Post::try_from(asset)
-                    .map_err(|error| BuildError::BuildPost(asset.path.clone(), error))
+                    .map_err(|error| BuildError::Post(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -43,7 +61,7 @@ impl Routes {
             .iter()
             .map(|asset| {
                 cocktails::Cocktail::try_from(asset)
-                    .map_err(|error| BuildError::BuildCocktail(asset.path.clone(), error))
+                    .map_err(|error| BuildError::Cocktail(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -54,7 +72,7 @@ impl Routes {
             .iter()
             .map(|asset| {
                 movies::Entry::try_from(asset)
-                    .map_err(|error| BuildError::BuildMovie(asset.path.clone(), error))
+                    .map_err(|error| BuildError::Movie(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -65,7 +83,7 @@ impl Routes {
             .iter()
             .map(|asset| {
                 records::Record::try_from(asset)
-                    .map_err(|error| BuildError::BuildRecord(asset.path.clone(), error))
+                    .map_err(|error| BuildError::Record(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -87,7 +105,7 @@ impl Routes {
             .iter()
             .map(|asset| {
                 pages::Page::try_from(asset)
-                    .map_err(|error| BuildError::BuildPage(asset.path.clone(), error))
+                    .map_err(|error| BuildError::Page(asset.path.clone(), error))
             })
             .collect::<Result<Vec<_>, _>>()?;
 
@@ -213,34 +231,30 @@ fn build_page(content: &maud::Markup) -> maud::Markup {
 
 #[derive(Debug)]
 pub enum BuildError {
-    GetAsset(std::path::PathBuf, assets::GetAssetError),
-    BuildPost(std::path::PathBuf, posts::FromError),
-    BuildPage(std::path::PathBuf, pages::FromError),
-    BuildCocktail(std::path::PathBuf, cocktails::FromError),
-    BuildMovie(std::path::PathBuf, movies::FromError),
-    BuildRecord(std::path::PathBuf, records::FromError),
+    Post(std::path::PathBuf, posts::FromError),
+    Page(std::path::PathBuf, pages::FromError),
+    Cocktail(std::path::PathBuf, cocktails::FromError),
+    Movie(std::path::PathBuf, movies::FromError),
+    Record(std::path::PathBuf, records::FromError),
     BuildPlace(std::path::PathBuf, restaurands_and_cafes::FromError),
 }
 
 impl std::fmt::Display for BuildError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            BuildError::GetAsset(path, error) => {
-                write!(f, "Error getting asset {}: {}", path.display(), error)
-            }
-            BuildError::BuildPost(path, error) => {
+            BuildError::Post(path, error) => {
                 write!(f, "Error building post {}: {}", path.display(), error)
             }
-            BuildError::BuildPage(path, error) => {
+            BuildError::Page(path, error) => {
                 write!(f, "Error building page {}: {}", path.display(), error)
             }
-            BuildError::BuildCocktail(path, error) => {
+            BuildError::Cocktail(path, error) => {
                 write!(f, "Error building cocktail {}: {}", path.display(), error)
             }
-            BuildError::BuildMovie(path, error) => {
+            BuildError::Movie(path, error) => {
                 write!(f, "Error building movie {}: {}", path.display(), error)
             }
-            BuildError::BuildRecord(path, error) => {
+            BuildError::Record(path, error) => {
                 write!(f, "Error building record {}: {}", path.display(), error)
             }
             BuildError::BuildPlace(path, error) => {
