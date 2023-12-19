@@ -1,4 +1,5 @@
 mod assets;
+mod build;
 mod cocktails;
 mod generated;
 mod movies;
@@ -8,6 +9,7 @@ mod path;
 mod posts;
 mod records;
 mod restaurands_and_cafes;
+mod routes;
 mod serve;
 mod update;
 
@@ -27,6 +29,10 @@ enum Commands {
     },
     #[command(subcommand)]
     Update(UpdateSubcommand),
+    Build {
+        #[arg(default_value = "./public/")]
+        output: String,
+    },
 }
 
 #[derive(Subcommand)]
@@ -67,5 +73,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .await
                 .map_err(Into::into)
         }
+        Commands::Build { output } => build::build(&output).await.map_err(Into::into),
     }
 }
