@@ -165,7 +165,7 @@ async fn fetch_page(n: u8) -> Result<(Vec<movies::Entry>, bool), Error> {
 }
 
 pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
-    use async_std::prelude::*;
+    let output = output.as_ref();
 
     let mut n = 1;
     let mut entries = vec![];
@@ -179,11 +179,14 @@ pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
         }
     }
 
-    let mut outputs = vec![];
+    if output.exists() {
+        async_std::fs::remove_dir_all(&output)
+            .await
+            .map_err(Error::Io)?;
+    }
+
     for entry in &entries {
-        let output = output
-            .as_ref()
-            .join(format!("{}", entry.date.format("%Y/%m/%d")));
+        let output = output.join(format!("{}", entry.date.format("%Y/%m/%d")));
 
         async_std::fs::create_dir_all(&output)
             .await
@@ -191,30 +194,12 @@ pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
 
         let output = output.join(format!("{title}.json", title = entry.title));
 
-        let serialized = serde_json::to_vec_pretty(&entry).map_err(Error::Ser)?;
-        async_std::fs::write(&output, serialized)
-            .await
-            .map_err(Error::Io)?;
-
-        outputs.push(output);
-    }
-
-    let mut entries = async_std::fs::read_dir(output.as_ref())
+        async_std::fs::write(
+            &output,
+            serde_json::to_vec_pretty(&entry).map_err(Error::Ser)?,
+        )
         .await
         .map_err(Error::Io)?;
-
-    while let Some(res) = entries.next().await {
-        let entry = res.map_err(Error::Io)?;
-        if !entry.file_type().await.map_err(Error::Io)?.is_file() {
-            continue;
-        }
-
-        let path = std::path::PathBuf::from(entry.path().display().to_string());
-        if !outputs.contains(&path) {
-            async_std::fs::remove_file(entry.path())
-                .await
-                .map_err(Error::Io)?;
-        }
     }
 
     Ok(())

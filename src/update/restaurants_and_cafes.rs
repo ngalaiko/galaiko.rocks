@@ -57,8 +57,9 @@ impl From<Row> for Entry {
 }
 
 pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Result<(), Error> {
-    use async_std::prelude::*;
     use std::collections::BTreeMap;
+
+    let output = output.as_ref();
 
     let year_ago = chrono::Local::now() - chrono::Duration::days(365);
 
@@ -123,32 +124,24 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
         .collect::<Vec<_>>();
     places.sort_by(|a, b| b.times.cmp(&a.times));
 
-    let mut outputs = vec![];
-    for place in &places {
-        let output = output.as_ref().join(format!("{}.json", place.name));
+    if output.exists() {
+        async_std::fs::remove_dir_all(&output)
+            .await
+            .map_err(Error::Io)?;
+    }
 
+    async_std::fs::create_dir_all(&output)
+        .await
+        .map_err(Error::Io)?;
+
+    for place in &places {
+        let output = output.join(format!("{}.json", place.name));
         async_std::fs::write(
             &output,
             serde_json::to_string_pretty(&place).map_err(Error::Ser)?,
         )
         .await
         .map_err(Error::Io)?;
-
-        outputs.push(output);
-    }
-
-    let mut entries = async_std::fs::read_dir(output.as_ref())
-        .await
-        .map_err(Error::Io)?;
-
-    while let Some(res) = entries.next().await {
-        let entry = res.map_err(Error::Io)?;
-        let path = std::path::PathBuf::from(entry.path().display().to_string());
-        if !outputs.contains(&path) {
-            async_std::fs::remove_file(entry.path())
-                .await
-                .map_err(Error::Io)?;
-        }
     }
 
     Ok(())
