@@ -4,7 +4,7 @@ use lib::path;
 
 #[derive(Parser)]
 struct Cli {
-    #[arg(default_value = "127.0.0.1:8080")]
+    #[arg(long, default_value = "127.0.0.1:8080")]
     address: String,
 }
 

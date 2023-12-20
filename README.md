@@ -5,13 +5,13 @@ my website
 ## update 3rd party data
 
 ```bash
-$ cargo run -p update letterboxd
-$ cargo run -p update discogs --token <personal access token>
-$ cargo run -p update hledger [--file <main file>]
+$ cargo run --package update letterboxd
+$ cargo run --package update discogs --token <personal access token>
+$ cargo run --package update hledger [--file <main file>]
 ```
 
 ## serve processed assets
 
 ```bash
-$ cargo run -p serve
+$ cargo run --package serve
 ```
