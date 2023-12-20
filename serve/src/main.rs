@@ -48,8 +48,12 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
                 .header("location", location)
                 .build())
         } else {
+            let sha256_hash = embedded_file.metadata.sha256_hash();
             Ok(tide::Response::builder(tide::StatusCode::Ok)
                 .header("content-type", embedded_file.metadata.mimetype())
+                .header("etag", format!("\"{:x}-{:x}\"", sha256_hash[0], sha256_hash[31]))
+                .header("cache-control", "public, max-age=31536000, immutable")
+                .header("last-modified", embedded_file.metadata.last_modified().unwrap_or(0).to_string())
                 .body(tide::Body::from(embedded_file.data.to_vec()))
                 .build())
         }
