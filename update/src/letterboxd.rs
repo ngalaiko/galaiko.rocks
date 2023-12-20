@@ -1,4 +1,4 @@
-use crate::movies;
+use lib::movies;
 
 #[derive(Debug)]
 pub enum Error {
@@ -50,86 +50,82 @@ impl std::fmt::Display for FromEntryError {
 
 impl std::error::Error for FromEntryError {}
 
-impl TryFrom<select::node::Node<'_>> for movies::Entry {
-    type Error = FromEntryError;
-
-    fn try_from(value: select::node::Node) -> Result<Self, Self::Error> {
-        use select::predicate::{Class, Name, Predicate};
-        let date = value
-            .find(Class("td-day").descendant(Name("a")))
-            .next()
-            .and_then(|node| node.attr("href"))
-            .and_then(|href| {
-                chrono::NaiveDate::parse_from_str(href, "/ngalaiko/films/diary/for/%Y/%m/%d/").ok()
-            })
-            .ok_or(FromEntryError::Date)?;
-
-        let title = value
-            .find(
-                Class("td-film-details")
-                    .descendant(Name("h3"))
-                    .descendant(Name("a")),
-            )
-            .next()
-            .and_then(|node| node.first_child())
-            .and_then(|node| node.as_text())
-            .map(std::string::ToString::to_string)
-            .ok_or(FromEntryError::Title)?;
-
-        let is_liked = value
-            .find(Class("td-like").descendant(Class("icon-liked")))
-            .next()
-            .is_some();
-
-        let is_rewatch = value
-            .find(Class("td-rewatch").and(Class("icon-status-off").not()))
-            .next()
-            .is_some();
-
-        let details = value.find(Class("td-actions")).next();
-
-        let href = details
-            .and_then(|node| node.attr("data-film-link"))
-            .map(|path| format!("https://letterboxd.com{path}"))
-            .ok_or(FromEntryError::Href)?;
-
-        let title_slug = details
-            .and_then(|node| node.attr("data-film-slug"))
-            .map(std::string::ToString::to_string)
-            .ok_or(FromEntryError::Slug)?;
-
-        let id = details
-            .and_then(|node| node.attr("data-film-id"))
-            .ok_or(FromEntryError::Id)?;
-
-        let poster_large_href = {
-            let mut href = "https://a.ltrbxd.com/resized/film-poster/".to_string();
-            for char in id.chars() {
-                href += char.to_string().as_str();
-                href += "/";
-            }
-            href += &format!("{id}-{title_slug}-0-600-0-900-crop.jpg");
-            href
-        };
-
-        let poster_small_href = value
-            .find(Class("td-film-details").descendant(Name("img")))
-            .next()
-            .and_then(|node| node.attr("src"))
-            .map(std::string::ToString::to_string)
-            .ok_or(FromEntryError::SmallPoster)?;
-
-        Ok(movies::Entry {
-            title,
-            title_slug,
-            date,
-            is_rewatch,
-            is_liked,
-            href,
-            poster_large_href,
-            poster_small_href,
+fn parse_entry(value: select::node::Node) -> Result<movies::Entry, FromEntryError> {
+    use select::predicate::{Class, Name, Predicate};
+    let date = value
+        .find(Class("td-day").descendant(Name("a")))
+        .next()
+        .and_then(|node| node.attr("href"))
+        .and_then(|href| {
+            chrono::NaiveDate::parse_from_str(href, "/ngalaiko/films/diary/for/%Y/%m/%d/").ok()
         })
-    }
+        .ok_or(FromEntryError::Date)?;
+
+    let title = value
+        .find(
+            Class("td-film-details")
+                .descendant(Name("h3"))
+                .descendant(Name("a")),
+        )
+        .next()
+        .and_then(|node| node.first_child())
+        .and_then(|node| node.as_text())
+        .map(std::string::ToString::to_string)
+        .ok_or(FromEntryError::Title)?;
+
+    let is_liked = value
+        .find(Class("td-like").descendant(Class("icon-liked")))
+        .next()
+        .is_some();
+
+    let is_rewatch = value
+        .find(Class("td-rewatch").and(Class("icon-status-off").not()))
+        .next()
+        .is_some();
+
+    let details = value.find(Class("td-actions")).next();
+
+    let href = details
+        .and_then(|node| node.attr("data-film-link"))
+        .map(|path| format!("https://letterboxd.com{path}"))
+        .ok_or(FromEntryError::Href)?;
+
+    let title_slug = details
+        .and_then(|node| node.attr("data-film-slug"))
+        .map(std::string::ToString::to_string)
+        .ok_or(FromEntryError::Slug)?;
+
+    let id = details
+        .and_then(|node| node.attr("data-film-id"))
+        .ok_or(FromEntryError::Id)?;
+
+    let poster_large_href = {
+        let mut href = "https://a.ltrbxd.com/resized/film-poster/".to_string();
+        for char in id.chars() {
+            href += char.to_string().as_str();
+            href += "/";
+        }
+        href += &format!("{id}-{title_slug}-0-600-0-900-crop.jpg");
+        href
+    };
+
+    let poster_small_href = value
+        .find(Class("td-film-details").descendant(Name("img")))
+        .next()
+        .and_then(|node| node.attr("src"))
+        .map(std::string::ToString::to_string)
+        .ok_or(FromEntryError::SmallPoster)?;
+
+    Ok(movies::Entry {
+        title,
+        title_slug,
+        date,
+        is_rewatch,
+        is_liked,
+        href,
+        poster_large_href,
+        poster_small_href,
+    })
 }
 
 fn parse_page(body: &str) -> Result<(Vec<movies::Entry>, bool), Error> {
@@ -140,7 +136,7 @@ fn parse_page(body: &str) -> Result<(Vec<movies::Entry>, bool), Error> {
 
     let entries = document
         .find(Attr("data-object-name", "entry"))
-        .map(movies::Entry::try_from)
+        .map(parse_entry)
         .collect::<Result<Vec<_>, FromEntryError>>()
         .map_err(Error::FromEntry)?;
 

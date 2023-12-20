@@ -1,4 +1,4 @@
-use crate::records;
+use lib::records;
 
 #[derive(Debug)]
 pub enum Error {

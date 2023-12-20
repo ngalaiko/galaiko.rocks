@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::restaurands_and_cafes::Place;
+use lib::restaurands_and_cafes::Place;
 
 #[derive(Debug)]
 pub enum Error {
@@ -63,7 +63,7 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
 
     let year_ago = chrono::Local::now() - chrono::Duration::days(365);
 
-    let mut command = async_std::process::Command::new("hledger");
+    let mut command = std::process::Command::new("hledger");
     let mut command = command
         .arg("register")
         .arg("--value=then,SEK")
@@ -75,7 +75,7 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
         command = command.arg(format!("--file={}", file.as_ref().display()));
     }
 
-    let hledger_output = command.output().await.map_err(Error::Io)?;
+    let hledger_output = command.output().map_err(Error::Io)?;
 
     if !hledger_output.status.success() {
         let stderr = String::from_utf8_lossy(&hledger_output.stderr);

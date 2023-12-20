@@ -1,21 +1,17 @@
 # galaiko.rocks
 
-[![Daily job](https://github.com/ngalaiko/galaiko.rocks/actions/workflows/daily.yaml/badge.svg)](https://github.com/ngalaiko/galaiko.rocks/actions/workflows/daily.yaml)
-
 my website
 
-## deployment
+## update 3rd party data
 
-Build command:
-
+```bash
+$ cargo run -p update letterboxd
+$ cargo run -p update discogs --token <personal access token>
+$ cargo run -p update hledger [--file <main file>]
 ```
-npm install -g pnpm && pnpm install && (pnpm build || true) && pnpm build
-```
 
-The first `build` will fail because records covers won't be downloaded for the first run.
+## serve processed assets
 
-Build output directory:
-
-```
-build
+```bash
+$ cargo run -p serve
 ```

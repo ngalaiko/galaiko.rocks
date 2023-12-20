@@ -1,18 +1,15 @@
-[package]
-name = "www"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = [
+    "lib",
+    "update",
+    "serve",
+]
+resolver = "2"
 
-[profile.release]
-codegen-units = 1
-lto = true
-opt-level = "s"
-debug = false
-
-[lints.rust]
+[workspace.lints.rust]
 unsafe_code = "forbid"
 
-[lints.clippy]
+[workspace.lints.clippy]
 all = "deny"
 perf = "deny"
 correctness = "deny"
@@ -20,21 +17,8 @@ complexity = "deny"
 style = "deny"
 pedantic = "deny"
 
-[dependencies]
-async-std = { version = "1.12.0", features = ["default", "attributes"] }
-chrono = "0.4.31"
-femme = "2.2.1"
-maud = "0.25.0"
-pulldown-cmark = "0.9.3"
-rust-embed = { version = "8.1.0", features = ["include-exclude","mime-guess"] }
-serde = "1.0.193"
-serde_yaml = "0.9.27"
-tide = { version = "0.16.0", features = ["default"] }
-urlencoding = "2.1.3"
-cooklang = { git = "https://github.com/cooklang/cooklang-rs.git", branch = "main" }
-once_cell = "1.19.0"
-clap = { version = "4.4.11", features = ["derive"] }
-select = "0.6.0"
-surf = "2.3.2"
-serde_json = "1.0.108"
-csv = "1.3.0"
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+debug = false
