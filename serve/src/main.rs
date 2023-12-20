@@ -24,6 +24,7 @@ struct Public;
 pub async fn serve(address: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut app = tide::new();
     app.with(tide::log::LogMiddleware::new());
+    app.with(tide_compress::CompressMiddleware::new());
     app.at("/").get(serve_asset);
     app.at("/*path").get(serve_asset);
     app.listen(address).await?;
