@@ -1,3 +1,6 @@
+static OPTIONS: once_cell::sync::Lazy<pulldown_cmark::Options> =
+    once_cell::sync::Lazy::new(|| pulldown_cmark::Options::ENABLE_TABLES);
+
 pub fn parse<T: serde::de::DeserializeOwned>(
     md: &[u8],
 ) -> Result<(Option<T>, maud::Markup), ParseError> {
@@ -8,7 +11,7 @@ pub fn parse<T: serde::de::DeserializeOwned>(
         .map_err(ParseError::De)?;
 
     let md = std::str::from_utf8(&md).map_err(ParseError::Utf8)?;
-    let parser = pulldown_cmark::Parser::new(md);
+    let parser = pulldown_cmark::Parser::new_ext(md, *OPTIONS);
     let mut html = String::new();
     pulldown_cmark::html::push_html(&mut html, parser);
 
