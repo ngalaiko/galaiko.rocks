@@ -1,4 +1,5 @@
 - css for all pages
 - optimized images
 - rss / atom
+- access logs + goaccess
 - generated previews
