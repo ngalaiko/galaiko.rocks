@@ -1,6 +1,7 @@
-use crate::{cocktails, movies, posts, records, restaurands_and_cafes};
+use crate::{cocktails, entries, movies, records, restaurands_and_cafes};
 
-pub fn posts(posts: &[posts::Post]) -> maud::Markup {
+#[must_use]
+pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
     let mut posts = posts.to_vec();
     posts.sort_by(|a, b| b.frontmatter.date.cmp(&a.frontmatter.date));
 
@@ -12,8 +13,10 @@ pub fn posts(posts: &[posts::Post]) -> maud::Markup {
                         (post.frontmatter.title)
                     }
                     " "
-                    time datetime=(post.frontmatter.date.format("%Y-%m-%d")) {
-                        (post.frontmatter.date.format("%Y-%m-%d"))
+                    @if let Some(date) = post.frontmatter.date.map(|date| date.format("%Y-%m-%d")) {
+                        time datetime=(date) {
+                            (date)
+                        }
                     }
                 }
             }
@@ -21,6 +24,7 @@ pub fn posts(posts: &[posts::Post]) -> maud::Markup {
     }
 }
 
+#[must_use]
 pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
     let mut cocktails = cocktails.to_vec();
     cocktails.sort_by(|a, b| a.frontmatter.title.cmp(&b.frontmatter.title));
@@ -38,6 +42,7 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
     }
 }
 
+#[must_use]
 pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
     let mut movies = movies.to_vec();
     movies.sort_by(|a, b| b.date.cmp(&a.date));
@@ -57,6 +62,7 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
     }
 }
 
+#[must_use]
 pub fn records(records: &[records::Record]) -> maud::Markup {
     let mut records = records.to_vec();
     records.sort_by(|a, b| b.date_added.cmp(&a.date_added));
@@ -76,6 +82,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
     }
 }
 
+#[must_use]
 pub fn restaurants_and_cafes(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
     let mut places = places.to_vec();
     places.sort_by(|a, b| b.times.cmp(&a.times));

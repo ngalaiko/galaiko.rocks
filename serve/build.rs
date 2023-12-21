@@ -1,11 +1,10 @@
-use lib::{
-    assets, cocktails, generated, movies, pages, path, posts, records, restaurands_and_cafes,
-};
+use lib::{assets, cocktails, entries, generated, movies, path, records, restaurands_and_cafes};
 
 #[derive(rust_embed::RustEmbed)]
 #[folder = "../assets/"]
 struct Assets;
 
+#[allow(clippy::too_many_lines)]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-changed=../assets");
@@ -30,7 +29,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.path.starts_with("/posts/") && asset.mimetype == "text/markdown");
     let posts = posts
         .iter()
-        .map(|asset| posts::Post::try_from(asset))
+        .map(entries::Entry::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
     let (cocktails, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
@@ -38,7 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
     let cocktails = cocktails
         .iter()
-        .map(|asset| cocktails::Cocktail::try_from(asset))
+        .map(cocktails::Cocktail::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
     let (movies, assets): (Vec<_>, Vec<_>) = assets
@@ -46,7 +45,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.path.starts_with("/movies/"));
     let movies = movies
         .iter()
-        .map(|asset| movies::Entry::try_from(asset))
+        .map(movies::Entry::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
     let (records, assets): (Vec<_>, Vec<_>) = assets
@@ -54,7 +53,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.path.starts_with("/records/"));
     let records = records
         .iter()
-        .map(|asset| records::Record::try_from(asset))
+        .map(records::Record::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
     let (places, assets): (Vec<_>, Vec<_>) = assets
@@ -62,7 +61,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.path.starts_with("/restaurants_and_cafes/"));
     let places = places
         .iter()
-        .map(|asset| restaurands_and_cafes::Place::try_from(asset))
+        .map(restaurands_and_cafes::Place::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
     let (pages, assets): (Vec<_>, Vec<_>) = assets
@@ -70,7 +69,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.mimetype == "text/markdown");
     let pages = pages
         .iter()
-        .map(|asset| pages::Page::try_from(asset))
+        .map(entries::Entry::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
     write(

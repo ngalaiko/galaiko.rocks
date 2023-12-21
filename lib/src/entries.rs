@@ -3,24 +3,25 @@ use crate::{assets, parse};
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Frontmatter {
     pub title: String,
-    pub date: chrono::NaiveDate,
+    pub date: Option<chrono::NaiveDate>,
+    #[serde(default)]
     pub aliases: Vec<std::path::PathBuf>,
 }
 
 #[derive(Debug, Clone)]
-pub struct Post {
+pub struct Entry {
     pub path: std::path::PathBuf,
     pub frontmatter: Frontmatter,
     pub body: maud::Markup,
 }
 
-impl TryFrom<&assets::Asset> for Post {
+impl TryFrom<&assets::Asset> for Entry {
     type Error = FromError;
 
     fn try_from(asset: &assets::Asset) -> Result<Self, Self::Error> {
         let (frontmatter, body) = parse::markdown(&asset.data).map_err(FromError::Parse)?;
         let frontmatter = frontmatter.ok_or(FromError::FrontmatterNotFound)?;
-        Ok(Post {
+        Ok(Entry {
             path: asset.path.clone(),
             frontmatter,
             body,
