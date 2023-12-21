@@ -1,6 +1,6 @@
 mod discogs;
-mod letterboxd;
 mod hledger;
+mod letterboxd;
 
 use clap::{Parser, Subcommand};
 
@@ -36,16 +36,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let cli = Cli::parse();
     match cli.command {
-        Commands::Letterboxd { output } => {
-            letterboxd::update(&output).await.map_err(Into::into)
-        }
+        Commands::Letterboxd { output } => letterboxd::update(&output).await.map_err(Into::into),
         Commands::Discogs { token, output } => {
             discogs::update(&token, &output).await.map_err(Into::into)
         }
-        Commands::Hledger { file, output } => {
-            hledger::update(file.as_deref(), &output)
-                .await
-                .map_err(Into::into)
-        }
+        Commands::Hledger { file, output } => hledger::update(file.as_deref(), &output)
+            .await
+            .map_err(Into::into),
     }
 }
