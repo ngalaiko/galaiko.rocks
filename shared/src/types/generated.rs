@@ -1,4 +1,4 @@
-use crate::{cocktails, entries, movies, records, restaurands_and_cafes};
+use crate::types::{cocktails, entries, movies, records, restaurands_and_cafes};
 
 #[must_use]
 pub fn posts(posts: &[entries::Entry]) -> maud::Markup {

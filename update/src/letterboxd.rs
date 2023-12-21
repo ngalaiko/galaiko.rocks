@@ -1,4 +1,4 @@
-use lib::movies;
+use shared::types::movies;
 
 #[derive(Debug)]
 pub enum Error {

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use lib::restaurands_and_cafes::Place;
+use shared::types::restaurands_and_cafes::Place;
 
 #[derive(Debug)]
 pub enum Error {

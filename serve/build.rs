@@ -1,4 +1,7 @@
-use lib::{assets, cocktails, entries, generated, movies, path, records, restaurands_and_cafes};
+use shared::{
+    assets, path,
+    types::{cocktails, entries, generated, movies, records, restaurands_and_cafes},
+};
 
 #[derive(rust_embed::RustEmbed)]
 #[folder = "../assets/"]

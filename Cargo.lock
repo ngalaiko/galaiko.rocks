@@ -1520,20 +1520,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "lib"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "cooklang",
- "maud",
- "once_cell",
- "pulldown-cmark",
- "serde",
- "serde_json",
- "serde_yaml",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.151"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2368,9 +2354,9 @@ dependencies = [
  "async-std",
  "clap",
  "femme",
- "lib",
  "maud",
  "rust-embed",
+ "shared",
  "tide",
  "tide-compress",
  "urlencoding",
@@ -2413,6 +2399,20 @@ dependencies = [
  "cfg-if 1.0.0",
  "cpufeatures",
  "digest 0.10.7",
+]
+
+[[package]]
+name = "shared"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "cooklang",
+ "maud",
+ "once_cell",
+ "pulldown-cmark",
+ "serde",
+ "serde_json",
+ "serde_yaml",
 ]
 
 [[package]]
@@ -2977,12 +2977,12 @@ dependencies = [
  "clap",
  "csv",
  "femme",
- "lib",
  "maud",
  "once_cell",
  "select",
  "serde",
  "serde_json",
+ "shared",
  "surf",
 ]
 

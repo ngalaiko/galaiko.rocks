@@ -1,6 +1,6 @@
 use clap::Parser;
 
-use lib::path;
+use shared::path;
 
 #[derive(Parser)]
 struct Cli {
@@ -20,7 +20,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 #[folder = "public/"]
 struct Public;
 
-pub async fn serve(address: &str) -> Result<(), Box<dyn std::error::Error>> {
+async fn serve(address: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut app = tide::new();
     app.with(tide::log::LogMiddleware::new());
     app.with(tide_compress::CompressMiddleware::new());
