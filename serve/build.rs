@@ -111,8 +111,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for post in posts {
         for alias in &post.frontmatter.aliases {
             write(
-                join(&output, alias.with_extension("redirect")),
-                post.path.display().to_string().as_bytes(),
+                join(&output, path::normalize(alias)),
+                format!("redirect: {}", post.path.display()).as_bytes(),
             )?;
         }
         write(
