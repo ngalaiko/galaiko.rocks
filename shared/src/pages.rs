@@ -9,18 +9,23 @@ impl Page {
     }
 }
 
-impl From<&maud::Markup> for Page {
-    fn from(value: &maud::Markup) -> Self {
+impl Page {
+    #[must_use]
+    pub fn new(title: &str, content: &maud::Markup) -> Self {
         Self(maud::html! {
             (maud::DOCTYPE)
             head {
                 meta charset="utf-8";
                 meta name="viewport" content="width=device-width, initial-scale=1";
+                title { (title) }
                 link rel="stylesheet" href="/index.css";
             }
             main {
                 article {
-                    (value)
+                    header {
+                        h1 { (title) }
+                    }
+                    (content)
                 }
             }
         })
@@ -29,42 +34,45 @@ impl From<&maud::Markup> for Page {
 
 impl From<&cocktails::Cocktail> for Page {
     fn from(value: &cocktails::Cocktail) -> Self {
-        Self::from(&value.body)
+        Self::new(&value.frontmatter.title, &value.body)
     }
 }
 
 impl From<&entries::Entry> for Page {
     fn from(value: &entries::Entry) -> Self {
-        Self::from(&value.body)
+        Self::new(&value.frontmatter.title, &value.body)
     }
 }
 
 impl From<&[entries::Entry]> for Page {
     fn from(value: &[entries::Entry]) -> Self {
-        Self::from(&generated::posts(value))
+        Self::new("archive", &generated::archive(value))
     }
 }
 
 impl From<&[restaurands_and_cafes::Place]> for Page {
     fn from(value: &[restaurands_and_cafes::Place]) -> Self {
-        Self::from(&generated::restaurants_and_cafes(value))
+        Self::new(
+            "restaursnts & cafes",
+            &generated::restaurants_and_cafes(value),
+        )
     }
 }
 
 impl From<&[cocktails::Cocktail]> for Page {
     fn from(value: &[cocktails::Cocktail]) -> Self {
-        Self::from(&generated::cocktails(value))
+        Self::new("cocktails", &generated::cocktails(value))
     }
 }
 
 impl From<&[movies::Entry]> for Page {
     fn from(value: &[movies::Entry]) -> Self {
-        Self::from(&generated::movies(value))
+        Self::new("movies", &generated::movies(value))
     }
 }
 
 impl From<&[records::Record]> for Page {
     fn from(value: &[records::Record]) -> Self {
-        Self::from(&generated::records(value))
+        Self::new("records", &generated::records(value))
     }
 }
