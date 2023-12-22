@@ -1,3 +1,5 @@
+- register all routes separetely
+- etag based cache per route
 - css for all pages
 - optimized images
 - rss / atom
