@@ -46,20 +46,37 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
                 let location = std::str::from_utf8(location)?;
                 tide::Redirect::new(location).into()
             } else {
-                let sha256_hash = embedded_file.metadata.sha256_hash();
-                tide::Response::builder(tide::StatusCode::Ok)
-                    .header("content-type", embedded_file.metadata.mimetype())
-                    .header(
-                        "etag",
-                        format!("\"{:x}-{:x}\"", sha256_hash[0], sha256_hash[31]),
-                    )
-                    .header("cache-control", "no-cache, max-age=31536000")
-                    .body(tide::Body::from(embedded_file.data.to_vec()))
-                    .build()
+                let etag = etag_header(embedded_file.metadata.sha256_hash());
+                let is_modified = req
+                    .header("if-none-match")
+                    .map(|etags| etags.contains(&etag))
+                    .unwrap_or_default();
+                if is_modified {
+                    tide::Response::builder(tide::StatusCode::NotModified)
+                } else {
+                    tide::Response::builder(tide::StatusCode::Ok)
+                        .body(tide::Body::from(embedded_file.data.to_vec()))
+                }
+                .header("content-type", embedded_file.metadata.mimetype())
+                .header("etag", etag)
+                .header("cache-control", "public, max-age=31536000")
+                .build()
             }
         } else {
             tide::Response::new(tide::StatusCode::NotFound)
         };
 
     Ok(response)
+}
+
+fn etag_header(hash: [u8; 32]) -> tide::http::headers::HeaderValue {
+    tide::http::headers::HeaderValue::from_bytes(
+        format!(
+            "W\\\"{:x}{:x}{:x}{:x}-{:x}{:x}\"",
+            hash[0], hash[1], hash[2], hash[3], hash[30], hash[31],
+        )
+        .as_bytes()
+        .to_vec(),
+    )
+    .expect("sha256 hash is valid ASCII")
 }
