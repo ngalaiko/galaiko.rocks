@@ -36,4 +36,5 @@
 
 body {
   font-family: "Berkeley Mono", monospace;
+  width: 80ch;
 }
