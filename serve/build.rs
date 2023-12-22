@@ -1,6 +1,6 @@
 use shared::{
-    assets, path,
-    types::{cocktails, entries, generated, movies, records, restaurands_and_cafes},
+    assets, pages, path,
+    types::{cocktails, entries, movies, records, restaurands_and_cafes},
 };
 
 #[derive(rust_embed::RustEmbed)]
@@ -77,35 +77,33 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     write(
         join(&output, "posts/index.html"),
-        build_page(&generated::posts(&posts))
-            .into_string()
-            .as_bytes(),
+        pages::Page::from(posts.as_slice()).into_string().as_bytes(),
     )?;
 
     write(
         join(&output, "records/index.html"),
-        build_page(&generated::records(&records))
+        pages::Page::from(records.as_slice())
             .into_string()
             .as_bytes(),
     )?;
 
     write(
         join(&output, "cocktails/index.html"),
-        build_page(&generated::cocktails(&cocktails))
+        pages::Page::from(cocktails.as_slice())
             .into_string()
             .as_bytes(),
     )?;
 
     write(
         join(&output, "restaurants_and_cafes/index.html"),
-        build_page(&generated::restaurants_and_cafes(&places))
+        pages::Page::from(places.as_slice())
             .into_string()
             .as_bytes(),
     )?;
 
     write(
         join(&output, "movies/index.html"),
-        build_page(&generated::movies(&movies))
+        pages::Page::from(movies.as_slice())
             .into_string()
             .as_bytes(),
     )?;
@@ -119,21 +117,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         write(
             join(&output, &post.path),
-            build_page(&post.body).into_string().as_bytes(),
+            pages::Page::from(&post).into_string().as_bytes(),
         )?;
     }
 
     for cocktail in cocktails {
         write(
             join(&output, &cocktail.path),
-            build_page(&cocktail.body).into_string().as_bytes(),
+            pages::Page::from(&cocktail).into_string().as_bytes(),
         )?;
     }
 
     for page in pages {
         write(
             join(&output, &page.path),
-            build_page(&page.body).into_string().as_bytes(),
+            pages::Page::from(&page).into_string().as_bytes(),
         )?;
     }
 
@@ -142,22 +140,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     Ok(())
-}
-
-fn build_page(content: &maud::Markup) -> maud::Markup {
-    maud::html! {
-        (maud::DOCTYPE)
-        head {
-            meta charset="utf-8";
-            meta name="viewport" content="width=device-width, initial-scale=1";
-            link rel="stylesheet" href="/index.css";
-        }
-        main {
-            article {
-                (content)
-            }
-        }
-    }
 }
 
 fn join<P, O>(path: P, other: O) -> std::path::PathBuf
