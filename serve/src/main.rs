@@ -53,15 +53,7 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
                         "etag",
                         format!("\"{:x}-{:x}\"", sha256_hash[0], sha256_hash[31]),
                     )
-                    .header("cache-control", "public, max-age=31536000, immutable")
-                    .header(
-                        "last-modified",
-                        embedded_file
-                            .metadata
-                            .last_modified()
-                            .unwrap_or(0)
-                            .to_string(),
-                    )
+                    .header("cache-control", "no-cache, max-age=31536000")
                     .body(tide::Body::from(embedded_file.data.to_vec()))
                     .build()
             }
