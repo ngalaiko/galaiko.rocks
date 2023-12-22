@@ -9,14 +9,14 @@ pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
         ul {
             @for post in posts {
                 li {
-                    a href=(post.path.display()) {
-                        (post.frontmatter.title)
-                    }
-                    " "
                     @if let Some(date) = post.frontmatter.date.map(|date| date.format("%Y-%m-%d")) {
                         time datetime=(date) {
                             (date)
                         }
+                        " | "
+                    }
+                    a href=(post.path.display()) {
+                        (post.frontmatter.title)
                     }
                 }
             }
@@ -51,11 +51,17 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
         ul {
             @for movie in movies {
                 li {
+                    (movie.date.format("%Y-%m-%d"))
+                    " | "
                     a href=(movie.href) {
                         (movie.title)
                     }
-                    " "
-                    (movie.date.format("%Y-%m-%d"))
+                    @if movie.is_liked {
+                        " ♥"
+                    }
+                    @if movie.is_rewatch {
+                        " ↻"
+                    }
                 }
             }
         }
@@ -65,7 +71,17 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
 #[must_use]
 pub fn records(records: &[records::Record]) -> maud::Markup {
     let mut records = records.to_vec();
-    records.sort_by(|a, b| b.date_added.cmp(&a.date_added));
+    records.sort_by(|a, b| {
+        let artist_a = &a.basic_information.artists[0]
+            .name
+            .strip_prefix("The ")
+            .unwrap_or(&a.basic_information.artists[0].name);
+        let artist_b = &b.basic_information.artists[0]
+            .name
+            .strip_prefix("The ")
+            .unwrap_or(&b.basic_information.artists[0].name);
+        artist_a.cmp(artist_b)
+    });
 
     maud::html! {
         ul {
@@ -74,8 +90,6 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
                     a href=(format!("https://www.discogs.com/release/{}", record.id)) {
                        (record.basic_information.artists[0].name) " - " (record.basic_information.title)
                     }
-                    " "
-                    (record.date_added.format("%Y-%m-%d"))
                 }
             }
         }
@@ -88,14 +102,27 @@ pub fn restaurants_and_cafes(places: &[restaurands_and_cafes::Place]) -> maud::M
     places.sort_by(|a, b| b.times.cmp(&a.times));
 
     maud::html! {
-        ul {
-            @for place in places {
-                li {
-                    (place.name)
-                    " "
-                    (place.times)
-                    " "
-                    (place.spent)
+        table {
+            thead {
+                tr {
+                    th {"name"}
+                    th {"times"}
+                    th {"spent"}
+                }
+            }
+            tbody {
+                @for place in places {
+                    tr {
+                        td {
+                            (place.name)
+                        }
+                        td {
+                            (place.times)
+                        }
+                        td {
+                            (place.spent)
+                        }
+                    }
                 }
             }
         }
