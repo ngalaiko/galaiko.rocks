@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+
+      - run: cargo build -p update
 
       - run: cargo run -p update letterboxd
       - uses: stefanzweifel/git-auto-commit-action@v5
