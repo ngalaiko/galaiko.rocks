@@ -15,7 +15,6 @@ this is not a very large website. however, here is a list of lists that you can 
 - [things i use](./uses.md)
 - [movies i watch](./movies/)
 - [what i am up to now](./now.md)
-- very bad [posts](./posts/)
 
 if you are into liking and subscribing, check this out:
 

@@ -4,39 +4,21 @@ on:
   workflow_dispatch: {}
   schedule:
     # every day at 3am
-    - cron: '0 3 * * *'
-
-env:
-  NODE_VERSION: 20
-  PNPM_VERSION: 8.6.7
+    - cron: "0 3 * * *"
 
 jobs:
-  update-movies:
+  daily:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '${{ env.NODE_VERSION }}'
-      - uses: pnpm/action-setup@v2
-        with:
-          version: '${{ env.PNPM_VERSION }}'
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - uses: dtolnay/rust-toolchain@stable
 
-      - name: Fetch movies info
-        run: |
-          pnpm letterboxd:update
+      - run: cargo run -p update letterboxd
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update movies
 
-      - name: Fetch records info
-        run: |
-          pnpm discogs:download \
-            --api-token "${{ secrets.DISCOGS_API_KEY}}"
+      - run: cargo run -p update discogs --token "${{ secrets.DISCOGS_API_KEY }}"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update records
@@ -46,14 +28,11 @@ jobs:
         with:
           repository: ngalaiko/ledger
           token: ${{ secrets.GH_PAT }}
-          path: 'ledger'
-          ref: 'master'
+          path: "ledger"
+          ref: "master"
       - name: Setup hledger
         uses: ngalaiko/setup-hledger@v1
-      - name: Fetch list
-        run: |
-          pnpm ledger:restaurants-and-cafes \
-            --file "$GITHUB_WORKSPACE/ledger/main.ledger"
+      - run: cargo run -p update hledger --file "$GITHUB_WORKSPACE/ledger/main.ledger"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes

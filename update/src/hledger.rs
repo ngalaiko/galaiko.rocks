@@ -329,6 +329,7 @@ static LOCATIONS: once_cell::sync::Lazy<HashMap<String, (f64, f64)>> =
         );
         locations.insert("La Terrazza".to_string(), (57.699_998, 11.984_547));
         locations.insert("Gansu Köket".to_string(), (57.708_635, 11.965_104));
+        locations.insert("Joe And The Juice".to_string(), (59.318_923, 18.071_062));
 
         locations
     });

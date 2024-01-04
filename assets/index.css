@@ -2,6 +2,15 @@
 
 body {
   font-family: "Berkeley Mono", monospace;
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+}
+
+main {
   max-width: 80ch;
   overflow-wrap: break-word;
+}
+
+code {
+  overflow-x: scroll;
 }
