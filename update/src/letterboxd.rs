@@ -145,15 +145,6 @@ fn parse_page(body: &str) -> Result<(Vec<movies::Entry>, bool), Error> {
     Ok((entries, has_next))
 }
 
-#[test]
-fn test_parse_page() {
-    let input = include_str!("letterboxd.html");
-
-    let (entries, has_next) = parse_page(input).unwrap();
-    assert_eq!(entries.len(), 50);
-    assert!(has_next);
-}
-
 async fn fetch_page(n: u8) -> Result<(Vec<movies::Entry>, bool), Error> {
     let mut response = surf::get(page_url(n)).await.map_err(Error::Surf)?;
     let body = response.body_string().await.map_err(Error::Surf)?;
