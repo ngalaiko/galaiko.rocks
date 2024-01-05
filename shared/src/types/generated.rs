@@ -1,7 +1,7 @@
 use crate::types::{cocktails, entries, movies, records, restaurands_and_cafes};
 
 #[must_use]
-pub fn archive(posts: &[entries::Entry]) -> maud::Markup {
+pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
     let mut posts = posts.to_vec();
     posts.sort_by(|a, b| b.frontmatter.date.cmp(&a.frontmatter.date));
 

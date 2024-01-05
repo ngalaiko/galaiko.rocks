@@ -3,9 +3,13 @@ use crate::{assets, parse};
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Frontmatter {
     pub title: String,
+    /// date of publication
     pub date: Option<chrono::NaiveDate>,
+    /// other paths to this entry (if it was moved, etc.)
     #[serde(default)]
     pub aliases: Vec<std::path::PathBuf>,
+    /// unique identifier for this entry to use, for example, in atom feed.
+    pub id: Option<String>,
 }
 
 #[derive(Debug, Clone)]

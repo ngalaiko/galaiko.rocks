@@ -77,33 +77,48 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     write(
         join(&output, "posts/index.html"),
-        pages::Page::from(posts.as_slice()).into_string().as_bytes(),
+        pages::html::posts(posts.as_slice())
+            .into_string()
+            .as_bytes(),
+    )?;
+
+    write(
+        join(&output, "posts.atom"),
+        "redirect: /posts/index.atom".as_bytes(),
+    )?;
+    write(
+        join(&output, "posts/index.atom"),
+        pages::atom::posts(posts.as_slice()).to_string().as_bytes(),
     )?;
 
     write(
         join(&output, "records/index.html"),
-        pages::Page::from(records.as_slice())
+        pages::html::records(records.as_slice())
             .into_string()
             .as_bytes(),
     )?;
 
     write(
         join(&output, "cocktails/index.html"),
-        pages::Page::from(cocktails.as_slice())
+        pages::html::cocktails(cocktails.as_slice())
             .into_string()
             .as_bytes(),
     )?;
 
     write(
         join(&output, "restaurants_and_cafes/index.html"),
-        pages::Page::from(places.as_slice())
+        "redirect: /places/index.html".as_bytes(),
+    )?;
+    write(
+        join(&output, "places/index.html"),
+        pages::html::places(places.as_slice())
             .into_string()
             .as_bytes(),
     )?;
 
     write(
         join(&output, "movies/index.html"),
-        pages::Page::from(movies.as_slice())
+        pages::html::movies(movies.as_slice())
             .into_string()
             .as_bytes(),
     )?;
@@ -117,21 +132,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         write(
             join(&output, &post.path),
-            pages::Page::from(&post).into_string().as_bytes(),
+            pages::html::entry(&post).into_string().as_bytes(),
         )?;
     }
 
     for cocktail in cocktails {
         write(
             join(&output, &cocktail.path),
-            pages::Page::from(&cocktail).into_string().as_bytes(),
+            pages::html::cocktail(&cocktail).into_string().as_bytes(),
         )?;
     }
 
     for page in pages {
         write(
             join(&output, &page.path),
-            pages::Page::from(&page).into_string().as_bytes(),
+            pages::html::entry(&page).into_string().as_bytes(),
         )?;
     }
 
