@@ -18,7 +18,7 @@ this is not a very large website. however, here is a list of lists that you can 
 
 if you are into liking and subscribing, check this out:
 
-- [github](https://github.com./ngalaiko)
+- [github](https://github.com/ngalaiko)
 - [letterboxd](https://letterboxd.com/ngalaiko)
 - [discogs](https://www.discogs.com/user/ngalaiko)
 - [mastodon](https://mastodon.online/@ngalaiko)

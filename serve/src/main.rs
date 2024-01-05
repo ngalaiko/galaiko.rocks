@@ -24,7 +24,7 @@ async fn serve(address: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut app = tide::new();
     app.with(tide::log::LogMiddleware::new());
     #[cfg(not(debug_assertions))]
-    app.with(RedirectMiddleware);
+    app.with(HostnameRedirectMiddleware);
     app.with(tide_compress::CompressMiddleware::new());
     app.at("/").get(serve_asset);
     app.at("/*path").get(serve_asset);
@@ -83,10 +83,10 @@ fn etag_header(hash: [u8; 32]) -> tide::http::headers::HeaderValue {
     .expect("sha256 hash is valid ASCII")
 }
 
-struct RedirectMiddleware;
+struct HostnameRedirectMiddleware;
 
 #[tide::utils::async_trait]
-impl tide::Middleware<()> for RedirectMiddleware {
+impl tide::Middleware<()> for HostnameRedirectMiddleware {
     async fn handle(&self, request: tide::Request<()>, next: tide::Next<'_, ()>) -> tide::Result {
         if let Some("nikita.galaiko.rocks") = request.host() {
             let response: tide::Response = next.run(request).await;

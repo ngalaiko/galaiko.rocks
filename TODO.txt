@@ -1,4 +1,3 @@
-- redirect to file, including index.html
 - css for all pages
 - atom link from posts index page
 - optimized images
