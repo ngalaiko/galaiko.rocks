@@ -4,6 +4,7 @@ date: 2018-07-01
 aliases:
   - "/posts/2018-07-01/"
   - "/posts/dcp/intro/"
+id: "/posts/dcp/intro/"
 ---
 
 Recently found this website [Daily Coding Problem](https://www.dailycodingproblem.com/]),

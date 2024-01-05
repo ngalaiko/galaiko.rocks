@@ -2,8 +2,9 @@
 title: Half a year with vim
 date: 2018-07-21
 aliases:
-  - "/posts/blog/half-a-year-with-vim/"
   - "/posts/half-a-year-with-vim/"
+  - "/posts/blog/half-a-year-with-vim/"
+id: "/posts/blog/half-a-year-with-vim/"
 ---
 
 ![Vim learning curve](./vim.jpg)

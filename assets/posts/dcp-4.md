@@ -4,6 +4,7 @@ date: 2018-07-05
 aliases:
   - "/posts/2018-07-05/"
   - "/posts/dcp/problem-4/"
+id: "/posts/dcp/problem-4/"
 ---
 
 ## Problem

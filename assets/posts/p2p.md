@@ -3,6 +3,7 @@ title: Building a peer to peer messenger
 date: 2019-03-20
 aliases:
   - "/posts/blog/peer-to-peer/"
+id: "/posts/blog/peer-to-peer/"
 ---
 
 ![](./p2p.jpg)

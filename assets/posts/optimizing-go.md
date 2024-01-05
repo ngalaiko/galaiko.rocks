@@ -3,6 +3,7 @@ title: Optimizing a function
 date: 2018-11-30
 aliases:
   - "/posts/blog/optimizing-functions/"
+id: "/posts/blog/optimizing-functions/"
 ---
 
 In the golang community slack, someone shared a link to a package used to

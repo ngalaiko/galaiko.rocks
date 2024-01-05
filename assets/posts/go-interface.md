@@ -3,6 +3,7 @@ title: Forcing interface wrapper
 date: 2019-03-24
 aliases:
   - "/posts/blog/interface-wrapper/"
+id: "/posts/blog/interface-wrapper/"
 ---
 
 Let's take this interface as an example:

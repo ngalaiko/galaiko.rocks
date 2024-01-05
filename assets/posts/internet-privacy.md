@@ -4,6 +4,7 @@ date: 2018-08-20
 aliases:
   - "/posts/privacy/"
   - "/posts/blog/privacy/"
+id: "/posts/blog/privacy/"
 ---
 
 About a month ago I began using some systems to protect my security on the internet a bit more than nothing.

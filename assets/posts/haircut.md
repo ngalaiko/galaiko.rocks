@@ -3,6 +3,7 @@ title: my ideal haircut
 date: 2023-01-06
 aliases:
   - "/posts/blog/my-ideal-haircut/"
+id: "/posts/blog/my-ideal-haircut/"
 ---
 
 i was just about to go outside to grap something to eat.

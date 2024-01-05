@@ -3,6 +3,7 @@ title: "Daily Coding Problem #23"
 date: 2018-09-01
 aliases:
   - "/posts/dcp/maze/"
+id: "/posts/dcp/maze/"
 ---
 
 ![maze](./dcp-23.png)

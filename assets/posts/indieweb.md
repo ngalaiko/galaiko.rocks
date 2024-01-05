@@ -3,6 +3,7 @@ title: "Hello, IndieWeb"
 date: 2022-04-16
 aliases:
   - "/posts/blog/hello-indieweb/"
+id: "/posts/blog/hello-indieweb/"
 ---
 
 In this post I want to share how this website connects with [IndieWeb][].

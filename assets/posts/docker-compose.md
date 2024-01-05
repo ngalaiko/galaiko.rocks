@@ -2,8 +2,9 @@
 title: "Docker compose for managing personal server"
 date: 2018-07-31
 aliases:
-  - "/posts/blog/docker-compose-server-manegement/"
   - "/posts/docker-compose-server-manegement/"
+  - "/posts/blog/docker-compose-server-manegement/"
+id: "/posts/blog/docker-compose-server-manegement/"
 ---
 
 For a long time, I tried to find the most comfortable way to manage a server where I host

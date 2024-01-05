@@ -3,6 +3,7 @@ title: Words Count
 date: 2019-05-11
 aliases:
   - "/posts/blog/words-count/"
+id: "/posts/blog/words-count/"
 ---
 
 Last week I participated in a small competiotion at work. The goal was to calculate the

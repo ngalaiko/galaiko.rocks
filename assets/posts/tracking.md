@@ -3,6 +3,7 @@ title: No more tracking
 date: 2022-12-30
 aliases: 
   - "/posts/blog/no-more-tracking/"
+id: "/posts/blog/no-more-tracking/"
 ---
 
 i do not wish to know which movies i've seen last year.

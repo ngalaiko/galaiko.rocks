@@ -25,7 +25,7 @@ enum Commands {
     Hledger {
         #[arg(long)]
         file: Option<String>,
-        #[arg(long, default_value = "./assets/restaurants_and_cafes/")]
+        #[arg(long, default_value = "./assets/places/")]
         output: String,
     },
 }

@@ -3,6 +3,7 @@ title: "Golang: Data races"
 date: 2019-02-02
 aliases:
   - "/posts/blog/go-data-races/"
+id: "/posts/blog/go-data-races/"
 ---
 
 I have noticed that many people who have started using go have troubles when it

@@ -3,6 +3,7 @@ title: "GitHub powered comments for a static website"
 date: 2022-10-04
 aliases:
   - "/posts/blog/comments/"
+id: "/posts/blog/comments/"
 ---
 
 after [implementing and then removing indieweb's webmentions][], i still kept thinking about a good way to allow comments on this website.
