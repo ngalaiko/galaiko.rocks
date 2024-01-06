@@ -14,3 +14,7 @@ main {
 code {
   overflow-x: scroll;
 }
+
+img {
+  width: 100%;
+}
