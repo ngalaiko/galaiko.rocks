@@ -83,12 +83,36 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
         artist_a.cmp(artist_b)
     });
 
+    let records = records.iter().filter_map(|record| {
+        std::path::Path::new(&record.basic_information.cover_image)
+            .extension()
+            .and_then(|ext| ext.to_str())
+            .map(|ext| {
+                (
+                    record.id,
+                    format!(
+                        "{} - {}",
+                        record.basic_information.artists[0].name, record.basic_information.title
+                    ),
+                    format!(
+                        "./{}.{ext}",
+                        record.basic_information.title.replace('/', "-")
+                    ),
+                )
+            })
+    });
+
     maud::html! {
         ul {
-            @for record in records {
+            @for (id, title, cover_href) in records {
                 li {
-                    a href=(format!("https://www.discogs.com/release/{}", record.id)) {
-                       (record.basic_information.artists[0].name) " - " (record.basic_information.title)
+                    a href=(format!("https://www.discogs.com/release/{}", id)) {
+                        figure {
+                            img src=(cover_href) alt=(title) style="width: 300px; height: 300px;";
+                        }
+                        figcaption {
+                            (title)
+                        }
                     }
                 }
             }
@@ -97,7 +121,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
 }
 
 #[must_use]
-pub fn restaurants_and_cafes(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
+pub fn places(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
     let mut places = places.to_vec();
     places.sort_by(|a, b| b.times.cmp(&a.times));
 

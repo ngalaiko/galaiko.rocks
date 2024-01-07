@@ -67,21 +67,18 @@ pub async fn update<P: AsRef<async_std::path::Path>>(token: &str, output: P) -> 
     let mut all_files = vec![];
     for record in &records {
         let title = record.basic_information.title.replace('/', "-");
-        let mut output_json = output.to_path_buf();
-        output_json.push(format!("{title}.json"));
 
-        if !output_json.exists().await {
-            let serialized = serde_json::to_vec_pretty(&record).map_err(Error::Ser)?;
-            async_std::fs::write(&output_json, serialized)
-                .await
-                .map_err(Error::Io)?;
-        }
-        all_files.push(output_json);
-
-        if let Some(ext) =
-            std::path::Path::new(&record.basic_information.cover_image).extension()
-            .and_then(|ext| ext.to_str())
-        {
+        if let (Some(filename), Some(ext)) = (
+            std::path::Path::new(&record.basic_information.cover_image)
+                .file_stem()
+                .and_then(|ext| ext.to_str()),
+            std::path::Path::new(&record.basic_information.cover_image)
+                .extension()
+                .and_then(|ext| ext.to_str()),
+        ) {
+            if filename == "spacer" {
+                continue;
+            }
             let mut image_out = output.to_path_buf();
             image_out.push(format!("{title}.{ext}"));
 
@@ -96,6 +93,17 @@ pub async fn update<P: AsRef<async_std::path::Path>>(token: &str, output: P) -> 
             }
             all_files.push(image_out);
         }
+
+        let mut output_json = output.to_path_buf();
+        output_json.push(format!("{title}.json"));
+
+        if !output_json.exists().await {
+            let serialized = serde_json::to_vec_pretty(&record).map_err(Error::Ser)?;
+            async_std::fs::write(&output_json, serialized)
+                .await
+                .map_err(Error::Io)?;
+        }
+        all_files.push(output_json);
     }
 
     let mut entries = async_std::fs::read_dir(&output).await.map_err(Error::Io)?;

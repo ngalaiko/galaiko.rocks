@@ -141,7 +141,7 @@ pub fn places(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
     new(
         "places",
         None,
-        &generated::restaurants_and_cafes(places),
+        &generated::places(places),
         &footer_without_copy_right(),
     )
 }
