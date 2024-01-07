@@ -85,9 +85,17 @@ fn parse_entry(value: select::node::Node) -> Result<movies::Entry, FromEntryErro
 
     let details = value.find(Class("td-actions")).next();
 
-    let href = details
-        .and_then(|node| node.attr("data-film-link"))
-        .map(|path| format!("https://letterboxd.com{path}"))
+
+    let href = value
+        .find(
+            Class("td-film-details")
+                .descendant(Name("h3"))
+                .descendant(Name("a")),
+        )
+        .next()
+        .and_then(|node| node.attr("href"))
+        .map(std::string::ToString::to_string)
+        .map(|href| format!("https://letterboxd.com{href}"))
         .ok_or(FromEntryError::Href)?;
 
     let title_slug = details
