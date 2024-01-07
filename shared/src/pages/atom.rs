@@ -35,7 +35,7 @@ pub fn posts(posts: &[entries::Entry]) -> atom_syndication::Feed {
                 .title(post.frontmatter.title.clone())
                 .id(id)
                 .links(vec![atom_syndication::Link {
-                    href: post.path.display().to_string(),
+                    href: format!("https://nikita.galaiko.rocks/{}", post.path.display()),
                     rel: "alternate".to_string(),
                     mime_type: Some("text/html".to_string()),
                     ..Default::default()
@@ -56,20 +56,20 @@ pub fn posts(posts: &[entries::Entry]) -> atom_syndication::Feed {
         .id("https://galaiko.rocks/posts".to_string())
         .links(vec![
             atom_syndication::Link {
-                href: "/posts/index.atom".to_string(),
+                href: "https://nikita.glaiko.rocks/posts/index.atom".to_string(),
                 rel: "self".to_string(),
                 mime_type: Some("application/atom+xml".to_string()),
                 ..Default::default()
             },
             atom_syndication::Link {
-                href: "/posts/".to_string(),
+                href: "https://nikita.galaiko.rocks/posts/".to_string(),
                 rel: "alternate".to_string(),
                 mime_type: Some("text/html".to_string()),
                 ..Default::default()
             },
         ])
         .updated(updated)
-        .icon(Some("/favicon.ico".to_string()))
+        .icon(Some("https://nikita.galaiko.rocks/favicon.ico".to_string()))
         .authors(vec![atom_syndication::Person {
             name: "nikita galaiko".to_string(),
             email: Some("nikita@galaiko.rocks".to_string()),
