@@ -1,4 +1,4 @@
-use crate::types::{cocktails, entries, movies, records, restaurands_and_cafes};
+use crate::types::{cocktails, entries, movies, places, records};
 
 #[must_use]
 pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
@@ -90,10 +90,8 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
             .map(|ext| {
                 (
                     record.id,
-                    format!(
-                        "{} - {}",
-                        record.basic_information.artists[0].name, record.basic_information.title
-                    ),
+                    record.basic_information.artists[0].name.clone(),
+                    record.basic_information.title.clone(),
                     format!(
                         "./{}.{ext}",
                         record.basic_information.title.replace('/', "-")
@@ -104,14 +102,18 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
 
     maud::html! {
         ul {
-            @for (id, title, cover_href) in records {
+            @for (id, artist, title, cover_href) in records {
                 li {
                     a href=(format!("https://www.discogs.com/release/{}", id)) {
                         figure {
-                            img src=(cover_href) loading="lazy" alt=(title) style="width: 300px; height: 300px;";
-                        }
-                        figcaption {
-                            (title)
+                            img src=(cover_href) loading="lazy" alt=(title);
+                            figcaption {
+                                center {
+                                    span { (artist) }
+                                    br;
+                                    span { (title) }
+                                }
+                            }
                         }
                     }
                 }
@@ -121,7 +123,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
 }
 
 #[must_use]
-pub fn places(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
+pub fn places(places: &[places::Place]) -> maud::Markup {
     let mut places = places.to_vec();
     places.sort_by(|a, b| b.times.cmp(&a.times));
 
@@ -144,7 +146,7 @@ pub fn places(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
                             (place.times)
                         }
                         td {
-                            (place.spent)
+                            (place.spent) " SEK"
                         }
                     }
                 }

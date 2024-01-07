@@ -1,4 +1,4 @@
-use crate::types::{cocktails, entries, generated, movies, records, restaurands_and_cafes};
+use crate::types::{cocktails, entries, generated, movies, places, records};
 
 fn footer_without_copy_right() -> maud::Markup {
     maud::html! {
@@ -130,17 +130,21 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
 pub fn records(records: &[records::Record]) -> maud::Markup {
     new(
         "records",
-        None,
+        Some(&maud::html! {
+            link rel="stylesheet" href="/styles/grid.css";
+        }),
         &generated::records(records),
         &footer_without_copy_right(),
     )
 }
 
 #[must_use]
-pub fn places(places: &[restaurands_and_cafes::Place]) -> maud::Markup {
+pub fn places(places: &[places::Place]) -> maud::Markup {
     new(
         "places",
-        None,
+        Some(&maud::html! {
+            link rel="stylesheet" href="/styles/table.css";
+        }),
         &generated::places(places),
         &footer_without_copy_right(),
     )

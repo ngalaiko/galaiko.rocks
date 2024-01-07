@@ -1,21 +1,55 @@
 use shared::{
     assets, pages, path,
-    types::{cocktails, entries, movies, records, restaurands_and_cafes},
+    types::{cocktails, entries, movies, places, records},
 };
 
 #[derive(rust_embed::RustEmbed)]
 #[folder = "../assets/"]
 struct Assets;
 
-#[allow(clippy::too_many_lines)]
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() {
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-changed=../assets");
 
-    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")?;
+    if let Err(err) = build() {
+        eprintln!("{err}");
+        std::process::exit(1);
+    }
+}
+
+#[derive(Debug)]
+enum BuildError {
+    Io(std::io::Error),
+    Var(std::env::VarError),
+    Entry(std::path::PathBuf, entries::FromError),
+    Cocktail(std::path::PathBuf, cocktails::FromError),
+    Movie(std::path::PathBuf, movies::FromError),
+    Record(std::path::PathBuf, records::FromError),
+    Place(std::path::PathBuf, places::FromError),
+}
+
+impl std::fmt::Display for BuildError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            BuildError::Io(error) => write!(f, "{error}"),
+            BuildError::Var(error) => write!(f, "{error}"),
+            BuildError::Entry(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Cocktail(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Movie(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Record(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Place(path, error) => write!(f, "{}: {error}", path.display()),
+        }
+    }
+}
+
+impl std::error::Error for BuildError {}
+
+#[allow(clippy::too_many_lines)]
+fn build() -> Result<(), BuildError> {
+    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR").map_err(BuildError::Var)?;
     let output = std::path::PathBuf::from(manifest_dir).join("public");
 
-    remove_dir_all(&output)?;
+    remove_dir_all(&output).map_err(BuildError::Io)?;
 
     let assets = Assets::iter()
         .filter_map(|asset_path| {
@@ -32,7 +66,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.path.starts_with("/posts/") && asset.mimetype == "text/markdown");
     let posts = posts
         .iter()
-        .map(entries::Entry::try_from)
+        .map(|asset| {
+            entries::Entry::try_from(asset)
+                .map_err(|err| BuildError::Entry(asset.path.clone(), err))
+        })
         .collect::<Result<Vec<_>, _>>()?;
 
     let (cocktails, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
@@ -40,7 +77,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
     let cocktails = cocktails
         .iter()
-        .map(cocktails::Cocktail::try_from)
+        .map(|asset| {
+            cocktails::Cocktail::try_from(asset)
+                .map_err(|err| BuildError::Cocktail(asset.path.clone(), err))
+        })
         .collect::<Result<Vec<_>, _>>()?;
 
     let (movies, assets): (Vec<_>, Vec<_>) = assets
@@ -48,7 +88,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.path.starts_with("/movies/"));
     let movies = movies
         .iter()
-        .map(movies::Entry::try_from)
+        .map(|asset| {
+            movies::Entry::try_from(asset).map_err(|err| BuildError::Movie(asset.path.clone(), err))
+        })
         .collect::<Result<Vec<_>, _>>()?;
 
     let (records, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
@@ -56,15 +98,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
     let records = records
         .iter()
-        .map(records::Record::try_from)
+        .map(|asset| {
+            records::Record::try_from(asset)
+                .map_err(|err| BuildError::Record(asset.path.clone(), err))
+        })
         .collect::<Result<Vec<_>, _>>()?;
 
-    let (places, assets): (Vec<_>, Vec<_>) = assets
-        .into_iter()
-        .partition(|asset| asset.path.starts_with("/places/"));
+    let (places, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("/places/") && asset.mimetype == "application/json"
+    });
     let places = places
         .iter()
-        .map(restaurands_and_cafes::Place::try_from)
+        .map(|asset| {
+            places::Place::try_from(asset).map_err(|err| BuildError::Place(asset.path.clone(), err))
+        })
         .collect::<Result<Vec<_>, _>>()?;
 
     let (pages, assets): (Vec<_>, Vec<_>) = assets
@@ -72,7 +119,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .partition(|asset| asset.mimetype == "text/markdown");
     let pages = pages
         .iter()
-        .map(entries::Entry::try_from)
+        .map(|asset| {
+            entries::Entry::try_from(asset)
+                .map_err(|err| BuildError::Entry(asset.path.clone(), err))
+        })
         .collect::<Result<Vec<_>, _>>()?;
 
     write(
@@ -80,78 +130,90 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         pages::html::posts(posts.as_slice())
             .into_string()
             .as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
 
     write(
         join(&output, "posts.atom"),
         "redirect: /posts/index.atom".as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
     write(
         join(&output, "posts/index.atom"),
         pages::atom::posts(posts.as_slice()).to_string().as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
 
     write(
         join(&output, "records/index.html"),
         pages::html::records(records.as_slice())
             .into_string()
             .as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
 
     write(
         join(&output, "cocktails/index.html"),
         pages::html::cocktails(cocktails.as_slice())
             .into_string()
             .as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
 
     write(
         join(&output, "restaurants_and_cafes/index.html"),
         "redirect: /places/index.html".as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
     write(
         join(&output, "places/index.html"),
         pages::html::places(places.as_slice())
             .into_string()
             .as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
 
     write(
         join(&output, "movies/index.html"),
         pages::html::movies(movies.as_slice())
             .into_string()
             .as_bytes(),
-    )?;
+    )
+    .map_err(BuildError::Io)?;
 
     for post in posts {
         for alias in &post.frontmatter.aliases {
             write(
                 join(&output, path::normalize(alias)),
                 format!("redirect: {}", post.path.display()).as_bytes(),
-            )?;
+            )
+            .map_err(BuildError::Io)?;
         }
         write(
             join(&output, &post.path),
             pages::html::post(&post).into_string().as_bytes(),
-        )?;
+        )
+        .map_err(BuildError::Io)?;
     }
 
     for cocktail in cocktails {
         write(
             join(&output, &cocktail.path),
             pages::html::cocktail(&cocktail).into_string().as_bytes(),
-        )?;
+        )
+        .map_err(BuildError::Io)?;
     }
 
     for page in pages {
         write(
             join(&output, &page.path),
             pages::html::entry(&page).into_string().as_bytes(),
-        )?;
+        )
+        .map_err(BuildError::Io)?;
     }
 
     for rest in assets {
-        write(join(&output, &rest.path), &rest.data)?;
+        write(join(&output, &rest.path), &rest.data).map_err(BuildError::Io)?;
     }
 
     Ok(())
