@@ -132,7 +132,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         write(
             join(&output, &post.path),
-            pages::html::entry(&post).into_string().as_bytes(),
+            pages::html::post(&post).into_string().as_bytes(),
         )?;
     }
 

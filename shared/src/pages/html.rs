@@ -2,8 +2,6 @@ use crate::types::{cocktails, entries, generated, movies, records, restaurands_a
 
 fn footer_without_copy_right() -> maud::Markup {
     maud::html! {
-        a href="/index.html" { "nikita galaiko" }
-        span { "·" }
         a href="/privacy.html" { "privacy policy" }
         span { "·" }
         a href="https://github.com/ngalaiko/galaiko.rocks" { "source" }
@@ -21,10 +19,7 @@ fn footer_with_copy_right() -> maud::Markup {
             "2018.."(year)
         }
         span { "·" }
-        a href="/privacy.html" { "privacy policy" }
-        span { "·" }
-        a href="https://github.com/ngalaiko/galaiko.rocks" { "source" }
-
+        (footer_without_copy_right())
     }
 }
 
@@ -75,7 +70,7 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
         "cocktails",
         None,
         &generated::cocktails(cocktails),
-        &footer_with_copy_right(),
+        &footer_without_copy_right(),
     )
 }
 
@@ -85,7 +80,7 @@ pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
         &cocktail.frontmatter.title,
         None,
         &cocktail.body,
-        &footer_with_copy_right(),
+        &footer_without_copy_right(),
     )
 }
 
@@ -102,12 +97,22 @@ pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
 }
 
 #[must_use]
-pub fn entry(page: &entries::Entry) -> maud::Markup {
+pub fn post(page: &entries::Entry) -> maud::Markup {
     new(
         &page.frontmatter.title,
         None,
         &page.body,
         &footer_with_copy_right(),
+    )
+}
+
+#[must_use]
+pub fn entry(page: &entries::Entry) -> maud::Markup {
+    new(
+        &page.frontmatter.title,
+        None,
+        &page.body,
+        &footer_without_copy_right(),
     )
 }
 
