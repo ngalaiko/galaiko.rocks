@@ -108,7 +108,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
                 li {
                     a href=(format!("https://www.discogs.com/release/{}", id)) {
                         figure {
-                            img src=(cover_href) alt=(title) style="width: 300px; height: 300px;";
+                            img src=(cover_href) loading="lazy" alt=(title) style="width: 300px; height: 300px;";
                         }
                         figcaption {
                             (title)
