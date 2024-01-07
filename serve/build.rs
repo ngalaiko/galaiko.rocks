@@ -51,9 +51,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .map(movies::Entry::try_from)
         .collect::<Result<Vec<_>, _>>()?;
 
-    let (records, assets): (Vec<_>, Vec<_>) = assets
-        .into_iter()
-        .partition(|asset| asset.path.starts_with("/records/"));
+    let (records, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("/records/") && asset.mimetype == "application/json"
+    });
     let records = records
         .iter()
         .map(records::Record::try_from)
@@ -61,7 +61,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let (places, assets): (Vec<_>, Vec<_>) = assets
         .into_iter()
-        .partition(|asset| asset.path.starts_with("/restaurants_and_cafes/"));
+        .partition(|asset| asset.path.starts_with("/places/"));
     let places = places
         .iter()
         .map(restaurands_and_cafes::Place::try_from)

@@ -85,7 +85,6 @@ fn parse_entry(value: select::node::Node) -> Result<movies::Entry, FromEntryErro
 
     let details = value.find(Class("td-actions")).next();
 
-
     let href = value
         .find(
             Class("td-film-details")
