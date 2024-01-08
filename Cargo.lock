@@ -766,8 +766,8 @@ dependencies = [
 
 [[package]]
 name = "cooklang"
-version = "0.10.0"
-source = "git+https://github.com/cooklang/cooklang-rs.git?branch=main#cd41242c083043552aa64e23131be7d99378cdcd"
+version = "0.11.1"
+source = "git+https://github.com/cooklang/cooklang-rs.git?branch=main#ad0e9c44a02dc01b9168f2d037407091ca155584"
 dependencies = [
  "ariadne",
  "bitflags 2.4.1",
