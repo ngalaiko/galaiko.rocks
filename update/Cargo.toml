@@ -11,7 +11,7 @@ shared = { path = "../shared" }
 async-std = { version = "1.12.0", features = ["default", "attributes"] }
 femme = "2.2.1"
 once_cell = "1.19.0"
-clap = { version = "4.4.11", features = ["derive"] }
+clap = { version = "4.4.13", features = ["derive"] }
 select = "0.6.0"
 surf = "2.3.2"
 serde = "1.0.193"
