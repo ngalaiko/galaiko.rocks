@@ -16,21 +16,21 @@ pub fn parse(data: &[u8]) -> Result<maud::Markup, ParseError> {
 #[allow(clippy::too_many_lines)]
 fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
     let ingredient_list = recipe.group_ingredients(PARSER.converter());
+    let source_url = recipe
+        .metadata
+        .source
+        .as_ref()
+        .and_then(cooklang::metadata::NameAndUrl::url);
+    let source_name = recipe
+        .metadata
+        .source
+        .as_ref()
+        .and_then(cooklang::metadata::NameAndUrl::name)
+        .or_else(|| source_url.as_ref().and_then(|u| u.host_str()));
+
     maud::html! {
-        @if !recipe.metadata.map.is_empty() {
-            ul {
-                @for (key, value) in &recipe.metadata.map {
-                    li.metadata {
-                        span.key { (key) } ":" (value)
-                    }
-                }
-            }
-
-            hr {}
-        }
-
         @if !ingredient_list.is_empty() {
-            h2 { "Ingredients:" }
+            h2 { "ingredients:" }
             ul {
                 @for entry in &ingredient_list {
                     li {
@@ -43,7 +43,7 @@ fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
         }
 
         @if !recipe.cookware.is_empty() {
-            h2 { "Cookware:" }
+            h2 { "cookware:" }
             ul {
                 @for item in recipe.cookware.iter().filter(|c| c.modifiers().should_be_listed()) {
                     @let amount = item.group_amounts(&recipe.cookware).iter()
@@ -66,7 +66,7 @@ fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
             @if let Some(name) = &section.name {
                 h3 { "(" (s_num) ") " (name) }
             } @else if recipe.sections.len() > 1 {
-                h3 { "Section " (s_num) }
+                h3 { "section " (s_num) }
             }
 
             @for content in &section.content {
@@ -129,6 +129,28 @@ fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
                     }
                 }
             }
+        }
+
+        @match (source_url, source_name) {
+            (Some(url), Some(source_name)) => {
+                hr {}
+                p {
+                    "source: "
+                    a href=(url) { (source_name) };
+                }
+            },
+            (Some(url), None) => {
+                hr {}
+                a href=(url) { "source" };
+            }
+            (None, Some(name)) => {
+                hr {}
+                p {
+                    "source: "
+                    (name)
+                }
+            }
+            (None, None) => {}
         }
     }
 }

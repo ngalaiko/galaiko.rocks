@@ -66,10 +66,17 @@ fn new(
 
 #[must_use]
 pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
+    let html = maud::html! {
+        aside {
+            img src=(format!("./{}.jpeg", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
+        }
+        (cocktail.body)
+    };
+
     new(
         &cocktail.frontmatter.title,
         None,
-        &cocktail.body,
+        &html,
         &footer_without_copy_right(),
     )
 }
