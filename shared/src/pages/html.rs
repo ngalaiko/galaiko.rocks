@@ -68,7 +68,9 @@ fn new(
 pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
     new(
         "cocktails",
-        None,
+        Some(&maud::html! {
+            link rel="stylesheet" href="/styles/grid.css";
+        }),
         &generated::cocktails(cocktails),
         &footer_without_copy_right(),
     )

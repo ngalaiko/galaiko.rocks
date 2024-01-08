@@ -34,7 +34,12 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
             @for cocktail in cocktails {
                 li {
                     a href=(cocktail.path.display()) {
-                        (cocktail.frontmatter.title)
+                        figure {
+                            img src=(format!("./{}.jpeg", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
+                            figcaption {
+                                (cocktail.frontmatter.title)
+                            }
+                        }
                     }
                 }
             }
