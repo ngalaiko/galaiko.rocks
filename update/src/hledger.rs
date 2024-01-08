@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use shared::types::restaurands_and_cafes::Place;
+use shared::types::places;
 
 #[derive(Debug)]
 pub enum Error {
@@ -68,6 +68,7 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
         .arg("register")
         .arg("--value=then,SEK")
         .arg("--output-format=csv")
+        .arg("--infer-market-prices")
         .arg("expenses:Food:Restaurants & Cafes$")
         .arg(format!("--begin={}", year_ago.format("%Y-%m-%d")));
 
@@ -113,7 +114,7 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
     let mut places = entries_by_place
         .into_iter()
         .filter(|(_, entries)| entries.len() > 1)
-        .map(|(payee, entries)| Place {
+        .map(|(payee, entries)| places::Place {
             location: *LOCATIONS
                 .get(&payee)
                 .unwrap_or_else(|| panic!("no location for {payee}")),
@@ -330,6 +331,7 @@ static LOCATIONS: once_cell::sync::Lazy<HashMap<String, (f64, f64)>> =
         locations.insert("La Terrazza".to_string(), (57.699_998, 11.984_547));
         locations.insert("Gansu Köket".to_string(), (57.708_635, 11.965_104));
         locations.insert("Joe And The Juice".to_string(), (59.318_923, 18.071_062));
+        locations.insert("Kuro - Tbilisi".to_string(), (41.706_772, 44.781_744));
 
         locations
     });
