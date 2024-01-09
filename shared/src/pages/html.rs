@@ -40,7 +40,7 @@ fn new(
             link rel="icon" sizes="16x16" href="/favicon-16x16.png";
             link rel="manifest" href="/site.webmanifest";
 
-            link rel="stylesheet" href="/index.css";
+            link rel="stylesheet" href=(format!("/index.css?v={}",chrono::Local::now().timestamp()));
 
             @if let Some(header) = header {
                 (header)
@@ -163,7 +163,7 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
     new(
         "cocktails",
         Some(&maud::html! {
-            link rel="stylesheet" href="/styles/grid.css";
+            link rel="stylesheet" href=(format!("/styles/grid.css?v={}", chrono::Local::now().timestamp()));
         }),
         &html,
         &footer_without_copy_right(),
@@ -201,7 +201,7 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
     new(
         "movies",
         Some(&maud::html! {
-            link rel="stylesheet" href="/styles/table.css";
+            link rel="stylesheet" href=(format!("/styles/table.css?v={}", chrono::Local::now().timestamp()));
         }),
         &html,
         &footer_without_copy_right(),
@@ -264,7 +264,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
     new(
         "records",
         Some(&maud::html! {
-            link rel="stylesheet" href="/styles/grid.css";
+            link rel="stylesheet" href=(format!("/styles/grid.css?v={}", chrono::Local::now().timestamp()));
         }),
         &html,
         &footer_without_copy_right(),
@@ -300,7 +300,7 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
     new(
         "places",
         Some(&maud::html! {
-            link rel="stylesheet" href="/styles/table.css";
+            link rel="stylesheet" href=(format!("/styles/table.css?v={}", chrono::Local::now().timestamp()));
         }),
         &html,
         &footer_without_copy_right(),

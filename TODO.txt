@@ -1,5 +1,4 @@
 - optimized images
-- append `?v=1` to css links
 - css for all pages
 - access logs + goaccess
 - generated previews
