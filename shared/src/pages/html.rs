@@ -176,25 +176,23 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
     movies.sort_by(|a, b| b.date.cmp(&a.date));
 
     let html = maud::html! {
-        ul {
+        table {
+            thead {
+                tr {
+                    th { "date" }
+                    th { "poster" }
+                    th { "film" }
+                    th { "liked" }
+                    th { "rewatch" }
+                }
+            }
             @for movie in movies {
-                li {
-                    a href=(movie.href) {
-                        figure {
-                            img src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title);
-                            figcaption {
-                                center {
-                                    (movie.title)
-                                    @if movie.is_liked {
-                                        " ♥"
-                                    }
-                                    @if movie.is_rewatch {
-                                        " ↻"
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    tr {
+                        td { time datetime=(movie.date.format("%Y-%m-%d")) { (movie.date.format("%Y-%m-%d")) } }
+                        td { img width="35px" src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title); }
+                        td { a href=(movie.href) { (movie.title) } }
+                        td { @if movie.is_liked   { "♥" } }
+                        td { @if movie.is_rewatch { "↻" } }
                 }
             }
         }
@@ -203,7 +201,7 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
     new(
         "movies",
         Some(&maud::html! {
-            link rel="stylesheet" href="/styles/grid.css";
+            link rel="stylesheet" href="/styles/table.css";
         }),
         &html,
         &footer_without_copy_right(),
@@ -282,23 +280,17 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
         table {
             thead {
                 tr {
-                    th {"name"}
-                    th {"times"}
-                    th {"spent"}
+                    th { "name" }
+                    th { "times" }
+                    th { "spent" }
                 }
             }
             tbody {
                 @for place in places {
                     tr {
-                        td {
-                            (place.name)
-                        }
-                        td {
-                            (place.times)
-                        }
-                        td {
-                            (place.spent) " SEK"
-                        }
+                        td { (place.name) }
+                        td { (place.times) }
+                        td { (place.spent) " SEK" }
                     }
                 }
             }
