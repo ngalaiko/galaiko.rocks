@@ -5,6 +5,7 @@ pub enum Error {
     Surf(surf::Error),
     Ser(serde_json::Error),
     Io(std::io::Error),
+    Download((String, surf::StatusCode)),
 }
 
 impl std::fmt::Display for Error {
@@ -13,6 +14,7 @@ impl std::fmt::Display for Error {
             Error::Surf(error) => write!(f, "{error}"),
             Error::Ser(error) => write!(f, "{error}"),
             Error::Io(error) => write!(f, "{error}"),
+            Error::Download((url, code)) => write!(f, "{url} returned {code}"),
         }
     }
 }
@@ -50,6 +52,9 @@ pub async fn update<P: AsRef<async_std::path::Path>>(token: &str, output: P) -> 
             .header("Accept", "application/json")
             .await
             .map_err(Error::Surf)?;
+        if response.status() != surf::StatusCode::Ok {
+            return Err(Error::Download((page_url.clone(), response.status())));
+        }
 
         let mut page = response.body_json::<Page>().await.map_err(Error::Surf)?;
         records.append(&mut page.releases);
@@ -86,6 +91,12 @@ pub async fn update<P: AsRef<async_std::path::Path>>(token: &str, output: P) -> 
                 let mut response = get_image(&record.basic_information.cover_image, token)
                     .await
                     .map_err(Error::Surf)?;
+                if response.status() != surf::StatusCode::Ok {
+                    return Err(Error::Download((
+                        record.basic_information.cover_image.clone(),
+                        response.status(),
+                    )));
+                }
                 let image = response.body_bytes().await.map_err(Error::Surf)?;
                 async_std::fs::write(&image_out, &image)
                     .await

@@ -6,6 +6,8 @@ pub enum Error {
     FromEntry(FromEntryError),
     Ser(serde_json::Error),
     Io(std::io::Error),
+    Download((String, surf::StatusCode)),
+    Poster(PosterError),
 }
 
 impl std::fmt::Display for Error {
@@ -15,6 +17,8 @@ impl std::fmt::Display for Error {
             Self::FromEntry(error) => write!(f, "{error}"),
             Self::Io(error) => write!(f, "{error}"),
             Self::Ser(error) => write!(f, "{error}"),
+            Self::Download((url, code)) => write!(f, "{url} returned {code}"),
+            Self::Poster(error) => write!(f, "{error}"),
         }
     }
 }
@@ -31,8 +35,6 @@ pub enum FromEntryError {
     Title,
     Href,
     Slug,
-    Id,
-    SmallPoster,
 }
 
 impl std::fmt::Display for FromEntryError {
@@ -42,8 +44,6 @@ impl std::fmt::Display for FromEntryError {
             FromEntryError::Title => write!(f, "title not found"),
             FromEntryError::Href => write!(f, "link not found"),
             FromEntryError::Slug => write!(f, "slug not found"),
-            FromEntryError::Id => write!(f, "id not found"),
-            FromEntryError::SmallPoster => write!(f, "small poster not found"),
         }
     }
 }
@@ -102,27 +102,6 @@ fn parse_entry(value: select::node::Node) -> Result<movies::Entry, FromEntryErro
         .map(std::string::ToString::to_string)
         .ok_or(FromEntryError::Slug)?;
 
-    let id = details
-        .and_then(|node| node.attr("data-film-id"))
-        .ok_or(FromEntryError::Id)?;
-
-    let poster_large_href = {
-        let mut href = "https://a.ltrbxd.com/resized/film-poster/".to_string();
-        for char in id.chars() {
-            href += char.to_string().as_str();
-            href += "/";
-        }
-        href += &format!("{id}-{title_slug}-0-600-0-900-crop.jpg");
-        href
-    };
-
-    let poster_small_href = value
-        .find(Class("td-film-details").descendant(Name("img")))
-        .next()
-        .and_then(|node| node.attr("src"))
-        .map(std::string::ToString::to_string)
-        .ok_or(FromEntryError::SmallPoster)?;
-
     Ok(movies::Entry {
         title,
         title_slug,
@@ -130,8 +109,6 @@ fn parse_entry(value: select::node::Node) -> Result<movies::Entry, FromEntryErro
         is_rewatch,
         is_liked,
         href,
-        poster_large_href,
-        poster_small_href,
     })
 }
 
@@ -154,11 +131,16 @@ fn parse_page(body: &str) -> Result<(Vec<movies::Entry>, bool), Error> {
 
 async fn fetch_page(n: u8) -> Result<(Vec<movies::Entry>, bool), Error> {
     let mut response = surf::get(page_url(n)).await.map_err(Error::Surf)?;
+    if response.status() != surf::StatusCode::Ok {
+        return Err(Error::Download((page_url(n), response.status())));
+    }
     let body = response.body_string().await.map_err(Error::Surf)?;
     parse_page(body.as_str())
 }
 
-pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
+pub async fn update<P: AsRef<async_std::path::Path>>(output: P) -> Result<(), Error> {
+    use async_std::prelude::*;
+
     let output = output.as_ref();
 
     let mut n = 1;
@@ -173,28 +155,123 @@ pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
         }
     }
 
-    if output.exists() {
-        async_std::fs::remove_dir_all(&output)
+    let mut all_files = vec![];
+    for entry in &entries {
+        let path = entry
+            .href
+            .strip_prefix("https://letterboxd.com/ngalaiko/film/")
+            .expect("invalid href");
+        let components = path.split('/').collect::<Vec<_>>();
+        let watch_number = if components.len() == 3 {
+            components[1].parse::<u64>().expect("invalid watch number")
+        } else {
+            0
+        };
+        let data_output = output
+            .join(&entry.title_slug)
+            .join(watch_number.to_string())
+            .with_extension("json")
+            .to_path_buf();
+
+        let dir = data_output.parent().expect("invalid output path");
+        if !data_output.exists().await {
+            async_std::fs::create_dir_all(&dir)
+                .await
+                .map_err(Error::Io)?;
+
+            async_std::fs::write(
+                &data_output,
+                serde_json::to_vec_pretty(&entry).map_err(Error::Ser)?,
+            )
             .await
             .map_err(Error::Io)?;
+        }
+
+        let poster_output = dir.with_extension("jpg");
+        if !poster_output.exists().await {
+            let image = get_poster(entry).await.map_err(Error::Poster)?;
+            async_std::fs::write(&poster_output, &image)
+                .await
+                .map_err(Error::Io)?;
+        }
+
+        all_files.push(data_output);
+        all_files.push(poster_output);
     }
 
-    for entry in &entries {
-        let output = output.join(format!("{}", entry.date.format("%Y/%m/%d")));
-
-        async_std::fs::create_dir_all(&output)
-            .await
-            .map_err(Error::Io)?;
-
-        let output = output.join(format!("{title}.json", title = entry.title));
-
-        async_std::fs::write(
-            &output,
-            serde_json::to_vec_pretty(&entry).map_err(Error::Ser)?,
-        )
-        .await
-        .map_err(Error::Io)?;
+    let mut entries = async_std::fs::read_dir(&output).await.map_err(Error::Io)?;
+    while let Some(res) = entries.next().await {
+        let entry = res.map_err(Error::Io)?;
+        if !entry.file_type().await.map_err(Error::Io)?.is_file() {
+            continue;
+        }
+        if !all_files.contains(&entry.path()) {
+            async_std::fs::remove_file(entry.path())
+                .await
+                .map_err(Error::Io)?;
+        }
     }
 
     Ok(())
+}
+
+#[derive(Debug)]
+pub enum PosterError {
+    Surf(surf::Error),
+    Download((String, surf::StatusCode)),
+    NoLdJson,
+    LdDe(serde_json::Error),
+}
+
+impl std::fmt::Display for PosterError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            PosterError::Surf(error) => write!(f, "{error}"),
+            PosterError::Download((url, code)) => write!(f, "{url} returned {code}"),
+            PosterError::NoLdJson => write!(f, "no ld+json found"),
+            PosterError::LdDe(error) => write!(f, "{error}"),
+        }
+    }
+}
+
+impl std::error::Error for PosterError {}
+
+async fn get_poster(entry: &movies::Entry) -> Result<Vec<u8>, PosterError> {
+    use select::document::Document;
+    use select::predicate::Attr;
+
+    #[derive(Debug, serde::Deserialize)]
+    struct LdData<'a> {
+        image: &'a str,
+    }
+
+    let film_page_url = format!("https://letterboxd.com/film/{}/", entry.title_slug);
+    let mut response = surf::get(&film_page_url).await.map_err(PosterError::Surf)?;
+    if response.status() != surf::StatusCode::Ok {
+        return Err(PosterError::Download((film_page_url, response.status())));
+    }
+    let movie_page = response
+        .body_string()
+        .await
+        .map(|body| Document::from(body.as_str()))
+        .map_err(PosterError::Surf)?;
+    let ld_data = movie_page
+        .find(Attr("type", "application/ld+json"))
+        .next()
+        .map(|node| node.text())
+        .ok_or(PosterError::NoLdJson)?;
+    let ld_data = ld_data.trim_start_matches("\n/* <![CDATA[ */\n");
+    let ld_data = ld_data.trim_end_matches("\n/* ]]> */\n");
+
+    let ld_data = serde_json::from_str::<LdData>(ld_data).map_err(PosterError::LdDe)?;
+    let image_url = ld_data.image.replace("0-230-0-345", "0-600-0-900");
+    let mut response = surf::get(image_url).await.map_err(PosterError::Surf)?;
+    if response.status() != surf::StatusCode::Ok {
+        return Err(PosterError::Download((
+            ld_data.image.to_string(),
+            response.status(),
+        )));
+    }
+    let image = response.body_bytes().await.map_err(PosterError::Surf)?;
+    Ok(image)
 }

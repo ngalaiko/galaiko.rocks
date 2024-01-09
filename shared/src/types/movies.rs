@@ -8,8 +8,6 @@ pub struct Entry {
     pub is_rewatch: bool,
     pub is_liked: bool,
     pub href: String,
-    pub poster_large_href: String,
-    pub poster_small_href: String,
 }
 
 impl TryFrom<&assets::Asset> for Entry {

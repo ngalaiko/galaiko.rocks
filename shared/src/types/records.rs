@@ -11,7 +11,6 @@ pub struct Record {
 pub struct BasicInformation {
     pub title: String,
     pub artists: Vec<Artist>,
-    pub thumb: String,
     pub cover_image: String,
 }
 

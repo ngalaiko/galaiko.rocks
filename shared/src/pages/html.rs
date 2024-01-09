@@ -85,7 +85,9 @@ pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
 pub fn post(page: &entries::Entry) -> maud::Markup {
     new(
         &page.frontmatter.title,
-        None,
+        Some(&maud::html! {
+            link rel="alternate" type="application/atom+xml" href="/posts/index.atom";
+        }),
         &page.body,
         &footer_with_copy_right(),
     )
@@ -147,7 +149,9 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
                         figure {
                             img src=(format!("./{}.jpeg", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
                             figcaption {
-                                (cocktail.frontmatter.title)
+                                center {
+                                    (cocktail.frontmatter.title)
+                                }
                             }
                         }
                     }
@@ -175,23 +179,35 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
         ul {
             @for movie in movies {
                 li {
-                    (movie.date.format("%Y-%m-%d"))
-                    " | "
                     a href=(movie.href) {
-                        (movie.title)
-                    }
-                    @if movie.is_liked {
-                        " ♥"
-                    }
-                    @if movie.is_rewatch {
-                        " ↻"
+                        figure {
+                            img src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title);
+                            figcaption {
+                                center {
+                                    (movie.title)
+                                    @if movie.is_liked {
+                                        " ♥"
+                                    }
+                                    @if movie.is_rewatch {
+                                        " ↻"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     };
 
-    new("movies", None, &html, &footer_without_copy_right())
+    new(
+        "movies",
+        Some(&maud::html! {
+            link rel="stylesheet" href="/styles/grid.css";
+        }),
+        &html,
+        &footer_without_copy_right(),
+    )
 }
 
 #[must_use]

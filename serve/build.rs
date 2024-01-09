@@ -83,9 +83,9 @@ fn build() -> Result<(), BuildError> {
         })
         .collect::<Result<Vec<_>, _>>()?;
 
-    let (movies, assets): (Vec<_>, Vec<_>) = assets
-        .into_iter()
-        .partition(|asset| asset.path.starts_with("/movies/"));
+    let (movies, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("/movies/") && asset.mimetype == "application/json"
+    });
     let movies = movies
         .iter()
         .map(|asset| {
