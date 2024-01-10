@@ -1,9 +1,13 @@
-@import url("/fonts/index.css");
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
 body {
-  font-family: "Berkeley Mono", monospace;
-  font-size: 1rem;
+  font: 18px/1.5 "Berkeley Mono", monospace;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 main {
