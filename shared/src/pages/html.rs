@@ -182,17 +182,16 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
                     th { "date" }
                     th { "poster" }
                     th { "film" }
-                    th { "liked" }
-                    th { "rewatch" }
                 }
             }
             @for movie in movies {
-                    tr {
-                        td { time datetime=(movie.date.format("%Y-%m-%d")) { (movie.date.format("%Y-%m-%d")) } }
-                        td { img width="35px" src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title); }
-                        td { a href=(movie.href) { (movie.title) } }
-                        td { @if movie.is_liked   { "♥" } }
-                        td { @if movie.is_rewatch { "↻" } }
+                tr {
+                    td { time datetime=(movie.date.format("%Y-%m-%d")) { (movie.date.format("%Y-%m-%d")) } }
+                    td { img width="35px" src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title); }
+                    td {
+                        @if movie.is_liked { span { { "♥ " } } }
+                        a href=(movie.href) { (movie.title) }
+                    }
                 }
             }
         }
