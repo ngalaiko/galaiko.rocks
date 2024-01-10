@@ -60,6 +60,10 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
                         .body(tide::Body::from(embedded_file.data.to_vec()))
                 }
                 .header("content-type", embedded_file.metadata.mimetype())
+                .header("cache-control", match embedded_file.metadata.mimetype() {
+                    "text/html" => "no-cache, max-age=31536000",
+                    _ => "max-age=31536000",
+                })
                 .header("etag", etag)
                 .build()
             }
