@@ -61,7 +61,6 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
                 }
                 .header("content-type", embedded_file.metadata.mimetype())
                 .header("etag", etag)
-                .header("cache-control", "public, max-age=31536000")
                 .build()
             }
         } else {
