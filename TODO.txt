@@ -1,4 +1,5 @@
 - optimized images
+- version images, css and js files with it's hash
 - figure out cache headers
 - css for all pages
 - access logs + goaccess
