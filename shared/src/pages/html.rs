@@ -105,7 +105,10 @@ pub fn entry(page: &entries::Entry) -> maud::Markup {
 
 #[must_use]
 pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
-    let mut posts = posts.to_vec();
+    let mut posts = posts
+        .iter()
+        .filter(|post| post.frontmatter.date.is_some())
+        .collect::<Vec<_>>();
     posts.sort_by(|a, b| b.frontmatter.date.cmp(&a.frontmatter.date));
 
     let html = maud::html! {
