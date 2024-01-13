@@ -191,10 +191,10 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
             @for movie in movies {
                 tr {
                     td { time datetime=(movie.date.format("%Y-%m-%d")) { (movie.date.format("%Y-%m-%d")) } }
-                    td { img width="35px" src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title); }
+                    td { img width="70px" src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title); }
                     td {
-                        @if movie.is_liked { span { { "♥ " } } }
                         a href=(movie.href) { (movie.title) }
+                        @if movie.is_liked { " | " "♥" }
                     }
                 }
             }
