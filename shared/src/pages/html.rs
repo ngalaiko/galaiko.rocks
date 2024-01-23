@@ -309,3 +309,19 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
         &footer_without_copy_right(),
     )
 }
+
+#[must_use]
+pub fn redirect<P: AsRef<std::path::Path>>(to: P) -> maud::Markup {
+    let to = to.as_ref().display().to_string();
+    new(
+        "redirect",
+        Some(&maud::html! {
+            meta http-equiv="refresh" content=(format!("0; url={}", to));
+            link rel="canonical" href=(to);
+        }),
+        &maud::html! {
+            "If you are not redirected automatically, follow this" a href=(to) { "link" }
+        },
+        &footer_without_copy_right(),
+    )
+}

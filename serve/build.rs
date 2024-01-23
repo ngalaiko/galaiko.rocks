@@ -185,7 +185,7 @@ fn build() -> Result<(), BuildError> {
         for alias in &post.frontmatter.aliases {
             write(
                 join(&output, path::normalize(alias)),
-                format!("redirect: {}", post.path.display()).as_bytes(),
+                pages::html::redirect(&post.path).into_string().as_bytes(),
             )
             .map_err(BuildError::Io)?;
         }

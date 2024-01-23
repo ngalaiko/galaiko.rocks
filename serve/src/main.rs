@@ -43,30 +43,27 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
 
     let response =
         if let Some(embedded_file) = asset_path.and_then(|asset_path| Public::get(&asset_path)) {
-            let data = embedded_file.data.to_vec();
-            if let Some(location) = data.strip_prefix(b"redirect: ") {
-                let location = std::str::from_utf8(location)?;
-                tide::Redirect::new(location).into()
+            let etag = etag_header(embedded_file.metadata.sha256_hash());
+            let is_modified = req
+                .header("if-none-match")
+                .map(|etags| etags.contains(&etag))
+                .unwrap_or_default();
+            if is_modified {
+                tide::Response::builder(tide::StatusCode::NotModified)
             } else {
-                let etag = etag_header(embedded_file.metadata.sha256_hash());
-                let is_modified = req
-                    .header("if-none-match")
-                    .map(|etags| etags.contains(&etag))
-                    .unwrap_or_default();
-                if is_modified {
-                    tide::Response::builder(tide::StatusCode::NotModified)
-                } else {
-                    tide::Response::builder(tide::StatusCode::Ok)
-                        .body(tide::Body::from(embedded_file.data.to_vec()))
-                }
-                .header("content-type", embedded_file.metadata.mimetype())
-                .header("cache-control", match embedded_file.metadata.mimetype() {
+                tide::Response::builder(tide::StatusCode::Ok)
+                    .body(tide::Body::from(embedded_file.data.to_vec()))
+            }
+            .header("content-type", embedded_file.metadata.mimetype())
+            .header(
+                "cache-control",
+                match embedded_file.metadata.mimetype() {
                     "text/html" => "no-cache, max-age=31536000",
                     _ => "max-age=31536000",
-                })
-                .header("etag", etag)
-                .build()
-            }
+                },
+            )
+            .header("etag", etag)
+            .build()
         } else {
             tide::Response::new(tide::StatusCode::NotFound)
         };
