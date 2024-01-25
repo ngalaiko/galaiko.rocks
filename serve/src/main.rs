@@ -38,6 +38,12 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
         .map_err(|error| tide::Error::new(tide::StatusCode::BadRequest, error))?;
 
     let normalized_path = path::normalize(requested_path.to_string());
+    if requested_path.to_string() != normalized_path.display().to_string() {
+        let response: tide::Response =
+            tide::Redirect::new(normalized_path.display().to_string()).into();
+        return Ok(response);
+    };
+
     let asset_path = Public::iter()
         .find(|asset_path| path::normalize(asset_path.to_string()) == normalized_path);
 
