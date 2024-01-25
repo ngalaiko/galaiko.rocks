@@ -1,6 +1,6 @@
 mod parse;
 
 pub mod assets;
-pub mod pages;
+pub mod build;
 pub mod path;
 pub mod types;

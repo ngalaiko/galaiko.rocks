@@ -1,5 +1,5 @@
 use shared::{
-    assets, pages, path,
+    assets, build, path,
     types::{cocktails, entries, movies, places, records},
 };
 
@@ -53,17 +53,18 @@ fn build() -> Result<(), BuildError> {
 
     let assets = Assets::iter()
         .filter_map(|asset_path| {
-            Assets::get(&asset_path).map(|asset| (path::normalize(asset_path.to_string()), asset))
+            Assets::get(&asset_path)
+                .map(|asset| (std::path::PathBuf::from(asset_path.to_string()), asset))
         })
         .map(|(path, asset)| assets::Asset {
             path,
-            mimetype: asset.metadata.mimetype().to_string(),
             data: asset.data.to_vec(),
         });
 
-    let (posts, assets): (Vec<_>, Vec<_>) = assets
-        .into_iter()
-        .partition(|asset| asset.path.starts_with("/posts/") && asset.mimetype == "text/markdown");
+    let (posts, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("posts/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("md"))
+    });
     let posts = posts
         .iter()
         .map(|asset| {
@@ -73,7 +74,8 @@ fn build() -> Result<(), BuildError> {
         .collect::<Result<Vec<_>, _>>()?;
 
     let (cocktails, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
-        asset.path.starts_with("/cocktails/") && asset.mimetype == "application/octet-stream"
+        asset.path.starts_with("cocktails/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("cook"))
     });
     let cocktails = cocktails
         .iter()
@@ -84,7 +86,8 @@ fn build() -> Result<(), BuildError> {
         .collect::<Result<Vec<_>, _>>()?;
 
     let (movies, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
-        asset.path.starts_with("/movies/") && asset.mimetype == "application/json"
+        asset.path.starts_with("movies/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("json"))
     });
     let movies = movies
         .iter()
@@ -94,7 +97,8 @@ fn build() -> Result<(), BuildError> {
         .collect::<Result<Vec<_>, _>>()?;
 
     let (records, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
-        asset.path.starts_with("/records/") && asset.mimetype == "application/json"
+        asset.path.starts_with("records/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("json"))
     });
     let records = records
         .iter()
@@ -105,7 +109,8 @@ fn build() -> Result<(), BuildError> {
         .collect::<Result<Vec<_>, _>>()?;
 
     let (places, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
-        asset.path.starts_with("/places/") && asset.mimetype == "application/json"
+        asset.path.starts_with("places/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("json"))
     });
     let places = places
         .iter()
@@ -116,7 +121,7 @@ fn build() -> Result<(), BuildError> {
 
     let (pages, assets): (Vec<_>, Vec<_>) = assets
         .into_iter()
-        .partition(|asset| asset.mimetype == "text/markdown");
+        .partition(|asset| asset.path.extension() == Some(std::ffi::OsStr::new("md")));
     let pages = pages
         .iter()
         .map(|asset| {
@@ -127,7 +132,7 @@ fn build() -> Result<(), BuildError> {
 
     write(
         join(&output, "posts/index.html"),
-        pages::html::posts(posts.as_slice())
+        build::html::posts(posts.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -140,13 +145,13 @@ fn build() -> Result<(), BuildError> {
     .map_err(BuildError::Io)?;
     write(
         join(&output, "posts/index.atom"),
-        pages::atom::posts(posts.as_slice()).to_string().as_bytes(),
+        build::atom::posts(posts.as_slice()).to_string().as_bytes(),
     )
     .map_err(BuildError::Io)?;
 
     write(
         join(&output, "records/index.html"),
-        pages::html::records(records.as_slice())
+        build::html::records(records.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -154,7 +159,7 @@ fn build() -> Result<(), BuildError> {
 
     write(
         join(&output, "cocktails/index.html"),
-        pages::html::cocktails(cocktails.as_slice())
+        build::html::cocktails(cocktails.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -167,7 +172,7 @@ fn build() -> Result<(), BuildError> {
     .map_err(BuildError::Io)?;
     write(
         join(&output, "places/index.html"),
-        pages::html::places(places.as_slice())
+        build::html::places(places.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -175,7 +180,7 @@ fn build() -> Result<(), BuildError> {
 
     write(
         join(&output, "movies/index.html"),
-        pages::html::movies(movies.as_slice())
+        build::html::movies(movies.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -185,13 +190,13 @@ fn build() -> Result<(), BuildError> {
         for alias in &post.frontmatter.aliases {
             write(
                 join(&output, path::normalize(alias)),
-                pages::html::redirect(&post.path).into_string().as_bytes(),
+                build::html::redirect(&post.path).into_string().as_bytes(),
             )
             .map_err(BuildError::Io)?;
         }
         write(
             join(&output, &post.path),
-            pages::html::post(&post).into_string().as_bytes(),
+            build::html::post(&post).into_string().as_bytes(),
         )
         .map_err(BuildError::Io)?;
     }
@@ -199,7 +204,7 @@ fn build() -> Result<(), BuildError> {
     for cocktail in cocktails {
         write(
             join(&output, &cocktail.path),
-            pages::html::cocktail(&cocktail).into_string().as_bytes(),
+            build::html::cocktail(&cocktail).into_string().as_bytes(),
         )
         .map_err(BuildError::Io)?;
     }
@@ -207,7 +212,7 @@ fn build() -> Result<(), BuildError> {
     for page in pages {
         write(
             join(&output, &page.path),
-            pages::html::entry(&page).into_string().as_bytes(),
+            build::html::entry(&page).into_string().as_bytes(),
         )
         .map_err(BuildError::Io)?;
     }

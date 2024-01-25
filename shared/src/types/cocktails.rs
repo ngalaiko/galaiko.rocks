@@ -1,4 +1,4 @@
-use crate::{assets, parse};
+use crate::{assets, parse, path};
 
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Frontmatter {
@@ -24,9 +24,9 @@ impl TryFrom<&assets::Asset> for Cocktail {
             .ok_or(FromError::NoTitle)?;
         let body = parse::cooklang(&asset.data).map_err(FromError::Cooklang)?;
         Ok(Cocktail {
+            path: path::normalize(&asset.path),
             body,
             frontmatter: Frontmatter { title },
-            path: asset.path.clone(),
         })
     }
 }

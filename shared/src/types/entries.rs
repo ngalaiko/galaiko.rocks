@@ -1,4 +1,4 @@
-use crate::{assets, parse};
+use crate::{assets, parse, path};
 
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Frontmatter {
@@ -26,7 +26,7 @@ impl TryFrom<&assets::Asset> for Entry {
         let (frontmatter, body) = parse::markdown(&asset.data).map_err(FromError::Parse)?;
         let frontmatter = frontmatter.ok_or(FromError::FrontmatterNotFound)?;
         Ok(Entry {
-            path: asset.path.clone(),
+            path: path::normalize(&asset.path),
             frontmatter,
             body,
         })

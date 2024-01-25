@@ -14,7 +14,7 @@ pub fn posts(posts: &[entries::Entry]) -> atom_syndication::Feed {
         .first()
         .map(|post| post.frontmatter.date.expect("date is not null"))
         .map(|date| date.and_hms_opt(0, 0, 0).expect("time is right").and_utc())
-        .expect("posts is not empty");
+        .expect("at least one post expected");
 
     let entries = posts
         .iter()

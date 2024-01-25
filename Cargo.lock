@@ -2269,7 +2269,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "816ccd4875431253d6bb54b804bcff4369cbde9bae33defde25fdf6c2ef91d40"
 dependencies = [
  "globset",
- "mime_guess",
  "sha2 0.10.8",
  "walkdir",
 ]
@@ -2465,6 +2464,7 @@ dependencies = [
  "clap",
  "femme",
  "maud",
+ "mime_guess",
  "rust-embed",
  "shared",
  "tide",

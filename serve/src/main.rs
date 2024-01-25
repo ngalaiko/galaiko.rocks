@@ -48,16 +48,19 @@ async fn serve_asset(req: tide::Request<()>) -> tide::Result {
                 .header("if-none-match")
                 .map(|etags| etags.contains(&etag))
                 .unwrap_or_default();
+            let content_type = mime_guess::from_path(normalized_path)
+                .first_or_octet_stream()
+                .to_string();
             if is_modified {
                 tide::Response::builder(tide::StatusCode::NotModified)
             } else {
                 tide::Response::builder(tide::StatusCode::Ok)
                     .body(tide::Body::from(embedded_file.data.to_vec()))
             }
-            .header("content-type", embedded_file.metadata.mimetype())
+            .header("content-type", content_type.to_string())
             .header(
                 "cache-control",
-                match embedded_file.metadata.mimetype() {
+                match content_type.as_str() {
                     "text/html" => "no-cache, max-age=31536000",
                     _ => "max-age=31536000",
                 },
