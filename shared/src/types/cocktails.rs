@@ -5,7 +5,7 @@ pub struct Frontmatter {
     pub title: String,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 pub struct Cocktail {
     pub path: std::path::PathBuf,
     pub frontmatter: Frontmatter,

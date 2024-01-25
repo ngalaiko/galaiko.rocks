@@ -144,21 +144,26 @@ pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
 
 #[must_use]
 pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
-    let mut cocktails = cocktails.to_vec();
-    cocktails.sort_by(|a, b| a.frontmatter.title.cmp(&b.frontmatter.title));
+    let mut cocktails = cocktails
+        .iter()
+        .map(|cocktail| {
+            (
+                cocktail.path.display().to_string(),
+                format!("./{}.jpeg", cocktail.frontmatter.title),
+                cocktail.frontmatter.title.clone(),
+            )
+        })
+        .collect::<Vec<_>>();
+    cocktails.sort_by(|a, b| a.2.cmp(&b.2));
 
     let html = maud::html! {
         ul {
-            @for cocktail in cocktails {
+            @for (href, image_href, title) in cocktails {
                 li {
-                    a href=(cocktail.path.display()) {
+                    a href=(href) {
                         figure {
-                            img src=(format!("./{}.jpeg", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
-                            figcaption {
-                                center {
-                                    (cocktail.frontmatter.title)
-                                }
-                            }
+                            img src=(image_href) loading="lazy" alt=(title);
+                            figcaption { center { (title) } }
                         }
                     }
                 }
@@ -178,8 +183,19 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
 
 #[must_use]
 pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
-    let mut movies = movies.to_vec();
-    movies.sort_by(|a, b| b.date.cmp(&a.date));
+    let mut movies = movies
+        .iter()
+        .map(|movie| {
+            (
+                movie.date.format("%Y-%m-%d").to_string(),
+                format!("./{}.jpg", movie.title_slug.replace('/', "-")),
+                movie.href.clone(),
+                movie.title.clone(),
+                movie.is_liked,
+            )
+        })
+        .collect::<Vec<_>>();
+    movies.sort_by(|a, b| a.0.cmp(&b.0));
 
     let html = maud::html! {
         table {
@@ -190,13 +206,13 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
                     th { "film" }
                 }
             }
-            @for movie in movies {
+            @for (date, poster_href, href, title, is_liked) in movies {
                 tr {
-                    td { time datetime=(movie.date.format("%Y-%m-%d")) { (movie.date.format("%Y-%m-%d")) } }
-                    td { img width="70px" src=(format!("./{}.jpg", movie.title_slug.replace('/', "-"))) loading="lazy" alt=(movie.title); }
+                    td { time datetime=(date) { (date) } }
+                    td { img width="70px" src=(poster_href) loading="lazy" alt=(title); }
                     td {
-                        a href=(movie.href) { (movie.title) }
-                        @if movie.is_liked { " | " "♥" }
+                        a href=(href) { (title) }
+                        @if is_liked { " | " "♥" }
                     }
                 }
             }
@@ -215,35 +231,27 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
 
 #[must_use]
 pub fn records(records: &[records::Record]) -> maud::Markup {
-    let mut records = records.to_vec();
-    records.sort_by(|a, b| {
-        let artist_a = &a.basic_information.artists[0]
-            .name
-            .strip_prefix("The ")
-            .unwrap_or(&a.basic_information.artists[0].name);
-        let artist_b = &b.basic_information.artists[0]
-            .name
-            .strip_prefix("The ")
-            .unwrap_or(&b.basic_information.artists[0].name);
-        artist_a.cmp(artist_b)
-    });
-
-    let records = records.iter().filter_map(|record| {
-        std::path::Path::new(&record.basic_information.cover_image)
-            .extension()
-            .and_then(|ext| ext.to_str())
-            .map(|ext| {
-                (
-                    record.id,
-                    record.basic_information.artists[0].name.clone(),
-                    record.basic_information.title.clone(),
-                    format!(
-                        "./{}.{ext}",
-                        record.basic_information.title.replace('/', "-")
-                    ),
-                )
-            })
-    });
+    let mut records = records
+        .into_iter()
+        .filter_map(|record| {
+            std::path::Path::new(&record.basic_information.cover_image)
+                .extension()
+                .and_then(|ext| ext.to_str())
+                .map(|ext| {
+                    (
+                        record.id,
+                        record.basic_information.artists[0].name.clone(),
+                        record.basic_information.title.clone(),
+                        format!(
+                            "./{}.{ext}",
+                            record.basic_information.title.replace('/', "-")
+                        ),
+                    )
+                })
+        })
+        .collect::<Vec<_>>();
+    records.sort_by(|a, b| a.2.cmp(&b.2));
+    records.sort_by(|a, b| a.1.cmp(&b.1));
 
     let html = maud::html! {
         ul {
@@ -278,8 +286,11 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
 
 #[must_use]
 pub fn places(places: &[places::Place]) -> maud::Markup {
-    let mut places = places.to_vec();
-    places.sort_by(|a, b| b.times.cmp(&a.times));
+    let mut places = places
+        .iter()
+        .map(|place| (place.name.clone(), place.times, place.spent))
+        .collect::<Vec<_>>();
+    places.sort_by_key(|p| p.1);
 
     let html = maud::html! {
         table {
@@ -291,11 +302,11 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
                 }
             }
             tbody {
-                @for place in places {
+                @for (name, times, spent) in places {
                     tr {
-                        td { (place.name) }
-                        td { (place.times) }
-                        td { (place.spent) " SEK" }
+                        td { (name) }
+                        td { (times) }
+                        td { (spent) " SEK" }
                     }
                 }
             }

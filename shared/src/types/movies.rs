@@ -1,6 +1,6 @@
 use crate::assets;
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct Entry {
     pub title: String,
     pub title_slug: String,

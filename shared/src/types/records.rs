@@ -1,20 +1,20 @@
 use crate::assets;
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct Record {
     pub id: u64,
     pub date_added: chrono::DateTime<chrono::Utc>,
     pub basic_information: BasicInformation,
 }
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct BasicInformation {
     pub title: String,
     pub artists: Vec<Artist>,
     pub cover_image: String,
 }
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct Artist {
     pub name: String,
 }

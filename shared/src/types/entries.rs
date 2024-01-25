@@ -1,6 +1,6 @@
 use crate::{assets, parse, path};
 
-#[derive(Debug, Clone, serde::Deserialize)]
+#[derive(Debug, serde::Deserialize)]
 pub struct Frontmatter {
     pub title: String,
     /// date of publication
@@ -12,7 +12,7 @@ pub struct Frontmatter {
     pub id: Option<String>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 pub struct Entry {
     pub path: std::path::PathBuf,
     pub frontmatter: Frontmatter,

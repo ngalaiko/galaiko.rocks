@@ -1,6 +1,6 @@
 use crate::assets;
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct Place {
     pub name: String,
     pub spent: f64,
