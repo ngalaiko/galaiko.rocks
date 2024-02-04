@@ -195,7 +195,7 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
             )
         })
         .collect::<Vec<_>>();
-    movies.sort_by(|a, b| a.0.cmp(&b.0));
+    movies.sort_by(|a, b| b.0.cmp(&a.0));
 
     let html = maud::html! {
         table {
@@ -290,7 +290,7 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
         .iter()
         .map(|place| (place.name.clone(), place.times, place.spent))
         .collect::<Vec<_>>();
-    places.sort_by_key(|p| p.1);
+    places.sort_by(|a, b| b.1.cmp(&a.1));
 
     let html = maud::html! {
         table {
