@@ -18,13 +18,11 @@ fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
     let ingredient_list = recipe.group_ingredients(PARSER.converter());
     let source_url = recipe
         .metadata
-        .source
-        .as_ref()
+        .source()
         .and_then(cooklang::metadata::NameAndUrl::url);
     let source_name = recipe
         .metadata
-        .source
-        .as_ref()
+        .source()
         .and_then(cooklang::metadata::NameAndUrl::name)
         .or_else(|| source_url.as_ref().and_then(|u| u.host_str()));
 
