@@ -71,7 +71,7 @@ fn new(
 pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
     let html = maud::html! {
         aside {
-            img src=(format!("./{}.jpeg", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
+            img src=(format!("./{}.800x0@2x.webp", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
         }
         (cocktail.body)
     };
@@ -149,20 +149,20 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
         .map(|cocktail| {
             (
                 cocktail.path.display().to_string(),
-                format!("./{}.jpeg", cocktail.frontmatter.title),
                 cocktail.frontmatter.title.clone(),
             )
         })
         .collect::<Vec<_>>();
-    cocktails.sort_by(|a, b| a.2.cmp(&b.2));
+    cocktails.sort_by(|a, b| a.1.cmp(&b.1));
 
     let html = maud::html! {
         ul {
-            @for (href, image_href, title) in cocktails {
+            @for (href, title) in cocktails {
                 li {
                     a href=(href) {
                         figure {
-                            img src=(image_href) loading="lazy" alt=(title);
+                            img width="200px"
+                            src=(format!("./{title}.200x0@2x.webp")) loading="lazy" alt=(title);
                             figcaption { center { (title) } }
                         }
                     }
@@ -188,7 +188,7 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
         .map(|movie| {
             (
                 movie.date.format("%Y-%m-%d").to_string(),
-                format!("./{}.jpg", movie.title_slug.replace('/', "-")),
+                format!("./{}.70x0@2x.webp", movie.title_slug.replace('/', "-")),
                 movie.href.clone(),
                 movie.title.clone(),
                 movie.is_liked,
@@ -232,22 +232,17 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
 #[must_use]
 pub fn records(records: &[records::Record]) -> maud::Markup {
     let mut records = records
-        .into_iter()
-        .filter_map(|record| {
-            std::path::Path::new(&record.basic_information.cover_image)
-                .extension()
-                .and_then(|ext| ext.to_str())
-                .map(|ext| {
-                    (
-                        record.id,
-                        record.basic_information.artists[0].name.clone(),
-                        record.basic_information.title.clone(),
-                        format!(
-                            "./{}.{ext}",
-                            record.basic_information.title.replace('/', "-")
-                        ),
-                    )
-                })
+        .iter()
+        .map(|record| {
+            (
+                record.id,
+                record.basic_information.artists[0].name.clone(),
+                record.basic_information.title.clone(),
+                format!(
+                    "./{}.200x0@2x.webp",
+                    record.basic_information.title.replace('/', "-")
+                ),
+            )
         })
         .collect::<Vec<_>>();
     records.sort_by(|a, b| a.2.cmp(&b.2));
@@ -259,7 +254,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
                 li {
                     a href=(format!("https://www.discogs.com/release/{}", id)) {
                         figure {
-                            img src=(cover_href) loading="lazy" alt=(title);
+                            img width="200" src=(cover_href) loading="lazy" alt=(title);
                             figcaption {
                                 center {
                                     span { (artist) }

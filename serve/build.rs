@@ -1,6 +1,6 @@
 use shared::{
     assets, build, path,
-    types::{cocktails, entries, movies, places, records},
+    types::{self, cocktails, entries, images, movies, places, records},
 };
 
 #[derive(rust_embed::RustEmbed)]
@@ -26,6 +26,7 @@ enum BuildError {
     Movie(std::path::PathBuf, movies::FromError),
     Record(std::path::PathBuf, records::FromError),
     Place(std::path::PathBuf, places::FromError),
+    Image(std::path::PathBuf, images::ImageError),
 }
 
 impl std::fmt::Display for BuildError {
@@ -38,6 +39,7 @@ impl std::fmt::Display for BuildError {
             BuildError::Movie(path, error) => write!(f, "{}: {error}", path.display()),
             BuildError::Record(path, error) => write!(f, "{}: {error}", path.display()),
             BuildError::Place(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Image(path, error) => write!(f, "{}: {error}", path.display()),
         }
     }
 }
@@ -85,6 +87,22 @@ fn build() -> Result<(), BuildError> {
         })
         .collect::<Result<Vec<_>, _>>()?;
 
+    let (cocktail_images, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("cocktails/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("jpeg"))
+    });
+    let cocktail_images = cocktail_images
+        .iter()
+        .map(|asset| {
+            types::images::Image::try_from(asset)
+                .map(|image| vec![image.resize(Some(200), None), image.resize(Some(800), None)])
+                .map_err(|err| BuildError::Image(asset.path.clone(), err))
+        })
+        .collect::<Result<Vec<_>, _>>()?
+        .into_iter()
+        .flatten()
+        .collect::<Vec<_>>();
+
     let (movies, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
         asset.path.starts_with("movies/")
             && asset.path.extension() == Some(std::ffi::OsStr::new("json"))
@@ -93,6 +111,19 @@ fn build() -> Result<(), BuildError> {
         .iter()
         .map(|asset| {
             movies::Entry::try_from(asset).map_err(|err| BuildError::Movie(asset.path.clone(), err))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+
+    let (movie_posters, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("movies/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("jpg"))
+    });
+    let movie_posters = movie_posters
+        .iter()
+        .map(|asset| {
+            types::images::Image::try_from(asset)
+                .map(|image| image.resize(Some(70), None))
+                .map_err(|err| BuildError::Image(asset.path.clone(), err))
         })
         .collect::<Result<Vec<_>, _>>()?;
 
@@ -105,6 +136,19 @@ fn build() -> Result<(), BuildError> {
         .map(|asset| {
             records::Record::try_from(asset)
                 .map_err(|err| BuildError::Record(asset.path.clone(), err))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+
+    let (record_covers, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("records/")
+            && asset.path.extension() == Some(std::ffi::OsStr::new("jpeg"))
+    });
+    let record_covers = record_covers
+        .iter()
+        .map(|asset| {
+            types::images::Image::try_from(asset)
+                .map(|image| image.resize(Some(200), None))
+                .map_err(|err| BuildError::Image(asset.path.clone(), err))
         })
         .collect::<Result<Vec<_>, _>>()?;
 
@@ -157,6 +201,16 @@ fn build() -> Result<(), BuildError> {
     )
     .map_err(BuildError::Io)?;
 
+    for cover in record_covers {
+        write(
+            join(&output, &cover.path),
+            &cover
+                .data()
+                .map_err(|err| BuildError::Image(cover.path.clone(), err))?,
+        )
+        .map_err(BuildError::Io)?;
+    }
+
     write(
         join(&output, "cocktails/index.html"),
         build::html::cocktails(cocktails.as_slice())
@@ -164,6 +218,15 @@ fn build() -> Result<(), BuildError> {
             .as_bytes(),
     )
     .map_err(BuildError::Io)?;
+    for image in cocktail_images {
+        write(
+            join(&output, &image.path),
+            &image
+                .data()
+                .map_err(|err| BuildError::Image(image.path.clone(), err))?,
+        )
+        .map_err(BuildError::Io)?;
+    }
 
     write(
         join(&output, "restaurants_and_cafes/index.html"),
@@ -185,6 +248,15 @@ fn build() -> Result<(), BuildError> {
             .as_bytes(),
     )
     .map_err(BuildError::Io)?;
+    for poster in movie_posters {
+        write(
+            join(&output, &poster.path),
+            &poster
+                .data()
+                .map_err(|err| BuildError::Image(poster.path.clone(), err))?,
+        )
+        .map_err(BuildError::Io)?;
+    }
 
     for post in posts {
         for alias in &post.frontmatter.aliases {
