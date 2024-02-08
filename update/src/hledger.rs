@@ -334,6 +334,7 @@ static LOCATIONS: once_cell::sync::Lazy<HashMap<String, (f64, f64)>> =
         locations.insert("Kuro - Tbilisi".to_string(), (41.706_772, 44.781_744));
         locations.insert("Evolushi".to_string(), (57.708_039, 11.985_960));
         locations.insert("Nonna".to_string(), (57.703_262, 11.959_582));
+        locations.insert("Kastello".to_string(), (57.696_235, 11.952_310))
 
         locations
     });
