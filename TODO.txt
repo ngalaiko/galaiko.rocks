@@ -1,5 +1,5 @@
-- optimized images
+- convert pages based on links
+- async convert pages
 - version images, css and js files with it's hash
-- css for all pages
-- access logs + goaccess
-- generated previews
+- og tags
+- generate og image
