@@ -41,16 +41,13 @@ impl Image {
         Image { path, img }
     }
 
-    #[allow(clippy::missing_errors_doc)]
-    pub fn data(&self) -> Result<Vec<u8>, ImageError> {
-        let mut data = vec![];
-        self.img
-            .write_to(
-                &mut std::io::Cursor::new(&mut data),
-                image::ImageOutputFormat::WebP,
-            )
-            .map_err(ImageError)?;
-        Ok(data)
+    #[must_use]
+    pub fn webp(&self, quality: f32) -> Vec<u8> {
+        let img = self.img.to_rgba8();
+        let (width, height) = img.dimensions();
+        webp::Encoder::new(&img, webp::PixelLayout::Rgba, width, height)
+            .encode(quality)
+            .to_vec()
     }
 }
 

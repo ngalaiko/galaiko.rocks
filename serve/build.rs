@@ -46,6 +46,8 @@ impl std::fmt::Display for BuildError {
 
 impl std::error::Error for BuildError {}
 
+const WEBP_QUALITY: f32 = 0.95;
+
 #[allow(clippy::too_many_lines)]
 fn build() -> Result<(), BuildError> {
     let manifest_dir = std::env::var("CARGO_MANIFEST_DIR").map_err(BuildError::Var)?;
@@ -218,13 +220,7 @@ fn build() -> Result<(), BuildError> {
     .map_err(BuildError::Io)?;
 
     for cover in record_covers {
-        write(
-            join(&output, &cover.path),
-            &cover
-                .data()
-                .map_err(|err| BuildError::Image(cover.path.clone(), err))?,
-        )
-        .map_err(BuildError::Io)?;
+        write(join(&output, &cover.path), &cover.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
     }
 
     write(
@@ -235,13 +231,7 @@ fn build() -> Result<(), BuildError> {
     )
     .map_err(BuildError::Io)?;
     for image in cocktail_images {
-        write(
-            join(&output, &image.path),
-            &image
-                .data()
-                .map_err(|err| BuildError::Image(image.path.clone(), err))?,
-        )
-        .map_err(BuildError::Io)?;
+        write(join(&output, &image.path), &image.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
     }
 
     write(
@@ -265,13 +255,7 @@ fn build() -> Result<(), BuildError> {
     )
     .map_err(BuildError::Io)?;
     for poster in movie_posters {
-        write(
-            join(&output, &poster.path),
-            &poster
-                .data()
-                .map_err(|err| BuildError::Image(poster.path.clone(), err))?,
-        )
-        .map_err(BuildError::Io)?;
+        write(join(&output, &poster.path), &poster.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
     }
 
     for post in posts {
@@ -290,13 +274,7 @@ fn build() -> Result<(), BuildError> {
     }
 
     for image in post_images {
-        write(
-            join(&output, &image.path),
-            &image
-                .data()
-                .map_err(|err| BuildError::Image(image.path.clone(), err))?,
-        )
-        .map_err(BuildError::Io)?;
+        write(join(&output, &image.path), &image.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
     }
 
     for cocktail in cocktails {
