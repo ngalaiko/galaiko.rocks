@@ -1,8 +1,8 @@
-use crate::types::entries;
+use crate::{render, types};
 
 #[must_use]
 #[allow(clippy::missing_panics_doc)]
-pub fn posts(posts: &[entries::Entry]) -> atom_syndication::Feed {
+pub fn posts(posts: &[types::entries::Entry]) -> atom_syndication::Feed {
     let mut posts = posts
         .iter()
         .filter(|post| post.frontmatter.date.is_some())
@@ -17,7 +17,7 @@ pub fn posts(posts: &[entries::Entry]) -> atom_syndication::Feed {
         .expect("at least one post expected");
 
     let entries = posts
-        .iter()
+        .into_iter()
         .map(|post| {
             let id = post
                 .frontmatter
@@ -44,7 +44,7 @@ pub fn posts(posts: &[entries::Entry]) -> atom_syndication::Feed {
                 .content(Some(
                     atom_syndication::ContentBuilder::default()
                         .content_type(Some("html".to_string()))
-                        .value(Some(post.body.clone().into_string()))
+                        .value(Some(render::html::markdown(&post.body).into_string()))
                         .build(),
                 ))
                 .build()

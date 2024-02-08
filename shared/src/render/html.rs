@@ -23,7 +23,7 @@ fn footer_with_copy_right() -> maud::Markup {
     }
 }
 
-fn new(
+fn page(
     title: &str,
     header: Option<&maud::Markup>,
     content: &maud::Markup,
@@ -76,7 +76,7 @@ pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
         (cocktail.body)
     };
 
-    new(
+    page(
         &cocktail.frontmatter.title,
         None,
         &html,
@@ -85,23 +85,23 @@ pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
 }
 
 #[must_use]
-pub fn post(page: &entries::Entry) -> maud::Markup {
-    new(
-        &page.frontmatter.title,
+pub fn post(entry: &entries::Entry) -> maud::Markup {
+    page(
+        &entry.frontmatter.title,
         Some(&maud::html! {
             link rel="alternate" type="application/atom+xml" href="/posts/index.atom";
         }),
-        &page.body,
+        &markdown(&entry.body),
         &footer_with_copy_right(),
     )
 }
 
 #[must_use]
-pub fn entry(page: &entries::Entry) -> maud::Markup {
-    new(
-        &page.frontmatter.title,
+pub fn entry(entry: &entries::Entry) -> maud::Markup {
+    page(
+        &entry.frontmatter.title,
         None,
-        &page.body,
+        &markdown(&entry.body),
         &footer_without_copy_right(),
     )
 }
@@ -132,7 +132,7 @@ pub fn posts(posts: &[entries::Entry]) -> maud::Markup {
         }
     };
 
-    new(
+    page(
         "posts",
         Some(&maud::html! {
             link rel="alternate" type="application/atom+xml" href="/posts/index.atom";
@@ -171,7 +171,7 @@ pub fn cocktails(cocktails: &[cocktails::Cocktail]) -> maud::Markup {
         }
     };
 
-    new(
+    page(
         "cocktails",
         Some(&maud::html! {
             link rel="stylesheet" href=(format!("/styles/grid.css?v={}", chrono::Local::now().timestamp()));
@@ -219,7 +219,7 @@ pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
         }
     };
 
-    new(
+    page(
         "movies",
         Some(&maud::html! {
             link rel="stylesheet" href=(format!("/styles/table.css?v={}", chrono::Local::now().timestamp()));
@@ -269,7 +269,7 @@ pub fn records(records: &[records::Record]) -> maud::Markup {
         }
     };
 
-    new(
+    page(
         "records",
         Some(&maud::html! {
             link rel="stylesheet" href=(format!("/styles/grid.css?v={}", chrono::Local::now().timestamp()));
@@ -308,7 +308,7 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
         }
     };
 
-    new(
+    page(
         "places",
         Some(&maud::html! {
             link rel="stylesheet" href=(format!("/styles/table.css?v={}", chrono::Local::now().timestamp()));
@@ -321,7 +321,7 @@ pub fn places(places: &[places::Place]) -> maud::Markup {
 #[must_use]
 pub fn redirect<P: AsRef<std::path::Path>>(to: P) -> maud::Markup {
     let to = to.as_ref().display().to_string();
-    new(
+    page(
         "redirect",
         Some(&maud::html! {
             meta http-equiv="refresh" content=(format!("0; url={}", to));
@@ -332,4 +332,12 @@ pub fn redirect<P: AsRef<std::path::Path>>(to: P) -> maud::Markup {
         },
         &footer_without_copy_right(),
     )
+}
+
+#[must_use]
+pub fn markdown(events: &[pulldown_cmark::Event]) -> maud::Markup {
+    let events = events.to_vec();
+    let mut body = String::new();
+    pulldown_cmark::html::push_html(&mut body, events.into_iter());
+    maud::PreEscaped(body)
 }

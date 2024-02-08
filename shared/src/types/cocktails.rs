@@ -22,7 +22,7 @@ impl TryFrom<&assets::Asset> for Cocktail {
             .and_then(|s| s.to_str())
             .map(std::borrow::ToOwned::to_owned)
             .ok_or(FromError::NoTitle)?;
-        let body = parse::cooklang(&asset.data).map_err(FromError::Cooklang)?;
+        let body = parse::cooklang::parse(&asset.data).map_err(FromError::Cooklang)?;
         Ok(Cocktail {
             path: path::normalize(&asset.path),
             body,
@@ -34,7 +34,7 @@ impl TryFrom<&assets::Asset> for Cocktail {
 #[derive(Debug)]
 pub enum FromError {
     NoTitle,
-    Cooklang(parse::CooklangParseError),
+    Cooklang(parse::cooklang::ParseError),
 }
 
 impl std::fmt::Display for FromError {

@@ -1,5 +1,5 @@
 use shared::{
-    assets, build, path,
+    assets, path, render,
     types::{self, cocktails, entries, images, movies, places, records},
 };
 
@@ -72,6 +72,22 @@ fn build() -> Result<(), BuildError> {
         .map(|asset| {
             entries::Entry::try_from(asset)
                 .map_err(|err| BuildError::Entry(asset.path.clone(), err))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+
+    let (post_images, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
+        asset.path.starts_with("posts/")
+            && matches!(
+                asset.path.extension(),
+                Some(ext) if ext == "png" || ext == "jpg" || ext == "jpeg"
+            )
+    });
+    let post_images = post_images
+        .iter()
+        .map(|asset| {
+            types::images::Image::try_from(asset)
+                .map(|image| image.resize(Some(800), None))
+                .map_err(|err| BuildError::Image(asset.path.clone(), err))
         })
         .collect::<Result<Vec<_>, _>>()?;
 
@@ -176,7 +192,7 @@ fn build() -> Result<(), BuildError> {
 
     write(
         join(&output, "posts/index.html"),
-        build::html::posts(posts.as_slice())
+        render::html::posts(posts.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -189,13 +205,13 @@ fn build() -> Result<(), BuildError> {
     .map_err(BuildError::Io)?;
     write(
         join(&output, "posts/index.atom"),
-        build::atom::posts(posts.as_slice()).to_string().as_bytes(),
+        render::atom::posts(posts.as_slice()).to_string().as_bytes(),
     )
     .map_err(BuildError::Io)?;
 
     write(
         join(&output, "records/index.html"),
-        build::html::records(records.as_slice())
+        render::html::records(records.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -213,7 +229,7 @@ fn build() -> Result<(), BuildError> {
 
     write(
         join(&output, "cocktails/index.html"),
-        build::html::cocktails(cocktails.as_slice())
+        render::html::cocktails(cocktails.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -235,7 +251,7 @@ fn build() -> Result<(), BuildError> {
     .map_err(BuildError::Io)?;
     write(
         join(&output, "places/index.html"),
-        build::html::places(places.as_slice())
+        render::html::places(places.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -243,7 +259,7 @@ fn build() -> Result<(), BuildError> {
 
     write(
         join(&output, "movies/index.html"),
-        build::html::movies(movies.as_slice())
+        render::html::movies(movies.as_slice())
             .into_string()
             .as_bytes(),
     )
@@ -262,13 +278,23 @@ fn build() -> Result<(), BuildError> {
         for alias in &post.frontmatter.aliases {
             write(
                 join(&output, path::normalize(alias)),
-                build::html::redirect(&post.path).into_string().as_bytes(),
+                render::html::redirect(&post.path).into_string().as_bytes(),
             )
             .map_err(BuildError::Io)?;
         }
         write(
             join(&output, &post.path),
-            build::html::post(&post).into_string().as_bytes(),
+            render::html::post(&post).into_string().as_bytes(),
+        )
+        .map_err(BuildError::Io)?;
+    }
+
+    for image in post_images {
+        write(
+            join(&output, &image.path),
+            &image
+                .data()
+                .map_err(|err| BuildError::Image(image.path.clone(), err))?,
         )
         .map_err(BuildError::Io)?;
     }
@@ -276,7 +302,7 @@ fn build() -> Result<(), BuildError> {
     for cocktail in cocktails {
         write(
             join(&output, &cocktail.path),
-            build::html::cocktail(&cocktail).into_string().as_bytes(),
+            render::html::cocktail(&cocktail).into_string().as_bytes(),
         )
         .map_err(BuildError::Io)?;
     }
@@ -284,7 +310,7 @@ fn build() -> Result<(), BuildError> {
     for page in pages {
         write(
             join(&output, &page.path),
-            build::html::entry(&page).into_string().as_bytes(),
+            render::html::entry(&page).into_string().as_bytes(),
         )
         .map_err(BuildError::Io)?;
     }

@@ -13,18 +13,19 @@ pub struct Frontmatter {
 }
 
 #[derive(Debug)]
-pub struct Entry {
+pub struct Entry<'a> {
     pub path: std::path::PathBuf,
     pub frontmatter: Frontmatter,
-    pub body: maud::Markup,
+    pub body: Vec<pulldown_cmark::Event<'a>>,
 }
 
-impl TryFrom<&assets::Asset> for Entry {
+impl<'a> TryFrom<&'a assets::Asset> for Entry<'a> {
     type Error = FromError;
 
-    fn try_from(asset: &assets::Asset) -> Result<Self, Self::Error> {
-        let (frontmatter, body) = parse::markdown(&asset.data).map_err(FromError::Parse)?;
-        let frontmatter = frontmatter.ok_or(FromError::FrontmatterNotFound)?;
+    fn try_from(asset: &'a assets::Asset) -> Result<Self, Self::Error> {
+        let (frontmatter, md) =
+            parse::frontmatter::parse(&asset.data).map_err(FromError::Frontmatter)?;
+        let body = parse::markdown::parse(md).map_err(FromError::Body)?;
         Ok(Entry {
             path: path::normalize(&asset.path),
             frontmatter,
@@ -35,15 +36,15 @@ impl TryFrom<&assets::Asset> for Entry {
 
 #[derive(Debug)]
 pub enum FromError {
-    FrontmatterNotFound,
-    Parse(parse::MarkdownParseError),
+    Frontmatter(parse::frontmatter::ParseError),
+    Body(parse::markdown::ParseError),
 }
 
 impl std::fmt::Display for FromError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            FromError::FrontmatterNotFound => write!(f, "frontmatter not found"),
-            FromError::Parse(error) => write!(f, "{error}"),
+            FromError::Frontmatter(error) => write!(f, "{error}"),
+            FromError::Body(error) => write!(f, "{error}"),
         }
     }
 }
