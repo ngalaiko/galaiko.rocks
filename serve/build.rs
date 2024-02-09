@@ -46,7 +46,7 @@ impl std::fmt::Display for BuildError {
 
 impl std::error::Error for BuildError {}
 
-const WEBP_QUALITY: f32 = 1.0;
+const WEBP_QUALITY: f32 = 95.0;
 
 #[allow(clippy::too_many_lines)]
 fn build() -> Result<(), BuildError> {
