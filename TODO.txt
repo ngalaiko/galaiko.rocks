@@ -1,4 +1,5 @@
 - convert pages based on links
+- use smol
 - async convert pages
 - version images, css and js files with it's hash
 - og tags
