@@ -70,6 +70,8 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
         .arg("--output-format=csv")
         .arg("--infer-market-prices")
         .arg("expenses:Food:Restaurants & Cafes$")
+        .arg("expenses:Food:Lunch$")
+        .arg("expenses:Food:Eating Out$")
         .arg(format!("--begin={}", year_ago.format("%Y-%m-%d")));
 
     if let Some(file) = file {
