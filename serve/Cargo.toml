@@ -8,7 +8,6 @@ workspace = true
 
 [build-dependencies]
 shared = { path = "../shared" }
-rust-embed = { version = "8.1.0", features = ["include-exclude"] }
 
 [dependencies]
 shared = { path = "../shared" }

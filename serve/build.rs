@@ -3,10 +3,6 @@ use shared::{
     types::{self, cocktails, entries, images, movies, places, records},
 };
 
-#[derive(rust_embed::RustEmbed)]
-#[folder = "../assets/"]
-struct Assets;
-
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-changed=../assets");
@@ -17,53 +13,37 @@ fn main() {
     }
 }
 
-#[derive(Debug)]
-enum BuildError {
-    Io(std::io::Error),
-    Var(std::env::VarError),
-    Entry(std::path::PathBuf, entries::FromError),
-    Cocktail(std::path::PathBuf, cocktails::FromError),
-    Movie(std::path::PathBuf, movies::FromError),
-    Record(std::path::PathBuf, records::FromError),
-    Place(std::path::PathBuf, places::FromError),
-    Image(std::path::PathBuf, images::ImageError),
-}
-
-impl std::fmt::Display for BuildError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            BuildError::Io(error) => write!(f, "{error}"),
-            BuildError::Var(error) => write!(f, "{error}"),
-            BuildError::Entry(path, error) => write!(f, "{}: {error}", path.display()),
-            BuildError::Cocktail(path, error) => write!(f, "{}: {error}", path.display()),
-            BuildError::Movie(path, error) => write!(f, "{}: {error}", path.display()),
-            BuildError::Record(path, error) => write!(f, "{}: {error}", path.display()),
-            BuildError::Place(path, error) => write!(f, "{}: {error}", path.display()),
-            BuildError::Image(path, error) => write!(f, "{}: {error}", path.display()),
-        }
-    }
-}
-
-impl std::error::Error for BuildError {}
-
 const WEBP_QUALITY: f32 = 95.0;
 
 #[allow(clippy::too_many_lines)]
-fn build() -> Result<(), BuildError> {
-    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR").map_err(BuildError::Var)?;
-    let output = std::path::PathBuf::from(manifest_dir).join("public");
+fn build() -> Result<(), BuildError<'static>> {
+    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
+        .map(std::path::PathBuf::from)
+        .map_err(|error| BuildError::Var("CARGO_MANIFEST_DIR", error))?;
+    let input = manifest_dir.join("../assets/");
+    let output = manifest_dir.join("public");
 
-    remove_dir_all(&output).map_err(BuildError::Io)?;
+    let asset_paths = walkdir(&input).map_err(|error| BuildError::WalkDir(input.clone(), error))?;
 
-    let assets = Assets::iter()
-        .filter_map(|asset_path| {
-            Assets::get(&asset_path)
-                .map(|asset| (std::path::PathBuf::from(asset_path.to_string()), asset))
+    let assets = asset_paths
+        .into_iter()
+        .map(|path| {
+            std::fs::read(&path)
+                .map(|data| (path.clone(), data))
+                .map_err(|error| BuildError::Read(path.clone(), error))
         })
-        .map(|(path, asset)| assets::Asset {
-            path,
-            data: asset.data.to_vec(),
-        });
+        .collect::<Result<Vec<_>, _>>()?
+        .into_iter()
+        .map(|(path, data)| assets::Asset {
+            path: path
+                .strip_prefix(&input)
+                .expect("always inside root")
+                .to_path_buf(),
+            data,
+        })
+        .collect::<Vec<_>>();
+
+    remove_dir_all(&output).map_err(|error| BuildError::Remove(output.clone(), error))?;
 
     let (posts, assets): (Vec<_>, Vec<_>) = assets.into_iter().partition(|asset| {
         asset.path.starts_with("posts/")
@@ -197,30 +177,26 @@ fn build() -> Result<(), BuildError> {
         render::html::posts(posts.as_slice())
             .into_string()
             .as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
 
     write(
         join(&output, "posts.atom"),
         "redirect: /posts/index.atom".as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
     write(
         join(&output, "posts/index.atom"),
         render::atom::posts(posts.as_slice()).to_string().as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
 
     write(
         join(&output, "records/index.html"),
         render::html::records(records.as_slice())
             .into_string()
             .as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
 
     for cover in record_covers {
-        write(join(&output, &cover.path), &cover.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
+        write(join(&output, &cover.path), &cover.webp(WEBP_QUALITY))?;
     }
 
     write(
@@ -228,34 +204,30 @@ fn build() -> Result<(), BuildError> {
         render::html::cocktails(cocktails.as_slice())
             .into_string()
             .as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
     for image in cocktail_images {
-        write(join(&output, &image.path), &image.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
+        write(join(&output, &image.path), &image.webp(WEBP_QUALITY))?;
     }
 
     write(
         join(&output, "restaurants_and_cafes/index.html"),
         "redirect: /places/index.html".as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
     write(
         join(&output, "places/index.html"),
         render::html::places(places.as_slice())
             .into_string()
             .as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
 
     write(
         join(&output, "movies/index.html"),
         render::html::movies(movies.as_slice())
             .into_string()
             .as_bytes(),
-    )
-    .map_err(BuildError::Io)?;
+    )?;
     for poster in movie_posters {
-        write(join(&output, &poster.path), &poster.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
+        write(join(&output, &poster.path), &poster.webp(WEBP_QUALITY))?;
     }
 
     for post in posts {
@@ -263,41 +235,56 @@ fn build() -> Result<(), BuildError> {
             write(
                 join(&output, path::normalize(alias)),
                 render::html::redirect(&post.path).into_string().as_bytes(),
-            )
-            .map_err(BuildError::Io)?;
+            )?;
         }
         write(
             join(&output, &post.path),
             render::html::post(&post).into_string().as_bytes(),
-        )
-        .map_err(BuildError::Io)?;
+        )?;
     }
 
     for image in post_images {
-        write(join(&output, &image.path), &image.webp(WEBP_QUALITY)).map_err(BuildError::Io)?;
+        write(join(&output, &image.path), &image.webp(WEBP_QUALITY))?;
     }
 
     for cocktail in cocktails {
         write(
             join(&output, &cocktail.path),
             render::html::cocktail(&cocktail).into_string().as_bytes(),
-        )
-        .map_err(BuildError::Io)?;
+        )?;
     }
 
     for page in pages {
         write(
             join(&output, &page.path),
             render::html::entry(&page).into_string().as_bytes(),
-        )
-        .map_err(BuildError::Io)?;
+        )?;
     }
 
     for rest in assets {
-        write(join(&output, &rest.path), &rest.data).map_err(BuildError::Io)?;
+        write(join(&output, &rest.path), &rest.data)?;
     }
 
     Ok(())
+}
+
+fn walkdir<P: AsRef<std::path::Path>>(root: P) -> Result<Vec<std::path::PathBuf>, std::io::Error> {
+    let root = root.as_ref();
+    let mut stack = vec![root.to_path_buf()];
+    let mut files = vec![];
+    while let Some(item) = stack.pop() {
+        if item.is_file() {
+            files.push(item);
+        } else if item.is_symlink() {
+            stack.push(item.read_link()?);
+        } else if item.is_dir() {
+            for item in std::fs::read_dir(item)? {
+                let item = item?;
+                stack.push(item.path());
+            }
+        }
+    }
+    Ok(files)
 }
 
 fn join<P, O>(path: P, other: O) -> std::path::PathBuf
@@ -313,14 +300,15 @@ where
     path.as_ref().join(other)
 }
 
-fn write<P: AsRef<std::path::Path>>(path: P, data: &[u8]) -> Result<(), std::io::Error> {
+fn write<'a, P: AsRef<std::path::Path>>(path: P, data: &[u8]) -> Result<(), BuildError<'a>> {
     let path = path.as_ref();
     if let Some(parent) = path.parent() {
         if !parent.exists() {
-            std::fs::create_dir_all(parent)?;
+            std::fs::create_dir_all(parent)
+                .map_err(|error| BuildError::CreateDir(path.to_path_buf(), error))?;
         }
     }
-    std::fs::write(path, data)?;
+    std::fs::write(path, data).map_err(|error| BuildError::Write(path.to_path_buf(), error))?;
     Ok(())
 }
 
@@ -331,3 +319,50 @@ fn remove_dir_all<P: AsRef<std::path::Path>>(path: P) -> Result<(), std::io::Err
     }
     Ok(())
 }
+
+#[derive(Debug)]
+enum BuildError<'a> {
+    Var(&'a str, std::env::VarError),
+    Remove(std::path::PathBuf, std::io::Error),
+    WalkDir(std::path::PathBuf, std::io::Error),
+    CreateDir(std::path::PathBuf, std::io::Error),
+    Read(std::path::PathBuf, std::io::Error),
+    Write(std::path::PathBuf, std::io::Error),
+    Entry(std::path::PathBuf, entries::FromError),
+    Cocktail(std::path::PathBuf, cocktails::FromError),
+    Movie(std::path::PathBuf, movies::FromError),
+    Record(std::path::PathBuf, records::FromError),
+    Place(std::path::PathBuf, places::FromError),
+    Image(std::path::PathBuf, images::ImageError),
+}
+
+impl std::fmt::Display for BuildError<'_> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            BuildError::Var(name, error) => write!(f, "env variale {name}: {error}"),
+            BuildError::WalkDir(path, error) => {
+                write!(f, "walking {}: {error}", path.display())
+            }
+            BuildError::CreateDir(path, error) => {
+                write!(f, "creating {}: {error}", path.display())
+            }
+            BuildError::Remove(path, error) => {
+                write!(f, "removing {}: {error}", path.display())
+            }
+            BuildError::Write(path, error) => {
+                write!(f, "writing {}: {error}", path.display())
+            }
+            BuildError::Read(path, error) => {
+                write!(f, "reading {}: {error}", path.display())
+            }
+            BuildError::Entry(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Cocktail(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Movie(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Record(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Place(path, error) => write!(f, "{}: {error}", path.display()),
+            BuildError::Image(path, error) => write!(f, "{}: {error}", path.display()),
+        }
+    }
+}
+
+impl std::error::Error for BuildError<'_> {}
