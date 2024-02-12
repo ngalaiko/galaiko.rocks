@@ -9,7 +9,7 @@ pub struct Frontmatter {
 pub struct Cocktail {
     pub path: std::path::PathBuf,
     pub frontmatter: Frontmatter,
-    pub body: maud::Markup,
+    pub recipe: parse::cooklang::Recipe,
 }
 
 impl TryFrom<&assets::Asset> for Cocktail {
@@ -22,10 +22,10 @@ impl TryFrom<&assets::Asset> for Cocktail {
             .and_then(|s| s.to_str())
             .map(std::borrow::ToOwned::to_owned)
             .ok_or(FromError::NoTitle)?;
-        let body = parse::cooklang::parse(&asset.data).map_err(FromError::Cooklang)?;
+        let recipe = parse::cooklang::parse(&asset.data).map_err(FromError::Cooklang)?;
         Ok(Cocktail {
             path: path::normalize(&asset.path),
-            body,
+            recipe,
             frontmatter: Frontmatter { title },
         })
     }

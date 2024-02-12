@@ -1,156 +1,55 @@
-static PARSER: once_cell::sync::Lazy<cooklang::CooklangParser> = once_cell::sync::Lazy::new(|| {
-    cooklang::CooklangParser::new(cooklang::Extensions::all(), cooklang::Converter::default())
-});
+#[derive(Debug)]
+pub struct Recipe {
+    recipe: cooklang::ScaledRecipe,
+    parser: cooklang::CooklangParser,
+}
 
-pub fn parse(data: &[u8]) -> Result<maud::Markup, ParseError> {
+impl Recipe {
+    pub fn source(&self) -> Option<&cooklang::metadata::NameAndUrl> {
+        self.recipe.metadata.source()
+    }
+
+    pub fn group_ingredients(&self) -> Vec<cooklang::ingredient_list::GroupedIngredient> {
+        self.recipe.group_ingredients(self.parser.converter())
+    }
+
+    pub fn group_cookware(&self) -> Vec<cooklang::ingredient_list::GroupedCookware> {
+        self.recipe.group_cookware()
+    }
+
+    pub fn sections(&self) -> &[cooklang::Section] {
+        &self.recipe.sections
+    }
+
+    pub fn ingredients(&self) -> &[cooklang::Ingredient] {
+        &self.recipe.ingredients
+    }
+
+    pub fn cookware(&self) -> &[cooklang::Cookware] {
+        &self.recipe.cookware
+    }
+
+    pub fn timers(&self) -> &[cooklang::Timer] {
+        &self.recipe.timers
+    }
+
+    pub fn inline_quantities(&self) -> &[cooklang::Quantity] {
+        &self.recipe.inline_quantities
+    }
+}
+
+pub fn parse(data: &[u8]) -> Result<Recipe, ParseError> {
     let src = std::str::from_utf8(data).map_err(ParseError::Utf8)?;
-    let (recipe, _) = PARSER
+    let parser =
+        cooklang::CooklangParser::new(cooklang::Extensions::all(), cooklang::Converter::default());
+    let (recipe, _) = parser
         .parse(src)
         .into_result()
         .map_err(|e| ParseError::Cooklang(e.to_string()))?;
-
-    let html = to_html(&recipe.default_scale());
-    Ok(html)
-}
-
-#[allow(clippy::too_many_lines)]
-fn to_html(recipe: &cooklang::ScaledRecipe) -> maud::Markup {
-    let ingredient_list = recipe.group_ingredients(PARSER.converter());
-    let source_url = recipe
-        .metadata
-        .source()
-        .and_then(cooklang::metadata::NameAndUrl::url);
-    let source_name = recipe
-        .metadata
-        .source()
-        .and_then(cooklang::metadata::NameAndUrl::name)
-        .or_else(|| source_url.as_ref().and_then(|u| u.host_str()));
-
-    maud::html! {
-        @if !ingredient_list.is_empty() {
-            h2 { "ingredients:" }
-            ul {
-                @for entry in &ingredient_list {
-                    li {
-                        b { (entry.ingredient.display_name()) }
-                        @if !entry.quantity.is_empty() {": " (entry.quantity) }
-                        @if let Some(n) = &entry.ingredient.note { " (" (n) ")" }
-                    }
-                }
-            }
-        }
-
-        @if !recipe.cookware.is_empty() {
-            h2 { "cookware:" }
-            ul {
-                @for item in recipe.cookware.iter().filter(|c| c.modifiers().should_be_listed()) {
-                    @let amount = item.group_amounts(&recipe.cookware).iter()
-                                        .map(std::string::ToString::to_string)
-                                        .reduce(|s, q| format!("{s}, {q}"))
-                                        .unwrap_or(String::new());
-                    li {
-                        b { (item.display_name()) }
-                        @if !amount.is_empty() { ": " (amount) }
-                        @if let Some(n) = &item.note { " (" (n) ")" }
-                    }
-                }
-            }
-        }
-        @if !recipe.cookware.is_empty() || !ingredient_list.is_empty() {
-            hr {}
-        }
-        @for (s_index, section) in recipe.sections.iter().enumerate() {
-            @let s_num = s_index + 1;
-            @if let Some(name) = &section.name {
-                h3 { "(" (s_num) ") " (name) }
-            } @else if recipe.sections.len() > 1 {
-                h3 { "section " (s_num) }
-            }
-
-            @for content in &section.content {
-                @match content {
-                    cooklang::Content::Text(t) => p { (t) },
-                    cooklang::Content::Step(s) => p {
-                        b { (s.number) ". " }
-                        @for item in &s.items {
-                            @match item {
-                                cooklang::Item::Ingredient { index } => {
-                                    @let igr = &recipe.ingredients[*index];
-                                    span.ingredient {
-                                        (igr.display_name())
-                                        @if let Some(q) = &igr.quantity {
-                                            i { "(" (q) ")" }
-                                        }
-                                        @if let Some((index, target)) = &igr.relation.references_to() {
-                                            @match target {
-                                                cooklang::IngredientReferenceTarget::Step => {
-                                                    i { "(from step " (section.content[*index].unwrap_step().number) ")" }
-                                                }
-                                                cooklang::IngredientReferenceTarget::Section => {
-                                                    @let sect = *index + 1;
-                                                    i { "(from section " (sect) ")" }
-                                                }
-                                                cooklang::IngredientReferenceTarget::Ingredient => {}
-                                            }
-                                        }
-                                    }
-                                }
-                                cooklang::Item::Cookware { index } => {
-                                    @let cw = &recipe.cookware[*index];
-                                    span.cookware {
-                                        (cw.display_name())
-                                        @if let Some(q) = &cw.quantity {
-                                            i { "(" (q) ")" }
-                                        }
-                                    }
-                                }
-                                cooklang::Item::Timer { index } => {
-                                    @let tm = &recipe.timers[*index];
-                                    span.timer {
-                                        @if let Some(name) = &tm.name {
-                                            "(" (name) ")"
-                                        }
-                                        @if let Some(q) = &tm.quantity {
-                                            i { (q) }
-                                        }
-                                    }
-                                }
-                                cooklang::Item::InlineQuantity { index } => {
-                                    @let q = &recipe.inline_quantities[*index];
-                                    i.temp { (q) }
-                                }
-                                cooklang::Item::Text { value } => {
-                                    (value)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        @match (source_url, source_name) {
-            (Some(url), Some(source_name)) => {
-                hr {}
-                p {
-                    "source: "
-                    a href=(url) { (source_name) };
-                }
-            },
-            (Some(url), None) => {
-                hr {}
-                a href=(url) { "source" };
-            }
-            (None, Some(name)) => {
-                hr {}
-                p {
-                    "source: "
-                    (name)
-                }
-            }
-            (None, None) => {}
-        }
-    }
+    Ok(Recipe {
+        recipe: recipe.default_scale(),
+        parser,
+    })
 }
 
 #[derive(Debug)]

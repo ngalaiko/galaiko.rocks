@@ -68,12 +68,145 @@ fn page(
 }
 
 #[must_use]
+#[allow(clippy::too_many_lines)]
 pub fn cocktail(cocktail: &cocktails::Cocktail) -> maud::Markup {
+    let ingredient_list = cocktail.recipe.group_ingredients();
+    let cookware_list = cocktail.recipe.group_cookware();
+    let source_url = cocktail
+        .recipe
+        .source()
+        .and_then(cooklang::metadata::NameAndUrl::url);
+    let source_name = cocktail
+        .recipe
+        .source()
+        .and_then(cooklang::metadata::NameAndUrl::name)
+        .or_else(|| source_url.as_ref().and_then(|u| u.host_str()));
+
     let html = maud::html! {
         aside {
             img src=(format!("./{}.800x0@2x.webp", cocktail.frontmatter.title)) loading="lazy" alt=(cocktail.frontmatter.title);
         }
-        (cocktail.body)
+
+        @if !ingredient_list.is_empty() {
+            h2 { "ingredients:" }
+            ul {
+                @for entry in &ingredient_list {
+                    li {
+                        b { (entry.ingredient.display_name()) }
+                        @if !entry.quantity.is_empty() {": " (entry.quantity) }
+                        @if let Some(n) = &entry.ingredient.note { " (" (n) ")" }
+                    }
+                }
+            }
+        }
+
+        @if !cookware_list.is_empty() {
+            h2 { "cookware:" }
+            ul {
+                @for item in &cookware_list {
+                    li {
+                        b { (item.cookware.display_name()) }
+                        @if !item.amount.is_empty() { ": " (item.amount) }
+                    }
+                }
+            }
+        }
+
+        @if !cookware_list.is_empty() || !ingredient_list.is_empty() {
+            hr {}
+        }
+
+        @for (s_index, section) in cocktail.recipe.sections().iter().enumerate() {
+            @let s_num = s_index + 1;
+            @if let Some(name) = &section.name {
+                h3 { "(" (s_num) ") " (name) }
+            } @else if cocktail.recipe.sections().len() > 1 {
+                h3 { "section " (s_num) }
+            }
+
+            @for content in &section.content {
+                @match content {
+                    cooklang::Content::Text(t) => p { (t) },
+                    cooklang::Content::Step(s) => p {
+                        b { (s.number) ". " }
+                        @for item in &s.items {
+                            @match item {
+                                cooklang::Item::Ingredient { index } => {
+                                    @let igr = &cocktail.recipe.ingredients()[*index];
+                                    span.ingredient {
+                                        (igr.display_name())
+                                        @if let Some(q) = &igr.quantity {
+                                            i { "(" (q) ")" }
+                                        }
+                                        @if let Some((index, target)) = &igr.relation.references_to() {
+                                            @match target {
+                                                cooklang::IngredientReferenceTarget::Step => {
+                                                    i { "(from step " (section.content[*index].unwrap_step().number) ")" }
+                                                }
+                                                cooklang::IngredientReferenceTarget::Section => {
+                                                    @let sect = *index + 1;
+                                                    i { "(from section " (sect) ")" }
+                                                }
+                                                cooklang::IngredientReferenceTarget::Ingredient => {}
+                                            }
+                                        }
+                                    }
+                                }
+                                cooklang::Item::Cookware { index } => {
+                                    @let cw = &cocktail.recipe.cookware()[*index];
+                                    span.cookware {
+                                        (cw.display_name())
+                                        @if let Some(q) = &cw.quantity {
+                                            i { "(" (q) ")" }
+                                        }
+                                    }
+                                }
+                                cooklang::Item::Timer { index } => {
+                                    @let tm = &cocktail.recipe.timers()[*index];
+                                    span.timer {
+                                        @if let Some(name) = &tm.name {
+                                            "(" (name) ")"
+                                        }
+                                        @if let Some(q) = &tm.quantity {
+                                            i { (q) }
+                                        }
+                                    }
+                                }
+                                cooklang::Item::InlineQuantity { index } => {
+                                    @let q = &cocktail.recipe.inline_quantities()[*index];
+                                    i.temp { (q) }
+                                }
+                                cooklang::Item::Text { value } => {
+                                    (value)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @match (source_url, source_name) {
+            (Some(url), Some(source_name)) => {
+                hr {}
+                p {
+                    "source: "
+                    a href=(url) { (source_name) };
+                }
+            },
+            (Some(url), None) => {
+                hr {}
+                a href=(url) { "source" };
+            }
+            (None, Some(name)) => {
+                hr {}
+                p {
+                    "source: "
+                    (name)
+                }
+            }
+            (None, None) => {}
+        }
     };
 
     page(
