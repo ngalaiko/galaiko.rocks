@@ -1,10 +1,15 @@
 #[derive(Debug)]
 pub struct Recipe {
+    title: String,
     recipe: cooklang::ScaledRecipe,
     parser: cooklang::CooklangParser,
 }
 
 impl Recipe {
+    pub fn title(&self) -> &str {
+        &self.title
+    }
+
     pub fn source(&self) -> Option<&cooklang::metadata::NameAndUrl> {
         self.recipe.metadata.source()
     }
@@ -46,7 +51,14 @@ pub fn parse(data: &[u8]) -> Result<Recipe, ParseError> {
         .parse(src)
         .into_result()
         .map_err(|e| ParseError::Cooklang(e.to_string()))?;
+    let title = recipe
+        .metadata
+        .map
+        .get("title")
+        .map(|v| v.to_string())
+        .ok_or(ParseError::NoTitle)?;
     Ok(Recipe {
+        title,
         recipe: recipe.default_scale(),
         parser,
     })
@@ -55,12 +67,14 @@ pub fn parse(data: &[u8]) -> Result<Recipe, ParseError> {
 #[derive(Debug)]
 pub enum ParseError {
     Utf8(std::str::Utf8Error),
+    NoTitle,
     Cooklang(String),
 }
 
 impl std::fmt::Display for ParseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            ParseError::NoTitle => write!(f, "title must be set"),
             ParseError::Utf8(error) => write!(f, "{error}"),
             ParseError::Cooklang(error) => write!(f, "{error}"),
         }
