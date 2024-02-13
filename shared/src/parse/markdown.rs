@@ -1,3 +1,5 @@
+use crate::path;
+
 static OPTIONS: once_cell::sync::Lazy<pulldown_cmark::Options> =
     once_cell::sync::Lazy::new(|| pulldown_cmark::Options::ENABLE_TABLES);
 
@@ -18,6 +20,16 @@ fn process_event(event: pulldown_cmark::Event) -> pulldown_cmark::Event {
 
 fn process_tag(tag: pulldown_cmark::Tag) -> pulldown_cmark::Tag {
     match tag {
+        pulldown_cmark::Tag::Link(typ, link, title) if is_local_link(&link) => {
+            pulldown_cmark::Tag::Link(
+                typ,
+                path::normalize(link.to_string())
+                    .display()
+                    .to_string()
+                    .into(),
+                title,
+            )
+        }
         pulldown_cmark::Tag::Image(typ, link, title) if is_local_image_link(&link) => {
             pulldown_cmark::Tag::Image(typ, replace_with_resized_image(link), title)
         }
