@@ -1,0 +1,23 @@
+[package]
+name = "convert"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "convert"
+path = "src/lib.rs"
+
+[[bin]]
+name = "convert"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+shared = { path = "../shared" }
+clap = { version = "4.4.11", features = ["derive"] }
+futures = "0.3.30"
+tokio = { version = "1.36.0", features = ["macros", "rt", "rt-multi-thread", "fs", "sync"] }
+image = "0.24.8"
+rayon = "1.8.1"

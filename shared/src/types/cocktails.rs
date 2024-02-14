@@ -1,47 +1,28 @@
-use crate::{assets, parse, path};
-
-#[derive(Debug, Clone, serde::Deserialize)]
-pub struct Frontmatter {
-    pub title: String,
-}
+use crate::parse;
 
 #[derive(Debug)]
 pub struct Cocktail {
-    pub path: std::path::PathBuf,
-    pub frontmatter: Frontmatter,
     pub recipe: parse::cooklang::Recipe,
 }
 
-impl TryFrom<&assets::Asset> for Cocktail {
+impl TryFrom<&[u8]> for Cocktail {
     type Error = FromError;
 
-    fn try_from(asset: &assets::Asset) -> Result<Self, Self::Error> {
-        let title = asset
-            .path
-            .file_stem()
-            .and_then(|s| s.to_str())
-            .map(std::borrow::ToOwned::to_owned)
-            .ok_or(FromError::NoTitle)?;
-        let recipe = parse::cooklang::parse(&asset.data).map_err(FromError::Cooklang)?;
-        Ok(Cocktail {
-            path: path::normalize(&asset.path),
-            recipe,
-            frontmatter: Frontmatter { title },
-        })
+    fn try_from(data: &[u8]) -> Result<Self, Self::Error> {
+        let recipe = parse::cooklang::parse(data).map_err(FromError::Parse)?;
+        Ok(Cocktail { recipe })
     }
 }
 
 #[derive(Debug)]
 pub enum FromError {
-    NoTitle,
-    Cooklang(parse::cooklang::ParseError),
+    Parse(parse::cooklang::ParseError),
 }
 
 impl std::fmt::Display for FromError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            FromError::NoTitle => write!(f, "No title"),
-            FromError::Cooklang(error) => write!(f, "{error}"),
+            FromError::Parse(error) => write!(f, "{error}"),
         }
     }
 }

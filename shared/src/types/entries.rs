@@ -1,4 +1,4 @@
-use crate::{assets, parse, path};
+use crate::parse;
 
 #[derive(Debug, serde::Deserialize)]
 pub struct Frontmatter {
@@ -14,23 +14,17 @@ pub struct Frontmatter {
 
 #[derive(Debug)]
 pub struct Entry<'a> {
-    pub path: std::path::PathBuf,
     pub frontmatter: Frontmatter,
     pub body: Vec<pulldown_cmark::Event<'a>>,
 }
 
-impl<'a> TryFrom<&'a assets::Asset> for Entry<'a> {
+impl<'a> TryFrom<&'a [u8]> for Entry<'a> {
     type Error = FromError;
 
-    fn try_from(asset: &'a assets::Asset) -> Result<Self, Self::Error> {
-        let (frontmatter, md) =
-            parse::frontmatter::parse(&asset.data).map_err(FromError::Frontmatter)?;
+    fn try_from(data: &'a [u8]) -> Result<Self, Self::Error> {
+        let (frontmatter, md) = parse::frontmatter::parse(data).map_err(FromError::Frontmatter)?;
         let body = parse::markdown::parse(md).map_err(FromError::Body)?;
-        Ok(Entry {
-            path: path::normalize(&asset.path),
-            frontmatter,
-            body,
-        })
+        Ok(Entry { frontmatter, body })
     }
 }
 

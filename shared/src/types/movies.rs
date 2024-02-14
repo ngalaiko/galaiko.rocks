@@ -1,5 +1,3 @@
-use crate::assets;
-
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct Entry {
     pub title: String,
@@ -10,11 +8,11 @@ pub struct Entry {
     pub href: String,
 }
 
-impl TryFrom<&assets::Asset> for Entry {
+impl TryFrom<&[u8]> for Entry {
     type Error = FromError;
 
-    fn try_from(value: &assets::Asset) -> Result<Self, Self::Error> {
-        serde_json::from_slice(&value.data).map_err(FromError::De)
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        serde_json::from_slice(value).map_err(FromError::De)
     }
 }
 

@@ -1,8 +1,9 @@
 [workspace]
 members = [
+    "convert",
+    "serve",
     "shared",
     "update",
-    "serve",
 ]
 resolver = "2"
 

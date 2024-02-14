@@ -1,23 +1,23 @@
-use crate::{assets, path};
-
 pub struct Image {
-    pub path: std::path::PathBuf,
     img: image::DynamicImage,
 }
 
-impl TryFrom<&assets::Asset> for Image {
+impl TryFrom<&[u8]> for Image {
     type Error = ImageError;
 
-    fn try_from(value: &assets::Asset) -> Result<Self, Self::Error> {
-        let img = image::load_from_memory(&value.data).map_err(ImageError)?;
-        Ok(Self {
-            path: path::normalize(&value.path),
-            img,
-        })
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        let img = image::load_from_memory(value).map_err(ImageError)?;
+        Ok(Self { img })
     }
 }
 
 impl Image {
+    #[allow(clippy::missing_errors_doc)]
+    pub fn open<P: AsRef<std::path::Path>>(path: P) -> Result<Self, ImageError> {
+        let img = image::open(path).map_err(ImageError)?;
+        Ok(Self { img })
+    }
+
     #[must_use]
     pub fn resize(&self, width: Option<u32>, height: Option<u32>) -> Image {
         let img = self.img.resize(
@@ -26,19 +26,7 @@ impl Image {
             image::imageops::FilterType::Triangle,
         );
 
-        let file_stem = self
-            .path
-            .file_stem()
-            .and_then(|file_stem| file_stem.to_str())
-            .unwrap_or_default();
-
-        let path = self.path.with_file_name(format!(
-            "{file_stem}.{}x{}@2x.webp",
-            width.unwrap_or(0),
-            height.unwrap_or(0),
-        ));
-
-        Image { path, img }
+        Image { img }
     }
 
     #[must_use]

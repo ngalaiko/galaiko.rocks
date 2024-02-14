@@ -1,5 +1,3 @@
-use crate::assets;
-
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct Record {
     pub id: u64,
@@ -19,11 +17,11 @@ pub struct Artist {
     pub name: String,
 }
 
-impl TryFrom<&assets::Asset> for Record {
+impl TryFrom<&[u8]> for Record {
     type Error = FromError;
 
-    fn try_from(value: &assets::Asset) -> Result<Self, Self::Error> {
-        serde_json::from_slice(&value.data).map_err(FromError::De)
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        serde_json::from_slice(value).map_err(FromError::De)
     }
 }
 

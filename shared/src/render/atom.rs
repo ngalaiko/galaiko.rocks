@@ -2,40 +2,39 @@ use crate::{render, types};
 
 #[must_use]
 #[allow(clippy::missing_panics_doc)]
-pub fn posts(posts: &[types::entries::Entry]) -> atom_syndication::Feed {
+pub fn posts(posts: &[(std::path::PathBuf, types::entries::Entry)]) -> atom_syndication::Feed {
     let mut posts = posts
         .iter()
-        .filter(|post| post.frontmatter.date.is_some())
+        .filter_map(|(path, post)| {
+            post.frontmatter.date.map(|date| {
+                let path = path.display().to_string();
+                (
+                    post.frontmatter.id.clone().unwrap_or_else(|| path.clone()),
+                    date.and_hms_opt(0, 0, 0).expect("time is right").and_utc(),
+                    post.frontmatter.title.clone(),
+                    path,
+                    render::html::markdown(&post.body).into_string(),
+                )
+            })
+        })
         .collect::<Vec<_>>();
-    posts.sort_by_key(|post| post.frontmatter.date.expect("date is not null"));
+    posts.sort_by(|a, b| b.1.cmp(&a.1));
     posts.reverse();
 
     let updated = posts
-        .first()
-        .map(|post| post.frontmatter.date.expect("date is not null"))
-        .map(|date| date.and_hms_opt(0, 0, 0).expect("time is right").and_utc())
-        .expect("at least one post expected");
+        .iter()
+        .map(|(_, updated, _, _, _)| *updated)
+        .next()
+        .expect("at least one post");
 
     let entries = posts
         .into_iter()
-        .map(|post| {
-            let id = post
-                .frontmatter
-                .id
-                .clone()
-                .unwrap_or_else(|| post.path.display().to_string());
-            let updated = post
-                .frontmatter
-                .date
-                .expect("date is not null")
-                .and_hms_opt(0, 0, 0)
-                .expect("time is right")
-                .and_utc();
+        .map(|(id, updated, title, path, body)| {
             atom_syndication::EntryBuilder::default()
-                .title(post.frontmatter.title.clone())
                 .id(id)
+                .title(title)
                 .links(vec![atom_syndication::Link {
-                    href: format!("https://nikita.galaiko.rocks/{}", post.path.display()),
+                    href: format!("https://nikita.galaiko.rocks/{path}"),
                     rel: "alternate".to_string(),
                     mime_type: Some("text/html".to_string()),
                     ..Default::default()
@@ -44,7 +43,7 @@ pub fn posts(posts: &[types::entries::Entry]) -> atom_syndication::Feed {
                 .content(Some(
                     atom_syndication::ContentBuilder::default()
                         .content_type(Some("html".to_string()))
-                        .value(Some(render::html::markdown(&post.body).into_string()))
+                        .value(Some(body))
                         .build(),
                 ))
                 .build()

@@ -7,8 +7,6 @@ pub fn parse<T: serde::de::DeserializeOwned>(md: &[u8]) -> Result<(T, &[u8]), Pa
         if line == b"---" {
             offset += 4;
             if in_frontmatter {
-                dbg!(&frontmatter);
-                dbg!(&offset);
                 return serde_yaml::from_slice(&frontmatter)
                     .map_err(ParseError::De)
                     .map(|t| (t, &md[offset..]));

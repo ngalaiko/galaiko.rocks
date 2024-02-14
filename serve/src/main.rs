@@ -1,33 +1,23 @@
-use async_io::Async;
 use axum::extract::Host;
 use axum::http::uri::Authority;
 use axum::http::{header, StatusCode, Uri};
 use axum::response::{IntoResponse, Redirect};
 use axum::{routing::get, Router};
 use clap::Parser;
-use macro_rules_attribute::apply;
 use tower_http::compression::CompressionLayer;
 use tower_http::trace::{self, TraceLayer};
 use tracing::Level;
-
-use std::io;
-use std::net::{SocketAddr, TcpListener};
-use std::sync::Arc;
 
 use shared::path;
 
 #[derive(Parser)]
 struct Cli {
-    #[arg(long, default_value = "127.0.0.1:8080", value_parser = parse_address)]
-    address: SocketAddr,
+    #[arg(long, default_value = "127.0.0.1:8080")]
+    address: String,
 }
 
-fn parse_address(s: &str) -> Result<SocketAddr, String> {
-    s.parse().map_err(|_| format!("invalid address: {s}"))
-}
-
-#[apply(smol_macros::main!)]
-async fn main(ex: &Arc<smol_macros::Executor<'_>>) -> io::Result<()> {
+#[tokio::main]
+async fn main() {
     tracing_subscriber::fmt()
         .with_target(false)
         .compact()
@@ -47,8 +37,8 @@ async fn main(ex: &Arc<smol_macros::Executor<'_>>) -> io::Result<()> {
                 .on_response(trace::DefaultOnResponse::new().level(Level::INFO)),
         )
         .layer(comression_layer);
-    let listener = Async::<TcpListener>::bind(serve.address).unwrap();
-    smol_axum::serve(ex.clone(), listener, app).await
+    let listener = tokio::net::TcpListener::bind(serve.address).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
 }
 
 #[derive(rust_embed::RustEmbed)]
