@@ -1,4 +1,3 @@
-- use reqwest in update
 - convert pages based on links
 - version images, css and js files with it's hash
 - og tags

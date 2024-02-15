@@ -128,18 +128,18 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
     places.sort_by(|a, b| b.times.cmp(&a.times));
 
     if output.exists() {
-        async_std::fs::remove_dir_all(&output)
+        tokio::fs::remove_dir_all(&output)
             .await
             .map_err(Error::Io)?;
     }
 
-    async_std::fs::create_dir_all(&output)
+    tokio::fs::create_dir_all(&output)
         .await
         .map_err(Error::Io)?;
 
     for place in &places {
         let output = output.join(format!("{}.json", place.name));
-        async_std::fs::write(
+        tokio::fs::write(
             &output,
             serde_json::to_string_pretty(&place).map_err(Error::Ser)?,
         )

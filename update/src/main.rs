@@ -16,24 +16,22 @@ enum Commands {
         #[arg(long)]
         token: String,
         #[arg(long, default_value = "./assets/records/")]
-        output: String,
+        output: std::path::PathBuf,
     },
     Letterboxd {
         #[arg(long, default_value = "./assets/movies/")]
-        output: String,
+        output: std::path::PathBuf,
     },
     Hledger {
         #[arg(long)]
-        file: Option<String>,
+        file: Option<std::path::PathBuf>,
         #[arg(long, default_value = "./assets/places/")]
-        output: String,
+        output: std::path::PathBuf,
     },
 }
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    femme::start();
-
     let cli = Cli::parse();
     match cli.command {
         Commands::Letterboxd { output } => letterboxd::update(&output).await.map_err(Into::into),
