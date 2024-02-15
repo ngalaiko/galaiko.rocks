@@ -15,7 +15,7 @@ main {
   overflow-wrap: break-word;
 }
 
-code {
+pre {
   overflow-x: scroll;
 }
 
