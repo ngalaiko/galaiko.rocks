@@ -1,7 +1,7 @@
 #[derive(Debug)]
 pub struct Recipe {
     title: String,
-    recipe: cooklang::ScaledRecipe,
+    inner: cooklang::ScaledRecipe,
     parser: cooklang::CooklangParser,
 }
 
@@ -11,35 +11,35 @@ impl Recipe {
     }
 
     pub fn source(&self) -> Option<&cooklang::metadata::NameAndUrl> {
-        self.recipe.metadata.source()
+        self.inner.metadata.source()
     }
 
     pub fn group_ingredients(&self) -> Vec<cooklang::ingredient_list::GroupedIngredient> {
-        self.recipe.group_ingredients(self.parser.converter())
+        self.inner.group_ingredients(self.parser.converter())
     }
 
     pub fn group_cookware(&self) -> Vec<cooklang::ingredient_list::GroupedCookware> {
-        self.recipe.group_cookware()
+        self.inner.group_cookware()
     }
 
     pub fn sections(&self) -> &[cooklang::Section] {
-        &self.recipe.sections
+        &self.inner.sections
     }
 
     pub fn ingredients(&self) -> &[cooklang::Ingredient] {
-        &self.recipe.ingredients
+        &self.inner.ingredients
     }
 
     pub fn cookware(&self) -> &[cooklang::Cookware] {
-        &self.recipe.cookware
+        &self.inner.cookware
     }
 
     pub fn timers(&self) -> &[cooklang::Timer] {
-        &self.recipe.timers
+        &self.inner.timers
     }
 
     pub fn inline_quantities(&self) -> &[cooklang::Quantity] {
-        &self.recipe.inline_quantities
+        &self.inner.inline_quantities
     }
 }
 
@@ -55,11 +55,11 @@ pub fn parse(data: &[u8]) -> Result<Recipe, ParseError> {
         .metadata
         .map
         .get("title")
-        .map(|v| v.to_string())
+        .map(std::string::ToString::to_string)
         .ok_or(ParseError::NoTitle)?;
     Ok(Recipe {
         title,
-        recipe: recipe.default_scale(),
+        inner: recipe.default_scale(),
         parser,
     })
 }

@@ -37,7 +37,6 @@ struct Urls {
 
 impl std::error::Error for Error {}
 
-
 pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result<(), Error> {
     let output = output.as_ref();
 

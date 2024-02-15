@@ -5,6 +5,8 @@ use shared::{
     types::{cocktails, entries, images, movies, places, records},
 };
 
+#[allow(clippy::missing_errors_doc)]
+#[allow(clippy::missing_panics_doc)]
 pub async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(), BuildError> {
     let input = tokio::fs::canonicalize(input.as_ref())
         .await
@@ -22,11 +24,11 @@ pub async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(
 
     let asset_paths = traverse(&input)
         .await
-        .map_err(|error| BuildError::IO(input.to_path_buf(), error))?;
+        .map_err(|error| BuildError::IO(input.clone(), error))?;
 
     remove_dir_all(&output)
         .await
-        .map_err(|error| BuildError::IO(output.to_path_buf(), error))?;
+        .map_err(|error| BuildError::IO(output.clone(), error))?;
 
     let (post_paths, asset_paths): (Vec<_>, Vec<_>) =
         asset_paths.into_iter().partition(is_post_path);
@@ -85,6 +87,7 @@ pub async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(
     Ok(())
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_post_path(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("md"))
         && path
@@ -92,6 +95,7 @@ fn is_post_path(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("posts")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_cocktail_path(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("cook"))
         && path
@@ -99,6 +103,7 @@ fn is_cocktail_path(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("cocktails")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_movie_path(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("json"))
         && path
@@ -106,6 +111,7 @@ fn is_movie_path(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("movies")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_record_path(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("json"))
         && path
@@ -113,6 +119,7 @@ fn is_record_path(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("records")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_place_path(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("json"))
         && path
@@ -120,6 +127,7 @@ fn is_place_path(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("places")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_page_path(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("md"))
         && !path
@@ -127,6 +135,7 @@ fn is_page_path(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("posts")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_post_image(path: &std::path::PathBuf) -> bool {
     (path.extension() == Some(std::ffi::OsStr::new("png"))
         || path.extension() == Some(std::ffi::OsStr::new("jpg"))
@@ -136,6 +145,7 @@ fn is_post_image(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("posts")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_cocktail_image(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("jpeg"))
         && path
@@ -143,6 +153,7 @@ fn is_cocktail_image(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("cocktails")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_movie_poster(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("jpg"))
         && path
@@ -150,6 +161,7 @@ fn is_movie_poster(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("movies")))
 }
 
+#[allow(clippy::ptr_arg)]
 fn is_record_cover(path: &std::path::PathBuf) -> bool {
     path.extension() == Some(std::ffi::OsStr::new("jpeg"))
         && path
@@ -171,13 +183,13 @@ async fn build_posts(
         .iter()
         .map(|(path, data)| {
             entries::Entry::try_from(data.as_slice())
-                .map(|entry| (path::normalize(&path), entry))
+                .map(|entry| (path::normalize(path), entry))
                 .map_err(ConvertError::Entry)
                 .map_err(|error| BuildError::Convert(path.clone(), error))
         })
         .collect::<Result<Vec<_>, _>>()?;
 
-    let posts_index_path = join(&output, "posts/index.html");
+    let posts_index_path = join(output, "posts/index.html");
     write_file(
         &posts_index_path,
         render::html::posts(posts.as_slice())
@@ -187,7 +199,7 @@ async fn build_posts(
     .await
     .map_err(|error| BuildError::IO(posts_index_path, error))?;
 
-    let old_posts_atom_path = join(&output, "posts.atom");
+    let old_posts_atom_path = join(output, "posts.atom");
     write_file(
         &old_posts_atom_path,
         render::html::redirect(path::normalize("posts/index.atom"))
@@ -197,7 +209,7 @@ async fn build_posts(
     .await
     .map_err(|error| BuildError::IO(old_posts_atom_path, error))?;
 
-    let posts_atom_path = join(&output, "posts/index.atom");
+    let posts_atom_path = join(output, "posts/index.atom");
     write_file(
         &posts_atom_path,
         render::atom::posts(posts.as_slice()).to_string().as_bytes(),
@@ -207,7 +219,7 @@ async fn build_posts(
 
     for (path, post) in posts {
         for alias in &post.frontmatter.aliases {
-            let alias_path = join(&output, path::normalize(&alias));
+            let alias_path = join(output, path::normalize(alias));
             write_file(
                 &alias_path,
                 render::html::redirect(&path).into_string().as_bytes(),
@@ -215,7 +227,7 @@ async fn build_posts(
             .await
             .map_err(|error| BuildError::IO(alias_path, error))?;
         }
-        let post_path = join(&output, &path);
+        let post_path = join(output, &path);
         write_file(
             &post_path,
             render::html::post(&post).into_string().as_bytes(),
@@ -248,7 +260,7 @@ async fn build_image(
         .await
         .expect("Panic in rayon::spawn")
         .map_err(ConvertError::Image)
-        .map_err(|error| BuildError::Convert(path.to_path_buf(), error))?;
+        .map_err(|error| BuildError::Convert(path.clone(), error))?;
 
     let path = {
         let file_stem = path
@@ -257,7 +269,7 @@ async fn build_image(
             .unwrap_or_default();
         path.with_file_name(format!("{file_stem}.{width}x0@2x.webp"))
     };
-    Ok((path::normalize(&path), image))
+    Ok((path::normalize(path), image))
 }
 
 #[tracing::instrument(skip_all)]
@@ -273,7 +285,7 @@ async fn build_images(
     let images = futures::future::try_join_all(images).await?;
 
     for (path, image) in images {
-        let image_path = join(&output, &path);
+        let image_path = join(output, &path);
         write_file(&image_path, &image)
             .await
             .map_err(|error| BuildError::IO(image_path, error))?;
@@ -293,7 +305,7 @@ async fn build_cocktail(
             cocktails::Cocktail::try_from(data.as_slice())
                 .map(|cocktail| (path::normalize(&path), cocktail))
                 .map_err(ConvertError::Cocktail)
-                .map_err(|error| BuildError::Convert(path.to_path_buf(), error))
+                .map_err(|error| BuildError::Convert(path.clone(), error))
         })
 }
 
@@ -307,7 +319,7 @@ async fn build_cocktails(
         .iter()
         .map(|path| build_cocktail(input, path));
     let cocktails = futures::future::try_join_all(cocktails).await?;
-    let cocktails_index_path = join(&output, "cocktails/index.html");
+    let cocktails_index_path = join(output, "cocktails/index.html");
     write_file(
         &cocktails_index_path,
         render::html::cocktails(cocktails.as_slice())
@@ -317,7 +329,7 @@ async fn build_cocktails(
     .await
     .map_err(|error| BuildError::IO(cocktails_index_path, error))?;
     for (path, cocktail) in cocktails {
-        let cocktail_path = join(&output, &path);
+        let cocktail_path = join(output, &path);
         write_file(
             &cocktail_path,
             render::html::cocktail(&cocktail).into_string().as_bytes(),
@@ -340,7 +352,7 @@ async fn build_movie(
             movies::Entry::try_from(data.as_slice())
                 .map(|movie| (path::normalize(&path), movie))
                 .map_err(ConvertError::Movie)
-                .map_err(|error| BuildError::Convert(path.to_path_buf(), error))
+                .map_err(|error| BuildError::Convert(path.clone(), error))
         })
 }
 
@@ -352,7 +364,7 @@ async fn build_movies(
 ) -> Result<(), BuildError> {
     let movies = movie_paths.iter().map(|path| build_movie(input, path));
     let movies = futures::future::try_join_all(movies).await?;
-    let movies_index_path = join(&output, "movies/index.html");
+    let movies_index_path = join(output, "movies/index.html");
     write_file(
         &movies_index_path,
         render::html::movies(movies.as_slice())
@@ -376,7 +388,7 @@ async fn build_record(
             records::Record::try_from(data.as_slice())
                 .map(|record| (path::normalize(&path), record))
                 .map_err(ConvertError::Record)
-                .map_err(|error| BuildError::Convert(path.to_path_buf(), error))
+                .map_err(|error| BuildError::Convert(path.clone(), error))
         })
 }
 
@@ -388,7 +400,7 @@ async fn build_records(
 ) -> Result<(), BuildError> {
     let records = record_paths.iter().map(|path| build_record(input, path));
     let records = futures::future::try_join_all(records).await?;
-    let records_index_path = join(&output, "records/index.html");
+    let records_index_path = join(output, "records/index.html");
     write_file(
         &records_index_path,
         render::html::records(records.as_slice())
@@ -412,7 +424,7 @@ async fn build_place(
             places::Place::try_from(data.as_slice())
                 .map(|place| (path::normalize(&path), place))
                 .map_err(ConvertError::Place)
-                .map_err(|error| BuildError::Convert(path.to_path_buf(), error))
+                .map_err(|error| BuildError::Convert(path.clone(), error))
         })
 }
 
@@ -424,7 +436,7 @@ async fn build_places(
 ) -> Result<(), BuildError> {
     let places = place_paths.iter().map(|path| build_place(input, path));
     let places = futures::future::try_join_all(places).await?;
-    let old_places_index_path = join(&output, "restaurants_and_cafes/index.html");
+    let old_places_index_path = join(output, "restaurants_and_cafes/index.html");
     write_file(
         &old_places_index_path,
         render::html::redirect(path::normalize("restaurants_and_cafes/index.html"))
@@ -433,7 +445,7 @@ async fn build_places(
     )
     .await
     .map_err(|error| BuildError::IO(old_places_index_path.clone(), error))?;
-    let places_index_path = join(&output, "places/index.html");
+    let places_index_path = join(output, "places/index.html");
     write_file(
         &places_index_path,
         render::html::places(places.as_slice())
@@ -459,13 +471,13 @@ async fn build_pages(
         .iter()
         .map(|(path, data)| {
             entries::Entry::try_from(data.as_slice())
-                .map(|entry| (path::normalize(&path), entry))
+                .map(|entry| (path::normalize(path), entry))
                 .map_err(ConvertError::Entry)
                 .map_err(|error| BuildError::Convert(path.clone(), error))
         })
         .collect::<Result<Vec<_>, _>>()?;
     for (path, page) in pages {
-        let path = join(&output, &path);
+        let path = join(output, &path);
         write_file(&path, render::html::entry(&page).into_string().as_bytes())
             .await
             .map_err(|error| BuildError::IO(path.clone(), error))?;

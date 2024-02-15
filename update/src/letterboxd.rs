@@ -173,7 +173,7 @@ pub async fn update<P: AsRef<std::path::Path>>(output: P) -> Result<(), Error> {
             .join(&entry.title_slug)
             .join(watch_number.to_string())
             .with_extension("json")
-            .to_path_buf();
+            .clone();
 
         let dir = data_output.parent().expect("invalid output path");
         if !tokio::fs::try_exists(&data_output)
