@@ -429,6 +429,8 @@ dependencies = [
  "rayon",
  "shared",
  "tokio",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]
@@ -2711,6 +2713,8 @@ dependencies = [
  "serde_json",
  "shared",
  "tokio",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]

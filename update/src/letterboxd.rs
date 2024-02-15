@@ -131,6 +131,7 @@ fn parse_page(body: &str) -> Result<(Vec<movies::Entry>, bool), Error> {
     Ok((entries, has_next))
 }
 
+#[tracing::instrument]
 async fn fetch_page(n: u8) -> Result<(Vec<movies::Entry>, bool), Error> {
     let response = reqwest::get(page_url(n)).await.map_err(Error::Reqwest)?;
     if response.status() != reqwest::StatusCode::OK {
@@ -243,6 +244,7 @@ impl std::fmt::Display for PosterError {
 
 impl std::error::Error for PosterError {}
 
+#[tracing::instrument(skip(entry), fields(title = entry.title.as_str()))]
 async fn get_poster(entry: &movies::Entry) -> Result<Vec<u8>, PosterError> {
     use select::document::Document;
     use select::predicate::Attr;

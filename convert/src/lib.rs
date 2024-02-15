@@ -60,7 +60,11 @@ pub async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(
 
     let asset_paths = asset_paths
         .into_iter()
-        .map(|path| path.strip_prefix(&input).unwrap().to_path_buf())
+        .map(|path| {
+            path.strip_prefix(&input)
+                .expect("input is always a prefix")
+                .to_path_buf()
+        })
         .collect::<Vec<_>>();
 
     futures::try_join!(
@@ -153,6 +157,7 @@ fn is_record_cover(path: &std::path::PathBuf) -> bool {
             .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("records")))
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_posts(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -221,6 +226,7 @@ async fn build_posts(
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.display()))]
 async fn build_image(
     input: &std::path::Path,
     path: &std::path::Path,
@@ -254,6 +260,7 @@ async fn build_image(
     Ok((path::normalize(&path), image))
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_images(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -274,6 +281,7 @@ async fn build_images(
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.display()))]
 async fn build_cocktail(
     input: &std::path::Path,
     path: &std::path::Path,
@@ -289,6 +297,7 @@ async fn build_cocktail(
         })
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_cocktails(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -319,6 +328,7 @@ async fn build_cocktails(
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.display()))]
 async fn build_movie(
     input: &std::path::Path,
     path: &std::path::Path,
@@ -334,6 +344,7 @@ async fn build_movie(
         })
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_movies(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -353,6 +364,7 @@ async fn build_movies(
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.display()))]
 async fn build_record(
     input: &std::path::Path,
     path: &std::path::Path,
@@ -368,6 +380,7 @@ async fn build_record(
         })
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_records(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -387,6 +400,7 @@ async fn build_records(
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.display()))]
 async fn build_place(
     input: &std::path::Path,
     path: &std::path::Path,
@@ -402,6 +416,7 @@ async fn build_place(
         })
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_places(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -430,6 +445,7 @@ async fn build_places(
     Ok(())
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_pages(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -457,6 +473,7 @@ async fn build_pages(
     Ok(())
 }
 
+#[tracing::instrument(skip_all)]
 async fn build_assets(
     input: &std::path::Path,
     output: &std::path::Path,
@@ -471,6 +488,7 @@ async fn build_assets(
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(source = %source.as_ref().display(), destination = %destination.as_ref().display()))]
 async fn copy_file<P: AsRef<std::path::Path>>(source: P, destination: P) -> Result<(), BuildError> {
     if let Some(parent) = destination.as_ref().parent() {
         if !parent.exists() {
@@ -487,6 +505,7 @@ async fn copy_file<P: AsRef<std::path::Path>>(source: P, destination: P) -> Resu
     Ok(())
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.as_ref().display()))]
 async fn remove_dir_all<P: AsRef<std::path::Path>>(path: P) -> Result<(), IOError> {
     match tokio::fs::remove_dir_all(path).await {
         Ok(()) => Ok(()),
@@ -495,6 +514,7 @@ async fn remove_dir_all<P: AsRef<std::path::Path>>(path: P) -> Result<(), IOErro
     }
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.as_ref().display()))]
 async fn read_file<P: AsRef<std::path::Path>>(
     root: P,
     path: P,
@@ -513,6 +533,7 @@ async fn read_file<P: AsRef<std::path::Path>>(
         .map_err(IOError::Read)
 }
 
+#[tracing::instrument(skip_all, fields(path = %path.as_ref().display()))]
 async fn write_file<P: AsRef<std::path::Path>>(path: P, data: &[u8]) -> Result<(), IOError> {
     let path = path.as_ref();
     if let Some(parent) = path.parent() {
@@ -523,8 +544,9 @@ async fn write_file<P: AsRef<std::path::Path>>(path: P, data: &[u8]) -> Result<(
     tokio::fs::write(path, data).await.map_err(IOError::Write)
 }
 
-async fn traverse<P: AsRef<std::path::Path>>(root: P) -> Result<Vec<std::path::PathBuf>, IOError> {
-    let root = root.as_ref();
+#[tracing::instrument(fields(path = %path.as_ref().display()))]
+async fn traverse<P: AsRef<std::path::Path>>(path: P) -> Result<Vec<std::path::PathBuf>, IOError> {
+    let root = path.as_ref();
     let mut stack = vec![root.to_path_buf()];
     let mut files = vec![];
     while let Some(item) = stack.pop() {

@@ -37,6 +37,7 @@ struct Urls {
 
 impl std::error::Error for Error {}
 
+
 pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result<(), Error> {
     let output = output.as_ref();
 
@@ -45,19 +46,7 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
         "https://api.discogs.com/users/ngalaiko/collection/folders/0/releases?sort=artist"
             .to_string();
     loop {
-        let response = reqwest::Client::new()
-            .get(&page_url)
-            .header("Authorization", format!("Discogs token={token}"))
-            .header("Accept", "application/json")
-            .send()
-            .await
-            .map_err(Error::Reqwest)?;
-        if response.status() != reqwest::StatusCode::OK {
-            return Err(Error::Download((page_url.clone(), response.status())));
-        }
-
-        let body = response.bytes().await.map_err(Error::Reqwest)?;
-        let mut page = serde_json::from_slice::<Page>(&body).map_err(Error::Ser)?;
+        let mut page = get_page(token, &page_url).await?;
         records.append(&mut page.releases);
         if let Some(next_page_url) = page.pagination.urls.next {
             page_url = next_page_url;
@@ -136,6 +125,24 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
     Ok(())
 }
 
+#[tracing::instrument(skip(token))]
+async fn get_page(token: &str, page_url: &str) -> Result<Page, Error> {
+    let response = reqwest::Client::new()
+        .get(page_url)
+        .header("Authorization", format!("Discogs token={token}"))
+        .header("Accept", "application/json")
+        .send()
+        .await
+        .map_err(Error::Reqwest)?;
+    if response.status() != reqwest::StatusCode::OK {
+        return Err(Error::Download((page_url.to_string(), response.status())));
+    }
+
+    let body = response.bytes().await.map_err(Error::Reqwest)?;
+    serde_json::from_slice::<Page>(&body).map_err(Error::Ser)
+}
+
+#[tracing::instrument(skip(token))]
 async fn get_image(url: &str, token: &str) -> Result<reqwest::Response, reqwest::Error> {
     loop {
         let response = reqwest::Client::new()
