@@ -1,30 +1,28 @@
 ---
-title: /uses
+title: /uses/
 ---
 
 on this page you can find most of the things that i use.
 
 ## software
 
-- [neovim](https://neovim.io/)
-- [kitty](https://sw.kovidgoyal.net/kitty/)
-- [raycast](http://raycast.com)
-- [zsh](https://www.zsh.org)
-- [ohmyposh](https://ohmyposh.dev)
-- [calibre](https://calibre-ebook.com)
-- [hledger](https://hledger.org)
-- [koreader](http://koreader.rocks)
-- [net news wire](https://netnewswire.com)
-- [overcast](https://overcast.fm/)
+- [neovim](https://neovim.io/) - text editor
+- [kitty](https://sw.kovidgoyal.net/kitty/) - terminal emulator
+- [raycast](http://raycast.com) - app launcher
+- [zsh](https://www.zsh.org) - shell
+- [starship](https://starship.rs) - shell prompt
+- [calibre](https://calibre-ebook.com) - ebooks management
+- [hledger](https://hledger.org) - plaintext accounting
+- [koreader](http://koreader.rocks) - ebooks reader
+- [net news wire](https://netnewswire.com) - rss reader
+- [overcast](https://overcast.fm/) - podcast player
 - apple mail / notes / calendar / maps
-- [organic maps](https://organicmaps.app)
 
 ## services
 
 - [nextdns](https://nextdns.io/?from=7dkc9vrh)
 - [countermail](https://countermail.com)
 - [telegram](https://telegram.com)
-- [notifier.in](https://notifier.in)
 - [mullvad](https://mullvad.net)
 - [tailscale](https://tailscale.com)
 - [kino.pub](https://kino.pub)
@@ -45,9 +43,9 @@ on this page you can find most of the things that i use.
   - [audio technica lp120xUSB](https://www.audio-technica.com/en-us/at-lp120xusb) turntable
   - [sansui 1000x](https://www.hifiengine.com/manual_library/sansui/1000x.shtml) receiver
 - espresso setup
-  - [lapavoni europiccola](https://www.lapavoni.com/en/product/europiccola-black-base/) (pre-millenium edition)
-  - [eureka oro mignon single dose](https://www.eureka.co.it/en/eureka_oro.aspx) grider
-- [kobo libra h2o](https://us.kobobooks.com/products/kobo-libra-h2o)
+  - lapavoni europiccola (EL (1995) (v. 2.5))
+  - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grider
+- [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2)
 
 ## transport
 
