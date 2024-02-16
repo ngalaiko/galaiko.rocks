@@ -128,6 +128,7 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
 async fn get_page(token: &str, page_url: &str) -> Result<Page, Error> {
     let response = reqwest::Client::new()
         .get(page_url)
+        .header("User-Agent", "https://nikita.galaiko.rocks")
         .header("Authorization", format!("Discogs token={token}"))
         .header("Accept", "application/json")
         .send()
@@ -146,6 +147,7 @@ async fn get_image(url: &str, token: &str) -> Result<reqwest::Response, reqwest:
     loop {
         let response = reqwest::Client::new()
             .get(url)
+            .header("User-Agent", "https://nikita.galaiko.rocks")
             .header("Authorization", format!("Discogs token={token}"))
             .send()
             .await?;
