@@ -67,35 +67,38 @@ async fn handler(
         return Redirect::to(normalized_path.display().to_string().as_str()).into_response();
     }
 
-    let asset_path = Public::iter()
-        .find(|asset_path| path::normalize(asset_path.to_string()) == normalized_path);
-    if let Some(embedded_file) = asset_path.and_then(|asset_path| Public::get(&asset_path)) {
-        let etag = etag_header(embedded_file.metadata.sha256_hash());
-        let is_modified = headers
-            .get(header::IF_NONE_MATCH)
-            .and_then(|value| value.to_str().ok())
-            .map_or(false, |value| value.contains(&etag));
-        let content_type = mime_guess::from_path(normalized_path)
-            .first_or_octet_stream()
-            .to_string();
-        let headers = [
-            (header::ETAG, etag),
-            (
-                header::CACHE_CONTROL,
-                match content_type.as_str() {
-                    "text/html" => "no-cache, max-age=31536000".to_string(),
-                    _ => "max-age=31536000".to_string(),
-                },
-            ),
-            (header::CONTENT_TYPE, content_type),
-        ];
-        if is_modified {
-            (StatusCode::NOT_MODIFIED, headers).into_response()
-        } else {
-            (StatusCode::OK, headers, embedded_file.data).into_response()
-        }
+    let Some(embedded_file) = Public::iter()
+        .find(|asset_path| path::normalize(asset_path.to_string()) == normalized_path)
+        .and_then(|asset_path| Public::get(&asset_path))
+    else {
+        return (StatusCode::NOT_FOUND, "404 Not Found").into_response()
+    };
+
+    let etag = etag_header(embedded_file.metadata.sha256_hash());
+    let is_modified = headers
+        .get(header::IF_NONE_MATCH)
+        .and_then(|value| value.to_str().ok())
+        .map_or(false, |value| value.contains(&etag));
+    let content_type = mime_guess::from_path(normalized_path)
+        .first_or_octet_stream()
+        .to_string();
+
+    let headers = [
+        (header::ETAG, etag),
+        (
+            header::CACHE_CONTROL,
+            match content_type.as_str() {
+                "text/html" => "no-cache, max-age=31536000".to_string(),
+                _ => "max-age=31536000".to_string(),
+            },
+        ),
+        (header::CONTENT_TYPE, content_type),
+    ];
+
+    if is_modified {
+        (StatusCode::NOT_MODIFIED, headers).into_response()
     } else {
-        (StatusCode::NOT_FOUND, "404 Not Found").into_response()
+        (StatusCode::OK, headers, embedded_file.data).into_response()
     }
 }
 
