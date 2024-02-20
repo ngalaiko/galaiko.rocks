@@ -2,6 +2,7 @@
 async fn main() {
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-changed=../assets");
+    println!("cargo:rerun-if-changed=../convert");
 
     let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
         .map(std::path::PathBuf::from)
