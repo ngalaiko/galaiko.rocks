@@ -1,4 +1,4 @@
-FROM rust:1.74 as build
+FROM rust:1.76 as build
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
