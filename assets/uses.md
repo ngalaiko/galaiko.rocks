@@ -7,7 +7,7 @@ on this page you can find most of the things that i use.
 ## software
 
 - [neovim](https://neovim.io/) - text editor
-- [kitty](https://sw.kovidgoyal.net/kitty/) - terminal emulator
+- [wezterm](https://wezfurlong.org/wezterm/) - terminal emulator
 - [raycast](http://raycast.com) - app launcher
 - [zsh](https://www.zsh.org) - shell
 - [starship](https://starship.rs) - shell prompt
@@ -50,4 +50,4 @@ on this page you can find most of the things that i use.
 ## transport
 
 - [brompton m6l](https://www.brompton.com)
-- custom fixed gear bike
+- custom fixed gear bike (49x16)
