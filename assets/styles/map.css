@@ -1,0 +1,12 @@
+#map {
+  height: 400px;
+}
+
+.place {
+  cursor: pointer;
+}
+
+.icon {
+  border-radius: 9999px;
+  background-color: darkorange;
+}

@@ -35,7 +35,7 @@ fn page(
             meta charset="utf-8";
             meta name="viewport" content="width=device-width, initial-scale=1.0";
 
-            meta http-equiv="Content-Security-Policy" content="default-src 'self';";
+            meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.basemaps.cartocdn.com";
 
             link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png";
             link rel="icon" sizes="32x32" href="/favicon-32x32.png";
@@ -415,11 +415,12 @@ pub fn records(records: &[(std::path::PathBuf, records::Record)]) -> maud::Marku
 pub fn places(places: &[(std::path::PathBuf, places::Place)]) -> maud::Markup {
     let mut places = places
         .iter()
-        .map(|(_path, place)| (place.name.clone(), place.times, place.spent))
+        .map(|(_path, place)| (place.name.clone(), place.times, place.spent, place.location))
         .collect::<Vec<_>>();
     places.sort_by(|a, b| b.1.cmp(&a.1));
 
     let html = maud::html! {
+        div id="map" hidden="true" {}
         table {
             thead {
                 tr {
@@ -429,8 +430,8 @@ pub fn places(places: &[(std::path::PathBuf, places::Place)]) -> maud::Markup {
                 }
             }
             tbody {
-                @for (name, times, spent) in places {
-                    tr {
+                @for (name, times, spent, location) in places {
+                    tr class="place" data-name=(name) data-latitude=(location.0) data-longtitude=(location.1) data-visits=(times) data-amount=(spent) data-currency="SEK" {
                         td { (name) }
                         td { (times) }
                         td { (spent) " SEK" }
@@ -438,12 +439,14 @@ pub fn places(places: &[(std::path::PathBuf, places::Place)]) -> maud::Markup {
                 }
             }
         }
+        script src="/scripts/map.js" {}
     };
 
     page(
         "places",
         Some(&maud::html! {
             link rel="stylesheet" href=(format!("/styles/table.css?v={}", chrono::Local::now().timestamp()));
+            link rel="stylesheet" href=(format!("/styles/map.css?v={}", chrono::Local::now().timestamp()));
         }),
         &html,
         &footer_without_copy_right(),
