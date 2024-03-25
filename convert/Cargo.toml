@@ -16,10 +16,10 @@ workspace = true
 
 [dependencies]
 shared = { path = "../shared" }
-clap = { version = "4.4.11", features = ["derive"] }
-futures = "0.3.30"
-tokio = { version = "1.36.0", features = ["macros", "rt", "rt-multi-thread", "fs", "sync"] }
-image = "0.24.8"
-rayon = "1.8.1"
-tracing-subscriber = "0.3.18"
-tracing = "0.1.40"
+clap = { version = "4.4", features = ["derive"] }
+futures = "0.3"
+tokio = { version = "1.36", features = ["macros", "rt", "rt-multi-thread", "fs", "sync"] }
+image = "0.24"
+rayon = "1.8"
+tracing-subscriber = "0.3"
+tracing = "0.1"
