@@ -8,7 +8,7 @@ use tower_http::compression::CompressionLayer;
 use tower_http::trace::{self, TraceLayer};
 use tracing::Level;
 
-use shared::path;
+use types::path;
 
 #[derive(Parser)]
 struct Cli {

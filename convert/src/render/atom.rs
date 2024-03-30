@@ -1,6 +1,6 @@
 use crate::render;
 
-use shared::types;
+use types;
 
 #[must_use]
 #[allow(clippy::missing_panics_doc)]

@@ -7,7 +7,7 @@ edition = "2021"
 workspace = true
 
 [dependencies]
-shared = { path = "../shared" }
+types = { path = "../types" }
 maud = "0.26"
 atom_syndication = "0.12"
 cooklang = "0.13"

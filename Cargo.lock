@@ -432,10 +432,10 @@ dependencies = [
  "maud",
  "pulldown-cmark",
  "rayon",
- "shared",
  "tokio",
  "tracing",
  "tracing-subscriber",
+ "types",
 ]
 
 [[package]]
@@ -2158,11 +2158,11 @@ dependencies = [
  "convert",
  "mime_guess",
  "rust-embed",
- "shared",
  "tokio",
  "tower-http",
  "tracing",
  "tracing-subscriber",
+ "types",
  "urlencoding",
 ]
 
@@ -2184,21 +2184,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f40ca3c46823713e0d4209592e8d6e826aa57e928f09752619fc696c499637f6"
 dependencies = [
  "lazy_static",
-]
-
-[[package]]
-name = "shared"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "cooklang",
- "image",
- "once_cell",
- "pulldown-cmark",
- "serde",
- "serde_json",
- "serde_yaml",
- "webp",
 ]
 
 [[package]]
@@ -2647,6 +2632,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825"
 
 [[package]]
+name = "types"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "cooklang",
+ "image",
+ "once_cell",
+ "pulldown-cmark",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "webp",
+]
+
+[[package]]
 name = "ucd-trie"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2706,10 +2706,10 @@ dependencies = [
  "select",
  "serde",
  "serde_json",
- "shared",
  "tokio",
  "tracing",
  "tracing-subscriber",
+ "types",
 ]
 
 [[package]]

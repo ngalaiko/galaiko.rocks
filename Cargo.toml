@@ -2,7 +2,7 @@
 members = [
     "convert",
     "serve",
-    "shared",
+    "types",
     "update",
 ]
 resolver = "2"

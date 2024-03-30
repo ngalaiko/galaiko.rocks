@@ -1,4 +1,4 @@
-use shared::types::records;
+use types::records;
 
 #[derive(Debug)]
 pub enum Error {

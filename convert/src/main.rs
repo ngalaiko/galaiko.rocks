@@ -3,9 +3,8 @@ mod render;
 use clap::Parser;
 use futures::future::TryFutureExt;
 
-use shared::{
-    path,
-    types::{cocktails, entries, images, movies, places, records},
+use types::{
+    path, {cocktails, entries, images, movies, places, records},
 };
 
 #[derive(Parser)]

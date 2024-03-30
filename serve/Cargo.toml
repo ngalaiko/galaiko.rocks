@@ -11,7 +11,7 @@ tokio = { version = "1.36", features = ["macros", "rt", "rt-multi-thread", "fs"]
 convert = { path = "../convert" }
 
 [dependencies]
-shared = { path = "../shared" }
+types = { path = "../types" }
 rust-embed = { version = "8.1", features = ["include-exclude"] }
 urlencoding = "2.1"
 clap = { version = "4.4", features = ["derive"] }

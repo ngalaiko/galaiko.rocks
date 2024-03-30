@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use shared::types::places;
+use types::places;
 
 #[derive(Debug)]
 pub enum Error {
