@@ -20,6 +20,7 @@ RUN --mount=type=cache,target=/app/target \
 	--mount=type=cache,target=/usr/local/rustup \
 	rustup install stable \
 	&& rustup target add ${CARGO_BUILD_TARGET} \
+	&& cargo run --package convert --release \
 	&& cargo build --package serve --release \
 	&& mkdir -p /build \
 	&& cp /app/target/${CARGO_BUILD_TARGET}/release/serve /build/ \
