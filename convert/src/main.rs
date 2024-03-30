@@ -1,8 +1,10 @@
+mod render;
+
 use clap::Parser;
 use futures::future::TryFutureExt;
 
 use shared::{
-    path, render,
+    path,
     types::{cocktails, entries, images, movies, places, records},
 };
 

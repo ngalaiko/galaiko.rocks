@@ -1,4 +1,4 @@
-use crate::types::{cocktails, entries, movies, places, records};
+use shared::types::{cocktails, entries, movies, places, records};
 
 fn footer_without_copy_right() -> maud::Markup {
     maud::html! {
