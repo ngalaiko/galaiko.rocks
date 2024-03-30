@@ -71,7 +71,7 @@ async fn handler(
         .find(|asset_path| path::normalize(asset_path.to_string()) == normalized_path)
         .and_then(|asset_path| Public::get(&asset_path))
     else {
-        return (StatusCode::NOT_FOUND, "404 Not Found").into_response()
+        return (StatusCode::NOT_FOUND, "404 Not Found").into_response();
     };
 
     let etag = etag_header(embedded_file.metadata.sha256_hash());
