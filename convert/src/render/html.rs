@@ -377,8 +377,11 @@ pub fn records(records: &[(std::path::PathBuf, records::Record)]) -> maud::Marku
             )
         })
         .collect::<Vec<_>>();
-    records.sort_by(|a, b| a.2.cmp(&b.2));
-    records.sort_by(|a, b| a.1.cmp(&b.1));
+    records.sort_by_key(|a| a.2.clone());
+    records.sort_by_key(|a| {
+        a.1.strip_prefix("The ")
+            .map_or_else(|| a.1.clone(), std::string::ToString::to_string)
+    });
 
     let html = maud::html! {
         ul {
