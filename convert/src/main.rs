@@ -304,12 +304,8 @@ async fn build_images(
     image_paths: &[std::path::PathBuf],
     width: u32,
 ) -> Result<(), BuildError> {
-    let images = image_paths
-        .iter()
-        .map(|path| build_image(input, path, width));
-    let images = futures::future::try_join_all(images).await?;
-
-    for (path, image) in images {
+    for path in image_paths {
+        let (path, image) = build_image(input, path, width).await?;
         let image_path = join(output, &path);
         write_file(&image_path, &image)
             .await
