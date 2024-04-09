@@ -26,6 +26,7 @@ on this page you can find most of the things that i use.
 - [mullvad](https://mullvad.net)
 - [tailscale](https://tailscale.com)
 - [kino.pub](https://kino.pub)
+- [fly.io](https://fly.io)
 
 ## hardware
 
