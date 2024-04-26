@@ -1,9 +1,9 @@
 [workspace]
 members = [
-    "convert",
-    "serve",
-    "types",
-    "update",
+    "crates/convert",
+    "crates/serve",
+    "crates/types",
+    "crates/update",
 ]
 resolver = "2"
 
