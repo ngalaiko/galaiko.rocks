@@ -8,7 +8,7 @@ workspace = true
 
 [dependencies]
 chrono = { version = "0.4", features = ["serde"] }
-pulldown-cmark = "0.9"
+pulldown-cmark = "0.10"
 serde = "1.0"
 serde_yaml = "0.9"
 cooklang = "0.13"
