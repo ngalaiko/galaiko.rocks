@@ -1,18 +1,32 @@
-pub fn normalize<P: AsRef<std::path::Path>>(s: P) -> std::path::PathBuf {
-    let mut path = s.as_ref().to_path_buf();
-    if !path.has_root() {
-        path = std::path::PathBuf::from("/").join(path);
-    };
-    match path.extension().and_then(|e| e.to_str()) {
-        Some("md" | "cook") => {
-            path.set_extension("html");
-        }
-        Some(_) => {}
-        None => {
-            path.push("index.html");
-        }
+pub fn normalize<P: AsRef<std::path::Path>>(path: P) -> std::path::PathBuf {
+    let path = add_root(path);
+    let path = change_extension(path);
+    remove_cur_dir(path)
+}
+
+fn add_root<P: AsRef<std::path::Path>>(path: P) -> std::path::PathBuf {
+    let path = path.as_ref();
+    if path.has_root() {
+        path.to_path_buf()
+    } else {
+        std::path::PathBuf::from("/").join(path)
     }
-    path
+}
+
+fn change_extension<P: AsRef<std::path::Path>>(path: P) -> std::path::PathBuf {
+    let path = path.as_ref();
+    match path.extension().and_then(|e| e.to_str()) {
+        Some("md" | "cook") => path.with_extension("html"),
+        Some(_) => path.to_path_buf(),
+        None => path.join("index.html"),
+    }
+}
+
+fn remove_cur_dir<P: AsRef<std::path::Path>>(path: P) -> std::path::PathBuf {
+    path.as_ref()
+        .components()
+        .filter(|component| !matches!(component, std::path::Component::CurDir))
+        .collect()
 }
 
 #[test]
