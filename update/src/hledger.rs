@@ -4,6 +4,7 @@ use types::places;
 
 #[derive(Debug)]
 pub enum Error {
+    MissingLocations(Vec<String>),
     Io(std::io::Error),
     Hledger(String),
     De(csv::Error),
@@ -13,6 +14,11 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::MissingLocations(list) => {
+                write!(f, "missing locations:")?;
+                list.iter()
+                    .try_for_each(|payee| write!(f, "\n   * {payee}"))
+            }
             Error::Io(error) => write!(f, "{error}"),
             Error::Hledger(error) => write!(f, "{error}"),
             Error::Ser(error) => write!(f, "{error}"),
@@ -61,7 +67,8 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
 
     let output = output.as_ref();
 
-    let year_ago = chrono::Local::now() - chrono::Duration::days(365);
+    let year_ago =
+        chrono::Local::now() - chrono::Duration::try_days(365).expect("failed to try days");
 
     let mut command = std::process::Command::new("hledger");
     let mut command = command
@@ -113,18 +120,37 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
                 map
             });
 
-    let mut places = entries_by_place
+    let places = entries_by_place
         .into_iter()
         .filter(|(_, entries)| entries.len() > 1)
-        .map(|(payee, entries)| places::Place {
-            location: *LOCATIONS
-                .get(&payee)
-                .unwrap_or_else(|| panic!("no location for {payee}")),
-            name: payee,
-            times: entries.len().try_into().expect("usize to u8"),
-            spent: entries.into_iter().map(|e| e.amount).sum(),
+        .map(|(payee, entries)| {
+            let place = LOCATIONS.get(&payee).map(|location| places::Place {
+                location: *location,
+                name: payee.clone(),
+                times: entries.len().try_into().expect("usize to u8"),
+                spent: entries.into_iter().map(|e| e.amount).sum(),
+            });
+            (payee, place)
         })
         .collect::<Vec<_>>();
+
+    let (with_location, without_location): (Vec<_>, Vec<_>) = places
+        .into_iter()
+        .partition(|(_payee, place)| place.is_some());
+
+    if !without_location.is_empty() {
+        let payees = without_location
+            .into_iter()
+            .map(|(payee, _)| payee)
+            .collect::<Vec<_>>();
+        return Err(Error::MissingLocations(payees));
+    }
+
+    let mut places = with_location
+        .into_iter()
+        .filter_map(|(_payee, place)| place)
+        .collect::<Vec<_>>();
+
     places.sort_by(|a, b| b.times.cmp(&a.times));
 
     if output.exists() {
@@ -339,6 +365,7 @@ static LOCATIONS: once_cell::sync::Lazy<HashMap<String, (f64, f64)>> =
         locations.insert("Kastello".to_string(), (57.696_235, 11.952_310));
         locations.insert("Viktors Kaffe".to_string(), (57.697_449, 11.978_164));
         locations.insert("Dirty Records".to_string(), (57.699_326, 11.951_237));
+        locations.insert("Råda Gelato".to_string(), (57.696_235, 11.952_310));
 
         locations
     });

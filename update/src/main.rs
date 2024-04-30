@@ -31,7 +31,7 @@ enum Commands {
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+async fn main() {
     let subscriber = tracing_subscriber::fmt::fmt()
         .with_span_events(
             tracing_subscriber::fmt::format::FmtSpan::NEW
@@ -42,12 +42,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let cli = Cli::parse();
     match cli.command {
-        Commands::Letterboxd { output } => letterboxd::update(&output).await.map_err(Into::into),
-        Commands::Discogs { token, output } => {
-            discogs::update(&token, &output).await.map_err(Into::into)
+        Commands::Letterboxd { output } => {
+            if let Err(error) = letterboxd::update(&output).await {
+                eprintln!("{error}");
+                std::process::exit(1);
+            }
         }
-        Commands::Hledger { file, output } => hledger::update(file.as_deref(), &output)
-            .await
-            .map_err(Into::into),
+        Commands::Discogs { token, output } => {
+            if let Err(error) = discogs::update(&token, &output).await {
+                eprintln!("{error}");
+                std::process::exit(1);
+            }
+        }
+        Commands::Hledger { file, output } => {
+            if let Err(error) = hledger::update(file.as_deref(), &output).await {
+                eprintln!("{error}");
+                std::process::exit(1);
+            }
+        }
     }
 }
