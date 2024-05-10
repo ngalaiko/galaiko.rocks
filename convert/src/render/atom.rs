@@ -4,10 +4,10 @@ use types;
 
 #[must_use]
 #[allow(clippy::missing_panics_doc)]
-pub fn posts(posts: &[(std::path::PathBuf, types::entries::Entry)]) -> atom_syndication::Feed {
+pub fn posts(posts: &[(types::entries::Entry, std::path::PathBuf)]) -> atom_syndication::Feed {
     let mut posts = posts
         .iter()
-        .filter_map(|(path, post)| {
+        .filter_map(|(post, path)| {
             post.frontmatter.date.map(|date| {
                 let path = path.display().to_string();
                 (

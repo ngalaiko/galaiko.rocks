@@ -240,10 +240,10 @@ pub fn entry(entry: &entries::Entry) -> maud::Markup {
 }
 
 #[must_use]
-pub fn posts(posts: &[(std::path::PathBuf, entries::Entry)]) -> maud::Markup {
+pub fn posts(posts: &[(entries::Entry, std::path::PathBuf)]) -> maud::Markup {
     let mut posts = posts
         .iter()
-        .filter_map(|(path, post)| {
+        .filter_map(|(post, path)| {
             post.frontmatter.date.map(|date| {
                 (
                     path.display().to_string(),
@@ -280,10 +280,10 @@ pub fn posts(posts: &[(std::path::PathBuf, entries::Entry)]) -> maud::Markup {
 }
 
 #[must_use]
-pub fn cocktails(cocktails: &[(std::path::PathBuf, cocktails::Cocktail)]) -> maud::Markup {
+pub fn cocktails(cocktails: &[(cocktails::Cocktail, &std::path::PathBuf)]) -> maud::Markup {
     let mut cocktails = cocktails
         .iter()
-        .map(|(path, cocktail)| (path.display().to_string(), cocktail.recipe.title()))
+        .map(|(cocktail, path)| (path.display().to_string(), cocktail.recipe.title()))
         .collect::<Vec<_>>();
     cocktails.sort_by(|a, b| a.1.cmp(b.1));
 
@@ -314,10 +314,10 @@ pub fn cocktails(cocktails: &[(std::path::PathBuf, cocktails::Cocktail)]) -> mau
 }
 
 #[must_use]
-pub fn movies(movies: &[(std::path::PathBuf, movies::Entry)]) -> maud::Markup {
+pub fn movies(movies: &[movies::Entry]) -> maud::Markup {
     let mut movies = movies
         .iter()
-        .map(|(_, movie)| {
+        .map(|movie| {
             (
                 movie.date.format("%Y-%m-%d").to_string(),
                 format!("./{}.70x0@2x.webp", movie.title_slug.replace('/', "-")),
@@ -362,10 +362,10 @@ pub fn movies(movies: &[(std::path::PathBuf, movies::Entry)]) -> maud::Markup {
 }
 
 #[must_use]
-pub fn records(records: &[(std::path::PathBuf, records::Record)]) -> maud::Markup {
+pub fn records(records: &[records::Record]) -> maud::Markup {
     let mut records = records
         .iter()
-        .map(|(_, record)| {
+        .map(|record| {
             (
                 record.id,
                 record.basic_information.artists[0].name.clone(),
@@ -415,10 +415,10 @@ pub fn records(records: &[(std::path::PathBuf, records::Record)]) -> maud::Marku
 }
 
 #[must_use]
-pub fn places(places: &[(std::path::PathBuf, places::Place)]) -> maud::Markup {
+pub fn places(places: &[places::Place]) -> maud::Markup {
     let mut places = places
         .iter()
-        .map(|(_path, place)| (place.name.clone(), place.times, place.spent, place.location))
+        .map(|place| (place.name.clone(), place.times, place.spent, place.location))
         .collect::<Vec<_>>();
     places.sort_by(|a, b| b.1.cmp(&a.1));
 

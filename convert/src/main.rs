@@ -1,7 +1,6 @@
 mod render;
 
 use clap::Parser;
-use futures::future::TryFutureExt;
 
 use types::{
     path, {cocktails, entries, images, movies, places, records},
@@ -33,27 +32,11 @@ async fn main() {
 }
 
 async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(), BuildError> {
-    let input = tokio::fs::canonicalize(input.as_ref())
-        .await
-        .map_err(IOError::Canonicalize)
-        .map_err(|error| BuildError::IO(input.as_ref().to_path_buf(), error))?;
+    let reader = PrefixReader::new(input).await?;
+    let writer = PrefixWriter::new(output).await?;
+    writer.clean().await?;
 
-    tokio::fs::create_dir_all(&output)
-        .await
-        .map_err(IOError::CreateDirAll)
-        .map_err(|error| BuildError::IO(output.as_ref().to_path_buf(), error))?;
-    let output = tokio::fs::canonicalize(output.as_ref())
-        .await
-        .map_err(IOError::Canonicalize)
-        .map_err(|error| BuildError::IO(output.as_ref().to_path_buf(), error))?;
-
-    let asset_paths = traverse(&input)
-        .await
-        .map_err(|error| BuildError::IO(input.clone(), error))?;
-
-    remove_dir_all(&output)
-        .await
-        .map_err(|error| BuildError::IO(output.clone(), error))?;
+    let asset_paths = reader.traverse().await?;
 
     let (post_paths, asset_paths): (Vec<_>, Vec<_>) =
         asset_paths.into_iter().partition(is_post_path);
@@ -85,28 +68,21 @@ async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(), B
     let (page_paths, asset_paths): (Vec<_>, Vec<_>) =
         asset_paths.into_iter().partition(is_page_path);
 
-    let asset_paths = asset_paths
-        .into_iter()
-        .map(|path| {
-            path.strip_prefix(&input)
-                .expect("input is always a prefix")
-                .to_path_buf()
-        })
-        .collect::<Vec<_>>();
+    let asset_paths = asset_paths.into_iter().collect::<Vec<_>>();
 
     futures::try_join!(
-        build_posts(&input, &output, post_paths.as_slice()),
-        build_images(&input, &output, post_image_paths.as_slice(), 800),
-        build_cocktails(&input, &output, cocktail_paths.as_slice()),
-        build_images(&input, &output, cocktail_image_paths.as_slice(), 800),
-        build_images(&input, &output, cocktail_image_paths.as_slice(), 200),
-        build_movies(&input, &output, movie_paths.as_slice()),
-        build_images(&input, &output, movie_poster_paths.as_slice(), 70),
-        build_places(&input, &output, place_paths.as_slice()),
-        build_records(&input, &output, record_paths.as_slice()),
-        build_images(&input, &output, record_cover_paths.as_slice(), 200),
-        build_pages(&input, &output, page_paths.as_slice()),
-        build_assets(&input, &output, asset_paths.as_slice()),
+        build_posts(&reader, &writer, post_paths.as_slice()),
+        build_images(&reader, &writer, post_image_paths.as_slice(), 800),
+        build_cocktails(&reader, &writer, cocktail_paths.as_slice()),
+        build_images(&reader, &writer, cocktail_image_paths.as_slice(), 800),
+        build_images(&reader, &writer, cocktail_image_paths.as_slice(), 200),
+        build_movies(&reader, &writer, movie_paths.as_slice()),
+        build_images(&reader, &writer, movie_poster_paths.as_slice(), 70),
+        build_places(&reader, &writer, place_paths.as_slice()),
+        build_records(&reader, &writer, record_paths.as_slice()),
+        build_images(&reader, &writer, record_cover_paths.as_slice(), 200),
+        build_pages(&reader, &writer, page_paths.as_slice()),
+        build_assets(&reader, &writer, asset_paths.as_slice()),
     )?;
 
     Ok(())
@@ -114,26 +90,17 @@ async fn convert<P: AsRef<std::path::Path>>(input: P, output: P) -> Result<(), B
 
 #[allow(clippy::ptr_arg)]
 fn is_post_path(path: &std::path::PathBuf) -> bool {
-    path.extension() == Some(std::ffi::OsStr::new("md"))
-        && path
-            .components()
-            .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("posts")))
+    path.starts_with("posts") && path.extension() == Some(std::ffi::OsStr::new("md"))
 }
 
 #[allow(clippy::ptr_arg)]
 fn is_cocktail_path(path: &std::path::PathBuf) -> bool {
-    path.extension() == Some(std::ffi::OsStr::new("cook"))
-        && path
-            .components()
-            .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("cocktails")))
+    path.starts_with("cocktails") && path.extension() == Some(std::ffi::OsStr::new("cook"))
 }
 
 #[allow(clippy::ptr_arg)]
 fn is_movie_path(path: &std::path::PathBuf) -> bool {
-    path.extension() == Some(std::ffi::OsStr::new("json"))
-        && path
-            .components()
-            .any(|c| c == std::path::Component::Normal(std::ffi::OsStr::new("movies")))
+    path.starts_with("movies") && path.extension() == Some(std::ffi::OsStr::new("json"))
 }
 
 #[allow(clippy::ptr_arg)]
@@ -196,84 +163,71 @@ fn is_record_cover(path: &std::path::PathBuf) -> bool {
 
 #[tracing::instrument(skip_all)]
 async fn build_posts(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    post_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
 ) -> Result<(), BuildError> {
-    let post_assets = post_paths
-        .iter()
-        .map(|path| read_file(input, path).map_err(|error| BuildError::IO(path.clone(), error)));
+    let post_assets = paths.iter().map(|path| reader.read(path));
     let post_assets = futures::future::try_join_all(post_assets).await?;
     let posts = post_assets
         .iter()
-        .map(|(path, data)| {
+        .zip(paths)
+        .map(|(data, path)| {
             entries::Entry::try_from(data.as_slice())
-                .map(|entry| (path::normalize(path), entry))
                 .map_err(ConvertError::Entry)
                 .map_err(|error| BuildError::Convert(path.clone(), error))
         })
         .collect::<Result<Vec<_>, _>>()?;
 
-    let posts_index_path = join(output, "posts/index.html");
-    write_file(
-        &posts_index_path,
-        render::html::posts(posts.as_slice())
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(posts_index_path, error))?;
+    let paths = paths.iter().map(path::normalize).collect::<Vec<_>>();
+    let posts = posts.into_iter().zip(paths).collect::<Vec<_>>();
 
-    let old_posts_atom_path = join(output, "posts.atom");
-    write_file(
-        &old_posts_atom_path,
-        render::html::redirect(path::normalize("posts/index.atom"))
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(old_posts_atom_path, error))?;
-
-    let posts_atom_path = join(output, "posts/index.atom");
-    write_file(
-        &posts_atom_path,
-        render::atom::posts(posts.as_slice()).to_string().as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(posts_atom_path, error))?;
-
-    for (path, post) in posts {
-        for alias in &post.frontmatter.aliases {
-            let alias_path = join(output, path::normalize(alias));
-            write_file(
-                &alias_path,
-                render::html::redirect(&path).into_string().as_bytes(),
-            )
-            .await
-            .map_err(|error| BuildError::IO(alias_path, error))?;
-        }
-        let post_path = join(output, &path);
-        write_file(
-            &post_path,
-            render::html::post(&post).into_string().as_bytes(),
+    writer
+        .write(
+            "posts/index.html",
+            render::html::posts(posts.as_slice()).into_string(),
         )
-        .await
-        .map_err(|error| BuildError::IO(post_path, error))?;
+        .await?;
+
+    writer
+        .write(
+            "posts.atom",
+            render::html::redirect(path::normalize("posts/index.atom")).into_string(),
+        )
+        .await?;
+
+    writer
+        .write(
+            "posts/index.atom",
+            render::atom::posts(posts.as_slice()).to_string(),
+        )
+        .await?;
+
+    for (post, path) in posts {
+        for alias in &post.frontmatter.aliases {
+            writer
+                .write(
+                    path::normalize(alias),
+                    render::html::redirect(&path).into_string(),
+                )
+                .await?;
+        }
+        writer
+            .write(&path, render::html::post(&post).into_string())
+            .await?;
     }
     Ok(())
 }
 
 #[tracing::instrument(skip_all, fields(path = %path.display()))]
 async fn build_image(
-    input: &std::path::Path,
+    reader: &PrefixReader,
     path: &std::path::Path,
     width: u32,
-) -> Result<(std::path::PathBuf, Vec<u8>), BuildError> {
+) -> Result<Vec<u8>, BuildError> {
     let (send, recv) = tokio::sync::oneshot::channel();
 
-    let (path, data) = read_file(input, path)
-        .await
-        .map_err(|error| BuildError::IO(path.to_path_buf(), error))?;
+    let data = reader.read(&path).await?;
 
     rayon::spawn(move || {
         let image = images::Image::try_from(data.as_slice())
@@ -285,337 +239,200 @@ async fn build_image(
         .await
         .expect("Panic in rayon::spawn")
         .map_err(ConvertError::Image)
-        .map_err(|error| BuildError::Convert(path.clone(), error))?;
+        .map_err(|error| BuildError::Convert(path.to_path_buf(), error))?;
 
-    let path = {
-        let file_stem = path
-            .file_stem()
-            .and_then(|file_stem| file_stem.to_str())
-            .unwrap_or_default();
-        path.with_file_name(format!("{file_stem}.{width}x0@2x.webp"))
-    };
-    Ok((path::normalize(path), image))
+    Ok(image)
 }
 
 #[tracing::instrument(skip_all)]
 async fn build_images(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    image_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
     width: u32,
 ) -> Result<(), BuildError> {
-    for path in image_paths {
-        let (path, image) = build_image(input, path, width).await?;
-        let image_path = join(output, &path);
-        write_file(&image_path, &image)
-            .await
-            .map_err(|error| BuildError::IO(image_path, error))?;
+    for path in paths {
+        let image = build_image(reader, path, width).await?;
+        let path = {
+            let file_stem = path
+                .file_stem()
+                .and_then(|file_stem| file_stem.to_str())
+                .unwrap_or_default();
+            path.with_file_name(format!("{file_stem}.{width}x0@2x.webp"))
+        };
+        writer.write(path::normalize(path), &image).await?;
     }
     Ok(())
-}
-
-#[tracing::instrument(skip_all, fields(path = %path.display()))]
-async fn build_cocktail(
-    input: &std::path::Path,
-    path: &std::path::Path,
-) -> Result<(std::path::PathBuf, cocktails::Cocktail), BuildError> {
-    read_file(input, path)
-        .map_err(|error| BuildError::IO(path.to_path_buf(), error))
-        .await
-        .and_then(|(path, data)| {
-            cocktails::Cocktail::try_from(data.as_slice())
-                .map(|cocktail| (path::normalize(&path), cocktail))
-                .map_err(ConvertError::Cocktail)
-                .map_err(|error| BuildError::Convert(path.clone(), error))
-        })
 }
 
 #[tracing::instrument(skip_all)]
 async fn build_cocktails(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    cocktail_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
 ) -> Result<(), BuildError> {
-    let cocktails = cocktail_paths
+    let assets = paths.iter().map(|path| reader.read(path));
+    let assets = futures::future::try_join_all(assets).await?;
+    let cocktails = assets
         .iter()
-        .map(|path| build_cocktail(input, path));
-    let cocktails = futures::future::try_join_all(cocktails).await?;
-    let cocktails_index_path = join(output, "cocktails/index.html");
-    write_file(
-        &cocktails_index_path,
-        render::html::cocktails(cocktails.as_slice())
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(cocktails_index_path, error))?;
-    for (path, cocktail) in cocktails {
-        let cocktail_path = join(output, &path);
-        write_file(
-            &cocktail_path,
-            render::html::cocktail(&cocktail).into_string().as_bytes(),
+        .zip(paths)
+        .map(|(data, path)| {
+            cocktails::Cocktail::try_from(data.as_slice())
+                .map_err(ConvertError::Cocktail)
+                .map_err(|error| BuildError::Convert(path.clone(), error))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+
+    let cocktails = cocktails.into_iter().zip(paths).collect::<Vec<_>>();
+
+    writer
+        .write(
+            "cocktails/index.html",
+            render::html::cocktails(cocktails.as_slice()).into_string(),
         )
-        .await
-        .map_err(|error| BuildError::IO(cocktail_path, error))?;
+        .await?;
+
+    for (cocktail, path) in cocktails {
+        writer
+            .write(
+                &path::normalize(path),
+                render::html::cocktail(&cocktail).into_string().as_bytes(),
+            )
+            .await?;
     }
     Ok(())
 }
 
-#[tracing::instrument(skip_all, fields(path = %path.display()))]
-async fn build_movie(
-    input: &std::path::Path,
-    path: &std::path::Path,
-) -> Result<(std::path::PathBuf, movies::Entry), BuildError> {
-    read_file(input, path)
-        .map_err(|error| BuildError::IO(path.to_path_buf(), error))
-        .await
-        .and_then(|(path, data)| {
+#[tracing::instrument(skip_all)]
+async fn build_movies(
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
+) -> Result<(), BuildError> {
+    let assets = paths.iter().map(|path| reader.read(path));
+    let assets = futures::future::try_join_all(assets).await?;
+    let movies = assets
+        .iter()
+        .zip(paths)
+        .map(|(data, path)| {
             movies::Entry::try_from(data.as_slice())
-                .map(|movie| (path::normalize(&path), movie))
                 .map_err(ConvertError::Movie)
                 .map_err(|error| BuildError::Convert(path.clone(), error))
         })
-}
+        .collect::<Result<Vec<_>, _>>()?;
 
-#[tracing::instrument(skip_all)]
-async fn build_movies(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    movie_paths: &[std::path::PathBuf],
-) -> Result<(), BuildError> {
-    let movies = movie_paths.iter().map(|path| build_movie(input, path));
-    let movies = futures::future::try_join_all(movies).await?;
-    let movies_index_path = join(output, "movies/index.html");
-    write_file(
-        &movies_index_path,
-        render::html::movies(movies.as_slice())
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(movies_index_path, error))?;
+    writer
+        .write(
+            "movies/index.html",
+            render::html::movies(movies.as_slice()).into_string(),
+        )
+        .await?;
     Ok(())
-}
-
-#[tracing::instrument(skip_all, fields(path = %path.display()))]
-async fn build_record(
-    input: &std::path::Path,
-    path: &std::path::Path,
-) -> Result<(std::path::PathBuf, records::Record), BuildError> {
-    read_file(input, path)
-        .map_err(|error| BuildError::IO(path.to_path_buf(), error))
-        .await
-        .and_then(|(path, data)| {
-            records::Record::try_from(data.as_slice())
-                .map(|record| (path::normalize(&path), record))
-                .map_err(ConvertError::Record)
-                .map_err(|error| BuildError::Convert(path.clone(), error))
-        })
 }
 
 #[tracing::instrument(skip_all)]
 async fn build_records(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    record_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
 ) -> Result<(), BuildError> {
-    let records = record_paths.iter().map(|path| build_record(input, path));
-    let records = futures::future::try_join_all(records).await?;
-    let records_index_path = join(output, "records/index.html");
-    write_file(
-        &records_index_path,
-        render::html::records(records.as_slice())
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(records_index_path.clone(), error))?;
-    Ok(())
-}
-
-#[tracing::instrument(skip_all, fields(path = %path.display()))]
-async fn build_place(
-    input: &std::path::Path,
-    path: &std::path::Path,
-) -> Result<(std::path::PathBuf, places::Place), BuildError> {
-    read_file(input, path)
-        .map_err(|error| BuildError::IO(path.to_path_buf(), error))
-        .await
-        .and_then(|(path, data)| {
-            places::Place::try_from(data.as_slice())
-                .map(|place| (path::normalize(&path), place))
-                .map_err(ConvertError::Place)
+    let assets = paths.iter().map(|path| reader.read(path));
+    let assets = futures::future::try_join_all(assets).await?;
+    let records = assets
+        .iter()
+        .zip(paths)
+        .map(|(data, path)| {
+            records::Record::try_from(data.as_slice())
+                .map_err(ConvertError::Record)
                 .map_err(|error| BuildError::Convert(path.clone(), error))
         })
+        .collect::<Result<Vec<_>, _>>()?;
+
+    writer
+        .write(
+            "records/index.html",
+            render::html::records(records.as_slice()).into_string(),
+        )
+        .await?;
+    Ok(())
 }
 
 #[tracing::instrument(skip_all)]
 async fn build_places(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    place_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
 ) -> Result<(), BuildError> {
-    let places = place_paths.iter().map(|path| build_place(input, path));
-    let places = futures::future::try_join_all(places).await?;
-    let old_places_index_path = join(output, "restaurants_and_cafes/index.html");
-    write_file(
-        &old_places_index_path,
-        render::html::redirect(path::normalize("restaurants_and_cafes/index.html"))
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(old_places_index_path.clone(), error))?;
-    let places_index_path = join(output, "places/index.html");
-    write_file(
-        &places_index_path,
-        render::html::places(places.as_slice())
-            .into_string()
-            .as_bytes(),
-    )
-    .await
-    .map_err(|error| BuildError::IO(places_index_path.clone(), error))?;
+    let assets = paths.iter().map(|path| reader.read(path));
+    let assets = futures::future::try_join_all(assets).await?;
+    let places = assets
+        .iter()
+        .zip(paths)
+        .map(|(data, path)| {
+            places::Place::try_from(data.as_slice())
+                .map_err(ConvertError::Place)
+                .map_err(|error| BuildError::Convert(path.clone(), error))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+
+    writer
+        .write(
+            "restaurants_and_cafes/index.html",
+            render::html::redirect(path::normalize("places/index.html")).into_string(),
+        )
+        .await?;
+
+    writer
+        .write(
+            "places/index.html",
+            render::html::places(places.as_slice()).into_string(),
+        )
+        .await?;
+
     Ok(())
 }
 
 #[tracing::instrument(skip_all)]
 async fn build_pages(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    page_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
 ) -> Result<(), BuildError> {
-    let page_assets = page_paths
+    let assets = paths.iter().map(|path| reader.read(path));
+    let assets = futures::future::try_join_all(assets).await?;
+    let pages = assets
         .iter()
-        .map(|path| read_file(input, path).map_err(|error| BuildError::IO(path.clone(), error)));
-    let page_assets = futures::future::try_join_all(page_assets).await?;
-    let pages = page_assets
-        .iter()
-        .map(|(path, data)| {
+        .zip(paths)
+        .map(|(data, path)| {
             entries::Entry::try_from(data.as_slice())
-                .map(|entry| (path::normalize(path), entry))
                 .map_err(ConvertError::Entry)
                 .map_err(|error| BuildError::Convert(path.clone(), error))
         })
         .collect::<Result<Vec<_>, _>>()?;
-    for (path, page) in pages {
-        let path = join(output, &path);
-        write_file(&path, render::html::entry(&page).into_string().as_bytes())
-            .await
-            .map_err(|error| BuildError::IO(path.clone(), error))?;
+    let pages = pages.into_iter().zip(paths).collect::<Vec<_>>();
+
+    for (page, path) in pages {
+        writer
+            .write(
+                path::normalize(path),
+                render::html::entry(&page).into_string(),
+            )
+            .await?;
     }
     Ok(())
 }
 
 #[tracing::instrument(skip_all)]
 async fn build_assets(
-    input: &std::path::Path,
-    output: &std::path::Path,
-    asset_paths: &[std::path::PathBuf],
+    reader: &PrefixReader,
+    writer: &PrefixWriter,
+    paths: &[std::path::PathBuf],
 ) -> Result<(), BuildError> {
-    futures::future::try_join_all(
-        asset_paths
-            .iter()
-            .map(|path| copy_file(input.join(path), path::normalize(output.join(path)))),
-    )
-    .await?;
+    for path in paths {
+        let data = reader.read(&path).await?;
+        writer.write(path::normalize(path), data).await?;
+    }
     Ok(())
-}
-
-#[tracing::instrument(skip_all, fields(source = %source.as_ref().display(), destination = %destination.as_ref().display()))]
-async fn copy_file<P: AsRef<std::path::Path>>(source: P, destination: P) -> Result<(), BuildError> {
-    if let Some(parent) = destination.as_ref().parent() {
-        if !parent.exists() {
-            tokio::fs::create_dir_all(parent)
-                .await
-                .map_err(IOError::CreateDirAll)
-                .map_err(|error| BuildError::IO(parent.to_path_buf(), error))?;
-        }
-    }
-    tokio::fs::copy(&source, &destination)
-        .await
-        .map_err(IOError::Copy)
-        .map_err(|error| BuildError::IO(destination.as_ref().to_path_buf(), error))?;
-    Ok(())
-}
-
-#[tracing::instrument(skip_all, fields(path = %path.as_ref().display()))]
-async fn remove_dir_all<P: AsRef<std::path::Path>>(path: P) -> Result<(), IOError> {
-    match tokio::fs::remove_dir_all(path).await {
-        Ok(()) => Ok(()),
-        Err(error) if error.kind() == std::io::ErrorKind::NotFound => Ok(()),
-        Err(error) => Err(IOError::Remove(error)),
-    }
-}
-
-#[tracing::instrument(skip_all, fields(path = %path.as_ref().display()))]
-async fn read_file<P: AsRef<std::path::Path>>(
-    root: P,
-    path: P,
-) -> Result<(std::path::PathBuf, Vec<u8>), IOError> {
-    tokio::fs::read(&path)
-        .await
-        .map(|data| {
-            (
-                path.as_ref()
-                    .strip_prefix(root)
-                    .expect("always inside root")
-                    .to_path_buf(),
-                data,
-            )
-        })
-        .map_err(IOError::Read)
-}
-
-#[tracing::instrument(skip_all, fields(path = %path.as_ref().display()))]
-async fn write_file<P: AsRef<std::path::Path>>(path: P, data: &[u8]) -> Result<(), IOError> {
-    let path = path.as_ref();
-    if let Some(parent) = path.parent() {
-        tokio::fs::create_dir_all(parent)
-            .await
-            .map_err(IOError::CreateDirAll)?;
-    }
-    tokio::fs::write(path, data).await.map_err(IOError::Write)
-}
-
-#[tracing::instrument(fields(path = %path.as_ref().display()))]
-async fn traverse<P: AsRef<std::path::Path>>(path: P) -> Result<Vec<std::path::PathBuf>, IOError> {
-    let root = path.as_ref();
-    let mut stack = vec![root.to_path_buf()];
-    let mut files = vec![];
-    while let Some(item) = stack.pop() {
-        let metadata = tokio::fs::metadata(&item)
-            .await
-            .map_err(IOError::Metadata)?;
-        if metadata.is_file() {
-            files.push(item);
-        } else if metadata.is_symlink() {
-            stack.push(
-                tokio::fs::read_link(item)
-                    .await
-                    .map_err(IOError::ReadLink)?,
-            );
-        } else if metadata.is_dir() {
-            let mut entries = tokio::fs::read_dir(item).await.map_err(IOError::ReadDir)?;
-
-            while let Some(entry) = entries.next_entry().await.map_err(IOError::ReadDir)? {
-                stack.push(entry.path());
-            }
-        }
-    }
-    Ok(files)
-}
-
-fn join<P, O>(path: P, other: O) -> std::path::PathBuf
-where
-    P: AsRef<std::path::Path>,
-    O: AsRef<std::path::Path>,
-{
-    let other = other
-        .as_ref()
-        .components()
-        .filter(|c| *c != std::path::Component::RootDir)
-        .collect::<std::path::PathBuf>();
-    path.as_ref().join(other)
 }
 
 #[derive(Debug)]
@@ -690,3 +507,116 @@ impl std::fmt::Display for BuildError {
 }
 
 impl std::error::Error for BuildError {}
+
+struct PrefixReader(std::path::PathBuf);
+
+impl PrefixReader {
+    pub async fn new<P: AsRef<std::path::Path>>(prefix: P) -> Result<Self, BuildError> {
+        tokio::fs::canonicalize(prefix.as_ref())
+            .await
+            .map_err(IOError::Canonicalize)
+            .map_err(|error| BuildError::IO(prefix.as_ref().to_path_buf(), error))
+            .map(Self)
+    }
+
+    #[tracing::instrument(skip(self), fields(path = %path.as_ref().display()))]
+    pub async fn read<P: AsRef<std::path::Path>>(&self, path: P) -> Result<Vec<u8>, BuildError> {
+        let path = self.0.join(path);
+
+        tokio::fs::read(&path)
+            .await
+            .map_err(IOError::Read)
+            .map_err(|error| BuildError::IO(path.clone(), error))
+    }
+
+    #[tracing::instrument(skip(self), fields(path = %self.0.display()))]
+    pub async fn traverse(&self) -> Result<Vec<std::path::PathBuf>, BuildError> {
+        let mut stack = vec![self.0.clone()];
+        let mut files = vec![];
+        while let Some(item) = stack.pop() {
+            let metadata = tokio::fs::metadata(&item)
+                .await
+                .map_err(IOError::Metadata)
+                .map_err(|error| BuildError::IO(item.clone(), error))?;
+            if metadata.is_file() {
+                let item = item
+                    .strip_prefix(&self.0)
+                    .expect("input is always a prefix");
+                files.push(item.to_path_buf());
+            } else if metadata.is_symlink() {
+                stack.push(
+                    tokio::fs::read_link(&item)
+                        .await
+                        .map_err(IOError::ReadLink)
+                        .map_err(|error| BuildError::IO(item.clone(), error))?,
+                );
+            } else if metadata.is_dir() {
+                let mut entries = tokio::fs::read_dir(&item)
+                    .await
+                    .map_err(IOError::ReadDir)
+                    .map_err(|error| BuildError::IO(item.clone(), error))?;
+
+                while let Some(entry) = entries
+                    .next_entry()
+                    .await
+                    .map_err(IOError::ReadDir)
+                    .map_err(|error| BuildError::IO(item.clone(), error))?
+                {
+                    stack.push(entry.path());
+                }
+            }
+        }
+        Ok(files)
+    }
+}
+
+struct PrefixWriter(std::path::PathBuf);
+
+impl PrefixWriter {
+    pub async fn new<P: AsRef<std::path::Path>>(prefix: P) -> Result<Self, BuildError> {
+        tokio::fs::create_dir_all(&prefix)
+            .await
+            .map_err(IOError::CreateDirAll)
+            .map_err(|error| BuildError::IO(prefix.as_ref().to_path_buf(), error))?;
+
+        tokio::fs::canonicalize(prefix.as_ref())
+            .await
+            .map_err(IOError::Canonicalize)
+            .map_err(|error| BuildError::IO(prefix.as_ref().to_path_buf(), error))
+            .map(Self)
+    }
+
+    pub async fn clean(&self) -> Result<(), BuildError> {
+        match tokio::fs::remove_dir_all(&self.0).await {
+            Ok(()) => Ok(()),
+            Err(error) if error.kind() == std::io::ErrorKind::NotFound => Ok(()),
+            Err(error) => Err(IOError::Remove(error)),
+        }
+        .map_err(|error| BuildError::IO(self.0.clone(), error))
+    }
+
+    #[tracing::instrument(skip(self, contents), fields(path = %path.as_ref().display()))]
+    pub async fn write(
+        &self,
+        path: impl AsRef<std::path::Path>,
+        contents: impl AsRef<[u8]>,
+    ) -> Result<(), BuildError> {
+        let path = path.as_ref();
+        let path = self.0.join(
+            path.components()
+                .filter(|c| *c != std::path::Component::RootDir)
+                .collect::<std::path::PathBuf>(),
+        );
+
+        if let Some(parent) = path.parent() {
+            tokio::fs::create_dir_all(parent)
+                .await
+                .map_err(IOError::CreateDirAll)
+                .map_err(|error| BuildError::IO(parent.to_path_buf(), error))?;
+        }
+        tokio::fs::write(&path, contents)
+            .await
+            .map_err(IOError::Write)
+            .map_err(|error| BuildError::IO(path.clone(), error))
+    }
+}
