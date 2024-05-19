@@ -50,5 +50,4 @@ on this page you can find most of the things that i use.
 
 ## transport
 
-- [brompton m6l](https://www.brompton.com)
 - custom fixed gear bike (49x16)
