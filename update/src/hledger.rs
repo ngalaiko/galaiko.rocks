@@ -369,7 +369,11 @@ static LOCATIONS: once_cell::sync::Lazy<HashMap<String, (f64, f64)>> =
         locations.insert("Umizu".to_string(), (57.699_246, 11.977_780));
         locations.insert("Bar Etzy".to_string(), (57.696_018, 11.959_750));
         locations.insert("Nooodle".to_string(), (57.695_921, 11.959_661));
-        locations.insert("Hasselsson - Skanstorget".to_string(), (57.695_921, 11.959_661));
+        locations.insert(
+            "Hasselsson - Skanstorget".to_string(),
+            (57.695_921, 11.959_661),
+        );
+        locations.insert("Manniny Espresso".to_string(), (57.698_252, 11.965_896));
 
         locations
     });
