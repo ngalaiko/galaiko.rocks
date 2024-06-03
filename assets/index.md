@@ -14,7 +14,6 @@ this is not a very large website. however, here is a list of lists that you can 
 - [cocktails](./cocktails/) i respect and occasionaly make to consume
 - [things i use](./uses.md)
 - [movies i watch](./movies/)
-- [what i am up to now](./now.md)
 
 if you are into liking and subscribing, check this out:
 
