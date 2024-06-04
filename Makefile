@@ -52,6 +52,7 @@ all: $(OUTPUT)
 # movies
 $(BUILD_DIR)/movies/index.html:
 	@echo '$(SRC_DIR)/movies/**/.json -> $@'
+	@mkdir -p "$(dir $@)"
 	@cat $(INPUT_MOVIE_FILES) | $(JQ_BIN) --slurp '{ entries: . }' | $(J2_BIN) --strict --format json --outfile="$@" -D=- ./templates/movies/index.html.jinja
 
 $(BUILD_DIR)/movies/%.jpg.70x0@2x.webp: $(SRC_DIR)/movies/%.jpg
@@ -62,7 +63,8 @@ $(BUILD_DIR)/movies/%.jpg.70x0@2x.webp: $(SRC_DIR)/movies/%.jpg
 # places
 $(BUILD_DIR)/places/index.html:
 	@echo '$(SRC_DIR)/places/**/.json -> $@'
-	@cat $(INPUT_PLACE_FILES) | $(JQ_BIN) --slurp '.' >/dev/null
+	@mkdir -p "$(dir $@)"
+	@cat $(INPUT_PLACE_FILES) | $(JQ_BIN) --slurp '{places: .}' | $(J2_BIN) --strict --format json --outfile="$@" -D=- ./templates/places/index.html.jinja
 
 # cocktails
 $(BUILD_DIR)/cocktails/%.html: $(SRC_DIR)/cocktails/%.cook

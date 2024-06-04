@@ -1,0 +1,23 @@
+<table>
+{%- for place in places|sort(attribute="times",reverse=True) %}
+    <tr
+        class="place"
+        data-name="{{ place.name }}"
+        data-latitude="{{ place.location[0] }}"
+        data-longtitude="{{ place.location[1] }}"
+        data-visits="{{ place.times }}"
+        data-amout="{{ place.spent }}"
+        data-currency="SEK"
+    >
+        <td>
+            {{ place.name }}
+        </td>
+        <td>
+            {{ place.times }}
+        </td>
+        <td>
+            {{ place.spent }} SEK
+        </td>
+    </tr>
+{%- endfor %}
+</table>

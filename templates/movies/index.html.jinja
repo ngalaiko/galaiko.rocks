@@ -5,12 +5,13 @@
             <datetime date="{{ entry.date }}">{{ entry.date }}</datetime>
         </td>
         <td>
+            {%- if entry.is_liked %}❤️{% else %}♥︎{% endif %}
+        </td>
+        <td>
             <img width="70px" src="{{ entry.title_slug }}.jpg.70x0@2x.webp"
         </td>
         <td>
-        </td>
-        <td>
-            {%- if entry.is_liked %}❤️{% endif %}<a href="{{ entry.href }}">{{ entry.title }}</a> 
+            <a href="{{ entry.href }}">{{ entry.title }}</a> 
         </td>
     </tr>
 {%- endfor %}
