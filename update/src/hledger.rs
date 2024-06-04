@@ -164,7 +164,7 @@ pub async fn update<P: AsRef<std::path::Path>>(file: Option<P>, output: P) -> Re
         .map_err(Error::Io)?;
 
     for place in &places {
-        let output = output.join(format!("{}.json", place.name));
+        let output = output.join(format!("{}.json", slug::slugify(&place.name)));
         tokio::fs::write(
             &output,
             serde_json::to_string_pretty(&place).map_err(Error::Ser)?,

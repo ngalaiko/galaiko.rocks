@@ -61,6 +61,7 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
     let mut all_files = vec![];
     for record in &records {
         let title = record.basic_information.title.replace('/', "-");
+        let title = slug::slugify(&title);
 
         if let (Some(filename), Some(ext)) = (
             std::path::Path::new(&record.basic_information.cover_image)

@@ -1,3 +1,7 @@
 target
 serve/public
 ledger
+
+bin
+build
+tmp
