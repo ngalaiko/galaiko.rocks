@@ -6,7 +6,7 @@ BUILD_DIR := build
 PANDOC_BIN := pandoc
 IMAGEMAGIC_BIN := magick
 JQ_BIN := jq
-J2_BIN := jinjanate
+J2_BIN := jinja2
 COOK_BIN := cook
 
 INPUT_MD_FILES := $(shell find $(SRC_DIR) -type f -name '*.md')
@@ -37,11 +37,11 @@ OUTPUT_COCKTAIL_IMAGE_FILES := $(OUTPUT_COCKTAIL_LARGE_IMAGE_FILES) $(OUTPUT_COC
 OUTPUT_PLACE_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_PLACE_FILES))
 
 OUTPUT := $(OUTPUT_MD_FILES)
-OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_FILES)
+# OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/movies/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_MOVIE_IMAGE_FILES)
-OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_FILES)
+# OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_POST_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/places/index.html
@@ -52,7 +52,7 @@ all: $(OUTPUT)
 # movies
 $(BUILD_DIR)/movies/index.html:
 	@echo '$(SRC_DIR)/movies/**/.json -> $@'
-	@cat $(INPUT_MOVIE_FILES) | $(JQ_BIN) --slurp '.' >/dev/null
+	@cat $(INPUT_MOVIE_FILES) | $(JQ_BIN) --slurp '{ entries: . }' | $(J2_BIN) --strict --format json --outfile="$@" -D=- ./templates/movies/index.html.jinja
 
 $(BUILD_DIR)/movies/%.jpg.70x0@2x.webp: $(SRC_DIR)/movies/%.jpg
 	@echo '$< -> $@'
@@ -67,6 +67,7 @@ $(BUILD_DIR)/places/index.html:
 # cocktails
 $(BUILD_DIR)/cocktails/%.html: $(SRC_DIR)/cocktails/%.cook
 	@echo '$< -> $@'
+	@$(COOK_BIN) recipe read "$<" --output-format json >/dev/null
 
 $(BUILD_DIR)/cocktails/%.jpeg.800x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 	@echo '$< -> $@'
@@ -81,6 +82,7 @@ $(BUILD_DIR)/cocktails/%.jpeg.200x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 # records
 $(BUILD_DIR)/records/%.html: $(SRC_DIR)/records/%.json
 	@echo '$< -> $@'
+	@cat "$<" | jq >/dev/null
 
 $(BUILD_DIR)/records/%.jpeg.200x0@2x.webp: $(SRC_DIR)/records/%.jpeg
 	@echo '$< -> $@'
