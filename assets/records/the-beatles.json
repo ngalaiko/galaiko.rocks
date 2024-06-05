@@ -1,13 +1,14 @@
 {
-  "id": 13988010,
-  "date_added": "2022-10-22T13:41:10Z",
   "basic_information": {
-    "title": "The Beatles",
     "artists": [
       {
         "name": "The Beatles"
       }
     ],
-    "cover_image": "https://i.discogs.com/MLRi8Ham4YKporItxjOWhVfsja2ipKqu-vgImpi7TZU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzOTg4/MDEwLTE1NjU1NDc5/MzgtMjcyMC5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/MLRi8Ham4YKporItxjOWhVfsja2ipKqu-vgImpi7TZU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzOTg4/MDEwLTE1NjU1NDc5/MzgtMjcyMC5qcGVn.jpeg",
+    "title": "The Beatles"
+  },
+  "date_added": "2022-10-22T13:41:10Z",
+  "id": 13988010,
+  "title_slug": "the-beatles"
 }

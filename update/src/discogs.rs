@@ -60,8 +60,7 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
 
     let mut all_files = vec![];
     for record in &records {
-        let title = record.basic_information.title.replace('/', "-");
-        let title = slug::slugify(&title);
+        let title_slug = slug::slugify(&record.basic_information.title);
 
         if let (Some(filename), Some(ext)) = (
             std::path::Path::new(&record.basic_information.cover_image)
@@ -75,7 +74,7 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
                 continue;
             }
             let mut image_out = output.to_path_buf();
-            image_out.push(format!("{title}.{ext}"));
+            image_out.push(format!("{title_slug}.{ext}"));
 
             if !tokio::fs::try_exists(&image_out).await.map_err(Error::Io)? {
                 let response = get_image(&record.basic_information.cover_image, token)
@@ -96,12 +95,18 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
         }
 
         let mut output_json = output.to_path_buf();
-        output_json.push(format!("{title}.json"));
+        output_json.push(format!("{title_slug}.json"));
 
         if !tokio::fs::try_exists(&output_json)
             .await
             .map_err(Error::Io)?
         {
+            let mut record = serde_json::to_value(record).map_err(Error::Ser)?;
+            if let serde_json::Value::Object(ref mut object) = record {
+                let title_slug = serde_json::to_value(title_slug).map_err(Error::Ser)?;
+                object.insert(String::from("title_slug"), title_slug);
+            }
+
             let serialized = serde_json::to_vec_pretty(&record).map_err(Error::Ser)?;
             tokio::fs::write(&output_json, serialized)
                 .await

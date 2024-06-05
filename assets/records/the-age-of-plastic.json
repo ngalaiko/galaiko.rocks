@@ -1,13 +1,14 @@
 {
-  "id": 1346013,
-  "date_added": "2021-05-23T13:40:10Z",
   "basic_information": {
-    "title": "The Age Of Plastic",
     "artists": [
       {
         "name": "The Buggles"
       }
     ],
-    "cover_image": "https://i.discogs.com/0nG7q4srfe1EgmDkGPKwIiB7GL5OEgYbDQjCeczzmGQ/rs:fit/g:sm/q:90/h:588/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNDYw/MTMtMTIxOTQzNDA1/Ny5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/0nG7q4srfe1EgmDkGPKwIiB7GL5OEgYbDQjCeczzmGQ/rs:fit/g:sm/q:90/h:588/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNDYw/MTMtMTIxOTQzNDA1/Ny5qcGVn.jpeg",
+    "title": "The Age Of Plastic"
+  },
+  "date_added": "2021-05-23T13:40:10Z",
+  "id": 1346013,
+  "title_slug": "the-age-of-plastic"
 }

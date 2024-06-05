@@ -1,13 +1,14 @@
 {
-  "id": 23063069,
-  "date_added": "2022-06-11T15:46:12Z",
   "basic_information": {
-    "title": "Face To Face",
     "artists": [
       {
         "name": "The Kinks"
       }
     ],
-    "cover_image": "https://i.discogs.com/EGbzYe0OO9jRCKRwmOV7HC2haSW997A3ccJs1fp-2Tk/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMDYz/MDY5LTE2NTI3MDE0/NjktOTc3Ny5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/EGbzYe0OO9jRCKRwmOV7HC2haSW997A3ccJs1fp-2Tk/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMDYz/MDY5LTE2NTI3MDE0/NjktOTc3Ny5qcGVn.jpeg",
+    "title": "Face To Face"
+  },
+  "date_added": "2022-06-11T15:46:12Z",
+  "id": 23063069,
+  "title_slug": "face-to-face"
 }

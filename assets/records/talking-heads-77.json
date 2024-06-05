@@ -1,13 +1,14 @@
 {
-  "id": 16033829,
-  "date_added": "2020-11-18T23:49:15Z",
   "basic_information": {
-    "title": "Talking Heads: 77",
     "artists": [
       {
         "name": "Talking Heads"
       }
     ],
-    "cover_image": "https://i.discogs.com/4HjvLWunclatwKOpFNXZBIAYa1KZMOBHwIknrhO0zy4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDMz/ODI5LTE2MDI2NzUy/ODUtNDMyMS5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/4HjvLWunclatwKOpFNXZBIAYa1KZMOBHwIknrhO0zy4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDMz/ODI5LTE2MDI2NzUy/ODUtNDMyMS5qcGVn.jpeg",
+    "title": "Talking Heads: 77"
+  },
+  "date_added": "2020-11-18T23:49:15Z",
+  "id": 16033829,
+  "title_slug": "talking-heads-77"
 }

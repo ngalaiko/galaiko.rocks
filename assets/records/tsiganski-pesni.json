@@ -1,13 +1,14 @@
 {
-  "id": 2828896,
-  "date_added": "2023-11-13T06:44:42Z",
   "basic_information": {
-    "title": "Цигански Песни",
     "artists": [
       {
         "name": "Оркестър Хасан Чинчири"
       }
     ],
-    "cover_image": "https://i.discogs.com/-Dkd_GEMdElwMcts6eWMfaX3DNiLCsiAiNSp_RKQtIc/rs:fit/g:sm/q:90/h:571/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4Mjg4/OTYtMTQ1NDQ0OTUz/MS00MzM4LmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/-Dkd_GEMdElwMcts6eWMfaX3DNiLCsiAiNSp_RKQtIc/rs:fit/g:sm/q:90/h:571/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4Mjg4/OTYtMTQ1NDQ0OTUz/MS00MzM4LmpwZWc.jpeg",
+    "title": "Цигански Песни"
+  },
+  "date_added": "2023-11-13T06:44:42Z",
+  "id": 2828896,
+  "title_slug": "tsiganski-pesni"
 }

@@ -1,13 +1,14 @@
 {
-  "id": 5289043,
-  "date_added": "2024-05-03T11:55:26Z",
   "basic_information": {
-    "title": "Look At Yourself",
     "artists": [
       {
         "name": "Uriah Heep"
       }
     ],
-    "cover_image": "https://i.discogs.com/Lej6PVWY-z8SuayxuQ3tXPBgoRKJ4tRPVmlIxpgTpGo/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUyODkw/NDMtMTQ0NDQyMzU4/My02OTQ0LmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/Lej6PVWY-z8SuayxuQ3tXPBgoRKJ4tRPVmlIxpgTpGo/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUyODkw/NDMtMTQ0NDQyMzU4/My02OTQ0LmpwZWc.jpeg",
+    "title": "Look At Yourself"
+  },
+  "date_added": "2024-05-03T11:55:26Z",
+  "id": 5289043,
+  "title_slug": "look-at-yourself"
 }

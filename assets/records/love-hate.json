@@ -1,13 +1,14 @@
 {
-  "id": 8778580,
-  "date_added": "2023-07-06T16:42:11Z",
   "basic_information": {
-    "title": "Love & Hate",
     "artists": [
       {
         "name": "Michael Kiwanuka"
       }
     ],
-    "cover_image": "https://i.discogs.com/ctBNk3Tp42pBh-j28L5GPdyWEAF5kcXXYALJc2TMObI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg3Nzg1/ODAtMTQ2ODU4NjM2/My02NTgxLmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/ctBNk3Tp42pBh-j28L5GPdyWEAF5kcXXYALJc2TMObI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg3Nzg1/ODAtMTQ2ODU4NjM2/My02NTgxLmpwZWc.jpeg",
+    "title": "Love & Hate"
+  },
+  "date_added": "2023-07-06T16:42:11Z",
+  "id": 8778580,
+  "title_slug": "love-hate"
 }

@@ -1,13 +1,14 @@
 {
-  "id": 864299,
-  "date_added": "2024-05-03T11:48:48Z",
   "basic_information": {
-    "title": "The Man • Machine",
     "artists": [
       {
         "name": "Kraftwerk"
       }
     ],
-    "cover_image": "https://i.discogs.com/ltTpzGvOrc_nGHW7_1uhl_xKzeSOorHcvYYsjOSp690/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2NDI5/OS0xMzg4NzczNzAx/LTY2NjMuanBlZw.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/ltTpzGvOrc_nGHW7_1uhl_xKzeSOorHcvYYsjOSp690/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2NDI5/OS0xMzg4NzczNzAx/LTY2NjMuanBlZw.jpeg",
+    "title": "The Man • Machine"
+  },
+  "date_added": "2024-05-03T11:48:48Z",
+  "id": 864299,
+  "title_slug": "the-man-machine"
 }

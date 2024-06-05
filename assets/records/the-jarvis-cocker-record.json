@@ -1,13 +1,14 @@
 {
-  "id": 16281419,
-  "date_added": "2021-07-02T14:45:05Z",
   "basic_information": {
-    "title": "The Jarvis Cocker Record",
     "artists": [
       {
         "name": "Jarvis Cocker"
       }
     ],
-    "cover_image": "https://i.discogs.com/W3RGqnSBLPILYmfmz4wHswu3b4Bo8piRINbj_Vm9L58/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2Mjgx/NDE5LTE2MDY1MTA0/OTUtOTkwMi5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/W3RGqnSBLPILYmfmz4wHswu3b4Bo8piRINbj_Vm9L58/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2Mjgx/NDE5LTE2MDY1MTA0/OTUtOTkwMi5qcGVn.jpeg",
+    "title": "The Jarvis Cocker Record"
+  },
+  "date_added": "2021-07-02T14:45:05Z",
+  "id": 16281419,
+  "title_slug": "the-jarvis-cocker-record"
 }

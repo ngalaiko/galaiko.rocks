@@ -1,13 +1,14 @@
 {
-  "id": 18150907,
-  "date_added": "2021-12-26T13:03:54Z",
   "basic_information": {
-    "title": "Moanin'",
     "artists": [
       {
         "name": "Art Blakey & The Jazz Messengers"
       }
     ],
-    "cover_image": "https://i.discogs.com/kBCsJS-L48l0kVPAPNrcvUn0AzHmvClBMseyOWknD48/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MTUw/OTA3LTE2MTc1NTEw/NTItNTAzOS5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/kBCsJS-L48l0kVPAPNrcvUn0AzHmvClBMseyOWknD48/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MTUw/OTA3LTE2MTc1NTEw/NTItNTAzOS5qcGVn.jpeg",
+    "title": "Moanin'"
+  },
+  "date_added": "2021-12-26T13:03:54Z",
+  "id": 18150907,
+  "title_slug": "moanin"
 }

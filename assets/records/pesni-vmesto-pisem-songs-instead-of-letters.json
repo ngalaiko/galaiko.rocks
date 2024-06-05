@@ -1,8 +1,5 @@
 {
-  "id": 1137895,
-  "date_added": "2023-07-26T13:58:42Z",
   "basic_information": {
-    "title": "Песни Вместо Писем = Songs Instead Of Letters",
     "artists": [
       {
         "name": "Udo Lindenberg"
@@ -17,6 +14,10 @@
         "name": "Алла Пугачева"
       }
     ],
-    "cover_image": "https://i.discogs.com/w5WL8CQV4ZlWKLV3rXQo1SEXi1HVBxLvR9vJGaNyCug/rs:fit/g:sm/q:90/h:608/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMzc4/OTUtMTI0NzA2MDU2/MC5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/w5WL8CQV4ZlWKLV3rXQo1SEXi1HVBxLvR9vJGaNyCug/rs:fit/g:sm/q:90/h:608/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMzc4/OTUtMTI0NzA2MDU2/MC5qcGVn.jpeg",
+    "title": "Песни Вместо Писем = Songs Instead Of Letters"
+  },
+  "date_added": "2023-07-26T13:58:42Z",
+  "id": 1137895,
+  "title_slug": "pesni-vmesto-pisem-songs-instead-of-letters"
 }

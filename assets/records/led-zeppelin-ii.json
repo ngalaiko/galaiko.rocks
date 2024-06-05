@@ -1,13 +1,14 @@
 {
-  "id": 5734489,
-  "date_added": "2021-12-26T13:05:59Z",
   "basic_information": {
-    "title": "Led Zeppelin II",
     "artists": [
       {
         "name": "Led Zeppelin"
       }
     ],
-    "cover_image": "https://i.discogs.com/6wOpOfWvHhufomtIuco4rs-c4kBO4jkVg5XND7eCHJ8/rs:fit/g:sm/q:90/h:601/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3MzQ0/ODktMTQxODM5NjY1/Ny04MzE1LmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/6wOpOfWvHhufomtIuco4rs-c4kBO4jkVg5XND7eCHJ8/rs:fit/g:sm/q:90/h:601/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3MzQ0/ODktMTQxODM5NjY1/Ny04MzE1LmpwZWc.jpeg",
+    "title": "Led Zeppelin II"
+  },
+  "date_added": "2021-12-26T13:05:59Z",
+  "id": 5734489,
+  "title_slug": "led-zeppelin-ii"
 }

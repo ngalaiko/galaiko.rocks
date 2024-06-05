@@ -1,8 +1,5 @@
 {
-  "id": 20103439,
-  "date_added": "2022-02-19T15:52:42Z",
   "basic_information": {
-    "title": "Этажи = Etazhi",
     "artists": [
       {
         "name": "Молчат Дома"
@@ -11,6 +8,10 @@
         "name": "Молчат Дома"
       }
     ],
-    "cover_image": "https://i.discogs.com/eJ-cB0m6Ang01P_gJeMRP5kX_41Ik1GF2q7WGzHYlmg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTAz/NDM5LTE2MzMwOTEx/NjUtNDYyMC5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/eJ-cB0m6Ang01P_gJeMRP5kX_41Ik1GF2q7WGzHYlmg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTAz/NDM5LTE2MzMwOTEx/NjUtNDYyMC5qcGVn.jpeg",
+    "title": "Этажи = Etazhi"
+  },
+  "date_added": "2022-02-19T15:52:42Z",
+  "id": 20103439,
+  "title_slug": "etazhi-etazhi"
 }

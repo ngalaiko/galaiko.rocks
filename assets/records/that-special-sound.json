@@ -1,8 +1,5 @@
 {
-  "id": 1901721,
-  "date_added": "2021-06-06T15:25:22Z",
   "basic_information": {
-    "title": "That Special Sound",
     "artists": [
       {
         "name": "Jimi Hendrix"
@@ -11,6 +8,10 @@
         "name": "Curtis Knight"
       }
     ],
-    "cover_image": "https://i.discogs.com/VhyIpTvUDpSWcxIIF9ZJwed1sZxScs1qo-dAXeH0GGc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDE3/MjEtMTUxMzI1NDMw/MS02NTE1LmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/VhyIpTvUDpSWcxIIF9ZJwed1sZxScs1qo-dAXeH0GGc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MDE3/MjEtMTUxMzI1NDMw/MS02NTE1LmpwZWc.jpeg",
+    "title": "That Special Sound"
+  },
+  "date_added": "2021-06-06T15:25:22Z",
+  "id": 1901721,
+  "title_slug": "that-special-sound"
 }

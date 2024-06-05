@@ -1,13 +1,14 @@
 {
-  "id": 17357578,
-  "date_added": "2021-07-02T14:52:30Z",
   "basic_information": {
-    "title": "Odessey And Oracle",
     "artists": [
       {
         "name": "The Zombies"
       }
     ],
-    "cover_image": "https://i.discogs.com/7WvH7H2CZT2L6Jiox2sL141axZZhRu9vxm3duBHzpcU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MzU3/NTc4LTE2MTMwMDI2/MDUtODcyMS5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/7WvH7H2CZT2L6Jiox2sL141axZZhRu9vxm3duBHzpcU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MzU3/NTc4LTE2MTMwMDI2/MDUtODcyMS5qcGVn.jpeg",
+    "title": "Odessey And Oracle"
+  },
+  "date_added": "2021-07-02T14:52:30Z",
+  "id": 17357578,
+  "title_slug": "odessey-and-oracle"
 }

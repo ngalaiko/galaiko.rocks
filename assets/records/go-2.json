@@ -1,13 +1,14 @@
 {
-  "id": 2472944,
-  "date_added": "2021-05-23T13:33:41Z",
   "basic_information": {
-    "title": "Go 2",
     "artists": [
       {
         "name": "XTC"
       }
     ],
-    "cover_image": "https://i.discogs.com/73MxDEvovwsDsxyuACGv2Wq8h8e4KUnOut6SePOLAok/rs:fit/g:sm/q:90/h:603/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NzI5/NDQtMTYwMzQ2Njky/MC01MTYyLmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/73MxDEvovwsDsxyuACGv2Wq8h8e4KUnOut6SePOLAok/rs:fit/g:sm/q:90/h:603/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NzI5/NDQtMTYwMzQ2Njky/MC01MTYyLmpwZWc.jpeg",
+    "title": "Go 2"
+  },
+  "date_added": "2021-05-23T13:33:41Z",
+  "id": 2472944,
+  "title_slug": "go-2"
 }

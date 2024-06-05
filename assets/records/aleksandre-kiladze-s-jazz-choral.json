@@ -1,13 +1,14 @@
 {
-  "id": 29408635,
-  "date_added": "2024-01-06T12:37:51Z",
   "basic_information": {
-    "title": "Aleksandre Kiladze's Jazz Choral",
     "artists": [
       {
         "name": "Aleksandre Kiladze's Jazz Choral"
       }
     ],
-    "cover_image": "https://i.discogs.com/Pmp3A6wYBmGcjFzENFrDeNhAiq8S9Qds8DzddG01ME4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDA4/NjM1LTE3MTY4OTIy/MDEtOTU5MS5qcGVn.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/Pmp3A6wYBmGcjFzENFrDeNhAiq8S9Qds8DzddG01ME4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDA4/NjM1LTE3MTY4OTIy/MDEtOTU5MS5qcGVn.jpeg",
+    "title": "Aleksandre Kiladze's Jazz Choral"
+  },
+  "date_added": "2024-01-06T12:37:51Z",
+  "id": 29408635,
+  "title_slug": "aleksandre-kiladze-s-jazz-choral"
 }

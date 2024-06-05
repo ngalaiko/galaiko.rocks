@@ -1,13 +1,14 @@
 {
-  "id": 7596232,
-  "date_added": "2022-04-23T12:22:11Z",
   "basic_information": {
-    "title": "Blonde On Blonde",
     "artists": [
       {
         "name": "Bob Dylan"
       }
     ],
-    "cover_image": "https://i.discogs.com/ID4Wr1yCjsYOBmQDjaH_cfeV_h9-Jp_4LUp4EpoJx-I/rs:fit/g:sm/q:90/h:602/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc1OTYy/MzItMTY5NTMxNzc4/My03OTY5LmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/ID4Wr1yCjsYOBmQDjaH_cfeV_h9-Jp_4LUp4EpoJx-I/rs:fit/g:sm/q:90/h:602/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc1OTYy/MzItMTY5NTMxNzc4/My03OTY5LmpwZWc.jpeg",
+    "title": "Blonde On Blonde"
+  },
+  "date_added": "2022-04-23T12:22:11Z",
+  "id": 7596232,
+  "title_slug": "blonde-on-blonde"
 }

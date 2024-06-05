@@ -1,13 +1,14 @@
 {
-  "id": 5789703,
-  "date_added": "2023-08-29T18:38:56Z",
   "basic_information": {
-    "title": "Tago Mago",
     "artists": [
       {
         "name": "Can"
       }
     ],
-    "cover_image": "https://i.discogs.com/IAD9kX7YPv_90Bm9-GKAqmpp_fMg25nJu-LyYfmmdb4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3ODk3/MDMtMTQwMjc0NTU3/MS0yODMxLmpwZWc.jpeg"
-  }
+    "cover_image": "https://i.discogs.com/IAD9kX7YPv_90Bm9-GKAqmpp_fMg25nJu-LyYfmmdb4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3ODk3/MDMtMTQwMjc0NTU3/MS0yODMxLmpwZWc.jpeg",
+    "title": "Tago Mago"
+  },
+  "date_added": "2023-08-29T18:38:56Z",
+  "id": 5789703,
+  "title_slug": "tago-mago"
 }
