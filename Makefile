@@ -76,7 +76,7 @@ all: $(OUTPUT)
 
 .PHONY: serve
 serve:
-	@python3 -m http.server --directory build
+	@python3 -m http.server --directory build 8080
 
 # movies
 $(BUILD_DIR)/movies/index.html:
@@ -168,6 +168,3 @@ $(BUILD_DIR)/%: $(SRC_DIR)/%
 .PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR)
-
-# https://github.com/mgdm/htmlq
-# https://github.com/mikefarah/yq
