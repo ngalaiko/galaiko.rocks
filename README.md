@@ -2,6 +2,22 @@
 
 my website
 
+## requirements
+
+- [python3](https://www.python.org)
+- [bash](https://www.gnu.org/software/bash/)
+- [make](https://www.gnu.org/software/make/)
+- [jq](https://github.com/jqlang/jq)
+- [cookcli](https://github.com/cooklang/cookcli)
+- [imagemagick](https://imagemagick.org)
+- [pandoc](https://pandoc.org)
+
+## build
+
+```bash
+$ make
+```
+
 ## update 3rd party data
 
 ### letterboxd
