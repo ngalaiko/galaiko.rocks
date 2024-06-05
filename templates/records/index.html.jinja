@@ -6,9 +6,20 @@
     <ul>
     {%- for record in records|sort(attribute="date_added",reverse=True) %}
         <li>
-            <a href="https://www.discogs.com/release{{ record.id }}">
+            <a href="https://www.discogs.com/release/{{ record.id }}">
                 <figure>
-                    <img width="200px" src="{{ record.basic_imormation.title }}"
+                    <img width="200px" src="{{ record.title_slug }}.jpeg.200x0@2x.webp" loading="lazy" alt="Cover of {{ record.basic_information.title }} album" />
+                    <figcaption>
+                        <center>
+                            <span>
+                                {{ record.basic_information.title }}
+                            </span>
+                            <br />
+                            <span>
+                                {{ record.basic_information.artists[0] }}
+                            </span>
+                        </center>
+                    </figcaption>
                 </figure>
             </a>
         </li>

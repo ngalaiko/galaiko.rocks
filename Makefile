@@ -39,6 +39,7 @@ OUTPUT_PLACE_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_P
 OUTPUT := $(OUTPUT_MD_FILES)
 # OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_IMAGE_FILES)
+OUTPUT := $(OUTPUT) $(BUILD_DIR)/records/index.html
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/movies/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_MOVIE_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_IMAGE_FILES)
@@ -81,7 +82,7 @@ $(BUILD_DIR)/cocktails/%.jpeg.200x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 	@$(IMAGEMAGIC_BIN) "$<" -resize 400 "$@"
 
 # records
-$(BUILD_DIR)/records/%.html: $(SRC_DIR)/records/%.json
+$(BUILD_DIR)/records/index.html:
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
 	@cat $(INPUT_RECORD_FILES) | $(JQ_BIN) --slurp '{ records: . }' | $(J2_BIN) -f json records/index.html.jinja -o="$@"
