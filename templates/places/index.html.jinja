@@ -1,5 +1,10 @@
 {% extends "_layout.html.jinja" %}
 
+{% block head %}
+    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="/styles/map.css">
+{% endblock %}
+
 {% block title %}/places/{% endblock %}
 
 {% block content %}
@@ -26,4 +31,6 @@
         </tr>
     {%- endfor %}
     </table>
+
+    <script href="/scripts/map.js">
 {% endblock %}

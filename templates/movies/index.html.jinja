@@ -1,5 +1,9 @@
 {% extends "_layout.html.jinja" %}
 
+{% block head %}
+    <link rel="stylesheet" href="/styles/table.css">
+{% endblock %}
+
 {% block title %}/movies/{% endblock %}
 
 {% block content %}
@@ -10,13 +14,13 @@
                 <time datetime="{{ entry.date }}">{{ entry.date }}</time>
             </td>
             <td>
-                {%- if entry.is_liked %}❤️{% else %}♥︎{% endif %}
-            </td>
-            <td>
                 <img width="70px" src="{{ entry.title_slug }}.jpg.70x0@2x.webp"
             </td>
             <td>
                 <a href="{{ entry.href }}">{{ entry.title }}</a> 
+            </td>
+            <td>
+                {%- if entry.is_liked %}❤️{% endif %}
             </td>
         </tr>
     {%- endfor %}

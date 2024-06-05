@@ -1,6 +1,8 @@
+# in and out
 SRC_DIR := assets
 BUILD_DIR := build
 
+# deps
 PANDOC_BIN := pandoc
 IMAGEMAGIC_BIN := magick
 JQ_BIN := jq
@@ -8,6 +10,7 @@ YQ_BIN := yq
 J2_BIN := j2 --customize ./j2_customize.py
 COOK_BIN := cook
 
+# find input files by type
 INPUT_MD_FILES := $(shell find $(SRC_DIR) -type f -name '*.md')
 INPUT_POST_FILES := $(shell find $(SRC_DIR)/posts -type f -name '*.md')
 INPUT_POST_JPG_IMAGE_FILES := $(shell find $(SRC_DIR)/posts -type f -name '*.jpg')
@@ -21,6 +24,24 @@ INPUT_COCKTAIL_FILES := $(shell find $(SRC_DIR)/cocktails -type f -name '*.cook'
 INPUT_COCKTAIL_IMAGE_FILES := $(shell find $(SRC_DIR)/cocktails -type f -name '*.jpeg')
 INPUT_PLACE_FILES := $(shell find $(SRC_DIR)/places -type f -name '*.json')
 
+# calculate all other input files
+INPUT_FILES := $(INPUT_MD_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_POST_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_POST_JPG_IMAGE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_POST_JPEG_IMAGE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_POST_PNG_IMAGE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_MOVIE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_MOVIE_IMAGE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_RECORD_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_RECORD_IMAGE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_COCKTAIL_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_COCKTAIL_IMAGE_FILES)
+INPUT_FILES := $(INPUT_FILES) $(INPUT_PLACE_FILES)
+
+INPUT_ALL_FILES := $(shell find $(SRC_DIR) -type f)
+INPUT_OTHER_FILES := $(filter-out $(INPUT_FILES),$(INPUT_ALL_FILES))
+
+# calculate output files
 OUTPUT_MD_FILES := $(patsubst $(SRC_DIR)/%.md,$(BUILD_DIR)/%.html,$(INPUT_MD_FILES))
 OUTPUT_POST_JPG_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpg,$(BUILD_DIR)/%.jpg.800x0@2x.webp,$(INPUT_POST_JPG_IMAGE_FILES))
 OUTPUT_POST_JPEG_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg.800x0@2x.webp,$(INPUT_POST_JPEG_IMAGE_FILES))
@@ -35,6 +56,7 @@ OUTPUT_COCKTAIL_SMALL_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%
 OUTPUT_COCKTAIL_LARGE_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg.800x0@2x.webp,$(INPUT_COCKTAIL_IMAGE_FILES))
 OUTPUT_COCKTAIL_IMAGE_FILES := $(OUTPUT_COCKTAIL_LARGE_IMAGE_FILES) $(OUTPUT_COCKTAIL_SMALL_IMAGE_FILES)
 OUTPUT_PLACE_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_PLACE_FILES))
+OUTPUT_OTHER_FILES := $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(INPUT_OTHER_FILES))
 
 OUTPUT := $(OUTPUT_MD_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_FILES)
@@ -47,9 +69,14 @@ OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/posts/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_POST_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/places/index.html
+OUTPUT := $(OUTPUT) $(OUTPUT_OTHER_FILES)
 
 .PHONY: all
 all: $(OUTPUT)
+
+.PHONY: serve
+serve:
+	@python3 -m http.server --directory build
 
 # movies
 $(BUILD_DIR)/movies/index.html:
@@ -135,6 +162,7 @@ $(BUILD_DIR)/%.html: $(SRC_DIR)/%.md
 # assets
 $(BUILD_DIR)/%: $(SRC_DIR)/%
 	@echo '$< -> $@'
+	@mkdir -p "$(dir $@)"
 	@cp "$<" "$@"
 
 .PHONY: clean
