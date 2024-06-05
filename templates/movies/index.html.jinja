@@ -7,7 +7,7 @@
     {%- for entry in entries|sort(attribute="date",reverse=True) %}
         <tr>
             <td>
-                <datetime date="{{ entry.date }}">{{ entry.date }}</datetime>
+                <time datetime="{{ entry.date }}">{{ entry.date }}</time>
             </td>
             <td>
                 {%- if entry.is_liked %}❤️{% else %}♥︎{% endif %}

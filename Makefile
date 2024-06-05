@@ -9,6 +9,7 @@ J2_BIN := j2 --customize ./j2_customize.py
 COOK_BIN := cook
 
 INPUT_MD_FILES := $(shell find $(SRC_DIR) -type f -name '*.md')
+INPUT_POST_FILES := $(shell find $(SRC_DIR)/posts -type f -name '*.md')
 INPUT_POST_JPG_IMAGE_FILES := $(shell find $(SRC_DIR)/posts -type f -name '*.jpg')
 INPUT_POST_JPEG_IMAGE_FILES := $(shell find $(SRC_DIR)/posts -type f -name '*.jpeg')
 INPUT_POST_PNG_IMAGE_FILES := $(shell find $(SRC_DIR)/posts -type f -name '*.png')
@@ -44,7 +45,6 @@ OUTPUT := $(OUTPUT) $(BUILD_DIR)/movies/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_MOVIE_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/posts/index.html
-OUTPUT := $(OUTPUT) $(OUTPUT_POST_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_POST_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/places/index.html
 
@@ -104,6 +104,7 @@ $(BUILD_DIR)/records/%.jpeg.200x0@2x.webp: $(SRC_DIR)/records/%.jpeg
 $(BUILD_DIR)/posts/index.html:
 	@echo '$(SRC_DIR)/posts/*.md -> $@'
 	@mkdir -p "$(dir $@)"
+	@ls $(INPUT_POST_FILES) | xargs -L 1 -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.html.jinja -o="$@"
 
 $(BUILD_DIR)/posts/%.html: $(SRC_DIR)/%.md
 	@echo '$< -> $@'
