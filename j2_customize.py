@@ -1,6 +1,8 @@
 import jinja2
 import os
 
+__dir__ = os.path.dirname(os.path.realpath(__file__))
+
 
 def j2_environment(env):
     """Modify Jinja2 environment
@@ -9,14 +11,7 @@ def j2_environment(env):
     :rtype: jinja2.environment.Environment
     """
 
-    __dir__ = os.path.dirname(os.path.realpath(__file__))
+    # set loader to templates root
     env.loader = jinja2.FileSystemLoader(os.path.join(__dir__, "templates"))
-
-
-    # def join_path(self, template, parent):
-    #     print(template)
-    #     return os.path.join(os.path.dirname(parent), template)
-    #
-    # env.join_path = join_path
 
     return env
