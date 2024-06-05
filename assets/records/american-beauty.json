@@ -1,14 +1,13 @@
 {
+  "id": 16194546,
+  "date_added": "2021-04-26T16:08:17Z",
   "basic_information": {
+    "title": "American Beauty",
     "artists": [
       {
         "name": "The Grateful Dead"
       }
     ],
-    "cover_image": "https://i.discogs.com/ow0rtVvzTdmtX5U3En7HZskdnKSC39XksZsEuLt1_9U/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTk0/NTQ2LTE2MDYwMDA5/MjgtNjc0My5qcGVn.jpeg",
-    "title": "American Beauty"
-  },
-  "date_added": "2021-04-26T16:08:17Z",
-  "id": 16194546,
-  "title_slug": "american-beauty"
+    "cover_image": "https://i.discogs.com/ow0rtVvzTdmtX5U3En7HZskdnKSC39XksZsEuLt1_9U/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTk0/NTQ2LTE2MDYwMDA5/MjgtNjc0My5qcGVn.jpeg"
+  }
 }

@@ -1,14 +1,13 @@
 {
+  "id": 21122347,
+  "date_added": "2023-07-06T16:40:56Z",
   "basic_information": {
+    "title": "30",
     "artists": [
       {
         "name": "Adele (3)"
       }
     ],
-    "cover_image": "https://i.discogs.com/fJvDK4Cb3-UBqC7vUBq63p7O8x8tyYTwEU7G_gyrWFI/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMTIy/MzQ3LTE2NTAxNDAx/MzItNDA2My5qcGVn.jpeg",
-    "title": "30"
-  },
-  "date_added": "2023-07-06T16:40:56Z",
-  "id": 21122347,
-  "title_slug": "30"
+    "cover_image": "https://i.discogs.com/fJvDK4Cb3-UBqC7vUBq63p7O8x8tyYTwEU7G_gyrWFI/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMTIy/MzQ3LTE2NTAxNDAx/MzItNDA2My5qcGVn.jpeg"
+  }
 }

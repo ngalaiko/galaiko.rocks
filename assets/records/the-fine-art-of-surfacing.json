@@ -1,14 +1,13 @@
 {
+  "id": 1094145,
+  "date_added": "2024-05-13T13:18:21Z",
   "basic_information": {
+    "title": "The Fine Art Of Surfacing",
     "artists": [
       {
         "name": "The Boomtown Rats"
       }
     ],
-    "cover_image": "https://i.discogs.com/3mrv43nHKfWweIy9UzquSRRpAhjSR34goy2Get5shxo/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwOTQx/NDUtMTI4MTI5NzEz/OC5qcGVn.jpeg",
-    "title": "The Fine Art Of Surfacing"
-  },
-  "date_added": "2024-05-13T13:18:21Z",
-  "id": 1094145,
-  "title_slug": "the-fine-art-of-surfacing"
+    "cover_image": "https://i.discogs.com/3mrv43nHKfWweIy9UzquSRRpAhjSR34goy2Get5shxo/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwOTQx/NDUtMTI4MTI5NzEz/OC5qcGVn.jpeg"
+  }
 }

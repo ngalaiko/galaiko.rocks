@@ -1,14 +1,13 @@
 {
+  "id": 11950639,
+  "date_added": "2020-12-02T00:49:07Z",
   "basic_information": {
+    "title": "Singularity",
     "artists": [
       {
         "name": "Jon Hopkins"
       }
     ],
-    "cover_image": "https://i.discogs.com/4c1XGEWgdOM9XIDHqQFSVCSCR4dw4xs6VGKgd7mbQXI/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExOTUw/NjM5LTE1MzA1NjA3/NzMtNjMzMS5qcGVn.jpeg",
-    "title": "Singularity"
-  },
-  "date_added": "2020-12-02T00:49:07Z",
-  "id": 11950639,
-  "title_slug": "singularity"
+    "cover_image": "https://i.discogs.com/4c1XGEWgdOM9XIDHqQFSVCSCR4dw4xs6VGKgd7mbQXI/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExOTUw/NjM5LTE1MzA1NjA3/NzMtNjMzMS5qcGVn.jpeg"
+  }
 }

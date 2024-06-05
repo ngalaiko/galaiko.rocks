@@ -1,14 +1,13 @@
 {
+  "id": 6533153,
+  "date_added": "2020-11-17T01:49:01Z",
   "basic_information": {
+    "title": "Rubber Soul",
     "artists": [
       {
         "name": "The Beatles"
       }
     ],
-    "cover_image": "https://i.discogs.com/-Jxeu768HXqMYL_Xppan9XItyAgHlfL7cvhQoARPwMo/rs:fit/g:sm/q:90/h:611/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY1MzMx/NTMtMTQyMTQyMjUy/Ny02MDUyLmpwZWc.jpeg",
-    "title": "Rubber Soul"
-  },
-  "date_added": "2020-11-17T01:49:01Z",
-  "id": 6533153,
-  "title_slug": "rubber-soul"
+    "cover_image": "https://i.discogs.com/-Jxeu768HXqMYL_Xppan9XItyAgHlfL7cvhQoARPwMo/rs:fit/g:sm/q:90/h:611/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY1MzMx/NTMtMTQyMTQyMjUy/Ny02MDUyLmpwZWc.jpeg"
+  }
 }

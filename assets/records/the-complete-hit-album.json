@@ -1,14 +1,13 @@
 {
+  "id": 27979191,
+  "date_added": "2023-09-14T17:40:30Z",
   "basic_information": {
+    "title": "The Complete Hit-Album",
     "artists": [
       {
         "name": "Creedence Clearwater Revival"
       }
     ],
-    "cover_image": "https://i.discogs.com/CoC1L_ZDJ_s3yBJUpQywG-96r4H4KMZuid9IQkTLCOk/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3OTc5/MTkxLTE3MDQ1Njk0/OTYtNjU0Ny5qcGVn.jpeg",
-    "title": "The Complete Hit-Album"
-  },
-  "date_added": "2023-09-14T17:40:30Z",
-  "id": 27979191,
-  "title_slug": "the-complete-hit-album"
+    "cover_image": "https://i.discogs.com/CoC1L_ZDJ_s3yBJUpQywG-96r4H4KMZuid9IQkTLCOk/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3OTc5/MTkxLTE3MDQ1Njk0/OTYtNjU0Ny5qcGVn.jpeg"
+  }
 }

@@ -1,14 +1,13 @@
 {
+  "id": 19223086,
+  "date_added": "2021-09-13T16:46:50Z",
   "basic_information": {
+    "title": "Раскраски Для Взрослых",
     "artists": [
       {
         "name": "Монеточка"
       }
     ],
-    "cover_image": "https://i.discogs.com/qSL6vuNCWkjzwuXjVS5ebbQrtUAbqm8tfNUiv_WUTvU/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MjIz/MDg2LTE2MjU0MzE1/NjktNzMyOS5qcGVn.jpeg",
-    "title": "Раскраски Для Взрослых"
-  },
-  "date_added": "2021-09-13T16:46:50Z",
-  "id": 19223086,
-  "title_slug": "raskraski-dlia-vzroslykh"
+    "cover_image": "https://i.discogs.com/qSL6vuNCWkjzwuXjVS5ebbQrtUAbqm8tfNUiv_WUTvU/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MjIz/MDg2LTE2MjU0MzE1/NjktNzMyOS5qcGVn.jpeg"
+  }
 }

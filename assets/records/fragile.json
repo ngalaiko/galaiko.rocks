@@ -1,14 +1,13 @@
 {
+  "id": 2540503,
+  "date_added": "2024-04-20T14:18:35Z",
   "basic_information": {
+    "title": "Fragile",
     "artists": [
       {
         "name": "Yes"
       }
     ],
-    "cover_image": "https://i.discogs.com/usmYw0-R_LmUjfDeN7P3JPZNvHd6LREch5w1ZYOvJ-U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1NDA1/MDMtMTI4OTUyNTI2/OS5qcGVn.jpeg",
-    "title": "Fragile"
-  },
-  "date_added": "2024-04-20T14:18:35Z",
-  "id": 2540503,
-  "title_slug": "fragile"
+    "cover_image": "https://i.discogs.com/usmYw0-R_LmUjfDeN7P3JPZNvHd6LREch5w1ZYOvJ-U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1NDA1/MDMtMTI4OTUyNTI2/OS5qcGVn.jpeg"
+  }
 }

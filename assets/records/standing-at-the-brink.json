@@ -1,14 +1,13 @@
 {
+  "id": 7065202,
+  "date_added": "2023-07-06T16:38:14Z",
   "basic_information": {
+    "title": "... Standing At The Brink",
     "artists": [
       {
         "name": "Владимир Высоцкий"
       }
     ],
-    "cover_image": "https://i.discogs.com/thKwvUwm5gy2bKtKJ82lQJouN5vnzcbRa1eW-d8eMMI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjUy/MDItMTQzMzA5Nzky/NS03OTQ0LnBuZw.jpeg",
-    "title": "... Standing At The Brink"
-  },
-  "date_added": "2023-07-06T16:38:14Z",
-  "id": 7065202,
-  "title_slug": "standing-at-the-brink"
+    "cover_image": "https://i.discogs.com/thKwvUwm5gy2bKtKJ82lQJouN5vnzcbRa1eW-d8eMMI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjUy/MDItMTQzMzA5Nzky/NS03OTQ0LnBuZw.jpeg"
+  }
 }

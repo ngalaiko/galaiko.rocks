@@ -1,14 +1,13 @@
 {
+  "id": 15442799,
+  "date_added": "2020-11-28T23:00:09Z",
   "basic_information": {
+    "title": "Blue Train",
     "artists": [
       {
         "name": "John Coltrane"
       }
     ],
-    "cover_image": "https://i.discogs.com/7_dXSRiWDwueS1SiTLNPeIupmMtQ-rvAIrUZIreKnOU/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1NDQy/Nzk5LTE1OTI3NTU2/MzMtMTI4OS5qcGVn.jpeg",
-    "title": "Blue Train"
-  },
-  "date_added": "2020-11-28T23:00:09Z",
-  "id": 15442799,
-  "title_slug": "blue-train"
+    "cover_image": "https://i.discogs.com/7_dXSRiWDwueS1SiTLNPeIupmMtQ-rvAIrUZIreKnOU/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1NDQy/Nzk5LTE1OTI3NTU2/MzMtMTI4OS5qcGVn.jpeg"
+  }
 }

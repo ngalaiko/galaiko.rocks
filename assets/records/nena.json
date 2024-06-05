@@ -1,14 +1,13 @@
 {
+  "id": 2353302,
+  "date_added": "2020-11-20T01:03:07Z",
   "basic_information": {
+    "title": "Nena",
     "artists": [
       {
         "name": "Nena"
       }
     ],
-    "cover_image": "https://i.discogs.com/piVlShNyaIPxW4h3JcRXohM7lFO6txp8lMsPiBwR9mc/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzNTMz/MDItMTQwNzU3MjQw/Ny02MTMwLmpwZWc.jpeg",
-    "title": "Nena"
-  },
-  "date_added": "2020-11-20T01:03:07Z",
-  "id": 2353302,
-  "title_slug": "nena"
+    "cover_image": "https://i.discogs.com/piVlShNyaIPxW4h3JcRXohM7lFO6txp8lMsPiBwR9mc/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzNTMz/MDItMTQwNzU3MjQw/Ny02MTMwLmpwZWc.jpeg"
+  }
 }

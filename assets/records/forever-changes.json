@@ -1,14 +1,13 @@
 {
+  "id": 15995868,
+  "date_added": "2020-11-16T02:54:20Z",
   "basic_information": {
+    "title": "Forever Changes",
     "artists": [
       {
         "name": "Love"
       }
     ],
-    "cover_image": "https://i.discogs.com/SLWn40ryEUpuw0wfKAdjNs4TlWhKJsiA8dQ-MxwLOMc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1OTk1/ODY4LTE2MDE3NDEw/MTEtODI3MC5qcGVn.jpeg",
-    "title": "Forever Changes"
-  },
-  "date_added": "2020-11-16T02:54:20Z",
-  "id": 15995868,
-  "title_slug": "forever-changes"
+    "cover_image": "https://i.discogs.com/SLWn40ryEUpuw0wfKAdjNs4TlWhKJsiA8dQ-MxwLOMc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1OTk1/ODY4LTE2MDE3NDEw/MTEtODI3MC5qcGVn.jpeg"
+  }
 }

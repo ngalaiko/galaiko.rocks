@@ -1,14 +1,13 @@
 {
+  "id": 6406827,
+  "date_added": "2021-03-07T13:45:23Z",
   "basic_information": {
+    "title": "Maggot Brain",
     "artists": [
       {
         "name": "Funkadelic"
       }
     ],
-    "cover_image": "https://i.discogs.com/Q5TYLUaWwCo8RqvWQ3J_R9v9gk6uN62PUtLjkS4L0E8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY0MDY4/MjctMTQzNDgzODgy/Ny00OTkxLmpwZWc.jpeg",
-    "title": "Maggot Brain"
-  },
-  "date_added": "2021-03-07T13:45:23Z",
-  "id": 6406827,
-  "title_slug": "maggot-brain"
+    "cover_image": "https://i.discogs.com/Q5TYLUaWwCo8RqvWQ3J_R9v9gk6uN62PUtLjkS4L0E8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY0MDY4/MjctMTQzNDgzODgy/Ny00OTkxLmpwZWc.jpeg"
+  }
 }

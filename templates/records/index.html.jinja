@@ -8,7 +8,7 @@
         <li>
             <a href="https://www.discogs.com/release/{{ record.id }}">
                 <figure>
-                    <img width="200px" src="{{ record.title_slug }}.jpeg.200x0@2x.webp" loading="lazy" alt="Cover of {{ record.basic_information.title }} album" />
+                    <img width="200px" src="{{ record.basic_information.title | slugify }}.jpeg.200x0@2x.webp" loading="lazy" alt="Cover of {{ record.basic_information.title }} album" />
                     <figcaption>
                         <center>
                             <span>
@@ -16,7 +16,7 @@
                             </span>
                             <br />
                             <span>
-                                {{ record.basic_information.artists[0] }}
+                                {{ record.basic_information.artists[0].name }}
                             </span>
                         </center>
                     </figcaption>

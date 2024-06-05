@@ -1,14 +1,13 @@
 {
+  "id": 30696067,
+  "date_added": "2024-06-04T15:08:28Z",
   "basic_information": {
+    "title": "Hit Me Hard And Soft",
     "artists": [
       {
         "name": "Billie Eilish"
       }
     ],
-    "cover_image": "https://i.discogs.com/eUI7bNgZuSklYf85UdRwsnirOFkCZcQ4LPSfTQiArf4/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwNjk2/MDY3LTE3MTYyMDU2/NTAtODE3Ny5qcGVn.jpeg",
-    "title": "Hit Me Hard And Soft"
-  },
-  "date_added": "2024-06-04T15:08:28Z",
-  "id": 30696067,
-  "title_slug": "hit-me-hard-and-soft"
+    "cover_image": "https://i.discogs.com/eUI7bNgZuSklYf85UdRwsnirOFkCZcQ4LPSfTQiArf4/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwNjk2/MDY3LTE3MTYyMDU2/NTAtODE3Ny5qcGVn.jpeg"
+  }
 }

@@ -1,5 +1,8 @@
 {
+  "id": 5897613,
+  "date_added": "2021-06-06T15:12:41Z",
   "basic_information": {
+    "title": "An American Prayer",
     "artists": [
       {
         "name": "Jim Morrison"
@@ -8,10 +11,6 @@
         "name": "The Doors"
       }
     ],
-    "cover_image": "https://i.discogs.com/xA5cc8vVHb0rcvp1tx0HTw73WqxA102RaEoh0eDaF2A/rs:fit/g:sm/q:90/h:398/w:531/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU4OTc2/MTMtMTQwNTcyMjY2/NS02MDA3LmpwZWc.jpeg",
-    "title": "An American Prayer"
-  },
-  "date_added": "2021-06-06T15:12:41Z",
-  "id": 5897613,
-  "title_slug": "an-american-prayer"
+    "cover_image": "https://i.discogs.com/xA5cc8vVHb0rcvp1tx0HTw73WqxA102RaEoh0eDaF2A/rs:fit/g:sm/q:90/h:398/w:531/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU4OTc2/MTMtMTQwNTcyMjY2/NS02MDA3LmpwZWc.jpeg"
+  }
 }

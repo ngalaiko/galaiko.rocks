@@ -1,14 +1,13 @@
 {
+  "id": 14054827,
+  "date_added": "2023-08-29T18:33:05Z",
   "basic_information": {
+    "title": "Gulag Orkestar",
     "artists": [
       {
         "name": "Beirut"
       }
     ],
-    "cover_image": "https://i.discogs.com/9oeNcgsfeTxBRTjjwjwB0WO2R_akLoa2u63v-00M1Ak/rs:fit/g:sm/q:90/h:567/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MDU0/ODI3LTE1Njk0ODQx/MzYtOTQ0Mi5qcGVn.jpeg",
-    "title": "Gulag Orkestar"
-  },
-  "date_added": "2023-08-29T18:33:05Z",
-  "id": 14054827,
-  "title_slug": "gulag-orkestar"
+    "cover_image": "https://i.discogs.com/9oeNcgsfeTxBRTjjwjwB0WO2R_akLoa2u63v-00M1Ak/rs:fit/g:sm/q:90/h:567/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MDU0/ODI3LTE1Njk0ODQx/MzYtOTQ0Mi5qcGVn.jpeg"
+  }
 }

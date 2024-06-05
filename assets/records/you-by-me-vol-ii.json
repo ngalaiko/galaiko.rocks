@@ -1,5 +1,8 @@
 {
+  "id": 6207248,
+  "date_added": "2023-12-15T18:12:43Z",
   "basic_information": {
+    "title": "You By Me: Vol. II",
     "artists": [
       {
         "name": "Toh Kay"
@@ -8,10 +11,6 @@
         "name": "Sycamore Smith"
       }
     ],
-    "cover_image": "https://i.discogs.com/sdDEsvF_kHOgjZF9cAfcyUd4IJfC-fMjOgf2t0SfH18/rs:fit/g:sm/q:90/h:170/w:170/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYyMDcy/NDgtMTQxMzczMjAx/MC03NDM2LmpwZWc.jpeg",
-    "title": "You By Me: Vol. II"
-  },
-  "date_added": "2023-12-15T18:12:43Z",
-  "id": 6207248,
-  "title_slug": "you-by-me-vol-ii"
+    "cover_image": "https://i.discogs.com/sdDEsvF_kHOgjZF9cAfcyUd4IJfC-fMjOgf2t0SfH18/rs:fit/g:sm/q:90/h:170/w:170/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYyMDcy/NDgtMTQxMzczMjAx/MC03NDM2LmpwZWc.jpeg"
+  }
 }

@@ -1,14 +1,13 @@
 {
+  "id": 7541569,
+  "date_added": "2021-04-01T15:24:08Z",
   "basic_information": {
+    "title": "A Night At The Opera",
     "artists": [
       {
         "name": "Queen"
       }
     ],
-    "cover_image": "https://i.discogs.com/p3_89hpuuj2UR5km7nitc1s_NXT0PM46-4RPIXWMt_E/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc1NDE1/NjktMTQ1NDQ0NjYy/Ny0yMzIyLmpwZWc.jpeg",
-    "title": "A Night At The Opera"
-  },
-  "date_added": "2021-04-01T15:24:08Z",
-  "id": 7541569,
-  "title_slug": "a-night-at-the-opera"
+    "cover_image": "https://i.discogs.com/p3_89hpuuj2UR5km7nitc1s_NXT0PM46-4RPIXWMt_E/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc1NDE1/NjktMTQ1NDQ0NjYy/Ny0yMzIyLmpwZWc.jpeg"
+  }
 }

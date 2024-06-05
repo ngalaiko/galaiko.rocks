@@ -1,14 +1,13 @@
 {
+  "id": 13951666,
+  "date_added": "2021-03-23T16:39:01Z",
   "basic_information": {
+    "title": "In The Court Of The Crimson King",
     "artists": [
       {
         "name": "King Crimson"
       }
     ],
-    "cover_image": "https://i.discogs.com/vbiHMNyNjwZpB1FmJ_lBWBn5sKgeVpxVHmOi41M8CYg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzOTUx/NjY2LTE1NjQ3Njk1/MDctNjY0OC5qcGVn.jpeg",
-    "title": "In The Court Of The Crimson King"
-  },
-  "date_added": "2021-03-23T16:39:01Z",
-  "id": 13951666,
-  "title_slug": "in-the-court-of-the-crimson-king"
+    "cover_image": "https://i.discogs.com/vbiHMNyNjwZpB1FmJ_lBWBn5sKgeVpxVHmOi41M8CYg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzOTUx/NjY2LTE1NjQ3Njk1/MDctNjY0OC5qcGVn.jpeg"
+  }
 }

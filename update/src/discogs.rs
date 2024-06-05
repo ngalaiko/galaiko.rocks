@@ -101,12 +101,6 @@ pub async fn update<P: AsRef<std::path::Path>>(token: &str, output: P) -> Result
             .await
             .map_err(Error::Io)?
         {
-            let mut record = serde_json::to_value(record).map_err(Error::Ser)?;
-            if let serde_json::Value::Object(ref mut object) = record {
-                let title_slug = serde_json::to_value(title_slug).map_err(Error::Ser)?;
-                object.insert(String::from("title_slug"), title_slug);
-            }
-
             let serialized = serde_json::to_vec_pretty(&record).map_err(Error::Ser)?;
             tokio::fs::write(&output_json, serialized)
                 .await

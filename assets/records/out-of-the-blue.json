@@ -1,14 +1,13 @@
 {
+  "id": 1474731,
+  "date_added": "2021-02-27T15:15:53Z",
   "basic_information": {
+    "title": "Out Of The Blue",
     "artists": [
       {
         "name": "Electric Light Orchestra"
       }
     ],
-    "cover_image": "https://i.discogs.com/Jorcj_fgF3BTX8LHHY2dFlepXTNvuiKZaAz1rZAk9IQ/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0NzQ3/MzEtMTUyMDY4MTc4/MC02MDEzLmpwZWc.jpeg",
-    "title": "Out Of The Blue"
-  },
-  "date_added": "2021-02-27T15:15:53Z",
-  "id": 1474731,
-  "title_slug": "out-of-the-blue"
+    "cover_image": "https://i.discogs.com/Jorcj_fgF3BTX8LHHY2dFlepXTNvuiKZaAz1rZAk9IQ/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0NzQ3/MzEtMTUyMDY4MTc4/MC02MDEzLmpwZWc.jpeg"
+  }
 }

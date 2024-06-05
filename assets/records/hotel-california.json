@@ -1,14 +1,13 @@
 {
+  "id": 1571555,
+  "date_added": "2020-11-20T01:48:34Z",
   "basic_information": {
+    "title": "Hotel California",
     "artists": [
       {
         "name": "Eagles"
       }
     ],
-    "cover_image": "https://i.discogs.com/SFEmMNxmEOAsm7IvBAfMiWQ5job95cb-P-K_kBfUQSo/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1NzE1/NTUtMTM4OTExNDUy/NS0yNjMyLmpwZWc.jpeg",
-    "title": "Hotel California"
-  },
-  "date_added": "2020-11-20T01:48:34Z",
-  "id": 1571555,
-  "title_slug": "hotel-california"
+    "cover_image": "https://i.discogs.com/SFEmMNxmEOAsm7IvBAfMiWQ5job95cb-P-K_kBfUQSo/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1NzE1/NTUtMTM4OTExNDUy/NS0yNjMyLmpwZWc.jpeg"
+  }
 }

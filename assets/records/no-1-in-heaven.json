@@ -1,14 +1,13 @@
 {
+  "id": 627568,
+  "date_added": "2024-04-20T13:29:44Z",
   "basic_information": {
+    "title": "No. 1 In Heaven",
     "artists": [
       {
         "name": "Sparks"
       }
     ],
-    "cover_image": "https://i.discogs.com/eJzE0KAtPK_AR8wizt57nHeuuHmmM59fB5T1QOgCrHE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYyNzU2/OC0xMjQxODAwNjY2/LmpwZWc.jpeg",
-    "title": "No. 1 In Heaven"
-  },
-  "date_added": "2024-04-20T13:29:44Z",
-  "id": 627568,
-  "title_slug": "no-1-in-heaven"
+    "cover_image": "https://i.discogs.com/eJzE0KAtPK_AR8wizt57nHeuuHmmM59fB5T1QOgCrHE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYyNzU2/OC0xMjQxODAwNjY2/LmpwZWc.jpeg"
+  }
 }

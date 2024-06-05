@@ -1,14 +1,13 @@
 {
+  "id": 1162570,
+  "date_added": "2024-02-25T14:19:16Z",
   "basic_information": {
+    "title": "Dare!",
     "artists": [
       {
         "name": "The Human League"
       }
     ],
-    "cover_image": "https://i.discogs.com/Pv8xn1jpnLpv0-RJGbd0unTHLMUesPMpuRknNeMQfIg/rs:fit/g:sm/q:90/h:602/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNjI1/NzAtMTU1NjUxNzA0/OS02NTY5LmpwZWc.jpeg",
-    "title": "Dare!"
-  },
-  "date_added": "2024-02-25T14:19:16Z",
-  "id": 1162570,
-  "title_slug": "dare"
+    "cover_image": "https://i.discogs.com/Pv8xn1jpnLpv0-RJGbd0unTHLMUesPMpuRknNeMQfIg/rs:fit/g:sm/q:90/h:602/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNjI1/NzAtMTU1NjUxNzA0/OS02NTY5LmpwZWc.jpeg"
+  }
 }
