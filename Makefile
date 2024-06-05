@@ -1,11 +1,10 @@
-tag = $(shell echo "<$(1)>$(2)</$(1)>")
-
 SRC_DIR := assets
 BUILD_DIR := build
 
 PANDOC_BIN := pandoc
 IMAGEMAGIC_BIN := magick
 JQ_BIN := jq
+YQ_BIN := yq
 J2_BIN := j2 --customize ./j2_customize.py
 COOK_BIN := cook
 
@@ -44,6 +43,8 @@ OUTPUT := $(OUTPUT) $(BUILD_DIR)/records/index.html
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/movies/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_MOVIE_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_IMAGE_FILES)
+OUTPUT := $(OUTPUT) $(BUILD_DIR)/posts/index.html
+OUTPUT := $(OUTPUT) $(OUTPUT_POST_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_POST_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/places/index.html
 
@@ -100,10 +101,14 @@ $(BUILD_DIR)/records/%.jpeg.200x0@2x.webp: $(SRC_DIR)/records/%.jpeg
 	@$(IMAGEMAGIC_BIN) "$<" -resize 400 "$@"
 
 # posts
+$(BUILD_DIR)/posts/index.html:
+	@echo '$(SRC_DIR)/posts/*.md -> $@'
+	@mkdir -p "$(dir $@)"
+
 $(BUILD_DIR)/posts/%.html: $(SRC_DIR)/%.md
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@$(PANDOC_BIN) "$<" -o "$@"
+	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' | $(J2_BIN) -f yaml posts/_post.html.jinja -o="$@"
 
 $(BUILD_DIR)/posts/%.jpg.800x0@2x.webp: $(SRC_DIR)/posts/%.jpg
 	@echo '$< -> $@'
@@ -124,7 +129,7 @@ $(BUILD_DIR)/posts/%.png.800x0@2x.webp: $(SRC_DIR)/posts/%.png
 $(BUILD_DIR)/%.html: $(SRC_DIR)/%.md
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@$(PANDOC_BIN) "$<" -o "$@"
+	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' | $(J2_BIN) -f yaml posts/_post.html.jinja -o="$@"
 
 # assets
 $(BUILD_DIR)/%: $(SRC_DIR)/%

@@ -1,0 +1,7 @@
+{% extends "_layout.html.jinja" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    {{ post.content | safe }}
+{% endblock %}

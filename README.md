@@ -7,10 +7,13 @@ my website
 - [python3](https://www.python.org)
 - [bash](https://www.gnu.org/software/bash/)
 - [make](https://www.gnu.org/software/make/)
+- [sed](https://www.gnu.org/software/sed/)
 - [jq](https://github.com/jqlang/jq)
+- [yq](https://github.com/mikefarah/yq)
 - [cookcli](https://github.com/cooklang/cookcli)
 - [imagemagick](https://imagemagick.org)
 - [pandoc](https://pandoc.org)
+- [tidy](http://www.html-tidy.org)
 
 ## build
 
