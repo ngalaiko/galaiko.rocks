@@ -1,7 +1,5 @@
 [workspace]
 members = [
-    "convert",
-    "serve",
     "types",
     "update",
 ]
