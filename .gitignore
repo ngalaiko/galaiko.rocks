@@ -5,3 +5,4 @@ ledger
 bin
 build
 tmp
+__pycache__

@@ -1,18 +1,24 @@
-<table>
-{%- for entry in entries|sort(attribute="date",reverse=True) %}
-    <tr>
-        <td>
-            <datetime date="{{ entry.date }}">{{ entry.date }}</datetime>
-        </td>
-        <td>
-            {%- if entry.is_liked %}❤️{% else %}♥︎{% endif %}
-        </td>
-        <td>
-            <img width="70px" src="{{ entry.title_slug }}.jpg.70x0@2x.webp"
-        </td>
-        <td>
-            <a href="{{ entry.href }}">{{ entry.title }}</a> 
-        </td>
-    </tr>
-{%- endfor %}
-</table>
+{% extends "_layout.html.jinja" %}
+
+{% block title %}/movies/{% endblock %}
+
+{% block content %}
+    <table>
+    {%- for entry in entries|sort(attribute="date",reverse=True) %}
+        <tr>
+            <td>
+                <datetime date="{{ entry.date }}">{{ entry.date }}</datetime>
+            </td>
+            <td>
+                {%- if entry.is_liked %}❤️{% else %}♥︎{% endif %}
+            </td>
+            <td>
+                <img width="70px" src="{{ entry.title_slug }}.jpg.70x0@2x.webp"
+            </td>
+            <td>
+                <a href="{{ entry.href }}">{{ entry.title }}</a> 
+            </td>
+        </tr>
+    {%- endfor %}
+    </table>
+{% endblock %}

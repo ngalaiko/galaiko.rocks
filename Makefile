@@ -6,7 +6,7 @@ BUILD_DIR := build
 PANDOC_BIN := pandoc
 IMAGEMAGIC_BIN := magick
 JQ_BIN := jq
-J2_BIN := jinja2
+J2_BIN := j2 --customize ./j2_customize.py
 COOK_BIN := cook
 
 INPUT_MD_FILES := $(shell find $(SRC_DIR) -type f -name '*.md')
@@ -41,7 +41,6 @@ OUTPUT := $(OUTPUT_MD_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/movies/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_MOVIE_IMAGE_FILES)
-# OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_RECORD_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(OUTPUT_POST_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/places/index.html
@@ -53,7 +52,7 @@ all: $(OUTPUT)
 $(BUILD_DIR)/movies/index.html:
 	@echo '$(SRC_DIR)/movies/**/.json -> $@'
 	@mkdir -p "$(dir $@)"
-	@cat $(INPUT_MOVIE_FILES) | $(JQ_BIN) --slurp '{ entries: . }' | $(J2_BIN) --strict --format json --outfile="$@" -D=- ./templates/movies/index.html.jinja
+	@cat $(INPUT_MOVIE_FILES) | $(JQ_BIN) --slurp '{ entries: . }' | $(J2_BIN) -f json movies/index.html.jinja -o="$@"
 
 $(BUILD_DIR)/movies/%.jpg.70x0@2x.webp: $(SRC_DIR)/movies/%.jpg
 	@echo '$< -> $@'
@@ -64,7 +63,7 @@ $(BUILD_DIR)/movies/%.jpg.70x0@2x.webp: $(SRC_DIR)/movies/%.jpg
 $(BUILD_DIR)/places/index.html:
 	@echo '$(SRC_DIR)/places/**/.json -> $@'
 	@mkdir -p "$(dir $@)"
-	@cat $(INPUT_PLACE_FILES) | $(JQ_BIN) --slurp '{places: .}' | $(J2_BIN) --strict --format json --outfile="$@" -D=- ./templates/places/index.html.jinja
+	@cat $(INPUT_PLACE_FILES) | $(JQ_BIN) --slurp '{ places: . }' | $(J2_BIN) -f json places/index.html.jinja -o="$@"
 
 # cocktails
 $(BUILD_DIR)/cocktails/%.html: $(SRC_DIR)/cocktails/%.cook
@@ -84,7 +83,8 @@ $(BUILD_DIR)/cocktails/%.jpeg.200x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 # records
 $(BUILD_DIR)/records/%.html: $(SRC_DIR)/records/%.json
 	@echo '$< -> $@'
-	@cat "$<" | jq >/dev/null
+	@mkdir -p "$(dir $@)"
+	@cat $(INPUT_RECORD_FILES) | $(JQ_BIN) --slurp '{ records: . }' | $(J2_BIN) -f json records/index.html.jinja -o="$@"
 
 $(BUILD_DIR)/records/%.jpeg.200x0@2x.webp: $(SRC_DIR)/records/%.jpeg
 	@echo '$< -> $@'

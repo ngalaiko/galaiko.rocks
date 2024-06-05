@@ -1,0 +1,17 @@
+{% extends "_layout.html.jinja" %}
+
+{% block title %}/records/{% endblock %}
+
+{% block content %}
+    <ul>
+    {%- for record in records|sort(attribute="date_added",reverse=True) %}
+        <li>
+            <a href="https://www.discogs.com/release{{ record.id }}">
+                <figure>
+                    <img width="200px" src="{{ record.basic_imormation.title }}"
+                </figure>
+            </a>
+        </li>
+    {%- endfor %}
+    </ul>
+{% endblock %}
