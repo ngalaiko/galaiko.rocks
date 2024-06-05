@@ -1,6 +1,9 @@
 {% extends "_layout.html.jinja" %}
 
 {% block head %}
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' https://*.basemaps.cartocdn.com">
+
     <link rel="stylesheet" href="/styles/table.css">
     <link rel="stylesheet" href="/styles/map.css">
 {% endblock %}
