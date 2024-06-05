@@ -8,6 +8,8 @@
 {% block title %}/places/{% endblock %}
 
 {% block content %}
+    <div id="map" hidden="true"></div>
+
     <table>
     {%- for place in places|sort(attribute="times",reverse=True) %}
         <tr
@@ -16,7 +18,7 @@
             data-latitude="{{ place.location[0] }}"
             data-longtitude="{{ place.location[1] }}"
             data-visits="{{ place.times }}"
-            data-amout="{{ place.spent }}"
+            data-amount="{{ place.spent }}"
             data-currency="SEK"
         >
             <td>
@@ -32,5 +34,5 @@
     {%- endfor %}
     </table>
 
-    <script href="/scripts/map.js">
+    <script src="/scripts/map.js"></script>
 {% endblock %}
