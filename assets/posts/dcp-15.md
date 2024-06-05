@@ -1,9 +1,6 @@
 ---
 title: "Daily Coding Problem #15"
 date: 2018-07-16
-aliases:
-  - "/posts/probability/"
-  - "/posts/dcp/probability/"
 id: "/posts/dcp/probability/"
 ---
 

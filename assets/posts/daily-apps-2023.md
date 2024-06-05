@@ -1,8 +1,6 @@
 ---
 title: "My daily apps at the end of 2023"
 date: 2023-11-07
-aliases:
-  - "/posts/blog/my-default-apps-at-the-end-of-2023/"
 id: "/posts/blog/my-default-apps-at-the-end-of-2023/"
 ---
 

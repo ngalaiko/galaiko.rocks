@@ -1,9 +1,6 @@
 ---
 title: Daily Coding Problems
 date: 2018-07-01
-aliases:
-  - "/posts/2018-07-01/"
-  - "/posts/dcp/intro/"
 id: "/posts/dcp/intro/"
 ---
 

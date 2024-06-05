@@ -1,8 +1,6 @@
 ---
 title: "GitHub powered comments for a static website"
 date: 2022-10-04
-aliases:
-  - "/posts/blog/comments/"
 id: "/posts/blog/comments/"
 ---
 

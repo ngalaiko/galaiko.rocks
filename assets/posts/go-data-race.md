@@ -1,8 +1,6 @@
 ---
 title: "Golang: Data races"
 date: 2019-02-02
-aliases:
-  - "/posts/blog/go-data-races/"
 id: "/posts/blog/go-data-races/"
 ---
 
