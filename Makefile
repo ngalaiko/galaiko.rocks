@@ -38,6 +38,7 @@ OUTPUT_PLACE_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_P
 
 OUTPUT := $(OUTPUT_MD_FILES)
 # OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_FILES)
+OUTPUT := $(OUTPUT) $(BUILD_DIR)/cocktails/index.html
 OUTPUT := $(OUTPUT) $(OUTPUT_COCKTAIL_IMAGE_FILES)
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/records/index.html
 OUTPUT := $(OUTPUT) $(BUILD_DIR)/movies/index.html
@@ -67,6 +68,11 @@ $(BUILD_DIR)/places/index.html:
 	@cat $(INPUT_PLACE_FILES) | $(JQ_BIN) --slurp '{ places: . }' | $(J2_BIN) -f json places/index.html.jinja -o="$@"
 
 # cocktails
+$(BUILD_DIR)/cocktails/index.html:
+	@echo '$< -> $@'
+	@mkdir -p "$(dir $@)"
+	@ls $(INPUT_COCKTAIL_FILES) | xargs -L 1 $(COOK_BIN) recipe read --output-format json | $(JQ_BIN) --slurp '{ cocktails: . }' | $(J2_BIN) -f json cocktails/index.html.jinja -o="$@"
+
 $(BUILD_DIR)/cocktails/%.html: $(SRC_DIR)/cocktails/%.cook
 	@echo '$< -> $@'
 	@$(COOK_BIN) recipe read "$<" --output-format json >/dev/null

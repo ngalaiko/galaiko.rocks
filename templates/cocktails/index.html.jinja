@@ -1,0 +1,23 @@
+{% extends "_layout.html.jinja" %}
+
+{% block title %}/cocktails/{% endblock %}
+
+{% block content %}
+    <ul>
+    {%- for cocktail in cocktails|sort(attribute="metadata.title") %}
+        <li>
+            <a href="{{ cocktail.metadata.title | slugify }}.html">
+                <figure>
+                    <img 
+                        width="200px" 
+                        loading="lazy" 
+                        src="{{ cocktail.metadata.title | slugify }}.jpeg.200x0@2x.webp" 
+                        alt="Picture of {{ cocktail.metadata.title }} cocktail" 
+                    />
+                    <figcaption><center>{{ cocktail.metadata.title }}</center></figcaption>
+                </figure>
+            </a>
+        </li>
+    {%- endfor %}
+    </ul>
+{% endblock %}
