@@ -1,0 +1,57 @@
+{% extends "_layout.html.jinja" %}
+
+{% block title %}{{ cocktail.metadata.title }}{% endblock %}
+
+{% block content %}
+    <aside>
+        <img 
+            width="800px" 
+            loading="lazy" 
+            src="{{ cocktail.metadata.title | slugify }}.jpeg.800x0@2x.webp" 
+            alt="Picture of {{ cocktail.metadata.title }} cocktail" 
+        />
+    </aside>
+
+    <section>
+        <h2>ingredients</h2>
+        <ul>
+            {%- for ingredient in cocktail.ingredients %}
+                <li><b>{{ ingredient.name }}</b>: {{ ingredient.amount }}</li>
+            {%- endfor -%}
+        </ul>
+    </section>
+
+    <section>
+        <h2>cookware</h2>
+        <ul>
+            {%- for cookware in cocktail.cookware %}
+                <li>{{ cookware.name }}</li>
+            {%- endfor -%}
+        </ul>
+    </section>
+
+    <hr />
+
+    <section>
+        <ol>
+            {%- for step in cocktail.steps %}
+                <li>{{ step.description }}</li>
+            {%- endfor -%}
+        </ol>
+    </section>
+
+
+    {%- if "source" in cocktail.metadata %}
+    <hr />
+
+    <section>
+        source: 
+        {%- if cocktail.metadata.source is url %}
+            {%- set source = cocktail.metadata.source | urlparse %}
+            <a href="{{ cocktail.metadata.source }}">{{ source.netloc }}</a>
+        {%- else %}
+            {{ cocktail.metadata.source }}
+        {%- endif %}
+    </section>
+    {%- endif %}
+{% endblock %}

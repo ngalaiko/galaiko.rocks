@@ -1,4 +1,5 @@
 import jinja2
+from urllib.parse import urlparse
 from slugify import slugify
 import os
 
@@ -23,4 +24,20 @@ def extra_filters():
 
     Returns: dict(name = function)
     """
-    return dict(slugify=slugify)
+    return dict(slugify=slugify, urlparse=urlparse)
+
+
+def extra_tests():
+    """Declare some custom tests
+
+    Returns: dict(name = function)
+    """
+
+    def is_url(s):
+        try:
+            urlparse(s)
+            return True
+        except AttributeError:
+            return False
+
+    return dict(url=is_url)
