@@ -1,4 +1,5 @@
 import jinja2
+import hashlib
 from urllib.parse import urlparse
 from slugify import slugify
 import os
@@ -24,7 +25,26 @@ def extra_filters():
 
     Returns: dict(name = function)
     """
-    return dict(slugify=slugify, urlparse=urlparse)
+
+    def calculate_asset_md5hash(relpath):
+        abspath = f"{__dir__}/assets{ relpath }"
+        h = hashlib.md5()
+        b = bytearray(128 * 1024)
+        mv = memoryview(b)
+        with open(abspath, "rb", buffering=0) as f:
+            while n := f.readinto(mv):
+                h.update(mv[:n])
+        return h.hexdigest()
+
+    def static_with_hash(relpath):
+        """Add version query parameter to the link with md5 hash of the file"""
+        return f"{relpath}?v={calculate_asset_md5hash(relpath)}"
+
+    return dict(
+        slugify=slugify,
+        urlparse=urlparse,
+        static_with_hash=static_with_hash,
+    )
 
 
 def extra_tests():

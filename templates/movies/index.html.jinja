@@ -1,7 +1,7 @@
 {% extends "_layout.html.jinja" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/styles/table.css">
+    <link rel="stylesheet" href="{{ "/styles/table.css" | static_with_hash }}">
 {% endblock %}
 
 {% block title %}/movies/{% endblock %}

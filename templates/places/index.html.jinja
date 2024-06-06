@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; img-src 'self' https://*.basemaps.cartocdn.com">
 
-    <link rel="stylesheet" href="/styles/table.css">
-    <link rel="stylesheet" href="/styles/map.css">
+    <link rel="stylesheet" href="{{ "/styles/table.css" | static_with_hash }}">
+    <link rel="stylesheet" href="{{ "/styles/map.css" | static_with_hash }}">
 {% endblock %}
 
 {% block title %}/places/{% endblock %}

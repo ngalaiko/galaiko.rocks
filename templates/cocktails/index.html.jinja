@@ -1,7 +1,7 @@
 {% extends "_layout.html.jinja" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/styles/grid.css">
+    <link rel="stylesheet" href="{{ "/styles/grid.css" | static_with_hash }}">
 {% endblock %}
 
 {% block title %}/cocktails/{% endblock %}
@@ -13,9 +13,9 @@
             <a href="{{ cocktail.metadata.title | slugify }}.html">
                 <figure>
                     <img 
+                        src="{{ cocktail.metadata.title | slugify }}.jpeg.200x0@2x.webp" 
                         width="200px" 
                         loading="lazy" 
-                        src="{{ cocktail.metadata.title | slugify }}.jpeg.200x0@2x.webp" 
                         alt="Picture of {{ cocktail.metadata.title }} cocktail" 
                     />
                     <figcaption><center>{{ cocktail.metadata.title }}</center></figcaption>
