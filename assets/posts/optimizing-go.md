@@ -1,8 +1,6 @@
 ---
 title: Optimizing a function
 date: 2018-11-30
-aliases:
-  - "/posts/blog/optimizing-functions/"
 id: "/posts/blog/optimizing-functions/"
 ---
 

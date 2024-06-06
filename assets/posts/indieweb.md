@@ -1,8 +1,6 @@
 ---
 title: "Hello, IndieWeb"
 date: 2022-04-16
-aliases:
-  - "/posts/blog/hello-indieweb/"
 id: "/posts/blog/hello-indieweb/"
 ---
 

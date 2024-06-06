@@ -1,8 +1,6 @@
 ---
 title: Selfhosted RaspberryPI based Docker Swarm Cluster
 date: 2018-11-02
-aliases:
-  - "/posts/blog/cluster/"
 id: "/posts/blog/cluster/"
 ---
 

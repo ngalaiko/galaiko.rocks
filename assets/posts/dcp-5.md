@@ -1,9 +1,6 @@
 ---
 title: "Daily Coding Problem: Problem #5"
 date: 2018-07-06
-aliases:
-  - "/posts/2018-07-06/"
-  - "/posts/dcp/problem-5/"
 id: "/posts/dcp/problem-5/"
 ---
 

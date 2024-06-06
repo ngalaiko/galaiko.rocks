@@ -1,8 +1,6 @@
 ---
 title: "Raspberry Pi: K8s cluster"
 date: 2019-06-24
-aliases:
-  - "/posts/blog/raspberry-k8s/"
 id: "/posts/blog/raspberry-k8s/"
 ---
 

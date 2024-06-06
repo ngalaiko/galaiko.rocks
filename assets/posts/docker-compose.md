@@ -1,9 +1,6 @@
 ---
 title: "Docker compose for managing personal server"
 date: 2018-07-31
-aliases:
-  - "/posts/docker-compose-server-manegement/"
-  - "/posts/blog/docker-compose-server-manegement/"
 id: "/posts/blog/docker-compose-server-manegement/"
 ---
 

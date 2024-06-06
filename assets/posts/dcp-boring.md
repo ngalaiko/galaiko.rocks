@@ -1,9 +1,6 @@
 ---
 title: "Daily Coding Problem: Boring"
 date: 2018-07-12
-aliases:
-  - "/posts/2018-07-12/"
-  - "/posts/dcp/boring/"
 id: "/posts/dcp/boring/"
 ---
 

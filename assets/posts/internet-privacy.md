@@ -1,9 +1,6 @@
 ---
 title: Internet privacy starter pack
 date: 2018-08-20
-aliases:
-  - "/posts/privacy/"
-  - "/posts/blog/privacy/"
 id: "/posts/blog/privacy/"
 ---
 

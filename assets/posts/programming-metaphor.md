@@ -1,8 +1,6 @@
 ---
 title: programming metaphor
 date: 2023-01-19
-aliases:
-  - "/posts/blog/programming-metaphor/"
 id: "/posts/blog/programming-metaphor/"
 ---
 
