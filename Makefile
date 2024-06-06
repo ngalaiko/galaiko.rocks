@@ -48,7 +48,7 @@ OUTPUT_POST_JPEG_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg
 OUTPUT_POST_PNG_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.png,$(BUILD_DIR)/%.png.800x0@2x.webp,$(INPUT_POST_PNG_IMAGE_FILES))
 OUTPUT_POST_IMAGE_FILES := $(OUTPUT_POST_JPG_IMAGE_FILES) $(OUTPUT_POST_JPEG_IMAGE_FILES) $(OUTPUT_POST_PNG_IMAGE_FILES)
 OUTPUT_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.md,$(BUILD_DIR)/%.html,$(INPUT_IMAGE_FILES))
-OUTPUT_MOVIE_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpg,$(BUILD_DIR)/%.jpg.70x0@2x.webp,$(INPUT_MOVIE_IMAGE_FILES))
+OUTPUT_MOVIE_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpg,$(BUILD_DIR)/%.jpg.200x0@2x.webp,$(INPUT_MOVIE_IMAGE_FILES))
 OUTPUT_RECORD_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_RECORD_FILES))
 OUTPUT_RECORD_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg.200x0@2x.webp,$(INPUT_RECORD_IMAGE_FILES))
 OUTPUT_COCKTAIL_FILES := $(patsubst $(SRC_DIR)/%.cook,$(BUILD_DIR)/%.html,$(INPUT_COCKTAIL_FILES))
@@ -88,10 +88,10 @@ $(BUILD_DIR)/movies/index.html: $(INPUT_MOVIE_FILES) $(call templ,movies/index.h
 	@mkdir -p "$(dir $@)"
 	@cat $(INPUT_MOVIE_FILES) | $(JQ_BIN) --slurp '{ entries: . }' | $(J2_BIN) -f json movies/index.html.jinja -o="$@"
 
-$(BUILD_DIR)/movies/%.jpg.70x0@2x.webp: $(SRC_DIR)/movies/%.jpg
+$(BUILD_DIR)/movies/%.jpg.200x0@2x.webp: $(SRC_DIR)/movies/%.jpg
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@$(IMAGEMAGIC_BIN) "$<" -resize 140 "$@"
+	@$(IMAGEMAGIC_BIN) "$<" -resize 400 "$@"
 
 # places
 $(BUILD_DIR)/places/index.html: $(INPUT_PLACE_FILES) $(call templ,places/index.html.jinja)
