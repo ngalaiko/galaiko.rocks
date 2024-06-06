@@ -1,0 +1,5 @@
+{
+  "buildCommand": "make",
+  "installCommand": "./scripts/setup_deps.sh",
+  "outputDirectory": "build"
+}
