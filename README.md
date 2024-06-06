@@ -43,7 +43,7 @@ $ cargo run --package update hledger [--file <main hledger file>]
 ## run
 
 ```bash
-$ cargo run --package serve
+$ make serve
 ```
 
 ## deploy
