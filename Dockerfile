@@ -17,7 +17,8 @@ RUN apk add --update --no-cache \
 COPY . .
 RUN make
 
-FROM python:3.11-alpine3.20
-COPY --from=build /app/build/ /www/
+FROM ghcr.io/umputun/reproxy:v1.2.2
+COPY --from=build /app/build /www
 EXPOSE 8080
-ENTRYPOINT ["python3", "-m", "http.server", "-d", "www", "8080"]
+USER app
+ENTRYPOINT ["/srv/reproxy", "--assets.location=/www", "--listen=0.0.0.0:8080"]
