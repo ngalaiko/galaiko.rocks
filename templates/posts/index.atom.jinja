@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<id>https://nikita.galaiko.rocks/posts</id>
+	<title>posts by nikita galaiko</title>
+    {%- set latest = posts | sort(attribute="date",reverse=True) | first -%}
+	<updated>{{ latest.date }}T0:0:00Z</updated>
+	<author>
+		<name>nikita galaiko</name>
+		<email>nikita@galaiko.rocks</email>
+		<uri>https://nikita.galaiko.rocks</uri>
+	</author>
+    <icon>https://nikita.galaiko.rocks/favicon.ico</icon>
+	<link rel="alternate" type="text/html" href="https://nikita.galaiko.rocks/posts/index.html"/>
+	<link rel="self" type="application/atom+xml" href="https://nikita.galaiko.rocks/posts/index.atom"/>
+	{%- for post in posts | sort(attribute="date", reverse = True) %}
+	<entry>
+		<title>{{ post.title }}</title>
+        {%- set path = "/posts/" + post.path|replace('.md', '.html') %}
+        {%- set id = post.id if 'id' in post else path %}
+		<link href="https://nikita.galaiko.rocks{{ path }}" rel="alternate" type="text/html"/>
+		<id>{{ id }}</id>
+		<updated>{{ post.date }}T0:0:00Z</updated>
+		<content type="html">{{ post.content | e }}</content>
+	</entry>
+	{%- endfor %}
+</feed>

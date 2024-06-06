@@ -1,3 +1,2 @@
-- rss, atom
 - migrate update scripts
 - version images, css and js files with it's hash
