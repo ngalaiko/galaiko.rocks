@@ -13,7 +13,6 @@ my website
 - [cookcli](https://github.com/cooklang/cookcli)
 - [imagemagick](https://imagemagick.org)
 - [pandoc](https://pandoc.org)
-- [tidy](http://www.html-tidy.org)
 
 ## build
 

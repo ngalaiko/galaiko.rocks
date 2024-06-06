@@ -1,14 +1,14 @@
 {% extends "_layout.html.jinja" %}
 
-{% block title %}{{ cocktail.metadata.title }}{% endblock %}
+{% block title %}{{ cocktail.metadata.map.title }}{% endblock %}
 
 {% block content %}
     <aside>
         <img 
             width="800px" 
             loading="lazy" 
-            src="{{ cocktail.metadata.title | slugify }}.jpeg.800x0@2x.webp" 
-            alt="Picture of {{ cocktail.metadata.title }} cocktail" 
+            src="{{ cocktail.metadata.map.title | slugify }}.jpeg.800x0@2x.webp" 
+            alt="Picture of {{ cocktail.metadata.map.title }} cocktail" 
         />
     </aside>
 
@@ -16,7 +16,15 @@
         <h2>ingredients</h2>
         <ul>
             {%- for ingredient in cocktail.ingredients %}
-                <li><b>{{ ingredient.name }}</b>: {{ ingredient.amount }}</li>
+                <li><b>{{ ingredient.name }}</b>
+                    {% if ingredient.quantity %}
+                    : 
+                    <span>{{ ingredient.quantity.value.value.value }}</span>
+                    {% if ingredient.quantity.unit %}
+                        <span>{{ ingredient.quantity.unit }}</span>
+                    {% endif %}
+                    {% endif %}
+                </li>
             {%- endfor -%}
         </ul>
     </section>
@@ -34,23 +42,37 @@
 
     <section>
         <ol>
-            {%- for step in cocktail.steps %}
-                <li>{{ step.description }}</li>
-            {%- endfor -%}
+            {%- for section in cocktail.sections %}
+                {%- for step in section.steps %}
+                    <li>
+                        {%- for item in step['items'] %}
+                            {%- if item.type == 'text' %}
+                                {{ item.value }}
+                            {%- elif item.type == 'ingredient' %}
+                                {{ cocktail.ingredients[item.index].name }}
+                            {%- elif item.type == 'cookware' %}
+                                {{ cocktail.cookware[item.index].name }}
+                            {%- endif %}
+                        {%- endfor %}
+                    </li>
+                {%- endfor %}
+            {%- endfor %}
         </ol>
     </section>
 
 
-    {%- if "source" in cocktail.metadata %}
+    {%- if cocktail.metadata.source %}
     <hr />
 
     <section>
         source: 
-        {%- if cocktail.metadata.source is url %}
-            {%- set source = cocktail.metadata.source | urlparse %}
-            <a href="{{ cocktail.metadata.source }}">{{ source.netloc }}</a>
-        {%- else %}
-            {{ cocktail.metadata.source }}
+        {%- if cocktail.metadata.source.name and cocktail.metadata.source.url  %}
+            <a href="{{ cocktail.metadata.source.url }}">{{ cocktail.metadata.source.name }}</a>
+        {%- elif cocktail.metadata.source.url  %}
+            {%- set url = cocktail.metadata.source.url | urlparse %}
+            <a href="{{ cocktail.metadata.source.url }}">{{ url.netloc }}</a>
+        {%- elif cocktail.metadata.source.name  %}
+            {{ cocktail.metadata.source.name }}
         {%- endif %}
     </section>
     {%- endif %}

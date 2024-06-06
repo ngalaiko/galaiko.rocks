@@ -103,12 +103,12 @@ $(BUILD_DIR)/places/index.html: $(INPUT_PLACE_FILES) $(call templ,places/index.h
 $(BUILD_DIR)/cocktails/index.html: $(INPUT_COCKTAIL_FILES)
 	@echo '$(SRC_DIR)/cocktails/*.cook -> $@'
 	@mkdir -p "$(dir $@)"
-	@ls $(INPUT_COCKTAIL_FILES) | xargs -L 1 $(COOK_BIN) recipe read --output-format json | $(JQ_BIN) --slurp '{ cocktails: . }' | $(J2_BIN) -f json cocktails/index.html.jinja -o="$@"
+	@ls $(INPUT_COCKTAIL_FILES) | xargs -I {} $(COOK_BIN) recipe read --format json {} | $(JQ_BIN) --slurp '{ cocktails: . }' | $(J2_BIN) -f json cocktails/index.html.jinja -o="$@"
 
 $(BUILD_DIR)/cocktails/%.html: $(SRC_DIR)/cocktails/%.cook $(call templ,cocktails/_cocktail.html.jinja)
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@cat "$<" | $(COOK_BIN) recipe read --output-format json | $(JQ_BIN) '{ cocktail: . }' | $(J2_BIN) -f json cocktails/_cocktail.html.jinja -o="$@"
+	@cat "$<" | $(COOK_BIN) recipe read --format json | $(JQ_BIN) '{ cocktail: . }' | $(J2_BIN) -f json cocktails/_cocktail.html.jinja -o="$@"
 
 $(BUILD_DIR)/cocktails/%.jpeg.800x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 	@echo '$< -> $@'
@@ -135,17 +135,17 @@ $(BUILD_DIR)/records/%.jpeg.200x0@2x.webp: $(SRC_DIR)/records/%.jpeg
 $(BUILD_DIR)/posts/index.html: $(INPUT_POST_FILES) $(call templ,posts/index.html.jinja)
 	@echo '$(SRC_DIR)/posts/*.md -> $@'
 	@mkdir -p "$(dir $@)"
-	@ls $(INPUT_POST_FILES) | xargs -L 1 -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.html.jinja -o="$@"
+	@ls $(INPUT_POST_FILES) | xargs -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.html.jinja -o="$@"
 
 $(BUILD_DIR)/posts/index.atom: $(INPUT_POST_FILES) $(call templ,posts/index.atom.jinja)
 	@echo '$(SRC_DIR)/posts/*.md -> $@'
 	@mkdir -p "$(dir $@)"
-	@ls $(INPUT_POST_FILES) | xargs -L 1 -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.atom.jinja -o="$@"
+	@ls $(INPUT_POST_FILES) | xargs -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.atom.jinja -o="$@"
 
 $(BUILD_DIR)/posts/%.html: $(SRC_DIR)/%.md $(call templ,posts/_post.html.jinja)
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' | $(J2_BIN) -f yaml posts/_post.html.jinja -o="$@"
+	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' --output-format json | $(J2_BIN) -f json posts/_post.html.jinja -o="$@"
 
 $(BUILD_DIR)/posts/%.jpg.800x0@2x.webp: $(SRC_DIR)/posts/%.jpg
 	@echo '$< -> $@'
@@ -166,7 +166,7 @@ $(BUILD_DIR)/posts/%.png.800x0@2x.webp: $(SRC_DIR)/posts/%.png
 $(BUILD_DIR)/%.html: $(SRC_DIR)/%.md $(call templ,posts/_post.html.jinja)
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' | $(J2_BIN) -f yaml posts/_post.html.jinja -o="$@"
+	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' --output-format json | $(J2_BIN) -f json posts/_post.html.jinja -o="$@"
 
 # assets
 $(BUILD_DIR)/%: $(SRC_DIR)/%
