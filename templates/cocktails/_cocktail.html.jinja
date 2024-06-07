@@ -4,11 +4,11 @@
 
 {% block content %}
     <aside>
-        <img 
-            width="800px" 
-            loading="lazy" 
-            src="{{ cocktail.metadata.map.title | slugify }}.jpeg.800x0@2x.webp" 
-            alt="Picture of {{ cocktail.metadata.map.title }} cocktail" 
+        <img
+            width="800"
+            loading="lazy"
+            src="{{ cocktail.metadata.map.title | slugify }}.jpeg.800x0@2x.webp"
+            alt="Picture of {{ cocktail.metadata.map.title }} cocktail"
         />
     </aside>
 
@@ -18,7 +18,7 @@
             {%- for ingredient in cocktail.ingredients %}
                 <li><b>{{ ingredient.name }}</b>
                     {% if ingredient.quantity %}
-                    : 
+                    :
                     <span>{{ ingredient.quantity.value.value.value }}</span>
                     {% if ingredient.quantity.unit %}
                         <span>{{ ingredient.quantity.unit }}</span>
@@ -65,7 +65,7 @@
     <hr />
 
     <section>
-        source: 
+        source:
         {%- if cocktail.metadata.source.name and cocktail.metadata.source.url  %}
             <a href="{{ cocktail.metadata.source.url }}">{{ cocktail.metadata.source.name }}</a>
         {%- elif cocktail.metadata.source.url  %}

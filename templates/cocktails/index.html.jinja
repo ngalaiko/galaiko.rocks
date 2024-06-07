@@ -12,13 +12,13 @@
         <li>
             <a href="{{ cocktail.metadata.map.title | slugify }}.html">
                 <figure>
-                    <img 
-                        src="{{ cocktail.metadata.map.title | slugify }}.jpeg.200x0@2x.webp" 
-                        width="200px" 
-                        loading="lazy" 
-                        alt="Picture of {{ cocktail.metadata.map.title }} cocktail" 
+                    <img
+                        src="{{ cocktail.metadata.map.title | slugify }}.jpeg.200x0@2x.webp"
+                        width="200"
+                        loading="lazy"
+                        alt="Picture of {{ cocktail.metadata.map.title }} cocktail"
                     />
-                    <figcaption><center>{{ cocktail.metadata.map.title }}</center></figcaption>
+                    <figcaption><p style="text-align: center;">{{ cocktail.metadata.map.title }}</p></figcaption>
                 </figure>
             </a>
         </li>

@@ -12,9 +12,9 @@
         <li>
             <a href="{{ entry.href }}">
                 <figure>
-                    <img width="200px" src="{{ entry.title_slug }}.jpg.200x0@2x.webp" loading="lazy" alt="Poster of {{ entry.title }} movie" />
+                    <img width="200" src="{{ entry.title_slug }}.jpg.200x0@2x.webp" loading="lazy" alt="Poster of {{ entry.title }} movie" />
                     <figcaption>
-                        <center>{{ entry.title }}{%- if entry.is_liked %} | ❤️{% endif %}</center>
+                        <p style="text-align: center;">{{ entry.title }}{%- if entry.is_liked %} | ❤️{% endif %}</p>
                     </figcaption>
                 </figure>
             </a>

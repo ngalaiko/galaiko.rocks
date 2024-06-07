@@ -12,9 +12,14 @@
         <li>
             <a href="https://www.discogs.com/release/{{ record.id }}">
                 <figure>
-                    <img width="200px" src="{{ record.basic_information.title | slugify }}.jpeg.200x0@2x.webp" loading="lazy" alt="Cover of {{ record.basic_information.title }} album" />
+                    <img
+                        width="200"
+                        src="{{ record.basic_information.title | slugify }}.jpeg.200x0@2x.webp"
+                        loading="lazy"
+                        alt="Cover of {{ record.basic_information.title }} album"
+                    />
                     <figcaption>
-                        <center>
+                        <p style="text-align: center;">
                             <span>
                                 {{ record.basic_information.title }}
                             </span>
@@ -22,7 +27,7 @@
                             <span>
                                 {{ record.basic_information.artists[0].name }}
                             </span>
-                        </center>
+                        </p>
                     </figcaption>
                 </figure>
             </a>
