@@ -12,11 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: dtolnay/rust-toolchain@stable
-      - uses: Swatinem/rust-cache@v2
-
-      - run: cargo build -p update
-
       - uses: actions/setup-python@v5
         with:
           cache: "pip"
@@ -43,7 +38,7 @@ jobs:
           ref: "master"
       - name: Setup hledger
         uses: ngalaiko/setup-hledger@v1
-      - run: cargo run -p update hledger --file "$GITHUB_WORKSPACE/ledger/main.ledger"
+      - run: python3 ./scripts/update/hledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes
