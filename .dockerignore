@@ -4,6 +4,7 @@ target
 serve/public
 ledger
 
+venv
 bin
 build
 tmp

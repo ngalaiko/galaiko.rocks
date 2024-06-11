@@ -17,7 +17,14 @@ jobs:
 
       - run: cargo build -p update
 
-      - run: cargo run -p update letterboxd
+      - uses: actions/setup-python@v5
+        with:
+          cache: "pip"
+      - run: python3 -m venv venv
+      - run: source venv/bin/activate
+      - run: python3 -m pip install -r requirements.txt
+
+      - run: python3 ./scripts/update/letterboxd.py
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update movies

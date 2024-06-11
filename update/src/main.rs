@@ -1,6 +1,5 @@
 mod discogs;
 mod hledger;
-mod letterboxd;
 
 use clap::{Parser, Subcommand};
 
@@ -16,10 +15,6 @@ enum Commands {
         #[arg(long)]
         token: String,
         #[arg(long, default_value = "./assets/records/")]
-        output: std::path::PathBuf,
-    },
-    Letterboxd {
-        #[arg(long, default_value = "./assets/movies/")]
         output: std::path::PathBuf,
     },
     Hledger {
@@ -42,12 +37,6 @@ async fn main() {
 
     let cli = Cli::parse();
     match cli.command {
-        Commands::Letterboxd { output } => {
-            if let Err(error) = letterboxd::update(&output).await {
-                eprintln!("{error}");
-                std::process::exit(1);
-            }
-        }
         Commands::Discogs { token, output } => {
             if let Err(error) = discogs::update(&token, &output).await {
                 eprintln!("{error}");
