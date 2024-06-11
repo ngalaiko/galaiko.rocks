@@ -1,0 +1,56 @@
+{
+    "id": 16106088,
+    "instance_id": 806128546,
+    "date_added": "2021-09-13T09:57:14-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 16106088,
+        "master_id": 25721,
+        "master_url": "https://api.discogs.com/masters/25721",
+        "resource_url": "https://api.discogs.com/releases/16106088",
+        "thumb": "https://i.discogs.com/QyA2ReI-gnlkqajtCPy-PjQxMpgRzahjnFw2WfViOwo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTA2/MDg4LTE2MDM1MzMy/MDktNjgyMC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/kZddCUMTtMlaTXTjU3AY1BQuuaAkxXFd0wibDcCD37M/rs:fit/g:sm/q:90/h:600/w:586/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTA2/MDg4LTE2MDM1MzMy/MDktNjgyMC5qcGVn.jpeg",
+        "title": "\u0410\u043b\u044c\u0431\u043e\u043c",
+        "year": 1987,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "Red labels",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Repress"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "ABBA",
+                "anv": "\u0410\u0411\u0411\u0410",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 69866,
+                "resource_url": "https://api.discogs.com/artists/69866"
+            }
+        ],
+        "labels": [
+            {
+                "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+                "catno": "\u042160-11177\u201478",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 15486,
+                "resource_url": "https://api.discogs.com/labels/15486"
+            }
+        ],
+        "genres": [
+            "Pop"
+        ],
+        "styles": [
+            "Disco"
+        ]
+    },
+    "folder_id": 1
+}
