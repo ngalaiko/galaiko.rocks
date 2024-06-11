@@ -158,6 +158,7 @@ LOCATIONS = {
     "Hasselsson - Skanstorget": (57.695_921, 11.959_661),
     "Manniny Espresso": (57.698_252, 11.965_896),
     "McDonald's - Göteborg": (57.699_245, 11.977_162),
+    "Che Argento": (57.698036, 11.960528),
 }
 
 
