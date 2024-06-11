@@ -1,4 +1,3 @@
-mod discogs;
 mod hledger;
 
 use clap::{Parser, Subcommand};
@@ -11,12 +10,6 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    Discogs {
-        #[arg(long)]
-        token: String,
-        #[arg(long, default_value = "./assets/records/")]
-        output: std::path::PathBuf,
-    },
     Hledger {
         #[arg(long)]
         file: Option<std::path::PathBuf>,
@@ -37,12 +30,6 @@ async fn main() {
 
     let cli = Cli::parse();
     match cli.command {
-        Commands::Discogs { token, output } => {
-            if let Err(error) = discogs::update(&token, &output).await {
-                eprintln!("{error}");
-                std::process::exit(1);
-            }
-        }
         Commands::Hledger { file, output } => {
             if let Err(error) = hledger::update(file.as_deref(), &output).await {
                 eprintln!("{error}");
