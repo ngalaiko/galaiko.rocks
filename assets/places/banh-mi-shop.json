@@ -1,9 +1,9 @@
 {
-  "name": "Banh Mi Shop",
-  "spent": 760.0,
-  "times": 6,
-  "location": [
-    57.703682,
-    11.968214
-  ]
+    "location": [
+        57.703682,
+        11.968214
+    ],
+    "name": "Banh Mi Shop",
+    "times": 6,
+    "spent": 760.0
 }

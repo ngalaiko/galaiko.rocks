@@ -1,9 +1,9 @@
 {
-  "name": "Viktors Kaffe",
-  "spent": 266.0,
-  "times": 4,
-  "location": [
-    57.697449,
-    11.978164
-  ]
+    "location": [
+        57.697449,
+        11.978164
+    ],
+    "name": "Viktors Kaffe",
+    "times": 4,
+    "spent": 266.0
 }

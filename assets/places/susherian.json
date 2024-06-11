@@ -1,9 +1,9 @@
 {
-  "name": "Susherian",
-  "spent": 270.0,
-  "times": 2,
-  "location": [
-    59.308812,
-    18.077144
-  ]
+    "location": [
+        59.308812,
+        18.077144
+    ],
+    "name": "Susherian",
+    "times": 2,
+    "spent": 270.0
 }

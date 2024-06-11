@@ -1,9 +1,9 @@
 {
-  "name": "Hasselsson - Saluhallen",
-  "spent": 820.0,
-  "times": 7,
-  "location": [
-    57.703598,
-    11.967959
-  ]
+    "location": [
+        57.703598,
+        11.967959
+    ],
+    "name": "Hasselsson - Saluhallen",
+    "times": 7,
+    "spent": 820.0
 }

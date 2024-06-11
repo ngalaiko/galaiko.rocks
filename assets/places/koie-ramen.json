@@ -1,9 +1,9 @@
 {
-  "name": "koie ramen",
-  "spent": 2189.0,
-  "times": 11,
-  "location": [
-    57.704636,
-    11.961785
-  ]
+    "location": [
+        57.704636,
+        11.961785
+    ],
+    "name": "koie ramen",
+    "times": 11,
+    "spent": 2189.0
 }

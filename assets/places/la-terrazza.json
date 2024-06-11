@@ -1,9 +1,9 @@
 {
-  "name": "La Terrazza",
-  "spent": 766.0,
-  "times": 2,
-  "location": [
-    57.699998,
-    11.984547
-  ]
+    "location": [
+        57.699998,
+        11.984547
+    ],
+    "name": "La Terrazza",
+    "times": 2,
+    "spent": 766.0
 }

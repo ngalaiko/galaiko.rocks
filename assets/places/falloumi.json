@@ -1,9 +1,9 @@
 {
-  "name": "Falloumi",
-  "spent": 310.0,
-  "times": 2,
-  "location": [
-    59.308163,
-    18.077789
-  ]
+    "location": [
+        59.308163,
+        18.077789
+    ],
+    "name": "Falloumi",
+    "times": 2,
+    "spent": 310.0
 }

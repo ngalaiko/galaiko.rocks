@@ -1,9 +1,9 @@
 {
-  "name": "Nooodle",
-  "spent": 520.0,
-  "times": 4,
-  "location": [
-    57.695921,
-    11.959661
-  ]
+    "location": [
+        57.695921,
+        11.959661
+    ],
+    "name": "Nooodle",
+    "times": 4,
+    "spent": 520.0
 }

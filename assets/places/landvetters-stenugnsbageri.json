@@ -1,9 +1,9 @@
 {
-  "name": "Landvetters Stenugnsbageri",
-  "spent": 176.0,
-  "times": 3,
-  "location": [
-    57.700682,
-    11.982264
-  ]
+    "location": [
+        57.700682,
+        11.982264
+    ],
+    "name": "Landvetters Stenugnsbageri",
+    "times": 3,
+    "spent": 176.0
 }

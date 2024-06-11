@@ -1,9 +1,9 @@
 {
-  "name": "Morgon Coffee Roasters",
-  "spent": 377.5,
-  "times": 5,
-  "location": [
-    57.708091,
-    11.951323
-  ]
+    "location": [
+        57.708091,
+        11.951323
+    ],
+    "name": "Morgon Coffee Roasters",
+    "times": 6,
+    "spent": 377.5
 }

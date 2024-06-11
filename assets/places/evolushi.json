@@ -1,9 +1,9 @@
 {
-  "name": "Evolushi",
-  "spent": 526.0,
-  "times": 3,
-  "location": [
-    57.708039,
-    11.98596
-  ]
+    "location": [
+        57.708039,
+        11.98596
+    ],
+    "name": "Evolushi",
+    "times": 3,
+    "spent": 526.0
 }

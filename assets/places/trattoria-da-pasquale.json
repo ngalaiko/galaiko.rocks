@@ -1,9 +1,9 @@
 {
-  "name": "Trattoria Da Pasquale",
-  "spent": 1160.65,
-  "times": 4,
-  "location": [
-    57.700095,
-    11.984407
-  ]
+    "location": [
+        57.700095,
+        11.984407
+    ],
+    "name": "Trattoria Da Pasquale",
+    "times": 4,
+    "spent": 1160.65
 }

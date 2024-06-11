@@ -1,9 +1,9 @@
 {
-  "name": "Joe And The Juice",
-  "spent": 150.0,
-  "times": 2,
-  "location": [
-    59.318923,
-    18.071062
-  ]
+    "location": [
+        59.318923,
+        18.071062
+    ],
+    "name": "Joe And The Juice",
+    "times": 2,
+    "spent": 150.0
 }

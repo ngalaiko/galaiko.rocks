@@ -1,9 +1,9 @@
 {
-  "name": "House of Vietnam",
-  "spent": 600.0,
-  "times": 5,
-  "location": [
-    57.709422,
-    11.980116
-  ]
+    "location": [
+        57.709422,
+        11.980116
+    ],
+    "name": "House of Vietnam",
+    "times": 5,
+    "spent": 600.0
 }

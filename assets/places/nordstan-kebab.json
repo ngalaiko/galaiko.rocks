@@ -1,9 +1,9 @@
 {
-  "name": "Nordstan Kebab",
-  "spent": 443.0,
-  "times": 4,
-  "location": [
-    57.707136,
-    11.968511
-  ]
+    "location": [
+        57.707136,
+        11.968511
+    ],
+    "name": "Nordstan Kebab",
+    "times": 4,
+    "spent": 443.0
 }

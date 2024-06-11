@@ -1,9 +1,9 @@
 {
-  "name": "Dirty Records",
-  "spent": 126.0,
-  "times": 2,
-  "location": [
-    57.699326,
-    11.951237
-  ]
+    "location": [
+        57.699326,
+        11.951237
+    ],
+    "name": "Dirty Records",
+    "times": 2,
+    "spent": 126.0
 }

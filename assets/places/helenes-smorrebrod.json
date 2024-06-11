@@ -1,9 +1,9 @@
 {
-  "name": "Helenes Smørrebrød",
-  "spent": 248.0,
-  "times": 2,
-  "location": [
-    57.698781,
-    11.983269
-  ]
+    "location": [
+        57.698781,
+        11.983269
+    ],
+    "name": "Helenes Sm\u00f8rrebr\u00f8d",
+    "times": 2,
+    "spent": 248.0
 }

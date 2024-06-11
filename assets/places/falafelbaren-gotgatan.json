@@ -1,9 +1,9 @@
 {
-  "name": "Falafelbaren - Götgatan",
-  "spent": 375.0,
-  "times": 3,
-  "location": [
-    59.309401,
-    18.075404
-  ]
+    "location": [
+        59.309401,
+        18.075404
+    ],
+    "name": "Falafelbaren - G\u00f6tgatan",
+    "times": 3,
+    "spent": 375.0
 }

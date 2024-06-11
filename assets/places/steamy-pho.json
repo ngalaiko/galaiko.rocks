@@ -1,9 +1,9 @@
 {
-  "name": "Steamy Pho",
-  "spent": 330.0,
-  "times": 2,
-  "location": [
-    57.709426,
-    11.985551
-  ]
+    "location": [
+        57.709426,
+        11.985551
+    ],
+    "name": "Steamy Pho",
+    "times": 2,
+    "spent": 330.0
 }

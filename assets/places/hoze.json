@@ -1,9 +1,9 @@
 {
-  "name": "Hoze",
-  "spent": 9500.0,
-  "times": 2,
-  "location": [
-    57.699405,
-    11.935068
-  ]
+    "location": [
+        57.699405,
+        11.935068
+    ],
+    "name": "Hoze",
+    "times": 2,
+    "spent": 9500.0
 }

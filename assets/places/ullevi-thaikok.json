@@ -1,9 +1,9 @@
 {
-  "name": "Ullevi Thaikök",
-  "spent": 3755.0,
-  "times": 29,
-  "location": [
-    57.708449,
-    11.986409
-  ]
+    "location": [
+        57.708449,
+        11.986409
+    ],
+    "name": "Ullevi Thaik\u00f6k",
+    "times": 29,
+    "spent": 3755.0
 }

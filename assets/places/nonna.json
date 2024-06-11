@@ -1,9 +1,9 @@
 {
-  "name": "Nonna",
-  "spent": 1384.0,
-  "times": 8,
-  "location": [
-    57.703262,
-    11.959582
-  ]
+    "location": [
+        57.703262,
+        11.959582
+    ],
+    "name": "Nonna",
+    "times": 8,
+    "spent": 1384.0
 }

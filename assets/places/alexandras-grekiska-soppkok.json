@@ -1,9 +1,9 @@
 {
-  "name": "Alexandras Grekiska Soppkök",
-  "spent": 2869.0,
-  "times": 25,
-  "location": [
-    57.703553,
-    11.96789
-  ]
+    "location": [
+        57.703553,
+        11.96789
+    ],
+    "name": "Alexandras Grekiska Soppk\u00f6k",
+    "times": 25,
+    "spent": 2869.0
 }

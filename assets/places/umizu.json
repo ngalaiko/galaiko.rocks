@@ -1,9 +1,9 @@
 {
-  "name": "Umizu",
-  "spent": 566.0,
-  "times": 3,
-  "location": [
-    57.699246,
-    11.97778
-  ]
+    "location": [
+        57.699246,
+        11.97778
+    ],
+    "name": "Umizu",
+    "times": 3,
+    "spent": 566.0
 }

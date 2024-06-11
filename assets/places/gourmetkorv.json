@@ -1,9 +1,9 @@
 {
-  "name": "Gourmetkorv",
-  "spent": 493.0,
-  "times": 4,
-  "location": [
-    57.702785,
-    11.963998
-  ]
+    "location": [
+        57.702785,
+        11.963998
+    ],
+    "name": "Gourmetkorv",
+    "times": 4,
+    "spent": 493.0
 }

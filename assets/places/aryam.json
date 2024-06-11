@@ -1,9 +1,9 @@
 {
-  "name": "Aryam",
-  "spent": 269.0,
-  "times": 3,
-  "location": [
-    59.31845,
-    18.070466
-  ]
+    "location": [
+        59.31845,
+        18.070466
+    ],
+    "name": "Aryam",
+    "times": 3,
+    "spent": 269.0
 }

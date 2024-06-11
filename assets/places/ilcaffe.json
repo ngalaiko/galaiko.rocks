@@ -1,9 +1,9 @@
 {
-  "name": "ilcaffè",
-  "spent": 259.0,
-  "times": 4,
-  "location": [
-    59.312661,
-    18.081021
-  ]
+    "location": [
+        59.312661,
+        18.081021
+    ],
+    "name": "ilcaff\u00e8",
+    "times": 6,
+    "spent": 259.0
 }

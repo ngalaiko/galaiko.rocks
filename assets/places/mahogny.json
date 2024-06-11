@@ -1,9 +1,9 @@
 {
-  "name": "Mahogny",
-  "spent": 136.0,
-  "times": 3,
-  "location": [
-    57.707827,
-    11.965388
-  ]
+    "location": [
+        57.707827,
+        11.965388
+    ],
+    "name": "Mahogny",
+    "times": 3,
+    "spent": 136.0
 }
