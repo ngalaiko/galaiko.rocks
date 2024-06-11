@@ -25,19 +25,19 @@ $ make
 ### letterboxd
 
 ```bash
-$ cargo run --package update letterboxd
+$ python3 ./scripts/update/letterboxd.py
 ```
 
 ### discogs
 
 ```bash
-$ cargo run --package update discogs --token <personal access token>
+$ python3 ./scripts/update/discogs.py --token <personal access token>
 ```
 
 ### hledger
 
 ```bash
-$ cargo run --package update hledger [--file <main hledger file>]
+$ python3 ./scripts/update/hledger.py [--file <main hledger file>]
 ```
 
 ## run
