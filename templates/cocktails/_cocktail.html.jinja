@@ -2,6 +2,22 @@
 
 {% block title %}{{ cocktail.metadata.map.title }}{% endblock %}
 
+{% macro float(value) -%}
+    {{ "%.15g" | format(value) }}
+{%- endmacro %}
+
+{%- macro quantity_value(value) -%}
+    {%- if value.type == 'fraction' -%}
+        {{ float(value.value.num) }}/{{ float(value.value.den) }}
+    {%- elif value.type == 'regular' -%}
+        {{ float(value.value) }}
+    {%- endif -%}
+{%- endmacro -%}
+
+{%- macro quantity(quantity) -%}
+    {{ quantity_value(quantity.value.value) }} {% if quantity.unit %}{{ quantity.unit }}{% endif %}
+{%- endmacro -%}
+
 {% block content %}
     <aside>
         <img
@@ -17,12 +33,9 @@
         <ul>
             {%- for ingredient in cocktail.ingredients %}
                 <li><b>{{ ingredient.name }}</b>
-                    {% if ingredient.quantity %}
+                    {%- if ingredient.quantity -%}
                     :
-                    <span>{{ ingredient.quantity.value.value.value }}</span>
-                    {% if ingredient.quantity.unit %}
-                        <span>{{ ingredient.quantity.unit }}</span>
-                    {% endif %}
+                    {{ quantity(ingredient.quantity) }}
                     {% endif %}
                 </li>
             {%- endfor -%}
@@ -42,18 +55,20 @@
 
     <section>
         <ol>
-            {%- for section in cocktail.sections %}
-                {%- for step in section.steps %}
+            {%- for section in cocktail.sections -%}
+                {%- for step in section.steps -%}
                     <li>
-                        {%- for item in step['items'] %}
-                            {%- if item.type == 'text' %}
+                        {%- for item in step['items'] -%}
+                            {%- if item.type == 'text' -%}
                                 {{ item.value }}
-                            {%- elif item.type == 'ingredient' %}
+                            {%- elif item.type == 'timer' -%}
+                                {{ quantity(cocktail.timers[item.index].quantity) }}
+                            {%- elif item.type == 'ingredient' -%}
                                 {{ cocktail.ingredients[item.index].name }}
-                            {%- elif item.type == 'cookware' %}
+                            {%- elif item.type == 'cookware' -%}
                                 {{ cocktail.cookware[item.index].name }}
-                            {%- endif %}
-                        {%- endfor %}
+                            {%- endif -%}
+                        {%- endfor -%}
                     </li>
                 {%- endfor %}
             {%- endfor %}
@@ -62,18 +77,18 @@
 
 
     {%- if cocktail.metadata.source %}
-    <hr />
+        <hr />
 
-    <section>
-        source:
-        {%- if cocktail.metadata.source.name and cocktail.metadata.source.url  %}
-            <a href="{{ cocktail.metadata.source.url }}">{{ cocktail.metadata.source.name }}</a>
-        {%- elif cocktail.metadata.source.url  %}
-            {%- set url = cocktail.metadata.source.url | urlparse %}
-            <a href="{{ cocktail.metadata.source.url }}">{{ url.netloc }}</a>
-        {%- elif cocktail.metadata.source.name  %}
-            {{ cocktail.metadata.source.name }}
-        {%- endif %}
-    </section>
+        <section>
+            source:
+            {%- if cocktail.metadata.source.name and cocktail.metadata.source.url  %}
+                <a href="{{ cocktail.metadata.source.url }}">{{ cocktail.metadata.source.name }}</a>
+            {%- elif cocktail.metadata.source.url  %}
+                {%- set url = cocktail.metadata.source.url | urlparse %}
+                <a href="{{ cocktail.metadata.source.url }}">{{ url.netloc }}</a>
+            {%- elif cocktail.metadata.source.name  %}
+                {{ cocktail.metadata.source.name }}
+            {%- endif %}
+        </section>
     {%- endif %}
 {% endblock %}
