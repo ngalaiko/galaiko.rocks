@@ -1,0 +1,56 @@
+{
+    "id": 6713518,
+    "instance_id": 1709066785,
+    "date_added": "2024-06-13T12:31:52-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 6713518,
+        "master_id": 11693,
+        "master_url": "https://api.discogs.com/masters/11693",
+        "resource_url": "https://api.discogs.com/releases/6713518",
+        "thumb": "https://i.discogs.com/dNHMVjbI0x9lwoXTNNW_7dHuMfzhydhjoBGe7gvH6F8/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY3MTM1/MTgtMTQyNTE1Njcw/MC03NzcyLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/yjmfQo_o4aZWXA6PjYEdKrFCIxWtzGahsDKt13mIHyo/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY3MTM1/MTgtMTQyNTE1Njcw/MC03NzcyLmpwZWc.jpeg",
+        "title": "Ege Bamyasi",
+        "year": 2018,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Reissue",
+                    "Remastered"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Can",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 17203,
+                "resource_url": "https://api.discogs.com/artists/17203"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Spoon Records",
+                "catno": "XSPOON8",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 2187,
+                "resource_url": "https://api.discogs.com/labels/2187"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": [
+            "Krautrock"
+        ]
+    },
+    "folder_id": 1
+}
