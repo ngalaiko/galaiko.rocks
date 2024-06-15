@@ -1,6 +1,10 @@
 app = "galaiko-rocks"
 primary_region = "arn"
 
+[mounts]
+source = "logs"
+destination = "/var/log/reproxy"
+
 [http_service]
   internal_port = 8080
   force_https = true

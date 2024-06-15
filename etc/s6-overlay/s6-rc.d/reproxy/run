@@ -1,0 +1,6 @@
+#!/command/execlineb -P
+reproxy \
+    --logger.enabled \
+    --logger.file=/var/log/reproxy/access.log \
+    --assets.location=/var/www/galaiko.rocks \
+    --listen=0.0.0.0:8080

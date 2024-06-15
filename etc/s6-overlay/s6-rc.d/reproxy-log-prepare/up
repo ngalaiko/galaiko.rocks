@@ -1,0 +1,3 @@
+if { mkdir -p /var/log/reproxy }
+if { chown nobody:nogroup /var/log/reproxy }
+chmod 02755 /var/log/reproxy
