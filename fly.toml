@@ -3,7 +3,7 @@ primary_region = "arn"
 
 [mounts]
   source = "logs"
-  destination = "/var/log/reproxy"
+  destination = "/var/log"
 
 [[services]]
   internal_port = 8080

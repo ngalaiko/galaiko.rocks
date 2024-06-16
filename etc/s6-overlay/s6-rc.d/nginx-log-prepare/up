@@ -1,0 +1,3 @@
+if { mkdir -p /var/log/nginx }
+if { chown nobody:nogroup /var/log/nginx }
+chmod 02755 /var/log/nginx
