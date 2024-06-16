@@ -3,4 +3,5 @@ reproxy \
     --logger.enabled \
     --logger.file=/var/log/reproxy/access.log \
     --assets.location=/var/www/galaiko.rocks \
+    --remote-lookup-headers \
     --listen=0.0.0.0:8080
