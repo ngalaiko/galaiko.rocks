@@ -13,7 +13,7 @@ Optional.
 
 ## Analytics
 
-No analytics.
+I collect some basic access logs from all requests. You can see all the information collected on the [stats](/stats.html) page.
 
 ## Cookies
 
