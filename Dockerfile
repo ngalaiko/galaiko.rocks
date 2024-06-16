@@ -58,7 +58,8 @@ RUN \
           echo "Cannot build, missing valid build platform." \
           exit 1; \
     esac; \
-    rm -rf "/tmp/*"
+    rm -rf "/tmp/*"; \
+    apk add --update --no-cache goaccess;
 COPY --from=build /app/build /var/www/galaiko.rocks
 COPY etc /etc
 COPY init-wrapper /

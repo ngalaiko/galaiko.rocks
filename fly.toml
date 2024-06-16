@@ -2,15 +2,28 @@ app = "galaiko-rocks"
 primary_region = "arn"
 
 [mounts]
-source = "logs"
-destination = "/var/log/reproxy"
+  source = "logs"
+  destination = "/var/log/reproxy"
 
-[http_service]
+[[services]]
   internal_port = 8080
-  force_https = true
+  protocol = "tcp"
+  min_machines_running = 1
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = 443
+
+[[services]]
+  internal_port = 7890
+  protocol = "tcp"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 1
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = 7890
 
 [[vm]]
   cpu_kind = "shared"
