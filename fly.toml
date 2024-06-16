@@ -11,7 +11,7 @@ primary_region = "arn"
   min_machines_running = 1
 
   [[services.ports]]
-    handlers = ["tls"]
+    handlers = ["tls", "http"]
     port = 443
 
 [[services]]
@@ -22,7 +22,7 @@ primary_region = "arn"
   min_machines_running = 1
 
   [[services.ports]]
-    handlers = ["tls"]
+    handlers = ["tls", "http"]
     port = 7890
 
 [[vm]]
