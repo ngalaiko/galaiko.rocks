@@ -47,8 +47,8 @@ OUTPUT_OTHER_FILES := $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(INPUT_OTHER_FILES
 # Combine all outputs
 OUTPUT := $(OUTPUT_MD_FILES) $(OUTPUT_COCKTAIL_FILES) $(BUILD_DIR)/cocktails/index.html $(OUTPUT_COCKTAIL_IMAGE_FILES)
 OUTPUT += $(BUILD_DIR)/records/index.html $(BUILD_DIR)/movies/index.html $(OUTPUT_MOVIE_IMAGE_FILES)
-OUTPUT += $(OUTPUT_RECORD_IMAGE_FILES) $(BUILD_DIR)/posts/index.html $(BUILD_DIR)/posts/index.atom $(OUTPUT_IMAGE_FILES)
-OUTPUT += $(BUILD_DIR)/places/index.html $(OUTPUT_OTHER_FILES)
+OUTPUT += $(OUTPUT_RECORD_IMAGE_FILES) $(BUILD_DIR)/posts/index.html $(BUILD_DIR)/posts/index.atom $(BUILD_DIR)/posts/index.xml
+OUTPUT += $(OUTPUT_IMAGE_FILES) $(BUILD_DIR)/places/index.html $(OUTPUT_OTHER_FILES)
 
 # Macros
 templ = templates/_layout.html.jinja j2_customize.py templates/$1
@@ -114,6 +114,11 @@ $(BUILD_DIR)/posts/index.html: $(INPUT_POST_FILES) $(call templ,posts/index.html
 	@echo '$(SRC_DIR)/posts/*.md -> $@'
 	@mkdir -p "$(dir $@)"
 	@ls $(INPUT_POST_FILES) | xargs -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.html.jinja -o="$@" || exit 1
+
+$(BUILD_DIR)/posts/index.xml: $(INPUT_POST_FILES) $(call templ,posts/index.xml.jinja)
+	@echo '$(SRC_DIR)/posts/*.md -> $@'
+	@mkdir -p "$(dir $@)"
+	@ls $(INPUT_POST_FILES) | xargs -I {} sh -c './scripts/convert_md.sh {} | $(YQ_BIN) --output-format json' | $(JQ_BIN) --slurp '{ posts: . }' | $(J2_BIN) -f json posts/index.xml.jinja -o="$@" || exit 1
 
 $(BUILD_DIR)/posts/index.atom: $(INPUT_POST_FILES) $(call templ,posts/index.atom.jinja)
 	@echo '$(SRC_DIR)/posts/*.md -> $@'

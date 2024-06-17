@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>posts by nikita galaiko</title>
+    <link>https://nikita.galaiko.rocks/posts</link>
+    <description>This is an RSS feed of posts by Nikita Galaiko</description>
+    {%- set latest = posts | sort(attribute="date",reverse=True) | first -%}
+    <lastBuildDate>{{ latest.date }}T00:00:00Z</lastBuildDate>
+    <managingEditor>nikita@galaiko.rocks (Nikita Galaiko)</managingEditor>
+    <webMaster>nikita@galaiko.rocks (Nikita Galaiko)</webMaster>
+    <ttl>60</ttl>
+    <image>
+      <url>https://nikita.galaiko.rocks/favicon.ico</url>
+      <title>posts by nikita galaiko</title>
+      <link>https://nikita.galaiko.rocks/posts</link>
+    </image>
+    {%- for post in posts | sort(attribute="date", reverse = True) %}
+    <item>
+      <title>{{ post.title }}</title>
+      {%- set path = "/posts/" + post.path|replace('.md', '.html') %}
+      {%- set guid = post.id if 'id' in post else path %}
+      <link>https://nikita.galaiko.rocks{{ path }}</link>
+      <guid>https://nikita.galaiko.rocks{{ guid }}</guid>
+      <pubDate>{{ post.date }}T00:00:00Z</pubDate>
+      <description><![CDATA[{{ post.content  }}]]></description>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
+
