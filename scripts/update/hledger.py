@@ -159,6 +159,7 @@ LOCATIONS = {
     "Manniny Espresso": (57.698_252, 11.965_896),
     "McDonald's - Göteborg": (57.699_245, 11.977_162),
     "Che Argento": (57.698036, 11.960528),
+    "Berlin Doner": (57.692734, 11.949853),
 }
 
 
