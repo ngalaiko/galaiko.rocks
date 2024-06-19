@@ -56,6 +56,9 @@ def extra_filters():
         slugify=slugify,
         urlparse=urlparse,
         static_with_hash=static_with_hash,
+        split=lambda str, sep: str.split(sep),
+        join=lambda ss, sep: sep.join(ss),
+        skip=lambda ss, n: ss[n:],
     )
 
 

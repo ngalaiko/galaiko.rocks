@@ -86,7 +86,7 @@ $(BUILD_DIR)/cocktails/index.html: $(INPUT_COCKTAIL_FILES)
 $(BUILD_DIR)/cocktails/%.html: $(SRC_DIR)/cocktails/%.cook $(call templ,cocktails/_cocktail.html.jinja)
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
-	@cat "$<" | $(COOK_BIN) recipe read --format json | $(JQ_BIN) '{ cocktail: . }' | $(J2_BIN) cocktails/_cocktail.html.jinja > "$@" || exit 1
+	@cat "$<" | $(COOK_BIN) recipe read --format markdown | ./scripts/convert_md.sh | $(YQ_BIN) '{ "cocktail": . }' --output-format json | $(J2_BIN) cocktails/_cocktail.html.jinja > "$@" || exit 1
 
 $(BUILD_DIR)/cocktails/%.jpeg.800x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 	@echo '$< -> $@'
