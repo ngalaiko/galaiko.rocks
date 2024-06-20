@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.20 as build
+FROM python:3.12-alpine3.20 as build
 WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN apk add --update --no-cache \
