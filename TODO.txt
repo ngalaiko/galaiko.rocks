@@ -1,1 +1,3 @@
 - [ ] og images
+- [ ] sitemap
+- [ ] robots.txt
