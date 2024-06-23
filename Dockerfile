@@ -1,22 +1,18 @@
 FROM python:3.12-alpine3.20 as build
 WORKDIR /app
-COPY requirements.txt requirements.txt
 RUN apk add --update --no-cache \
     imagemagick imagemagick-dev libjpeg-turbo-dev libpng-dev libwebp-dev \
     pandoc \
     make \
     jq \
-    yq \
-    \
-    && pip install --break-system-packages -r requirements.txt \
-    \
-    && wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.8.0/cook-x86_64-unknown-linux-musl.tar.gz" \
-    && sha256sum "cook-x86_64-unknown-linux-musl.tar.gz" \
+    yq
+COPY requirements.txt requirements.txt
+RUN pip install --break-system-packages -r requirements.txt
+RUN wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.8.0/cook-x86_64-unknown-linux-musl.tar.gz" \
     && echo "4e1b95202d92b492027a5df2f78624679f93f368a9b5832e2ec94f518890f130  cook-x86_64-unknown-linux-musl.tar.gz" | sha256sum -c \
     && tar -xzf "cook-x86_64-unknown-linux-musl.tar.gz" -C /usr/bin
 COPY . .
-RUN make
-
+RUN make -j$(nproc)
 
 FROM alpine:3.20
 ARG S6_OVERLAY_VERSION=3.2.0.0
@@ -47,7 +43,7 @@ RUN \
     esac; \
     rm -rf "/tmp/*"; \
     apk add --update --no-cache goaccess nginx
-COPY --from=build /app/build /var/www/galaiko.rocks
+COPY --from=build /app/build /var/www/nikita.galaiko.rocks
 COPY etc /etc
 COPY init-wrapper /
 ENTRYPOINT ["/init-wrapper"]

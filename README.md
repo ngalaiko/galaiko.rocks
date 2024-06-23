@@ -17,7 +17,7 @@ my website
 ## build
 
 ```bash
-$ make
+$ make -j$(nproc)
 ```
 
 ## update 3rd party data
