@@ -1,0 +1,11 @@
+server {
+    listen 8080;
+    server_name nikita.galaiko.rocks;
+
+    root /var/www/nikita.galaiko.rocks;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
