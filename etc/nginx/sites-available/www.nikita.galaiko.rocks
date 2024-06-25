@@ -1,0 +1,6 @@
+server {
+    listen 8080;
+    server_name www.nikita.galaiko.rocks;
+
+    return 301 https://nikita.galaiko.rocks$request_uri;
+}
