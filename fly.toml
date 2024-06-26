@@ -14,6 +14,11 @@ primary_region = "arn"
     handlers = ["tls", "http"]
     port = 443
 
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+    force_https = true
+
 [[services]]
   internal_port = 7890
   protocol = "tcp"
