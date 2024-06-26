@@ -16,7 +16,6 @@ RUN make -j$(nproc)
 
 FROM alpine:3.20
 ARG S6_OVERLAY_VERSION=3.2.0.0
-ARG REPROXY_VERSION=1.2.2
 ADD "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" /tmp
 ADD "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-aarch64.tar.xz" /tmp
 ADD "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-x86_64.tar.xz" /tmp
