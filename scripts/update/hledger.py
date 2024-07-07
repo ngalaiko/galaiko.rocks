@@ -71,6 +71,7 @@ LOCATIONS = {
     "Joe & The Juice": (59.318_803, 18.071_292),
     "Eatnam": (59.341_795, 18.047_249),
     "Jafaris Donuts": (59.329_551, 18.065_829),
+    "Jafaris Donuts - Goteborg": (57.708128, 11.973687),
     "Birkastans Pizzeria": (59.340_846, 18.032_985),
     "Ming Palace": (59.318_524, 18.061_989),
     "SEN Street Kitchen": (59.333_376, 18.054_404),
@@ -161,6 +162,7 @@ LOCATIONS = {
     "Che Argento": (57.698036, 11.960528),
     "Berlin Doner": (57.692734, 11.949853),
     "Bizen": (57.717110, 11.929223),
+    "Pagoden": (57.715770, 11.973805),
 }
 
 
