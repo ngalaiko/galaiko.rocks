@@ -163,6 +163,7 @@ LOCATIONS = {
     "Berlin Doner": (57.692734, 11.949853),
     "Bizen": (57.717110, 11.929223),
     "Pagoden": (57.715770, 11.973805),
+    "Kaffe Labet": (57.698059, 11.952616),
 }
 
 
@@ -190,8 +191,7 @@ def main(file, output):
         command.append(f"--file={file}")
 
     try:
-        hledger_output = subprocess.check_output(
-            command, stderr=subprocess.STDOUT)
+        hledger_output = subprocess.check_output(command, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
         raise Exception(e.output.decode())
 
@@ -225,15 +225,13 @@ def main(file, output):
     places.sort(key=lambda x: x[1]["times"], reverse=True)
 
     for _, place in places:
-        output_file = os.path.join(
-            output_dir, f"{slugify(place['name'])}.json")
+        output_file = os.path.join(output_dir, f"{slugify(place['name'])}.json")
         with open(output_file, "w") as f:
             json.dump(place, f, indent=4)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Scrape Letterboxd diary entries.")
+    parser = argparse.ArgumentParser(description="Scrape Letterboxd diary entries.")
     parser.add_argument("-f", "--file", help="Output directory")
     parser.add_argument(
         "-o", "--output", help="Output directory", default="./assets/places/"
