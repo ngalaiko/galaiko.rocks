@@ -1,0 +1,56 @@
+{
+    "id": 791854,
+    "instance_id": 1734188641,
+    "date_added": "2024-07-14T02:34:45-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 791854,
+        "master_id": 126510,
+        "master_url": "https://api.discogs.com/masters/126510",
+        "resource_url": "https://api.discogs.com/releases/791854",
+        "thumb": "https://i.discogs.com/TzeOIE61XB-W9CvCRsHLENtLiA_aa-iZs-awMOKevkQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5MTg1/NC0xMjEyNzc3MDcz/LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/LduJyWdTxLd2aTUz--fy40_cQSIOj1YNj5MyyZojWOc/rs:fit/g:sm/q:90/h:590/w:594/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5MTg1/NC0xMjEyNzc3MDcz/LmpwZWc.jpeg",
+        "title": "Solid",
+        "year": 1985,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Ashford & Simpson",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 15875,
+                "resource_url": "https://api.discogs.com/artists/15875"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Capitol Records",
+                "catno": "1A 064-24 0250 1",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 654,
+                "resource_url": "https://api.discogs.com/labels/654"
+            }
+        ],
+        "genres": [
+            "Electronic",
+            "Funk / Soul",
+            "Stage & Screen"
+        ],
+        "styles": [
+            "Funk"
+        ]
+    },
+    "folder_id": 1
+}

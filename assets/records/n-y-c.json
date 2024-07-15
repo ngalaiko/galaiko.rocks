@@ -1,0 +1,63 @@
+{
+    "id": 1929199,
+    "instance_id": 1734187747,
+    "date_added": "2024-07-14T02:33:16-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 1929199,
+        "master_id": 168559,
+        "master_url": "https://api.discogs.com/masters/168559",
+        "resource_url": "https://api.discogs.com/releases/1929199",
+        "thumb": "https://i.discogs.com/yqjMpd8eo-05CMe8mxSaVw-m6y-t0F0J-_UgmTIOHrQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5Mjkx/OTktMTI1MzExOTI1/Ny5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/MXYAcZxjwZDuI2DdeLKAVYG64TIkrHQp-TIMf6XQ-eM/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5Mjkx/OTktMTI1MzExOTI1/Ny5qcGVn.jpeg",
+        "title": "N.Y.C.",
+        "year": 1989,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Steps Ahead",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 29019,
+                "resource_url": "https://api.discogs.com/artists/29019"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Capitol Records",
+                "catno": "C1-91354",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 654,
+                "resource_url": "https://api.discogs.com/labels/654"
+            },
+            {
+                "name": "Intuition Records",
+                "catno": "C1-91354",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 37811,
+                "resource_url": "https://api.discogs.com/labels/37811"
+            }
+        ],
+        "genres": [
+            "Jazz"
+        ],
+        "styles": [
+            "Post Bop",
+            "Fusion"
+        ]
+    },
+    "folder_id": 1
+}

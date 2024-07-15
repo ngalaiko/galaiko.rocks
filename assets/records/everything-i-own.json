@@ -1,0 +1,59 @@
+{
+    "id": 1103778,
+    "instance_id": 1734186706,
+    "date_added": "2024-07-14T02:31:33-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 1103778,
+        "master_id": 71262,
+        "master_url": "https://api.discogs.com/masters/71262",
+        "resource_url": "https://api.discogs.com/releases/1103778",
+        "thumb": "https://i.discogs.com/g8xLcd8y6lJRJzqh5Q-K-eg1fQ6oVdqMIbQEMAUY6vg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMDM3/NzgtMTE5MjI4MzEz/Mi5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/Xuuo5uJ7tYJAkblPtB8wXzS02bbqm56sp6KChQS6Nv8/rs:fit/g:sm/q:90/h:586/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMDM3/NzgtMTE5MjI4MzEz/Mi5qcGVn.jpeg",
+        "title": "Everything I Own",
+        "year": 1987,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "12\"",
+                    "45 RPM",
+                    "Maxi-Single",
+                    "Stereo"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Boy George",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 21032,
+                "resource_url": "https://api.discogs.com/artists/21032"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Virgin",
+                "catno": "608 891-213",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 750,
+                "resource_url": "https://api.discogs.com/labels/750"
+            }
+        ],
+        "genres": [
+            "Reggae",
+            "Pop"
+        ],
+        "styles": [
+            "Dub",
+            "Reggae-Pop",
+            "Lovers Rock"
+        ]
+    },
+    "folder_id": 1
+}

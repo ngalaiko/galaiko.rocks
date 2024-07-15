@@ -1,0 +1,56 @@
+{
+    "id": 2619721,
+    "instance_id": 1734187318,
+    "date_added": "2024-07-14T02:32:35-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 2619721,
+        "master_id": 145799,
+        "master_url": "https://api.discogs.com/masters/145799",
+        "resource_url": "https://api.discogs.com/releases/2619721",
+        "thumb": "https://i.discogs.com/E8_zfOV5CJtrSMiTZsuUx_3Wlrn-ltUCR3PRz5cusl0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MTk3/MjEtMTM3MDYzNTU1/Ni00NDIxLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/uDJ-glCaJjOFmKul1jANyQiNOmkY9bynLMHiFng5WKY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MTk3/MjEtMTM3MDYzNTU1/Ni00NDIxLmpwZWc.jpeg",
+        "title": "Michel'le",
+        "year": 1989,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Michel'le",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 105614,
+                "resource_url": "https://api.discogs.com/artists/105614"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Ruthless Records",
+                "catno": "7 91282-1",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 7801,
+                "resource_url": "https://api.discogs.com/labels/7801"
+            }
+        ],
+        "genres": [
+            "Hip Hop",
+            "Funk / Soul"
+        ],
+        "styles": [
+            "Contemporary R&B",
+            "New Jack Swing"
+        ]
+    },
+    "folder_id": 1
+}

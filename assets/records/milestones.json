@@ -1,0 +1,57 @@
+{
+    "id": 5528275,
+    "instance_id": 1734189367,
+    "date_added": "2024-07-14T02:35:55-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 5528275,
+        "master_id": 560977,
+        "master_url": "https://api.discogs.com/masters/560977",
+        "resource_url": "https://api.discogs.com/releases/5528275",
+        "thumb": "https://i.discogs.com/A_Z7MzHUnTiCpRj5UHAKLVmi2_Nh8gk3rm-7UMSue-M/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU1Mjgy/NzUtMTM5NTY5MzU5/Mi0xMTAzLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/FOgqn3RF4qAFNqvghwpnPcjVzF8nX3P3HqmE9AQ85HU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU1Mjgy/NzUtMTM5NTY5MzU5/Mi0xMTAzLmpwZWc.jpeg",
+        "title": "Milestones",
+        "year": 1985,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "2",
+                "descriptions": [
+                    "LP",
+                    "Compilation"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Jerry Lee Lewis",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 229194,
+                "resource_url": "https://api.discogs.com/artists/229194"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Rhino Records (2)",
+                "catno": "RNDA 1499",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 33244,
+                "resource_url": "https://api.discogs.com/labels/33244"
+            }
+        ],
+        "genres": [
+            "Rock",
+            "Folk, World, & Country"
+        ],
+        "styles": [
+            "Rock & Roll",
+            "Rockabilly",
+            "Country"
+        ]
+    },
+    "folder_id": 1
+}

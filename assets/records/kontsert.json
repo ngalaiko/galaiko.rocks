@@ -1,0 +1,56 @@
+{
+    "id": 2544921,
+    "instance_id": 1734186079,
+    "date_added": "2024-07-14T02:30:30-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 2544921,
+        "master_id": 75395,
+        "master_url": "https://api.discogs.com/masters/75395",
+        "resource_url": "https://api.discogs.com/releases/2544921",
+        "thumb": "https://i.discogs.com/ICPUER016UnQmS7IIGmo9ZjK1xpwNJePWXaFDNQ-Jf0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1NDQ5/MjEtMTU0NTE2MDg4/Ny05NTA2LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/yHWeOsOG9MDn7X2Vu1qfu4x0YcylTqrR2q52ELLOPvc/rs:fit/g:sm/q:90/h:355/w:355/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1NDQ5/MjEtMTU0NTE2MDg4/Ny05NTA2LmpwZWc.jpeg",
+        "title": "\u041a\u043e\u043d\u0446\u0435\u0440\u0442",
+        "year": 1987,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "2",
+                "text": "Embossed Gatefold",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Billy Joel",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 137418,
+                "resource_url": "https://api.discogs.com/artists/137418"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Columbia",
+                "catno": "C2X 40996",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 1866,
+                "resource_url": "https://api.discogs.com/labels/1866"
+            }
+        ],
+        "genres": [
+            "Rock",
+            "Blues",
+            "Pop"
+        ],
+        "styles": []
+    },
+    "folder_id": 1
+}

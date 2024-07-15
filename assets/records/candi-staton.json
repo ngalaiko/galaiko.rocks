@@ -1,0 +1,57 @@
+{
+    "id": 970021,
+    "instance_id": 1734189823,
+    "date_added": "2024-07-14T02:36:40-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 970021,
+        "master_id": 148334,
+        "master_url": "https://api.discogs.com/masters/148334",
+        "resource_url": "https://api.discogs.com/releases/970021",
+        "thumb": "https://i.discogs.com/7uLQViPTbb9oSo5K0GkO_wpik0cT9pKLkj2TNjUDgSQ/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk3MDAy/MS0xMjk1ODU2NjY5/LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/K3Zsa-kSLwiTHFCDIiEIcb9vNjtMo4T-qLOVFbgpODo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk3MDAy/MS0xMjk1ODU2NjY5/LmpwZWc.jpeg",
+        "title": "Candi Staton",
+        "year": 1980,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "LA Pressing",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Candi Staton",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 17399,
+                "resource_url": "https://api.discogs.com/artists/17399"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Warner Bros. Records",
+                "catno": "BSK 3428",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 1000,
+                "resource_url": "https://api.discogs.com/labels/1000"
+            }
+        ],
+        "genres": [
+            "Funk / Soul"
+        ],
+        "styles": [
+            "Soul",
+            "Disco"
+        ]
+    },
+    "folder_id": 1
+}
