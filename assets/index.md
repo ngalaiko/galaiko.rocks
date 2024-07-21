@@ -20,4 +20,5 @@ if you are into liking and subscribing, check this out:
 - [github](https://github.com/ngalaiko)
 - [letterboxd](https://letterboxd.com/ngalaiko)
 - [discogs](https://www.discogs.com/user/ngalaiko)
+- [round & square](https://roundnsquare.club/galaiko.rocks)
 - [mastodon](https://mastodon.online/@ngalaiko)
