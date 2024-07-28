@@ -165,6 +165,7 @@ LOCATIONS = {
     "Pagoden": (57.715770, 11.973805),
     "Kaffe Labet": (57.698059, 11.952616),
     "Oizo": (57.713235, 12.024676),
+    "Papi's Pirogi - Gronsakstorg": (57.713235, 12.024676),
 }
 
 
