@@ -1,0 +1,57 @@
+{
+    "id": 10535405,
+    "instance_id": 1761026450,
+    "date_added": "2024-08-17T05:36:41-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 10535405,
+        "master_id": 1206091,
+        "master_url": "https://api.discogs.com/masters/1206091",
+        "resource_url": "https://api.discogs.com/releases/10535405",
+        "thumb": "https://i.discogs.com/uJgnUtRJKfFk838V0Nj63cWvJI9hvf1iDRWYjGN6FYE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTM1/NDA1LTE2MTc4MTU3/OTUtNDA2OS5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/0lv79Kpte8eBMApnzs8K-rrBVxBRUB6wYgP5fy3vcRQ/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTM1/NDA1LTE2MTc4MTU3/OTUtNDA2OS5qcGVn.jpeg",
+        "title": "Every Valley",
+        "year": 2017,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "180g",
+                "descriptions": [
+                    "LP",
+                    "Album"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Public Service Broadcasting",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 2916285,
+                "resource_url": "https://api.discogs.com/artists/2916285"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Play It Again Sam",
+                "catno": "PIASR970LP",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 26215,
+                "resource_url": "https://api.discogs.com/labels/26215"
+            }
+        ],
+        "genres": [
+            "Electronic",
+            "Rock"
+        ],
+        "styles": [
+            "Post Rock",
+            "Krautrock"
+        ]
+    },
+    "folder_id": 1
+}
