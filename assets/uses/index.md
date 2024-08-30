@@ -45,7 +45,7 @@ on this page you can find most of the things that i use.
   - [sansui 1000x](https://www.hifiengine.com/manual_library/sansui/1000x.shtml) receiver
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
-  - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grider
+  - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
 - [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2)
 
 ## transport
