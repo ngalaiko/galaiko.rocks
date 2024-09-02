@@ -169,6 +169,7 @@ LOCATIONS = {
     "Efessos": (57.695582, 11.922782),
     "Firos Crep": (57.697161, 11.957360),
     "Poppels Citybryggeri": (57.713640, 11.971329),
+    "Waffles Goteborg": (57.699106, 11.969203),
 }
 
 
