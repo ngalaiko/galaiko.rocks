@@ -170,6 +170,7 @@ LOCATIONS = {
     "Firos Crep": (57.697161, 11.957360),
     "Poppels Citybryggeri": (57.713640, 11.971329),
     "Waffles Goteborg": (57.699106, 11.969203),
+    "Big Bird": (57.693569, 11.956427),
 }
 
 
