@@ -171,6 +171,7 @@ LOCATIONS = {
     "Poppels Citybryggeri": (57.713640, 11.971329),
     "Waffles Goteborg": (57.699106, 11.969203),
     "Big Bird": (57.693569, 11.956427),
+    "Com": (57.696215, 11.950183),
 }
 
 
