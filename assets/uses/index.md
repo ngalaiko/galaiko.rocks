@@ -47,6 +47,7 @@ on this page you can find most of the things that i use.
   - lapavoni europiccola (EL (1995) (v. 2.5))
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
 - [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2)
+- iPod classic 5.5 modded with 3800mAh battery & 256GB ssd
 
 ## transport
 
