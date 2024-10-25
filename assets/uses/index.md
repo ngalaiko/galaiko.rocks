@@ -42,7 +42,7 @@ on this page you can find most of the things that i use.
 - playstation 5
 - vinyl setup
   - [audio technica lp120xUSB](https://www.audio-technica.com/en-us/at-lp120xusb) turntable
-  - [sansui 1000x](https://www.hifiengine.com/manual_library/sansui/1000x.shtml) receiver
+  - [marantz 4270](https://classicreceivers.com/marantz-4270-quad) receiver
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
