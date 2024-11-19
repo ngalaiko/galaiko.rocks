@@ -1,0 +1,58 @@
+{
+    "id": 7065202,
+    "instance_id": 1398863694,
+    "date_added": "2023-07-06T09:38:14-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 7065202,
+        "master_id": 200941,
+        "master_url": "https://api.discogs.com/masters/200941",
+        "resource_url": "https://api.discogs.com/releases/7065202",
+        "thumb": "https://i.discogs.com/jfglmAvevtj4xQhFJL2S0fK9SAf6pqsXpKZK9sPyw5c/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjUy/MDItMTQzMzA5Nzky/NS03OTQ0LnBuZw.jpeg",
+        "cover_image": "https://i.discogs.com/thKwvUwm5gy2bKtKJ82lQJouN5vnzcbRa1eW-d8eMMI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjUy/MDItMTQzMzA5Nzky/NS03OTQ0LnBuZw.jpeg",
+        "title": "...\u0425\u043e\u0442\u044c \u041d\u0435\u043c\u043d\u043e\u0433\u043e \u0415\u0449\u0435 \u041f\u043e\u0441\u0442\u043e\u044e \u041d\u0430 \u041a\u0440\u0430\u044e... = ... Standing At The Brink",
+        "year": 1987,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "2",
+                "text": "Gatefold",
+                "descriptions": [
+                    "LP",
+                    "Stereo"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u044b\u0441\u043e\u0446\u043a\u0438\u0439",
+                "anv": "Vladimir Vysotsky",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 658660,
+                "resource_url": "https://api.discogs.com/artists/658660"
+            }
+        ],
+        "labels": [
+            {
+                "name": "\u041c\u0435\u043b\u043e\u0434\u0438\u044f",
+                "catno": "C60 25427 003",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 15486,
+                "resource_url": "https://api.discogs.com/labels/15486"
+            }
+        ],
+        "genres": [
+            "Non-Music",
+            "Pop"
+        ],
+        "styles": [
+            "Chanson",
+            "Poetry",
+            "Ballad"
+        ]
+    },
+    "folder_id": 1
+}
