@@ -31,8 +31,7 @@ def main(username, output):
         watch_number = (
             watch_number if watch_number < 10 else 0
         )  # because movie 1917 exists
-        data_output = os.path.join(
-            output, entry["title_slug"], f"{watch_number}.json")
+        data_output = os.path.join(output, entry["title_slug"], f"{watch_number}.json")
 
         os.makedirs(os.path.dirname(data_output), exist_ok=True)
 
@@ -71,7 +70,7 @@ def parse_page(body):
     soup = BeautifulSoup(body, "html.parser")
     entries = [
         parse_entry(entry)
-        for entry in soup.find_all(attrs={"data-object-name": "entry"})
+        for entry in soup.find_all(attrs={"data-object-name": ["entry", "review"]})
     ]
     has_next = bool(soup.find("a", class_="next"))
     return entries, has_next
@@ -82,21 +81,17 @@ def parse_entry(entry):
     date_str = date_node["href"].split("/")[-4:-1]
     date = datetime.strptime("-".join(date_str), "%Y-%m-%d").date()
 
-    title = entry.find(
-        "td", class_="td-film-details").find("h3").find("a").text
+    title = entry.find("td", class_="td-film-details").find("h3").find("a").text
 
-    is_liked = bool(entry.find(
-        "td", class_="td-like").find(class_="icon-liked"))
+    is_liked = bool(entry.find("td", class_="td-like").find(class_="icon-liked"))
     is_rewatch = bool(
-        entry.find(
-            "td", class_="td-rewatch").find(class_="icon-status-off") is None
+        entry.find("td", class_="td-rewatch").find(class_="icon-status-off") is None
     )
 
     details = entry.find("td", class_="td-actions")
     href = (
         "https://letterboxd.com"
-        + entry.find("td",
-                     class_="td-film-details").find("h3").find("a")["href"]
+        + entry.find("td", class_="td-film-details").find("h3").find("a")["href"]
     )
     title_slug = details["data-film-slug"]
 
@@ -131,8 +126,7 @@ def get_poster(entry):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Scrape Letterboxd diary entries.")
+    parser = argparse.ArgumentParser(description="Scrape Letterboxd diary entries.")
     parser.add_argument(
         "-o", "--output", help="Output directory", default="./assets/movies"
     )
