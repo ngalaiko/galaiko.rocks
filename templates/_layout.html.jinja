@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | static_with_hash }}" />
     <link rel="icon" sizes="32x32" href="{{ "/favicon-32x32.png" | static_with_hash }}" />
@@ -22,24 +23,14 @@
 </head>
 
 <body>
-    <main>
-        <article>
-            <header>
-                <h1>{{ self.title() }}</h1>
-            </header>
-            {%- block content %}
-            {%- endblock %}
-        </article>
-    </main>
+	{%- block content %}
+	{%- endblock %}
 
-    <footer>
-        <hr />
-        <a href="/privacy.html">privacy policy</a>
-        <span>·</span>
-        <a href="https://github.com/ngalaiko/galaiko.rocks">source</a>
-        <span>·</span>
-        <a href="/stats.html">stats</a>
-    </footer>
+	<pre>
+
+                   <a href="/privacy.html">privacy policy</a> · <a href="https://github.com/ngalaiko/galaiko.rocks">source</a> · <a href="/stats.html">stats</a>
+    </pre>
+
 </body>
 
 </html>

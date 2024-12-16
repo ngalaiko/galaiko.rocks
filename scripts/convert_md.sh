@@ -6,24 +6,30 @@ set -o pipefail
 
 DIR="$(dirname $(readlink -f -- $0))"
 
-if [ -z "${1:-}" ]; then
-    # If there's no argument, read from stdin
-    input=$(cat)
+function main() {
+	local input_path="${1:-}"
+	if [[ -z "${input_path}" ]]; then
+		# If there's no argument, read from stdin
+		input=$(cat)
+		path="<stdin>"
+	else
+		# If there's an argument, read from file
+		input=$(cat "${input_path}")
+		path="${input_path#assets/posts/}"
+	fi
+
     frontmatter="$(echo "$input" | sed -n '/^---$/,/^---$/p' | sed '1d;$d')"
-    body="$(echo "$input" | sed -e '/^---$/,/^---$/d' | pandoc --lua-filter="$DIR/../filters/fix_md.lua")"
-    path="<stdin>"
-else
-    # If there's an argument, read from file
-    frontmatter="$(cat "$1" | sed -n '/^---$/,/^---$/p' | sed '1d;$d')"
-    body="$(cat "$1" | sed -e '/^---$/,/^---$/d' | pandoc --lua-filter="$DIR/../filters/fix_md.lua")"
-    path="${1/assets\/posts\//}"
-fi
+	body="$(echo "$input" |\
+		pandoc --lua-filter="$DIR/../filters/fix_links.lua" --lua-filter="$DIR/../filters/plaintext_style.lua")"
 
-# Output the result
-echo "path: $path"
-echo "$frontmatter"
-echo "content: |"
-echo "$body" | while IFS= read -r line; do
-    echo "  $line"
-done
+	echo "path: $path"
+	echo "$(echo "$frontmatter" |  grep "title:")"
+	echo "$(echo "$frontmatter" |  grep "date:")"
+	echo "$(echo "$frontmatter" |  grep "id:")"
+	echo "content: |"
+	echo "$body" | while IFS= read -r line; do
+		echo "  $line"
+	done
+}
 
+main "$@"

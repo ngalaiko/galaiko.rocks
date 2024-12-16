@@ -8,15 +8,19 @@ body {
   font-family: "Berkeley Mono", monospace;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
 
-main {
-  max-width: 80ch;
-  overflow-wrap: break-word;
+  max-width: 72ch;
 }
 
 pre {
-  overflow-x: scroll;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-x: scroll;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
 }
 
 img {

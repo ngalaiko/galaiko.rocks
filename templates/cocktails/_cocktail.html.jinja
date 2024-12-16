@@ -12,5 +12,7 @@
         />
     </aside>
 
-    {{ cocktail.content | split("\n") | skip(1) | join("\n") | safe }}
+	<pre>
+		{{ cocktail.content | split("\n") | skip(1) | join("\n") | safe }}
+	</pre>
 {% endblock %}

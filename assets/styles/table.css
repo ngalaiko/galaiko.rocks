@@ -5,12 +5,8 @@ td {
   text-align: left;
 }
 
-th {
-  background-color: #f2f2f2; /* Light gray background for header */
-}
-
 tr:hover {
-  background-color: #f5f5f5; /* Lighter background on hover for better visibility */
+  text-decoration: underline;
 }
 
 /* Add borders to the table cells */
