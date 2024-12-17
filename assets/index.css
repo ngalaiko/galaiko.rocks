@@ -4,8 +4,11 @@ html {
   text-size-adjust: none;
 }
 
-body {
+* {
   font-family: "Berkeley Mono", monospace;
+}
+
+body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
@@ -13,14 +16,14 @@ body {
 }
 
 pre {
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	overflow-x: scroll;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: scroll;
 }
 
 a {
-	color: inherit;
-	text-decoration: underline;
+  color: inherit;
+  text-decoration: underline;
 }
 
 img {
