@@ -137,6 +137,6 @@ function Pandoc(doc)
 			table.insert(all_text, block_text)
 		end
 	end
-	local output = "<pre>" .. table.concat(all_text, "\n\n") .. "</pre>"
+	local output = table.concat(all_text, "\n\n")
 	return pandoc.Pandoc({ pandoc.RawBlock("html", output) }, doc.meta)
 end

@@ -3,16 +3,14 @@
 {% block title %}{{ cocktail.title }}{% endblock %}
 
 {% block content %}
-    <aside>
-        <img
-            width="800"
-            loading="lazy"
-            src="{{ cocktail.title | slugify }}.jpeg.800x0@2x.webp"
-            alt="Picture of {{ cocktail.title }} cocktail"
-        />
-    </aside>
+<aside>
+	<img
+		width="800"
+		loading="lazy"
+		src="{{ cocktail.title | slugify }}.jpeg.800x0@2x.webp"
+		alt="Picture of {{ cocktail.title }} cocktail"
+	/>
+</aside>
 
-	<pre>
-		{{ cocktail.content | split("\n") | skip(1) | join("\n") | safe }}
-	</pre>
+<pre>{{ cocktail.content | split("\n") | skip(1) | join("\n") | safe }}</pre>
 {% endblock %}
