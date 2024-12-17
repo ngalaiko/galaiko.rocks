@@ -10,7 +10,7 @@
 {% block content %}
 <pre>
     {%- for post in posts|sort(attribute="date",reverse=True) %}
-    * <time datetime="{{ post.date }}">{{ post.date }}</time> | <a href="{{ post.path | replace(".md", ".html") }}">{{ post.title }}</a>
+* <time datetime="{{ post.date }}">{{ post.date }}</time> | <a href="{{ post.path | replace(".md", ".html") }}">{{ post.title }}</a>
     {%- endfor %}
 </pre>
 {% endblock %}
