@@ -8,7 +8,11 @@
 {% endblock %}
 
 {% block content %}
-    {%- for post in posts|sort(attribute="date",reverse=True) %}
-* <time datetime="{{ post.date }}">{{ post.date }}</time> | <a href="{{ post.path | replace(".md", ".html") }}">{{ post.title }}</a>
-    {%- endfor %}
+<ul>
+	{% for post in posts|sort(attribute="date",reverse=True) %}
+	<li>
+		<time datetime="{{ post.date }}">{{ post.date }}</time> | <a href="{{ post.path | replace(".md", ".html") }}">{{ post.title }}</a>
+	</li>
+	{% endfor %}
+</ul>
 {% endblock %}
