@@ -7,7 +7,7 @@ on this page you can find most of the things that i use.
 ## software
 
 - [neovim](https://neovim.io/) - text editor
-- [wezterm](https://wezfurlong.org/wezterm/) - terminal emulator
+- [ghostty](https://ghostty.org) - terminal emulator
 - [raycast](http://raycast.com) - app launcher
 - [zsh](https://www.zsh.org) - shell
 - [starship](https://starship.rs) - shell prompt
@@ -20,24 +20,23 @@ on this page you can find most of the things that i use.
 
 ## services
 
-- [nextdns](https://nextdns.io/?from=7dkc9vrh)
-- [countermail](https://countermail.com)
-- [telegram](https://telegram.com)
-- [mullvad](https://mullvad.net)
-- [tailscale](https://tailscale.com)
-- [kino.pub](https://kino.pub)
-- [fly.io](https://fly.io)
+- [nextdns](https://nextdns.io/?from=7dkc9vrh) - dns filtering
+- icloud mail - email provider
+- [telegram](https://telegram.com) - messenger
+- [mullvad](https://mullvad.net) - vpn
+- [tailscale](https://tailscale.com) - vpn but different
+- [kino.pub](https://kino.pub) - online movies etc.
+- [fly.io](https://fly.io) - hosting provider
 
 ## hardware
 
 - 14 inch macbook pro 2021
 - iphone 13 mini
-- air pods pro
 - air pods max
 - sennheiser IE 200
 - iPod classic 5.5 modded with 3800mAh battery & 256GB ssd
 - [unify dream machine](https://store.ui.com/collections/unifi-network-unifi-os-consoles/products/udm-us)
-- corne lp mechanical keyaboard
+- corne lp mechanical keyboard
   - [case](https://boardsource.xyz/store/5f2efc462902de7151495057)
   - [switches](https://lowprokb.ca/products/sunset-tactile-choc-switches)
   - [keycaps](https://lowprokb.ca/products/ldsa-low-profile-blank-keycaps)
@@ -48,7 +47,7 @@ on this page you can find most of the things that i use.
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
-- [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2)
+- [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2) - ebook
 
 ## transport
 
