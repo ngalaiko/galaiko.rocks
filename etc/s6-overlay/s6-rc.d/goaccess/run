@@ -1,2 +1,2 @@
 #!/command/execlineb -P
-goaccess
+goaccess --ignore-referrer=*.galaiko.rocks
