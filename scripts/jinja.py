@@ -1,3 +1,10 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "jinja2",
+#     "python-slugify",
+# ]
+# ///
 import sys
 import json
 import jinja2

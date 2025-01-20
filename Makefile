@@ -7,7 +7,7 @@ PANDOC_BIN := pandoc
 IMAGEMAGICK_BIN := magick
 JQ_BIN := jq
 YQ_BIN := yq
-J2_BIN := python3 ./scripts/jinja.py
+J2_BIN := uv run -s ./scripts/jinja.py
 COOK_BIN := cook
 
 # Find input files

@@ -1,4 +1,4 @@
-FROM python:3.12-alpine3.20 as build
+FROM ghcr.io/astral-sh/uv:python3.13-alpine as build
 WORKDIR /app
 RUN apk add --update --no-cache \
     imagemagick imagemagick-dev libjpeg-turbo-dev libpng-dev libwebp-dev \
@@ -6,8 +6,6 @@ RUN apk add --update --no-cache \
     make \
     jq \
     yq
-COPY requirements.txt requirements.txt
-RUN pip install --break-system-packages -r requirements.txt
 RUN wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.8.0/cook-x86_64-unknown-linux-musl.tar.gz" \
     && echo "4e1b95202d92b492027a5df2f78624679f93f368a9b5832e2ec94f518890f130  cook-x86_64-unknown-linux-musl.tar.gz" | sha256sum -c \
     && tar -xzf "cook-x86_64-unknown-linux-musl.tar.gz" -C /usr/bin

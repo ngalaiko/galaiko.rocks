@@ -12,19 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v5
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
         with:
-          cache: "pip"
-      - run: python3 -m venv venv
-      - run: source venv/bin/activate
-      - run: python3 -m pip install -r requirements.txt
+          enable-cache: true
+          cache-suffix: "optional-suffix"
 
-      - run: python3 ./scripts/update/letterboxd.py
+      - run: uv run ./scripts/update/letterboxd.py
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update movies
 
-      - run: python3 ./scripts/update/discogs.py --token "${{ secrets.DISCOGS_API_KEY }}"
+      - run: uv run ./scripts/update/discogs.py --token "${{ secrets.DISCOGS_API_KEY }}"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update records
@@ -38,7 +37,7 @@ jobs:
           ref: "master"
       - name: Setup hledger
         uses: ngalaiko/setup-hledger@v1
-      - run: python3 ./scripts/update/hledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
+      - run: uv run ./scripts/update/hledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes

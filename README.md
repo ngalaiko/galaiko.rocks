@@ -4,7 +4,7 @@ my website
 
 ## requirements
 
-- [python3](https://www.python.org)
+- [uv](https://docs.astral.sh/uv)
 - [bash](https://www.gnu.org/software/bash/)
 - [make](https://www.gnu.org/software/make/)
 - [sed](https://www.gnu.org/software/sed/)

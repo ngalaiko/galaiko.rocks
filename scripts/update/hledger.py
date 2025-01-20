@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "python-slugify",
+# ]
+# ///
 import csv
 from slugify import slugify
 import subprocess

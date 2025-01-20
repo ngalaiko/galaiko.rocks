@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "python-slugify",
+# ]
+# ///
 import os
 import time
 import argparse
