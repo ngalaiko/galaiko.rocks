@@ -20,7 +20,7 @@ function main() {
 
     frontmatter="$(echo "$input" | sed -n '/^---$/,/^---$/p' | sed '1d;$d')"
 	body="$(echo "$input" |\
-		pandoc --lua-filter="$DIR/../filters/fix_links.lua" --lua-filter="$DIR/../filters/plaintext_style.lua")"
+		pandoc --lua-filter="$DIR/../filters/fix_links.lua")"
 
 	echo "path: $path"
 	echo "$(echo "$frontmatter" |  grep "title:")"

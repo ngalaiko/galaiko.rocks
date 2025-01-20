@@ -3,5 +3,6 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {%- block content -%}
-<pre>{{ post.content | safe }}</pre>
+<h1>{{ post.title }}</h1>
+{{ post.content | safe }}
 {%- endblock -%}

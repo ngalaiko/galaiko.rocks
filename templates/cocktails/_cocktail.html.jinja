@@ -2,7 +2,10 @@
 
 {% block title %}{{ cocktail.title }}{% endblock %}
 
+
 {% block content %}
+<h1>{{ cocktail.title }}</h1>
+
 <aside>
 	<img
 		width="800"
@@ -12,5 +15,5 @@
 	/>
 </aside>
 
-<pre>{{ cocktail.content | split("\n") | skip(1) | join("\n") | safe }}</pre>
+{{ cocktail.content | split("\n") | skip(1) | join("\n") | safe }}
 {% endblock %}
