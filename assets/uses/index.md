@@ -10,7 +10,6 @@ on this page you can find most of the things that i use.
 - [ghostty](https://ghostty.org) - terminal emulator
 - [raycast](http://raycast.com) - app launcher
 - [fish](https://fishshell.com) - shell
-- [starship](https://starship.rs) - shell prompt
 - [calibre](https://calibre-ebook.com) - ebooks management
 - [hledger](https://hledger.org) - plaintext accounting
 - [koreader](http://koreader.rocks) - ebooks reader
