@@ -34,10 +34,11 @@ def main(username, output):
                 return 0
 
         watch_number = parse_watch_number(entry["href"])
+        title_slug = entry["title_slug"].replace(":", "_")
         watch_number = (
             watch_number if watch_number < 10 else 0
         )  # because movie 1917 exists
-        data_output = os.path.join(output, entry["title_slug"], f"{watch_number}.json")
+        data_output = os.path.join(output, title_slug, f"{watch_number}.json")
 
         os.makedirs(os.path.dirname(data_output), exist_ok=True)
 
@@ -45,7 +46,7 @@ def main(username, output):
             with open(data_output, "w") as f:
                 json.dump(entry, f, indent=4, default=str)
 
-        poster_output = os.path.join(output, f"{entry['title_slug']}.jpg")
+        poster_output = os.path.join(output, f"{title_slug}.jpg")
 
         if not os.path.exists(poster_output):
             image = get_poster(entry)
