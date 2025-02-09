@@ -185,6 +185,8 @@ LOCATIONS = {
     "Gyllene Prag": (57.692369, 11.954439),
     "Yi Li": (57.719522, 12.026042),
     "Sylvain Marron": (57.677306, 11.928185),
+    "Aftonstjarnans": (57.706905, 11.932676),
+    "Uni3 World Of Food": (57.711676, 11.946318),
 }
 
 
