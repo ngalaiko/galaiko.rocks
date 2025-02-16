@@ -187,6 +187,7 @@ LOCATIONS = {
     "Sylvain Marron": (57.677306, 11.928185),
     "Aftonstjarnans": (57.706905, 11.932676),
     "Uni3 World Of Food": (57.711676, 11.946318),
+    'Bistro "Vermantitis"': (56.952928, 24.119861),
 }
 
 
@@ -200,7 +201,6 @@ def main(file, output):
     command = [
         "hledger",
         "register",
-        "cur:SEK",
         "--value=then,SEK",
         "--output-format=csv",
         "--infer-market-prices",
@@ -247,10 +247,18 @@ def main(file, output):
 
     places.sort(key=lambda x: x[1]["times"], reverse=True)
 
+    all_files = []
     for _, place in places:
         output_file = os.path.join(output_dir, f"{slugify(place['name'])}.json")
+        all_files.append(output_file)
         with open(output_file, "w") as f:
             json.dump(place, f, indent=4)
+
+    for root, dirs, files in os.walk(output):
+        for file in files:
+            file_path = os.path.join(root, file)
+            if file_path not in all_files:
+                os.remove(file_path)
 
 
 if __name__ == "__main__":
