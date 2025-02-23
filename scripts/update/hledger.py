@@ -74,7 +74,6 @@ LOCATIONS = {
     "Bano City": (59.337_541, 18.057_392),
     "La Neta Bar": (59.333_599, 18.070_247),
     "A bowl of poke": (59.319_777, 18.062_516),
-    "Joe & The Juice": (59.318_803, 18.071_292),
     "Eatnam": (59.341_795, 18.047_249),
     "Jafaris Donuts": (59.329_551, 18.065_829),
     "Jafaris Donuts - Goteborg": (57.708128, 11.973687),
@@ -151,7 +150,7 @@ LOCATIONS = {
     "Trattoria Da Pasquale": (57.700_095, 11.984_407),
     "La Terrazza": (57.699_998, 11.984_547),
     "Gansu Köket": (57.708_635, 11.965_104),
-    "Joe And The Juice": (59.318_923, 18.071_062),
+    "Joe & The Juice": (59.318_803, 18.071_292),
     "Kuro - Tbilisi": (41.706_772, 44.781_744),
     "Evolushi": (57.708_039, 11.985_960),
     "Nonna": (57.703_262, 11.959_582),
@@ -188,6 +187,7 @@ LOCATIONS = {
     "Aftonstjarnans": (57.706905, 11.932676),
     "Uni3 World Of Food": (57.711676, 11.946318),
     'Bistro "Vermantitis"': (56.952928, 24.119861),
+    "Joe & The Juice - Goteborg": (57.705545, 11.968347),
 }
 
 
