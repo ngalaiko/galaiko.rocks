@@ -1,0 +1,59 @@
+{
+    "id": 161590,
+    "instance_id": 1948051509,
+    "date_added": "2025-02-27T10:35:15-08:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 161590,
+        "master_id": 4538,
+        "master_url": "https://api.discogs.com/masters/4538",
+        "resource_url": "https://api.discogs.com/releases/161590",
+        "thumb": "https://i.discogs.com/bCsLH9GEHOaJ1oEGOOb4iL00tODorvRz-5Bc3FArUrw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTU5/MC0xMzI1NTA1MDA0/LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/Zf6RQmoOV583sheRwSRRF4aHRtiLVgsbj4g1tllY6Bc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MTU5/MC0xMzI1NTA1MDA0/LmpwZWc.jpeg",
+        "title": "Music From Twin Peaks",
+        "year": 1990,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Angelo Badalamenti",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 10785,
+                "resource_url": "https://api.discogs.com/artists/10785"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Warner Bros. Records",
+                "catno": "7599-26316-1",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 1000,
+                "resource_url": "https://api.discogs.com/labels/1000"
+            }
+        ],
+        "genres": [
+            "Electronic",
+            "Jazz",
+            "Stage & Screen"
+        ],
+        "styles": [
+            "Soundtrack",
+            "Score",
+            "Ambient"
+        ]
+    },
+    "folder_id": 1
+}
