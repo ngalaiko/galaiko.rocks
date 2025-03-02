@@ -29,7 +29,7 @@ on this page you can find most of the things that i use.
 
 ## hardware
 
-- 14 inch macbook pro 2021
+- macbook pro 14-inch, Nov 2024
 - iphone 13 mini
 - air pods max
 - sennheiser IE 200
