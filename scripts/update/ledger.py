@@ -186,7 +186,7 @@ LOCATIONS = {
     "Sylvain Marron": (57.677306, 11.928185),
     "Aftonstjarnans": (57.706905, 11.932676),
     "Uni3 World Of Food": (57.711676, 11.946318),
-    'Bistro "Vermantitis"': (56.952928, 24.119861),
+    'Bistro Vermantitis': (56.952928, 24.119861),
     "Joe & The Juice - Goteborg": (57.705545, 11.968347),
     "Gansu Koket Lindholmen": (57.711629, 11.945064),
 }
@@ -200,11 +200,9 @@ def main(file, output):
     year_ago_str = year_ago.strftime("%Y-%m-%d")
 
     command = [
-        "hledger",
-        "register",
-        "--value=then,SEK",
-        "--output-format=csv",
-        "--infer-market-prices",
+        "ledger",
+        "csv",
+        "--exchange=SEK",
         "expenses:Food:Restaurants & Cafes$",
         "expenses:Food:Lunch$",
         "expenses:Food:Eating Out$",
@@ -215,17 +213,19 @@ def main(file, output):
         command.append(f"--file={file}")
 
     try:
-        hledger_output = subprocess.check_output(command, stderr=subprocess.STDOUT)
+        ledger_output = subprocess.check_output(command, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
         raise Exception(e.output.decode())
 
-    rows = list(csv.DictReader(hledger_output.decode().splitlines()))
+    rows = list(csv.reader(ledger_output.decode().splitlines()))
 
     entries = []
     for row in rows:
-        amount = float(row["amount"].replace(" SEK", ""))
-        payee = row["description"].split("|")[0].strip()
-        entry = {"date": row["date"], "amount": amount, "payee": payee}
+        amount = float(row[5])
+        payee = row[2].split("|")[0].strip()
+        if payee == "Commodities revalued":
+            continue
+        entry = {"date": row[0], "amount": amount, "payee": payee, "commodity": row[4]}
         entries.append(entry)
 
     entries_by_place = defaultdict(list)

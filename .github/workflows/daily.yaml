@@ -35,9 +35,8 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: "ledger"
           ref: "master"
-      - name: Setup hledger
-        uses: ngalaiko/setup-hledger@v1
-      - run: uv run ./scripts/update/hledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
+      - run: sudo apt-get install ledger
+      - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes
