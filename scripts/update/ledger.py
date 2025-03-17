@@ -186,9 +186,10 @@ LOCATIONS = {
     "Sylvain Marron": (57.677306, 11.928185),
     "Aftonstjarnans": (57.706905, 11.932676),
     "Uni3 World Of Food": (57.711676, 11.946318),
-    'Bistro Vermantitis': (56.952928, 24.119861),
+    "Bistro Vermantitis": (56.952928, 24.119861),
     "Joe & The Juice - Goteborg": (57.705545, 11.968347),
     "Gansu Koket Lindholmen": (57.711629, 11.945064),
+    "Cafe Pupp": (50.219706, 12.879045),
 }
 
 
