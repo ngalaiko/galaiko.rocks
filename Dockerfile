@@ -6,8 +6,9 @@ RUN apk add --update --no-cache \
     make \
     jq \
     yq
-RUN wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.8.0/cook-x86_64-unknown-linux-musl.tar.gz" \
-    && echo "4e1b95202d92b492027a5df2f78624679f93f368a9b5832e2ec94f518890f130  cook-x86_64-unknown-linux-musl.tar.gz" | sha256sum -c \
+RUN wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.10.0/cook-x86_64-unknown-linux-musl.tar.gz" \
+    && sha256sum "cook-x86_64-unknown-linux-musl.tar.gz" \
+    && echo "cbea3306f7a24ea2d065f6daf98c232f246c45b9f775d4b5def3989a85329a64  cook-x86_64-unknown-linux-musl.tar.gz" | sha256sum -c \
     && tar -xzf "cook-x86_64-unknown-linux-musl.tar.gz" -C /usr/bin
 COPY . .
 RUN make -j$(nproc)
