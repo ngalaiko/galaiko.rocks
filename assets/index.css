@@ -11,14 +11,24 @@ html {
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-
   max-width: 72ch;
+}
+
+pre,
+code {
+  font-size: 0.875em;
+  border-radius: 4px;
 }
 
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code {
+  padding: 0.2em 0.4em;
 }
 
 a {
