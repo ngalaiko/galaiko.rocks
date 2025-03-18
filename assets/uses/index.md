@@ -11,7 +11,7 @@ on this page you can find most of the things that i use.
 - [raycast](http://raycast.com) - app launcher
 - [fish](https://fishshell.com) - shell
 - [calibre](https://calibre-ebook.com) - ebooks management
-- [hledger](https://hledger.org) - plaintext accounting
+- [ledger](https://ledger-cli.org) - plaintext accounting
 - [koreader](http://koreader.rocks) - ebooks reader
 - [net news wire](https://netnewswire.com) - rss reader
 - [overcast](https://overcast.fm/) - podcast player
