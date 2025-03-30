@@ -190,6 +190,8 @@ LOCATIONS = {
     "Joe & The Juice - Goteborg": (57.705545, 11.968347),
     "Gansu Koket Lindholmen": (57.711629, 11.945064),
     "Cafe Pupp": (50.219706, 12.879045),
+    "Geatanos": (57.693483, 11.954466),
+    "Bonor och bagels": (57.694241, 11.952782),
 }
 
 
@@ -235,17 +237,22 @@ def main(file, output):
 
     places = []
     for payee, entries in entries_by_place.items():
-        if len(entries) > 1 and payee in LOCATIONS:
-            location = LOCATIONS[payee]
-            place = {
-                "location": location,
-                "name": payee,
-                "times": len(entries),
-                "spent": sum(entry["amount"] for entry in entries),
-            }
-            places.append((payee, place))
-        elif len(entries) > 1:
+        entries_by_date = defaultdict(list)
+        for entry in entries:
+            entries_by_date[entry["date"]].append(entry)
+        times = len(entries_by_date)
+        if times < 2:
+            continue
+        if payee not in LOCATIONS:
             raise Exception(f"Location for '{payee}' is missing")
+        location = LOCATIONS[payee]
+        place = {
+            "location": location,
+            "name": payee,
+            "times": len(entries_by_date),
+            "spent": sum(entry["amount"] for entry in entries),
+        }
+        places.append((payee, place))
 
     places.sort(key=lambda x: x[1]["times"], reverse=True)
 
