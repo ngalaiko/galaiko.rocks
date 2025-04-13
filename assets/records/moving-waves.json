@@ -1,0 +1,56 @@
+{
+    "id": 7008714,
+    "instance_id": 1993023378,
+    "date_added": "2025-04-12T08:07:21-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 7008714,
+        "master_id": 54718,
+        "master_url": "https://api.discogs.com/masters/54718",
+        "resource_url": "https://api.discogs.com/releases/7008714",
+        "thumb": "https://i.discogs.com/Su9X7qLRMJfK2rcrf8sURi8S1fiZexSASrpbYEX9An4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwMDg3/MTQtMTU0MDQxMzY3/MS03Nzc3LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/0misUb-97Ey92ca7qPU1byzhBni5VReok21OFlObYtM/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwMDg3/MTQtMTU0MDQxMzY3/MS03Nzc3LmpwZWc.jpeg",
+        "title": "Moving Waves",
+        "year": 1971,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "Monarch Press, No Publishing On Labels",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "artists": [
+            {
+                "name": "Focus (2)",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 31208,
+                "resource_url": "https://api.discogs.com/artists/31208"
+            }
+        ],
+        "labels": [
+            {
+                "name": "Sire",
+                "catno": "SAS-7401",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 27031,
+                "resource_url": "https://api.discogs.com/labels/27031"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": [
+            "Prog Rock"
+        ]
+    },
+    "folder_id": 1
+}
