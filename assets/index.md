@@ -5,7 +5,7 @@ title: "Nikita Galaiko"
 hello and welcome to my homepage!
 
 if you want to contact me for any reason, the best way is to send an email to
-[nikita@galaiko.rocks](mailto:nikita@galaiko.rocks)
+[nikita@galaiko.rocks](mailto:nikita@galaiko.rocks) or [schedule a call](https://cal.com/galaiko.rocks)
 
 this is not a very large website. however, here is a list of lists that you can explore:
 
