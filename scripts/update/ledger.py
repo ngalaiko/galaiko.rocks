@@ -192,6 +192,8 @@ LOCATIONS = {
     "Cafe Pupp": (50.219706, 12.879045),
     "Geatanos": (57.693483, 11.954466),
     "Bonor och bagels": (57.694241, 11.952782),
+    "Kooperativet Lindholmen": (57.709034, 11.945366),
+    "Skroz Dobra Pekara": (44.815323, 20.460383),
 }
 
 
