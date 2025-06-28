@@ -88,7 +88,7 @@ def parse_entry(entry):
     date_str = date_node["href"].split("/")[-4:-1]
     date = datetime.strptime("-".join(date_str), "%Y-%m-%d").date()
 
-    title = entry.find("td", class_="td-film-details").find("h3").find("a").text
+    title = entry.find("td", class_="td-film-details").find("h2").find("a").text
 
     is_liked = bool(entry.find("td", class_="td-like").find(class_="icon-liked"))
     is_rewatch = bool(
@@ -98,7 +98,7 @@ def parse_entry(entry):
     details = entry.find("td", class_="td-actions")
     href = (
         "https://letterboxd.com"
-        + entry.find("td", class_="td-film-details").find("h3").find("a")["href"]
+        + entry.find("td", class_="td-film-details").find("h2").find("a")["href"]
     )
     title_slug = details["data-film-slug"]
 
