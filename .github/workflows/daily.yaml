@@ -28,6 +28,11 @@ jobs:
         with:
           commit_message: Update records
 
+      - run: uv run ./scripts/update/blogroll.py
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update blogroll
+
       - name: Checkout ledger
         uses: actions/checkout@v3
         with:
@@ -40,9 +45,3 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes
-
-      - run: uv run ./scripts/update/blogroll.py
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Update blogroll
-
