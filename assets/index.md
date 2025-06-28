@@ -14,6 +14,7 @@ this is not a very large website. however, here is a list of lists that you can 
 - [cocktails](./cocktails/) i respect and occasionaly make to consume
 - [things i use](./uses/)
 - [movies i watch](./movies/)
+- [blogroll](./blogroll/) of websites i follow
 
 if you are into liking and subscribing, check this out:
 
