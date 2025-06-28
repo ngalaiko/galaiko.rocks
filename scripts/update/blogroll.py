@@ -91,7 +91,7 @@ def main(input_file, output_file):
     with open(output_file, "w") as file:
         file.write(
             """---
-title: /uses/
+title: /blogroll/
 ---
 
 """
