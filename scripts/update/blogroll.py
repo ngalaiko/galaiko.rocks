@@ -93,7 +93,6 @@ def main(input_file, output_file):
             """---
 title: /blogroll/
 ---
-
 """
         )
         date = None
@@ -101,7 +100,7 @@ title: /blogroll/
             if get_entry_date(entry) != date:
                 date = get_entry_date(entry)
                 file.write(
-                    f"## {date.tm_year}-{date.tm_mon:02d}-{date.tm_mday:02d}\n\n"
+                    f"\n## {date.tm_year}-{date.tm_mon:02d}-{date.tm_mday:02d}\n\n"
                 )
             title = entry["title"] or entry["author"]
             link = entry["link"]
