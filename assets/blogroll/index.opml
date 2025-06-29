@@ -45,7 +45,6 @@
 	<outline text="Denis Evsyukov" title="Denis Evsyukov" description="" type="rss" version="RSS" htmlUrl="https://www.juev.org/" xmlUrl="https://www.juev.org/atom.xml"/>
 	<outline text="Dennis Schubert - Blog" title="Dennis Schubert - Blog" description="" type="rss" version="RSS" htmlUrl="https://overengineer.dev/" xmlUrl="https://overengineer.dev/blog/feeds/all.xml"/>
 	<outline text="Devon Dundee" title="Devon Dundee" description="" type="rss" version="RSS" htmlUrl="https://devondundee.com/" xmlUrl="https://devondundee.com/blog?format=rss"/>
-	<outline text="DEVPEW" title="DEVPEW" description="" type="rss" version="RSS" htmlUrl="http://localhost:1313/" xmlUrl="https://devpew.com/index.xml"/>
 	<outline text="Dragon’s notes" title="Dragon’s notes" description="" type="rss" version="RSS" htmlUrl="https://eugene-andrienko.com/" xmlUrl="https://eugene-andrienko.com/feed.xml"/>
 	<outline text="Drew DeVault's blog" title="Drew DeVault's blog" description="" type="rss" version="RSS" htmlUrl="https://drewdevault.com/" xmlUrl="https://drewdevault.com/blog/index.xml"/>
 	<outline text="Duarte O.Carmo" title="Duarte O.Carmo" description="" type="rss" version="RSS" htmlUrl="https://duarteocarmo.com/" xmlUrl="https://duarteocarmo.com/feed.xml"/>
@@ -62,7 +61,6 @@
 	<outline text="George Blackshaw" title="George Blackshaw" description="" type="rss" version="RSS" htmlUrl="https://blackshaw.substack.com/" xmlUrl="https://blackshaw.substack.com/feed"/>
 	<outline text="GitButler" title="GitButler" description="" type="rss" version="RSS" htmlUrl="https://blog.gitbutler.com/" xmlUrl="https://blog.gitbutler.com/rss/"/>
 	<outline text="Grant Slatton" title="Grant Slatton" description="" type="rss" version="RSS" htmlUrl="https://grantslatton.com/" xmlUrl="https://grantslatton.com/rss.xml"/>
-	<outline text="gtank writes here" title="gtank writes here" description="" type="rss" version="RSS" htmlUrl="https://blog.gtank.cc/" xmlUrl="https://blog.gtank.cc/rss/"/>
 	<outline text="haewyr" title="haewyr" description="" type="rss" version="RSS" htmlUrl="https://haewyr.mataroa.blog/" xmlUrl="https://haewyr.mataroa.blog/rss/"/>
 	<outline text="Henrik Warne's blog" title="Henrik Warne's blog" description="" type="rss" version="RSS" htmlUrl="https://henrikwarne.com/" xmlUrl="https://henrikwarne.com/feed/"/>
 	<outline text="Herman's blog" title="Herman's blog" description="" type="rss" version="RSS" htmlUrl="https://herman.bearblog.dev/feed/?type=rss" xmlUrl="https://herman.bearblog.dev/feed/?type=rss"/>
@@ -197,7 +195,6 @@
 	<outline text="Здесь в…" title="Здесь в…" description="" type="rss" version="RSS" htmlUrl="https://staskulesh.com/" xmlUrl="https://staskulesh.com/feed/"/>
 	<outline text="Котлован - Telegram Channel" title="Котлован - Telegram Channel" description="" type="rss" version="RSS" htmlUrl="https://t.me/s/foundationpit" xmlUrl="https://rsshub.app/telegram/channel/foundationpit"/>
 	<outline text="Леонид Каганов" title="Леонид Каганов" description="" type="rss" version="RSS" htmlUrl="https://lleo.me/dnevnik/" xmlUrl="https://lleo.me/dnevnik/rss.xml"/>
-	<outline text="Новости Радио-Т" title="Новости Радио-Т" description="" type="rss" version="RSS" htmlUrl="https://news.radio-t.com/" xmlUrl="https://news.radio-t.com/rss"/>
 	<outline text="Нуриль Барадусов" title="Нуриль Барадусов" description="" type="rss" version="RSS" htmlUrl="https://baradusov.ru/" xmlUrl="https://baradusov.ru/feed.xml"/>
 	<outline text="Отдушина для мозга" title="Отдушина для мозга" description="" type="rss" version="RSS" htmlUrl="https://kochanoff.com/?utm_source=teletype&amp;utm_medium=feed_rss&amp;utm_campaign=kochanoff" xmlUrl="https://kochanoff.com/data/rss"/>
 	<outline text="Печатает... - Telegram Channel" title="Печатает... - Telegram Channel" description="" type="rss" version="RSS" htmlUrl="https://t.me/sergeykorol" xmlUrl="https://rsshub.app/telegram/channel/sergeykorol"/>
