@@ -65,15 +65,13 @@ def parse_feed(feed, max_entries=3):
     def filter_entry(entry):
         if "link" not in entry:
             return False
-        if "title" not in entry and "author" not in entry:
-            return False
         if not get_entry_date(entry):
             return False
         return True
 
     def map_entry(entry):
         return {
-            "title": entry.get("title", entry.get("author", ""), feed.title),
+            "title": entry.get("title", entry.get("author")),
             "link": entry["link"],
             "date": get_entry_date(entry),
         }
