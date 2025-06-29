@@ -1,14 +1,12 @@
 a {
   color: inherit;
   text-decoration: underline;
-  cursor: pointer;              /* show pointer on hover */
+  cursor: pointer;
 }
 
 a:visited {
-  color: #551A8B;               /* standard visited-link purple */
+  color: #8E44AD;
 }
-
-/* rest of your stylesheet… */
 
 html {
   -moz-text-size-adjust: none;
