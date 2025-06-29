@@ -3,8 +3,8 @@ name: Updates
 on:
   workflow_dispatch: {}
   schedule:
-    # every 6 hours
-    - cron: "0 */6 * * *"
+    # every 2 hours
+    - cron: "0 */2 * * *"
 
 jobs:
   letterboxd:
