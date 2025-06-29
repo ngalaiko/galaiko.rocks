@@ -62,23 +62,24 @@ def parse_feed(feed, max_entries=3):
     feed = feedparser.parse(feed.xmlUrl)
     entries = feed.entries[:max_entries]
 
-    def has_title_or_author(entry):
-        return "title" in entry or "author" in entry
+    def filter_entry(entry):
+        if "link" not in entry:
+            return False
+        if "title" not in entry and "author" not in entry:
+            return False
+        if not get_entry_date(entry):
+            return False
+        return True
 
-    entries = filter(
-        has_title_or_author,
-        entries,
-    )
+    def map_entry(entry):
+        return {
+            "title": entry.get("title", entry.get("author", ""), feed.title),
+            "link": entry["link"],
+            "date": get_entry_date(entry),
+        }
 
-    def has_date(entry):
-        return get_entry_date(entry) is not None
-
-    entries = filter(has_date, entries)
-
-    def has_link(entry):
-        return "link" in entry
-
-    entries = filter(has_link, entries)
+    entries = filter(filter_entry, entries)
+    entries = map(map_entry, entries)
 
     return sort_entries(entries)[:max_entries]
 
@@ -97,12 +98,12 @@ title: /blogroll/
         )
         date = None
         for entry in entries:
-            if get_entry_date(entry) != date:
-                date = get_entry_date(entry)
+            if entry["date"] != date:
+                date = entry["date"]
                 file.write(
                     f"\n## {date.tm_year}-{date.tm_mon:02d}-{date.tm_mday:02d}\n\n"
                 )
-            title = entry["title"] or entry["author"]
+            title = entry["title"]
             link = entry["link"]
             file.write(f"- [{title}]({link})\n")
 

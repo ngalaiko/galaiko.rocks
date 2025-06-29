@@ -1,14 +1,15 @@
-name: Daily job
+name: Updates
 
 on:
   workflow_dispatch: {}
   schedule:
-    # every day at 3am
-    - cron: "0 3 * * *"
+    # every 6 hours
+    - cron: "0 */6 * * *"
 
 jobs:
-  daily:
+  letterboxd:
     runs-on: ubuntu-latest
+    if: always()
     steps:
       - uses: actions/checkout@v3
 
@@ -23,16 +24,47 @@ jobs:
         with:
           commit_message: Update movies
 
+  discogs:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [letterboxd]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-suffix: "optional-suffix"
+
       - run: uv run ./scripts/update/discogs.py --token "${{ secrets.DISCOGS_API_KEY }}"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update records
+
+  blogroll:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [discogs]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-suffix: "optional-suffix"
 
       - run: uv run ./scripts/update/blogroll.py
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update blogroll
 
+  ledger:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [blogroll]
+    steps:
       - name: Checkout ledger
         uses: actions/checkout@v3
         with:
@@ -45,3 +77,15 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Restaurants and Cafes
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [ledger]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+
