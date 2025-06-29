@@ -4,7 +4,6 @@
 	<outline text="&gt;рабочие заметки" title="&gt;рабочие заметки" description="" type="rss" version="RSS" htmlUrl="https://dev.cheremin.info/" xmlUrl="https://dev.cheremin.info/feeds/posts/default"/>
 	<outline text="A Place Where Even Mammoths Fly" title="A Place Where Even Mammoths Fly" description="" type="rss" version="RSS" htmlUrl="https://dmitriid.com/" xmlUrl="https://dmitriid.com/rss"/>
 	<outline text="A Very Good Blog by Keenan" title="A Very Good Blog by Keenan" description="" type="rss" version="RSS" htmlUrl="" xmlUrl="https://gkeenan.co/avgb/feed.xml"/>
-	<outline text="addmeto | addmeto @ tele.ga" title="addmeto | addmeto @ tele.ga" description="" type="rss" version="RSS" htmlUrl="https://addmeto.cc/" xmlUrl="https://addmeto.cc/rss/"/>
 	<outline text="ajkprojects" title="ajkprojects" description="" type="rss" version="RSS" htmlUrl="https://asnewman.github.io/" xmlUrl="https://raw.githubusercontent.com/asnewman/asnewman.github.io/main/rss.xml"/>
 	<outline text="Alex Molas Blog" title="Alex Molas Blog" description="" type="rss" version="RSS" htmlUrl="https://alexmolas.com/" xmlUrl="https://www.alexmolas.com/feed.xml"/>
 	<outline text="And a Dinosaur" title="And a Dinosaur" description="" type="rss" version="RSS" htmlUrl="https://andadinosaur.com/" xmlUrl="https://andadinosaur.com/home.rss"/>
@@ -37,7 +36,6 @@
 	<outline text="Constantine Chukhlomin" title="Constantine Chukhlomin" description="" type="rss" version="RSS" htmlUrl="https://chuhlomin.com/blog" xmlUrl="https://chuhlomin.com/blog/feed.atom"/>
 	<outline text="Copper • A blog about conductive layers" title="Copper • A blog about conductive layers" description="" type="rss" version="RSS" htmlUrl="https://alinpanaitiu.com/" xmlUrl="https://alinpanaitiu.com/index.xml"/>
 	<outline text="crawshaw blog" title="crawshaw blog" description="" type="rss" version="RSS" htmlUrl="" xmlUrl="https://crawshaw.io/atom.xml"/>
-	<outline text="Daily Geek News - Telegram 频道" title="Daily Geek News - Telegram 频道" description="" type="rss" version="RSS" htmlUrl="https://t.me/s/daily_geek_news" xmlUrl="https://rsshub.app/telegram/channel/daily_geek_news"/>
 	<outline text="Daniel Lemire's blog" title="Daniel Lemire's blog" description="" type="rss" version="RSS" htmlUrl="https://lemire.me/blog" xmlUrl="http://feeds.feedburner.com/daniel-lemire/atom"/>
 	<outline text="Dave Cheney" title="Dave Cheney" description="" type="rss" version="RSS" htmlUrl="https://dave.cheney.net/" xmlUrl="https://dave.cheney.net/feed"/>
 	<outline text="David Heinemeier Hansson" title="David Heinemeier Hansson" description="" type="rss" version="RSS" htmlUrl="https://world.hey.com/dhh" xmlUrl="https://world.hey.com/dhh/feed.atom"/>
@@ -72,7 +70,6 @@
 	<outline text="Home on xie" title="Home on xie" description="" type="rss" version="RSS" htmlUrl="http:///" xmlUrl="https://xie.oskarsh.ru/index.xml"/>
 	<outline text="Hypercritical" title="Hypercritical" description="" type="rss" version="RSS" htmlUrl="http://hypercritical.co/" xmlUrl="https://hypercritical.co/feeds/main"/>
 	<outline text="Ian Henry" title="Ian Henry" description="" type="rss" version="RSS" htmlUrl="https://ianthehenry.com/posts/" xmlUrl="https://ianthehenry.com/posts/feed.xml"/>
-	<outline text="igrishaev - Telegram Channel" title="igrishaev - Telegram Channel" description="" type="rss" version="RSS" htmlUrl="https://t.me/s/igrishaev_blog" xmlUrl="https://rsshub.app/telegram/channel/igrishaev_blog"/>
 	<outline text="inessential" title="inessential" description="" type="rss" version="RSS" htmlUrl="https://inessential.com/" xmlUrl="https://inessential.com/xml/rss.xml"/>
 	<outline text="Infrequently Noted" title="Infrequently Noted" description="" type="rss" version="RSS" htmlUrl="" xmlUrl="https://infrequently.org/feed/"/>
 	<outline text="Ingrid's Space" title="Ingrid's Space" description="" type="rss" version="RSS" htmlUrl="https://ingrids.space/" xmlUrl="https://ingrids.space/index.xml"/>
@@ -98,7 +95,6 @@
 	<outline text="Kevin Lacker’s blog" title="Kevin Lacker’s blog" description="" type="rss" version="RSS" htmlUrl="http://lacker.io/" xmlUrl="http://lacker.io/feed.xml"/>
 	<outline text="Latest posts in “Technical” // -dealloc" title="Latest posts in “Technical” // -dealloc" description="" type="rss" version="RSS" htmlUrl="https://belkadan.com/blog/technical" xmlUrl="https://belkadan.com/blog/technical/atom"/>
 	<outline text="Lawrence Jones" title="Lawrence Jones" description="" type="rss" version="RSS" htmlUrl="https://blog.lawrencejones.dev/" xmlUrl="https://blog.lawrencejones.dev/feed.xml"/>
-	<outline text="Lex Fridman - Telegram Channel" title="Lex Fridman - Telegram Channel" description="" type="rss" version="RSS" htmlUrl="https://t.me/s/lexfridman" xmlUrl="https://rsshub.app/telegram/channel/lexfridman"/>
 	<outline text="Lincoln Quirk" title="Lincoln Quirk" description="" type="rss" version="RSS" htmlUrl="https://lincolnquirk.com/" xmlUrl="https://lincolnquirk.com/feed.xml"/>
 	<outline text="Ludicity" title="Ludicity" description="" type="rss" version="RSS" htmlUrl="https://ludic.mataroa.blog/" xmlUrl="https://ludic.mataroa.blog/rss/"/>
 	<outline text="Mac OS World" title="Mac OS World" description="" type="rss" version="RSS" htmlUrl="https://www.macosworld.net/" xmlUrl="https://www.macosworld.net/rss/"/>
@@ -193,14 +189,11 @@
 	<outline text="Записки программиста" title="Записки программиста" description="" type="rss" version="RSS" htmlUrl="https://eax.me/" xmlUrl="https://eax.me/feed/"/>
 	<outline text="Записки усталого админа" title="Записки усталого админа" description="" type="rss" version="RSS" htmlUrl="https://blog.rcmd.space/" xmlUrl="https://tiredsysadmin.cc/rss.xml"/>
 	<outline text="Здесь в…" title="Здесь в…" description="" type="rss" version="RSS" htmlUrl="https://staskulesh.com/" xmlUrl="https://staskulesh.com/feed/"/>
-	<outline text="Котлован - Telegram Channel" title="Котлован - Telegram Channel" description="" type="rss" version="RSS" htmlUrl="https://t.me/s/foundationpit" xmlUrl="https://rsshub.app/telegram/channel/foundationpit"/>
 	<outline text="Леонид Каганов" title="Леонид Каганов" description="" type="rss" version="RSS" htmlUrl="https://lleo.me/dnevnik/" xmlUrl="https://lleo.me/dnevnik/rss.xml"/>
 	<outline text="Нуриль Барадусов" title="Нуриль Барадусов" description="" type="rss" version="RSS" htmlUrl="https://baradusov.ru/" xmlUrl="https://baradusov.ru/feed.xml"/>
 	<outline text="Отдушина для мозга" title="Отдушина для мозга" description="" type="rss" version="RSS" htmlUrl="https://kochanoff.com/?utm_source=teletype&amp;utm_medium=feed_rss&amp;utm_campaign=kochanoff" xmlUrl="https://kochanoff.com/data/rss"/>
-	<outline text="Печатает... - Telegram Channel" title="Печатает... - Telegram Channel" description="" type="rss" version="RSS" htmlUrl="https://t.me/sergeykorol" xmlUrl="https://rsshub.app/telegram/channel/sergeykorol"/>
 	<outline text="Саша Бизиков" title="Саша Бизиков" description="" type="rss" version="RSS" htmlUrl="https://bizikov.ru/" xmlUrl="https://bizikov.ru/feed/"/>
 	<outline text="Сергей Капличный" title="Сергей Капличный" description="" type="rss" version="RSS" htmlUrl="https://skaplichniy.ru/" xmlUrl="https://skaplichniy.ru/feed/"/>
-	<outline text="Стой под стрелой - Telegram 频道" title="Стой под стрелой - Telegram 频道" description="" type="rss" version="RSS" htmlUrl="https://t.me/s/nikitonsky_pub" xmlUrl="https://rsshub.app/telegram/channel/nikitonsky_pub"/>
 	<outline text="Фёдоров пишет" title="Фёдоров пишет" description="" type="rss" version="RSS" htmlUrl="https://fedorovpishet.ru/" xmlUrl="https://fedorovpishet.ru/feed/"/>
 	<outline text="ШТОСМ" title="ШТОСМ" description="" type="rss" version="RSS" htmlUrl="https://shtosm.ru/" xmlUrl="https://shtosm.ru/rss/"/>
 	<outline text="道&amp;c." title="道&amp;c." description="" type="rss" version="RSS" htmlUrl="http://gemini://taoetc.org/" xmlUrl="https://blog.taoetc.org/atom.xml"/>
