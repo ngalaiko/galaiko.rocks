@@ -2,6 +2,7 @@
 title: "/blogroll/"
 ---
 
+- [Experimenting with Development containers](https://xeiaso.net/notes/2025/devcontainers/)
 - [My Emacs configuration (common parts)](https://eugene-andrienko.com/it/2025/06/30/my-emacs-configuration-common.html)
 - [The parental dead end of consent morality](https://world.hey.com/dhh/the-parental-dead-end-of-consent-morality-e4e8a8ee)
 - [Is chat a good UI for AI? A Socratic dialogue](https://www.geoffreylitt.com/2025/06/29/chat-ai-dialogue.html)
@@ -95,7 +96,6 @@ title: "/blogroll/"
 - [Accept, leave or reform the unsustainable](https://axbom.com/omelas/)
 - [Data Oriented Programming in Java: Chapter 7 Progress (Part X)](https://chriskiehl.com/article/dopij-progress-update-2025-06-09)
 - [Unionize or die](https://drewdevault.com/2025/06/09/2025-06-09-Unionize-or-die.html)
-- [Apple just Sherlocked Docker](https://xeiaso.net/notes/2025/dubdub/)
 - [On How Long it Takes to Know if a Job is Right for You or Not](https://charity.wtf/2025/06/08/on-how-long-it-takes-to-know-if-a-job-is-right-for-you-or-not/)
 - [Joy & Curiosity #42](https://registerspill.thorstenball.com/p/joy-and-curiosity-42)
 - [How I program with Agents](https://crawshaw.io/blog/programming-with-agents)
