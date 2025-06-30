@@ -2,6 +2,7 @@
 title: "/blogroll/"
 ---
 
+- [My Emacs configuration (common parts)](https://eugene-andrienko.com/it/2025/06/30/my-emacs-configuration-common.html)
 - [The parental dead end of consent morality](https://world.hey.com/dhh/the-parental-dead-end-of-consent-morality-e4e8a8ee)
 - [Is chat a good UI for AI? A Socratic dialogue](https://www.geoffreylitt.com/2025/06/29/chat-ai-dialogue.html)
 - [The Story of Max, a Real Programmer](https://incoherency.co.uk/blog/stories/the-story-of-max.html)
@@ -235,7 +236,6 @@ title: "/blogroll/"
 - [Март](https://baradusov.ru/posts/2025/march)
 - [Type-safe lookup tables](https://holzer.online/articles/2025/03-30-ts-lookuptables/index.html)
 - [Vibe Coding and Kodak Cameras](https://stevedylan.dev/posts/vibe-coding-and-kodak-cameras/)
-- [My way to remove “Linuxisms” from FreeBSD](https://eugene-andrienko.com/it/2025/03/30/freebsd-pkgs-wout-unwanted-deps.html)
 - [Talk: Clojure workflow with Sublime Text @ SciCloj](https://tonsky.me/talks/#2025-03-28)
 - [The case against conversational interfaces](https://julian.digital/2025/03/27/the-case-against-conversational-interfaces/)
 - [Why Signal is more secure than WhatsApp](https://axbom.com/signal-whatsapp/)
