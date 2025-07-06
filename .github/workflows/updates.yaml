@@ -1,75 +1,64 @@
 name: Updates
-
 on:
   workflow_dispatch: {}
   schedule:
-    # every day
-    - cron: "0 0 * * *"
-
+    # every 2 hours
+    - cron: "0 */2 * * *"
 jobs:
   letterboxd:
     runs-on: ubuntu-latest
-    if: always()
     steps:
-      - uses: actions/checkout@v3
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v4
         with:
-          enable-cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: astral-sh/setup-uv@v5
       - run: uv run ./scripts/update/letterboxd.py
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: Update movies
-
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-movies-${{ github.run_number }}
+          title: "Update movies"
+          body: "Automated update of movies data"
   discogs:
     runs-on: ubuntu-latest
-    if: always()
     needs: [letterboxd]
     steps:
-      - uses: actions/checkout@v3
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v4
         with:
-          enable-cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: astral-sh/setup-uv@v5
       - run: uv run ./scripts/update/discogs.py --token "${{ secrets.DISCOGS_API_KEY }}"
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: Update records
-
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-records-${{ github.run_number }}
+          title: "Update records"
+          body: "Automated update of records data"
   blogroll:
     runs-on: ubuntu-latest
     if: always()
     needs: [discogs]
-    env:
-      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          lfs: true
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: astral-sh/setup-uv@v5
       - run: uv run ./scripts/update/blogroll.py
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: Update blogroll
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
-
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-blogroll-${{ github.run_number }}
+          title: "Update blogroll"
+          body: "Automated update of blogroll data"
   ledger:
     runs-on: ubuntu-latest
-    if: always()
     needs: [blogroll]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v4
         with:
-          enable-cache: true
-      - name: Checkout ledger
-        uses: actions/checkout@v3
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v4
         with:
           repository: ngalaiko/ledger
           token: ${{ secrets.GH_PAT }}
@@ -77,7 +66,9 @@ jobs:
           ref: "master"
       - run: sudo apt-get install ledger
       - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: Update Restaurants and Cafes
-
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-ledger-${{ github.run_number }}
+          title: "Update Restaurants and Cafes"
+          body: "Automated update of ledger data"
