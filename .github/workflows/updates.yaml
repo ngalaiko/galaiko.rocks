@@ -13,46 +13,57 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: astral-sh/setup-uv@v5
       - run: uv run ./scripts/update/letterboxd.py
-      - uses: peter-evans/create-pull-request@v7
+      - id: cpr-movies
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-movies-${{ github.run_number }}
           title: "Update movies"
           body: "Automated update of movies data"
+      - if: steps.cpr-movies.outputs.pull-request-number
+        run: gh pr merge ${{ steps.cpr-movies.outputs.pull-request-number }} --auto --rebase
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   discogs:
     runs-on: ubuntu-latest
-    needs: [letterboxd]
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: astral-sh/setup-uv@v5
       - run: uv run ./scripts/update/discogs.py --token "${{ secrets.DISCOGS_API_KEY }}"
-      - uses: peter-evans/create-pull-request@v7
+      - id: cpr-records
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-records-${{ github.run_number }}
           title: "Update records"
           body: "Automated update of records data"
+      - if: steps.cpr-records.outputs.pull-request-number
+        run: gh pr merge ${{ steps.cpr-records.outputs.pull-request-number }} --auto --rebase
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   blogroll:
     runs-on: ubuntu-latest
-    if: always()
-    needs: [discogs]
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: astral-sh/setup-uv@v5
       - run: uv run ./scripts/update/blogroll.py
-      - uses: peter-evans/create-pull-request@v7
+      - id: cpr-blogroll
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-blogroll-${{ github.run_number }}
           title: "Update blogroll"
           body: "Automated update of blogroll data"
+      - if: steps.cpr-blogroll.outputs.pull-request-number
+        run: gh pr merge ${{ steps.cpr-blogroll.outputs.pull-request-number }} --auto --rebase
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ledger:
     runs-on: ubuntu-latest
-    needs: [blogroll]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -66,9 +77,14 @@ jobs:
           ref: "master"
       - run: sudo apt-get install ledger
       - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
-      - uses: peter-evans/create-pull-request@v7
+      - id: cpr-ledger
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-ledger-${{ github.run_number }}
           title: "Update Restaurants and Cafes"
           body: "Automated update of ledger data"
+      - if: steps.cpr-ledger.outputs.pull-request-number
+        run: gh pr merge ${{ steps.cpr-ledger.outputs.pull-request-number }} --auto --rebase
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
