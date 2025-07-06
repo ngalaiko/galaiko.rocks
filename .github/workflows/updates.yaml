@@ -21,7 +21,7 @@ jobs:
           title: "Update movies"
           body: "Automated update of movies data"
       - if: steps.cpr-movies.outputs.pull-request-number
-        run: gh pr merge ${{ steps.cpr-movies.outputs.pull-request-number }} --auto --rebase
+        run: gh pr merge ${{ steps.cpr-movies.outputs.pull-request-number }} --rebase
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   discogs:
@@ -40,7 +40,7 @@ jobs:
           title: "Update records"
           body: "Automated update of records data"
       - if: steps.cpr-records.outputs.pull-request-number
-        run: gh pr merge ${{ steps.cpr-records.outputs.pull-request-number }} --auto --rebase
+        run: gh pr merge ${{ steps.cpr-records.outputs.pull-request-number }} --rebase
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   blogroll:
@@ -59,7 +59,7 @@ jobs:
           title: "Update blogroll"
           body: "Automated update of blogroll data"
       - if: steps.cpr-blogroll.outputs.pull-request-number
-        run: gh pr merge ${{ steps.cpr-blogroll.outputs.pull-request-number }} --auto --rebase
+        run: gh pr merge ${{ steps.cpr-blogroll.outputs.pull-request-number }} --rebase
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ledger:
@@ -85,6 +85,6 @@ jobs:
           title: "Update Restaurants and Cafes"
           body: "Automated update of ledger data"
       - if: steps.cpr-ledger.outputs.pull-request-number
-        run: gh pr merge ${{ steps.cpr-ledger.outputs.pull-request-number }} --auto --rebase
+        run: gh pr merge ${{ steps.cpr-ledger.outputs.pull-request-number }} --rebase
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
