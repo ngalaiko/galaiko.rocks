@@ -2,6 +2,7 @@
 title: "/blogroll/"
 ---
 
+- [When tech hardware becomes paperweights](https://basic.bearblog.dev/when-tech-hardware-becomes-paperweights/)
 - [Apple in China, Ripoff in Amazon](https://lapcatsoftware.com/articles/2025/6/5.html)
 - [A gift to myself](https://manuelmoreale.com/a-gift-to-myself)
 - [Joy & Curiosity #44](https://registerspill.thorstenball.com/p/joy-and-curiosity-44)
@@ -72,7 +73,6 @@ title: "/blogroll/"
 - [Плёночные фотографии снова в тренде](https://staskulesh.com/2025/06/film/)
 - [Rust: A programming language that grows with you, your career and your projects](https://kerkour.com/rust-grows-with-you)
 - [Back on Mastodon](https://basic.bearblog.dev/back-on-mastodon/)
-- [The End of YouTubers](https://basic.bearblog.dev/the-end-of-youtubers/)
 - [Setting up an XMPP server with Prosody](https://voxelmanip.se/2025/06/25/setting-up-an-xmpp-server-with-prosody/)
 - [Bad cold email](https://blog.kaplich.me/bad-cold-email/)
 - [forbidden secrets of ancient X11 scaling technology revealed](https://flak.tedunangst.com/post/forbidden-secrets-of-ancient-X11-scaling-technology-revealed)
