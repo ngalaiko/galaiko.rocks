@@ -2,6 +2,7 @@
 title: "/blogroll/"
 ---
 
+- [Do You Even Personalize, Bro?](https://blog.jim-nielsen.com/2025/do-you-personalize/)
 - [When tech hardware becomes paperweights](https://basic.bearblog.dev/when-tech-hardware-becomes-paperweights/)
 - [Apple in China, Ripoff in Amazon](https://lapcatsoftware.com/articles/2025/6/5.html)
 - [A gift to myself](https://manuelmoreale.com/a-gift-to-myself)
@@ -69,7 +70,6 @@ title: "/blogroll/"
 - [Leveling Up Agents with MCPs](https://zed.dev/blog/mcp-with-kent-dodds)
 - [Памятка по работе кучи и пирамидальной сортировки](https://eax.me/heapsort/)
 - [Иногда они возвращаются.](https://lifeisenduro.blogspot.com/2025/06/blog-post.html)
-- [Transforming HTML With Netlify Edge Functions](https://blog.jim-nielsen.com/2025/transform-html-with-edge-functions/)
 - [Плёночные фотографии снова в тренде](https://staskulesh.com/2025/06/film/)
 - [Rust: A programming language that grows with you, your career and your projects](https://kerkour.com/rust-grows-with-you)
 - [Back on Mastodon](https://basic.bearblog.dev/back-on-mastodon/)
