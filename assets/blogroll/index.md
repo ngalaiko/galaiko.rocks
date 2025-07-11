@@ -2,6 +2,7 @@
 title: "/blogroll/"
 ---
 
+- [SourceHut is now accepting payments in Euro](https://sourcehut.org/blog/2025-07-10-pay-in-euro/)
 - [Thoughts on Motivation and My 40-Year Career](https://charity.wtf/2025/07/09/thoughts-on-motivation-and-my-40-year-career/)
 - [Memory-level parallelism :: Apple M2 vs Apple M4](https://lemire.me/blog/2025/07/09/memory-level-parallelism-apple-m2-vs-apple-m4/)
 - [The 4 pillars of Rust's superiority](https://kerkour.com/rust-superiority)
@@ -249,7 +250,6 @@ title: "/blogroll/"
 - [Vibe Coding and Kodak Cameras](https://stevedylan.dev/posts/vibe-coding-and-kodak-cameras/)
 - [The case against conversational interfaces](https://julian.digital/2025/03/27/the-case-against-conversational-interfaces/)
 - [Why Signal is more secure than WhatsApp](https://axbom.com/signal-whatsapp/)
-- [Announcing docs.sourcehut.org](https://sourcehut.org/blog/2025-03-27-announcing-docs-sourcehut-org/)
 - [Surround yourself.](https://rusingh.com/surround-yourself/)
 - [Moving To Substack](http://jalammar.github.io/moving_to_substack/)
 - [About Container Interfaces](https://garrit.xyz/posts/2025-03-25-container-interfaces?utm_source=rss)
