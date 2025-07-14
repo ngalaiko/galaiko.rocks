@@ -2,6 +2,8 @@
 title: "/blogroll/"
 ---
 
+- [Mark Zuckerberg: Facebook's strategy tax](https://www.techemails.com/p/mark-zuckerberg-facebook-strategy-tax)
+- [Думаем дальше № 42 — «Лучи добра исследователям» c Мишей Нозиком](https://ilyabirman.ru/meanwhile/all/think-on-42/)
 - [Joy & Curiosity #45](https://registerspill.thorstenball.com/p/joy-and-curiosity-45)
 - [Why measuring productivity is hard](https://lemire.me/blog/2025/07/12/why-measuring-productivity-is-hard/)
 - [Ссылки #346](https://www.juev.org/2025/07/12/weblinks-346/)
@@ -48,7 +50,6 @@ title: "/blogroll/"
 - [Just say no to broken JSON](https://lemire.me/blog/2025/07/04/just-say-no-to-broken-json/)
 - [I want to leave tech: what do I do?](https://write.as/conjure-utopia/lets-say-youre-working-in-tech-and-you-have-a-technical-role-youre-a?pk_campaign=rss-feed)
 - [Думаем дальше № 41 — «Любовь к жидкостям в интерфейсе» c Сашей Каном](https://ilyabirman.ru/meanwhile/all/think-on-41/)
-- [ГЭС-2 весной 2022-го](https://ilyabirman.ru/meanwhile/all/moscow-ges-2/)
 - [On This Day in Collections](https://devondundee.com/blog/on-this-day-in-collections)
 - [Recently](https://macwright.com/2025/07/04/recently.html)
 - [Get in losers, we're moving to Linux!](https://world.hey.com/dhh/get-in-losers-we-re-moving-to-linux-5e1b93cd)
@@ -157,8 +158,8 @@ title: "/blogroll/"
 - [Linux Mount Namespaces](https://jmtd.net/log/mount_namespaces/)
 - [Nerding out about heaters](https://herman.bearblog.dev/heaters/)
 - [HTML HATEOAS in the age of LLMs](https://mikesub.net/blog/html-mcp.html)
-- [Saying Bye to Glitch](https://pketh.org/bye-glitch.html)
 - [NYC Primaries June 24 - don't rank Cuomo, vote for everyone else](https://macwright.com/2025/05/28/dont-rank-cuomo-vote-for-everyone-else.html)
+- [Saying Bye to Glitch](https://pketh.org/bye-glitch.html)
 - [Talk: Local-first is not going to win, but that’s okay @ Local-First Conf](https://tonsky.me/talks/#2025-05-28)
 - [The Myths of Venture Capital](https://molodtsov.me/2025/05/the-myths-of-venture-capital/)
 - [Retirement and NetNewsWire](https://inessential.com/2025/05/24/retirement_and_netnewswire.html)
@@ -225,7 +226,6 @@ title: "/blogroll/"
 - [Making a small JavaScript blog static site generator even smaller using the general async-tree library](https://jan.miksovsky.com/posts/2025/04-23-async-tree.html)
 - [Body::poll_progress](https://seanmonstar.com/blog/body-poll-progress/)
 - [Manuel was annoyed](https://annoying.technology/posts/f74fdc953e1d3fe1/)
-- [Mark Zuckerberg and Snapchat](https://www.techemails.com/p/mark-zuckerberg-and-snapchat)
 - [This minimalist static site generator pattern is only for JavaScript developers who want something small, fast, flexible, and comprehensible](https://jan.miksovsky.com/posts/2025/04-17-zero-dependencies.html)
 - [Моя формула оценки фильмов (и кино)](https://ignatuque.xyz/ru/journal/secret-formula/)
 - [You cannot have our user's data](https://sourcehut.org/blog/2025-04-15-you-cannot-have-our-users-data/)
