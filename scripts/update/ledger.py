@@ -194,6 +194,8 @@ LOCATIONS = {
     "Bonor och bagels": (57.694241, 11.952782),
     "Kooperativet Lindholmen": (57.709034, 11.945366),
     "Skroz Dobra Pekara": (44.815323, 20.460383),
+    "Dua Ragazzi": (57.695692, 11.951276),
+    "Borgskogs": (57.692549, 11.951397),
 }
 
 
