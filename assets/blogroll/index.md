@@ -2,6 +2,8 @@
 title: "/blogroll/"
 ---
 
+- [Революция в блогинге: как ИИ стал моим соавтором](https://www.juev.org/2025/07/19/vibe/)
+- [Ссылки #347](https://www.juev.org/2025/07/19/weblinks-347/)
 - [A digital film roll for your old camera](https://basic.bearblog.dev/a-digital-film-roll-for-your-old-camera/)
 - [Is it obsolete or enshitification?](https://basic.bearblog.dev/is-it-obselete-or-enshitification/)
 - [Интерфейс управления флотом самокатов Суперпедестриана](https://ilyabirman.ru/meanwhile/all/superpedestrian/)
@@ -75,7 +77,6 @@ title: "/blogroll/"
 - [How to restore FreeBSD with ZFS boot environments and boot2 loader](https://eugene-andrienko.com/it/2025/07/06/freebsd-zfs-boot-environment-boot2.html)
 - [2025/07/06 - сегодня 147 лет со дня рождения финского поэта Эйно Лейно](https://lleo.me/dnevnik/2025/07/06)
 - [Hyper Case: Designing my own keyboard case](https://arslan.io/2025/07/05/hyper-case-designing-my-own-keyboard-case/)
-- [Ссылки #345](https://www.juev.org/2025/07/05/weblinks-345/)
 - [Everything around LLMs is still magical and wishful thinking](https://dmitriid.com/everything-around-llms-is-still-magical-and-wishful-thinking)
 - [can an email go 500 miles in 2025?](https://flak.tedunangst.com/post/can-an-email-go-500-miles-in-2025)
 - [I want to leave tech: what do I do?](https://write.as/conjure-utopia/lets-say-youre-working-in-tech-and-you-have-a-technical-role-youre-a?pk_campaign=rss-feed)
@@ -104,7 +105,6 @@ title: "/blogroll/"
 - [The Story of Max, a Real Programmer](https://incoherency.co.uk/blog/stories/the-story-of-max.html)
 - [Thank you, Databend; Hello, LanceDB](https://xuanwo.io/2025/04-thank-you-databend-hello-lancedb/)
 - [Joy & Curiosity #43](https://registerspill.thorstenball.com/p/joy-and-curiosity-43)
-- [Ссылки #344](https://www.juev.org/2025/06/28/weblinks-344/)
 - [App Store search is not a user feature](https://lapcatsoftware.com/articles/2025/6/4.html)
 - [Viva](https://jmtd.net/log/phd/viva/)
 - [All color is best-effort](https://fasterthanli.me/articles/all-color-is-best-effort)
@@ -357,6 +357,7 @@ title: "/blogroll/"
 - [Ghostty: Reflecting on Reaching 1.0](https://mitchellh.com/writing/ghostty-1-0-reflection)
 - [Питер, 2024](https://bizikov.ru/blog/piter-2024/)
 - [Launch: Teleplayer](https://andadinosaur.com/launch-teleplayer)
+- [Конечные и бесконечные игры](https://zamesin.ru/book-finite-and-infinite-games/)
 - [Improved home printing](https://wilw.dev/blog/2024/12/20/printing/)
 - [Казань, Чебоксары и Йошка, 2024](https://bizikov.ru/blog/three-republics-2024/)
 - [Иремель, 2024](https://bizikov.ru/blog/iremel-2024/)
@@ -491,8 +492,10 @@ title: "/blogroll/"
 - [On Buddhism](https://evanjconrad.com/posts/buddhism)
 - [Stocketa](https://paulstamatiou.com/stocketa)
 - [Переписал сайт на SvelteKit](https://bespoyasov.ru/blog/rebuilt-site-with-sveltekit)
+- [Сервисы и программы, за которые я с удовольствием* плачу](https://zamesin.ru/siervisy-i-proghrammy-za-kotoryie-ia-s-udovolstviiem-plachu/)
 - [Cloudflare DNS](https://p.umputun.com/2023/09/09/cloudflare-dns/)
 - [Comments in stories](https://ivanzviahin.by/blog/all/comments/)
+- [Жизнь—агент создания знания](https://zamesin.ru/book-why-information-grows/)
 - [The complex simplicity of my static websites](https://alinpanaitiu.com/blog/complex-simplicity-of-static-websites/)
 - [Batch PDF Editing](https://xie.oskarsh.ru/post/2023/07/pdf/)
 - [Malaysian fuel prices and open data](https://xie.oskarsh.ru/post/2023/07/dosm/)
