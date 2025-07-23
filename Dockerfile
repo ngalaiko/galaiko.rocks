@@ -13,8 +13,8 @@ RUN wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.10.0/
 COPY . .
 RUN make -j$(nproc)
 
-FROM alpine:3.20
-ARG S6_OVERLAY_VERSION=3.2.0.0
+FROM alpine:3.22
+ARG S6_OVERLAY_VERSION=3.2.1.0
 ADD "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" /tmp
 ADD "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-aarch64.tar.xz" /tmp
 ADD "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-x86_64.tar.xz" /tmp
@@ -40,7 +40,7 @@ RUN \
           exit 1; \
     esac; \
     rm -rf "/tmp/*"; \
-    apk add --update --no-cache goaccess nginx
+    apk add --update --no-cache goaccess=1.9.4-r0 nginx=1.28.0-r3
 COPY --from=build /app/build /var/www/nikita.galaiko.rocks
 COPY etc /etc
 COPY init-wrapper /
