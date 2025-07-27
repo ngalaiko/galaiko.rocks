@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [On books and assumptions](https://manuelmoreale.com/on-books-and-assumptions)
+- [На интерфейсном курсе: на элементах интерфейса не надо писать что угодно](https://ilyabirman.ru/meanwhile/all/ui-course-frag-176/)
+- [Ссылки #348](https://www.juev.org/2025/07/26/weblinks-348/)
 - [KnightPrint's First Run](https://rknight.me/blog/knightprints-first-run/)
 - [polarizing parsers](https://flak.tedunangst.com/post/polarizing-parsers)
 - [Building competency is better than therapy](https://world.hey.com/dhh/building-competency-is-better-than-therapy-4622c6b7)
@@ -32,9 +35,7 @@ title: "/blogroll/"
 - [Still no agents](https://mikesub.net/blog/tools.html)
 - [2025/07/22 - Про Мирей Матье, свечи и сложные авторские права](https://lleo.me/dnevnik/2025/07/22)
 - [Farmors Chokladkaka](https://sarajoy.dev/blog/farmors-chokladkaka/)
-- [Фрагменты интерфейсного курса](https://ilyabirman.ru/meanwhile/all/ui-course-frags-1-175/)
 - [Nine Inch Nails, Paris, 2025-07-07](https://jmtd.net/log/nin_paris/)
-- [The July experiment: week three](https://manuelmoreale.com/the-july-experiment-week-three)
 - [Agentic development](https://alexsavin.me/posts/2025-07-21-agentic-development/)
 - [Data Oriented Programming in Java: Progress 2025-07-21](https://chriskiehl.com/article/dopij-progress-update-2025-07-21)
 - [Covers as a way of learning music and code](https://ntietz.com/blog/covers-as-a-way-of-learning/?utm_source=atom&utm_medium=feed)
@@ -46,7 +47,6 @@ title: "/blogroll/"
 - [Some of us should never get on a bike](https://basic.bearblog.dev/some-of-us-should-never-get-on-a-bike/)
 - [Dependency thoughts](https://macwright.com/2025/07/20/dependency-thoughts.html)
 - [Революция в блогинге: как ИИ стал моим соавтором](https://www.juev.org/2025/07/19/vibe/)
-- [Ссылки #347](https://www.juev.org/2025/07/19/weblinks-347/)
 - [A digital film roll for your old camera](https://basic.bearblog.dev/a-digital-film-roll-for-your-old-camera/)
 - [Is it obsolete or enshitification?](https://basic.bearblog.dev/is-it-obselete-or-enshitification/)
 - [Occupation and Preoccupation](https://blog.jim-nielsen.com/2025/occupation-and-preoccupation/)
@@ -78,6 +78,7 @@ title: "/blogroll/"
 - [Bottle deposits and the pit of success](https://alexsavin.me/posts/2025-07-14-bottle-deposits/)
 - [Data Oriented Programming in Java: Progress 2025-07-14](https://chriskiehl.com/article/dopij-progress-update-2025-07-14)
 - [Mark Zuckerberg: Facebook's strategy tax](https://www.techemails.com/p/mark-zuckerberg-facebook-strategy-tax)
+- [Hello!](https://brandons-journal.com/hello/)
 - [Joy & Curiosity #45](https://registerspill.thorstenball.com/p/joy-and-curiosity-45)
 - [Weeknote #1956](https://rknight.me/blog/weeknote-1956/)
 - [Learning Rust With AI](https://stevedylan.dev/posts/learning-rust-with-ai/)
