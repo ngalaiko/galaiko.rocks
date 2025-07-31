@@ -1,0 +1,15 @@
+{% extends "_layout.html.jinja" %}
+
+{% block title %}/recipes/{% endblock %}
+
+{% block content %}
+    <ul>
+    {%- for recipe in recipes|sort(attribute="metadata.map.title") %}
+        <li>
+            <a href="{{ recipe.metadata.map.title | slugify }}.html">
+                {{ recipe.metadata.map.title }}
+            </a>
+        </li>
+    {%- endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "_layout.html.jinja" %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ recipe.title }}</h1>
+
+{{ recipe.content | split("\n") | skip(1) | join("\n") | safe }}
+{% endblock %}

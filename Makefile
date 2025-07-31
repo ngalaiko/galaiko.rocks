@@ -24,9 +24,10 @@ INPUT_RECORD_IMAGE_FILES := $(filter $(SRC_DIR)/records/%.jpeg, $(INPUT_FILES))
 INPUT_COCKTAIL_FILES := $(filter $(SRC_DIR)/cocktails/%.cook, $(INPUT_FILES))
 INPUT_COCKTAIL_IMAGE_FILES := $(filter $(SRC_DIR)/cocktails/%.jpeg, $(INPUT_FILES))
 INPUT_PLACE_FILES := $(filter $(SRC_DIR)/places/%.json, $(INPUT_FILES))
+INPUT_RECIPE_FILES := $(filter $(SRC_DIR)/recipes/%.cook, $(INPUT_FILES))
 
 # Other input files
-INPUT_OTHER_FILES := $(filter-out $(INPUT_MD_FILES) $(INPUT_POST_FILES) $(INPUT_POST_IMAGE_FILES) $(INPUT_MOVIE_FILES) $(INPUT_MOVIE_IMAGE_FILES) $(INPUT_RECORD_FILES) $(INPUT_RECORD_IMAGE_FILES) $(INPUT_COCKTAIL_FILES) $(INPUT_COCKTAIL_IMAGE_FILES) $(INPUT_PLACE_FILES), $(INPUT_FILES))
+INPUT_OTHER_FILES := $(filter-out $(INPUT_MD_FILES) $(INPUT_POST_FILES) $(INPUT_POST_IMAGE_FILES) $(INPUT_MOVIE_FILES) $(INPUT_MOVIE_IMAGE_FILES) $(INPUT_RECORD_FILES) $(INPUT_RECORD_IMAGE_FILES) $(INPUT_COCKTAIL_FILES) $(INPUT_COCKTAIL_IMAGE_FILES) $(INPUT_PLACE_FILES) $(INPUT_RECIPE_FILES) , $(INPUT_FILES))
 
 # Output file definitions
 OUTPUT_MD_FILES := $(patsubst $(SRC_DIR)/%.md,$(BUILD_DIR)/%.html,$(INPUT_MD_FILES))
@@ -41,6 +42,7 @@ OUTPUT_COCKTAIL_FILES := $(patsubst $(SRC_DIR)/%.cook,$(BUILD_DIR)/%.html,$(INPU
 OUTPUT_COCKTAIL_IMAGE_FILES := $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg.200x0@2x.webp,$(INPUT_COCKTAIL_IMAGE_FILES))
 OUTPUT_COCKTAIL_IMAGE_FILES += $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg.800x0@2x.webp,$(INPUT_COCKTAIL_IMAGE_FILES))
 
+OUTPUT_RECIPE_FILES := $(patsubst $(SRC_DIR)/%.cook,$(BUILD_DIR)/%.html,$(INPUT_RECIPE_FILES))
 OUTPUT_PLACE_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_PLACE_FILES))
 OUTPUT_OTHER_FILES := $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(INPUT_OTHER_FILES))
 
@@ -48,7 +50,8 @@ OUTPUT_OTHER_FILES := $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(INPUT_OTHER_FILES
 OUTPUT := $(OUTPUT_MD_FILES) $(OUTPUT_COCKTAIL_FILES) $(BUILD_DIR)/cocktails/index.html $(OUTPUT_COCKTAIL_IMAGE_FILES)
 OUTPUT += $(BUILD_DIR)/records/index.html $(BUILD_DIR)/movies/index.html $(OUTPUT_MOVIE_IMAGE_FILES)
 OUTPUT += $(OUTPUT_RECORD_IMAGE_FILES) $(BUILD_DIR)/posts/index.html $(BUILD_DIR)/posts/index.atom $(BUILD_DIR)/posts/index.xml
-OUTPUT += $(OUTPUT_IMAGE_FILES) $(BUILD_DIR)/places/index.html $(OUTPUT_OTHER_FILES)
+OUTPUT += $(OUTPUT_RECIPE_FILES) $(BUILD_DIR)/recipes/index.html
+OUTPUT += $(OUTPUT_IMAGE_FILES) $(BUILD_DIR)/places/index.html $(OUTPUT_OTHER_FILES) 
 
 # Macros
 templ = templates/_layout.html.jinja templates/$1
@@ -97,6 +100,17 @@ $(BUILD_DIR)/cocktails/%.jpeg.200x0@2x.webp: $(SRC_DIR)/cocktails/%.jpeg
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
 	@$(IMAGEMAGICK_BIN) "$<" -resize 400 "$@" || exit 1
+
+# Recipes
+$(BUILD_DIR)/recipes/index.html: $(INPUT_RECIPE_FILES) $(call templ,recipes/index.html.jinja)
+	@echo '$(SRC_DIR)/recipes/*.cook -> $@'
+	@mkdir -p "$(dir $@)"
+	@ls $(INPUT_RECIPE_FILES) | xargs -I {} $(COOK_BIN) recipe read --format json {} | $(JQ_BIN) --slurp '{ recipes: . }' | $(J2_BIN) recipes/index.html.jinja > "$@" || exit 1
+
+$(BUILD_DIR)/recipes/%.html: $(SRC_DIR)/recipes/%.cook $(call templ,recipes/_recipe.html.jinja)
+	@echo '$< -> $@'
+	@mkdir -p "$(dir $@)"
+	@cat "$<" | $(COOK_BIN) recipe read --format markdown | ./scripts/convert_md.sh | $(YQ_BIN) '{ "recipe": . }' --output-format json | $(J2_BIN) recipes/_recipe.html.jinja > "$@" || exit 1
 
 # Records
 $(BUILD_DIR)/records/index.html: $(INPUT_RECORD_FILES) $(call templ,records/index.html.jinja)

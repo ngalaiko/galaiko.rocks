@@ -12,6 +12,7 @@ this is not a very large website. however, here is a list of lists that you can 
 - [vinyl records i own](./records/)
 - [restaurants and cafes](./places/) i went to at least twice since last year
 - [cocktails](./cocktails/) i respect and occasionaly make to consume
+- [recipes](./recipes/) i like
 - [things i use](./uses/)
 - [movies i watch](./movies/)
 - [blogroll](./blogroll/) of websites i follow
