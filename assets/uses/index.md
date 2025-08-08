@@ -8,13 +8,13 @@ on this page you can find most of the things that i use.
 
 - [neovim](https://neovim.io/) - text editor
 - [ghostty](https://ghostty.org) - terminal emulator
+- [jj](https://jj-vcs.github.io/jj/latest/) - version control
 - [raycast](http://raycast.com) - app launcher
 - [fish](https://fishshell.com) - shell
 - [calibre](https://calibre-ebook.com) - ebooks management
 - [ledger](https://ledger-cli.org) - plaintext accounting
 - [koreader](http://koreader.rocks) - ebooks reader
 - [net news wire](https://netnewswire.com) - rss reader
-- [overcast](https://overcast.fm/) - podcast player
 - apple mail / notes / calendar / maps
 
 ## services
@@ -40,9 +40,11 @@ on this page you can find most of the things that i use.
   - [switches](https://lowprokb.ca/products/sunset-tactile-choc-switches)
   - [keycaps](https://lowprokb.ca/products/ldsa-low-profile-blank-keycaps)
 - playstation 5
-- vinyl setup
+- audio setup
   - [audio technica lp120xUSB](https://www.audio-technica.com/en-us/at-lp120xusb) turntable
   - [marantz 4270](https://classicreceivers.com/marantz-4270-quad) receiver
+  - [luxor 8071](https://hifigoteborg.se/pdf/Luxor_8071_test_1978.pdf) speakers
+  - [arylic lp10](https://www.arylic.com/products/lp10-music-streamer) streamer
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
