@@ -84,23 +84,23 @@ def parse_page(body):
 
 
 def parse_entry(entry):
-    date_node = entry.find("td", class_="td-day").find("a")
+    date_node = entry.find("td", class_="col-daydate").find("a")
     date_str = date_node["href"].split("/")[-4:-1]
     date = datetime.strptime("-".join(date_str), "%Y-%m-%d").date()
 
-    title = entry.find("td", class_="td-film-details").find("h2").find("a").text
+    title = entry.find("td", class_="col-production").find("h2").find("a").text
 
-    is_liked = bool(entry.find("td", class_="td-like").find(class_="icon-liked"))
+    is_liked = bool(entry.find("td", class_="col-like").find(class_="icon-liked"))
     is_rewatch = bool(
-        entry.find("td", class_="td-rewatch").find(class_="icon-status-off") is None
+        entry.find("td", class_="col-rewatch").find(class_="icon-status-off") is None
     )
 
-    details = entry.find("td", class_="td-actions")
+    details = entry.find("td", class_="col-actions")
     href = (
         "https://letterboxd.com"
-        + entry.find("td", class_="td-film-details").find("h2").find("a")["href"]
+        + entry.find("td", class_="col-production").find("h2").find("a")["href"]
     )
-    title_slug = details["data-film-slug"]
+    title_slug = details.find("span")["data-viewingable-link"].split("/")[-2]
 
     return {
         "title": title,
