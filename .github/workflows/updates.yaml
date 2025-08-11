@@ -71,12 +71,12 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - uses: actions/checkout@v4
         with:
-          repository: ngalaiko/ledger
+          repository: ngalaiko/finance
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: "ledger"
+          path: "finance"
           ref: "master"
       - run: sudo apt-get install ledger
-      - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/ledger/main.ledger"
+      - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/finance/main.ledger"
       - id: cpr-ledger
         uses: peter-evans/create-pull-request@v5
         with:
