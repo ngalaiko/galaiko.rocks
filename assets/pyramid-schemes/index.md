@@ -1,8 +1,8 @@
 ---
-title: Piramid schemes
+title: piramid schemes
 ---
 
-i am a proud member of the pyramid schemes club, here is a list of my favorite ones:
+here is a list of my favorite pyramid schemes:
 
 - [revolut](https://revolut.com/referral/?referral-code=nikitaizu!AUG1-25-noreward&geo-redirect)
 - [transfer go](https://trgo.co/en/r/WAKhRl?utm_source=1)
