@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [Let it work](https://blog.kaplich.me/let-it-work/)
+- [Ссылки #351](https://www.juev.org/2025/08/16/weblinks-351/)
+- [How Much Spotify Pays Artists](https://molodtsov.me/2025/08/spotify-payouts/)
 - [Predictable memory accesses are much faster](https://lemire.me/blog/2025/08/15/predictable-memory-accesses-are-much-faster/)
 - [Just a Little More Context Bro, I Promise, and It’ll Fix Everything](https://blog.jim-nielsen.com/2025/more-context-bro/)
 - [is OpenBSD 10x faster than Linux?](https://flak.tedunangst.com/post/is-OpenBSD-10x-faster-than-Linux)
@@ -84,12 +87,10 @@ title: "/blogroll/"
 - [I Can't Stop Using Dia Browser](https://molodtsov.me/2025/08/i-cant-stop-using-dia-browser/)
 - [Что дарить?](https://strizhechenko.github.io/2025/08/03/wishlist.html)
 - [Joy & Curiosity #48](https://registerspill.thorstenball.com/p/joy-and-curiosity-48)
-- [Ссылки #349](https://www.juev.org/2025/08/02/weblinks-349/)
 - [LinkedIn removes clear support for trans people](https://axbom.com/linkedin-trans-policy/)
 - [School of Computing Technical Reports](https://jmtd.net/log/tech_reports/)
 - [Debian Chronicles](https://jmtd.net/log/debian_chronicles/)
 - [Old Computer Challenge 2025 - part 2](https://haewyr.mataroa.blog/blog/old-computer-challenge-2025-part-2/)
-- [Highlights from Apple in China](https://molodtsov.me/2025/07/highlights-from-apple-in-china/)
 - [Go Assembly Mutation Testing](https://words.filippo.io/assembly-mutation/)
 - [Dispatch 012: Local-first talks, Automerge 3, and Scribbling on a Google Calendar](https://www.inkandswitch.com/newsletter/dispatch-012/)
 - [Observable Notebooks 2.0](https://macwright.com/2025/07/31/observable-notebooks-2.html)
@@ -163,7 +164,6 @@ title: "/blogroll/"
 - [Launch: Technotes](https://andadinosaur.com/launch-technotes)
 - [epanet-js](https://macwright.com/2025/07/03/epanet-placemark.html)
 - [Июнь](https://baradusov.ru/posts/2025/june)
-- [Square one](https://blog.kaplich.me/square-one/)
 - [GitButler 0.15 - "Quirky Quinceañera"](https://blog.gitbutler.com/gitbutler-15-quirky-quinceanera/)
 - [Digital hygiene: Emails](https://herman.bearblog.dev/digital-hygiene-emails/)
 - [no feedback no cry](https://blog.kaplich.me/no-feedback-no-cry/)
