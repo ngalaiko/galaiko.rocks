@@ -2,6 +2,7 @@
 title: "/blogroll/"
 ---
 
+- [Joy & Curiosity #50](https://registerspill.thorstenball.com/p/joy-and-curiosity-50)
 - [Let it work](https://blog.kaplich.me/let-it-work/)
 - [Ссылки #351](https://www.juev.org/2025/08/16/weblinks-351/)
 - [How Much Spotify Pays Artists](https://molodtsov.me/2025/08/spotify-payouts/)
@@ -105,7 +106,6 @@ title: "/blogroll/"
 - [How I Do Support and Community](https://pketh.org/support-community.html)
 - [Speed up suspend/resume for FreeBSD](https://eugene-andrienko.com/it/2025/07/28/speed-up-suspend-resume-freebsd.html)
 - [Enough AI copilots! We need AI HUDs](https://www.geoffreylitt.com/2025/07/27/enough-ai-copilots-we-need-ai-huds.html)
-- [Joy & Curiosity #47](https://registerspill.thorstenball.com/p/joy-and-curiosity-47)
 - [Hypermedia is a property of the client](https://dmitriid.com/hypermedia-is-a-property-of-the-client)
 - [Placemark updates: Vite!](https://macwright.com/2025/07/27/placemark-updates-vite.html)
 - [July Pebble Update](https://ericmigi.com/blog/july-pebble-update)
