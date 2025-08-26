@@ -16,7 +16,8 @@ this is not a very large website. however, here is a list of lists that you can 
 - [things i use](./uses/)
 - [movies i watch](./movies/)
 - [blogroll](./blogroll/) of websites i follow
-- [pyramid schemes](./pyramid-schemes/) i am a proud member of
+- [pyramid schemes](./pyramid-schemes/) i am a member of
+- [people i am not](./not/)
 
 if you are into liking and subscribing, check this out:
 
