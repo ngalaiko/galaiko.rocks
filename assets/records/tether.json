@@ -1,0 +1,60 @@
+{
+    "id": 34275385,
+    "instance_id": 2055588096,
+    "date_added": "2025-08-28T09:07:50-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 34275385,
+        "master_id": 3879256,
+        "master_url": "https://api.discogs.com/masters/3879256",
+        "resource_url": "https://api.discogs.com/releases/34275385",
+        "thumb": "https://i.discogs.com/0WufEf1yRl2m6sFr8W8KzzO1lkcPVZQXg3Dcwl0dbHM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0Mjc1/Mzg1LTE3NTAwMjEx/MzYtMzIxMi5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/d10GVG5wnj55qSUlld22PWonzJbruN6gRx7GWKqO2vQ/rs:fit/g:sm/q:90/h:594/w:590/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0Mjc1/Mzg1LTE3NTAwMjEx/MzYtMzIxMi5qcGVn.jpeg",
+        "title": "Tether",
+        "year": 2025,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "Red Clay",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Drink Sum Wtr",
+                "catno": "DSW011",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 2830649,
+                "resource_url": "https://api.discogs.com/labels/2830649"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Annahstasia",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 12011383,
+                "resource_url": "https://api.discogs.com/artists/12011383"
+            }
+        ],
+        "genres": [
+            "Rock",
+            "Funk / Soul",
+            "Folk, World, & Country"
+        ],
+        "styles": [
+            "Art Rock",
+            "Avantgarde",
+            "Contemporary Jazz"
+        ]
+    },
+    "folder_id": 1
+}
