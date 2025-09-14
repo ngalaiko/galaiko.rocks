@@ -2,6 +2,10 @@
 title: "/blogroll/"
 ---
 
+- [Ссылки #355](https://www.juev.org/2025/09/13/weblinks-355/)
+- [Dialing Up the Internet Phonebook](https://pketh.org/internet-phonebook.html)
+- [Hyperlink Roundup 02](https://basic.bearblog.dev/hyperlink-roundup-02/)
+- [2025/09/13 - Еще о проблеме особого отношения к палачам в России](https://lleo.me/dnevnik/2025/09/13)
 - [Вопрос на секундочку](https://ilyabirman.ru/meanwhile/all/vopros-na-sekundochku/)
 - [Two quick news items](https://manuelmoreale.com/two-quick-news-items)
 - [crates.io phishing attempt](https://fasterthanli.me/articles/crates-io-phishing-attempt)
@@ -48,7 +52,6 @@ title: "/blogroll/"
 - [Engineering excellence starts on edge](https://world.hey.com/dhh/engineering-excellence-starts-on-edge-c36e4c59)
 - [Ссылки #354](https://www.juev.org/2025/09/06/weblinks-354/)
 - [2025/09/06_2 - Первая волна омоложения](https://lleo.me/dnevnik/2025/09/06_2)
-- [2025/09/06_1 - Пересадка](https://lleo.me/dnevnik/2025/09/06_1)
 - [Мнение из интернета](https://ilyabirman.ru/meanwhile/all/mnenie-iz-interneta/)
 - [Trying to Make Sense of Casing Conventions on the Web](https://blog.jim-nielsen.com/2025/casing-on-the-web/)
 - [Deep Research: From Front-End to Full-Stack, Graphics, or AI](https://blog.m0rtyn.cc/blog/deep-research-from-front-end-to-full-stack-graphics-or-ai/)
@@ -79,7 +82,6 @@ title: "/blogroll/"
 - [You Have to Feel It](https://mitchellh.com/writing/feel-it)
 - [[ОПЯТЬ ПРО СЕВЕРНЫЕ ПОТОКИ или «1984» в действии]](https://blog.cheresh.me/2025/08/29/why-nordsteam-was-bombed-not-by-ukraine-but-usa/?utm_source=rss&utm_medium=rss&utm_campaign=why-nordsteam-was-bombed-not-by-ukraine-but-usa)
 - [An Open Letter to Everyone I've Butted Heads With](https://andrewkelley.me/post/open-letter-everyone-butted-heads.html)
-- [Why My iPhone + VLC Was a Musical Misstep (and What I Learned)](https://basic.bearblog.dev/why-my-iphone-vlc-was-a-musical-misstep-and-what-i-learned/)
 - [Recently](https://macwright.com/2025/08/29/recently.html)
 - [Writing Mac and iOS Apps Shouldn’t Be So Difficult](https://inessential.com/2025/08/28/easy-app-writing.html)
 - [The psychology of fixing bugs](https://lapcatsoftware.com/articles/2025/8/8.html)
@@ -107,7 +109,6 @@ title: "/blogroll/"
 - [OCC: Rebuilding my first PC - part 3 - more hardware woes](https://haewyr.mataroa.blog/blog/occ-rebuilding-my-first-pc-part-3/)
 - [Final Fantasy 14 on macOS with a 36 key keyboard](https://xeiaso.net/notes/2025/xiv-mac/)
 - [Frankenstein's expression](https://axbom.com/frankensteins-expression/)
-- [Ссылки #352](https://www.juev.org/2025/08/23/weblinks-352/)
 - [Half my work is adding a cache](https://blog.waleedkhan.name/half-my-work-is-adding-a-cache/)
 - [The science of loudness](https://fasterthanli.me/articles/the-science-of-loudness)
 - [My favorite Panera interaction](https://critter.blog/2025/08/22/my-favorite-panera-interaction/)
@@ -332,7 +333,6 @@ title: "/blogroll/"
 - [Fullscreen](https://chuhlomin.com/blog/2025/fullscreen)
 - [KWIC, quickly](https://holzer.online/articles/2025/03-05-kwic-quickly/index.html)
 - [The Hierarchy of Controls (or how to stop devs from dropping prod)](https://www.hillelwayne.com/post/hoc/)
-- [The Lo-Fi Art and Human Tools Era](https://pketh.org/the-human-tools-era.html)
 - [Blue Ghost](https://blog.not-a-kernel-guy.com/2025/03/02/blue-ghost/)
 - [Investing](https://www.johnnyrodgers.is/investing/)
 - [More Good Programming Quotes, Part 6](https://henrikwarne.com/2025/03/02/more-good-programming-quotes-part-6/)
