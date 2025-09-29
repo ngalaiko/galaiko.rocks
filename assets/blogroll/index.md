@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [What place for the Cyborgs in the Alliance of Flesh?](https://write.as/conjure-utopia/what-place-for-the-cyborgs-in-the-alliance-of-flesh?pk_campaign=rss-feed)
+- [Joy & Curiosity #55](https://registerspill.thorstenball.com/p/joy-and-curiosity-55)
+- [Ты согласен на получение персональных предложений и рекламных материалов](https://strizhechenko.github.io/2025/09/28/you-are-agreed.html)
 - [Хочу влиять на дизайн в корпорациях](https://ilyabirman.ru/meanwhile/all/hochu-vliyat-na-dizayn-v-korporaciyah/)
 - [Hyperlink Roundup 03](https://basic.bearblog.dev/hyperlink-roundup-03/)
 - [GitHub-hosted copycat Mac app malware scam proliferates](https://lapcatsoftware.com/articles/2025/9/3.html)
@@ -105,10 +108,8 @@ title: "/blogroll/"
 - [Август](https://baradusov.ru/posts/2025/august)
 - [color npm package compromised](https://fasterthanli.me/articles/color-npm-package-compromised)
 - [Шаблон для проектирования ПО](https://strizhechenko.github.io/2025/09/08/software-design-template.html)
-- [Критерии оценки команд разработки](https://strizhechenko.github.io/2025/09/08/team-criteria.html)
 - [Изучаем возможности HackRF One](https://eax.me/hackrf/)
 - [Splitting a long string in lines efficiently](https://lemire.me/blog/2025/09/07/splitting-a-long-string-in-lines-efficiently/)
-- [Joy & Curiosity #53](https://registerspill.thorstenball.com/p/joy-and-curiosity-53)
 - [Conventional Comments](https://chuhlomin.com/blog/2025/conventional-comments)
 - [Common misconceptions about AI](https://duarteocarmo.com/blog/common-misconceptions-about-ai.html)
 - [What is political agency?](https://write.as/conjure-utopia/what-is-political-agency?pk_campaign=rss-feed)
@@ -124,7 +125,6 @@ title: "/blogroll/"
 - [What's cooking on SourceHut? Q3 2025](https://sourcehut.org/blog/2025-09-01-whats-cooking-q3-2025/)
 - [Automating the Hue Tap Dial Switch in Elixir via MQTT](https://www.jonashietala.se/blog/2025/09/01/automating_the_hue_tap_dial_switch_in_elixir_via_mqtt)
 - [Европейский человек](https://staskulesh.com/2025/08/pl/)
-- [Three years of building no-code software for grassroots political organizations](https://write.as/conjure-utopia/three-years-of-building-no-code-software-for-political-organizations?pk_campaign=rss-feed)
 - [Turning Solidity NatSpec into Interactive Markdown UI](https://stevedylan.dev/posts/turning-natspec-into-markdown-ui/)
 - [A Week in Billund: LEGO House, LEGOLAND, and Lalandia](https://arslan.io/2025/08/30/a-week-in-billund-lego-house-legoland-and-lalandia/)
 - [You Have to Feel It](https://mitchellh.com/writing/feel-it)
