@@ -1,0 +1,54 @@
+{
+    "id": 2636006,
+    "instance_id": 2068611947,
+    "date_added": "2025-10-09T09:50:27-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 2636006,
+        "master_id": 19746,
+        "master_url": "https://api.discogs.com/masters/19746",
+        "resource_url": "https://api.discogs.com/releases/2636006",
+        "thumb": "https://i.discogs.com/NJ6FssOSkf7aKUcQxrXASPJlA0R9AWeq5BDvNwwNxhk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MzYw/MDYtMTM5MDc2MDI1/Ni0xNDE2LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/eZ_VHjPPOMXhDqisPyiBs2tCWwvBozHlcCCdgjbc4pI/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MzYw/MDYtMTM5MDc2MDI1/Ni0xNDE2LmpwZWc.jpeg",
+        "title": "Absolutely",
+        "year": 1980,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Stiff Records",
+                "catno": "SEEZ 29",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 11617,
+                "resource_url": "https://api.discogs.com/labels/11617"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Madness",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 10388,
+                "resource_url": "https://api.discogs.com/artists/10388"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": [
+            "Ska"
+        ]
+    },
+    "folder_id": 1
+}

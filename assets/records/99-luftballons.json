@@ -1,0 +1,65 @@
+{
+    "id": 212898,
+    "instance_id": 2068610974,
+    "date_added": "2025-10-09T09:47:05-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 212898,
+        "master_id": 52256,
+        "master_url": "https://api.discogs.com/masters/52256",
+        "resource_url": "https://api.discogs.com/releases/212898",
+        "thumb": "https://i.discogs.com/QPKtkYNYZFtE2yNfCzmMgyZEXpL8KuRtezazsWoPgic/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMjg5/OC0xMjg0NTgzMzM5/LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/H1z90jG2CrgUNXOvZjgnglYQTc-an70bJUovwxy928k/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMjg5/OC0xMjg0NTgzMzM5/LmpwZWc.jpeg",
+        "title": "99 Luftballons",
+        "year": 1983,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "12\"",
+                    "Maxi-Single",
+                    "33 \u2153 RPM"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "CBS",
+                "catno": "CBS A 12.3060",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 3072,
+                "resource_url": "https://api.discogs.com/labels/3072"
+            },
+            {
+                "name": "CBS",
+                "catno": "A 12.3060",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 3072,
+                "resource_url": "https://api.discogs.com/labels/3072"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Nena",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 39774,
+                "resource_url": "https://api.discogs.com/artists/39774"
+            }
+        ],
+        "genres": [
+            "Electronic",
+            "Rock"
+        ],
+        "styles": [
+            "New Wave",
+            "Synth-pop"
+        ]
+    },
+    "folder_id": 1
+}
