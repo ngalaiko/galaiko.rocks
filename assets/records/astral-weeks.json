@@ -1,0 +1,58 @@
+{
+    "id": 2356344,
+    "instance_id": 2068610462,
+    "date_added": "2025-10-09T09:45:34-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 2356344,
+        "master_id": 14541,
+        "master_url": "https://api.discogs.com/masters/14541",
+        "resource_url": "https://api.discogs.com/releases/2356344",
+        "thumb": "https://i.discogs.com/OI2krr9ZeAbOwZXENgylGROvIEo8DaJKyrtjAaO0qIE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzNTYz/NDQtMTQ1MTUwMTU2/My0xODA0LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/ZNwcF121Uo-ePpsIQIM9_N1PEdYQ6XS_xULbPYbMAvE/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzNTYz/NDQtMTQ1MTUwMTU2/My0xODA0LmpwZWc.jpeg",
+        "title": "Astral Weeks",
+        "year": 2009,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "180 Gram",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Reissue",
+                    "Remastered"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Warner Bros. - Seven Arts Records",
+                "catno": "R1 1768",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 102249,
+                "resource_url": "https://api.discogs.com/labels/102249"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Van Morrison",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 255411,
+                "resource_url": "https://api.discogs.com/artists/255411"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": [
+            "Blues Rock",
+            "Avantgarde"
+        ]
+    },
+    "folder_id": 1
+}

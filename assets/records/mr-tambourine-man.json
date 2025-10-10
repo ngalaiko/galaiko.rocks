@@ -1,0 +1,55 @@
+{
+    "id": 20198614,
+    "instance_id": 2068612913,
+    "date_added": "2025-10-09T09:53:45-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 20198614,
+        "master_id": 29939,
+        "master_url": "https://api.discogs.com/masters/29939",
+        "resource_url": "https://api.discogs.com/releases/20198614",
+        "thumb": "https://i.discogs.com/sOJ5_-5DY_5dimA9SQ3scncjOlOPKr1jKnDITquuLt0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTk4/NjE0LTE2MzEzODgz/ODktODQwNS5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/nywcdbGFfmp7hFN1rRvJjWgHwGNExW8TiZ3RbD2Ptyo/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTk4/NjE0LTE2MzEzODgz/ODktODQwNS5qcGVn.jpeg",
+        "title": "Mr. Tambourine Man",
+        "year": 1965,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "CBS",
+                "catno": "SBPG 62571",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 3072,
+                "resource_url": "https://api.discogs.com/labels/3072"
+            }
+        ],
+        "artists": [
+            {
+                "name": "The Byrds",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 215471,
+                "resource_url": "https://api.discogs.com/artists/215471"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": [
+            "Folk Rock"
+        ]
+    },
+    "folder_id": 1
+}
