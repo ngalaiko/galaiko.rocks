@@ -13,4 +13,4 @@ here is a list of my favorite pyramid schemes:
 - [digital ocean](https://m.do.co/c/7f7dc650bba7)
 - [omio](https://go-refer.omio.com/RArU99)
 - [geoguessr](https://www.geoguessr.com/referral-program/DN76-OQNX-9P3X?s=rp)
-
+- [kinto share](https://www.kinto-mobility.se/kom-igang/?id=241164&linksource=link)
