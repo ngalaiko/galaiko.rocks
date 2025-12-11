@@ -1,5 +1,5 @@
 ---
-title: piramid schemes
+title: pyramid schemes
 ---
 
 here is a list of my favorite pyramid schemes:
