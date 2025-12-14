@@ -2,7 +2,7 @@
 title: pyramid schemes
 ---
 
-here is a list of my favorite pyramid schemes:
+here is a list of my favorite pyramid schemes. you should join!
 
 - [revolut](https://revolut.com/referral/?referral-code=nikitaizu!AUG1-25-noreward&geo-redirect)
 - [transfer go](https://trgo.co/en/r/WAKhRl?utm_source=1)
@@ -15,3 +15,4 @@ here is a list of my favorite pyramid schemes:
 - [geoguessr](https://www.geoguessr.com/referral-program/DN76-OQNX-9P3X?s=rp)
 - [kinto share](https://www.kinto-mobility.se/kom-igang/?id=241164&linksource=link)
 - [kiwi.com](https://kiwi.com/user/refer-friend/e077607a36584ebeb1bce57ba46cd733)
+- [hedvig][https://www.hedvig.com/se-en/forever/241YVR]
