@@ -1,0 +1,64 @@
+{
+    "id": 29408635,
+    "instance_id": 1556743792,
+    "date_added": "2024-01-06T04:37:51-08:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 29408635,
+        "master_id": 3568505,
+        "master_url": "https://api.discogs.com/masters/3568505",
+        "resource_url": "https://api.discogs.com/releases/29408635",
+        "thumb": "https://i.discogs.com/4AsDrHyt8d5lQqJqipZ2NNYvGlytfdvEGmku0xTO5Yo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDA4/NjM1LTE3NjYwMDUy/MjgtNjI5OC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/TlyzFfriFhgiuMP_2sTnblwsX9SN3-hvHdtRLRMIJ98/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDA4/NjM1LTE3NjYwMDUy/MjgtNjI5OC5qcGVn.jpeg",
+        "title": "Aleksandre Kiladze's Jazz Choral = \u10d0\u10da\u10d4\u10e5\u10e1\u10d0\u10dc\u10d3\u10e0\u10d4 \u10d9\u10d8\u10da\u10d0\u10eb\u10d8\u10e1 \u10ef\u10d0\u10ee \u10e5\u10dd\u10e0\u10d0\u10da\u10d8",
+        "year": 2023,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Reissue"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Tbilisi Records",
+                "catno": "TBIL001",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 3539413,
+                "resource_url": "https://api.discogs.com/labels/3539413"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Aleksandre Kiladze's Jazz Choral",
+                "anv": "",
+                "join": "=",
+                "role": "",
+                "tracks": "",
+                "id": 13996453,
+                "resource_url": "https://api.discogs.com/artists/13996453"
+            },
+            {
+                "name": "Aleksandre Kiladze's Jazz Choral",
+                "anv": "\u10d0\u10da\u10d4\u10e5\u10e1\u10d0\u10dc\u10d3\u10e0\u10d4 \u10d9\u10d8\u10da\u10d0\u10eb\u10d8\u10e1 \u10ef\u10d0\u10ee \u10e5\u10dd\u10e0\u10d0\u10da\u10d8",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 13996453,
+                "resource_url": "https://api.discogs.com/artists/13996453"
+            }
+        ],
+        "genres": [
+            "Jazz"
+        ],
+        "styles": [
+            "Vocal"
+        ]
+    },
+    "folder_id": 1
+}
