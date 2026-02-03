@@ -25,4 +25,4 @@ if you are into liking and subscribing, check this out:
 - [letterboxd](https://letterboxd.com/ngalaiko)
 - [discogs](https://www.discogs.com/user/ngalaiko)
 - [round & square](https://roundnsquare.club/galaiko.rocks)
-- [mastodon](https://mastodon.online/@ngalaiko){rel="me"}
+- [bsky](https://bsky.app/profile/galaiko.rocks){rel="me"}
