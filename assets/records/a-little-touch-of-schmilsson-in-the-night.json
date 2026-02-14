@@ -1,0 +1,59 @@
+{
+    "id": 1291966,
+    "instance_id": 2113610703,
+    "date_added": "2026-02-13T08:42:41-08:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 1291966,
+        "master_id": 96898,
+        "master_url": "https://api.discogs.com/masters/96898",
+        "resource_url": "https://api.discogs.com/releases/1291966",
+        "thumb": "https://i.discogs.com/p3snjJTu75sNdAz2TNVxFjWbWTfXD8sCIES2GK-Hncg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTE5/NjYtMTY3ODA1NDMz/NS03MzEwLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/cpYUs7tUee1dMK8G86glps5pFJA9kXz6W5HBkjTT5Do/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTE5/NjYtMTY3ODA1NDMz/NS03MzEwLmpwZWc.jpeg",
+        "title": "A Little Touch Of Schmilsson In The Night",
+        "year": 1973,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "Indianapolis Pressing, Gatefold",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Stereo"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "RCA Victor",
+                "catno": "APL1-0097",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 11358,
+                "resource_url": "https://api.discogs.com/labels/11358"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Harry Nilsson",
+                "anv": "Nilsson",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 152685,
+                "resource_url": "https://api.discogs.com/artists/152685"
+            }
+        ],
+        "genres": [
+            "Jazz",
+            "Pop"
+        ],
+        "styles": [
+            "Music Hall",
+            "Swing",
+            "Easy Listening"
+        ]
+    },
+    "folder_id": 1
+}
