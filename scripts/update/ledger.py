@@ -57,6 +57,7 @@ LOCATIONS = {
     "Aryam": (59.318_45, 18.070_466),
     "Hanoi Corner": (59.335_554, 18.053_908),
     "Prime Burger": (59.336_478, 18.061_049),
+    "Burger King - Järntorget": (57.699522, 11.952816),
     "Gute Grill Bar": (59.336_739, 18.069_433),
     "Fullmoon Wook": (59.342_143, 18.049_23),
     "Falafelbaren": (59.318_37, 18.059_678),
@@ -156,6 +157,7 @@ LOCATIONS = {
     "Nonna": (57.703_262, 11.959_582),
     "Kastello": (57.696_235, 11.952_310),
     "Viktors Kaffe": (57.697_449, 11.978_164),
+    "Viktors Kaffe Brunnsparken": (57.706825, 11.968352),
     "Dirty Records": (57.699_326, 11.951_237),
     "Råda Gelato": (57.696_235, 11.952_310),
     "Umizu": (57.699_246, 11.977_780),
@@ -172,7 +174,7 @@ LOCATIONS = {
     "Oizo": (57.713235, 12.024676),
     "Papi's Pirogi - Gronsakstorg": (57.713235, 12.024676),
     "Efessos": (57.695582, 11.922782),
-    "Firos Crep": (57.697161, 11.957360),
+    "Firos Creperie": (57.697161, 11.957360),
     "Poppels Citybryggeri": (57.713640, 11.971329),
     "Waffles Goteborg": (57.699106, 11.969203),
     "Big Bird": (57.693569, 11.956427),
@@ -188,6 +190,7 @@ LOCATIONS = {
     "Uni3 World Of Food": (57.711676, 11.946318),
     "Bistro Vermantitis": (56.952928, 24.119861),
     "Joe & The Juice - Göteborg": (57.705545, 11.968347),
+    "Joe & The Juice - Nordstan": (57.708536, 11.969527),
     "Gansu Koket Lindholmen": (57.711629, 11.945064),
     "Cafe Pupp": (50.219706, 12.879045),
     "Geatanos": (57.693483, 11.954466),
@@ -201,6 +204,7 @@ LOCATIONS = {
     "Ivans Pilsner": (57.720618, 11.971765),
     "Vega Bryggeri": (57.719214, 11.973553),
     "pulp tbilisi": (41.706096, 44.781474),
+    "Forida's": (57.699239, 11.951854),
 }
 
 
