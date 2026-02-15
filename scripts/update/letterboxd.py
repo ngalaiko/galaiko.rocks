@@ -1,30 +1,20 @@
 # /// script
 # requires-python = ">=3.13"
-# dependencies = [
-#     "beautifulsoup4",
-# ]
+# dependencies = []
 # ///
-from bs4 import BeautifulSoup
+import xml.etree.ElementTree as ET
 import argparse
 import json
+import re
 import urllib.request
 import os
 from datetime import datetime
 
 
 def main(username, output):
-    n = 1
-    entries = []
+    rss = fetch_rss(username)
+    entries = parse_rss(rss)
 
-    while True:
-        page_entries, has_next = fetch_page(username, n)
-        entries.extend(page_entries)
-        if has_next:
-            n += 1
-        else:
-            break
-
-    all_files = []
     for entry in entries:
 
         def parse_watch_number(href):
@@ -48,59 +38,73 @@ def main(username, output):
 
         poster_output = os.path.join(output, f"{title_slug}.jpg")
 
-        if not os.path.exists(poster_output):
-            image = get_poster(entry)
+        if not os.path.exists(poster_output) and entry.get("poster_url"):
+            image_request = urllib.request.Request(
+                method="GET",
+                url=entry["poster_url"],
+                headers={"User-Agent": "nikita.galaiko.rocks robot"},
+            )
+            image = urllib.request.urlopen(image_request).read()
             with open(poster_output, "wb") as f:
                 f.write(image)
 
-        all_files.append(data_output)
-        all_files.append(poster_output)
 
-    for root, dirs, files in os.walk(output):
-        for file in files:
-            file_path = os.path.join(root, file)
-            if file_path not in all_files:
-                os.remove(file_path)
-
-
-def fetch_page(username, n):
+def fetch_rss(username):
     request = urllib.request.Request(
         method="GET",
-        url=f"https://letterboxd.com/{username}/films/diary/page/{n}/",
+        url=f"https://letterboxd.com/{username}/rss/",
         headers={"User-Agent": "nikita.galaiko.rocks robot"},
     )
-    response = urllib.request.urlopen(request).read()
-    return parse_page(response)
+    return urllib.request.urlopen(request).read()
 
 
-def parse_page(body):
-    soup = BeautifulSoup(body, "html.parser")
-    entries = [
-        parse_entry(entry)
-        for entry in soup.find_all(attrs={"data-object-name": ["entry", "review"]})
-    ]
-    has_next = bool(soup.find("a", class_="next"))
-    return entries, has_next
+def parse_rss(body):
+    root = ET.fromstring(body)
+    items = root.findall(".//item")
+    entries = []
+    for item in items:
+        entry = parse_item(item)
+        if entry:
+            entries.append(entry)
+    return entries
 
 
-def parse_entry(entry):
-    date_node = entry.find("td", class_="col-daydate").find("a")
-    date_str = date_node["href"].split("/")[-4:-1]
-    date = datetime.strptime("-".join(date_str), "%Y-%m-%d").date()
+def parse_item(item):
+    ns = {"letterboxd": "https://letterboxd.com"}
 
-    title = entry.find("td", class_="col-production").find("h2").find("a").text
+    film_title_el = item.find("letterboxd:filmTitle", ns)
+    if film_title_el is None:
+        return None
 
-    is_liked = bool(entry.find("td", class_="col-like").find(class_="icon-liked"))
-    is_rewatch = bool(
-        entry.find("td", class_="col-rewatch").find(class_="icon-status-off") is None
+    title = film_title_el.text
+    link = item.findtext("link")
+
+    watched_date_el = item.find("letterboxd:watchedDate", ns)
+    date = (
+        datetime.strptime(watched_date_el.text, "%Y-%m-%d").date()
+        if watched_date_el is not None
+        else None
     )
 
-    details = entry.find("td", class_="col-actions")
-    href = (
-        "https://letterboxd.com"
-        + entry.find("td", class_="col-production").find("h2").find("a")["href"]
-    )
-    title_slug = details.find("span")["data-viewingable-link"].split("/")[-2]
+    is_rewatch = item.findtext("letterboxd:rewatch", default="No", namespaces=ns) == "Yes"
+    is_liked = item.findtext("letterboxd:memberLike", default="No", namespaces=ns) == "Yes"
+
+    # Extract title_slug from link: https://letterboxd.com/user/film/slug/...
+    title_slug = None
+    if link:
+        match = re.search(r"/film/([^/]+)", link)
+        if match:
+            title_slug = match.group(1)
+
+    if not title_slug:
+        return None
+
+    # Extract poster URL from description CDATA <img src="...">
+    poster_url = None
+    description = item.findtext("description") or ""
+    img_match = re.search(r'<img\s+src="([^"]+)"', description)
+    if img_match:
+        poster_url = img_match.group(1).replace("0-230-0-345", "0-600-0-900")
 
     return {
         "title": title,
@@ -108,32 +112,13 @@ def parse_entry(entry):
         "date": date,
         "is_rewatch": is_rewatch,
         "is_liked": is_liked,
-        "href": href,
+        "href": link,
+        "poster_url": poster_url,
     }
 
 
-def get_poster(entry):
-    request = urllib.request.Request(
-        method="GET",
-        url=f"https://letterboxd.com/film/{entry['title_slug']}/",
-        headers={"User-Agent": "nikita.galaiko.rocks robot"},
-    )
-    response = urllib.request.urlopen(request).read()
-    soup = BeautifulSoup(response, "html.parser")
-
-    ld_data = soup.find("script", type="application/ld+json").string
-    ld_data = ld_data.split("\n")[2]
-    ld_data = json.loads(ld_data)
-    image_request = urllib.request.Request(
-        method="GET",
-        url=ld_data["image"].replace("0-230-0-345", "0-600-0-900"),
-        headers={"User-Agent": "nikita.galaiko.rocks robot"},
-    )
-    return urllib.request.urlopen(image_request).read()
-
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Scrape Letterboxd diary entries.")
+    parser = argparse.ArgumentParser(description="Fetch Letterboxd diary entries from RSS.")
     parser.add_argument(
         "-o", "--output", help="Output directory", default="./assets/movies"
     )
