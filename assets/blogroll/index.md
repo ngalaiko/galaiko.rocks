@@ -2,6 +2,10 @@
 title: "/blogroll/"
 ---
 
+- [Файндер не находит файлы в Айклауде](https://ilyabirman.ru/meanwhile/all/finder-cant-find-in-icloud/)
+- [Хочу сделать навигацию в метро Санкт-Петербурга](https://ilyabirman.ru/meanwhile/all/hochu-sdelat-navigaciyu-v-metro-sankt-peterburga/)
+- [Type-based alias analysis in the Toy Optimizer](https://bernsteinbear.com/blog/toy-tbaa/?utm_source=rss)
+- [TIL: Docker log rotation](https://ntietz.com/blog/til-docker-log-rotation/?utm_source=atom&utm_medium=feed)
 - [Что послушать — 87](https://ilyabirman.ru/meanwhile/all/listening-87/)
 - [How bad can Python stop-the-world pauses get?](https://lemire.me/blog/2026/02/15/how-bad-can-python-stop-the-world-pauses-get/)
 - [It’s official: 2026 is a weird year for tech and programmers](https://amontalenti.com/2026/02/15/a-weird-year)
@@ -10,9 +14,7 @@ title: "/blogroll/"
 - [Step aside, phone: week 1](https://manuelmoreale.com/thoughts/step-aside-phone-week-1)
 - [How much time did you use your phone this weekend?](https://kerkour.com/use-phone-too-much)
 - [Everybody Needs a Rock](https://nazhamid.com/journal/everybody-needs-a-rock/)
-- [Эйрподы Про 3 всё время включаются по одному](https://ilyabirman.ru/meanwhile/all/eyrpody-pro-3-vsyo-vremya-vklyuchayutsya-po-odnomu/)
 - [Ссылки #377](https://www.juev.org/2026/02/14/weblinks-377/)
-- [Стандартное место для прав сайта или приложения](https://ilyabirman.ru/meanwhile/all/standard-permissions-ui/)
 - [2026/02/14](https://lleo.me/dnevnik/2026/02/14)
 - [Evidence of absence](https://incoherency.co.uk/blog/stories/evidence-of-absence.html)
 - [David Cain](https://manuelmoreale.com/interview/david-cain)
@@ -97,7 +99,6 @@ title: "/blogroll/"
 - [Data Oriented Programming in Java: Progress 2026-01-27](https://chriskiehl.com/article/dopij-progress-update-2026-01-27)
 - [The reasons for the big discrepancy between satisfied vs dissatisfied developers using AI for coding](https://unixdigest.com/articles/the-reasons-for-the-big-discrepancy-between-satisfied-vs-dissatisfied-developers-using-ai-for-coding.html)
 - [Сага о двух туалетах в IT-корпорации](https://vas3k.blog/notes/toilets/)
-- [Making niche solutions is the point](https://ntietz.com/blog/making-niche-solutions-is-the-point/?utm_source=atom&utm_medium=feed)
 - [On Being A Canadian In America In 2026](https://ericmigi.com/blog/on-being-a-canadian-in-america-in-2026)
 - [How to police your agents](https://duarteocarmo.com/blog/how-to-police-your-agents.html)
 - [Искусственный интеллект, как научный руководитель](https://staskulesh.com/2026/01/ai-review/)
@@ -175,7 +176,6 @@ title: "/blogroll/"
 - [Books I Read in 2025](https://arslan.io/2025/12/26/books-i-read-in-2025/)
 - [A wet physics gamedev adventure](https://voxelmanip.se/2025/12/26/a-wet-physics-gamedev-adventure/)
 - [On Friday Deploys: Sometimes that Puppy Needs Murdering (xpost)](https://charity.wtf/2025/12/24/on-friday-deploys-sometimes-that-puppy-needs-murdering-xpost/)
-- [Load and store forwarding in the Toy Optimizer](https://bernsteinbear.com/blog/toy-load-store/?utm_source=rss)
 - [2025 was for AI what 2010 was for cloud (xpost)](https://charity.wtf/2025/12/22/2025-was-for-ai-what-2010-was-for-cloud-xpost/)
 - [2025 Web Origami year-end report](https://jan.miksovsky.com/posts/2025/12-22-web-origami-year-end-report.html)
 - [My 2025 app audit: less mindless scrolling, but more mindless listening](https://amontalenti.com/2025/12/20/2025-app-audit)
