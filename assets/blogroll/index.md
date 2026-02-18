@@ -2,6 +2,8 @@
 title: "/blogroll/"
 ---
 
+- [The myth and reality of Mac OS X Snow Leopard revisited](https://lapcatsoftware.com/articles/2026/2/5.html)
+- [Using go fix to modernize Go code](https://go.dev/blog/gofix)
 - [Файндер не находит файлы в Айклауде](https://ilyabirman.ru/meanwhile/all/finder-cant-find-in-icloud/)
 - [Хочу сделать навигацию в метро Санкт-Петербурга](https://ilyabirman.ru/meanwhile/all/hochu-sdelat-navigaciyu-v-metro-sankt-peterburga/)
 - [Type-based alias analysis in the Toy Optimizer](https://bernsteinbear.com/blog/toy-tbaa/?utm_source=rss)
@@ -24,8 +26,8 @@ title: "/blogroll/"
 - [Inspecting the Source of Go Modules](https://words.filippo.io/go-source/)
 - [microgpt](http://karpathy.github.io/2026/02/12/microgpt/)
 - [Reactionary AI Centrism](https://macwright.com/2026/02/12/reactionary-ai-centrism.html)
-- [The Discourse has been Automated](https://xeiaso.net/notes/2026/the-discourse-has-been-automated/)
 - [Introducing Theme Builder](https://zed.dev/blog/theme-builder)
+- [The Discourse has been Automated](https://xeiaso.net/notes/2026/the-discourse-has-been-automated/)
 - [More macOS 26.3 Finder column view silliness](https://lapcatsoftware.com/articles/2026/2/4.html)
 - [Unresponsive Buttons on My Fastest Hardware Ever](https://blog.jim-nielsen.com/2026/unresponsive-buttons/)
 - [Wes Cook and The McDonald’s Mural](https://cabel.com/wes-cook-and-the-mcdonalds-mural/)
@@ -52,7 +54,6 @@ title: "/blogroll/"
 - [Study Finds Obvious Truth Everybody Knows](https://blog.jim-nielsen.com/2026/study-finds-obvious-truth/)
 - [Trying Out Claude's C Compiler](https://voxelmanip.se/2026/02/06/trying-out-claudes-c-compiler/)
 - [Что отличает удачную идею для пет-проекта от неудачной](https://eax.me/2026/2026-02-06-pet-project.html)
-- [I’m in the Epstein files](https://lapcatsoftware.com/articles/2026/2/2.html)
 - [Introducing the GitButler CLI](https://blog.gitbutler.com/but-cli)
 - [Clankers with claws](https://world.hey.com/dhh/clankers-with-claws-9f86fa71)
 - [GitButler 0.19 - "Commander Keen"](https://blog.gitbutler.com/gitbutler-0-19)
@@ -235,7 +236,6 @@ title: "/blogroll/"
 - [Let Me Be Delusional](https://keenen.xyz/let-me-be-delusional/)
 - [War, Saint Augustin, Geometry, Rodrigo Nunes, and the new grammar of politics](https://write.as/conjure-utopia/war-saint-augustin-geometry-rodrigo-nunes-and-the-new-grammar-of-politics?pk_campaign=rss-feed)
 - [АЛЯСКА. БУДАПЕШТ. ЯЛТА. ПЕРИМЕТР.](https://blog.cheresh.me/2025/11/14/alaska-budapest-putin-trump-peace/?utm_source=rss&utm_medium=rss&utm_campaign=alaska-budapest-putin-trump-peace)
-- [Go’s Sweet 16](https://go.dev/blog/16years)
 - [⛵ Вастрик Флот 2025 ⛵](https://vas3k.club/post/29747/)
 - [Tech I Believe In](https://keenen.xyz/tech-i-believe-in/)
 - [Beckett 01 · Version Control for Space and Structure](https://www.inkandswitch.com/project/beckett/notebook/01/)
