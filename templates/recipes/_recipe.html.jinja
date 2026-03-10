@@ -5,5 +5,9 @@
 {% block content %}
 <h1>{{ recipe.title }}</h1>
 
+{% if recipe.source %}
+<p><a href="{{ recipe.source }}">source</a></p>
+{% endif %}
+
 {{ recipe.content | split("\n") | skip(1) | join("\n") | safe }}
 {% endblock %}

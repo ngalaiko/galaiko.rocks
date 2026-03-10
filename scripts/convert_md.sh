@@ -26,6 +26,7 @@ function main() {
 	echo "$(echo "$frontmatter" |  grep "title:")"
 	echo "$(echo "$frontmatter" |  grep "date:")"
 	echo "$(echo "$frontmatter" |  grep "id:")"
+	echo "$(echo "$frontmatter" |  grep "source:")"
 	echo "content: |2"
 	echo "$body" | while IFS= read -r line; do
 		echo "  $line"
