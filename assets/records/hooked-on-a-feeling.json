@@ -1,0 +1,61 @@
+{
+    "id": 30413603,
+    "instance_id": 2122733025,
+    "date_added": "2026-03-10T09:23:15-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 30413603,
+        "master_id": 236086,
+        "master_url": "https://api.discogs.com/masters/236086",
+        "resource_url": "https://api.discogs.com/releases/30413603",
+        "thumb": "https://i.discogs.com/O0xBqlMzKDoggPu04aiYZ_yl6uv5rNfwqlvGhEnoOSU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwNDEz/NjAzLTE3MTMyNjk4/OTgtNTMyNi5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/YnwQQfp5RBH45EC5n_QBFKqdefXJgUTt-3B0ZTn5sls/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwNDEz/NjAzLTE3MTMyNjk4/OTgtNTMyNi5qcGVn.jpeg",
+        "title": "Hooked On A Feeling",
+        "year": 2024,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Reissue",
+                    "Remastered",
+                    "Stereo"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Parlophone",
+                "catno": "5054197957192",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 2294,
+                "resource_url": "https://api.discogs.com/labels/2294"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Blue Swede",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 258997,
+                "resource_url": "https://api.discogs.com/artists/258997"
+            }
+        ],
+        "genres": [
+            "Rock",
+            "Funk / Soul",
+            "Pop"
+        ],
+        "styles": [
+            "Pop Rock",
+            "Soul",
+            "Vocal"
+        ]
+    },
+    "folder_id": 1
+}
