@@ -1,6 +1,6 @@
 # galaiko.rocks
 
-my website
+my website. builds with make, runs on [fly][].
 
 ## requirements
 
@@ -17,7 +17,7 @@ my website
 ## build
 
 ```bash
-$ make -j$(nproc)
+$ make
 ```
 
 ## update 3rd party data
@@ -25,19 +25,19 @@ $ make -j$(nproc)
 ### letterboxd
 
 ```bash
-$ python3 ./scripts/update/letterboxd.py
+$ uv run ./scripts/update/letterboxd.py
 ```
 
 ### discogs
 
 ```bash
-$ python3 ./scripts/update/discogs.py --token <personal access token>
+$ uv run ./scripts/update/discogs.py --token <personal access token>
 ```
 
-### hledger
+### ledger
 
 ```bash
-$ python3 ./scripts/update/hledger.py [--file <main hledger file>]
+$ uv run ./scripts/update/ledger.py [--file <main ledger file>]
 ```
 
 ## run
@@ -48,8 +48,10 @@ $ make serve
 
 ## deploy
 
-this requires [fly.io](https://fly.io) account.
+this requires [fly.io][] account.
 
 ```
 $ fly deploy
 ```
+
+[fly.io]: https://fly.io)
