@@ -10,7 +10,7 @@
         "resource_url": "https://api.discogs.com/releases/29408635",
         "thumb": "https://i.discogs.com/4AsDrHyt8d5lQqJqipZ2NNYvGlytfdvEGmku0xTO5Yo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDA4/NjM1LTE3NjYwMDUy/MjgtNjI5OC5qcGVn.jpeg",
         "cover_image": "https://i.discogs.com/TlyzFfriFhgiuMP_2sTnblwsX9SN3-hvHdtRLRMIJ98/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5NDA4/NjM1LTE3NjYwMDUy/MjgtNjI5OC5qcGVn.jpeg",
-        "title": "Aleksandre Kiladze's Jazz Choral = \u10d0\u10da\u10d4\u10e5\u10e1\u10d0\u10dc\u10d3\u10e0\u10d4 \u10d9\u10d8\u10da\u10d0\u10eb\u10d8\u10e1 \u10ef\u10d0\u10ee \u10e5\u10dd\u10e0\u10d0\u10da\u10d8",
+        "title": "Aleksandre Kiladze's Jazz Choral = \u10d0\u10da\u10d4\u10e5\u10e1\u10d0\u10dc\u10d3\u10e0\u10d4 \u10d9\u10d8\u10da\u10d0\u10eb\u10d8\u10e1 \u10ef\u10d0\u10d6 \u10e5\u10dd\u10e0\u10d0\u10da\u10d8",
         "year": 2023,
         "formats": [
             {
@@ -45,7 +45,7 @@
             },
             {
                 "name": "Aleksandre Kiladze's Jazz Choral",
-                "anv": "\u10d0\u10da\u10d4\u10e5\u10e1\u10d0\u10dc\u10d3\u10e0\u10d4 \u10d9\u10d8\u10da\u10d0\u10eb\u10d8\u10e1 \u10ef\u10d0\u10ee \u10e5\u10dd\u10e0\u10d0\u10da\u10d8",
+                "anv": "\u10d0\u10da\u10d4\u10e5\u10e1\u10d0\u10dc\u10d3\u10e0\u10d4 \u10d9\u10d8\u10da\u10d0\u10eb\u10d8\u10e1 \u10ef\u10d0\u10d6 \u10e5\u10dd\u10e0\u10d0\u10da\u10d8",
                 "join": "",
                 "role": "",
                 "tracks": "",
