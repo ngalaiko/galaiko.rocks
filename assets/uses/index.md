@@ -30,10 +30,8 @@ on this page you can find most of the things that i use.
 ## hardware
 
 - macbook pro 14-inch, Nov 2024
-- iphone 13 mini
-- air pods max
-- sennheiser IE 200
-- iPod classic 5.5 modded with 3800mAh battery & 256GB ssd
+- iphone 17
+- air pods pro 3
 - [unify dream machine](https://store.ui.com/collections/unifi-network-unifi-os-consoles/products/udm-us)
 - corne lp mechanical keyboard
   - [case](https://boardsource.xyz/store/5f2efc462902de7151495057)
@@ -44,7 +42,7 @@ on this page you can find most of the things that i use.
   - [audio technica lp120xUSB](https://www.audio-technica.com/en-us/at-lp120xusb) turntable
   - [marantz 4270](https://classicreceivers.com/marantz-4270-quad) receiver
   - [luxor 8071](https://hifigoteborg.se/pdf/Luxor_8071_test_1978.pdf) speakers
-  - [arylic lp10](https://www.arylic.com/products/lp10-music-streamer) streamer
+  - [arylic lp10](https://www.arylic.com/products/lp10-music-streamer) digital streamer
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
@@ -53,3 +51,14 @@ on this page you can find most of the things that i use.
 ## transport
 
 - custom fixed gear bike (49x16)
+    - frame and quill stem by [atepernetuzh(https://imginn.com/atepernetuzh/)
+    - Miche Xpress Track Wheelset
+    - Affinity Pro 165mm 144BCD 49T Crankset
+    - Miche Ergal Fixed Sprocket
+    - Miche Pista Single Speeds 9.15mm Chain 
+    - Continental Super Sport Plus Wire Tire
+    - Shimano EF202 Pedals
+    - Miche Pista sprocket Carrier
+    - Ynot Strap
+    - Miche Performance Brake Caliper
+    - Cinelli Criterium Handlebar 
