@@ -9,6 +9,7 @@ JQ_BIN := jq
 YQ_BIN := yq
 J2_BIN := uv run -s ./scripts/jinja.py
 COOK_BIN := cook
+TYPST_BIN := typst
 
 # Find input files
 INPUT_FILES := $(shell find $(SRC_DIR) -type f)
@@ -25,9 +26,10 @@ INPUT_COCKTAIL_FILES := $(filter $(SRC_DIR)/cocktails/%.cook, $(INPUT_FILES))
 INPUT_COCKTAIL_IMAGE_FILES := $(filter $(SRC_DIR)/cocktails/%.jpeg, $(INPUT_FILES))
 INPUT_PLACE_FILES := $(filter $(SRC_DIR)/places/%.json, $(INPUT_FILES))
 INPUT_RECIPE_FILES := $(filter $(SRC_DIR)/recipes/%.cook, $(INPUT_FILES))
+INPUT_TYPST_FILES := $(filter %.typ, $(INPUT_FILES))
 
 # Other input files
-INPUT_OTHER_FILES := $(filter-out $(INPUT_MD_FILES) $(INPUT_POST_FILES) $(INPUT_POST_IMAGE_FILES) $(INPUT_MOVIE_FILES) $(INPUT_MOVIE_IMAGE_FILES) $(INPUT_RECORD_FILES) $(INPUT_RECORD_IMAGE_FILES) $(INPUT_COCKTAIL_FILES) $(INPUT_COCKTAIL_IMAGE_FILES) $(INPUT_PLACE_FILES) $(INPUT_RECIPE_FILES) , $(INPUT_FILES))
+INPUT_OTHER_FILES := $(filter-out $(INPUT_MD_FILES) $(INPUT_POST_FILES) $(INPUT_POST_IMAGE_FILES) $(INPUT_MOVIE_FILES) $(INPUT_MOVIE_IMAGE_FILES) $(INPUT_RECORD_FILES) $(INPUT_RECORD_IMAGE_FILES) $(INPUT_COCKTAIL_FILES) $(INPUT_COCKTAIL_IMAGE_FILES) $(INPUT_PLACE_FILES) $(INPUT_RECIPE_FILES) $(INPUT_TYPST_FILES) , $(INPUT_FILES))
 
 # Output file definitions
 OUTPUT_MD_FILES := $(patsubst $(SRC_DIR)/%.md,$(BUILD_DIR)/%.html,$(INPUT_MD_FILES))
@@ -45,13 +47,14 @@ OUTPUT_COCKTAIL_IMAGE_FILES += $(patsubst $(SRC_DIR)/%.jpeg,$(BUILD_DIR)/%.jpeg.
 OUTPUT_RECIPE_FILES := $(patsubst $(SRC_DIR)/%.cook,$(BUILD_DIR)/%.html,$(INPUT_RECIPE_FILES))
 OUTPUT_PLACE_FILES := $(patsubst $(SRC_DIR)/%.json,$(BUILD_DIR)/%.html,$(INPUT_PLACE_FILES))
 OUTPUT_OTHER_FILES := $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(INPUT_OTHER_FILES))
+OUTPUT_TYPST_FILES := $(patsubst $(SRC_DIR)/%.typ,$(BUILD_DIR)/%.pdf,$(INPUT_TYPST_FILES))
 
 # Combine all outputs
 OUTPUT := $(OUTPUT_MD_FILES) $(OUTPUT_COCKTAIL_FILES) $(BUILD_DIR)/cocktails/index.html $(OUTPUT_COCKTAIL_IMAGE_FILES)
 OUTPUT += $(BUILD_DIR)/records/index.html $(BUILD_DIR)/movies/index.html $(OUTPUT_MOVIE_IMAGE_FILES)
 OUTPUT += $(OUTPUT_RECORD_IMAGE_FILES) $(BUILD_DIR)/posts/index.html $(BUILD_DIR)/posts/index.atom $(BUILD_DIR)/posts/index.xml
 OUTPUT += $(OUTPUT_RECIPE_FILES) $(BUILD_DIR)/recipes/index.html
-OUTPUT += $(OUTPUT_IMAGE_FILES) $(BUILD_DIR)/places/index.html $(OUTPUT_OTHER_FILES) 
+OUTPUT += $(OUTPUT_IMAGE_FILES) $(BUILD_DIR)/places/index.html $(OUTPUT_OTHER_FILES) $(OUTPUT_TYPST_FILES)
 
 # Macros
 templ = templates/_layout.html.jinja templates/$1
@@ -164,6 +167,12 @@ $(BUILD_DIR)/%.html: $(SRC_DIR)/%.md $(call templ,posts/_post.html.jinja)
 	@echo '$< -> $@'
 	@mkdir -p "$(dir $@)"
 	@./scripts/convert_md.sh "$<" | $(YQ_BIN) '{ "post": . }' --output-format json | $(J2_BIN) posts/_post.html.jinja > "$@" || exit 1
+
+# Typst
+$(BUILD_DIR)/%.pdf: $(SRC_DIR)/%.typ
+	@echo '$< -> $@'
+	@mkdir -p "$(dir $@)"
+	@$(TYPST_BIN) compile --font-path $(SRC_DIR)/fonts "$<" "$@" || exit 1
 
 # Assets
 $(BUILD_DIR)/%: $(SRC_DIR)/%

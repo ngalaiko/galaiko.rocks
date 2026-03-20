@@ -10,6 +10,11 @@ RUN wget --quiet "https://github.com/cooklang/cookcli/releases/download/v0.10.0/
     && sha256sum "cook-x86_64-unknown-linux-musl.tar.gz" \
     && echo "cbea3306f7a24ea2d065f6daf98c232f246c45b9f775d4b5def3989a85329a64  cook-x86_64-unknown-linux-musl.tar.gz" | sha256sum -c \
     && tar -xzf "cook-x86_64-unknown-linux-musl.tar.gz" -C /usr/bin
+RUN wget --quiet "https://github.com/typst/typst/releases/download/v0.14.2/typst-x86_64-unknown-linux-musl.tar.xz" \
+    && sha256sum "typst-x86_64-unknown-linux-musl.tar.xz" \
+    && echo "a6044cbad2a954deb921167e257e120ac0a16b20339ec01121194ff9d394996d  typst-x86_64-unknown-linux-musl.tar.xz" | sha256sum -c \
+    && tar -xJf "typst-x86_64-unknown-linux-musl.tar.xz" \
+    && mv typst-x86_64-unknown-linux-musl/typst /usr/bin/typst
 COPY . .
 RUN make -j$(nproc)
 
