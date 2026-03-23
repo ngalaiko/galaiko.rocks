@@ -1,8 +1,6 @@
-// Font setup - Berkeley Mono, 10pt
 #set text(font: "Berkeley Mono", size: 10pt)
 
-// Page setup - A4, 80 chars wide
-// (6pt * 80 = 480pt, margin = (210mm - 480pt) / 2)
+// A4, 80 chars wide (6pt * 80 = 480pt)
 #let margin-top = 1.8cm
 #set page(
   paper: "a4",
@@ -22,31 +20,19 @@
 #set par(leading: 0.55em, spacing: 0.85em, justify: true)
 #set smartquote(enabled: false)
 
-// Disable heading default styling
-// - just plain text with a blank line around it
 #show heading.where(level: 1): it => {
   text(size: 10pt, weight: "regular", it.body)
 }
 
-// List styling
 #set list(marker: [-], spacing: 0.6em)
-
-// Disable link colouring
 #show link: set text(fill: black)
 
-// URL helper - uses raw() + box() to prevent
-// hyphenation and line-breaking of URLs
-#let url(addr) = {
-  link(addr, raw(addr))
-}
-#show raw.where(block: false): it => {
-  set text(font: "Berkeley Mono", size: 10pt)
-  box(it)
-}
+// raw() + box() prevents hyphenation and
+// line-breaking of URLs
+#let url(addr) = link(addr, raw(addr))
+#show raw.where(block: false): box
 
-// Separator - text-based, full width.
-// Skips rendering if at the top of a page
-// (page break is a natural separator).
+// Skips rendering at the top of a page
 #let sep() = context {
   let pos = here().position()
   if pos.y > margin-top + 0.7cm {
@@ -54,21 +40,18 @@
   }
 }
 
-// Job entry - header + description,
-// always kept together on one page
-#let job-entry(
-  number, company, role, location, body,
+#let section-entry(
+  number, company, location, body,
+  role: none,
 ) = {
   v(1em)
   block(breakable: false, width: 100%)[
-    #number #company - #role
+    #{number} #{company}#{if role != none {" - "; role}}
     #align(right)[#location]
     #body
   ]
 }
 
-// Section - separator + heading + body,
-// always kept together on one page
 #let section(title, body) = {
   block(breakable: false, width: 100%)[
     #sep()
@@ -77,7 +60,6 @@
   ]
 }
 
-// Header
 #grid(
   columns: (1fr, auto),
   [Nikita Galaiko],
@@ -94,25 +76,22 @@
 
 = 1. SUMMARY
 
-Platform engineer at heart with 10 years of
-experience. I build the foundations that empower
-teams to ship faster and more reliably, but I'm
-no stranger to business logic and frontend work
-too. More recently I've spent a lot of time deep
-in git internals. I'm passionate about developer
-experience, and don't feel restricted by
-languages or tools - it's all just code. I prefer
-keeping things simple, slightly functional, with
-trunk-based development and continuous
-deployments.
+Software engineer with 10 years of experience
+and a platform engineering focus. I design and
+build the infrastructure that helps teams deliver
+faster and with confidence, though I'm equally
+comfortable working on business logic and
+frontend code. Lately I've been deep in git
+internals. Language- and tool-agnostic by
+nature \- to me it's all just code. I gravitate
+toward simplicity, functional patterns, trunk-based
+development and continuous deployment.
 
 #sep()
 
 = 2. EMPLOYMENT HISTORY
 
-#job-entry[2.1.][Cerve][
-  Founding Software Engineer
-][Göteborg, Jan 2025 -- now][
+#section-entry(role: [Founding Software Engineer])[2.1.][Cerve][Göteborg, Jan 2025 -- now][
 Cerve is building infrastructure for food
 companies: APIs, data collection from PDFs and AI
 tooling on top.
@@ -129,9 +108,7 @@ tooling on top.
   pipelines and infrastructure for the AI layer
 ]
 
-#job-entry[2.2.][GitButler][
-  Founding Software Engineer
-][Remote, Jan 2023 -- June 2024][
+#section-entry(role: [Founding Software Engineer])[2.2.][GitButler][Remote, Jan 2023 -- June 2024][
 GitButler is an early-stage startup building a
 modern git client, from the same team behind
 Sturdy.
@@ -145,9 +122,7 @@ Sturdy.
   simultaneously
 ]
 
-#job-entry[2.3.][Sturdy / Codeball][
-  Founding Software Engineer
-][Stockholm, Sep 2021 -- Jan 2023][
+#section-entry(role: [Founding Software Engineer])[2.3.][Sturdy / Codeball][Stockholm, Sep 2021 -- Jan 2023][
 Sturdy was an early-stage startup building a
 real-time cloud-based version control platform.
 
@@ -164,9 +139,7 @@ real-time cloud-based version control platform.
   and a demo website
 ]
 
-#job-entry[2.4.][Tink][
-  Software Engineer
-][Stockholm, Apr 2019 -- Sep 2021][
+#section-entry(role: [Software Engineer])[2.4.][Tink][Stockholm, Apr 2019 -- Sep 2021][
 Tink is a fintech that analyses bank
 transactions.
 
@@ -184,9 +157,7 @@ transactions.
   tools to help other teams adopt them
 ]
 
-#job-entry[2.5.][Opera][
-  Software Engineer
-][Göteborg, Feb 2018 -- Apr 2019][
+#section-entry(role: [Software Engineer])[2.5.][Opera][Göteborg, Feb 2018 -- Apr 2019][
 OPay is Opera's payments product. I joined before
 the public release as part of the core platform
 team.
@@ -200,9 +171,7 @@ team.
   scenario testing
 ]
 
-#job-entry[2.6.][Lazada][
-  Go Developer
-][Moscow, Jun 2017 -- Jan 2018][
+#section-entry(role: [Go Developer])[2.6.][Lazada][Moscow, Jun 2017 -- Jan 2018][
 Lazada is a Southeast Asian e-commerce platform.
 I worked in the team responsible for the API
 Gateway, focused on stability and performance
@@ -218,20 +187,37 @@ during high-load sale campaigns.
   JVM
 ]
 
-#job-entry[2.7.][TheQuestion / Yandex.Q][
-  Software Developer
-][Moscow, Apr 2016 -- Jun 2017][
+#section-entry(role: [Software Developer])[2.7.][TheQuestion / Yandex.Q][Moscow, Apr 2016 -- Jun 2017][
 TheQuestion is a Q&A platform similar to Quora,
 later acquired by Yandex.
 
-- Involved in every aspect of running the system
-  - developing features, operating deployments
+- Involved in every aspect of running the
+  system: developing features, operating
+  deployments
 - Built on-demand deployment of development
   environments for specific versions, improving
   testing efficiency
 ]
 
-#section[3. SKILLS][
+#section[3. NOTABLE OPEN SOURCE PROJECTS][
+#section-entry(role: [134 stars])[3.1.][#link("https://github.com/ngalaiko/tree-sitter-go-template")[tree-sitter-go-template]][][
+Golang template grammar for tree-sitter.
+]
+
+#section-entry(role: [21 stars])[3.2.][#link("https://github.com/ngalaiko/bazel-action")[bazel-action]][][
+A GitHub Action to run Bazel commands.
+]
+
+#section-entry[3.3.][#link("https://github.com/ngalaiko/hledger-desktop")[hledger-desktop]][][
+Desktop app for hledger.
+]
+
+#section-entry[3.4.][#link("https://github.com/ngalaiko/cloudrun-local")[cloudrun-local]][][
+Local development proxy for Google Cloud Run.
+]
+]
+
+#section[4. SKILLS][
 - Programming languages: Golang, Rust,
   TypeScript, Java, Python, Bash, SQL
 - Frontend frameworks: Svelte, Vue.js, React
@@ -246,15 +232,13 @@ later acquired by Yandex.
   Bazel
 ]
 
-#section[4. EDUCATION][
-#job-entry[4.1.][Higher School of Economics][
-  Informatics and computer science
-][Moscow, 2013 -- 2016][
+#section[5. EDUCATION][
+#section-entry(role: [Informatics and computer science])[5.1.][Higher School of Economics][Moscow, 2013 -- 2016][
 Bachelor programme, incomplete.
 ]
 ]
 
-#section[5. LANGUAGES][
+#section[6. LANGUAGES][
 English (fluent), Swedish (beginner),
 Russian (native)
 ]
