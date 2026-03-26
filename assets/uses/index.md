@@ -45,6 +45,10 @@ on this page you can find most of the things that i use.
   - [arylic lp10](https://www.arylic.com/products/lp10-music-streamer) digital streamer
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
+    - AirBuster release valve
+    - group head pressure gauge
+    - boiler pressure gauge
+    - long single hole steam tip extender
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
 - [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2) - ebook
 
