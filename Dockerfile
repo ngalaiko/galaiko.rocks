@@ -45,7 +45,7 @@ RUN \
           exit 1; \
     esac; \
     rm -rf "/tmp/*"; \
-    apk add --update --no-cache goaccess=1.9.4-r0 nginx=1.28.2-r0
+    apk add --update --no-cache goaccess nginx
 COPY --from=build /app/build /var/www/nikita.galaiko.rocks
 COPY etc /etc
 COPY init-wrapper /
