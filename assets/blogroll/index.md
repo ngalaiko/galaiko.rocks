@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [Can your AI rewrite your code in assembly?](https://lemire.me/blog/2026/04/05/can-your-ai-rewrite-your-code-in-assembly/)
+- [Обводка по границе контура](https://ilyabirman.ru/meanwhile/all/path-side-stroke/)
+- [In the Atmosphere](https://macwright.com/2026/04/05/in-the-atmosphere.html)
 - [Кофе и наращения](https://ilyabirman.ru/meanwhile/all/kofe-i-narascheniya/)
 - [Ссылки #384](https://www.juev.org/2026/04/04/weblinks-384/)
 - [Value numbering](https://bernsteinbear.com/blog/value-numbering/?utm_source=rss)
@@ -16,7 +19,6 @@ title: "/blogroll/"
 - [2026/04/03 - поздравляю обоих](https://lleo.me/dnevnik/2026/04/03)
 - [The Blandness of Systematic Rules vs. The Delight of Localized Sensitivity](https://blog.jim-nielsen.com/2026/systemic-vs-localized/)
 - [Заметки под контролем: развёртывание Standard Notes с E2E-шифрованием](https://www.juev.org/2026/04/02/standard-notes/)
-- [Москва, давай-ка потише](https://ilyabirman.ru/meanwhile/all/moskva-davay-ka-potishe/)
 - [Spring 2026 Pebble App Contest + SDK Updates](https://repebble.com/blog/spring-2026-pebble-app-contest)
 - [A letter to John Ternus](https://marco.org/2026/04/01/letter-to-john-ternus)
 - [A non-exhaustive list of stuff I recommend](https://hey.georgie.nu/stuff-i-recommend/)
@@ -79,7 +81,6 @@ title: "/blogroll/"
 - [Nakaya Aka-Tame Fountain Pen](https://arslan.io/2026/03/19/nakaya-aka-tame-fountain-pen/)
 - [On becoming a day person](https://herman.bearblog.dev/becoming-a-day-person/)
 - [Code is more expressive than configuration: comparing a sample blog in Web Origami and Eleventy](https://jan.miksovsky.com/posts/2026/03-19-code-is-more-expressive-than-configuration.html)
-- [How many branches can your CPU predict?](https://lemire.me/blog/2026/03/18/how-many-branches-can-your-cpu-predict/)
 - [Расцвет опенсорса в эпоху AI](https://p.umputun.com/2026/03/18/opensource-ai-renaissance/)
 - [Code is more coherent than configuration: comparing a sample blog in Web Origami and Eleventy](https://jan.miksovsky.com/posts/2026/03-18-code-is-more-coherent-than-configuration.html)
 - [Building small and secure Docker images for Rust: scratch vs alpine vs debian](https://kerkour.com/rust-docker-small-secure-images)
@@ -129,7 +130,6 @@ title: "/blogroll/"
 - [Продуктовая аналитика. Дорога на выход](https://kochanoff.com/how-to-stop-data-science-and-start-living?utm_source=teletype&utm_medium=feed_rss&utm_campaign=kochanoff)
 - [Redis patterns for coding](http://antirez.com/news/161)
 - [Некоторые размышления об этих ваших вайбкодах](https://bizikov.ru/notes/vibecoding-thoughts)
-- [Recently](https://macwright.com/2026/03/01/recently.html)
 - [Why Objective-C](https://inessential.com/2026/02/27/why-objective-c.html)
 - [Февраль](https://baradusov.ru/posts/2026/february)
 - [Embedding the Sky](https://heavymeta.org/2026/02/27/embedding-the-sky.html)
