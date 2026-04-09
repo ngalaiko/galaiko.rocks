@@ -55,7 +55,7 @@ on this page you can find most of the things that i use.
 ## transport
 
 - custom fixed gear bike (49x16)
-    - frame and quill stem by [atepernetuzh(https://imginn.com/atepernetuzh/)
+    - frame and quill stem by [atepernetuzh](https://imginn.com/atepernetuzh/)
     - Miche Xpress Track Wheelset
     - Affinity Pro 165mm 144BCD 49T Crankset
     - Miche Ergal Fixed Sprocket
