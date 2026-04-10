@@ -205,6 +205,7 @@ LOCATIONS = {
     "Vega Bryggeri": (57.719214, 11.973553),
     "pulp tbilisi": (41.706096, 44.781474),
     "Forida's": (57.699239, 11.951854),
+    "Human Restaurang": (57.694338, 11.955882),
 }
 
 
