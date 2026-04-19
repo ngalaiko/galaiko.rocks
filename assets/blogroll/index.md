@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [We Need a New Product Hunt](https://molodtsov.me/2026/04/we-need-a-new-product-hunt/)
+- [I gave up podcasts after 20 years](https://basic.bearblog.dev/i-gave-up-podcasts-after-20-years/)
+- [Ссылки #386](https://www.juev.org/2026/04/18/weblinks-386/)
 - [Really miss the old PalmPilot days](https://basic.bearblog.dev/really-miss-the-old-palmpilot-days/)
 - [[США VS ИРАН VS ИЗРАИЛЬ –РЕАЛЬНЫЕ ПРИЧИНЫ ВОЙНЫ И ЧТО БУДЕТ ДАЛЬШЕ]](https://blog.cheresh.me/2026/04/17/usa-iran-israel-war-truth/?utm_source=rss&utm_medium=rss&utm_campaign=usa-iran-israel-war-truth)
 - [JTR](https://manuelmoreale.com/interview/jtr)
@@ -59,10 +62,8 @@ title: "/blogroll/"
 - [A Cryptography Engineer’s Perspective on Quantum Computing Timelines](https://words.filippo.io/crqc-timeline/)
 - [The browser extension API setUninstallURL violates user privacy](https://lapcatsoftware.com/articles/2026/4/1.html)
 - [Panther Lake is the real deal](https://world.hey.com/dhh/panther-lake-is-the-real-deal-4bd731f1)
-- [Gopher or bust](https://basic.bearblog.dev/gopher-or-bust/)
 - [Can your AI rewrite your code in assembly?](https://lemire.me/blog/2026/04/05/can-your-ai-rewrite-your-code-in-assembly/)
 - [In the Atmosphere](https://macwright.com/2026/04/05/in-the-atmosphere.html)
-- [Ссылки #384](https://www.juev.org/2026/04/04/weblinks-384/)
 - [Value numbering](https://bernsteinbear.com/blog/value-numbering/?utm_source=rss)
 - [The Web Is An Antitrust Wedge](https://infrequently.org/2026/04/the-web-is-an-antitrust-wedge/)
 - [A Local-First Task Framework](https://www.inkandswitch.com/patchwork/notebook/tasks-01/)
@@ -116,7 +117,6 @@ title: "/blogroll/"
 - [Code is more coherent than configuration: comparing a sample blog in Web Origami and Eleventy](https://jan.miksovsky.com/posts/2026/03-18-code-is-more-coherent-than-configuration.html)
 - [Effect notes: PRs, progress, and joys](https://macwright.com/2026/03/18/effect-devlog.html)
 - [Homelab downtime update: The fight for DNS supremacy](https://xeiaso.net/notes/2026/dns-fight/)
-- [Shiori, A Novel Bookmarking App](https://molodtsov.me/2026/03/shiori-a-novel-way-to-save-links/)
 - [YAML is (not) my preferred configuration format](https://belkadan.com/blog/2026/03/YAML-Is-Not-My-Preferred-Configuration-Format/)
 - [Returning to Neovim](https://stevedylan.dev/posts/returning-to-neovim/)
 - [I went to jail](https://lincolnquirk.substack.com/p/i-went-to-jail)
