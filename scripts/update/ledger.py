@@ -206,6 +206,7 @@ LOCATIONS = {
     "pulp tbilisi": (41.706096, 44.781474),
     "Forida's": (57.699239, 11.951854),
     "Human Restaurang": (57.694338, 11.955882),
+    "Bennys Bar & Slice Shop": (57.701492, 11.956397),
 }
 
 
