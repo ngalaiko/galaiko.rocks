@@ -208,6 +208,12 @@ LOCATIONS = {
     "Human Restaurang": (57.694338, 11.955882),
     "Bennys Bar & Slice Shop": (57.701492, 11.956397),
     "BodyBuddy": (57.700628, 11.947046),
+    "Alkemisten Lindholmen": (57.708666, 11.940023),
+    "Pinch Pantry": (57.692812, 11.952981),
+    "New California Taco Shop": (57.693644, 11.956399),
+    "Escacito": (57.704175, 11.963435),
+    "Coffee Project NY": (40.766412, -73.986528),
+    "Egg And Milk": (57.692714, 11.955475),
 }
 
 
