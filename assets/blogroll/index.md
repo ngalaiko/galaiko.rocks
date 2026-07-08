@@ -2,6 +2,10 @@
 title: "/blogroll/"
 ---
 
+- [Изучаем возможности Matrix SDK для Rust](https://eax.me/2026/2026-07-08-matrix-rust-sdk.html)
+- [Agentic Version Control Benchmarks](https://blog.gitbutler.com/vcbench)
+- [Прощай мьюшка и плёночное хобби](https://bizikov.ru/notes/goodbye-mju-ii)
+- [Июнь](https://baradusov.ru/posts/2026/june)
 - [On Moral Panics](https://molodtsov.me/2026/07/on-moral-panics/)
 - [The Caesar Cipher: A 2,000-Year-Old Lesson in Secret Writing](https://buznik.net/j/2752-the-caesar-cipher-a-2000-year-old-lesson-in-secret-writing/)
 - [Safari sidebar silently loads all your bookmarks](https://lapcatsoftware.com/articles/2026/7/1.html)
@@ -79,7 +83,6 @@ title: "/blogroll/"
 - [Bet On Centaurs](https://asnewman.github.io/bet-on-centaurs)
 - [The Rape of Britain](https://world.hey.com/dhh/the-rape-of-britain-610412f8)
 - [Where I've been, and the future of this blog](https://ntietz.com/blog/where-ive-been/?utm_source=atom&utm_medium=feed)
-- [Рецензии на прочитанные книги: 33-й десяток](https://eax.me/2026/2026-06-17-books-issue-33.html)
 - [Kubernetes runs on feedback loops](https://arslan.io/2026/06/16/kubernetes-runs-on-feedback-loops/)
 - [Books Jan - June 2026](https://chriskiehl.com/article/books-jan-jun-2026)
 - [AI Blog Questions Challenge](https://haewyr.mataroa.blog/blog/ai-blog-questions-challenge/)
@@ -166,8 +169,6 @@ title: "/blogroll/"
 - [Апрель](https://baradusov.ru/posts/2026/april)
 - [Как я настраивал себе второй мозг на автопилоте](https://staskulesh.com/2026/05/second-brain/)
 - [The trauma of AI Humanizers](https://axbom.com/ai-humanizer/)
-- [Бузулукский бор, 2026](https://bizikov.ru/travel/buzulukskij-bor-2026)
-- [Март](https://baradusov.ru/posts/2026/march)
 - [Manuel was annoyed](https://annoying.technology/posts/ff2304efc5ca56fb/)
 - [Вастрик ✖︎ AfrikaBurn](https://vas3k.blog/world/afrikaburn26/)
 - [How and why I journal](https://jan.miksovsky.com/posts/2026/05-11-journaling.html)
@@ -201,7 +202,6 @@ title: "/blogroll/"
 - [Expansion artifacts](https://mattstromawn.com/writing/expansion-artifacts/)
 - [Интервью с психотерапевтом Сашей Леном](https://sergeykorol.ru/blog/len-2/)
 - [[США VS ИРАН VS ИЗРАИЛЬ –РЕАЛЬНЫЕ ПРИЧИНЫ ВОЙНЫ И ЧТО БУДЕТ ДАЛЬШЕ]](https://blog.cheresh.me/2026/04/17/usa-iran-israel-war-truth/?utm_source=rss&utm_medium=rss&utm_campaign=usa-iran-israel-war-truth)
-- [Agent-safe Git with GitButler](https://blog.gitbutler.com/agentic-safety)
 - [On AI writing in 2026](https://www.lincolnquirk.com/2026/04/16/aiwriting.html)
 - [Simdutf Can Now Be Used Without libc++ or libc++abi](https://mitchellh.com/writing/simdutf-no-libcxx)
 - [Cables of Resistance: the numbers don't add up](https://write.as/conjure-utopia/cables-of-resistance-the-numbers-dont-add-up?pk_campaign=rss-feed)
