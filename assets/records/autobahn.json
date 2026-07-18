@@ -1,0 +1,67 @@
+{
+    "id": 2047018,
+    "instance_id": 2164854583,
+    "date_added": "2026-07-17T14:12:32-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 2047018,
+        "master_id": 2994,
+        "master_url": "https://api.discogs.com/masters/2994",
+        "resource_url": "https://api.discogs.com/releases/2047018",
+        "thumb": "https://i.discogs.com/bjOEXzeQBXNUUEgTEYxV9FHwyYHJzuOXKHpdWTma384/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwNDcw/MTgtMTM1Nzg1MjAz/Ni05NTY4LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/XjMbMc1nAjWkPMBX19g5gR9sJRcjiewTdkDYcWMEmZg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwNDcw/MTgtMTM1Nzg1MjAz/Ni05NTY4LmpwZWc.jpeg",
+        "title": "Autobahn",
+        "year": 2009,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "180g",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Reissue",
+                    "Remastered"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Kling Klang",
+                "catno": "50999 9 66014 1 9",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 780,
+                "resource_url": "https://api.discogs.com/labels/780"
+            },
+            {
+                "name": "Mute",
+                "catno": "STUMM 303",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 26391,
+                "resource_url": "https://api.discogs.com/labels/26391"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Kraftwerk",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 4654,
+                "resource_url": "https://api.discogs.com/artists/4654"
+            }
+        ],
+        "genres": [
+            "Electronic"
+        ],
+        "styles": [
+            "Electro",
+            "Synth-pop",
+            "Krautrock"
+        ]
+    },
+    "folder_id": 1
+}
