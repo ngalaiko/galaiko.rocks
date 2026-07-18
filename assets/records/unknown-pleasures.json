@@ -1,0 +1,67 @@
+{
+    "id": 7132498,
+    "instance_id": 2164854700,
+    "date_added": "2026-07-17T14:12:52-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 7132498,
+        "master_id": 4805,
+        "master_url": "https://api.discogs.com/masters/4805",
+        "resource_url": "https://api.discogs.com/releases/7132498",
+        "thumb": "https://i.discogs.com/ZSCneLpTtm3TBtXssGj4Ii8aS-UrYz11CwTUjYtYxBA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcxMzI0/OTgtMTQ0MDU4OTM2/OC00OTcyLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/tbxV7AJrDRFyeXBywKzNPABG40Gm7aLqEggPNpQ4it8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcxMzI0/OTgtMTQ0MDU4OTM2/OC00OTcyLmpwZWc.jpeg",
+        "title": "Unknown Pleasures",
+        "year": 2015,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "180g; Textured Sleeve",
+                "descriptions": [
+                    "LP",
+                    "Album",
+                    "Reissue",
+                    "Remastered",
+                    "Stereo"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Factory",
+                "catno": "FACT 10R",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 857,
+                "resource_url": "https://api.discogs.com/labels/857"
+            },
+            {
+                "name": "Factory",
+                "catno": "FACT 10",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 857,
+                "resource_url": "https://api.discogs.com/labels/857"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Joy Division",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 3898,
+                "resource_url": "https://api.discogs.com/artists/3898"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": [
+            "New Wave",
+            "Post-Punk"
+        ]
+    },
+    "folder_id": 1
+}
