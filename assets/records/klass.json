@@ -1,0 +1,54 @@
+{
+    "id": 37911756,
+    "instance_id": 2164982122,
+    "date_added": "2026-07-18T02:22:23-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 37911756,
+        "master_id": 1506735,
+        "master_url": "https://api.discogs.com/masters/1506735",
+        "resource_url": "https://api.discogs.com/releases/37911756",
+        "thumb": "https://i.discogs.com/4kJpUKWOu4o_IZ93Bsqx5B2yYsbwYTlnfr2MrKASQfU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3OTEx/NzU2LTE3ODQzNjYy/MzQtOTQ4MS5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/8T5edHU6YUp4I8MCgeW0aKHxThuM8KgV_zH1_Zlcimk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3OTEx/NzU2LTE3ODQzNjYy/MzQtOTQ4MS5qcGVn.jpeg",
+        "title": "Klass",
+        "year": 2026,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "Red Translucent",
+                "descriptions": [
+                    "LP",
+                    "Numbered",
+                    "Reissue"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Bengans Skivbutik AB",
+                "catno": "BENLP107",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 1657460,
+                "resource_url": "https://api.discogs.com/labels/1657460"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Hurula",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 4925796,
+                "resource_url": "https://api.discogs.com/artists/4925796"
+            }
+        ],
+        "genres": [
+            "Rock"
+        ],
+        "styles": []
+    },
+    "folder_id": 1
+}
