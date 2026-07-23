@@ -1,0 +1,59 @@
+{
+    "id": 4579610,
+    "instance_id": 2166370418,
+    "date_added": "2026-07-22T08:55:47-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 4579610,
+        "master_id": 64717,
+        "master_url": "https://api.discogs.com/masters/64717",
+        "resource_url": "https://api.discogs.com/releases/4579610",
+        "thumb": "https://i.discogs.com/8MGpF7miQvmjZhLHDza8Pow7YbEA1lMqsObJoUSYHlI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1Nzk2/MTAtMTY2MjQ5NDY2/MC0zODYzLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/MU4nV5DB-CbTiiqww1c_bsm-XURoK6MTE0thcvkkXJ4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1Nzk2/MTAtMTY2MjQ5NDY2/MC0zODYzLmpwZWc.jpeg",
+        "title": "Cocktail - Original Motion Picture Soundtrack",
+        "year": 1988,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "descriptions": [
+                    "LP",
+                    "Compilation"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Elektra",
+                "catno": "96 08061",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 651,
+                "resource_url": "https://api.discogs.com/labels/651"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Various",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 194,
+                "resource_url": "https://api.discogs.com/artists/194"
+            }
+        ],
+        "genres": [
+            "Rock",
+            "Stage & Screen"
+        ],
+        "styles": [
+            "Soundtrack",
+            "Rock & Roll",
+            "Soft Rock",
+            "Pop Rock",
+            "Rockabilly"
+        ]
+    },
+    "folder_id": 1
+}
