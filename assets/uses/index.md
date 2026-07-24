@@ -24,8 +24,9 @@ on this page you can find most of the things that i use.
 - [telegram](https://telegram.com) - messenger
 - [mullvad](https://mullvad.net) - vpn
 - [tailscale](https://tailscale.com) - vpn but different
-- [kino.pub](https://kino.pub) - online movies etc.
+- [kino.watch](https://kino.watch) - online movies etc.
 - [fly.io](https://fly.io) - hosting provider
+- [exe.dev](https://exe.dev) - another hosting provider
 
 ## hardware
 
@@ -51,6 +52,7 @@ on this page you can find most of the things that i use.
     - long single hole steam tip extender
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
 - [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2) - ebook
+- [minox 35 GL](https://camera-wiki.org/wiki/Minox_35_GL) - compact film camera
 
 ## transport
 
