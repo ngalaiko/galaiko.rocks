@@ -202,6 +202,7 @@ LOCATIONS = {
     "Bombay": (57.699382, 11.951487),
     "Shiro By Takame": (57.708150, 11.937240),
     "Ivans Pilsner": (57.720618, 11.971765),
+    "Ivans Pilsnerbar": (57.720618, 11.971765),
     "Vega Bryggeri": (57.719214, 11.973553),
     "pulp tbilisi": (41.706096, 44.781474),
     "Forida's": (57.699239, 11.951854),
@@ -214,6 +215,14 @@ LOCATIONS = {
     "Escacito": (57.704175, 11.963435),
     "Coffee Project NY": (40.766412, -73.986528),
     "Egg And Milk": (57.692714, 11.955475),
+    "Bar Schiacciate - Lindholmen": (57.709563, 11.941562),
+    "Vassen": (57.709661, 11.950976),
+    "Babka": (57.635217, 18.292380),
+    "Crêperie & Logi": (57.638668, 18.295583),
+    "McDonald's - Avenyn": (57.699158, 11.977224),
+    "McDonald's - Nordstan": (57.707431, 11.969684),
+    "Saluhall och Bar": (57.639163, 18.296859),
+    "Vega": (57.719214, 11.973553),
 }
 
 
