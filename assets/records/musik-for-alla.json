@@ -1,0 +1,57 @@
+{
+    "id": 37484655,
+    "instance_id": 2179654496,
+    "date_added": "2026-08-31T11:35:48-07:00",
+    "rating": 0,
+    "basic_information": {
+        "id": 37484655,
+        "master_id": 4258137,
+        "master_url": "https://api.discogs.com/masters/4258137",
+        "resource_url": "https://api.discogs.com/releases/37484655",
+        "thumb": "https://i.discogs.com/DSREqhPVT6r6PbqjhfHk3rzTuClqsbUuCWIk24qb6p4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NDg0/NjU1LTE3ODAxNDQ3/NjgtODg2NC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/XYKzhNjca1ErGMn5zc5ovjaFvvt6v2ySRuwYysGNuXc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NDg0/NjU1LTE3ODAxNDQ3/NjgtODg2NC5qcGVn.jpeg",
+        "title": "Musik f\u00f6r alla",
+        "year": 2026,
+        "formats": [
+            {
+                "name": "Vinyl",
+                "qty": "1",
+                "text": "Blue translucent vinyl",
+                "descriptions": [
+                    "LP",
+                    "Album"
+                ]
+            }
+        ],
+        "labels": [
+            {
+                "name": "Oraklet",
+                "catno": "OR001",
+                "entity_type": "1",
+                "entity_type_name": "Label",
+                "id": 4580211,
+                "resource_url": "https://api.discogs.com/labels/4580211"
+            }
+        ],
+        "artists": [
+            {
+                "name": "Terra (25)",
+                "anv": "",
+                "join": "",
+                "role": "",
+                "tracks": "",
+                "id": 5098392,
+                "resource_url": "https://api.discogs.com/artists/5098392"
+            }
+        ],
+        "genres": [
+            "Rock",
+            "Pop"
+        ],
+        "styles": [
+            "Indie Rock",
+            "Indie Pop"
+        ]
+    },
+    "folder_id": 1
+}
