@@ -189,6 +189,8 @@ LOCATIONS = {
     "Aftonstjarnans": (57.706905, 11.932676),
     "Uni3 World Of Food": (57.711676, 11.946318),
     "Bistro Vermantitis": (56.952928, 24.119861),
+    "Bistro Bangatan": (57.696459, 11.934945),
+    "Coffee Lab Sweden": (57.698010, 11.952724),
     "Joe & The Juice - Göteborg": (57.705545, 11.968347),
     "Joe & The Juice - Nordstan": (57.708536, 11.969527),
     "Gansu Köket - Lindholmen": (57.711629, 11.945064),
