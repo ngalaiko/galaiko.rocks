@@ -14,6 +14,7 @@ import datetime
 from collections import defaultdict
 
 LOCATIONS = {
+"da Matteo - Magasinsgatan": (57.702_779_8, 11.962_260_2),
     "Cafe Ragazzi": (59.335_918, 18.059_252),
     "Esperanza": (59.337_541, 18.057_392),
     "Weidao": (59.331_949, 18.057_649),
