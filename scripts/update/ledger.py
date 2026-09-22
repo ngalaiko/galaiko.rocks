@@ -5,6 +5,7 @@
 # ]
 # ///
 import csv
+import sys
 from slugify import slugify
 import subprocess
 import os
@@ -277,7 +278,8 @@ def main(file, output):
         if times < 2:
             continue
         if payee not in LOCATIONS:
-            raise Exception(f"Location for '{payee}' is missing")
+            print(f"Warning: skipping {payee!r}: location is missing", file=sys.stderr)
+            continue
         location = LOCATIONS[payee]
         place = {
             "location": location,
