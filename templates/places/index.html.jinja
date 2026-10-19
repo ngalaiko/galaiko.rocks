@@ -2,7 +2,7 @@
 
 {% block head %}
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' https://*.basemaps.cartocdn.com">
+        content="default-src 'self'; img-src 'self' data: https://tile.openstreetmap.org">
 
     <link rel="stylesheet" href="{{ "/styles/table.css" | static_with_hash }}">
     <link rel="stylesheet" href="{{ "/styles/map.css" | static_with_hash }}">
@@ -37,5 +37,5 @@
     {%- endfor %}
     </table>
 
-    <script src="/scripts/map.js"></script>
+    <script src="{{ "/scripts/map.js" | static_with_hash }}"></script>
 {% endblock %}
