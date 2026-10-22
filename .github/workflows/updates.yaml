@@ -76,6 +76,7 @@ jobs:
           path: "finance"
           ref: "master"
       - run: sudo apt-get install ledger
+      - run: uv run --with python-slugify python scripts/update/test_ledger.py
       - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/finance/main.ledger"
       - id: cpr-ledger
         uses: peter-evans/create-pull-request@v5
