@@ -75,9 +75,11 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           path: "finance"
           ref: "master"
-      - run: sudo apt-get install ledger
-      - run: uv run --with python-slugify python scripts/update/test_ledger.py
-      - run: uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/finance/main.ledger"
+      - uses: cachix/install-nix-action@v31
+      - name: Test Ledger export
+        run: nix shell github:NixOS/nixpkgs/a033e66ab94a6bedf2c3d58d93a36319d3cbbbaf#ledger --command uv run --with python-slugify python scripts/update/test_ledger.py
+      - name: Export Ledger places
+        run: nix shell github:NixOS/nixpkgs/a033e66ab94a6bedf2c3d58d93a36319d3cbbbaf#ledger --command uv run ./scripts/update/ledger.py --file "$GITHUB_WORKSPACE/finance/main.ledger"
       - id: cpr-ledger
         uses: peter-evans/create-pull-request@v5
         with:
