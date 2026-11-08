@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [(Almost) everything I ate in Taiwan](https://hey.georgie.nu/taiwan-food/)
+- [Соответствует](https://ilyabirman.ru/meanwhile/all/sootvetstvuet/)
+- [Большое путешествие: ОАЭ → Гонконг → Бангкок и Самуи](https://sergeykorol.com/big-trip-2025/)
 - [Ссылки #415](https://www.juev.org/2026/11/07/weblinks-415/)
 - [Weeknote #2025](https://rknight.me/blog/weeknote-2025/)
 - [What’s the deal with screenshots on macOS Golden Gate?](https://lapcatsoftware.com/articles/2026/11/3.html)
@@ -23,7 +26,6 @@ title: "/blogroll/"
 - [“It Gives Great Demo”](https://blog.jim-nielsen.com/2026/it-gives-great-demo/)
 - [November Update](https://brandons-journal.com/post/november-update)
 - [Open source as a research method](https://lemire.me/blog/2026/11/04/open-source-as-a-research-method/)
-- [Нейрооптимизация](https://ilyabirman.ru/meanwhile/all/neurooptimization/)
 - [Everything you need to know to secure your Rust projects against the wave of cyberattacks](https://kerkour.com/secure-rust-projects)
 - [A new Go API for JSON](https://go.dev/blog/jsonv2)
 - [Запускаем локального LLM-агента под Linux](https://eax.me/2026/2026-11-04-local-llm.html)
@@ -43,7 +45,6 @@ title: "/blogroll/"
 - [Cycling Vermont](https://macwright.com/2026/11/01/cycling-vermont.html)
 - [Halloween 2K26 - My Final Costume](https://brandons-journal.com/post/halloween-2k26-my-final-costume)
 - [Perigee: своя читалка и разреженные строки](https://www.juev.org/2026/10/31/perigee-justification/)
-- [Day trip to Beitou Hot Spring Village and Tamsui](https://hey.georgie.nu/beitou-tamsui/)
 - [Ссылки #414](https://www.juev.org/2026/10/31/weblinks-414/)
 - [Grief, Memory, and Blessing](https://devondundee.com/blog/grief-memory-and-blessing)
 - [So Long Captain](https://brandons-journal.com/post/so-long-captain)
@@ -68,7 +69,7 @@ title: "/blogroll/"
 - [Code review was never about the code](https://mattstromawn.com/writing/code-review-was-never-about-the-code/)
 - [Community](https://marco.org/2026/10/24/community)
 - [Seven years from China](https://world.hey.com/dhh/seven-years-from-china-a63b03cc)
-- [Continuing at the beginning](https://manuelmoreale.com/fromthesummit/continuing-at-the-beginning)
+- [Continuing at the beginning](https://manuelmoreale.com/walks/continuing-at-the-beginning)
 - [Be a tech bro](https://world.hey.com/dhh/be-a-tech-bro-30db1962)
 - [Building Java ME Apps with Modern Tooling](https://voxelmanip.se/2026/10/24/building-java-me-apps-with-modern-tooling/)
 - [What Is a Friend?](https://nazhamid.com/journal/what-is-a-friend/)
@@ -220,7 +221,6 @@ title: "/blogroll/"
 - [Pebble Mega Update - July 2026](https://repebble.com/blog/pebble-mega-update-july-2026)
 - [Logo: Squawkbox](https://tonsky.me/design/#2026-07-squawkbox)
 - [Let's Taboo the V-Word](https://lincolnquirk.substack.com/p/lets-taboo-the-v-word)
-- [Парфюмы](https://sergeykorol.com/perfumes/)
 - [I like using scrollbars](https://www.arp242.net/scrollbar.html)
 - [My Thoughts on the Bun Rust Rewrite](https://andrewkelley.me/post/my-thoughts-bun-rust-rewrite.html)
 - [RSS syndication on Fedi #meta](https://haewyr.mataroa.blog/blog/rss-syndication-on-fedi-meta/)
