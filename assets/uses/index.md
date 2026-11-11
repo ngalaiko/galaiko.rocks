@@ -7,7 +7,9 @@ on this page you can find most of the things that i use.
 ## software
 
 - [neovim](https://neovim.io/) - text editor
-- [ghostty](https://ghostty.org) - terminal emulator
+- [pi](https://pi.dev) - coding agent
+- [amp](https://ampcode.com) - another coding agent
+- [rex](https://www.superlogical.com) - terminal emulator
 - [jj](https://jj-vcs.github.io/jj/latest/) - version control
 - [raycast](http://raycast.com) - app launcher
 - [fish](https://fishshell.com) - shell
@@ -27,10 +29,11 @@ on this page you can find most of the things that i use.
 - [kino.watch](https://kino.watch) - online movies etc.
 - [fly.io](https://fly.io) - hosting provider
 - [exe.dev](https://exe.dev) - another hosting provider
+- [posthog](https://posthog.com) - analytics
 
 ## hardware
 
-- macbook pro 14-inch, Nov 2024
+- macbook pro 14-inch, M5 Pro, 48 GB RAM
 - iphone 17
 - air pods pro 3
 - [unify dream machine](https://store.ui.com/collections/unifi-network-unifi-os-consoles/products/udm-us)
@@ -46,10 +49,10 @@ on this page you can find most of the things that i use.
   - [arylic lp10](https://www.arylic.com/products/lp10-music-streamer) digital streamer
 - espresso setup
   - lapavoni europiccola (EL (1995) (v. 2.5))
-    - AirBuster release valve
-    - group head pressure gauge
-    - boiler pressure gauge
-    - long single hole steam tip extender
+    - [AirBuster release valve](https://coffee-sensor.com/product/airbuster-release-valve-and-chamber-for-la-pavoni-lever-group-heads/)
+    - [group head pressure gauge](https://coffee-sensor.com/product/coffee-sensor-full-piston-pressure-kit-for-the-la-pavoni-europiccola-pre-millennium-and-millenium-machines/)
+    - [boiler pressure gauge](https://coffee-sensor.com/product/la-pavoni-lever-boiler-pressure-gauge-and-stainless-adapter-kit/)
+    - [long single hole steam tip extender](https://coffee-sensor.com/product/la-pavoni-lever-long-single-hole-steam-tip-extender-brass/)
   - [eureka oro mignon single dose](https://www.eureka.co.it/en/products/eureka+oro/prosumer+grinders/prosumer/71.aspx) grinder
 - [kobo libra 2](https://us.kobobooks.com/products/kobo-libra-2) - ebook
 - [minox 35 GL](https://camera-wiki.org/wiki/Minox_35_GL) - compact film camera
