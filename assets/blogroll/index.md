@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [Ye Olde Blogroll](https://basic.bearblog.dev/ye-olde-blogroll/)
+- [The expectation of effort](https://manuelmoreale.com/thoughts/the-expectation-of-effort)
+- [Покажи мне мои слепые зоны](https://zamesin.ru/pokazhi-mne-moi-slepye-zony/)
 - [Inside PyPy: first contact with RPython](https://bernsteinbear.com/blog/inside-pypy-first-contact-with-rpython/?utm_source=rss)
 - [Java4Shell: when base64 decoding leads to remote code execution?](https://lemire.me/blog/2026/11/18/java4shell-when-base64-decoding-leads-to-remote-code-execution/)
 - [Email Dumpster Diving](https://blog.jim-nielsen.com/2026/email-dumpster-diving/)
@@ -25,7 +28,6 @@ title: "/blogroll/"
 - [Why does my phone have no entropy?](https://voxelmanip.se/2026/11/16/why-does-my-phone-have-no-entropy/)
 - [2026/11/16_volk - Про...ли волка-то!](https://lleo.me/dnevnik/2026/11/16_volk)
 - [2026/11/16 - Ебанутым нет покоя](https://lleo.me/dnevnik/2026/11/16)
-- [Friends with new sites](https://manuelmoreale.com/thoughts/friends-with-new-sites)
 - [Knowember](https://rknight.me/blog/knowember/)
 - [Marty McFly’s 1985 Toyota SR5 Xtra Cab](https://basic.bearblog.dev/marty-mcflys-1985-toyota-sr5-xtra-cab/)
 - [Joy & Curiosity #106](https://registerspill.thorstenball.com/p/joy-and-curiosity-106)
@@ -38,7 +40,6 @@ title: "/blogroll/"
 - [Ссылки #416](https://www.juev.org/2026/11/14/weblinks-416/)
 - [Bring on That Wholesome Entertainment](https://brandons-journal.com/post/bring-on-that-wholesome-entertainment)
 - [Designing nextest's install scripts](https://sunshowers.io/posts/nextest-install-scripts/)
-- [Back from a digital break](https://basic.bearblog.dev/back-from-a-digital-break/)
 - [Group tour to Taiwan’s north-east coast: Yehliu, Jiufen, and Pingxi](https://hey.georgie.nu/taiwan-north-east/)
 - [you won't win at copyright](https://ingrids.space/posts/you-wont-win-at-copyright/)
 - [Info-ZIP - Widespread and Unmaintained](https://voxelmanip.se/2026/11/13/info-zip-widespread-and-unmaintained/)
@@ -97,7 +98,6 @@ title: "/blogroll/"
 - [Нейронки увольняют тех, кто не умеют думать](https://zamesin.ru/neyronki-uvolnyayut-tekh-kto-ne-umeyut-dumat/)
 - [GitButler 0.23 - "Air Jordan"](https://blog.gitbutler.com/gitbutler-0-23)
 - [The upvote dilemma](https://herman.bearblog.dev/the-upvote-dilemma/)
-- [Реальность служит сюжетам для развития души](https://zamesin.ru/realnost-sluzhit-syuzhetam-dlya-razvitiya-dushi/)
 - [Let the Builders Talk](https://molodtsov.me/2026/10/let-the-builders-talk/)
 - [Micro: Make smaller structs](https://seanmonstar.com/micro/20261026-make-smaller-structs/)
 - [Our Response To The eMudhra Key Disclosure Incident](https://go.dev/blog/emudhra-incident)
