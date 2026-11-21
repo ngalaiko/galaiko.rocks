@@ -2,6 +2,9 @@
 title: "/blogroll/"
 ---
 
+- [Weeknote #2027](https://rknight.me/blog/weeknote-2027/)
+- [Decoding base64 email attachments: a speed ranking of programming languages](https://lemire.me/blog/2026/11/20/decoding-base64-email-attachments/)
+- [В корзину](https://ilyabirman.ru/meanwhile/all/v-korzinu/)
 - [Ye Olde Blogroll](https://basic.bearblog.dev/ye-olde-blogroll/)
 - [The expectation of effort](https://manuelmoreale.com/thoughts/the-expectation-of-effort)
 - [Покажи мне мои слепые зоны](https://zamesin.ru/pokazhi-mne-moi-slepye-zony/)
@@ -17,7 +20,6 @@ title: "/blogroll/"
 - [Как обогнать быструю сортировку](https://eax.me/2026/2026-11-18-bucket-sort.html)
 - [Думаем дальше № 70 — «Клод-дизайн после этого закрылся» с Мишей Нозиком](https://ilyabirman.ru/meanwhile/all/think-on-70/)
 - [Neat stats are neat](https://manuelmoreale.com/thoughts/neat-stats-are-neat)
-- [На интерфейсном курсе: ставим семисегментные часики по общей сетке](https://ilyabirman.ru/meanwhile/all/ui-course-frag-210/)
 - [Video Killed the Text Star](https://nazhamid.com/journal/video-killed-the-text-star/)
 - [I put an AI agent in our family group chat](https://kaplich.me/blog/i-put-an-ai-agent-in-our-family-group-chat/)
 - [Cognitive radius](https://lemire.me/blog/2026/11/16/cognitive-radius/)
@@ -34,9 +36,7 @@ title: "/blogroll/"
 - [“Dreamer” by QWER • custom visualizer](https://verbnounenter.net/visualizer-3?pk_campaign=rss-feed)
 - [2026/11/15 - Учёные бьют тревогу: люди, отказавшиеся от вакцинации, начали забывать про ГМО](https://lleo.me/dnevnik/2026/11/15)
 - [Как из .pptx достать оригинальные картинки](https://bizikov.ru/notes/pptx-images)
-- [Reading JSON at 277 GB/s in Python](https://lemire.me/blog/2026/11/14/reading-json-at-277-gb-s-in-python/)
 - [freshgo 0.3.14: месяц спустя это уже не FreshRSS](https://www.juev.org/2026/11/14/freshgo-0-3-14/)
-- [Weeknotes #2026](https://rknight.me/blog/weeknotes-2026/)
 - [Ссылки #416](https://www.juev.org/2026/11/14/weblinks-416/)
 - [Bring on That Wholesome Entertainment](https://brandons-journal.com/post/bring-on-that-wholesome-entertainment)
 - [Designing nextest's install scripts](https://sunshowers.io/posts/nextest-install-scripts/)
